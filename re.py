@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+##file function: æå–C CPPæ–‡ä»¶ä¸­çš„å‡½æ•°åï¼Œå®å®šä¹‰ï¼Œç»“æž„ä½“ç­‰
 ##filename:re.py
 
 import re
@@ -9,10 +10,8 @@ import os
 tips = "regular expression"
 print '-' * 30 + tips + '-' * 30
 
-print 'numbers of argument', len(sys.argv)
-print 'They are', str(sys.argv)
-
-
+print 'Number of arguments:', len(sys.argv)
+print 'They are:', str(sys.argv)
 if (len(sys.argv) > 1):
 	filename=str(sys.argv[1])
 	print 'filename is ' + filename
@@ -25,73 +24,56 @@ def openfilereturncontent(filename):
 		fh.close()
 		return filecontent
 	finally:
-		print "Error:Ã»ÓÐÕÒµ½ÎÄ¼þ»ò¶ÁÈ¡ÎÄ¼þÊ§°Ü"
+		print "Error:æ²¡æœ‰æ‰¾åˆ°æ–‡ä»¶æˆ–è¯»å–æ–‡ä»¶å¤±è´¥"
 	
 
 def writefilewithcontent(filename, text):
-	try:
-		print filename
-		print os.path.dirname(filename)
-		print os.path.exists(os.path.dirname(filename))
-		if False == os.path.exists(os.path.dirname(filename)):
-			os.makedirs(os.path.dirname(filename))
-		fw = open(filename,"w")
-		fw.write(text)
-		fw.close()
-	finally:
-		print "Error:Ã»ÓÐÕÒµ½ÎÄ¼þ»ò¶ÁÈ¡ÎÄ¼þÊ§°Ü"
+	# try:
+	print filename
+	print os.path.dirname(filename)
+	print os.path.exists(os.path.dirname(filename))
+	if False == os.path.exists(os.path.dirname(filename)):
+		os.makedirs(os.path.dirname(filename))
+	fw = open(filename,"w")
+	fw.write(text)
+	fw.close()
+	# finally:
+		# print "Error:æ²¡æœ‰æ‰¾åˆ°æ–‡ä»¶æˆ–è¯»å–æ–‡ä»¶å¤±è´¥"
 	
 
 ###regular expression for header and source files
 def regrexheader(text):
-	#m = re.match(r'\s+', text)
-	astr = re.sub(r'\s*#include.*', '', text)  ##del #include
-	astr = re.sub(r'\s*\/\*.*\*\/', '', astr)  ##del /*  */ in a line
-	astr = re.sub(r'\s*\/\/.*', '', astr)  ##del //
-	astr = re.sub(r'\s*\/\*([\s\S]*?)\*\/', '', astr)  ##del /*  */  in many lines
+	astr = re.sub(r'\s*\/\/.*','', text) ##del //
+	astr = re.sub(r'\s*\/\*([\s\S]*?)\*\/', '', astr) ##del /* * in multi line
 	astr = re.sub(r'#ifdef\s+__cplusplus([\s\S]*?)#endif', '', astr)  ##del __cplusplus
-	astr = re.sub(r'#if 0([\s\S]*?)#endif', '', astr)  ##del 
+	astr = re.sub(r'#if 0([\s\S]*?)#endif', '', astr)  ##del  #if 0 ~ #endif
+	astr = re.sub(r'\s*#include.*', '', astr)  ##del #include
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
+	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}	
 	astr = re.sub(r'#pragma.*', '', astr)  ##del 
 	astr = re.sub(r'\s*#endif', '', astr)  ##del 
-	astr = re.sub(r'\s*#else', '', astr)  ##del 
 	astr = re.sub(r'\s*#ifndef.*', '', astr)  ##del 
 	astr = re.sub(r'\s*#ifdef.*', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'\{([@/^\'\?\~#£¨|£¬£©*\/\\\-:&\[\]|+;->_$<%",!\w\d<=().¡¢\n\s]*)\}', '', astr)  ##del 
-	astr = re.sub(r'', '', astr)  ##del 
-	print astr
+	astr = re.sub(r'\s*#else', '', astr)  ##del 
+	# print astr
 	return astr
 	
 def delete(filepath):
-	f = open(filepath)
+	f = open(filepath, 'a+')
 	fnew = open(filepath + '.re.txt','wb')
-	for line in f.readline():
+	for line in f.readlines():
 		data = line.strip()
 		if len(data) != 0:
 			fnew.write(data)
@@ -104,22 +86,24 @@ def delete(filepath):
 	
 if __name__=="__main__":
 	
-	print '-' * 10 + "begin" + '-' * 10
+	print '=' * 3 + "begin" + '=' * 3
 	str=""
-	savedir="regularexpress"
+	savedir="regularexpress/"
 	savefilename="abc.txt"
 	if (len(sys.argv) > 1):
 		str = openfilereturncontent(sys.argv[1])
 		print "file[%s] content:" % (sys.argv[1])
 		savefilename = savedir + sys.argv[1]
-	print str
+	# print str
 	text = regrexheader(str)
+	print '-' *100
+	print "deal result:" + text
 	
 	writefilewithcontent(savefilename, text)
 	delete(savefilename)
 	os.remove(savefilename)
 	
-	print '-' * 10 + "end" + '-' * 10
+	print '=' * 3 + "end" + '=' * 3
 	
 
 
