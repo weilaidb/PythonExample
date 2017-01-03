@@ -93,7 +93,7 @@ if __name__=="__main__":
 	if (len(sys.argv) > 1):
 		str = openfilereturncontent(sys.argv[1])
 		print "file[%s] content:" % (sys.argv[1])
-		savefilename = savedir + sys.argv[1]
+		savefilename = savedir + os.path.realpath(sys.argv[1])
 	# print str
 	text = regrexheader(str)
 	print '-' *100
