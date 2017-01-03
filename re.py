@@ -100,8 +100,8 @@ if __name__=="__main__":
 	print "deal result:" + text
 	
 	writefilewithcontent(savefilename, text)
-	delete(savefilename)
-	os.remove(savefilename)
+	# delete(savefilename)
+	# os.remove(savefilename)
 	
 	print '=' * 3 + "end" + '=' * 3
 	
