@@ -1,0 +1,2 @@
+#define AVUTIL_HWCONTEXT_VDPAU_H
+typedef struct AVVDPAUDeviceContext  AVVDPAUDeviceContext;

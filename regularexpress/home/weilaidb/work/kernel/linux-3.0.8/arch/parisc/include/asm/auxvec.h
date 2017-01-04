@@ -1,0 +1,1 @@
+#define __ASMPARISC_AUXVEC_H

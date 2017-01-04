@@ -1,0 +1,1 @@
+#define ___ASM_SPARC_STATFS_H

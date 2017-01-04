@@ -1,0 +1,28 @@
+void fimc_hw_reset(struct fimc_dev *dev)
+static u32 fimc_hw_get_in_flip(struct fimc_ctx *ctx)
+static u32 fimc_hw_get_target_flip(struct fimc_ctx *ctx)
+void fimc_hw_set_rotation(struct fimc_ctx *ctx)
+void fimc_hw_set_target_format(struct fimc_ctx *ctx)
+static void fimc_hw_set_out_dma_size(struct fimc_ctx *ctx)
+void fimc_hw_set_out_dma(struct fimc_ctx *ctx)
+static void fimc_hw_en_autoload(struct fimc_dev *dev, int enable)
+void fimc_hw_en_lastirq(struct fimc_dev *dev, int enable)
+void fimc_hw_set_prescaler(struct fimc_ctx *ctx)
+static void fimc_hw_set_scaler(struct fimc_ctx *ctx)
+void fimc_hw_set_mainscaler(struct fimc_ctx *ctx)
+void fimc_hw_en_capture(struct fimc_ctx *ctx)
+void fimc_hw_set_effect(struct fimc_ctx *ctx)
+static void fimc_hw_set_in_dma_size(struct fimc_ctx *ctx)
+void fimc_hw_set_in_dma(struct fimc_ctx *ctx)
+void fimc_hw_set_input_path(struct fimc_ctx *ctx)
+void fimc_hw_set_output_path(struct fimc_ctx *ctx)
+void fimc_hw_set_input_addr(struct fimc_dev *dev, struct fimc_addr *paddr)
+void fimc_hw_set_output_addr(struct fimc_dev *dev,
+struct fimc_addr *paddr, int index)
+int fimc_hw_set_camera_polarity(struct fimc_dev *fimc,
+struct s5p_fimc_isp_info *cam)
+int fimc_hw_set_camera_source(struct fimc_dev *fimc,
+struct s5p_fimc_isp_info *cam)
+int fimc_hw_set_camera_offset(struct fimc_dev *fimc, struct fimc_frame *f)
+int fimc_hw_set_camera_type(struct fimc_dev *fimc,
+struct s5p_fimc_isp_info *cam)

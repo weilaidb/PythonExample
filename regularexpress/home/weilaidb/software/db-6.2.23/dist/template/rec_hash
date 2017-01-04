@@ -1,0 +1,105 @@
+int
+__ham_insdel_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_insdel_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_newpage_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_splitdata_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_replace_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_replace_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_copypage_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_metagroup_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_metagroup_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_groupalloc_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_groupalloc_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_changeslot_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_contract_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_curadj_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;
+int
+__ham_chgpg_recover(env, dbtp, lsnp, op, info)
+env *env;
+DBT *dbtp;
+DB_LSN *lsnp;
+db_recops op;
+void *info;

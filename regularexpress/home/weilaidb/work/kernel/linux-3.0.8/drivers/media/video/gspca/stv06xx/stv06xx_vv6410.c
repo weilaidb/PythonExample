@@ -1,0 +1,16 @@
+static struct v4l2_pix_format vv6410_mode[] = ;
+static const struct ctrl vv6410_ctrl[] = ;
+static int vv6410_probe(struct sd *sd)
+static int vv6410_init(struct sd *sd)
+static void vv6410_disconnect(struct sd *sd)
+static int vv6410_start(struct sd *sd)
+static int vv6410_stop(struct sd *sd)
+static int vv6410_dump(struct sd *sd)
+static int vv6410_get_hflip(struct gspca_dev *gspca_dev, __s32 *val)
+static int vv6410_set_hflip(struct gspca_dev *gspca_dev, __s32 val)
+static int vv6410_get_vflip(struct gspca_dev *gspca_dev, __s32 *val)
+static int vv6410_set_vflip(struct gspca_dev *gspca_dev, __s32 val)
+static int vv6410_get_analog_gain(struct gspca_dev *gspca_dev, __s32 *val)
+static int vv6410_set_analog_gain(struct gspca_dev *gspca_dev, __s32 val)
+static int vv6410_get_exposure(struct gspca_dev *gspca_dev, __s32 *val)
+static int vv6410_set_exposure(struct gspca_dev *gspca_dev, __s32 val)

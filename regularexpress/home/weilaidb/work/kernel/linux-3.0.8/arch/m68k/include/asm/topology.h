@@ -1,0 +1,1 @@
+#define _ASM_M68K_TOPOLOGY_H

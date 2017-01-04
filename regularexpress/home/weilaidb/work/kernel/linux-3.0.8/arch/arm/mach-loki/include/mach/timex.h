@@ -1,0 +1,2 @@
+#define CLOCK_TICK_RATE		(100 * HZ)
+#define LOKI_TCLK		180000000

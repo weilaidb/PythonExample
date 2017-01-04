@@ -1,0 +1,6 @@
+static int compat_agpioc_info_wrap(struct agp_file_private *priv, void __user *arg)
+static int compat_agpioc_reserve_wrap(struct agp_file_private *priv, void __user *arg)
+static int compat_agpioc_allocate_wrap(struct agp_file_private *priv, void __user *arg)
+static int compat_agpioc_bind_wrap(struct agp_file_private *priv, void __user *arg)
+static int compat_agpioc_unbind_wrap(struct agp_file_private *priv, void __user *arg)
+long compat_agp_ioctl(struct file *file, unsigned int cmd, unsigned long arg)

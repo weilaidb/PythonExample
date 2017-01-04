@@ -1,0 +1,8 @@
+static int r520_mc_wait_for_idle(struct radeon_device *rdev)
+static void r520_gpu_init(struct radeon_device *rdev)
+static void r520_vram_get_type(struct radeon_device *rdev)
+void r520_mc_init(struct radeon_device *rdev)
+void r520_mc_program(struct radeon_device *rdev)
+static int r520_startup(struct radeon_device *rdev)
+int r520_resume(struct radeon_device *rdev)
+int r520_init(struct radeon_device *rdev)

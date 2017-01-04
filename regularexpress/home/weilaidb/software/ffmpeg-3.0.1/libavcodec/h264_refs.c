@@ -1,0 +1,26 @@
+static void pic_as_field(H264Ref *pic, const int parity)
+static void ref_from_h264pic(H264Ref *dst, H264Picture *src)
+static int split_field_copy(H264Ref *dest, H264Picture *src, int parity, int id_add)
+static int build_def_list(H264Ref *def, int def_len,
+H264Picture **in, int len, int is_long, int sel)
+static int add_sorted(H264Picture **sorted, H264Picture **src, int len, int limit, int dir)
+static int mismatches_ref(H264Context *h, H264Picture *pic)
+static void h264_initialise_ref_list(H264Context *h, H264SliceContext *sl)
+static void print_short_term(H264Context *h);
+static void print_long_term(H264Context *h);
+static int pic_num_extract(H264Context *h, int pic_num, int *structure)
+int ff_h264_decode_ref_pic_list_reordering(H264Context *h, H264SliceContext *sl)
+void ff_h264_fill_mbaff_ref_list(H264Context *h, H264SliceContext *sl)
+static inline int unreference_pic(H264Context *h, H264Picture *pic, int refmask)
+static H264Picture *find_short(H264Context *h, int frame_num, int *idx)
+static void remove_short_at_index(H264Context *h, int i)
+static H264Picture *remove_short(H264Context *h, int frame_num, int ref_mask)
+static H264Picture *remove_long(H264Context *h, int i, int ref_mask)
+void ff_h264_remove_all_refs(H264Context *h)
+static void print_short_term(H264Context *h)
+static void print_long_term(H264Context *h)
+static int check_opcodes(MMCO *mmco1, MMCO *mmco2, int n_mmcos)
+int ff_generate_sliding_window_mmcos(H264Context *h, int first_slice)
+int ff_h264_execute_ref_pic_marking(H264Context *h, MMCO *mmco, int mmco_count)
+int ff_h264_decode_ref_pic_marking(H264Context *h, GetBitContext *gb,
+int first_slice)

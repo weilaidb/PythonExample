@@ -1,0 +1,43 @@
+bool sci_remote_node_context_is_ready(
+struct sci_remote_node_context *sci_rnc)
+static union scu_remote_node_context *sci_rnc_by_id(struct isci_host *ihost, u16 id)
+static void sci_remote_node_context_construct_buffer(struct sci_remote_node_context *sci_rnc)
+static void sci_remote_node_context_setup_to_resume(
+struct sci_remote_node_context *sci_rnc,
+scics_sds_remote_node_context_callback callback,
+void *callback_parameter)
+static void sci_remote_node_context_setup_to_destory(
+struct sci_remote_node_context *sci_rnc,
+scics_sds_remote_node_context_callback callback,
+void *callback_parameter)
+static void sci_remote_node_context_notify_user(
+struct sci_remote_node_context *rnc)
+static void sci_remote_node_context_continue_state_transitions(struct sci_remote_node_context *rnc)
+static void sci_remote_node_context_validate_context_buffer(struct sci_remote_node_context *sci_rnc)
+static void sci_remote_node_context_invalidate_context_buffer(struct sci_remote_node_context *sci_rnc)
+static void sci_remote_node_context_initial_state_enter(struct sci_base_state_machine *sm)
+static void sci_remote_node_context_posting_state_enter(struct sci_base_state_machine *sm)
+static void sci_remote_node_context_invalidating_state_enter(struct sci_base_state_machine *sm)
+static void sci_remote_node_context_resuming_state_enter(struct sci_base_state_machine *sm)
+static void sci_remote_node_context_ready_state_enter(struct sci_base_state_machine *sm)
+static void sci_remote_node_context_tx_suspended_state_enter(struct sci_base_state_machine *sm)
+static void sci_remote_node_context_tx_rx_suspended_state_enter(struct sci_base_state_machine *sm)
+static const struct sci_base_state sci_remote_node_context_state_table[] = ;
+void sci_remote_node_context_construct(struct sci_remote_node_context *rnc,
+u16 remote_node_index)
+enum sci_status sci_remote_node_context_event_handler(struct sci_remote_node_context *sci_rnc,
+u32 event_code)
+enum sci_status sci_remote_node_context_destruct(struct sci_remote_node_context *sci_rnc,
+scics_sds_remote_node_context_callback cb_fn,
+void *cb_p)
+enum sci_status sci_remote_node_context_suspend(struct sci_remote_node_context *sci_rnc,
+u32 suspend_type,
+scics_sds_remote_node_context_callback cb_fn,
+void *cb_p)
+enum sci_status sci_remote_node_context_resume(struct sci_remote_node_context *sci_rnc,
+scics_sds_remote_node_context_callback cb_fn,
+void *cb_p)
+enum sci_status sci_remote_node_context_start_io(struct sci_remote_node_context *sci_rnc,
+struct isci_request *ireq)
+enum sci_status sci_remote_node_context_start_task(struct sci_remote_node_context *sci_rnc,
+struct isci_request *ireq)

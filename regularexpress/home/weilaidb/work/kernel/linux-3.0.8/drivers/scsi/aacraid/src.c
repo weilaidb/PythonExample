@@ -1,0 +1,15 @@
+static irqreturn_t aac_src_intr_message(int irq, void *dev_id)
+static void aac_src_disable_interrupt(struct aac_dev *dev)
+static void aac_src_enable_interrupt_message(struct aac_dev *dev)
+static int src_sync_cmd(struct aac_dev *dev, u32 command,
+u32 p1, u32 p2, u32 p3, u32 p4, u32 p5, u32 p6,
+u32 *status, u32 * r1, u32 * r2, u32 * r3, u32 * r4)
+static void aac_src_interrupt_adapter(struct aac_dev *dev)
+static void aac_src_notify_adapter(struct aac_dev *dev, u32 event)
+static void aac_src_start_adapter(struct aac_dev *dev)
+static int aac_src_check_health(struct aac_dev *dev)
+static int aac_src_deliver_message(struct fib *fib)
+static int aac_src_ioremap(struct aac_dev *dev, u32 size)
+static int aac_src_restart_adapter(struct aac_dev *dev, int bled)
+int aac_src_select_comm(struct aac_dev *dev, int comm)
+int aac_src_init(struct aac_dev *dev)

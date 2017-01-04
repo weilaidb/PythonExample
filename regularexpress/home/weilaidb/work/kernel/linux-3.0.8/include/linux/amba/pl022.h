@@ -1,0 +1,21 @@
+#define _SSP_PL022_H
+enum ssp_loopback ;
+enum ssp_interface ;
+enum ssp_hierarchy ;
+struct ssp_clock_params ;
+enum ssp_rx_endian ;
+enum ssp_tx_endian ;
+enum ssp_data_size ;
+enum ssp_mode ;
+enum ssp_rx_level_trig ;
+enum ssp_tx_level_trig ;
+enum ssp_spi_clk_phase ;
+enum ssp_spi_clk_pol ;
+enum ssp_microwire_ctrl_len ;
+enum ssp_microwire_wait_state ;
+enum ssp_duplex ;
+enum ssp_clkdelay ;
+enum ssp_chip_select ;
+struct dma_chan;
+struct pl022_ssp_controller ;
+struct pl022_config_chip ;

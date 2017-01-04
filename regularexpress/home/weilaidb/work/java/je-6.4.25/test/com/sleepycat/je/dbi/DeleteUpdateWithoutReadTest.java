@@ -1,0 +1,26 @@
+package com.sleepycat.je.dbi;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import java.io.File;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import org.junit.After;
+import org.junit.Test;
+import com.sleepycat.bind.tuple.IntegerBinding;
+import com.sleepycat.je.CacheMode;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.EnvironmentStats;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.StatsConfig;
+import com.sleepycat.je.trigger.TestBase.DBT;
+import com.sleepycat.je.trigger.Trigger;
+import com.sleepycat.je.util.DualTestCase;
+import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.util.test.SharedTestUtils;
+public class DeleteUpdateWithoutReadTest extends DualTestCase

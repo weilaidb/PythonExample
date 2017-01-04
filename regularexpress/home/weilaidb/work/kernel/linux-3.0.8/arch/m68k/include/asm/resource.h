@@ -1,0 +1,1 @@
+#define _M68K_RESOURCE_H

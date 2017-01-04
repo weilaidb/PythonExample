@@ -1,0 +1,38 @@
+package com.sleepycat.collections.test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+import com.sleepycat.bind.serial.StoredClassCatalog;
+import com.sleepycat.bind.serial.TupleSerialMarshalledKeyCreator;
+import com.sleepycat.bind.serial.test.MarshalledObject;
+import com.sleepycat.collections.CurrentTransaction;
+import com.sleepycat.collections.TupleSerialFactory;
+import com.sleepycat.compat.DbCompat;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.DeleteConstraintException;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.ForeignConstraintException;
+import com.sleepycat.je.ForeignKeyDeleteAction;
+import com.sleepycat.je.SecondaryConfig;
+import com.sleepycat.je.SecondaryDatabase;
+import com.sleepycat.util.ExceptionUnwrapper;
+import com.sleepycat.util.RuntimeExceptionWrapper;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+import com.sleepycat.util.test.TestEnv;
+@RunWith(Parameterized.class)
+public class ForeignKeyTest extends TestBase

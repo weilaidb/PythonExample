@@ -1,0 +1,7 @@
+u32 r128_get_vblank_counter(struct drm_device *dev, int crtc)
+irqreturn_t r128_driver_irq_handler(DRM_IRQ_ARGS)
+int r128_enable_vblank(struct drm_device *dev, int crtc)
+void r128_disable_vblank(struct drm_device *dev, int crtc)
+void r128_driver_irq_preinstall(struct drm_device *dev)
+int r128_driver_irq_postinstall(struct drm_device *dev)
+void r128_driver_irq_uninstall(struct drm_device *dev)

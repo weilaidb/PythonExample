@@ -1,0 +1,3 @@
+#define AVUTIL_HWCONTEXT_DXVA2_H
+typedef struct AVDXVA2DeviceContext  AVDXVA2DeviceContext;
+typedef struct AVDXVA2FramesContext  AVDXVA2FramesContext;

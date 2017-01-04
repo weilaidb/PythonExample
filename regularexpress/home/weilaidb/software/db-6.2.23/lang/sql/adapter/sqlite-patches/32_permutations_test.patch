@@ -1,0 +1,28 @@
+--- test/permutations.test
++++ test/permutations.test
+@@ -217,6 +217,13 @@
+thread004.test thread005.test walthread.test
+}
++# We exlcude below fts3 tests:
++#  fts3defer.test, fts3defer2.test
++#  --  Known difference of zeroblob between SQLite and BDBSQL. #19764
++#  fts3fault.test
++#  --  Known difference: DBSQL testfixture does't support sqlite_io_error tests.
++#  fts4growth.test, fts4growth2.test
++#  --  Deferred when upgrading to SQLite 3.8.10. #24397
+test_suite "fts3" -prefix "" -description  -files
+test_suite "nofaultsim" -prefix "" -description
++# Run tests appropriate to the BDB SQL API using UTF-16 databases.
++#
++test_suite "bdb-utf16" -description  -presql  -files
++
+# Run some tests in exclusive locking mode.
+#
+test_suite "exclusive" -description
+test_suite "rtree" -description  -files [glob -nocomplain $::testdir/../ext/rtree/*.test]
++} -files [test_set [glob -nocomplain $::testdir/../ext/rtree/*.test] \
++    -exclude *rtreeD.test]
+test_suite "no_optimization" -description  -files {
+where.test where2.test where3.test where4.test where5.test
+where6.test where7.test where8.test where9.test
+whereA.test whereB.test wherelimit.test

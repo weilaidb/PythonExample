@@ -1,0 +1,20 @@
+package com.sleepycat.je.jmx;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.io.File;
+import java.lang.reflect.Method;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import javax.management.Attribute;
+import javax.management.DynamicMBean;
+import javax.management.MBeanInfo;
+import javax.management.MBeanOperationInfo;
+import org.junit.Test;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class JEDiagnosticsTest extends TestBase

@@ -1,0 +1,16 @@
+int tap_open_common(void *dev, char *gate_addr)
+void tap_check_ips(char *gate_addr, unsigned char *eth_addr)
+void read_output(int fd, char *output, int len)
+int net_read(int fd, void *buf, int len)
+int net_recvfrom(int fd, void *buf, int len)
+int net_write(int fd, void *buf, int len)
+int net_send(int fd, void *buf, int len)
+int net_sendto(int fd, void *buf, int len, void *to, int sock_len)
+struct change_pre_exec_data ;
+static void change_pre_exec(void *arg)
+static int change_tramp(char **argv, char *output, int output_len)
+static void change(char *dev, char *what, unsigned char *addr,
+unsigned char *netmask)
+void open_addr(unsigned char *addr, unsigned char *netmask, void *arg)
+void close_addr(unsigned char *addr, unsigned char *netmask, void *arg)
+char *split_if_spec(char *str, ...)

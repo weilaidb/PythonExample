@@ -1,0 +1,1 @@
+#define __ARCH_M32R_PERCPU__

@@ -1,0 +1,10 @@
+#define PYTHON_EXE          (L"python_d.exe")
+#define PYTHON_EXE_LEN      (12)
+#define KILL_PYTHON_EXE     (L"kill_python_d.exe")
+#define KILL_PYTHON_EXE_LEN (17)
+#define PYTHON_EXE          (L"python.exe")
+#define PYTHON_EXE_LEN      (10)
+#define KILL_PYTHON_EXE     (L"kill_python.exe")
+#define KILL_PYTHON_EXE_LEN (15)
+int
+main(int argc, char **argv)

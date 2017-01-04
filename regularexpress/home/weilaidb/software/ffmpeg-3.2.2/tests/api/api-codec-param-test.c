@@ -1,0 +1,6 @@
+static int try_decode_video_frame(AVCodecContext *codec_ctx, AVPacket *pkt, int decode)
+static int find_video_stream_info(AVFormatContext *fmt_ctx, int decode)
+static void dump_video_streams(const AVFormatContext *fmt_ctx, int decode)
+static int open_and_probe_video_streams(AVFormatContext **fmt_ctx, const char *filename, int decode)
+static int check_video_streams(const AVFormatContext *fmt_ctx1, const AVFormatContext *fmt_ctx2)
+int main(int argc, char* argv[])

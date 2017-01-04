@@ -1,0 +1,24 @@
+package com.sleepycat.je.rep;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import java.io.File;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.bind.tuple.IntegerBinding;
+import com.sleepycat.bind.tuple.LongBinding;
+import com.sleepycat.je.CommitToken;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.Durability;
+import com.sleepycat.je.StatsConfig;
+import com.sleepycat.je.rep.NodeType;
+import com.sleepycat.je.rep.ReplicatedEnvironment.State;
+import com.sleepycat.je.rep.impl.RepTestBase;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.je.utilint.VLSN;
+import com.sleepycat.util.test.SharedTestUtils;
+public class JoinGroupTest extends RepTestBase

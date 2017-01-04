@@ -1,0 +1,25 @@
+package com.sleepycat.je.util;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.je.CheckpointConfig;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.dbi.DatabaseId;
+import com.sleepycat.je.junit.JUnitProcessThread;
+import com.sleepycat.je.log.LNFileReader;
+import com.sleepycat.je.log.LogEntryType;
+import com.sleepycat.je.utilint.DbLsn;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class CustomDbPrintLogTest extends TestBase

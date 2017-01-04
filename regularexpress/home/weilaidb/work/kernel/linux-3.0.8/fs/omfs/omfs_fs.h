@@ -1,0 +1,21 @@
+#define _OMFS_FS_H
+#define OMFS_MAGIC 0xC2993D87
+#define OMFS_IMAGIC 0xD2
+#define OMFS_DIR 'D'
+#define OMFS_FILE 'F'
+#define OMFS_INODE_NORMAL 'e'
+#define OMFS_INODE_CONTINUATION 'c'
+#define OMFS_INODE_SYSTEM 's'
+#define OMFS_NAMELEN 256
+#define OMFS_DIR_START 0x1b8
+#define OMFS_EXTENT_START 0x1d0
+#define OMFS_EXTENT_CONT 0x40
+#define OMFS_XOR_COUNT 19
+#define OMFS_MAX_BLOCK_SIZE 8192
+#define OMFS_MAX_CLUSTER_SIZE 8
+struct omfs_super_block ;
+struct omfs_header ;
+struct omfs_root_block ;
+struct omfs_inode ;
+struct omfs_extent_entry ;
+struct omfs_extent ;

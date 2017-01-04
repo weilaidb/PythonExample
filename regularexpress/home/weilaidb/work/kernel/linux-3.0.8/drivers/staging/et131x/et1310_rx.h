@@ -1,0 +1,19 @@
+#define __ET1310_RX_H__
+#define USE_FBR0 true
+#define FBR_CHUNKS 32
+#define MAX_DESC_PER_RING_RX         1024
+#define RFD_LOW_WATER_MARK	40
+#define NIC_MIN_NUM_RFD		64
+#define NIC_DEFAULT_NUM_RFD	1024
+#define RFD_LOW_WATER_MARK	20
+#define NIC_MIN_NUM_RFD		64
+#define NIC_DEFAULT_NUM_RFD	256
+#define NUM_PACKETS_HANDLED	256
+#define ALCATEL_BAD_STATUS	0xe47f0000
+#define ALCATEL_MULTICAST_PKT	0x01000000
+#define ALCATEL_BROADCAST_PKT	0x02000000
+struct fbr_desc ;
+struct pkt_stat_desc ;
+struct rx_status_block ;
+struct fbr_lookup ;
+struct rx_ring ;

@@ -1,0 +1,2 @@
+#if SDL_VIDEO_DRIVER_HAIKU
+void BE_PumpEvents(_THIS)

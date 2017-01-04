@@ -1,0 +1,18 @@
+struct poll ;
+EXPORT_SYMBOL(__flushw_user);
+EXPORT_SYMBOL_GPL(real_hard_smp_processor_id);
+EXPORT_SYMBOL(__ret_efault);
+EXPORT_SYMBOL(tlb_type);
+EXPORT_SYMBOL(sun4v_chip_type);
+EXPORT_SYMBOL(prom_root_node);
+EXPORT_SYMBOL(sun4v_niagara_getperf);
+EXPORT_SYMBOL(sun4v_niagara_setperf);
+EXPORT_SYMBOL(sun4v_niagara2_getperf);
+EXPORT_SYMBOL(sun4v_niagara2_setperf);
+EXPORT_SYMBOL(__arch_hweight8);
+EXPORT_SYMBOL(__arch_hweight16);
+EXPORT_SYMBOL(__arch_hweight32);
+EXPORT_SYMBOL(__arch_hweight64);
+EXPORT_SYMBOL(ffs);
+EXPORT_SYMBOL(__ffs);
+EXPORT_SYMBOL(saved_command_line);

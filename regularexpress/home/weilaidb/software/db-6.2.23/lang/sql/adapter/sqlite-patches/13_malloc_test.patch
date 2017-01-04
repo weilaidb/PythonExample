@@ -1,0 +1,6 @@
+--- test/malloc.test
++++ test/malloc.test
+@@ -718,7 +718,7 @@
+#
+do_malloc_test 31 -sqlprep  -sqlbody {
+INSERT INTO t1 VALUES(1, 2);

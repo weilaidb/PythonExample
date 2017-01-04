@@ -1,0 +1,5 @@
+static int init_hw(struct echoaudio *chip, u16 device_id, u16 subdevice_id)
+static int set_mixer_defaults(struct echoaudio *chip)
+static u32 detect_input_clocks(const struct echoaudio *chip)
+static int load_asic(struct echoaudio *chip)
+static int set_sample_rate(struct echoaudio *chip, u32 rate)

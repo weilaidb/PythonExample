@@ -1,0 +1,6 @@
+struct spu_gang *alloc_spu_gang(void)
+static void destroy_spu_gang(struct kref *kref)
+struct spu_gang *get_spu_gang(struct spu_gang *gang)
+int put_spu_gang(struct spu_gang *gang)
+void spu_gang_add_ctx(struct spu_gang *gang, struct spu_context *ctx)
+void spu_gang_remove_ctx(struct spu_gang *gang, struct spu_context *ctx)

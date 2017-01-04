@@ -1,0 +1,13 @@
+--- src/btree.h
++++ src/btree.h
+@@ -122,6 +122,14 @@
+int sqlite3BtreeNewDb(Btree *p);
++int sqlite3BtreeHandleCacheFixup(Btree *, int);
++
++
++
+pC->aRow = sqlite3BtreeDataFetch(pCrsr, &avail);
+}
+-      assert( avail<=65536 );
++
+if( pC->payloadSize <= (u32)avail )else

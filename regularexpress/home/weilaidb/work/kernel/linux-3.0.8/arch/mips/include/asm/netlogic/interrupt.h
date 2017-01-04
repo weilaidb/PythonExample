@@ -1,0 +1,5 @@
+#define _ASM_NLM_INTERRUPT_H
+#define IRQ_IPI_SMP_FUNCTION	3
+#define IRQ_IPI_SMP_RESCHEDULE	4
+#define IRQ_MSGRING		6
+#define IRQ_TIMER		7

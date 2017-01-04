@@ -1,0 +1,12 @@
+static int handle_set_prefix(struct kvm_vcpu *vcpu)
+static int handle_store_prefix(struct kvm_vcpu *vcpu)
+static int handle_store_cpu_address(struct kvm_vcpu *vcpu)
+static int handle_skey(struct kvm_vcpu *vcpu)
+static int handle_stsch(struct kvm_vcpu *vcpu)
+static int handle_chsc(struct kvm_vcpu *vcpu)
+static int handle_stfl(struct kvm_vcpu *vcpu)
+static int handle_stidp(struct kvm_vcpu *vcpu)
+static void handle_stsi_3_2_2(struct kvm_vcpu *vcpu, struct sysinfo_3_2_2 *mem)
+static int handle_stsi(struct kvm_vcpu *vcpu)
+static intercept_handler_t priv_handlers[256] = ;
+int kvm_s390_handle_b2(struct kvm_vcpu *vcpu)

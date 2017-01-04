@@ -1,0 +1,1 @@
+#define _S390_RESOURCE_H

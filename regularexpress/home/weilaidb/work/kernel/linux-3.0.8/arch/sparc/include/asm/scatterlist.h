@@ -1,0 +1,2 @@
+#define _SPARC_SCATTERLIST_H
+#define ARCH_HAS_SG_CHAIN

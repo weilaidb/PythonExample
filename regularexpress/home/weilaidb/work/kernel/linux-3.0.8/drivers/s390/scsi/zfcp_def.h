@@ -1,0 +1,44 @@
+#define ZFCP_DEF_H
+struct zfcp_reqlist;
+#define ZFCP_SCSI_ER_TIMEOUT                    (10*HZ)
+#define FSF_QTCB_UNSOLICITED_STATUS		0x6305
+#define ZFCP_FSF_REQUEST_TIMEOUT (60*HZ)
+#define ZFCP_COMMON_FLAGS			0xfff00000
+#define ZFCP_STATUS_COMMON_RUNNING		0x40000000
+#define ZFCP_STATUS_COMMON_ERP_FAILED		0x20000000
+#define ZFCP_STATUS_COMMON_UNBLOCKED		0x10000000
+#define ZFCP_STATUS_COMMON_OPEN                 0x04000000
+#define ZFCP_STATUS_COMMON_ERP_INUSE		0x01000000
+#define ZFCP_STATUS_COMMON_ACCESS_DENIED	0x00800000
+#define ZFCP_STATUS_COMMON_ACCESS_BOXED		0x00400000
+#define ZFCP_STATUS_COMMON_NOESC		0x00200000
+#define ZFCP_STATUS_ADAPTER_QDIOUP		0x00000002
+#define ZFCP_STATUS_ADAPTER_SIOSL_ISSUED	0x00000004
+#define ZFCP_STATUS_ADAPTER_XCONFIG_OK		0x00000008
+#define ZFCP_STATUS_ADAPTER_HOST_CON_INIT	0x00000010
+#define ZFCP_STATUS_ADAPTER_ERP_PENDING		0x00000100
+#define ZFCP_STATUS_ADAPTER_LINK_UNPLUGGED	0x00000200
+#define ZFCP_STATUS_ADAPTER_DATA_DIV_ENABLED	0x00000400
+#define ZFCP_STATUS_PORT_PHYS_OPEN		0x00000001
+#define ZFCP_STATUS_PORT_LINK_TEST		0x00000002
+#define ZFCP_STATUS_LUN_SHARED			0x00000004
+#define ZFCP_STATUS_LUN_READONLY		0x00000008
+#define ZFCP_STATUS_FSFREQ_ERROR		0x00000008
+#define ZFCP_STATUS_FSFREQ_CLEANUP		0x00000010
+#define ZFCP_STATUS_FSFREQ_ABORTSUCCEEDED	0x00000040
+#define ZFCP_STATUS_FSFREQ_ABORTNOTNEEDED       0x00000080
+#define ZFCP_STATUS_FSFREQ_TMFUNCFAILED         0x00000200
+#define ZFCP_STATUS_FSFREQ_DISMISSED            0x00001000
+struct zfcp_fsf_req;
+struct zfcp_adapter_mempool ;
+struct zfcp_erp_action ;
+struct fsf_latency_record ;
+struct latency_cont ;
+struct zfcp_latencies ;
+struct zfcp_adapter ;
+struct zfcp_port ;
+struct zfcp_unit ;
+struct zfcp_scsi_dev ;
+static inline struct zfcp_scsi_dev *sdev_to_zfcp(struct scsi_device *sdev)
+static inline u64 zfcp_scsi_dev_lun(struct scsi_device *sdev)
+struct zfcp_fsf_req ;

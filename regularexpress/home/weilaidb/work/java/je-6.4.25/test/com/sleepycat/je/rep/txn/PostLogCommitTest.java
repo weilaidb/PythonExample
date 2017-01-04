@@ -1,0 +1,24 @@
+package com.sleepycat.je.rep.txn;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.fail;
+import java.io.File;
+import java.io.IOException;
+import org.junit.Test;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.Durability;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.TransactionConfig;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.rep.InsufficientAcksException;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.impl.node.NameIdPair;
+import com.sleepycat.je.rep.txn.MasterTxn.MasterTxnFactory;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class PostLogCommitTest extends TestBase

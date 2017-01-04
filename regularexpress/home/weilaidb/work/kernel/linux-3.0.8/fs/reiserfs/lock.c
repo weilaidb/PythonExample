@@ -1,0 +1,6 @@
+void reiserfs_write_lock(struct super_block *s)
+void reiserfs_write_unlock(struct super_block *s)
+int reiserfs_write_lock_once(struct super_block *s)
+void reiserfs_write_unlock_once(struct super_block *s, int lock_depth)
+void reiserfs_check_lock_depth(struct super_block *sb, char *caller)
+void reiserfs_lock_check_recursive(struct super_block *sb)

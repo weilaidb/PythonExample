@@ -1,0 +1,23 @@
+package com.sleepycat.je.rep;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+import com.sleepycat.je.EnvironmentConfig;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.dbi.EnvironmentFailureReason;
+import com.sleepycat.je.log.LogEntryType;
+import com.sleepycat.je.rep.ReplicatedEnvironment.State;
+import com.sleepycat.je.rep.impl.RepImpl;
+import com.sleepycat.je.rep.impl.node.Feeder;
+import com.sleepycat.je.rep.impl.node.RepNode;
+import com.sleepycat.je.rep.stream.FeederReplicaHandshake;
+import com.sleepycat.je.rep.stream.ReplicaFeederHandshake;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class HandshakeTest extends TestBase

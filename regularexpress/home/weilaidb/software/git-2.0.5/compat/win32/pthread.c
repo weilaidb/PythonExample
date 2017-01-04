@@ -1,0 +1,10 @@
+static unsigned __stdcall win32_start_routine(void *arg)
+int pthread_create(pthread_t *thread, const void *unused,
+void *(*start_routine)(void*), void *arg)
+int win32_pthread_join(pthread_t *thread, void **value_ptr)
+pthread_t pthread_self(void)
+int pthread_cond_init(pthread_cond_t *cond, const void *unused)
+int pthread_cond_destroy(pthread_cond_t *cond)
+int pthread_cond_wait(pthread_cond_t *cond, CRITICAL_SECTION *mutex)
+int pthread_cond_signal(pthread_cond_t *cond)
+int pthread_cond_broadcast(pthread_cond_t *cond)

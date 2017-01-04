@@ -1,0 +1,73 @@
+#define _ET1310_ADDRESS_MAP_H_
+#define ET_PM_PHY_SW_COMA		0x40
+#define ET_PMCSR_INIT			0x38
+#define	ET_INTR_TXDMA_ISR	0x00000008
+#define ET_INTR_TXDMA_ERR	0x00000010
+#define ET_INTR_RXDMA_XFR_DONE	0x00000020
+#define ET_INTR_RXDMA_FB_R0_LOW	0x00000040
+#define ET_INTR_RXDMA_FB_R1_LOW	0x00000080
+#define ET_INTR_RXDMA_STAT_LOW	0x00000100
+#define ET_INTR_RXDMA_ERR	0x00000200
+#define ET_INTR_WATCHDOG	0x00004000
+#define ET_INTR_WOL		0x00008000
+#define ET_INTR_PHY		0x00010000
+#define ET_INTR_TXMAC		0x00020000
+#define ET_INTR_RXMAC		0x00040000
+#define ET_INTR_MAC_STAT	0x00080000
+#define ET_INTR_SLV_TIMEOUT	0x00100000
+#define ET_MSI_VECTOR	0x0000001F
+#define ET_MSI_TC	0x00070000
+#define ET_LOOP_MAC	0x00000001
+#define ET_LOOP_DMA	0x00000002
+struct global_regs ;
+#define ET_TXDMA_CSR_HALT	0x00000001
+#define ET_TXDMA_DROP_TLP	0x00000002
+#define ET_TXDMA_CACHE_THRS	0x000000F0
+#define ET_TXDMA_CACHE_SHIFT	4
+#define ET_TXDMA_SNGL_EPKT	0x00000100
+#define ET_TXDMA_CLASS		0x00001E00
+#define ET_DMA12_MASK		0x0FFF
+#define ET_DMA12_WRAP		0x1000
+#define ET_DMA10_MASK		0x03FF
+#define ET_DMA10_WRAP		0x0400
+#define ET_DMA4_MASK		0x000F
+#define ET_DMA4_WRAP		0x0010
+#define INDEX12(x)	((x) & ET_DMA12_MASK)
+#define INDEX10(x)	((x) & ET_DMA10_MASK)
+#define INDEX4(x)	((x) & ET_DMA4_MASK)
+extern inline void add_10bit(u32 *v, int n)
+extern inline void add_12bit(u32 *v, int n)
+struct txdma_regs ;
+struct rxdma_regs ;
+struct txmac_regs ;
+typedef union _RXMAC_WOL_SA_LO_t  RXMAC_WOL_SA_LO_t, *PRXMAC_WOL_SA_LO_t;
+typedef union _RXMAC_WOL_SA_HI_t  RXMAC_WOL_SA_HI_t, *PRXMAC_WOL_SA_HI_t;
+typedef union _RXMAC_UNI_PF_ADDR1_t  RXMAC_UNI_PF_ADDR1_t, *PRXMAC_UNI_PF_ADDR1_t;
+typedef union _RXMAC_UNI_PF_ADDR2_t  RXMAC_UNI_PF_ADDR2_t, *PRXMAC_UNI_PF_ADDR2_t;
+typedef union _RXMAC_UNI_PF_ADDR3_t  RXMAC_UNI_PF_ADDR3_t, *PRXMAC_UNI_PF_ADDR3_t;
+typedef struct _RXMAC_t  RXMAC_t, *PRXMAC_t;
+#define CFG1_LOOPBACK	0x00000100
+#define CFG1_RX_FLOW	0x00000020
+#define CFG1_TX_FLOW	0x00000010
+#define CFG1_RX_ENABLE	0x00000004
+#define CFG1_TX_ENABLE	0x00000001
+#define CFG1_WAIT	0x0000000A
+#define MII_ADDR(phy, reg)	((phy) << 8 | (reg))
+#define MGMT_BUSY	0x00000001
+#define MGMT_WAIT	0x00000005
+typedef union _MAC_STATION_ADDR1_t  MAC_STATION_ADDR1_t, *PMAC_STATION_ADDR1_t;
+typedef union _MAC_STATION_ADDR2_t  MAC_STATION_ADDR2_t, *PMAC_STATION_ADDR2_t;
+typedef struct _MAC_t  MAC_t, *PMAC_t;
+struct macstat_regs ;
+#define ET_MMC_ENABLE		1
+#define ET_MMC_ARB_DISABLE	2
+#define ET_MMC_RXMAC_DISABLE	4
+#define ET_MMC_TXMAC_DISABLE	8
+#define ET_MMC_TXDMA_DISABLE	16
+#define ET_MMC_RXDMA_DISABLE	32
+#define ET_MMC_FORCE_CE		64
+#define ET_SRAM_REQ_ACCESS	1
+#define ET_SRAM_WR_ACCESS	2
+#define ET_SRAM_IS_CTRL		4
+struct mmc_regs ;
+typedef struct _ADDRESS_MAP_t  ADDRESS_MAP_t, *PADDRESS_MAP_t;

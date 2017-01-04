@@ -1,0 +1,24 @@
+package com.sleepycat.je.rep.util.ldiff;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.io.File;
+import java.net.InetSocketAddress;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.bind.tuple.IntegerBinding;
+import com.sleepycat.bind.tuple.StringBinding;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.ReplicationConfig;
+import com.sleepycat.je.rep.ReplicationNetworkConfig;
+import com.sleepycat.je.rep.utilint.BinaryProtocol.ProtocolException;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.je.rep.utilint.net.DataChannelFactoryBuilder;
+import com.sleepycat.je.utilint.PollCondition;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class LDiffServiceTest extends TestBase

@@ -1,0 +1,7 @@
+#define _FTS2_TOKENIZER_H_
+typedef struct sqlite3_tokenizer_module sqlite3_tokenizer_module;
+typedef struct sqlite3_tokenizer sqlite3_tokenizer;
+typedef struct sqlite3_tokenizer_cursor sqlite3_tokenizer_cursor;
+struct sqlite3_tokenizer_module ;
+struct sqlite3_tokenizer ;
+struct sqlite3_tokenizer_cursor ;

@@ -1,0 +1,14 @@
+#define _CM_HOST_H
+#define  DSX_MESSAGE_EXCHANGE_BUFFER        0xBF60AC84
+#define  DSX_MESSAGE_EXCHANGE_BUFFER_SIZE   72000
+typedef struct stLocalSFAddRequestAltstLocalSFAddRequestAlt;
+typedef struct stLocalSFAddIndicationAltstLocalSFAddIndicationAlt;
+typedef struct stLocalSFAddConfirmationAltstLocalSFAddConfirmationAlt;
+typedef struct stLocalSFChangeRequestAltstLocalSFChangeRequestAlt;
+typedef struct stLocalSFChangeConfirmationAltstLocalSFChangeConfirmationAlt;
+typedef struct stLocalSFChangeIndicationAltstLocalSFChangeIndicationAlt;
+ULONG StoreCmControlResponseMessage(PMINI_ADAPTER Adapter,PVOID pvBuffer,UINT *puBufferLength);
+INT AllocAdapterDsxBuffer(PMINI_ADAPTER Adapter);
+INT FreeAdapterDsxBuffer(PMINI_ADAPTER Adapter);
+ULONG SetUpTargetDsxBuffers(PMINI_ADAPTER Adapter);
+BOOLEAN CmControlResponseMessage(PMINI_ADAPTER Adapter,PVOID pvBuffer);

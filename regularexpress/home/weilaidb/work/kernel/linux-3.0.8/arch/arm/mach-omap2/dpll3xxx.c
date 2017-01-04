@@ -1,0 +1,20 @@
+#define DPLL_AUTOIDLE_DISABLE			0x0
+#define DPLL_AUTOIDLE_LOW_POWER_STOP		0x1
+#define MAX_DPLL_WAIT_TRIES		1000000
+static void _omap3_dpll_write_clken(struct clk *clk, u8 clken_bits)
+static int _omap3_wait_dpll_status(struct clk *clk, u8 state)
+static u16 _omap3_dpll_compute_freqsel(struct clk *clk, u8 n)
+static int _omap3_noncore_dpll_lock(struct clk *clk)
+static int _omap3_noncore_dpll_bypass(struct clk *clk)
+static int _omap3_noncore_dpll_stop(struct clk *clk)
+static void _lookup_dco(struct clk *clk, u8 *dco, u16 m, u8 n)
+static void _lookup_sddiv(struct clk *clk, u8 *sd_div, u16 m, u8 n)
+static int omap3_noncore_dpll_program(struct clk *clk, u16 m, u8 n, u16 freqsel)
+unsigned long omap3_dpll_recalc(struct clk *clk)
+int omap3_noncore_dpll_enable(struct clk *clk)
+void omap3_noncore_dpll_disable(struct clk *clk)
+int omap3_noncore_dpll_set_rate(struct clk *clk, unsigned long rate)
+u32 omap3_dpll_autoidle_read(struct clk *clk)
+void omap3_dpll_allow_idle(struct clk *clk)
+void omap3_dpll_deny_idle(struct clk *clk)
+unsigned long omap3_clkoutx2_recalc(struct clk *clk)

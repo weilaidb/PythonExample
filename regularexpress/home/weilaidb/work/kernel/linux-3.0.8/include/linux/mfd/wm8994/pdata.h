@@ -1,0 +1,20 @@
+#define __MFD_WM8994_PDATA_H__
+#define WM8994_NUM_LDO   2
+#define WM8994_NUM_GPIO 11
+struct wm8994_ldo_pdata ;
+#define WM8994_CONFIGURE_GPIO 0x10000
+#define WM8994_DRC_REGS 5
+#define WM8994_EQ_REGS  20
+#define WM8958_MBC_CUTOFF_REGS 20
+#define WM8958_MBC_COEFF_REGS  48
+#define WM8958_MBC_COMBINED_REGS 56
+#define WM8958_VSS_HPF_REGS 2
+#define WM8958_VSS_REGS 148
+#define WM8958_ENH_EQ_REGS 32
+struct wm8994_drc_cfg ;
+struct wm8994_retune_mobile_cfg ;
+struct wm8958_mbc_cfg ;
+struct wm8958_vss_hpf_cfg ;
+struct wm8958_vss_cfg ;
+struct wm8958_enh_eq_cfg ;
+struct wm8994_pdata ;

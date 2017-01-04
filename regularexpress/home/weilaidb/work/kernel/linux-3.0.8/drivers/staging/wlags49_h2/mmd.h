@@ -1,0 +1,2 @@
+#define MMD_H 1
+EXTERN_C CFG_RANGE_SPEC_STRCT* mmd_check_comp( CFG_RANGES_STRCT *actp, CFG_SUP_RANGE_STRCT *supp );

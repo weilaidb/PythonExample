@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+#
+# Clean a patch file -- or directory of patch files -- of stealth whitespace.
+# WARNING: this can be a highly destructive operation.  Use with caution.
+#
+use bytes;
+use File::Basename;
+# Default options
+$max_width = 79;
+# Clean up space-tab sequences, either by removing spaces or
+# replacing them with tabs.
+sub clean_space_tabs($)
+# Compute the visual width of a string
+sub strwidth($)
+$name = basename($0);
+@files = ();
+while (defined($a = shift(@ARGV)))
+foreach $f ( @files )

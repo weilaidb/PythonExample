@@ -1,0 +1,11 @@
+static const u32 ar5416Modes[][6] = ;
+static const u32 ar5416Common[][2] = ;
+static const u32 ar5416Bank0[][2] = ;
+static const u32 ar5416BB_RfGain[][3] = ;
+static const u32 ar5416Bank1[][2] = ;
+static const u32 ar5416Bank2[][2] = ;
+static const u32 ar5416Bank3[][3] = ;
+static const u32 ar5416Bank6[][3] = ;
+static const u32 ar5416Bank6TPC[][3] = ;
+static const u32 ar5416Bank7[][2] = ;
+static const u32 ar5416Addac[][2] = ;

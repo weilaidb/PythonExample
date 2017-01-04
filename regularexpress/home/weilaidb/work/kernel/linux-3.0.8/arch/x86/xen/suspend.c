@@ -1,0 +1,5 @@
+void xen_arch_pre_suspend(void)
+void xen_arch_hvm_post_suspend(int suspend_cancelled)
+void xen_arch_post_suspend(int suspend_cancelled)
+static void xen_vcpu_notify_restore(void *data)
+void xen_arch_resume(void)

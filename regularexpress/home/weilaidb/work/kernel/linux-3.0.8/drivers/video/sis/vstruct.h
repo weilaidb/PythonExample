@@ -1,0 +1,44 @@
+#define _VSTRUCT_H_
+struct SiS_PanelDelayTbl ;
+struct SiS_LCDData ;
+struct SiS_TVData ;
+struct SiS_LVDSData ;
+struct SiS_LVDSDes ;
+struct SiS_LVDSCRT1Data ;
+struct SiS_CHTVRegData ;
+struct SiS_St ;
+struct SiS_VBMode ;
+struct SiS_StandTable_S ;
+struct SiS_Ext ;
+struct SiS_Ext2 ;
+struct SiS_Part2PortTbl ;
+struct SiS_CRT1Table ;
+struct SiS_MCLKData ;
+struct SiS_VCLKData ;
+struct SiS_VBVCLKData ;
+struct SiS_StResInfo_S ;
+struct SiS_ModeResInfo_S ;
+#define CUT_NONE		 0
+#define CUT_FORCENONE		 1
+#define CUT_BARCO1366		 2
+#define CUT_BARCO1024		 3
+#define CUT_COMPAQ1280		 4
+#define CUT_COMPAQ12802		 5
+#define CUT_PANEL848		 6
+#define CUT_CLEVO1024		 7
+#define CUT_CLEVO10242		 8
+#define CUT_CLEVO1400		 9
+#define CUT_CLEVO14002		10
+#define CUT_UNIWILL1024		11
+#define CUT_ASUSL3000D		12
+#define CUT_UNIWILL10242	13
+#define CUT_ACER1280		14
+#define CUT_COMPAL1400_1	15
+#define CUT_COMPAL1400_2	16
+#define CUT_ASUSA2H_1		17
+#define CUT_ASUSA2H_2		18
+#define CUT_UNKNOWNLCD		19
+#define CUT_AOP8060		20
+#define CUT_PANEL856		21
+struct SiS_Private
+;

@@ -1,0 +1,27 @@
+package com.sleepycat.je.rep.monitor;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.je.JEVersion;
+import com.sleepycat.je.rep.NodeType;
+import com.sleepycat.je.rep.impl.RepGroupImpl;
+import com.sleepycat.je.rep.impl.RepNodeImpl;
+import com.sleepycat.je.rep.impl.TextProtocol;
+import com.sleepycat.je.rep.impl.TextProtocol.InvalidMessageException;
+import com.sleepycat.je.rep.impl.TextProtocol.Message;
+import com.sleepycat.je.rep.impl.TextProtocolTestBase;
+import com.sleepycat.je.rep.impl.node.NameIdPair;
+import com.sleepycat.je.rep.net.DataChannelFactory;
+import com.sleepycat.je.rep.monitor.GroupChangeEvent.GroupChangeType;
+import com.sleepycat.je.rep.monitor.LeaveGroupEvent.LeaveReason;
+import com.sleepycat.je.rep.monitor.Protocol.GroupChange;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.net.DataChannelFactoryBuilder;
+public class ProtocolTest extends TextProtocolTestBase

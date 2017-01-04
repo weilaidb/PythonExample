@@ -1,0 +1,36 @@
+static int mal_count;
+int __devinit mal_register_commac(struct mal_instance	*mal,
+struct mal_commac	*commac)
+void mal_unregister_commac(struct mal_instance	*mal,
+struct mal_commac *commac)
+int mal_set_rcbs(struct mal_instance *mal, int channel, unsigned long size)
+int mal_tx_bd_offset(struct mal_instance *mal, int channel)
+int mal_rx_bd_offset(struct mal_instance *mal, int channel)
+void mal_enable_tx_channel(struct mal_instance *mal, int channel)
+void mal_disable_tx_channel(struct mal_instance *mal, int channel)
+void mal_enable_rx_channel(struct mal_instance *mal, int channel)
+void mal_disable_rx_channel(struct mal_instance *mal, int channel)
+void mal_poll_add(struct mal_instance *mal, struct mal_commac *commac)
+void mal_poll_del(struct mal_instance *mal, struct mal_commac *commac)
+static inline void mal_enable_eob_irq(struct mal_instance *mal)
+static inline void mal_disable_eob_irq(struct mal_instance *mal)
+static irqreturn_t mal_serr(int irq, void *dev_instance)
+static inline void mal_schedule_poll(struct mal_instance *mal)
+static irqreturn_t mal_txeob(int irq, void *dev_instance)
+static irqreturn_t mal_rxeob(int irq, void *dev_instance)
+static irqreturn_t mal_txde(int irq, void *dev_instance)
+static irqreturn_t mal_rxde(int irq, void *dev_instance)
+static irqreturn_t mal_int(int irq, void *dev_instance)
+void mal_poll_disable(struct mal_instance *mal, struct mal_commac *commac)
+void mal_poll_enable(struct mal_instance *mal, struct mal_commac *commac)
+static int mal_poll(struct napi_struct *napi, int budget)
+static void mal_reset(struct mal_instance *mal)
+int mal_get_regs_len(struct mal_instance *mal)
+void *mal_dump_regs(struct mal_instance *mal, void *buf)
+static int __devinit mal_probe(struct platform_device *ofdev)
+static int __devexit mal_remove(struct platform_device *ofdev)
+static struct of_device_id mal_platform_match[] =
+;
+static struct platform_driver mal_of_driver = ;
+int __init mal_init(void)
+void mal_exit(void)

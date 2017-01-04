@@ -1,0 +1,5 @@
+Track::Track(const QString &title, int duration)
+TrackEditor::TrackEditor(QList<Track> *tracks, QWidget *parent)
+: QDialog(parent)
+void TrackEditor::done(int result)
+void TrackEditor::addTrack()

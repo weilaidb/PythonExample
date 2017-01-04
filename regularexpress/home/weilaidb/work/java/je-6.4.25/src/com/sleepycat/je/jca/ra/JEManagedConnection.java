@@ -1,0 +1,24 @@
+package com.sleepycat.je.jca.ra;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import javax.resource.ResourceException;
+import javax.resource.spi.ConnectionEvent;
+import javax.resource.spi.ConnectionEventListener;
+import javax.resource.spi.ConnectionRequestInfo;
+import javax.resource.spi.LocalTransaction;
+import javax.resource.spi.ManagedConnection;
+import javax.resource.spi.ManagedConnectionMetaData;
+import javax.security.auth.Subject;
+import javax.transaction.xa.XAResource;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.SecondaryConfig;
+import com.sleepycat.je.SecondaryDatabase;
+import com.sleepycat.je.TransactionConfig;
+import com.sleepycat.je.XAEnvironment;
+public class JEManagedConnection implements ManagedConnection

@@ -1,0 +1,24 @@
+package com.sleepycat.collections;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
+import java.io.File;
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Comparator;
+import org.junit.After;
+import org.junit.Test;
+import com.sleepycat.bind.ByteArrayBinding;
+import com.sleepycat.compat.DbCompat;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.util.keyrange.KeyRange;
+import com.sleepycat.util.keyrange.KeyRangeException;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class KeyRangeTest extends TestBase

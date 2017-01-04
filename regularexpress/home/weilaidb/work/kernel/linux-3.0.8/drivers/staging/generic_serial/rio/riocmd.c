@@ -1,0 +1,17 @@
+static struct IdentifyRta IdRta;
+static struct KillNeighbour KillUnit;
+int RIOFoadRta(struct Host *HostP, struct Map *MapP)
+int RIOZombieRta(struct Host *HostP, struct Map *MapP)
+int RIOCommandRta(struct rio_info *p, unsigned long RtaUnique, int (*func) (struct Host * HostP, struct Map * MapP))
+int RIOIdentifyRta(struct rio_info *p, void __user * arg)
+int RIOKillNeighbour(struct rio_info *p, void __user * arg)
+int RIOSuspendBootRta(struct Host *HostP, int ID, int Link)
+int RIOFoadWakeup(struct rio_info *p)
+static int RIOCommandRup(struct rio_info *p, uint Rup, struct Host *HostP, struct PKT __iomem *PacketP)
+struct CmdBlk *RIOGetCmdBlk(void)
+void RIOFreeCmdBlk(struct CmdBlk *CmdBlkP)
+int RIOQueueCmdBlk(struct Host *HostP, uint Rup, struct CmdBlk *CmdBlkP)
+void RIOPollHostCommands(struct rio_info *p, struct Host *HostP)
+int RIOWFlushMark(unsigned long iPortP, struct CmdBlk *CmdBlkP)
+int RIORFlushEnable(unsigned long iPortP, struct CmdBlk *CmdBlkP)
+int RIOUnUse(unsigned long iPortP, struct CmdBlk *CmdBlkP)

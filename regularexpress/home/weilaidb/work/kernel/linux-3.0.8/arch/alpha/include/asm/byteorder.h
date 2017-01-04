@@ -1,0 +1,1 @@
+#define _ALPHA_BYTEORDER_H

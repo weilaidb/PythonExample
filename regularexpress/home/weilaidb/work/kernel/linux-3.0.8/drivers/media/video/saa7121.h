@@ -1,0 +1,46 @@
+#define __SAA7121_H__
+#define NTSC_BURST_START	0x19
+#define NTSC_BURST_END		0x1d
+#define NTSC_CHROMA_PHASE	0x67
+#define NTSC_GAINU		0x76
+#define NTSC_GAINV		0xa5
+#define NTSC_BLACK_LEVEL	0x2a
+#define NTSC_BLANKING_LEVEL	0x2e
+#define NTSC_VBI_BLANKING	0x2e
+#define NTSC_DAC_CONTROL	0x11
+#define NTSC_BURST_AMP		0x3f
+#define NTSC_SUBC3		0x1f
+#define NTSC_SUBC2		0x7c
+#define NTSC_SUBC1		0xf0
+#define NTSC_SUBC0		0x21
+#define NTSC_HTRIG		0x72
+#define NTSC_VTRIG		0x00
+#define NTSC_MULTI		0x30
+#define NTSC_CCTTX		0x11
+#define NTSC_FIRST_ACTIVE	0x12
+#define NTSC_LAST_ACTIVE	0x02
+#define NTSC_MSB_VERTICAL	0x40
+#define PAL_BURST_START		0x21
+#define PAL_BURST_END		0x1d
+#define PAL_CHROMA_PHASE	0x3f
+#define PAL_GAINU		0x7d
+#define PAL_GAINV		0xaf
+#define PAL_BLACK_LEVEL		0x23
+#define PAL_BLANKING_LEVEL	0x35
+#define PAL_VBI_BLANKING	0x35
+#define PAL_DAC_CONTROL		0x02
+#define PAL_BURST_AMP		0x2f
+#define PAL_SUBC3		0xcb
+#define PAL_SUBC2		0x8a
+#define PAL_SUBC1		0x09
+#define PAL_SUBC0		0x2a
+#define PAL_HTRIG		0x86
+#define PAL_VTRIG		0x04
+#define PAL_MULTI		0x20
+#define PAL_CCTTX		0x15
+#define PAL_FIRST_ACTIVE	0x16
+#define PAL_LAST_ACTIVE		0x36
+#define PAL_MSB_VERTICAL	0x40
+static __u8 init7121ntsc[] = ;
+#define INIT7121LEN	(sizeof(init7121ntsc)/2)
+static __u8 init7121pal[] = ;

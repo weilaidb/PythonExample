@@ -1,0 +1,23 @@
+#define AVCODEC_AACSBRDATA_H
+static const uint8_t t_huffman_env_1_5dB_bits[121] = ;
+static const uint32_t t_huffman_env_1_5dB_codes[121] = ;
+static const uint8_t f_huffman_env_1_5dB_bits[121] = ;
+static const uint32_t f_huffman_env_1_5dB_codes[121] = ;
+static const uint8_t t_huffman_env_bal_1_5dB_bits[49] = ;
+static const uint32_t t_huffman_env_bal_1_5dB_codes[49] = ;
+static const uint8_t f_huffman_env_bal_1_5dB_bits[49] = ;
+static const uint32_t f_huffman_env_bal_1_5dB_codes[49] = ;
+static const uint8_t t_huffman_env_3_0dB_bits[63] = ;
+static const uint32_t t_huffman_env_3_0dB_codes[63] = ;
+static const uint8_t f_huffman_env_3_0dB_bits[63] = ;
+static const uint32_t f_huffman_env_3_0dB_codes[63] = ;
+static const uint8_t t_huffman_env_bal_3_0dB_bits[25] = ;
+static const uint16_t t_huffman_env_bal_3_0dB_codes[25] = ;
+static const uint8_t f_huffman_env_bal_3_0dB_bits[25] = ;
+static const uint16_t f_huffman_env_bal_3_0dB_codes[25] = ;
+static const uint8_t t_huffman_noise_3_0dB_bits[63] = ;
+static const uint16_t t_huffman_noise_3_0dB_codes[63] = ;
+static const uint8_t t_huffman_noise_bal_3_0dB_bits[25] = ;
+static const uint8_t t_huffman_noise_bal_3_0dB_codes[25] = ;
+static const int8_t sbr_offset[6][16] = ;
+const DECLARE_ALIGNED(16, INTFLOAT, AAC_RENAME(ff_sbr_noise_table))[][2] = ;

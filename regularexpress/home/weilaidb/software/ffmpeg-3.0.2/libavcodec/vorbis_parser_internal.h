@@ -1,0 +1,2 @@
+#define AVCODEC_VORBIS_PARSER_INTERNAL_H
+struct AVVorbisParseContext ;

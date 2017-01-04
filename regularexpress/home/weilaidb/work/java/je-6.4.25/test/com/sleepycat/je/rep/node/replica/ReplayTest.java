@@ -1,0 +1,20 @@
+package com.sleepycat.je.rep.node.replica;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.util.concurrent.TimeUnit;
+import org.junit.Test;
+import com.sleepycat.je.CommitToken;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseNotFoundException;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.TransactionConfig;
+import com.sleepycat.je.rep.CommitPointConsistencyPolicy;
+import com.sleepycat.je.rep.DatabasePreemptedException;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.impl.RepTestBase;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.je.utilint.VLSN;
+public class ReplayTest extends RepTestBase

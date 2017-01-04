@@ -1,0 +1,10 @@
+package com.sleepycat.je.cleaner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.SortedMap;
+import java.util.StringTokenizer;
+import com.sleepycat.je.config.EnvironmentParams;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.log.LogEntryType;
+class FilesToMigrate

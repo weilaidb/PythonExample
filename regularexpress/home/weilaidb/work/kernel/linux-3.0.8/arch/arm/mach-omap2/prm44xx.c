@@ -1,0 +1,12 @@
+#define OMAP4_RST_CTRL_ST_OFFSET		4
+u32 omap4_prm_read_inst_reg(s16 inst, u16 reg)
+void omap4_prm_write_inst_reg(u32 val, s16 inst, u16 reg)
+u32 omap4_prm_rmw_inst_reg_bits(u32 mask, u32 bits, s16 inst, s16 reg)
+u32 omap4_prm_read_bits_shift(void __iomem *reg, u32 mask)
+u32 omap4_prm_rmw_reg_bits(u32 mask, u32 bits, void __iomem *reg)
+u32 omap4_prm_set_inst_reg_bits(u32 bits, s16 inst, s16 reg)
+u32 omap4_prm_clear_inst_reg_bits(u32 bits, s16 inst, s16 reg)
+int omap4_prm_is_hardreset_asserted(void __iomem *rstctrl_reg, u8 shift)
+int omap4_prm_assert_hardreset(void __iomem *rstctrl_reg, u8 shift)
+int omap4_prm_deassert_hardreset(void __iomem *rstctrl_reg, u8 shift)
+void omap4_prm_global_warm_sw_reset(void)

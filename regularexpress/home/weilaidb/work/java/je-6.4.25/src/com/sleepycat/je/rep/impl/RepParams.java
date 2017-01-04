@@ -1,0 +1,23 @@
+package com.sleepycat.je.rep.impl;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.net.UnknownHostException;
+import java.util.HashSet;
+import java.util.StringTokenizer;
+import com.sleepycat.je.config.BooleanConfigParam;
+import com.sleepycat.je.config.ConfigParam;
+import com.sleepycat.je.config.DurationConfigParam;
+import com.sleepycat.je.config.EnvironmentParams;
+import com.sleepycat.je.config.IntConfigParam;
+import com.sleepycat.je.config.LongConfigParam;
+import com.sleepycat.je.rep.NodeType;
+import com.sleepycat.je.rep.ReplicationConfig;
+import com.sleepycat.je.rep.ReplicationMutableConfig;
+import com.sleepycat.je.rep.ReplicationNetworkConfig;
+import com.sleepycat.je.rep.ReplicationSSLConfig;
+import com.sleepycat.je.rep.util.DbResetRepGroup;
+import com.sleepycat.je.rep.utilint.RepUtils;
+import com.sleepycat.je.rep.utilint.net.SSLChannelFactory;
+public class RepParams

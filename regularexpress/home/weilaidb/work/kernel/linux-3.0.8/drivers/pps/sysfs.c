@@ -1,0 +1,13 @@
+static ssize_t pps_show_assert(struct device *dev,
+struct device_attribute *attr, char *buf)
+static ssize_t pps_show_clear(struct device *dev,
+struct device_attribute *attr, char *buf)
+static ssize_t pps_show_mode(struct device *dev,
+struct device_attribute *attr, char *buf)
+static ssize_t pps_show_echo(struct device *dev,
+struct device_attribute *attr, char *buf)
+static ssize_t pps_show_name(struct device *dev,
+struct device_attribute *attr, char *buf)
+static ssize_t pps_show_path(struct device *dev,
+struct device_attribute *attr, char *buf)
+struct device_attribute pps_attrs[] = ;

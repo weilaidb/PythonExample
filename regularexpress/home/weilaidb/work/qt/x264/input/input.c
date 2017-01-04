@@ -1,0 +1,16 @@
+#elif HAVE_MMAP
+const x264_cli_csp_t x264_cli_csps[] = ;
+int x264_cli_csp_is_invalid( int csp )
+int x264_cli_csp_depth_factor( int csp )
+uint64_t x264_cli_pic_plane_size( int csp, int width, int height, int plane )
+uint64_t x264_cli_pic_size( int csp, int width, int height )
+static int x264_cli_pic_init_internal( cli_pic_t *pic, int csp, int width, int height, int align, int alloc )
+int x264_cli_pic_alloc( cli_pic_t *pic, int csp, int width, int height )
+int x264_cli_pic_alloc_aligned( cli_pic_t *pic, int csp, int width, int height )
+int x264_cli_pic_init_noalloc( cli_pic_t *pic, int csp, int width, int height )
+void x264_cli_pic_clean( cli_pic_t *pic )
+const x264_cli_csp_t *x264_cli_get_csp( int csp )
+int x264_cli_mmap_init( cli_mmap_t *h, FILE *fh )
+void *x264_cli_mmap( cli_mmap_t *h, int64_t offset, size_t size )
+int x264_cli_munmap( cli_mmap_t *h, void *addr, size_t size )
+void x264_cli_mmap_close( cli_mmap_t *h )

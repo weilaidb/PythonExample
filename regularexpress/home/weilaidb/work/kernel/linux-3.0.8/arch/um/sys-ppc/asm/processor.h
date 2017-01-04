@@ -1,0 +1,3 @@
+#define __UM_PROCESSOR_PPC_H
+#if defined(__ASSEMBLY__)
+#define CONFIG_PPC_MULTIPLATFORM

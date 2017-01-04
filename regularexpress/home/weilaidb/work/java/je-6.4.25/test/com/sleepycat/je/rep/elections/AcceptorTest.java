@@ -1,0 +1,24 @@
+package com.sleepycat.je.rep.elections;
+import static com.sleepycat.je.rep.impl.RepParams.GROUP_NAME;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.util.Arrays;
+import java.util.HashSet;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.je.rep.elections.Proposer.Proposal;
+import com.sleepycat.je.rep.elections.Protocol.Accept;
+import com.sleepycat.je.rep.elections.Protocol.Propose;
+import com.sleepycat.je.rep.elections.Protocol.StringValue;
+import com.sleepycat.je.rep.elections.Protocol.Value;
+import com.sleepycat.je.rep.impl.RepImpl;
+import com.sleepycat.je.rep.impl.TextProtocol.ResponseMessage;
+import com.sleepycat.je.rep.impl.node.NameIdPair;
+import com.sleepycat.je.rep.impl.node.RepNode;
+import com.sleepycat.je.rep.net.DataChannelFactory;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.ServiceDispatcher;
+import com.sleepycat.je.rep.utilint.net.DataChannelFactoryBuilder;
+import com.sleepycat.util.test.TestBase;
+public class AcceptorTest extends TestBase

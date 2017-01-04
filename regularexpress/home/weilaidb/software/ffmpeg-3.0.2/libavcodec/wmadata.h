@@ -1,0 +1,26 @@
+#define AVCODEC_WMADATA_H
+static const uint8_t exponent_band_22050[3][25] = ;
+static const uint8_t exponent_band_32000[3][25] = ;
+static const uint8_t exponent_band_44100[3][25] = ;
+const uint16_t ff_wma_hgain_huffcodes[37] = ;
+const uint8_t ff_wma_hgain_huffbits[37] = ;
+const float ff_wma_lsp_codebook[NB_LSP_COEFS][16] = ;
+static const uint32_t coef0_huffcodes[666] = ;
+static const uint8_t coef0_huffbits[666] = ;
+static const uint32_t coef1_huffcodes[555] = ;
+static const uint8_t coef1_huffbits[555] = ;
+static const uint32_t coef2_huffcodes[1336] = ;
+static const uint8_t coef2_huffbits[1336] = ;
+static const uint32_t coef3_huffcodes[1072] = ;
+static const uint8_t coef3_huffbits[1072] = ;
+static const uint32_t coef4_huffcodes[476] = ;
+static const uint8_t coef4_huffbits[476] = ;
+static const uint32_t coef5_huffcodes[435] = ;
+static const uint8_t coef5_huffbits[435] = ;
+static const uint16_t levels0[60] = ;
+static const uint16_t levels1[40] = ;
+static const uint16_t levels2[340] = ;
+static const uint16_t levels3[180] = ;
+static const uint16_t levels4[70] = ;
+static const uint16_t levels5[40] = ;
+static const CoefVLCTable coef_vlcs[6] = ;

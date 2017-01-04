@@ -1,0 +1,11 @@
+#define K 1024LL
+s64 perf_atoll(const char *str)
+static const char *skip_sep(const char *cp)
+static const char *skip_arg(const char *cp)
+static int count_argc(const char *str)
+void argv_free(char **argv)
+char **argv_split(const char *str, int *argcp)
+static bool __match_charclass(const char *pat, char c, const char **npat)
+static bool __match_glob(const char *str, const char *pat, bool ignore_space)
+bool strglobmatch(const char *str, const char *pat)
+bool strlazymatch(const char *str, const char *pat)

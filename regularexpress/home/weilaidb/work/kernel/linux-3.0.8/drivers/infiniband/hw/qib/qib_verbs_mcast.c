@@ -1,0 +1,10 @@
+static struct qib_mcast_qp *qib_mcast_qp_alloc(struct qib_qp *qp)
+static void qib_mcast_qp_free(struct qib_mcast_qp *mqp)
+static struct qib_mcast *qib_mcast_alloc(union ib_gid *mgid)
+static void qib_mcast_free(struct qib_mcast *mcast)
+struct qib_mcast *qib_mcast_find(struct qib_ibport *ibp, union ib_gid *mgid)
+static int qib_mcast_add(struct qib_ibdev *dev, struct qib_ibport *ibp,
+struct qib_mcast *mcast, struct qib_mcast_qp *mqp)
+int qib_multicast_attach(struct ib_qp *ibqp, union ib_gid *gid, u16 lid)
+int qib_multicast_detach(struct ib_qp *ibqp, union ib_gid *gid, u16 lid)
+int qib_mcast_tree_empty(struct qib_ibport *ibp)

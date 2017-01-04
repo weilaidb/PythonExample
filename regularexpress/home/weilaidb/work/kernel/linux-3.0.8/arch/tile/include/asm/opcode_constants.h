@@ -1,0 +1,2 @@
+#define _ASM_TILE_OPCODE_CONSTANTS_H
+#if CHIP_WORD_SIZE() == 64

@@ -1,0 +1,23 @@
+#define INITVALS_9485_H
+static const u32 ar9485_1_1_mac_core[][2] = ;
+static const u32 ar9485_1_1_baseband_core[][2] = ;
+static const u32 ar9485Common_1_1[][2] = ;
+static const u32 ar9485_1_1_baseband_postamble[][5] = ;
+static const u32 ar9485Modes_high_ob_db_tx_gain_1_1[][5] = ;
+static const u32 ar9485_modes_lowest_ob_db_tx_gain_1_1[][5] = ;
+static const u32 ar9485_1_1_radio_postamble[][2] = ;
+static const u32 ar9485_1_1_mac_postamble[][5] = ;
+static const u32 ar9485_1_1_radio_core[][2] = ;
+static const u32 ar9485_1_1_pcie_phy_pll_on_clkreq_enable_L1[][2] = ;
+static const u32 ar9485Modes_high_power_tx_gain_1_1[][5] = ;
+static const u32 ar9485_1_1[][2] = ;
+static const u32 ar9485_modes_green_ob_db_tx_gain_1_1[][5] = ;
+static const u32 ar9485_1_1_pcie_phy_clkreq_disable_L1[][2] = ;
+static const u32 ar9485_1_1_soc_preamble[][2] = ;
+static const u32 ar9485_1_1_baseband_core_txfir_coeff_japan_2484[][2] = ;
+static const u32 ar9485Modes_low_ob_db_tx_gain_1_1[][5] = ;
+static const u32 ar9485_fast_clock_1_1_baseband_postamble[][3] = ;
+static const u32 ar9485_1_1_pcie_phy_pll_on_clkreq_disable_L1[][2] = ;
+static const u32 ar9485_common_rx_gain_1_1[][2] = ;
+static const u32 ar9485_1_1_pcie_phy_clkreq_enable_L1[][2] = ;
+static const u32 ar9485Common_wo_xlna_rx_gain_1_1[][2] = ;

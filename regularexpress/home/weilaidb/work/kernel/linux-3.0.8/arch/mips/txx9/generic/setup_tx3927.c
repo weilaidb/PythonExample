@@ -1,0 +1,5 @@
+void __init tx3927_wdt_init(void)
+void __init tx3927_setup(void)
+void __init tx3927_time_init(unsigned int evt_tmrnr, unsigned int src_tmrnr)
+void __init tx3927_sio_init(unsigned int sclk, unsigned int cts_mask)
+void __init tx3927_mtd_init(int ch)

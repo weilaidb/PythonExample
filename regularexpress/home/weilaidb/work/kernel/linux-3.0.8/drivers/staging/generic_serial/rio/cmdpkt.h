@@ -1,0 +1,25 @@
+#define __rio_cmdpkt_h__
+#define	RTA_BOOT_DATA_SIZE (PKT_MAX_DATA_LEN-2)
+struct BootSequence ;
+#define	BOOT_SEQUENCE_LEN	8
+struct SamTop ;
+struct CmdHdr ;
+struct PktCmd ;
+struct PktCmd_M ;
+#define Command		U1.S1.CmdHdr.PcCommand
+#define PhbNum		U1.S1.CmdHdr.U0.PcPhbNum
+#define IDNum		U1.S1.CmdHdr.U0.PcIDNum
+#define IDNum2		U1.S5.PcIDNum2
+#define LinkNum		U1.S1.CmdHdr.U0.PcLinkNum
+#define Sequence	U1.S2.PcSequence
+#define BootData	U1.S2.PcBootData
+#define BootSequence	U1.S1.PcBootSequence
+#define UniqNum		U1.S3.PcUniqNum
+#define ModemStatus	U1.S4.PcModemStatus
+#define PortStatus	U1.S4.PcPortStatus
+#define SubCommand	U1.S4.PcSubCommand
+#define SubAddr		U1.S4.PcSubAddr
+#define SubData		U1.S4.PcSubData
+#define CommandText	U1.S5.PcCommandText
+#define RouteTopology	U1.S6.Topology
+#define ModuleTypes	U1.S3.PcModuleTypes

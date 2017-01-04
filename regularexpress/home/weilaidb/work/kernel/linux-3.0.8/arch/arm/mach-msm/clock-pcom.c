@@ -1,0 +1,12 @@
+int pc_clk_enable(unsigned id)
+void pc_clk_disable(unsigned id)
+int pc_clk_reset(unsigned id, enum clk_reset_action action)
+int pc_clk_set_rate(unsigned id, unsigned rate)
+int pc_clk_set_min_rate(unsigned id, unsigned rate)
+int pc_clk_set_max_rate(unsigned id, unsigned rate)
+int pc_clk_set_flags(unsigned id, unsigned flags)
+unsigned pc_clk_get_rate(unsigned id)
+unsigned pc_clk_is_enabled(unsigned id)
+long pc_clk_round_rate(unsigned id, unsigned rate)
+static bool pc_clk_is_local(unsigned id)
+struct clk_ops clk_ops_pcom = ;

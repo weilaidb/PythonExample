@@ -1,0 +1,1 @@
+#define _ASM_H8300_KMAP_TYPES_H

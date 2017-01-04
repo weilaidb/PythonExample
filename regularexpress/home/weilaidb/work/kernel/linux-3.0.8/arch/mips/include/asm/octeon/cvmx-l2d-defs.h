@@ -1,0 +1,25 @@
+#define __CVMX_L2D_DEFS_H__
+#define CVMX_L2D_BST0 (CVMX_ADD_IO_SEG(0x0001180080000780ull))
+#define CVMX_L2D_BST1 (CVMX_ADD_IO_SEG(0x0001180080000788ull))
+#define CVMX_L2D_BST2 (CVMX_ADD_IO_SEG(0x0001180080000790ull))
+#define CVMX_L2D_BST3 (CVMX_ADD_IO_SEG(0x0001180080000798ull))
+#define CVMX_L2D_ERR (CVMX_ADD_IO_SEG(0x0001180080000010ull))
+#define CVMX_L2D_FADR (CVMX_ADD_IO_SEG(0x0001180080000018ull))
+#define CVMX_L2D_FSYN0 (CVMX_ADD_IO_SEG(0x0001180080000020ull))
+#define CVMX_L2D_FSYN1 (CVMX_ADD_IO_SEG(0x0001180080000028ull))
+#define CVMX_L2D_FUS0 (CVMX_ADD_IO_SEG(0x00011800800007A0ull))
+#define CVMX_L2D_FUS1 (CVMX_ADD_IO_SEG(0x00011800800007A8ull))
+#define CVMX_L2D_FUS2 (CVMX_ADD_IO_SEG(0x00011800800007B0ull))
+#define CVMX_L2D_FUS3 (CVMX_ADD_IO_SEG(0x00011800800007B8ull))
+union cvmx_l2d_bst0 ;
+union cvmx_l2d_bst1 ;
+union cvmx_l2d_bst2 ;
+union cvmx_l2d_bst3 ;
+union cvmx_l2d_err ;
+union cvmx_l2d_fadr ;
+union cvmx_l2d_fsyn0 ;
+union cvmx_l2d_fsyn1 ;
+union cvmx_l2d_fus0 ;
+union cvmx_l2d_fus1 ;
+union cvmx_l2d_fus2 ;
+union cvmx_l2d_fus3 ;

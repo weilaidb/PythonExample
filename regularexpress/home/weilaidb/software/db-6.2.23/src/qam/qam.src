@@ -1,0 +1,50 @@
+DBPRIVATE
+PREFIX	__qam
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+BEGIN incfirst		42	84
+DB	fileid		int32_t		ld
+ARG	recno		db_recno_t	lu
+ARG	meta_pgno	db_pgno_t	lu
+END
+BEGIN mvptr		42	85
+ARG	opcode		u_int32_t	lu
+DB	fileid		int32_t		ld
+ARG	old_first	db_recno_t	lu
+ARG	new_first	db_recno_t	lu
+ARG	old_cur		db_recno_t	lu
+ARG	new_cur		db_recno_t	lu
+POINTER	metalsn		DB_LSN *	lu
+ARG	meta_pgno	db_pgno_t	lu
+END
+BEGIN del		42	79
+DB	fileid		int32_t		ld
+POINTER	lsn		DB_LSN *	lu
+ARG	pgno		db_pgno_t	lu
+ARG	indx		u_int32_t	lu
+ARG	recno		db_recno_t	lu
+END
+BEGIN add		42	80
+DB	fileid		int32_t		ld
+POINTER	lsn		DB_LSN *	lu
+ARG	pgno		db_pgno_t	lu
+ARG	indx		u_int32_t	lu
+ARG	recno		db_recno_t	lu
+DBT	data		DBT		s
+ARG	vflag		u_int32_t	lu
+DBT	olddata		DBT		s
+END
+BEGIN delext		42	83
+DB	fileid		int32_t		ld
+POINTER	lsn		DB_LSN *	lu
+ARG	pgno		db_pgno_t	lu
+ARG	indx		u_int32_t	lu
+ARG	recno		db_recno_t	lu
+DBT	data		DBT		s
+END

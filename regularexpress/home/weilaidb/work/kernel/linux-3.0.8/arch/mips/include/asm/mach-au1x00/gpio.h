@@ -1,0 +1,2 @@
+#define _ALCHEMY_GPIO_H_
+#if defined(CONFIG_ALCHEMY_GPIOINT_AU1000)

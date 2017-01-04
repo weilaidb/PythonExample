@@ -1,0 +1,11 @@
+#define ULPI_VIEW_WAKEUP	(1 << 31)
+#define ULPI_VIEW_RUN		(1 << 30)
+#define ULPI_VIEW_WRITE		(1 << 29)
+#define ULPI_VIEW_READ		(0 << 29)
+#define ULPI_VIEW_ADDR(x)	(((x) & 0xff) << 16)
+#define ULPI_VIEW_DATA_READ(x)	(((x) >> 8) & 0xff)
+#define ULPI_VIEW_DATA_WRITE(x)	((x) & 0xff)
+static int ulpi_viewport_wait(void __iomem *view, u32 mask)
+static int ulpi_viewport_read(struct otg_transceiver *otg, u32 reg)
+static int ulpi_viewport_write(struct otg_transceiver *otg, u32 val, u32 reg)
+struct otg_io_access_ops ulpi_viewport_access_ops = ;

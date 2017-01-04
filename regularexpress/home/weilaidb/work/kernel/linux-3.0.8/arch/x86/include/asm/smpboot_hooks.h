@@ -1,0 +1,5 @@
+static inline void smpboot_clear_io_apic_irqs(void)
+static inline void smpboot_setup_warm_reset_vector(unsigned long start_eip)
+static inline void smpboot_restore_warm_reset_vector(void)
+static inline void __init smpboot_setup_io_apic(void)
+static inline void smpboot_clear_io_apic(void)

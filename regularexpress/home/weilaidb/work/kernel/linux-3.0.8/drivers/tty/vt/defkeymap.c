@@ -1,0 +1,16 @@
+u_short plain_map[NR_KEYS] = ;
+u_short shift_map[NR_KEYS] = ;
+u_short altgr_map[NR_KEYS] = ;
+u_short ctrl_map[NR_KEYS] = ;
+u_short shift_ctrl_map[NR_KEYS] = ;
+u_short alt_map[NR_KEYS] = ;
+u_short ctrl_alt_map[NR_KEYS] = ;
+ushort *key_maps[MAX_NR_KEYMAPS] = ;
+unsigned int keymap_count = 7;
+char func_buf[] = ;
+char *funcbufptr = func_buf;
+int funcbufsize = sizeof(func_buf);
+int funcbufleft = 0;
+char *func_table[MAX_NR_FUNC] = ;
+struct kbdiacruc accent_table[MAX_DIACR] = ;
+unsigned int accent_table_size = 68;

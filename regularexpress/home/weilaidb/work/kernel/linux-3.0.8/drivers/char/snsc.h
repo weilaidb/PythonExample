@@ -1,0 +1,32 @@
+#define _SN_SYSCTL_H_
+#define CHUNKSIZE 127
+struct subch_data_s ;
+struct sysctl_data_s ;
+#define IR_ARG_INT              0x00
+#define IR_ARG_ASCII            0x01
+#define IR_ARG_UNKNOWN          0x80
+#define IR_ARG_UNKNOWN_LENGTH_MASK	0x7f
+#define EV_CLASS_MASK		0xf000ul
+#define EV_SEVERITY_MASK	0x0f00ul
+#define EV_COMPONENT_MASK	0x00fful
+#define EV_CLASS_POWER		0x1000ul
+#define EV_CLASS_FAN		0x2000ul
+#define EV_CLASS_TEMP		0x3000ul
+#define EV_CLASS_ENV		0x4000ul
+#define EV_CLASS_TEST_FAULT	0x5000ul
+#define EV_CLASS_TEST_WARNING	0x6000ul
+#define EV_CLASS_PWRD_NOTIFY	0x8000ul
+#define ENV_PWRDN_PEND		0x4101ul
+#define EV_SEVERITY_POWER_STABLE	0x0000ul
+#define EV_SEVERITY_POWER_LOW_WARNING	0x0100ul
+#define EV_SEVERITY_POWER_HIGH_WARNING	0x0200ul
+#define EV_SEVERITY_POWER_HIGH_FAULT	0x0300ul
+#define EV_SEVERITY_POWER_LOW_FAULT	0x0400ul
+#define EV_SEVERITY_FAN_STABLE		0x0000ul
+#define EV_SEVERITY_FAN_WARNING		0x0100ul
+#define EV_SEVERITY_FAN_FAULT		0x0200ul
+#define EV_SEVERITY_TEMP_STABLE		0x0000ul
+#define EV_SEVERITY_TEMP_ADVISORY	0x0100ul
+#define EV_SEVERITY_TEMP_CRITICAL	0x0200ul
+#define EV_SEVERITY_TEMP_FAULT		0x0300ul
+void scdrv_event_init(struct sysctl_data_s *);

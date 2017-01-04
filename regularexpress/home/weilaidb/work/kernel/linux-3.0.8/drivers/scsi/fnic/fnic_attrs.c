@@ -1,0 +1,10 @@
+static ssize_t fnic_show_state(struct device *dev,
+struct device_attribute *attr, char *buf)
+static ssize_t fnic_show_drv_version(struct device *dev,
+struct device_attribute *attr, char *buf)
+static ssize_t fnic_show_link_state(struct device *dev,
+struct device_attribute *attr, char *buf)
+static DEVICE_ATTR(fnic_state, S_IRUGO, fnic_show_state, NULL);
+static DEVICE_ATTR(drv_version, S_IRUGO, fnic_show_drv_version, NULL);
+static DEVICE_ATTR(link_state, S_IRUGO, fnic_show_link_state, NULL);
+struct device_attribute *fnic_attrs[] = ;

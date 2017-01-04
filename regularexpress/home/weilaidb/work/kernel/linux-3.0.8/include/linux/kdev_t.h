@@ -1,0 +1,26 @@
+#define _LINUX_KDEV_T_H
+#define MINORBITS	20
+#define MINORMASK	((1U << MINORBITS) - 1)
+#define MAJOR(dev)	((unsigned int) ((dev) >> MINORBITS))
+#define MINOR(dev)	((unsigned int) ((dev) & MINORMASK))
+#define MKDEV(ma,mi)	(((ma) << MINORBITS) | (mi))
+#define print_dev_t(buffer, dev)					\
+sprintf((buffer), "%u:%u\n", MAJOR(dev), MINOR(dev))
+#define format_dev_t(buffer, dev)					\
+()
+static inline int old_valid_dev(dev_t dev)
+static inline u16 old_encode_dev(dev_t dev)
+static inline dev_t old_decode_dev(u16 val)
+static inline int new_valid_dev(dev_t dev)
+static inline u32 new_encode_dev(dev_t dev)
+static inline dev_t new_decode_dev(u32 dev)
+static inline int huge_valid_dev(dev_t dev)
+static inline u64 huge_encode_dev(dev_t dev)
+static inline dev_t huge_decode_dev(u64 dev)
+static inline int sysv_valid_dev(dev_t dev)
+static inline u32 sysv_encode_dev(dev_t dev)
+static inline unsigned sysv_major(u32 dev)
+static inline unsigned sysv_minor(u32 dev)
+#define MAJOR(dev)	((dev)>>8)
+#define MINOR(dev)	((dev) & 0xff)
+#define MKDEV(ma,mi)	((ma)<<8 | (mi))

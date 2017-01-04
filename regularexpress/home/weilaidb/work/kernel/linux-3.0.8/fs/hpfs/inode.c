@@ -1,0 +1,8 @@
+void hpfs_init_inode(struct inode *i)
+void hpfs_read_inode(struct inode *i)
+static void hpfs_write_inode_ea(struct inode *i, struct fnode *fnode)
+void hpfs_write_inode(struct inode *i)
+void hpfs_write_inode_nolock(struct inode *i)
+int hpfs_setattr(struct dentry *dentry, struct iattr *attr)
+void hpfs_write_if_changed(struct inode *inode)
+void hpfs_evict_inode(struct inode *inode)

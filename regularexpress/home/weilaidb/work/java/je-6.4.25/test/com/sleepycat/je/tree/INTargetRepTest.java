@@ -1,0 +1,20 @@
+package com.sleepycat.je.tree;
+import static com.sleepycat.je.tree.INTargetRep.NONE;
+import static org.junit.Assert.assertEquals;
+import java.util.Random;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.LockMode;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.dbi.DatabaseImpl;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.dbi.INList;
+import com.sleepycat.je.log.LogEntryType;
+import com.sleepycat.je.log.Loggable;
+import com.sleepycat.je.tree.INTargetRep.Default;
+import com.sleepycat.je.tree.INTargetRep.Sparse;
+import com.sleepycat.je.tree.INTargetRep.Type;
+import org.junit.Test;
+public class INTargetRepTest extends INEntryTestBase

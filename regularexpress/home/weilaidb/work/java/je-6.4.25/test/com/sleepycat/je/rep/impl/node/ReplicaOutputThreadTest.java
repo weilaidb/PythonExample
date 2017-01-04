@@ -1,0 +1,24 @@
+package com.sleepycat.je.rep.impl.node;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.io.IOException;
+import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.bind.tuple.IntegerBinding;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.Durability;
+import com.sleepycat.je.Durability.ReplicaAckPolicy;
+import com.sleepycat.je.Durability.SyncPolicy;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.TransactionConfig;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.ReplicatedEnvironment.State;
+import com.sleepycat.je.rep.impl.RepParams;
+import com.sleepycat.je.rep.impl.RepTestBase;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.utilint.TestHook;
+public class ReplicaOutputThreadTest extends RepTestBase

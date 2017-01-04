@@ -1,0 +1,6 @@
+static void eprom_cs(struct r8192_priv *priv, short bit)
+static void eprom_ck_cycle(struct r8192_priv *priv)
+static void eprom_w(struct r8192_priv *priv, short bit)
+static short eprom_r(struct r8192_priv *priv)
+static void eprom_send_bits_string(struct r8192_priv *priv, short b[], int len)
+u32 eprom_read(struct r8192_priv *priv, u32 addr)

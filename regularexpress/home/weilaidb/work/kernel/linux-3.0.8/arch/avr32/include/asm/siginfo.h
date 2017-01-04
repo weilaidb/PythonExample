@@ -1,0 +1,1 @@
+#define _AVR32_SIGINFO_H

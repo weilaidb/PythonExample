@@ -1,0 +1,21 @@
+package com.sleepycat.je.rep.txn;
+import static org.junit.Assert.assertTrue;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+import com.sleepycat.je.CursorConfig;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.txn.Utils.RollbackData;
+import com.sleepycat.je.rep.txn.Utils.SavedData;
+import com.sleepycat.je.rep.txn.Utils.TestData;
+import com.sleepycat.persist.EntityCursor;
+import com.sleepycat.persist.EntityStore;
+import com.sleepycat.persist.PrimaryIndex;
+import com.sleepycat.persist.StoreConfig;
+abstract class RollbackWorkload

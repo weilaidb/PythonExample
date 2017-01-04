@@ -1,0 +1,8 @@
+#define MIN_GAP32 (128*1024*1024)
+#define MIN_GAP64 ((128 + 1024)*1024*1024UL)
+#define MIN_GAP ((is_32bit_task()) ? MIN_GAP32 : MIN_GAP64)
+#define MAX_GAP (TASK_SIZE/6*5)
+static inline int mmap_is_legacy(void)
+static unsigned long mmap_rnd(void)
+static inline unsigned long mmap_base(void)
+void arch_pick_mmap_layout(struct mm_struct *mm)

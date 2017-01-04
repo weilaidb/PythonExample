@@ -1,0 +1,1 @@
+#define __ASM_SPARC_HW_IRQ_H

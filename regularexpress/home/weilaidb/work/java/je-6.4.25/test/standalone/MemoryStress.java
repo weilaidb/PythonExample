@@ -1,0 +1,26 @@
+import java.io.File;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Iterator;
+import java.util.Random;
+import com.sleepycat.bind.tuple.IntegerBinding;
+import com.sleepycat.je.BtreeStats;
+import com.sleepycat.je.Cursor;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.EnvironmentStats;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.StatsConfig;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.dbi.INList;
+import com.sleepycat.je.dbi.MemoryBudget;
+import com.sleepycat.je.incomp.INCompressor;
+import com.sleepycat.je.tree.BIN;
+import com.sleepycat.je.tree.IN;
+public class MemoryStress

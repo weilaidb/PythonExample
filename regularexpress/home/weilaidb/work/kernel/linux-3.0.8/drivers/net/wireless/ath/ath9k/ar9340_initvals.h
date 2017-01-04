@@ -1,0 +1,19 @@
+#define INITVALS_9340_H
+static const u32 ar9340_1p0_radio_postamble[][5] = ;
+static const u32 ar9340Modes_lowest_ob_db_tx_gain_table_1p0[][5] = ;
+static const u32 ar9340Modes_fast_clock_1p0[][3] = ;
+static const u32 ar9340_1p0_radio_core[][2] = ;
+static const u32 ar9340_1p0_radio_core_40M[][2] = ;
+static const u32 ar9340_1p0_mac_postamble[][5] = ;
+static const u32 ar9340_1p0_soc_postamble[][5] = ;
+static const u32 ar9340_1p0_baseband_postamble[][5] = ;
+static const u32 ar9340_1p0_baseband_core[][2] = ;
+static const u32 ar9340Modes_high_power_tx_gain_table_1p0[][5] = ;
+static const u32 ar9340Modes_high_ob_db_tx_gain_table_1p0[][5] = ;
+static const u32 ar9340Modes_ub124_tx_gain_table_1p0[][5] = ;
+static const u32 ar9340Common_rx_gain_table_1p0[][2] = ;
+static const u32 ar9340Modes_low_ob_db_tx_gain_table_1p0[][5] = ;
+static const u32 ar9340Modes_mixed_ob_db_tx_gain_table_1p0[][5] = ;
+static const u32 ar9340_1p0_mac_core[][2] = ;
+static const u32 ar9340Common_wo_xlna_rx_gain_table_1p0[][2] = ;
+static const u32 ar9340_1p0_soc_preamble[][2] = ;

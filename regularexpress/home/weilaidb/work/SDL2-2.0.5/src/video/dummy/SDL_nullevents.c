@@ -1,0 +1,3 @@
+#if SDL_VIDEO_DRIVER_DUMMY
+void
+DUMMY_PumpEvents(_THIS)

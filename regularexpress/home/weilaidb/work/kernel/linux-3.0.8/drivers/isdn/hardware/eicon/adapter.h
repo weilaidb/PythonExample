@@ -1,0 +1,3 @@
+#define __DIVA_USER_MODE_IDI_ADAPTER_H__
+#define DIVA_UM_IDI_ADAPTER_REMOVED 0x00000001
+typedef struct _diva_um_idi_adapter  diva_um_idi_adapter_t;

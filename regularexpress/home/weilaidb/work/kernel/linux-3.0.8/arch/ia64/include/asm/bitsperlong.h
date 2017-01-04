@@ -1,0 +1,2 @@
+#define __ASM_IA64_BITSPERLONG_H
+#define __BITS_PER_LONG 64

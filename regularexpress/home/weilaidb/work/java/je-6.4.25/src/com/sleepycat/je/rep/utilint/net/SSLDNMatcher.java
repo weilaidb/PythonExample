@@ -1,0 +1,10 @@
+package com.sleepycat.je.rep.utilint.net;
+import java.security.Principal;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+import javax.net.ssl.SSLPeerUnverifiedException;
+import javax.net.ssl.SSLSession;
+import javax.security.auth.x500.X500Principal;
+import com.sleepycat.je.rep.net.InstanceParams;
+class SSLDNMatcher

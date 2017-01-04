@@ -1,0 +1,2 @@
+#define __LINUX_LEDS_REGULATOR_H
+struct led_regulator_platform_data ;

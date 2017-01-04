@@ -1,0 +1,11 @@
+prefix=/usr/local
+exec_prefix=$
+libdir=$/lib
+includedir=$/include
+Name: Python
+Description: Python library
+Requires:
+Version: 2.7
+Libs.private: -lpthread -ldl  -lutil
+Libs: -L$ -lpython2.7
+Cflags: -I$/python2.7

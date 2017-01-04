@@ -1,0 +1,2 @@
+#define AVUTIL_HWCONTEXT_CUDA_H
+typedef struct AVCUDADeviceContext  AVCUDADeviceContext;

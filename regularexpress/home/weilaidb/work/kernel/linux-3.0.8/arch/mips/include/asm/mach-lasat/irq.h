@@ -1,0 +1,5 @@
+#define _ASM_MACH_LASAT_IRQ_H
+#define LASAT_CASCADE_IRQ	(MIPS_CPU_IRQ_BASE + 2)
+#define LASAT_IRQ_BASE		8
+#define LASAT_IRQ_END		23
+#define NR_IRQS			24

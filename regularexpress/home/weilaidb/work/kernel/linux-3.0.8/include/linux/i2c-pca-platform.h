@@ -1,0 +1,2 @@
+#define I2C_PCA9564_PLATFORM_H
+struct i2c_pca9564_pf_platform_data ;

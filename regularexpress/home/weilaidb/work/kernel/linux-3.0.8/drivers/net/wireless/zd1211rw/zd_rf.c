@@ -1,0 +1,11 @@
+static const char * const rfs[] = ;
+const char *zd_rf_name(u8 type)
+void zd_rf_init(struct zd_rf *rf)
+void zd_rf_clear(struct zd_rf *rf)
+int zd_rf_init_hw(struct zd_rf *rf, u8 type)
+int zd_rf_scnprint_id(struct zd_rf *rf, char *buffer, size_t size)
+int zd_rf_set_channel(struct zd_rf *rf, u8 channel)
+int zd_switch_radio_on(struct zd_rf *rf)
+int zd_switch_radio_off(struct zd_rf *rf)
+int zd_rf_patch_6m_band_edge(struct zd_rf *rf, u8 channel)
+int zd_rf_generic_patch_6m(struct zd_rf *rf, u8 channel)

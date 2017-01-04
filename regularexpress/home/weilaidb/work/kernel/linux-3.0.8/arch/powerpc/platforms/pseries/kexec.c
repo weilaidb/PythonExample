@@ -1,0 +1,5 @@
+static void pseries_kexec_cpu_down(int crash_shutdown, int secondary)
+static void pseries_kexec_cpu_down_mpic(int crash_shutdown, int secondary)
+void __init setup_kexec_cpu_down_mpic(void)
+static void pseries_kexec_cpu_down_xics(int crash_shutdown, int secondary)
+void __init setup_kexec_cpu_down_xics(void)

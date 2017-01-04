@@ -1,0 +1,11 @@
+static void x264_lookahead_shift( x264_sync_frame_list_t *dst, x264_sync_frame_list_t *src, int count )
+static void x264_lookahead_update_last_nonb( x264_t *h, x264_frame_t *new_nonb )
+#if HAVE_THREAD
+static void x264_lookahead_slicetype_decide( x264_t *h )
+static void *x264_lookahead_thread( x264_t *h )
+int x264_lookahead_init( x264_t *h, int i_slicetype_length )
+void x264_lookahead_delete( x264_t *h )
+void x264_lookahead_put_frame( x264_t *h, x264_frame_t *frame )
+int x264_lookahead_is_empty( x264_t *h )
+static void x264_lookahead_encoder_shift( x264_t *h )
+void x264_lookahead_get_frames( x264_t *h )

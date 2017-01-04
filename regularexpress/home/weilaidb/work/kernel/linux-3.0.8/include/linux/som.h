@@ -1,0 +1,21 @@
+#define _LINUX_SOM_H
+#define SOM_PAGESIZE 4096
+struct som_hdr ;
+#define SOM_SID_PARISC_1_0	0x020b
+#define SOM_SID_PARISC_1_1	0x0210
+#define SOM_SID_PARISC_2_0	0x0214
+#define SOM_LIB_EXEC		0x0104
+#define SOM_RELOCATABLE		0x0106
+#define SOM_EXEC_NONSHARE	0x0107
+#define SOM_EXEC_SHARE		0x0108
+#define SOM_EXEC_DEMAND		0x010B
+#define SOM_LIB_DYN		0x010D
+#define SOM_LIB_SHARE		0x010E
+#define SOM_LIB_RELOC		0x0619
+#define SOM_ID_OLD		85082112
+#define SOM_ID_NEW		87102412
+struct aux_id ;
+struct som_exec_auxhdr ;
+union name_pt ;
+struct space_dictionary_record ;
+struct subspace_dictionary_record ;

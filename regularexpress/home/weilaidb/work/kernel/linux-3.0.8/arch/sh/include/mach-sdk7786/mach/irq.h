@@ -1,0 +1,2 @@
+#define __MACH_SDK7786_IRQ_H
+extern void sdk7786_init_irq(void);

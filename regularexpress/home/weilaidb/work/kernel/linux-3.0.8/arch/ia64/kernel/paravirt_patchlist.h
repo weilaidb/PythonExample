@@ -1,0 +1,1 @@
+#if defined(__IA64_GATE_PARAVIRTUALIZED_XEN)

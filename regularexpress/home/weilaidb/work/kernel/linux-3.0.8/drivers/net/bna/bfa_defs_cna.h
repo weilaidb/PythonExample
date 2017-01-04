@@ -1,0 +1,26 @@
+#define __BFA_DEFS_CNA_H__
+struct bfa_port_fc_stats ;
+struct bfa_port_eth_stats ;
+union bfa_port_stats_u ;
+#define BFA_CEE_LLDP_MAX_STRING_LEN (128)
+#define BFA_CEE_DCBX_MAX_PRIORITY	(8)
+#define BFA_CEE_DCBX_MAX_PGID		(8)
+#define BFA_CEE_LLDP_SYS_CAP_OTHER	0x0001
+#define BFA_CEE_LLDP_SYS_CAP_REPEATER	0x0002
+#define BFA_CEE_LLDP_SYS_CAP_MAC_BRIDGE	0x0004
+#define BFA_CEE_LLDP_SYS_CAP_WLAN_AP	0x0008
+#define BFA_CEE_LLDP_SYS_CAP_ROUTER	0x0010
+#define BFA_CEE_LLDP_SYS_CAP_TELEPHONE	0x0020
+#define BFA_CEE_LLDP_SYS_CAP_DOCSIS_CD	0x0040
+#define BFA_CEE_LLDP_SYS_CAP_STATION	0x0080
+#define BFA_CEE_LLDP_SYS_CAP_CVLAN	0x0100
+#define BFA_CEE_LLDP_SYS_CAP_SVLAN	0x0200
+#define BFA_CEE_LLDP_SYS_CAP_TPMR	0x0400
+struct bfa_cee_lldp_str ;
+struct bfa_cee_lldp_cfg ;
+enum bfa_cee_dcbx_version ;
+enum bfa_cee_lls ;
+struct bfa_cee_dcbx_cfg ;
+enum bfa_cee_status ;
+struct bfa_cee_attr ;
+struct bfa_cee_stats ;

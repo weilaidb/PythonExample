@@ -1,0 +1,26 @@
+#define	__rio_board_h__
+#define	DP_SRAM1_SIZE	0x7C00
+#define	DP_SRAM2_SIZE	0x0200
+#define	DP_SRAM3_SIZE	0x7000
+#define	DP_SCRATCH_SIZE	0x1000
+#define	DP_PARMMAP_ADDR	0x01FE
+#define	DP_STARTUP_ADDR	0x01F8
+struct s_Ctrl ;
+struct s_Prom ;
+union u_CtrlProm ;
+struct s_ParmMapS ;
+struct s_StartUpS ;
+union u_Sram2ParmMap ;
+struct DpRam ;
+#define	DpControl	DpCtrlProm.DpCtrl.DpCtl
+#define	DpSetInt	DpCtrlProm.DpCtrl.DpIntSet
+#define	DpResetTpu	DpCtrlProm.DpCtrl.DpTpuReset
+#define	DpResetInt	DpCtrlProm.DpCtrl.DpIntReset
+#define	DpSlx		DpCtrlProm.DpProm.DpSlxCode
+#define	DpRevision	DpCtrlProm.DpProm.DpRev
+#define	DpUnique	DpCtrlProm.DpProm.DpUniq
+#define	DpYear		DpCtrlProm.DpProm.DpJahre
+#define	DpWeek		DpCtrlProm.DpProm.DpWoche
+#define	DpSignature	DpCtrlProm.DpProm.DpSiggy
+#define	DpParmMapR	DpSram2ParmMap.DpParmMapS.DpParmMapAd
+#define	DpSram2		DpSram2ParmMap.DpSramMem

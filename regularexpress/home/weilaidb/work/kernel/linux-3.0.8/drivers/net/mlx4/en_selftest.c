@@ -1,0 +1,6 @@
+static int mlx4_en_test_registers(struct mlx4_en_priv *priv)
+static int mlx4_en_test_loopback_xmit(struct mlx4_en_priv *priv)
+static int mlx4_en_test_loopback(struct mlx4_en_priv *priv)
+static int mlx4_en_test_link(struct mlx4_en_priv *priv)
+static int mlx4_en_test_speed(struct mlx4_en_priv *priv)
+void mlx4_en_ex_selftest(struct net_device *dev, u32 *flags, u64 *buf)

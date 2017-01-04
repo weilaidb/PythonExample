@@ -1,0 +1,1 @@
+#define _ASM_SCORE_BITSPERLONG_H

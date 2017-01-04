@@ -1,0 +1,6 @@
+static int fill_mmfile_blob(mmfile_t *f, struct blob *obj)
+static void free_mmfile(mmfile_t *f)
+static void *three_way_filemerge(const char *path, mmfile_t *base, mmfile_t *our, mmfile_t *their, unsigned long *size)
+static int common_outf(void *priv_, mmbuffer_t *mb, int nbuf)
+static int generate_common_file(mmfile_t *res, mmfile_t *f1, mmfile_t *f2)
+void *merge_blobs(const char *path, struct blob *base, struct blob *our, struct blob *their, unsigned long *size)

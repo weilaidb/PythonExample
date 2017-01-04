@@ -1,0 +1,5 @@
+void ax25_std_heartbeat_expiry(ax25_cb *ax25)
+void ax25_std_t2timer_expiry(ax25_cb *ax25)
+void ax25_std_t3timer_expiry(ax25_cb *ax25)
+void ax25_std_idletimer_expiry(ax25_cb *ax25)
+void ax25_std_t1timer_expiry(ax25_cb *ax25)

@@ -1,0 +1,1 @@
+#define _ASM_IA64_RESOURCE_H

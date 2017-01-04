@@ -1,0 +1,22 @@
+struct tomoyo_gc ;
+static LIST_HEAD(tomoyo_gc_queue);
+static DEFINE_MUTEX(tomoyo_gc_mutex);
+static bool tomoyo_add_to_gc(const int type, struct list_head *element)
+static void tomoyo_del_allow_read(struct list_head *element)
+static void tomoyo_del_file_pattern(struct list_head *element)
+static void tomoyo_del_no_rewrite(struct list_head *element)
+static void tomoyo_del_transition_control(struct list_head *element)
+static void tomoyo_del_aggregator(struct list_head *element)
+static void tomoyo_del_manager(struct list_head *element)
+static void tomoyo_del_acl(struct list_head *element)
+static bool tomoyo_del_domain(struct list_head *element)
+static void tomoyo_del_name(struct list_head *element)
+static void tomoyo_del_path_group(struct list_head *element)
+static void tomoyo_del_group(struct list_head *element)
+static void tomoyo_del_number_group(struct list_head *element)
+static bool tomoyo_collect_member(struct list_head *member_list, int id)
+static bool tomoyo_collect_acl(struct tomoyo_domain_info *domain)
+static void tomoyo_collect_entry(void)
+static void tomoyo_kfree_entry(void)
+static int tomoyo_gc_thread(void *unused)
+void tomoyo_run_gc(void)

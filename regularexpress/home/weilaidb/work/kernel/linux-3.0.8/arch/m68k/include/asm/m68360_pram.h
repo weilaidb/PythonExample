@@ -1,0 +1,20 @@
+#define __PRAM_H
+#define VALID_SLOT	0x8000
+#define WRAP_SLOT	0x4000
+struct global_multi_pram ;
+struct quicc32_pram ;
+struct hdlc_pram ;
+#define CC_INVALID  0x8000
+#define CC_REJ      0x4000
+#define CC_CHAR     0x00ff
+struct uart_pram ;
+struct bisync_pram ;
+struct iom2_pram ;
+#define SPI_R       0x8000
+struct spi_pram ;
+struct smc_uart_pram ;
+struct smc_trnsp_pram ;
+struct idma_pram ;
+struct ethernet_pram ;
+struct transparent_pram ;
+struct timer_pram ;

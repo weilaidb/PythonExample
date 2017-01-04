@@ -1,0 +1,11 @@
+static char bad_path[] = "/bad-path/";
+static const char *get_perf_dir(void)
+size_t strlcpy(char *dest, const char *src, size_t size)
+static char *get_pathname(void)
+static char *cleanup_path(char *path)
+static char *perf_vsnpath(char *buf, size_t n, const char *fmt, va_list args)
+char *perf_pathdup(const char *fmt, ...)
+char *mkpath(const char *fmt, ...)
+char *perf_path(const char *fmt, ...)
+static inline int chomp_trailing_dir_sep(const char *path, int len)
+char *strip_path_suffix(const char *path, const char *suffix)

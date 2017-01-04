@@ -1,0 +1,23 @@
+static struct wl1271_partition_set part_table[PART_TABLE_LEN] = ;
+static void wl1271_boot_set_ecpu_ctrl(struct wl1271 *wl, u32 flag)
+static void wl1271_parse_fw_ver(struct wl1271 *wl)
+static void wl1271_boot_fw_version(struct wl1271 *wl)
+static int wl1271_boot_upload_firmware_chunk(struct wl1271 *wl, void *buf,
+size_t fw_data_len, u32 dest)
+static int wl1271_boot_upload_firmware(struct wl1271 *wl)
+static int wl1271_boot_upload_nvs(struct wl1271 *wl)
+static void wl1271_boot_enable_interrupts(struct wl1271 *wl)
+static int wl1271_boot_soft_reset(struct wl1271 *wl)
+static int wl1271_boot_run_firmware(struct wl1271 *wl)
+static int wl1271_boot_write_irq_polarity(struct wl1271 *wl)
+static void wl1271_boot_hw_version(struct wl1271 *wl)
+static int wl128x_switch_tcxo_to_fref(struct wl1271 *wl)
+static bool wl128x_is_tcxo_valid(struct wl1271 *wl)
+static bool wl128x_is_fref_valid(struct wl1271 *wl)
+static int wl128x_manually_configure_mcs_pll(struct wl1271 *wl)
+static int wl128x_configure_mcs_pll(struct wl1271 *wl, int clk)
+static int wl128x_boot_clk(struct wl1271 *wl, int *selected_clock)
+static int wl127x_boot_clk(struct wl1271 *wl)
+int wl1271_load_firmware(struct wl1271 *wl)
+EXPORT_SYMBOL_GPL(wl1271_load_firmware);
+int wl1271_boot(struct wl1271 *wl)

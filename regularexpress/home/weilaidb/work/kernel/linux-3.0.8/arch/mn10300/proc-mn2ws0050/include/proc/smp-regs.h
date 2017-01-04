@@ -1,0 +1,15 @@
+#define _ASM_PROC_SMP_REGS_H
+#define CROSS_ICR_CPU_SHIFT	16
+#define CROSS_GxICR(X, CPU)	__SYSREG(0xc4000000 + (X) * 4 + \
+((X) >= 64 && (X) < 192) * 0xf00 + ((CPU) << CROSS_ICR_CPU_SHIFT), u16)
+#define CROSS_GxICR_u8(X, CPU)	__SYSREG(0xc4000000 + (X) * 4 +		\
+(((X) >= 64) && ((X) < 192)) * 0xf00 + ((CPU) << CROSS_ICR_CPU_SHIFT), u8)
+#define CPUID		__SYSREGC(0xc0000054, u32)
+#define CPUID_MASK	0x00000007
+#define ECHCTR		__SYSREG(0xc0000c20, u32)
+#define ECHCTR_IBCM	0x00000001
+#define ECHCTR_DBCM	0x00000002
+#define ECHCTR_ISPM	0x00000004
+#define ECHCTR_DSPM	0x00000008
+#define NMIAGR		__SYSREG(0xd400013c, u16)
+#define NMIAGR_GN	0x03fc

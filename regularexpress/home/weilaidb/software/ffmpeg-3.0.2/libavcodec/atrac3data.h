@@ -1,0 +1,25 @@
+#define AVCODEC_ATRAC3DATA_H
+static const uint8_t huffcode1[9] = ;
+static const uint8_t huffbits1[9] = ;
+static const uint8_t huffcode2[5] = ;
+static const uint8_t huffbits2[5] = ;
+static const uint8_t huffcode3[7] = ;
+static const uint8_t huffbits3[7] = ;
+static const uint8_t huffcode4[9] = ;
+static const uint8_t huffbits4[9] = ;
+static const uint8_t huffcode5[15] = ;
+static const uint8_t huffbits5[15] = ;
+static const uint8_t huffcode6[31] = ;
+static const uint8_t huffbits6[31] = ;
+static const uint8_t huffcode7[63] = ;
+static const uint8_t huffbits7[63] = ;
+static const uint8_t huff_tab_sizes[7] = ;
+static const uint8_t* const huff_codes[7] = ;
+static const uint8_t* const huff_bits[7] = ;
+static const uint16_t atrac3_vlc_offs[9] = ;
+static const uint8_t clc_length_tab[8] = ;
+static const int8_t mantissa_clc_tab[4] = ;
+static const int8_t mantissa_vlc_tab[18] = ;
+static const float inv_max_quant[8] = ;
+static const uint16_t subband_tab[33] = ;
+static const float matrix_coeffs[8] = ;

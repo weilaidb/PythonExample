@@ -1,0 +1,1 @@
+#define _ASM_CRIS_TOPOLOGY_H

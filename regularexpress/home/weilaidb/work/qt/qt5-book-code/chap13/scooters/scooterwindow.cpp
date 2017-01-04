@@ -1,0 +1,1 @@
+ScooterWindow::ScooterWindow()

@@ -1,0 +1,6 @@
+static const char *type_string(int type)
+static int list_op(const char *input_dir)
+static int del_op(const char *url)
+static int move_op(const char *src, const char *dst)
+static void usage(const char *program_name)
+int main(int argc, char *argv[])

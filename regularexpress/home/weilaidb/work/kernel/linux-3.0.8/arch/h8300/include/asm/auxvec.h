@@ -1,0 +1,1 @@
+#define __ASMH8300_AUXVEC_H

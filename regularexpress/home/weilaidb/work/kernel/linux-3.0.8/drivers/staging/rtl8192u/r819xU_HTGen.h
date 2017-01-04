@@ -1,0 +1,1 @@
+typedef enum _HT_IOT_ACTIONHT_IOT_ACTION_E, *PHT_IOT_ACTION_E;

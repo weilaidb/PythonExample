@@ -1,0 +1,1 @@
+#define AVCODEC_LIBXVID_H

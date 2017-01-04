@@ -1,0 +1,10 @@
+#define __CVMX_SCRATCH_H__
+#define CVMX_SCRATCH_BASE       (-32768l)
+static inline uint8_t cvmx_scratch_read8(uint64_t address)
+static inline uint16_t cvmx_scratch_read16(uint64_t address)
+static inline uint32_t cvmx_scratch_read32(uint64_t address)
+static inline uint64_t cvmx_scratch_read64(uint64_t address)
+static inline void cvmx_scratch_write8(uint64_t address, uint64_t value)
+static inline void cvmx_scratch_write16(uint64_t address, uint64_t value)
+static inline void cvmx_scratch_write32(uint64_t address, uint64_t value)
+static inline void cvmx_scratch_write64(uint64_t address, uint64_t value)

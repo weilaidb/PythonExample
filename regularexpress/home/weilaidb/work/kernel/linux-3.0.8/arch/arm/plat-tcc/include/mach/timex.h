@@ -1,0 +1,1 @@
+#define CLOCK_TICK_RATE		(HZ * 100000UL)

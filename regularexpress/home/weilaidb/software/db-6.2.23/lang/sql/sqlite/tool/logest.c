@@ -1,0 +1,10 @@
+typedef short int LogEst;
+LogEst logEstMultiply(LogEst a, LogEst b)
+LogEst logEstAdd(LogEst a, LogEst b)
+LogEst logEstFromInteger(sqlite3_uint64 x)
+static sqlite3_uint64 logEstToInt(LogEst x)
+static LogEst logEstFromDouble(double x)
+int isInteger(const char *z)
+int isFloat(const char *z)
+static void showHelp(const char *zArgv0)
+int main(int argc, char **argv)

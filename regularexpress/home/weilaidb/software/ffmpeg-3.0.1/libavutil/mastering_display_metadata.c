@@ -1,0 +1,2 @@
+AVMasteringDisplayMetadata *av_mastering_display_metadata_alloc(void)
+AVMasteringDisplayMetadata *av_mastering_display_metadata_create_side_data(AVFrame *frame)

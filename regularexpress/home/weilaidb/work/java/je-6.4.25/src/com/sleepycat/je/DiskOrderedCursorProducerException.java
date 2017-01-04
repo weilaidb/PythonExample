@@ -1,0 +1,3 @@
+package com.sleepycat.je;
+public class DiskOrderedCursorProducerException
+extends OperationFailureException

@@ -1,0 +1,16 @@
+int wl1251_hw_init_hwenc_config(struct wl1251 *wl)
+int wl1251_hw_init_templates_config(struct wl1251 *wl)
+int wl1251_hw_init_rx_config(struct wl1251 *wl, u32 config, u32 filter)
+int wl1251_hw_init_phy_config(struct wl1251 *wl)
+int wl1251_hw_init_beacon_filter(struct wl1251 *wl)
+int wl1251_hw_init_pta(struct wl1251 *wl)
+int wl1251_hw_init_energy_detection(struct wl1251 *wl)
+int wl1251_hw_init_beacon_broadcast(struct wl1251 *wl)
+int wl1251_hw_init_power_auth(struct wl1251 *wl)
+int wl1251_hw_init_mem_config(struct wl1251 *wl)
+static int wl1251_hw_init_txq_fill(u8 qid,
+struct acx_tx_queue_qos_config *config,
+u32 num_blocks)
+static int wl1251_hw_init_tx_queue_config(struct wl1251 *wl)
+static int wl1251_hw_init_data_path_config(struct wl1251 *wl)
+int wl1251_hw_init(struct wl1251 *wl)

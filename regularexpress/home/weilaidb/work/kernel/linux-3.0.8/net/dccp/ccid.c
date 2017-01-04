@@ -1,0 +1,15 @@
+static struct ccid_operations *ccids[] = ;
+static struct ccid_operations *ccid_by_number(const u8 id)
+bool ccid_support_check(u8 const *ccid_array, u8 array_len)
+int ccid_get_builtin_ccids(u8 **ccid_array, u8 *array_len)
+int ccid_getsockopt_builtin_ccids(struct sock *sk, int len,
+char __user *optval, int __user *optlen)
+static struct kmem_cache *ccid_kmem_cache_create(int obj_size, char *slab_name_fmt, const char *fmt,...)
+static void ccid_kmem_cache_destroy(struct kmem_cache *slab)
+static int ccid_activate(struct ccid_operations *ccid_ops)
+static void ccid_deactivate(struct ccid_operations *ccid_ops)
+struct ccid *ccid_new(const u8 id, struct sock *sk, bool rx)
+void ccid_hc_rx_delete(struct ccid *ccid, struct sock *sk)
+void ccid_hc_tx_delete(struct ccid *ccid, struct sock *sk)
+int __init ccid_initialize_builtins(void)
+void ccid_cleanup_builtins(void)

@@ -1,0 +1,26 @@
+package com.sleepycat.je.rep.util;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.io.IOException;
+import java.nio.channels.Channels;
+import java.nio.channels.SocketChannel;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.atomic.AtomicReference;
+import org.junit.Test;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.rep.net.DataChannel;
+import com.sleepycat.je.rep.net.DataChannelFactory;
+import com.sleepycat.je.rep.net.DataChannelFactory.ConnectOptions;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.ServiceDispatcher;
+import com.sleepycat.je.rep.utilint.ServiceDispatcher.Response;
+import com.sleepycat.je.rep.utilint.ServiceDispatcher.ServiceConnectFailedException;
+import com.sleepycat.je.rep.utilint.net.DataChannelFactoryBuilder;
+public class ServiceDispatcherTest extends ServiceDispatcherTestBase

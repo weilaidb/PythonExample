@@ -1,0 +1,21 @@
+#define INITVALS_9003_2P2_H
+static const u32 ar9300_2p2_radio_postamble[][5] = ;
+static const u32 ar9300Modes_lowest_ob_db_tx_gain_table_2p2[][5] = ;
+static const u32 ar9300Modes_fast_clock_2p2[][3] = ;
+static const u32 ar9300_2p2_radio_core[][2] = ;
+static const u32 ar9300Common_rx_gain_table_merlin_2p2[][2] = ;
+static const u32 ar9300_2p2_mac_postamble[][5] = ;
+static const u32 ar9300_2p2_soc_postamble[][5] = ;
+static const u32 ar9200_merlin_2p2_radio_core[][2] = ;
+static const u32 ar9300_2p2_baseband_postamble[][5] = ;
+static const u32 ar9300_2p2_baseband_core[][2] = ;
+static const u32 ar9300Modes_high_power_tx_gain_table_2p2[][5] = ;
+static const u32 ar9300Modes_high_ob_db_tx_gain_table_2p2[][5] = ;
+static const u32 ar9300Common_rx_gain_table_2p2[][2] = ;
+static const u32 ar9300Modes_low_ob_db_tx_gain_table_2p2[][5] = ;
+static const u32 ar9300_2p2_mac_core[][2] = ;
+static const u32 ar9300Common_wo_xlna_rx_gain_table_2p2[][2] = ;
+static const u32 ar9300_2p2_soc_preamble[][2] = ;
+static const u32 ar9300PciePhy_pll_on_clkreq_disable_L1_2p2[][2] = ;
+static const u32 ar9300PciePhy_clkreq_enable_L1_2p2[][2] = ;
+static const u32 ar9300PciePhy_clkreq_disable_L1_2p2[][2] = ;

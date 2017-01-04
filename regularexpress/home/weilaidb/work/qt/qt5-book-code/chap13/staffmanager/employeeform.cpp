@@ -1,0 +1,5 @@
+EmployeeForm::EmployeeForm(int id, QWidget *parent)
+: QDialog(parent)
+void EmployeeForm::done(int result)
+void EmployeeForm::addEmployee()
+void EmployeeForm::deleteEmployee()

@@ -1,0 +1,13 @@
+static inline unsigned int icp_hv_get_xirr(unsigned char cppr)
+static inline void icp_hv_set_xirr(unsigned int value)
+static inline void icp_hv_set_cppr(u8 value)
+static inline void icp_hv_set_qirr(int n_cpu , u8 value)
+static void icp_hv_eoi(struct irq_data *d)
+static void icp_hv_teardown_cpu(void)
+static void icp_hv_flush_ipi(void)
+static unsigned int icp_hv_get_irq(void)
+static void icp_hv_set_cpu_priority(unsigned char cppr)
+static void icp_hv_cause_ipi(int cpu, unsigned long data)
+static irqreturn_t icp_hv_ipi_action(int irq, void *dev_id)
+static const struct icp_ops icp_hv_ops = ;
+int icp_hv_init(void)

@@ -1,0 +1,2 @@
+#define __ASM_AVR32_NUMNODES_H
+#define NODES_SHIFT	2

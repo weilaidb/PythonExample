@@ -1,0 +1,8 @@
+typedef struct
+NativeWindowFactory;
+#define TEST_NATIVE_WINDOWS
+extern NativeWindowFactory WindowsWindowFactory;
+#define TEST_NATIVE_X11
+extern NativeWindowFactory X11WindowFactory;
+#define TEST_NATIVE_COCOA
+extern NativeWindowFactory CocoaWindowFactory;

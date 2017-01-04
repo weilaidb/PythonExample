@@ -1,0 +1,27 @@
+package com.sleepycat.persist.impl;
+import java.io.Serializable;
+import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.IdentityHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import com.sleepycat.compat.DbCompat;
+import com.sleepycat.persist.evolve.Converter;
+import com.sleepycat.persist.evolve.Deleter;
+import com.sleepycat.persist.evolve.EntityConverter;
+import com.sleepycat.persist.evolve.Mutations;
+import com.sleepycat.persist.evolve.Renamer;
+import com.sleepycat.persist.model.ClassMetadata;
+import com.sleepycat.persist.model.DeleteAction;
+import com.sleepycat.persist.model.EntityMetadata;
+import com.sleepycat.persist.model.EntityModel;
+import com.sleepycat.persist.model.FieldMetadata;
+import com.sleepycat.persist.model.Relationship;
+import com.sleepycat.persist.model.SecondaryKeyMetadata;
+import com.sleepycat.persist.raw.RawField;
+import com.sleepycat.persist.raw.RawObject;
+public class ComplexFormat extends Format

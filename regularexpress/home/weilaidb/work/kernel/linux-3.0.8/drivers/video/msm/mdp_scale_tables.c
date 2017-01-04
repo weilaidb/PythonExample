@@ -1,0 +1,12 @@
+struct mdp_table_entry mdp_upscale_table[] = ;
+static struct mdp_table_entry mdp_downscale_x_table_PT2TOPT4[] = ;
+static struct mdp_table_entry mdp_downscale_x_table_PT4TOPT6[] = ;
+static struct mdp_table_entry mdp_downscale_x_table_PT6TOPT8[] = ;
+static struct mdp_table_entry mdp_downscale_x_table_PT8TO1[] = ;
+struct mdp_table_entry *mdp_downscale_x_table[MDP_DOWNSCALE_MAX] = ;
+static struct mdp_table_entry mdp_downscale_y_table_PT2TOPT4[] = ;
+static struct mdp_table_entry mdp_downscale_y_table_PT4TOPT6[] = ;
+static struct mdp_table_entry mdp_downscale_y_table_PT6TOPT8[] = ;
+static struct mdp_table_entry mdp_downscale_y_table_PT8TO1[] = ;
+struct mdp_table_entry *mdp_downscale_y_table[MDP_DOWNSCALE_MAX] = ;
+struct mdp_table_entry mdp_gaussian_blur_table[] = ;

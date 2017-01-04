@@ -1,0 +1,86 @@
+#define _AT76_USB_H
+enum board_type ;
+#define CMD_STATUS_IDLE				0x00
+#define CMD_STATUS_COMPLETE			0x01
+#define CMD_STATUS_UNKNOWN			0x02
+#define CMD_STATUS_INVALID_PARAMETER		0x03
+#define CMD_STATUS_FUNCTION_NOT_SUPPORTED	0x04
+#define CMD_STATUS_TIME_OUT			0x07
+#define CMD_STATUS_IN_PROGRESS			0x08
+#define CMD_STATUS_HOST_FAILURE			0xff
+#define CMD_STATUS_SCAN_FAILED			0xf0
+#define OPMODE_NONE				0x00
+#define OPMODE_NORMAL_NIC_WITH_FLASH		0x01
+#define OPMODE_HW_CONFIG_MODE			0x02
+#define OPMODE_DFU_MODE_WITH_FLASH		0x03
+#define OPMODE_NORMAL_NIC_WITHOUT_FLASH		0x04
+#define CMD_SET_MIB		0x01
+#define CMD_GET_MIB		0x02
+#define CMD_SCAN		0x03
+#define CMD_JOIN		0x04
+#define CMD_START_IBSS		0x05
+#define CMD_RADIO_ON		0x06
+#define CMD_RADIO_OFF		0x07
+#define CMD_STARTUP		0x0B
+#define MIB_LOCAL		0x01
+#define MIB_MAC_ADDR		0x02
+#define MIB_MAC			0x03
+#define MIB_MAC_MGMT		0x05
+#define MIB_MAC_WEP		0x06
+#define MIB_PHY			0x07
+#define MIB_FW_VERSION		0x08
+#define MIB_MDOMAIN		0x09
+#define ADHOC_MODE		1
+#define INFRASTRUCTURE_MODE	2
+#define PREAMBLE_TYPE_LONG	0
+#define PREAMBLE_TYPE_SHORT	1
+#define PREAMBLE_TYPE_AUTO	2
+#define TX_RATE_1MBIT		0
+#define TX_RATE_2MBIT		1
+#define TX_RATE_5_5MBIT 	2
+#define TX_RATE_11MBIT		3
+#define TX_RATE_AUTO		4
+#define AT76_PM_OFF		1
+#define AT76_PM_ON		2
+#define AT76_PM_SMART		3
+struct hwcfg_r505  __packed;
+struct hwcfg_rfmd  __packed;
+struct hwcfg_intersil  __packed;
+union at76_hwcfg ;
+#define WEP_SMALL_KEY_LEN	(40 / 8)
+#define WEP_LARGE_KEY_LEN	(104 / 8)
+#define WEP_KEYS		(4)
+struct at76_card_config  __packed;
+struct at76_command  __packed;
+#define AT76_RX_HDRLEN offsetof(struct at76_rx_buffer, packet)
+struct at76_rx_buffer  __packed;
+#define AT76_TX_HDRLEN offsetof(struct at76_tx_buffer, packet)
+struct at76_tx_buffer  __packed;
+#define SCAN_TYPE_ACTIVE	0
+#define SCAN_TYPE_PASSIVE	1
+struct at76_req_scan  __packed;
+struct at76_req_ibss  __packed;
+struct at76_req_join  __packed;
+struct set_mib_buffer  __packed;
+struct mib_local  __packed;
+struct mib_mac_addr  __packed;
+struct mib_mac  __packed;
+struct mib_mac_mgmt  __packed;
+struct mib_mac_wep  __packed;
+struct mib_phy  __packed;
+struct mib_fw_version  __packed;
+struct mib_mdomain  __packed;
+struct at76_fw_header  __packed;
+struct reg_domain ;
+struct fwentry ;
+struct at76_priv ;
+#define AT76_SUPPORTED_FILTERS FIF_PROMISC_IN_BSS
+#define SCAN_POLL_INTERVAL	(HZ / 4)
+#define CMD_COMPLETION_TIMEOUT	(5 * HZ)
+#define DEF_RTS_THRESHOLD	1536
+#define DEF_FRAG_THRESHOLD	1536
+#define DEF_SHORT_RETRY_LIMIT	8
+#define DEF_CHANNEL		10
+#define DEF_SCAN_MIN_TIME	10
+#define DEF_SCAN_MAX_TIME	120
+#define MAX_PADDING_SIZE	53

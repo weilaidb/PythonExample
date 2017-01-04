@@ -1,0 +1,27 @@
+package com.sleepycat.je.rep.util;
+import static com.sleepycat.je.rep.utilint.RepTestUtils.TEST_REP_GROUP_NAME;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.Writer;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.je.CheckpointConfig;
+import com.sleepycat.je.CommitToken;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.rep.InsufficientLogException;
+import com.sleepycat.je.rep.NetworkRestore;
+import com.sleepycat.je.rep.NetworkRestoreConfig;
+import com.sleepycat.je.rep.NodeType;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.ReplicationConfig;
+import com.sleepycat.je.rep.impl.RepParams;
+import com.sleepycat.je.rep.impl.RepTestBase;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.je.utilint.VLSN;
+import com.sleepycat.util.test.SharedTestUtils;
+public class ResetRepGroupTest extends RepTestBase

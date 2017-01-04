@@ -1,0 +1,12 @@
+package je.rep.quote;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.util.StringTokenizer;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.persist.EntityStore;
+import com.sleepycat.persist.StoreConfig;
+class QuoteUtil

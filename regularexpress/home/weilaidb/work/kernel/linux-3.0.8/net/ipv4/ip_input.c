@@ -1,0 +1,6 @@
+int ip_call_ra_chain(struct sk_buff *skb)
+static int ip_local_deliver_finish(struct sk_buff *skb)
+int ip_local_deliver(struct sk_buff *skb)
+static inline int ip_rcv_options(struct sk_buff *skb)
+static int ip_rcv_finish(struct sk_buff *skb)
+int ip_rcv(struct sk_buff *skb, struct net_device *dev, struct packet_type *pt, struct net_device *orig_dev)

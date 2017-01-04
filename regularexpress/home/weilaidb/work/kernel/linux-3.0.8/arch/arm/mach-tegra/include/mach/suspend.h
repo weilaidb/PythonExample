@@ -1,0 +1,13 @@
+#define _MACH_TEGRA_SUSPEND_H_
+void tegra_pinmux_suspend(void);
+void tegra_irq_suspend(void);
+void tegra_gpio_suspend(void);
+void tegra_clk_suspend(void);
+void tegra_dma_suspend(void);
+void tegra_timer_suspend(void);
+void tegra_pinmux_resume(void);
+void tegra_irq_resume(void);
+void tegra_gpio_resume(void);
+void tegra_clk_resume(void);
+void tegra_dma_resume(void);
+void tegra_timer_resume(void);

@@ -1,0 +1,7 @@
+#define __PXA3XX_GCU_H__
+#define PXA3XX_GCU_BUFFER_WORDS  ((256 * 1024 - 256) / 4)
+#define PXA3XX_GCU_SHARED_MAGIC  0x30000001
+#define PXA3XX_GCU_BATCH_WORDS   8192
+struct pxa3xx_gcu_shared ;
+#define PXA3XX_GCU_IOCTL_RESET		_IO('G', 0)
+#define PXA3XX_GCU_IOCTL_WAIT_IDLE	_IO('G', 2)

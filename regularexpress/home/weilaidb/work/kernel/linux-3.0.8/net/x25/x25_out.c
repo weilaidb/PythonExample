@@ -1,0 +1,5 @@
+static int x25_pacsize_to_bytes(unsigned int pacsize)
+int x25_output(struct sock *sk, struct sk_buff *skb)
+static void x25_send_iframe(struct sock *sk, struct sk_buff *skb)
+void x25_kick(struct sock *sk)
+void x25_enquiry_response(struct sock *sk)

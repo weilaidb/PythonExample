@@ -1,0 +1,46 @@
+#define args_neq(a1, a2, x) ((a1)->ar_##x != (a2)->ar_##x)
+enum ;
+static const match_table_t tokens = ;
+int gfs2_mount_args(struct gfs2_args *args, char *options)
+void gfs2_jindex_free(struct gfs2_sbd *sdp)
+static struct gfs2_jdesc *jdesc_find_i(struct list_head *head, unsigned int jid)
+struct gfs2_jdesc *gfs2_jdesc_find(struct gfs2_sbd *sdp, unsigned int jid)
+int gfs2_jdesc_check(struct gfs2_jdesc *jd)
+int gfs2_make_fs_rw(struct gfs2_sbd *sdp)
+void gfs2_statfs_change_in(struct gfs2_statfs_change_host *sc, const void *buf)
+static void gfs2_statfs_change_out(const struct gfs2_statfs_change_host *sc, void *buf)
+int gfs2_statfs_init(struct gfs2_sbd *sdp)
+void gfs2_statfs_change(struct gfs2_sbd *sdp, s64 total, s64 free,
+s64 dinodes)
+void update_statfs(struct gfs2_sbd *sdp, struct buffer_head *m_bh,
+struct buffer_head *l_bh)
+int gfs2_statfs_sync(struct super_block *sb, int type)
+struct lfcc ;
+static int gfs2_lock_fs_check_clean(struct gfs2_sbd *sdp,
+struct gfs2_holder *t_gh)
+int gfs2_freeze_fs(struct gfs2_sbd *sdp)
+void gfs2_unfreeze_fs(struct gfs2_sbd *sdp)
+void gfs2_dinode_out(const struct gfs2_inode *ip, void *buf)
+static int gfs2_write_inode(struct inode *inode, struct writeback_control *wbc)
+static int gfs2_make_fs_ro(struct gfs2_sbd *sdp)
+static int gfs2_umount_recovery_wait(void *word)
+static void gfs2_put_super(struct super_block *sb)
+static int gfs2_sync_fs(struct super_block *sb, int wait)
+static int gfs2_freeze(struct super_block *sb)
+static int gfs2_unfreeze(struct super_block *sb)
+static int statfs_slow_fill(struct gfs2_rgrpd *rgd,
+struct gfs2_statfs_change_host *sc)
+static int gfs2_statfs_slow(struct gfs2_sbd *sdp, struct gfs2_statfs_change_host *sc)
+static int gfs2_statfs_i(struct gfs2_sbd *sdp, struct gfs2_statfs_change_host *sc)
+static int gfs2_statfs(struct dentry *dentry, struct kstatfs *buf)
+static int gfs2_remount_fs(struct super_block *sb, int *flags, char *data)
+static int gfs2_drop_inode(struct inode *inode)
+static int is_ancestor(const struct dentry *d1, const struct dentry *d2)
+static int gfs2_show_options(struct seq_file *s, struct vfsmount *mnt)
+static void gfs2_final_release_pages(struct gfs2_inode *ip)
+static int gfs2_dinode_dealloc(struct gfs2_inode *ip)
+static void gfs2_evict_inode(struct inode *inode)
+static struct inode *gfs2_alloc_inode(struct super_block *sb)
+static void gfs2_i_callback(struct rcu_head *head)
+static void gfs2_destroy_inode(struct inode *inode)
+const struct super_operations gfs2_super_ops = ;

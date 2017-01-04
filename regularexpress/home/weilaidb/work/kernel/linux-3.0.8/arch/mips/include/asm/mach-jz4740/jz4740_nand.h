@@ -1,0 +1,2 @@
+#define __ASM_MACH_JZ4740_JZ4740_NAND_H__
+struct jz_nand_platform_data ;

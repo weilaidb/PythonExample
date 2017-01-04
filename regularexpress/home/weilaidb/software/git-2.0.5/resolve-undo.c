@@ -1,0 +1,7 @@
+void record_resolve_undo(struct index_state *istate, struct cache_entry *ce)
+void resolve_undo_write(struct strbuf *sb, struct string_list *resolve_undo)
+struct string_list *resolve_undo_read(const char *data, unsigned long size)
+void resolve_undo_clear_index(struct index_state *istate)
+int unmerge_index_entry_at(struct index_state *istate, int pos)
+void unmerge_marked_index(struct index_state *istate)
+void unmerge_index(struct index_state *istate, const struct pathspec *pathspec)

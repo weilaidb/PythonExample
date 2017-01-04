@@ -1,0 +1,6 @@
+PreferenceDialog::PreferenceDialog(QWidget *parent)
+: QDialog(parent)
+void PreferenceDialog::createAppearancePage()
+void PreferenceDialog::createWebBrowserPage()
+void PreferenceDialog::createMailAndNewsPage()
+void PreferenceDialog::createAdvancedPage()

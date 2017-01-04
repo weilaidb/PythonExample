@@ -1,0 +1,25 @@
+package com.sleepycat.je.rep.monitor;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.io.File;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.util.HashSet;
+import java.util.concurrent.CountDownLatch;
+import org.junit.Test;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.junit.JUnitProcessThread;
+import com.sleepycat.je.rep.AppStateMonitor;
+import com.sleepycat.je.rep.NodeState;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.ReplicatedEnvironment.State;
+import com.sleepycat.je.rep.ReplicationConfig;
+import com.sleepycat.je.rep.impl.RepNodeImpl;
+import com.sleepycat.je.rep.impl.node.RepNode;
+import com.sleepycat.je.rep.monitor.LeaveGroupEvent.LeaveReason;
+import com.sleepycat.je.rep.util.ReplicationGroupAdmin;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.ServiceDispatcher.ServiceConnectFailedException;
+import com.sleepycat.utilint.StringUtils;
+public class PingCommandTest extends MonitorTestBase

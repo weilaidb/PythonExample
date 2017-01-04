@@ -1,0 +1,5 @@
+int __devinit read_current_timer(unsigned long *timer_value)
+void __delay(unsigned long loops)
+inline void __const_udelay(unsigned long xloops)
+void __udelay(unsigned long usecs)
+void __ndelay(unsigned long nsecs)

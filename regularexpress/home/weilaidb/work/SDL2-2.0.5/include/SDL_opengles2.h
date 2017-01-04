@@ -1,0 +1,1 @@
+#define APIENTRY GL_APIENTRY

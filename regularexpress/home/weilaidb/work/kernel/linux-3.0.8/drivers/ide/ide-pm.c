@@ -1,0 +1,6 @@
+int generic_ide_suspend(struct device *dev, pm_message_t mesg)
+int generic_ide_resume(struct device *dev)
+void ide_complete_power_step(ide_drive_t *drive, struct request *rq)
+ide_startstop_t ide_start_power_step(ide_drive_t *drive, struct request *rq)
+void ide_complete_pm_rq(ide_drive_t *drive, struct request *rq)
+void ide_check_pm_state(ide_drive_t *drive, struct request *rq)

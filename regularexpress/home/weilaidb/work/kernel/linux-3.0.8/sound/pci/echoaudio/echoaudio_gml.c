@@ -1,0 +1,5 @@
+static int check_asic_status(struct echoaudio *chip)
+static int write_control_reg(struct echoaudio *chip, u32 value, char force)
+static int set_input_auto_mute(struct echoaudio *chip, int automute)
+static int set_digital_mode(struct echoaudio *chip, u8 mode)
+static int set_professional_spdif(struct echoaudio *chip, char prof)

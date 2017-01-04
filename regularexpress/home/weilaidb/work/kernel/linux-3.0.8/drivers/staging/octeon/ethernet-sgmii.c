@@ -1,0 +1,5 @@
+int cvm_oct_sgmii_open(struct net_device *dev)
+int cvm_oct_sgmii_stop(struct net_device *dev)
+static void cvm_oct_sgmii_poll(struct net_device *dev)
+int cvm_oct_sgmii_init(struct net_device *dev)
+void cvm_oct_sgmii_uninit(struct net_device *dev)

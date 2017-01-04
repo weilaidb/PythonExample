@@ -1,0 +1,8 @@
+__cvmx_cmd_queue_all_state_t *__cvmx_cmd_queue_state_ptr;
+static cvmx_cmd_queue_result_t __cvmx_cmd_queue_init_state_ptr(void)
+cvmx_cmd_queue_result_t cvmx_cmd_queue_initialize(cvmx_cmd_queue_id_t queue_id,
+int max_depth, int fpa_pool,
+int pool_size)
+cvmx_cmd_queue_result_t cvmx_cmd_queue_shutdown(cvmx_cmd_queue_id_t queue_id)
+int cvmx_cmd_queue_length(cvmx_cmd_queue_id_t queue_id)
+void *cvmx_cmd_queue_buffer(cvmx_cmd_queue_id_t queue_id)

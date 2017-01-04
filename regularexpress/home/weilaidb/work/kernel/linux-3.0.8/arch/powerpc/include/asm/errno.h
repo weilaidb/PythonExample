@@ -1,0 +1,4 @@
+#define _ASM_POWERPC_ERRNO_H
+#undef	EDEADLOCK
+#define	EDEADLOCK	58
+#define _LAST_ERRNO	516

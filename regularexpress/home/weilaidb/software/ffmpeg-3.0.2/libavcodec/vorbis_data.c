@@ -1,0 +1,13 @@
+const uint8_t ff_vorbis_channel_layout_offsets[8][8] = ;
+const uint8_t ff_vorbis_encoding_channel_layout_offsets[8][8] = ;
+const uint64_t ff_vorbis_channel_layouts[9] = ;
+DECLARE_ALIGNED(16, static const float, vwin64)[32] = ;
+DECLARE_ALIGNED(16, static const float, vwin128)[64] = ;
+DECLARE_ALIGNED(16, static const float, vwin256)[128] = ;
+DECLARE_ALIGNED(16, static const float, vwin512)[256] = ;
+DECLARE_ALIGNED(16, static const float, vwin1024)[512] = ;
+DECLARE_ALIGNED(16, static const float, vwin2048)[1024] = ;
+DECLARE_ALIGNED(16, static const float, vwin4096)[2048] = ;
+DECLARE_ALIGNED(16, static const float, vwin8192)[4096] = ;
+const float ff_vorbis_floor1_inverse_db_table[256]=;
+const float * const ff_vorbis_vwin[8] = ;

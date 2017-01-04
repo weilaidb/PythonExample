@@ -1,0 +1,16 @@
+union msr_bcr2 ;
+union msr_longhaul ;
+static const int __cpuinitdata samuel1_mults[16] = ;
+static const int __cpuinitdata samuel1_eblcr[16] = ;
+static const int __cpuinitdata samuel2_eblcr[16] = ;
+static const int __cpuinitdata ezra_mults[16] = ;
+static const int __cpuinitdata ezra_eblcr[16] = ;
+static const int __cpuinitdata ezrat_mults[32] = ;
+static const int __cpuinitdata ezrat_eblcr[32] = ;
+static const int __cpuinitdata nehemiah_mults[32] = ;
+static const int __cpuinitdata nehemiah_eblcr[32] = ;
+struct mV_pos ;
+static const struct mV_pos __cpuinitdata vrm85_mV[32] = ;
+static const unsigned char __cpuinitdata mV_vrm85[32] = ;
+static const struct mV_pos __cpuinitdata mobilevrm_mV[32] = ;
+static const unsigned char __cpuinitdata mV_mobilevrm[32] = ;

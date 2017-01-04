@@ -1,0 +1,11 @@
+static int _fdt_sw_check_header(void *fdt)
+#define FDT_SW_CHECK_HEADER(fdt) \
+static void *_fdt_grab_space(void *fdt, int len)
+int fdt_create(void *buf, int bufsize)
+int fdt_add_reservemap_entry(void *fdt, uint64_t addr, uint64_t size)
+int fdt_finish_reservemap(void *fdt)
+int fdt_begin_node(void *fdt, const char *name)
+int fdt_end_node(void *fdt)
+static int _fdt_find_add_string(void *fdt, const char *s)
+int fdt_property(void *fdt, const char *name, const void *val, int len)
+int fdt_finish(void *fdt)

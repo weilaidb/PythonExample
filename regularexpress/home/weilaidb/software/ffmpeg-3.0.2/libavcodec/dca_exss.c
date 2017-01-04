@@ -1,0 +1,6 @@
+static int count_chs_for_mask(int mask)
+static void parse_xll_parameters(DCAExssParser *s, DCAExssAsset *asset)
+static void parse_lbr_parameters(DCAExssParser *s, DCAExssAsset *asset)
+static int parse_descriptor(DCAExssParser *s, DCAExssAsset *asset)
+static int set_exss_offsets(DCAExssAsset *asset)
+int ff_dca_exss_parse(DCAExssParser *s, uint8_t *data, int size)

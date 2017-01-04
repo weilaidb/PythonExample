@@ -1,0 +1,5 @@
+static int init_desc(struct hash_desc *desc)
+int ima_calc_hash(struct file *file, char *digest)
+int ima_calc_template_hash(int template_len, void *template, char *digest)
+static void __init ima_pcrread(int idx, u8 *pcr)
+int __init ima_calc_boot_aggregate(char *digest)

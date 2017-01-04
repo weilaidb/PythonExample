@@ -1,0 +1,20 @@
+package com.sleepycat.je.rep.impl.node;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import static com.sleepycat.je.rep.impl.RepParams.TEST_JE_VERSION;
+import org.junit.Test;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.JEVersion;
+import com.sleepycat.je.rep.NodeType;
+import com.sleepycat.je.rep.RepInternal;
+import com.sleepycat.je.rep.impl.MinJEVersionUnsupportedException;
+import com.sleepycat.je.rep.impl.RepGroupImpl;
+import com.sleepycat.je.rep.impl.RepTestBase;
+import com.sleepycat.je.rep.stream.Protocol.FeederJEVersions;
+import com.sleepycat.je.rep.utilint.BinaryProtocol.Message;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.je.utilint.TestAction;
+import com.sleepycat.je.utilint.WaitTestHook;
+public class UpdateJEVersionTest extends RepTestBase

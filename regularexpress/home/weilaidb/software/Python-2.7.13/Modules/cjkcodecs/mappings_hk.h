@@ -1,0 +1,9 @@
+static const ucs2_t __big5hkscs_decmap[6219] = ;
+static const struct dbcs_index big5hkscs_decmap[256] = ;
+static const unsigned char big5hkscs_phint_0[] = ;
+static const unsigned char big5hkscs_phint_12130[] = ;
+static const unsigned char big5hkscs_phint_21924[] = ;
+static const DBCHAR __big5hkscs_bmp_encmap[26401] = ;
+static const struct unim_index big5hkscs_bmp_encmap[256] = ;
+static const DBCHAR __big5hkscs_nonbmp_encmap[29306] = ;
+static const struct unim_index big5hkscs_nonbmp_encmap[256] = ;

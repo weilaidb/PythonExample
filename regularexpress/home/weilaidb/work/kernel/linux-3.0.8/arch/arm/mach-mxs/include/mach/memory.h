@@ -1,0 +1,2 @@
+#define __MACH_MXS_MEMORY_H__
+#define PHYS_OFFSET		UL(0x40000000)

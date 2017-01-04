@@ -1,0 +1,2 @@
+#define __PLAT_TIMEX_H
+#define CLOCK_TICK_RATE			48000000

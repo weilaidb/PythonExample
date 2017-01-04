@@ -1,0 +1,6 @@
+int RIOParam(struct Port *PortP, int cmd, int Modem, int SleepFlag)
+int can_add_transmit(struct PKT __iomem **PktP, struct Port *PortP)
+void add_transmit(struct Port *PortP)
+void put_free_end(struct Host *HostP, struct PKT __iomem *PktP)
+int can_remove_receive(struct PKT __iomem **PktP, struct Port *PortP)
+void remove_receive(struct Port *PortP)

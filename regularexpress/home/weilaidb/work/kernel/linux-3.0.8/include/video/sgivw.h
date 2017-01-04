@@ -1,0 +1,161 @@
+#define __SGIVWFB_H__
+#define DBE_GETREG(reg, dest)		((dest) = DBE_REG_BASE->reg)
+#define DBE_SETREG(reg, src)		DBE_REG_BASE->reg = (src)
+#define DBE_IGETREG(reg, idx, dest)	((dest) = DBE_REG_BASE->reg[idx])
+#define DBE_ISETREG(reg, idx, src)	(DBE_REG_BASE->reg[idx] = (src))
+#define MASK(msb, lsb)          ( (((u32)1<<((msb)-(lsb)+1))-1) << (lsb) )
+#define GET(v, msb, lsb)        ( ((u32)(v) & MASK(msb,lsb)) >> (lsb) )
+#define SET(v, f, msb, lsb)     ( (v) = ((v)&~MASK(msb,lsb)) | (( (u32)(f)<<(lsb) ) & MASK(msb,lsb)) )
+#define GET_DBE_FIELD(reg, field, v)        GET((v), DBE_##reg##_##field##_MSB, DBE_##reg##_##field##_LSB)
+#define SET_DBE_FIELD(reg, field, v, f)     SET((v), (f), DBE_##reg##_##field##_MSB, DBE_##reg##_##field##_LSB)
+#define DBE_REG_PHYS	0xd0000000
+#define DBE_REG_SIZE        0x01000000
+struct asregs ;
+#define DBE_CTRLSTAT_CHIPID_MSB     3
+#define DBE_CTRLSTAT_CHIPID_LSB     0
+#define DBE_CTRLSTAT_SENSE_N_MSB    4
+#define DBE_CTRLSTAT_SENSE_N_LSB    4
+#define DBE_CTRLSTAT_PCLKSEL_MSB    29
+#define DBE_CTRLSTAT_PCLKSEL_LSB    28
+#define DBE_DOTCLK_M_MSB            7
+#define DBE_DOTCLK_M_LSB            0
+#define DBE_DOTCLK_N_MSB            13
+#define DBE_DOTCLK_N_LSB            8
+#define DBE_DOTCLK_P_MSB            15
+#define DBE_DOTCLK_P_LSB            14
+#define DBE_DOTCLK_RUN_MSB          20
+#define DBE_DOTCLK_RUN_LSB          20
+#define DBE_VT_XY_VT_FREEZE_MSB     31
+#define DBE_VT_XY_VT_FREEZE_LSB     31
+#define DBE_FP_VDRV_FP_VDRV_ON_MSB	23
+#define DBE_FP_VDRV_FP_VDRV_ON_LSB	12
+#define DBE_FP_VDRV_FP_VDRV_OFF_MSB	11
+#define DBE_FP_VDRV_FP_VDRV_OFF_LSB	0
+#define DBE_FP_HDRV_FP_HDRV_ON_MSB	23
+#define DBE_FP_HDRV_FP_HDRV_ON_LSB	12
+#define DBE_FP_HDRV_FP_HDRV_OFF_MSB	11
+#define DBE_FP_HDRV_FP_HDRV_OFF_LSB	0
+#define DBE_FP_DE_FP_DE_ON_MSB		23
+#define DBE_FP_DE_FP_DE_ON_LSB		12
+#define DBE_FP_DE_FP_DE_OFF_MSB		11
+#define DBE_FP_DE_FP_DE_OFF_LSB		0
+#define DBE_VT_VSYNC_VT_VSYNC_ON_MSB        23
+#define DBE_VT_VSYNC_VT_VSYNC_ON_LSB        12
+#define DBE_VT_VSYNC_VT_VSYNC_OFF_MSB       11
+#define DBE_VT_VSYNC_VT_VSYNC_OFF_LSB       0
+#define DBE_VT_HSYNC_VT_HSYNC_ON_MSB        23
+#define DBE_VT_HSYNC_VT_HSYNC_ON_LSB        12
+#define DBE_VT_HSYNC_VT_HSYNC_OFF_MSB       11
+#define DBE_VT_HSYNC_VT_HSYNC_OFF_LSB       0
+#define DBE_VT_VBLANK_VT_VBLANK_ON_MSB        23
+#define DBE_VT_VBLANK_VT_VBLANK_ON_LSB        12
+#define DBE_VT_VBLANK_VT_VBLANK_OFF_MSB       11
+#define DBE_VT_VBLANK_VT_VBLANK_OFF_LSB       0
+#define DBE_VT_HBLANK_VT_HBLANK_ON_MSB        23
+#define DBE_VT_HBLANK_VT_HBLANK_ON_LSB        12
+#define DBE_VT_HBLANK_VT_HBLANK_OFF_MSB       11
+#define DBE_VT_HBLANK_VT_HBLANK_OFF_LSB       0
+#define DBE_VT_FLAGS_VDRV_INVERT_MSB		0
+#define DBE_VT_FLAGS_VDRV_INVERT_LSB		0
+#define DBE_VT_FLAGS_HDRV_INVERT_MSB		2
+#define DBE_VT_FLAGS_HDRV_INVERT_LSB		2
+#define DBE_VT_VCMAP_VT_VCMAP_ON_MSB        23
+#define DBE_VT_VCMAP_VT_VCMAP_ON_LSB        12
+#define DBE_VT_VCMAP_VT_VCMAP_OFF_MSB       11
+#define DBE_VT_VCMAP_VT_VCMAP_OFF_LSB       0
+#define DBE_VT_HCMAP_VT_HCMAP_ON_MSB        23
+#define DBE_VT_HCMAP_VT_HCMAP_ON_LSB        12
+#define DBE_VT_HCMAP_VT_HCMAP_OFF_MSB       11
+#define DBE_VT_HCMAP_VT_HCMAP_OFF_LSB       0
+#define DBE_VT_XYMAX_VT_MAXX_MSB    11
+#define DBE_VT_XYMAX_VT_MAXX_LSB    0
+#define DBE_VT_XYMAX_VT_MAXY_MSB    23
+#define DBE_VT_XYMAX_VT_MAXY_LSB    12
+#define DBE_VT_HPIXEN_VT_HPIXEN_ON_MSB      23
+#define DBE_VT_HPIXEN_VT_HPIXEN_ON_LSB      12
+#define DBE_VT_HPIXEN_VT_HPIXEN_OFF_MSB     11
+#define DBE_VT_HPIXEN_VT_HPIXEN_OFF_LSB     0
+#define DBE_VT_VPIXEN_VT_VPIXEN_ON_MSB      23
+#define DBE_VT_VPIXEN_VT_VPIXEN_ON_LSB      12
+#define DBE_VT_VPIXEN_VT_VPIXEN_OFF_MSB     11
+#define DBE_VT_VPIXEN_VT_VPIXEN_OFF_LSB     0
+#define DBE_OVR_CONTROL_OVR_DMA_ENABLE_MSB  0
+#define DBE_OVR_CONTROL_OVR_DMA_ENABLE_LSB  0
+#define DBE_OVR_INHWCTRL_OVR_DMA_ENABLE_MSB 0
+#define DBE_OVR_INHWCTRL_OVR_DMA_ENABLE_LSB 0
+#define DBE_OVR_WIDTH_TILE_OVR_FIFO_RESET_MSB       13
+#define DBE_OVR_WIDTH_TILE_OVR_FIFO_RESET_LSB       13
+#define DBE_FRM_CONTROL_FRM_DMA_ENABLE_MSB  0
+#define DBE_FRM_CONTROL_FRM_DMA_ENABLE_LSB  0
+#define DBE_FRM_CONTROL_FRM_TILE_PTR_MSB    31
+#define DBE_FRM_CONTROL_FRM_TILE_PTR_LSB    9
+#define DBE_FRM_CONTROL_FRM_LINEAR_MSB      1
+#define DBE_FRM_CONTROL_FRM_LINEAR_LSB      1
+#define DBE_FRM_INHWCTRL_FRM_DMA_ENABLE_MSB 0
+#define DBE_FRM_INHWCTRL_FRM_DMA_ENABLE_LSB 0
+#define DBE_FRM_SIZE_TILE_FRM_WIDTH_TILE_MSB        12
+#define DBE_FRM_SIZE_TILE_FRM_WIDTH_TILE_LSB        5
+#define DBE_FRM_SIZE_TILE_FRM_RHS_MSB       4
+#define DBE_FRM_SIZE_TILE_FRM_RHS_LSB       0
+#define DBE_FRM_SIZE_TILE_FRM_DEPTH_MSB     14
+#define DBE_FRM_SIZE_TILE_FRM_DEPTH_LSB     13
+#define DBE_FRM_SIZE_TILE_FRM_FIFO_RESET_MSB        15
+#define DBE_FRM_SIZE_TILE_FRM_FIFO_RESET_LSB        15
+#define DBE_FRM_SIZE_PIXEL_FB_HEIGHT_PIX_MSB        31
+#define DBE_FRM_SIZE_PIXEL_FB_HEIGHT_PIX_LSB        16
+#define DBE_DID_CONTROL_DID_DMA_ENABLE_MSB  0
+#define DBE_DID_CONTROL_DID_DMA_ENABLE_LSB  0
+#define DBE_DID_INHWCTRL_DID_DMA_ENABLE_MSB 0
+#define DBE_DID_INHWCTRL_DID_DMA_ENABLE_LSB 0
+#define DBE_DID_START_XY_DID_STARTY_MSB     23
+#define DBE_DID_START_XY_DID_STARTY_LSB     12
+#define DBE_DID_START_XY_DID_STARTX_MSB     11
+#define DBE_DID_START_XY_DID_STARTX_LSB     0
+#define DBE_CRS_START_XY_CRS_STARTY_MSB     23
+#define DBE_CRS_START_XY_CRS_STARTY_LSB     12
+#define DBE_CRS_START_XY_CRS_STARTX_MSB     11
+#define DBE_CRS_START_XY_CRS_STARTX_LSB     0
+#define DBE_WID_TYP_MSB     4
+#define DBE_WID_TYP_LSB     2
+#define DBE_WID_BUF_MSB     1
+#define DBE_WID_BUF_LSB     0
+#define DBE_VC_START_XY_VC_STARTY_MSB       23
+#define DBE_VC_START_XY_VC_STARTY_LSB       12
+#define DBE_VC_START_XY_VC_STARTX_MSB       11
+#define DBE_VC_START_XY_VC_STARTX_LSB       0
+#define DBE_FRM_DEPTH_8     0
+#define DBE_FRM_DEPTH_16    1
+#define DBE_FRM_DEPTH_32    2
+#define DBE_CMODE_I8        0
+#define DBE_CMODE_I12       1
+#define DBE_CMODE_RG3B2     2
+#define DBE_CMODE_RGB4      3
+#define DBE_CMODE_ARGB5     4
+#define DBE_CMODE_RGB8      5
+#define DBE_CMODE_RGBA5     6
+#define DBE_CMODE_RGB10     7
+#define DBE_BMODE_BOTH      3
+#define DBE_CRS_MAGIC       54
+#define DBE_CLOCK_REF_KHZ	27000
+#define DBE_CONFIG_VDAC_ENABLE       0x00000001
+#define DBE_CONFIG_VDAC_GSYNC        0x00000002
+#define DBE_CONFIG_VDAC_PBLANK       0x00000004
+#define DBE_CONFIG_FPENABLE          0x00000008
+#define DBE_CONFIG_LENDIAN           0x00000020
+#define DBE_CONFIG_TILEHIST          0x00000040
+#define DBE_CONFIG_EXT_ADDR          0x00000080
+#define DBE_CONFIG_FBDEV        ( DBE_CONFIG_VDAC_ENABLE | \
+DBE_CONFIG_VDAC_GSYNC  | \
+DBE_CONFIG_VDAC_PBLANK | \
+DBE_CONFIG_LENDIAN     | \
+DBE_CONFIG_EXT_ADDR )
+typedef enum  dbe_timing_t;
+struct dbe_timing_info
+;
+#define DBE_VOF_UNKNOWNMON    1
+#define DBE_VOF_STEREO        2
+#define DBE_VOF_DO_GENSYNC    4
+#define DBE_VOF_SYNC_ON_GREEN 8
+#define DBE_VOF_FLATPANEL     0x1000
+#define DBE_VOF_MAGICKEY      0x2000
+struct dbe_timing_info dbeVTimings[] = ;

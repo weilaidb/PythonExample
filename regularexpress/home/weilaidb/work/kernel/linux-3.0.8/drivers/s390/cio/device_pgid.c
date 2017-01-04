@@ -1,0 +1,31 @@
+#define PGID_RETRIES	256
+#define PGID_TIMEOUT	(10 * HZ)
+static void verify_done(struct ccw_device *cdev, int rc)
+static void nop_build_cp(struct ccw_device *cdev)
+static void nop_do(struct ccw_device *cdev)
+static enum io_status nop_filter(struct ccw_device *cdev, void *data,
+struct irb *irb, enum io_status status)
+static void nop_callback(struct ccw_device *cdev, void *data, int rc)
+static void spid_build_cp(struct ccw_device *cdev, u8 fn)
+static void spid_do(struct ccw_device *cdev)
+static void verify_start(struct ccw_device *cdev);
+static void spid_callback(struct ccw_device *cdev, void *data, int rc)
+static void spid_start(struct ccw_device *cdev)
+static int pgid_is_reset(struct pgid *p)
+static int pgid_cmp(struct pgid *p1, struct pgid *p2)
+static void pgid_analyze(struct ccw_device *cdev, struct pgid **p,
+int *mismatch, int *reserved, u8 *reset)
+static u8 pgid_to_donepm(struct ccw_device *cdev)
+static void pgid_fill(struct ccw_device *cdev, struct pgid *pgid)
+static void snid_done(struct ccw_device *cdev, int rc)
+static void snid_build_cp(struct ccw_device *cdev)
+static void snid_do(struct ccw_device *cdev)
+static void snid_callback(struct ccw_device *cdev, void *data, int rc)
+static void verify_start(struct ccw_device *cdev)
+void ccw_device_verify_start(struct ccw_device *cdev)
+static void disband_callback(struct ccw_device *cdev, void *data, int rc)
+void ccw_device_disband_start(struct ccw_device *cdev)
+static void stlck_build_cp(struct ccw_device *cdev, void *buf1, void *buf2)
+static void stlck_callback(struct ccw_device *cdev, void *data, int rc)
+void ccw_device_stlck_start(struct ccw_device *cdev, void *data, void *buf1,
+void *buf2)

@@ -1,0 +1,2 @@
+void
+GetTime(HTimestampData *ts)

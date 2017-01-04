@@ -1,0 +1,6 @@
+const char *zmq::errno_to_string (int errno_)
+void zmq::zmq_abort(const char *errmsg_)
+const char *zmq::wsa_error()
+const char *zmq::wsa_error_no (int no_)
+void zmq::win_error (char *buffer_, size_t buffer_size_)
+int zmq::wsa_error_to_errno (int errcode)

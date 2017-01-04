@@ -1,0 +1,23 @@
+static int make_idx_node(struct ubifs_info *c, struct ubifs_idx_node *idx,
+struct ubifs_znode *znode, int lnum, int offs, int len)
+static int fill_gap(struct ubifs_info *c, int lnum, int gap_start, int gap_end,
+int *dirt)
+static int find_old_idx(struct ubifs_info *c, int lnum, int offs)
+static int is_idx_node_in_use(struct ubifs_info *c, union ubifs_key *key,
+int level, int lnum, int offs)
+static int layout_leb_in_gaps(struct ubifs_info *c, int *p)
+static int get_leb_cnt(struct ubifs_info *c, int cnt)
+static int layout_in_gaps(struct ubifs_info *c, int cnt)
+static int layout_in_empty_space(struct ubifs_info *c)
+static int layout_commit(struct ubifs_info *c, int no_space, int cnt)
+static struct ubifs_znode *find_first_dirty(struct ubifs_znode *znode)
+static struct ubifs_znode *find_next_dirty(struct ubifs_znode *znode)
+static int get_znodes_to_commit(struct ubifs_info *c)
+static int alloc_idx_lebs(struct ubifs_info *c, int cnt)
+static int free_unused_idx_lebs(struct ubifs_info *c)
+static int free_idx_lebs(struct ubifs_info *c)
+int ubifs_tnc_start_commit(struct ubifs_info *c, struct ubifs_zbranch *zroot)
+static int write_index(struct ubifs_info *c)
+static void free_obsolete_znodes(struct ubifs_info *c)
+static int return_gap_lebs(struct ubifs_info *c)
+int ubifs_tnc_end_commit(struct ubifs_info *c)

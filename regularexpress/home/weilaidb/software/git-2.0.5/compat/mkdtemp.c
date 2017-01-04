@@ -1,0 +1,1 @@
+char *gitmkdtemp(char *template)

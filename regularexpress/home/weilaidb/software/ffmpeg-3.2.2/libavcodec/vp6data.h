@@ -1,0 +1,19 @@
+#define AVCODEC_VP6DATA_H
+static const uint8_t vp6_def_fdv_vector_model[2][8] = ;
+static const uint8_t vp6_def_pdv_vector_model[2][7] = ;
+static const uint8_t vp6_def_coeff_reorder[] = ;
+static const uint8_t vp6_def_runv_coeff_model[2][14] = ;
+static const uint8_t vp6_sig_dct_pct[2][2] = ;
+static const uint8_t vp6_pdv_pct[2][7] = ;
+static const uint8_t vp6_fdv_pct[2][8] = ;
+static const uint8_t vp6_dccv_pct[2][11] = ;
+static const uint8_t vp6_coeff_reorder_pct[] =  ;
+static const uint8_t vp6_runv_pct[2][14] = ;
+static const uint8_t vp6_ract_pct[3][2][6][11] = ;
+static const int vp6_dccv_lc[3][5][2] = ;
+static const uint8_t vp6_coeff_groups[] = ;
+static const int16_t vp6_block_copy_filter[17][8][4] = ;
+static const VP56Tree vp6_pcr_tree[] = ;
+static const uint8_t vp6_coord_div[] = ;
+static const uint8_t vp6_huff_coeff_map[] = ;
+static const uint8_t vp6_huff_run_map[] = ;

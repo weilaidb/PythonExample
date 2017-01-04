@@ -1,0 +1,23 @@
+package com.sleepycat.je.rep;
+import static com.sleepycat.je.rep.impl.RepParams.GROUP_NAME;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.net.InetSocketAddress;
+import java.util.HashSet;
+import java.util.Set;
+import org.junit.Test;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.dbi.DbConfigManager;
+import com.sleepycat.je.dbi.EnvironmentFailureReason;
+import com.sleepycat.je.rep.impl.RepGroupImpl;
+import com.sleepycat.je.rep.impl.RepImpl;
+import com.sleepycat.je.rep.impl.RepNodeImpl;
+import com.sleepycat.je.rep.impl.RepTestBase;
+import com.sleepycat.je.rep.impl.node.NameIdPair;
+import com.sleepycat.je.rep.util.ReplicationGroupAdmin;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+public class RepGroupAdminTest extends RepTestBase

@@ -1,0 +1,1 @@
+#elif defined(__IA64_ASM_PARAVIRTUALIZED_XEN)

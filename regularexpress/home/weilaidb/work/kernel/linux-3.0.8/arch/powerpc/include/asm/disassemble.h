@@ -1,0 +1,12 @@
+#define __ASM_PPC_DISASSEMBLE_H__
+static inline unsigned int get_op(u32 inst)
+static inline unsigned int get_xop(u32 inst)
+static inline unsigned int get_sprn(u32 inst)
+static inline unsigned int get_dcrn(u32 inst)
+static inline unsigned int get_rt(u32 inst)
+static inline unsigned int get_rs(u32 inst)
+static inline unsigned int get_ra(u32 inst)
+static inline unsigned int get_rb(u32 inst)
+static inline unsigned int get_rc(u32 inst)
+static inline unsigned int get_ws(u32 inst)
+static inline unsigned int get_d(u32 inst)

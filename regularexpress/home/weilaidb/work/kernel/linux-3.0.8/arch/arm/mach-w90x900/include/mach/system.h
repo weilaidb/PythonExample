@@ -1,0 +1,6 @@
+#define	WTCR	(TMR_BA + 0x1C)
+#define	WTCLK	(1 << 10)
+#define	WTE	(1 << 7)
+#define	WTRE	(1 << 1)
+static void arch_idle(void)
+static void arch_reset(char mode, const char *cmd)

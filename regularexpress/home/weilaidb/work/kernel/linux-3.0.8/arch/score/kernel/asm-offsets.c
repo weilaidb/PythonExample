@@ -1,0 +1,7 @@
+void output_ptreg_defines(void)
+void output_task_defines(void)
+void output_thread_info_defines(void)
+void output_thread_defines(void)
+void output_mm_defines(void)
+void output_sc_defines(void)
+void output_signal_defined(void)

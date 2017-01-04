@@ -1,0 +1,27 @@
+package com.sleepycat.je.tree;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.io.File;
+import java.util.Random;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.config.EnvironmentParams;
+import com.sleepycat.je.dbi.DatabaseId;
+import com.sleepycat.je.dbi.DatabaseImpl;
+import com.sleepycat.je.dbi.EnvironmentFailureReason;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.tree.Key.DumpType;
+import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.je.utilint.DbLsn;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class INTest extends TestBase

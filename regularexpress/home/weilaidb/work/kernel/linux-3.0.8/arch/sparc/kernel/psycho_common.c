@@ -1,0 +1,78 @@
+#define  PSYCHO_STRBUF_CTRL_DENAB	0x0000000000000002ULL
+#define  PSYCHO_STCERR_WRITE		0x0000000000000002ULL
+#define  PSYCHO_STCERR_READ		0x0000000000000001ULL
+#define  PSYCHO_STCTAG_PPN		0x0fffffff00000000ULL
+#define  PSYCHO_STCTAG_VPN		0x00000000ffffe000ULL
+#define  PSYCHO_STCTAG_VALID		0x0000000000000002ULL
+#define  PSYCHO_STCTAG_WRITE		0x0000000000000001ULL
+#define  PSYCHO_STCLINE_LINDX		0x0000000001e00000ULL
+#define  PSYCHO_STCLINE_SPTR		0x00000000001f8000ULL
+#define  PSYCHO_STCLINE_LADDR		0x0000000000007f00ULL
+#define  PSYCHO_STCLINE_EPTR		0x00000000000000fcULL
+#define  PSYCHO_STCLINE_VALID		0x0000000000000002ULL
+#define  PSYCHO_STCLINE_FOFN		0x0000000000000001ULL
+static DEFINE_SPINLOCK(stc_buf_lock);
+static unsigned long stc_error_buf[128];
+static unsigned long stc_tag_buf[16];
+static unsigned long stc_line_buf[16];
+static void psycho_check_stc_error(struct pci_pbm_info *pbm)
+#define PSYCHO_IOMMU_TAG		0xa580UL
+#define PSYCHO_IOMMU_DATA		0xa600UL
+static void psycho_record_iommu_tags_and_data(struct pci_pbm_info *pbm,
+u64 *tag, u64 *data)
+#define  PSYCHO_IOMMU_TAG_ERRSTS (0x3UL << 23UL)
+#define  PSYCHO_IOMMU_TAG_ERR	 (0x1UL << 22UL)
+#define  PSYCHO_IOMMU_TAG_WRITE	 (0x1UL << 21UL)
+#define  PSYCHO_IOMMU_TAG_STREAM (0x1UL << 20UL)
+#define  PSYCHO_IOMMU_TAG_SIZE	 (0x1UL << 19UL)
+#define  PSYCHO_IOMMU_TAG_VPAGE	 0x7ffffULL
+#define  PSYCHO_IOMMU_DATA_VALID (1UL << 30UL)
+#define  PSYCHO_IOMMU_DATA_CACHE (1UL << 28UL)
+#define  PSYCHO_IOMMU_DATA_PPAGE 0xfffffffULL
+static void psycho_dump_iommu_tags_and_data(struct pci_pbm_info *pbm,
+u64 *tag, u64 *data)
+#define  PSYCHO_IOMMU_CTRL_XLTESTAT	0x0000000006000000UL
+#define  PSYCHO_IOMMU_CTRL_XLTEERR	0x0000000001000000UL
+void psycho_check_iommu_error(struct pci_pbm_info *pbm,
+unsigned long afsr,
+unsigned long afar,
+enum psycho_error_type type)
+#define  PSYCHO_PCICTRL_SBH_ERR	 0x0000000800000000UL
+#define  PSYCHO_PCICTRL_SERR	 0x0000000400000000UL
+static irqreturn_t psycho_pcierr_intr_other(struct pci_pbm_info *pbm)
+#define  PSYCHO_PCIAFSR_PMA	0x8000000000000000ULL
+#define  PSYCHO_PCIAFSR_PTA	0x4000000000000000ULL
+#define  PSYCHO_PCIAFSR_PRTRY	0x2000000000000000ULL
+#define  PSYCHO_PCIAFSR_PPERR	0x1000000000000000ULL
+#define  PSYCHO_PCIAFSR_SMA	0x0800000000000000ULL
+#define  PSYCHO_PCIAFSR_STA	0x0400000000000000ULL
+#define  PSYCHO_PCIAFSR_SRTRY	0x0200000000000000ULL
+#define  PSYCHO_PCIAFSR_SPERR	0x0100000000000000ULL
+#define  PSYCHO_PCIAFSR_RESV1	0x00ff000000000000ULL
+#define  PSYCHO_PCIAFSR_BMSK	0x0000ffff00000000ULL
+#define  PSYCHO_PCIAFSR_BLK	0x0000000080000000ULL
+#define  PSYCHO_PCIAFSR_RESV2	0x0000000040000000ULL
+#define  PSYCHO_PCIAFSR_MID	0x000000003e000000ULL
+#define  PSYCHO_PCIAFSR_RESV3	0x0000000001ffffffULL
+irqreturn_t psycho_pcierr_intr(int irq, void *dev_id)
+static void psycho_iommu_flush(struct pci_pbm_info *pbm)
+#define PSYCHO_IOMMU_CONTROL		0x0200UL
+#define  PSYCHO_IOMMU_CTRL_TSBSZ	0x0000000000070000UL
+#define  PSYCHO_IOMMU_TSBSZ_1K      	0x0000000000000000UL
+#define  PSYCHO_IOMMU_TSBSZ_2K      	0x0000000000010000UL
+#define  PSYCHO_IOMMU_TSBSZ_4K      	0x0000000000020000UL
+#define  PSYCHO_IOMMU_TSBSZ_8K      	0x0000000000030000UL
+#define  PSYCHO_IOMMU_TSBSZ_16K     	0x0000000000040000UL
+#define  PSYCHO_IOMMU_TSBSZ_32K     	0x0000000000050000UL
+#define  PSYCHO_IOMMU_TSBSZ_64K     	0x0000000000060000UL
+#define  PSYCHO_IOMMU_TSBSZ_128K    	0x0000000000070000UL
+#define  PSYCHO_IOMMU_CTRL_TBWSZ    	0x0000000000000004UL
+#define  PSYCHO_IOMMU_CTRL_DENAB    	0x0000000000000002UL
+#define  PSYCHO_IOMMU_CTRL_ENAB     	0x0000000000000001UL
+#define PSYCHO_IOMMU_FLUSH		0x0210UL
+#define PSYCHO_IOMMU_TSBBASE		0x0208UL
+int psycho_iommu_init(struct pci_pbm_info *pbm, int tsbsize,
+u32 dvma_offset, u32 dma_mask,
+unsigned long write_complete_offset)
+void psycho_pbm_init_common(struct pci_pbm_info *pbm, struct platform_device *op,
+const char *chip_name, int chip_type)

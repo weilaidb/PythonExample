@@ -1,0 +1,2 @@
+#define _SDL_test_h
+#define SDLTEST_MAX_LOGMESSAGE_LENGTH   3584

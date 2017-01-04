@@ -1,0 +1,1 @@
+#define __ASMCRIS_AUXVEC_H

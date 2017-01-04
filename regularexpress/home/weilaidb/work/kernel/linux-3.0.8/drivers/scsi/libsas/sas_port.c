@@ -1,0 +1,12 @@
+static bool phy_is_wideport_member(struct asd_sas_port *port, struct asd_sas_phy *phy)
+static void sas_form_port(struct asd_sas_phy *phy)
+void sas_deform_port(struct asd_sas_phy *phy, int gone)
+void sas_porte_bytes_dmaed(struct work_struct *work)
+void sas_porte_broadcast_rcvd(struct work_struct *work)
+void sas_porte_link_reset_err(struct work_struct *work)
+void sas_porte_timer_event(struct work_struct *work)
+void sas_porte_hard_reset(struct work_struct *work)
+static void sas_init_port(struct asd_sas_port *port,
+struct sas_ha_struct *sas_ha, int i)
+int sas_register_ports(struct sas_ha_struct *sas_ha)
+void sas_unregister_ports(struct sas_ha_struct *sas_ha)

@@ -1,0 +1,23 @@
+package com.sleepycat.je.rep.stream;
+import java.io.File;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.Durability;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.Durability.ReplicaAckPolicy;
+import com.sleepycat.je.Durability.SyncPolicy;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.log.FileReader;
+import com.sleepycat.je.log.LogEntryHeader;
+import com.sleepycat.je.log.entry.LogEntry;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.ReplicationConfig;
+import com.sleepycat.je.rep.UnknownMasterException;
+import com.sleepycat.je.rep.impl.RepParams;
+import com.sleepycat.je.rep.impl.node.LocalCBVLSNUpdater;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.utilint.DbLsn;
+import com.sleepycat.je.utilint.VLSN;
+public class VLSNTestUtils

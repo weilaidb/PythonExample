@@ -1,0 +1,1 @@
+#define __ASM_MACH_VR41XX_IRQ_H

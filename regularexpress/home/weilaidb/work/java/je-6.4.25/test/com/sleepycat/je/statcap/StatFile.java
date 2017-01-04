@@ -1,0 +1,22 @@
+package com.sleepycat.je.statcap;
+import static org.junit.Assert.assertTrue;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileFilter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.SortedMap;
+import java.util.SortedSet;
+import java.util.TreeMap;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.rep.utilint.StatCaptureRepDefinitions;
+import com.sleepycat.je.utilint.Stat;
+import com.sleepycat.je.utilint.StatDefinition;
+import com.sleepycat.je.utilint.StatDefinition.StatType;
+import com.sleepycat.je.utilint.StatGroup;
+public class StatFile

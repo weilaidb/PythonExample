@@ -1,0 +1,23 @@
+package com.sleepycat.je.rep;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static com.sleepycat.je.rep.impl.RepParams.COMMIT_TO_NETWORK;
+import static com.sleepycat.je.rep.impl.RepParams.TEST_JE_VERSION;
+import static com.sleepycat.je.rep.impl.RepParams.TEST_REPLICA_DELAY;
+import java.util.Arrays;
+import org.junit.Test;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.JEVersion;
+import com.sleepycat.je.StatsConfig;
+import com.sleepycat.je.TransactionConfig;
+import com.sleepycat.je.rep.QuorumPolicy;
+import com.sleepycat.je.rep.impl.RepGroupImpl;
+import com.sleepycat.je.rep.impl.RepTestBase;
+import com.sleepycat.je.rep.impl.node.Feeder;
+import com.sleepycat.je.rep.utilint.BinaryProtocol.Message;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.je.utilint.TestHookAdapter;
+import com.sleepycat.je.utilint.WaitTestHook;
+public class SecondaryNodeTest extends RepTestBase

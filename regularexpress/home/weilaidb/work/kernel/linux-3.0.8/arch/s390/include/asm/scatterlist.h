@@ -1,0 +1,1 @@
+#define ARCH_HAS_SG_CHAIN

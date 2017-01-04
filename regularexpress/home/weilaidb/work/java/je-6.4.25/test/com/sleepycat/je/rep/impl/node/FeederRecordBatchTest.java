@@ -1,0 +1,20 @@
+package com.sleepycat.je.rep.impl.node;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.bind.tuple.IntegerBinding;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.StatsConfig;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.TransactionConfig;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.ReplicatedEnvironment.State;
+import com.sleepycat.je.rep.ReplicatedEnvironmentStats;
+import com.sleepycat.je.rep.ReplicationConfig;
+import com.sleepycat.je.rep.impl.RepParams;
+import com.sleepycat.je.rep.impl.RepTestBase;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.utilint.VLSN;
+public class FeederRecordBatchTest extends RepTestBase

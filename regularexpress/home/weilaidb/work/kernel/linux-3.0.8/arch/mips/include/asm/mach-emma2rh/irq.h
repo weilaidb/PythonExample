@@ -1,0 +1,2 @@
+#define __ASM_MACH_EMMA2RH_IRQ_H
+#define NR_IRQS	256

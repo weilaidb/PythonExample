@@ -1,0 +1,9 @@
+#define CPU_DMA_REGISTER_H
+#define CHCR_TS_LOW_MASK	0x18
+#define CHCR_TS_LOW_SHIFT	3
+#define CHCR_TS_HIGH_MASK	0
+#define CHCR_TS_HIGH_SHIFT	0
+#define DMAOR_INIT	DMAOR_DME
+enum ;
+#define TS_SHIFT
+#define TS_INDEX2VAL(i)	(((i) & 3) << CHCR_TS_LOW_SHIFT)

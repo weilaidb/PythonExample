@@ -1,0 +1,8 @@
+#define AVCODEC_D3D11VA_H
+#if !defined(_WIN32_WINNT) || _WIN32_WINNT < 0x0602
+#undef _WIN32_WINNT
+#define _WIN32_WINNT 0x0602
+#define FF_DXVA2_WORKAROUND_SCALING_LIST_ZIGZAG 1
+#define FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO    2
+typedef struct AVD3D11VAContext  AVD3D11VAContext;
+AVD3D11VAContext *av_d3d11va_alloc_context(void);

@@ -1,0 +1,26 @@
+package com.sleepycat.je.rep.subscription;
+import java.io.Serializable;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.UnknownHostException;
+import java.util.Properties;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.config.DurationConfigParam;
+import com.sleepycat.je.config.EnvironmentParams;
+import com.sleepycat.je.config.IntConfigParam;
+import com.sleepycat.je.dbi.DatabaseId;
+import com.sleepycat.je.dbi.DatabaseImpl;
+import com.sleepycat.je.dbi.DbConfigManager;
+import com.sleepycat.je.rep.ReplicationConfig;
+import com.sleepycat.je.rep.ReplicationNetworkConfig;
+import com.sleepycat.je.rep.impl.RepImpl;
+import com.sleepycat.je.rep.impl.RepParams;
+import com.sleepycat.je.rep.stream.FeederFilter;
+import com.sleepycat.je.rep.stream.OutputWireRecord;
+import com.sleepycat.je.rep.utilint.HostPortPair;
+import com.sleepycat.je.utilint.DatabaseUtil;
+import com.sleepycat.je.utilint.PropUtil;
+import com.sleepycat.je.utilint.VLSN;
+public class SubscriptionConfig implements Cloneable

@@ -1,0 +1,7 @@
+#define SERIAL_BASE ((volatile unsigned char *)0x400003f8)
+static inline void putc(int c)
+static inline void flush(void)
+static void putn(unsigned long z)
+static void putr()
+#define arch_decomp_setup()
+#define arch_decomp_wdog()

@@ -1,0 +1,154 @@
+--- test/backup.test
++++ test/backup.test
+@@ -73,7 +73,7 @@
+# Check that it is possible to create and finish backup operations.
+#
+do_test backup-1.3.1
+@@ -164,12 +164,12 @@
+set file_dest temp
+}] {
+foreach rows_dest  {
+-foreach pgsz_dest  {
++foreach pgsz_dest  {
+foreach nPagePerStep  {
+# Open the databases.
+-  catch
+-  catch
++  catch
++  catch
+eval $zOpenScript
+# Set to true if copying to an in-memory destination. Copying to an
+@@ -191,6 +191,7 @@
+# Set up the content of the source database.
+execsql {
+PRAGMA page_size = 1024;
++      PRAGMA cache_size = 4000;
+BEGIN;
+CREATE TABLE t1(a, b);
+CREATE INDEX i1 ON t1(a, b);
+@@ -206,6 +207,7 @@
+# Set up the content of the target database.
+execsql "PRAGMA $.page_size = $" $db_dest
++    execsql "PRAGMA $.cache_size = 4000" $db_dest
+if  {
+execsql "
+BEGIN;
+@@ -245,120 +248,6 @@
+#---------------------------------------------------------------------
+#---------------------------------------------------------------------
+-# These tests, backup-3.*, ensure that nothing goes wrong if either
+-# the source or destination database are large enough to include the
+-# the locking-page (the page that contains the range of bytes that
+-# the locks are applied to). These tests assume that the pending
+-# byte is at offset 0x00010000 (64KB offset), as set by tester.tcl,
+-# not at the 1GB offset as it usually is.
+-#
+-# The test procedure is as follows (same procedure as used for
+-# the backup-2.* tests):
+-#
+-#   1) Populate the source database.
+-#   2) Populate the destination database.
+-#   3) Run the backup to completion. (backup-3.*.1)
+-#   4) Integrity check the destination db. (backup-3.*.2)
+-#   5) Check that the contents of the destination db is the same as that
+-#      of the source db. (backup-3.*.3)
+-#
+-# The test procedure is run with the following parameters varied:
+-#
+-#   * Source database includes pending-byte page.
+-#   * Source database does not include pending-byte page.
+-#
+-#   * Target database includes pending-byte page.
+-#   * Target database does not include pending-byte page.
+-#
+-#   * Target database page-size is the same as the source, OR
+-#   * Target database page-size is larger than the source, OR
+-#   * Target database page-size is smaller than the source.
+-#
+-set iTest 1
+-foreach nSrcPg
+-
+-#--------------------------------------------------------------------
+-do_test backup-3.$iTest.1
+-
+-do_test backup-3.$iTest.2
+-
+-#
+-# End of backup-3.* tests.
+-#---------------------------------------------------------------------
+-
+-
+-#---------------------------------------------------------------------
+# The following tests, backup-4.*, test various error conditions:
+#
+# backup-4.1.*: Test invalid database names.
+@@ -492,11 +380,11 @@
+#
+set iTest 0
+forcedelete bak.db-wal
+-foreach   {
++foreach
+do_test backup-5.$iTest.1.3
+do_test backup-5.$iTest.1.4 {
+B finish
+@@ -597,9 +485,9 @@
+catch
+catch
+catch
+-  catch
++  catch
+sqlite3 db2 bak.db
+-  catch
++  catch
+sqlite3 db $file
+sqlite3 db3 $file
+do_test backup-5.$iTest.5.1
+integrity_check backup-5.$iTest.5.5 db2
+-  test_contents backup-5.$iTest.5.6 db main db2 main
+catch
+catch
+catch
+@@ -705,6 +592,7 @@
+catch
+sqlite3 db2 test2.db
+sqlite3 db test.db
++  sqlite3 db3 test.db
+execsql
+-do_test backup-7.1.2
+-do_test backup-7.1.3
+do_test backup-7.2.1
+-do_test backup-7.2.2
+do_test backup-7.2.3
+do_test backup-7.3.2
+do_test backup-7.3.3 {
+@@ -773,7 +650,6 @@
+test_contents backup-7.3.4 db main db2 main
+integrity_check backup-7.3.5 db2
+catch
+-catch
+#-----------------------------------------------------------------------
+# The following tests, backup-8.*, test attaching multiple backup
+@@ -916,16 +791,24 @@
+#
+#   10.1.*: If the db is in-memory, the backup is restarted.
+#   10.2.*: If the db is a file, the backup is not restarted.
++#   10.2.*: If the db is a file, the backup is restarted.
++#   10.3.*: If the db is in-memory, and not updated, the backup is not
++#           restarted
++#   10.4.*: If the db is a file,and not updated, the backup is not
++#           restarted
+#
+db close
+forcedelete test.db test.db-journal
+-foreach  {
+-  1 test.db  SQLITE_DONE
+-  2 :memory: SQLITE_OK
++foreach   {
+do_test backup-10.$tn.1
+-  do_test backup-10.$tn.2
+-
+do_test backup-10.$tn.3
+-  do_test backup-10.$tn.4
++  if
+do_test backup-10.$tn.5 {
+B step 50

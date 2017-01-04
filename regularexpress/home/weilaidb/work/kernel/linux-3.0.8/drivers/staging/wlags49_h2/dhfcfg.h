@@ -1,0 +1,9 @@
+#define DHFCFG_H
+#define DHF_WCI
+#define DHF_BIG_ENDIAN
+#define DHF_LITTLE_ENDIAN
+#define _INC_STDLIB
+#define _INC_STRING
+#define DSF_VOLATILE_ONLY
+#define DSF_HERMESII
+#undef DSF_HERMESII

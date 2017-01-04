@@ -1,0 +1,2 @@
+struct SDL_mutex
+;

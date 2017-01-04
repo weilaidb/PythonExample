@@ -1,0 +1,5 @@
+Dbt::Dbt()
+Dbt::Dbt(void *data_arg, u_int32_t size_arg)
+Dbt::~Dbt()
+Dbt::Dbt(const Dbt &that)
+Dbt &Dbt::operator = (const Dbt &that)

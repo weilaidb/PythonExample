@@ -1,0 +1,24 @@
+package com.sleepycat.je.rep.impl;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.net.UnknownHostException;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.je.JEVersion;
+import com.sleepycat.je.rep.NodeType;
+import com.sleepycat.je.rep.impl.RepGroupProtocol.EnsureNode;
+import com.sleepycat.je.rep.impl.RepGroupProtocol.GroupRequest;
+import com.sleepycat.je.rep.impl.RepGroupProtocol.GroupResponse;
+import com.sleepycat.je.rep.impl.RepGroupProtocol.TransferMaster;
+import com.sleepycat.je.rep.impl.TextProtocol.InvalidMessageException;
+import com.sleepycat.je.rep.impl.TextProtocol.Message;
+import com.sleepycat.je.rep.impl.node.NameIdPair;
+import com.sleepycat.je.rep.net.DataChannelFactory;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.net.DataChannelFactoryBuilder;
+public class RepGroupProtocolTest extends TextProtocolTestBase

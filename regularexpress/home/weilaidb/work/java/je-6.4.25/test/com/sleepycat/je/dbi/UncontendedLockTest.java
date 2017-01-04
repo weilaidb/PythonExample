@@ -1,0 +1,25 @@
+package com.sleepycat.je.dbi;
+import static com.sleepycat.je.txn.LockStatDefinition.LOCK_READ_LOCKS;
+import static com.sleepycat.je.txn.LockStatDefinition.LOCK_WRITE_LOCKS;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import java.io.File;
+import org.junit.After;
+import org.junit.Test;
+import com.sleepycat.bind.tuple.IntegerBinding;
+import com.sleepycat.je.Cursor;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.EnvironmentStats;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.StatsConfig;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.util.DualTestCase;
+import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.je.utilint.StatGroup;
+import com.sleepycat.util.test.SharedTestUtils;
+public class UncontendedLockTest extends DualTestCase

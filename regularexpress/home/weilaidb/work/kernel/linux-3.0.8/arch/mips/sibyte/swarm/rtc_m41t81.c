@@ -1,0 +1,52 @@
+#define M41T81REG_SC_ST		0x80
+#define M41T81REG_HR_CB		0x40
+#define M41T81REG_HR_CEB	0x80
+#define M41T81REG_CTL_S		0x20
+#define M41T81REG_CTL_FT	0x40
+#define M41T81REG_CTL_OUT	0x80
+#define M41T81REG_WD_RB0	0x01
+#define M41T81REG_WD_RB1	0x02
+#define M41T81REG_WD_BMB0	0x04
+#define M41T81REG_WD_BMB1	0x08
+#define M41T81REG_WD_BMB2	0x10
+#define M41T81REG_WD_BMB3	0x20
+#define M41T81REG_WD_BMB4	0x40
+#define M41T81REG_AMO_ABE	0x20
+#define M41T81REG_AMO_SQWE	0x40
+#define M41T81REG_AMO_AFE	0x80
+#define M41T81REG_ADT_RPT5	0x40
+#define M41T81REG_ADT_RPT4	0x80
+#define M41T81REG_AHR_RPT3	0x80
+#define M41T81REG_AHR_HT	0x40
+#define M41T81REG_AMN_RPT2	0x80
+#define M41T81REG_ASC_RPT1	0x80
+#define M41T81REG_FLG_AF	0x40
+#define M41T81REG_FLG_WDF	0x80
+#define M41T81REG_SQW_RS0	0x10
+#define M41T81REG_SQW_RS1	0x20
+#define M41T81REG_SQW_RS2	0x40
+#define M41T81REG_SQW_RS3	0x80
+#define M41T81REG_TSC	0x00
+#define M41T81REG_SC	0x01
+#define M41T81REG_MN	0x02
+#define M41T81REG_HR	0x03
+#define M41T81REG_DY	0x04
+#define M41T81REG_DT	0x05
+#define M41T81REG_MO	0x06
+#define M41T81REG_YR	0x07
+#define M41T81REG_CTL	0x08
+#define M41T81REG_WD	0x09
+#define M41T81REG_AMO	0x0A
+#define M41T81REG_ADT	0x0B
+#define M41T81REG_AHR	0x0C
+#define M41T81REG_AMN	0x0D
+#define M41T81REG_ASC	0x0E
+#define M41T81REG_FLG	0x0F
+#define M41T81REG_SQW	0x13
+#define M41T81_CCR_ADDRESS	0x68
+#define SMB_CSR(reg)	IOADDR(A_SMB_REGISTER(1, reg))
+static int m41t81_read(uint8_t addr)
+static int m41t81_write(uint8_t addr, int b)
+int m41t81_set_time(unsigned long t)
+unsigned long m41t81_get_time(void)
+int m41t81_probe(void)

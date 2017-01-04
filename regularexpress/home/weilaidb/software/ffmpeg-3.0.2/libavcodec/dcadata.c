@@ -1,0 +1,33 @@
+const uint32_t ff_dca_bit_rates[32] = ;
+const uint8_t ff_dca_channels[16] = ;
+const uint8_t ff_dca_bits_per_sample[8] = ;
+const uint8_t ff_dca_dmix_primary_nch[8] = ;
+const int16_t ff_dca_adpcm_vb[4096][4] = ;
+const uint32_t ff_dca_scale_factor_quant6[64] = ;
+const uint32_t ff_dca_scale_factor_quant7[128] = ;
+const uint32_t ff_dca_joint_scale_factors[129] = ;
+const uint32_t ff_dca_scale_factor_adj[4] = ;
+const uint32_t ff_dca_quant_levels[32] = ;
+const uint32_t ff_dca_lossy_quant[32] = ;
+const uint32_t ff_dca_lossless_quant[32] = ;
+DECLARE_ALIGNED(8, const int8_t, ff_dca_high_freq_vq)[1024][32] = ;
+DECLARE_ALIGNED(16, const float, ff_dca_fir_32bands_perfect)[512] = ;
+DECLARE_ALIGNED(16, const float, ff_dca_fir_32bands_nonperfect)[512] = ;
+#define SCALE(c) ((c) / (256.0f * 32768.0f))
+DECLARE_ALIGNED(16, const float, ff_dca_lfe_fir_64)[256] = ;
+DECLARE_ALIGNED(16, const float, ff_dca_lfe_fir_128)[256] = ;
+#undef SCALE
+DECLARE_ALIGNED(16, const float, ff_dca_fir_64bands)[1024] = ;
+DECLARE_ALIGNED(16, const int32_t, ff_dca_fir_32bands_perfect_fixed)[512] = ;
+DECLARE_ALIGNED(16, const int32_t, ff_dca_fir_32bands_nonperfect_fixed)[512] = ;
+DECLARE_ALIGNED(16, const int32_t, ff_dca_lfe_fir_64_fixed)[256] = ;
+DECLARE_ALIGNED(16, const int32_t, ff_dca_fir_64bands_fixed)[1024] = ;
+const uint16_t ff_dca_dmixtable[FF_DCA_DMIXTABLE_SIZE] = ;
+const uint32_t ff_dca_inv_dmixtable[FF_DCA_INV_DMIXTABLE_SIZE] = ;
+const uint16_t ff_dca_xll_refl_coeff[128] = ;
+const int32_t ff_dca_xll_band_coeff[20] = ;
+const int32_t ff_dca_sampling_freqs[16] = ;
+const int8_t ff_dca_lfe_index[16] = ;
+const int8_t ff_dca_channel_reorder_lfe[16][9] = ;
+const int8_t ff_dca_channel_reorder_nolfe[16][9] = ;
+const uint16_t ff_dca_vlc_offs[63] = ;

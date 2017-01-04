@@ -1,0 +1,60 @@
+#define FMOVQ	0x003
+#define FNEGQ	0x007
+#define FABSQ	0x00b
+#define FSQRTQ	0x02b
+#define FADDQ	0x043
+#define FSUBQ	0x047
+#define FMULQ	0x04b
+#define FDIVQ	0x04f
+#define FDMULQ	0x06e
+#define FQTOX	0x083
+#define FXTOQ	0x08c
+#define FQTOS	0x0c7
+#define FQTOD	0x0cb
+#define FITOQ	0x0cc
+#define FSTOQ	0x0cd
+#define FDTOQ	0x0ce
+#define FQTOI	0x0d3
+#define FSQRTS	0x029
+#define FSQRTD	0x02a
+#define FADDS	0x041
+#define FADDD	0x042
+#define FSUBS	0x045
+#define FSUBD	0x046
+#define FMULS	0x049
+#define FMULD	0x04a
+#define FDIVS	0x04d
+#define FDIVD	0x04e
+#define FSMULD	0x069
+#define FSTOX	0x081
+#define FDTOX	0x082
+#define FDTOS	0x0c6
+#define FSTOD	0x0c9
+#define FSTOI	0x0d1
+#define FDTOI	0x0d2
+#define FXTOS	0x084
+#define FXTOD	0x088
+#define FITOD	0x0c8
+#define FCMPQ	0x053
+#define FCMPEQ	0x057
+#define FMOVQ0	0x003
+#define FMOVQ1	0x043
+#define FMOVQ2	0x083
+#define FMOVQ3	0x0c3
+#define FMOVQI	0x103
+#define FMOVQX	0x183
+#define FMOVQZ	0x027
+#define FMOVQLE	0x047
+#define FMOVQLZ 0x067
+#define FMOVQNZ	0x0a7
+#define FMOVQGZ	0x0c7
+#define FMOVQGE 0x0e7
+#define FSR_TEM_SHIFT	23UL
+#define FSR_TEM_MASK	(0x1fUL << FSR_TEM_SHIFT)
+#define FSR_AEXC_SHIFT	5UL
+#define FSR_AEXC_MASK	(0x1fUL << FSR_AEXC_SHIFT)
+#define FSR_CEXC_SHIFT	0UL
+#define FSR_CEXC_MASK	(0x1fUL << FSR_CEXC_SHIFT)
+static inline int record_exception(struct pt_regs *regs, int eflag)
+typedef union  *argp;
+int do_mathemu(struct pt_regs *regs, struct fpustate *f)

@@ -1,0 +1,14 @@
+--- test/loadext.test
++++ test/loadext.test
+@@ -66,6 +66,26 @@
+set dlerror_nosymbol
+}
++if
++
++if
++
++if
++
+if  {
+set dlerror_nosuchfile
+set dlerror_notadll

@@ -1,0 +1,6 @@
+static av_always_inline void rv34_row_transform(int temp[16], int16_t *block)
+static void rv34_idct_add_c(uint8_t *dst, ptrdiff_t stride, int16_t *block)
+static void rv34_inv_transform_noround_c(int16_t *block)
+static void rv34_idct_dc_add_c(uint8_t *dst, ptrdiff_t stride, int dc)
+static void rv34_inv_transform_dc_noround_c(int16_t *block)
+av_cold void ff_rv34dsp_init(RV34DSPContext *c)

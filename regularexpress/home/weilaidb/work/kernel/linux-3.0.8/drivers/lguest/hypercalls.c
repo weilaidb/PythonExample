@@ -1,0 +1,5 @@
+static void do_hcall(struct lg_cpu *cpu, struct hcall_args *args)
+static void do_async_hcalls(struct lg_cpu *cpu)
+static void initialize(struct lg_cpu *cpu)
+void do_hypercalls(struct lg_cpu *cpu)
+void write_timestamp(struct lg_cpu *cpu)

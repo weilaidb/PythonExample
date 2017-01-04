@@ -1,0 +1,22 @@
+#define	_FC_NS_H_
+#define	FC_NS_SUBTYPE	    2
+enum fc_ns_req ;
+enum fc_ns_pt ;
+struct fc_ns_pt_obj ;
+struct fc_ns_fid ;
+#define	FC_NS_FID_LAST	0x80
+#define	FC_NS_TYPES	256
+#define	FC_NS_BPW	32
+struct fc_ns_fts ;
+struct fc_ns_ff	;
+struct fc_ns_gid_pt ;
+struct fc_ns_gid_ft ;
+struct fc_gpn_ft_resp ;
+struct fc_ns_gid_pn ;
+struct fc_gid_pn_resp ;
+struct fc_gspn_resp ;
+struct fc_ns_rft_id ;
+struct fc_ns_rn_id  __attribute__((__packed__));
+struct fc_ns_rsnn  __attribute__((__packed__));
+struct fc_ns_rspn  __attribute__((__packed__));
+struct fc_ns_rff_id  __attribute__((__packed__));

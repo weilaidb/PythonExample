@@ -1,0 +1,32 @@
+const struct HvReleaseData hvReleaseData = ;
+struct naca_struct naca = ;
+struct ItLpRegSave ;
+extern void system_reset_iSeries(void);
+extern void machine_check_iSeries(void);
+extern void data_access_iSeries(void);
+extern void instruction_access_iSeries(void);
+extern void hardware_interrupt_iSeries(void);
+extern void alignment_iSeries(void);
+extern void program_check_iSeries(void);
+extern void fp_unavailable_iSeries(void);
+extern void decrementer_iSeries(void);
+extern void trap_0a_iSeries(void);
+extern void trap_0b_iSeries(void);
+extern void system_call_iSeries(void);
+extern void single_step_iSeries(void);
+extern void trap_0e_iSeries(void);
+extern void performance_monitor_iSeries(void);
+extern void data_access_slb_iSeries(void);
+extern void instruction_access_slb_iSeries(void);
+struct ItLpNaca itLpNaca = ;
+static struct ItIplParmsReal xItIplParmsReal __attribute__((__section__(".data")));
+struct ItExtVpdPanel xItExtVpdPanel __attribute__((__section__(".data")));
+#define maxPhysicalProcessors 32
+struct IoHriProcessorVpd xIoHriProcessorVpd[maxPhysicalProcessors] = ;
+u64    xMsVpd[3400] __attribute__((__section__(".data")));
+static u64    xRecoveryLogBuffer[32] __attribute__((__section__(".data")));
+static const struct SpCommArea xSpCommArea = ;
+static const struct ItLpRegSave iseries_reg_save[] = ;
+#define ALPACA_INIT(number)						\
+const struct alpaca alpaca[] = ;
+const struct ItVpdAreas itVpdAreas = ;

@@ -1,0 +1,5 @@
+#define SERIAL_BASE	((unsigned char *)UART0_PHYS_BASE)
+static void putc(const char c)
+static void flush(void)
+#define arch_decomp_setup()
+#define arch_decomp_wdog()

@@ -1,0 +1,5 @@
+static void sh2a__flush_wback_region(void *start, int size)
+static void sh2a__flush_purge_region(void *start, int size)
+static void sh2a__flush_invalidate_region(void *start, int size)
+static void sh2a_flush_icache_range(void *args)
+void __init sh2a_cache_init(void)

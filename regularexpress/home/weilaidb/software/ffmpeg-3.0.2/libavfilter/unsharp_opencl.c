@@ -1,0 +1,10 @@
+#define PLANE_NUM 3
+#define ROUND_TO_16(a) (((((a) - 1)/16)+1)*16)
+static inline void add_mask_counter(uint32_t *dst, uint32_t *counter1, uint32_t *counter2, int len)
+static int compute_mask(int step, uint32_t *mask)
+static int copy_separable_masks(cl_mem cl_mask_x, cl_mem cl_mask_y, int step_x, int step_y)
+static int generate_mask(AVFilterContext *ctx)
+int ff_opencl_apply_unsharp(AVFilterContext *ctx, AVFrame *in, AVFrame *out)
+int ff_opencl_unsharp_init(AVFilterContext *ctx)
+void ff_opencl_unsharp_uninit(AVFilterContext *ctx)
+int ff_opencl_unsharp_process_inout_buf(AVFilterContext *ctx, AVFrame *in, AVFrame *out)

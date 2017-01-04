@@ -1,0 +1,35 @@
+package com.sleepycat.persist.test;
+import static com.sleepycat.persist.model.DeleteAction.NULLIFY;
+import static com.sleepycat.persist.model.Relationship.ONE_TO_MANY;
+import static com.sleepycat.persist.model.Relationship.ONE_TO_ONE;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Locale;
+import org.junit.After;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.SecondaryConfig;
+import com.sleepycat.je.SequenceConfig;
+import com.sleepycat.persist.EntityStore;
+import com.sleepycat.persist.PrimaryIndex;
+import com.sleepycat.persist.SecondaryIndex;
+import com.sleepycat.persist.StoreConfig;
+import com.sleepycat.persist.model.AnnotationModel;
+import com.sleepycat.persist.model.Entity;
+import com.sleepycat.persist.model.KeyField;
+import com.sleepycat.persist.model.Persistent;
+import com.sleepycat.persist.model.PersistentProxy;
+import com.sleepycat.persist.model.PrimaryKey;
+import com.sleepycat.persist.model.SecondaryKey;
+import com.sleepycat.util.test.TxnTestCase;
+@RunWith(Parameterized.class)
+public class NegativeTest extends TxnTestCase

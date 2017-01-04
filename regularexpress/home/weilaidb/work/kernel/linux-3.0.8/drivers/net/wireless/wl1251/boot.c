@@ -1,0 +1,8 @@
+void wl1251_boot_target_enable_interrupts(struct wl1251 *wl)
+int wl1251_boot_soft_reset(struct wl1251 *wl)
+int wl1251_boot_init_seq(struct wl1251 *wl)
+static void wl1251_boot_set_ecpu_ctrl(struct wl1251 *wl, u32 flag)
+int wl1251_boot_run_firmware(struct wl1251 *wl)
+static int wl1251_boot_upload_firmware(struct wl1251 *wl)
+static int wl1251_boot_upload_nvs(struct wl1251 *wl)
+int wl1251_boot(struct wl1251 *wl)

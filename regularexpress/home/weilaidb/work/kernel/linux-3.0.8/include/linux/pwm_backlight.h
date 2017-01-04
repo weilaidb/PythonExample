@@ -1,0 +1,2 @@
+#define __LINUX_PWM_BACKLIGHT_H
+struct platform_pwm_backlight_data ;

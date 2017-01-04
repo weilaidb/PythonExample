@@ -1,0 +1,30 @@
+package com.sleepycat.collections.test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
+import java.util.Map;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.bind.EntityBinding;
+import com.sleepycat.bind.EntryBinding;
+import com.sleepycat.bind.serial.ClassCatalog;
+import com.sleepycat.bind.serial.SerialBinding;
+import com.sleepycat.bind.serial.StoredClassCatalog;
+import com.sleepycat.bind.serial.TupleSerialBinding;
+import com.sleepycat.bind.tuple.IntegerBinding;
+import com.sleepycat.bind.tuple.TupleInput;
+import com.sleepycat.bind.tuple.TupleOutput;
+import com.sleepycat.collections.StoredMap;
+import com.sleepycat.collections.TransactionRunner;
+import com.sleepycat.collections.TransactionWorker;
+import com.sleepycat.compat.DbCompat;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.Environment;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+import com.sleepycat.util.test.TestEnv;
+public class NullValueTest extends TestBase
+implements TransactionWorker

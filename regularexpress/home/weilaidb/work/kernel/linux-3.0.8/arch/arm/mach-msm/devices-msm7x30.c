@@ -1,0 +1,12 @@
+static struct resource resources_uart2[] = ;
+struct platform_device msm_device_uart2 = ;
+struct platform_device msm_device_smd = ;
+static struct resource resources_otg[] = ;
+struct platform_device msm_device_otg = ;
+static struct resource resources_hsusb[] = ;
+struct platform_device msm_device_hsusb = ;
+static u64 dma_mask = 0xffffffffULL;
+static struct resource resources_hsusb_host[] = ;
+struct platform_device msm_device_hsusb_host = ;
+struct clk_lookup msm_clocks_7x30[] = ;
+unsigned msm_num_clocks_7x30 = ARRAY_SIZE(msm_clocks_7x30);

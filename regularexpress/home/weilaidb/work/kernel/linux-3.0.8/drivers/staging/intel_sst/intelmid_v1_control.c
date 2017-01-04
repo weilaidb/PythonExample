@@ -1,0 +1,25 @@
+#define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
+#define KOSKI_VOICE_CODEC_ENABLE 46
+enum _reg_v2 ;
+static int mx_init_card(void)
+static int mx_enable_audiodac(int value)
+static int mx_power_up_pb(unsigned int port)
+static int mx_power_down_pb(unsigned int device)
+static int mx_power_up_cp(unsigned int port)
+static int mx_power_down_cp(unsigned int device)
+static int mx_power_down(void)
+static int mx_set_pcm_voice_params(void)
+static int mx_set_pcm_audio_params(int sfreq, int word_size, int num_channel)
+static int mx_set_selected_output_dev(u8 dev_id)
+static int mx_set_voice_port(int status)
+static int mx_set_audio_port(int status)
+static int mx_set_selected_input_dev(u8 dev_id)
+static int mx_set_mute(int dev_id, u8 value)
+static int mx_set_vol(int dev_id, int value)
+static int mx_get_mute(int dev_id, u8 *value)
+static int mx_get_vol(int dev_id, int *value)
+static u8 mx_get_jack_status(void)
+static void mx_pmic_irq_enable(void *data)
+static void mx_pmic_irq_cb(void *cb_data, u8 intsts)
+static int mx_jack_enable(void)
+struct snd_pmic_ops snd_pmic_ops_mx = ;

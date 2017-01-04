@@ -1,0 +1,15 @@
+struct poll ;
+EXPORT_SYMBOL(__udelay);
+EXPORT_SYMBOL(__ndelay);
+EXPORT_SYMBOL(__ret_efault);
+EXPORT_SYMBOL(empty_zero_page);
+EXPORT_SYMBOL(BTFIXUP_CALL(___xchg32));
+EXPORT_SYMBOL(BTFIXUP_CALL(__hard_smp_processor_id));
+EXPORT_SYMBOL(BTFIXUP_CALL(mmu_unlockarea));
+EXPORT_SYMBOL(BTFIXUP_CALL(mmu_lockarea));
+EXPORT_SYMBOL(BTFIXUP_CALL(mmu_get_scsi_sgl));
+EXPORT_SYMBOL(BTFIXUP_CALL(mmu_get_scsi_one));
+EXPORT_SYMBOL(BTFIXUP_CALL(mmu_release_scsi_sgl));
+EXPORT_SYMBOL(BTFIXUP_CALL(mmu_release_scsi_one));
+EXPORT_SYMBOL(BTFIXUP_CALL(pgprot_noncached));
+EXPORT_SYMBOL(saved_command_line);

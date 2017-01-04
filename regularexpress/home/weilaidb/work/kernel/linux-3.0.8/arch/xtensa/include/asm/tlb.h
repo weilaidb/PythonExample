@@ -1,0 +1,2 @@
+#define _XTENSA_TLB_H
+#if (DCACHE_WAY_SIZE <= PAGE_SIZE)

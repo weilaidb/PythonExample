@@ -1,0 +1,1 @@
+#define __ASM_PARISC_PERF_EVENT_H

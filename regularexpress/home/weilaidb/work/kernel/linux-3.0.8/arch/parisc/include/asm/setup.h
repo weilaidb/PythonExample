@@ -1,0 +1,2 @@
+#define _PARISC_SETUP_H
+#define COMMAND_LINE_SIZE	1024

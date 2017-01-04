@@ -1,0 +1,19 @@
+#define AVCODEC_TRUEMOTION1DATA_H
+static const int16_t ydt1[8] = ;
+static const int16_t ydt2[8] = ;
+static const int16_t ydt3[8] = ;
+static const int16_t fat_ydt3[8] = ;
+static const int16_t ydt4[8] = ;
+static const int16_t fat_ydt4[8] = ;
+static const int16_t cdt1[8] = ;
+static const int16_t cdt2[8] = ;
+static const int16_t fat_cdt2[8] = ;
+static const int16_t cdt3[8] = ;
+static const int16_t * const ydts[] = ;
+static const int16_t * const fat_ydts[] = ;
+static const int16_t * const cdts[] = ;
+static const int16_t * const fat_cdts[] = ;
+static const uint8_t pc_tbl2[] = ;
+static const uint8_t pc_tbl3[] = ;
+static const uint8_t pc_tbl4[] = ;
+static const uint8_t * const tables[] = ;

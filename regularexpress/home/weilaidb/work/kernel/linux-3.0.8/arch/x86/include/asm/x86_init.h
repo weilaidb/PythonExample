@@ -1,0 +1,24 @@
+#define _ASM_X86_PLATFORM_H
+struct mpc_bus;
+struct mpc_cpu;
+struct mpc_table;
+struct x86_init_mpparse ;
+struct x86_init_resources ;
+struct x86_init_irqs ;
+struct x86_init_oem ;
+struct x86_init_mapping ;
+struct x86_init_paging ;
+struct x86_init_timers ;
+struct x86_init_iommu ;
+struct x86_init_pci ;
+struct x86_init_ops ;
+struct x86_cpuinit_ops ;
+struct x86_platform_ops ;
+struct pci_dev;
+struct x86_msi_ops ;
+extern struct x86_init_ops x86_init;
+extern struct x86_cpuinit_ops x86_cpuinit;
+extern struct x86_platform_ops x86_platform;
+extern struct x86_msi_ops x86_msi;
+extern void x86_init_noop(void);
+extern void x86_init_uint_noop(unsigned int unused);

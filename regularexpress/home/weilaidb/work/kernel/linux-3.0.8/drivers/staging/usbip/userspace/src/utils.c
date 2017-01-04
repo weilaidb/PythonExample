@@ -1,0 +1,12 @@
+int read_integer(char *path)
+int read_string(char *path, char *string, size_t len)
+int write_integer(char *path, int value)
+int read_bConfigurationValue(char *busid)
+int write_bConfigurationValue(char *busid, int config)
+int read_bNumInterfaces(char *busid)
+int read_bDeviceClass(char *busid)
+int getdriver(char *busid, int conf, int infnum, char *driver, size_t len)
+int getdevicename(char *busid, char *name, size_t len)
+#define MAXLINE 100
+int readline(int sockfd, char *buff, int bufflen)
+int writeline(int sockfd, char *str, int strlen)

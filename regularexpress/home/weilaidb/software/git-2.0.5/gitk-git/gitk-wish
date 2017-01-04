@@ -1,0 +1,524 @@
+#!/bin/sh
+# Tcl ignores the next line -*- tcl -*- \
+exec wish "$0" -- "$@"
+# Copyright © 2005-2014 Paul Mackerras.  All rights reserved.
+# This program is free software; it may be used, copied, modified
+# and distributed under the terms of the GNU General Public Licence,
+# either version 2, or (at your option) any later version.
+package require Tk
+proc hasworktree
+proc reponame
+proc gitworktree
+# A simple scheduler for compute-intensive stuff.
+# The aim is to make sure that event handlers for GUI actions can
+# run at least every 50-100 ms.  Unfortunately fileevent handlers are
+# run before X event handlers, so reading from a fast source can
+# make the GUI completely unresponsive.
+proc run args
+proc filerun
+proc filereadable
+proc nukefile
+proc dorunq
+proc reg_instance
+proc unmerged_files
+proc parseviewargs
+proc parseviewrevs
+# Start off a git log process and arrange to read its output
+proc start_rev_list
+proc stop_instance
+proc stop_backends
+proc stop_rev_list
+proc reset_pending_select
+proc getcommits
+proc updatecommits
+proc reloadcommits
+# This makes a string representation of a positive integer which
+# sorts as a string in numerical order
+proc strrep
+# Procedures used in reordering commits from git log (without
+# --topo-order) into the order for display.
+proc varcinit
+proc resetvarcs
+# returns a list of the commits with no children
+proc seeds
+proc newvarc
+proc splitvarc
+proc renumbervarc
+# Fix up the graph after we have found out that in view $v,
+# $p (a commit that we have already seen) is actually the parent
+# of the last commit in arc $a.
+proc fix_reversal
+proc insertrow
+proc insertfakerow
+proc removefakerow
+proc real_children
+proc first_real_child
+proc last_real_child
+proc vtokcmp
+# This assumes that if lim is not given, the caller has checked that
+# arc a's token is less than $vtokmod($v)
+proc modify_arc
+proc update_arcrows
+# Test whether view $v contains commit $id
+proc commitinview
+# Return the row number for commit $id in the current view
+proc rowofcommit
+# Returns 1 if a is on an earlier row than b, otherwise 0
+proc comes_before
+proc bsearch
+# Make sure rows $start..$end-1 are valid in displayorder and parentlist
+proc make_disporder
+proc commitonrow
+proc closevarcs
+# Use $rwid as a substitute for $id, i.e. reparent $id's children to $rwid
+# Assumes we already have an arc for $rwid.
+proc rewrite_commit
+# Mechanism for registering a command to be executed when we come
+# across a particular commit.  To handle the case when only the
+# prefix of the commit is known, the commitinterest array is now
+# indexed by the first 4 characters of the ID.  Each element is a
+# list of id, cmd pairs.
+proc interestedin
+proc check_interest
+proc getcommitlines
+proc chewcommits
+proc do_readcommit
+proc readcommit
+proc parsecommit
+proc getcommit
+# Expand an abbreviated commit ID to a list of full 40-char IDs that match
+# and are present in the current view.
+# This is fairly slow...
+proc longid
+proc readrefs
+}
+set t [$canv create text $xl $y1 -anchor w -text $tag -fill $headfgcolor \
+-font $font -tags [list tag.$id text]]
+if   elseif
+}
+return $xt
+}
+proc drawnotesign
+proc xcoord
+proc show_status
+# Don't change the text pane cursor if it is currently the hand cursor,
+# showing that we are over a sha1 ID link.
+proc settextcursor
+proc nowbusy
+proc notbusy
+proc findmatches
+proc dofind
+proc stopfinding
+proc findmore
+proc findselectline
+# mark the bits of a headline or author that match a find string
+proc markmatches
+proc unmarkmatches
+proc selcanvline
+proc commit_descriptor
+# append some text to the ctext widget, and make any SHA1 ID
+# that we know about be a clickable link.
+proc appendwithlinks
+proc setlink
+proc appendshortlink
+proc makelink
+proc linkcursor
+proc viewnextline
+# add a list of tag or branch names at position pos
+# returns the number of names inserted
+proc appendrefs
+# called when we have finished computing the nearby tags
+proc dispneartags
+proc dispnexttag
+proc make_secsel
+proc make_idmark
+proc selectline
+proc selfirstline
+proc sellastline
+proc selnextline
+proc selnextpage
+proc unselectline
+proc reselectline
+proc addtohistory
+# save the scrolling position of the diff display pane
+proc save_position
+proc unset_posvars
+proc godo
+proc goback
+proc goforw
+proc gettree
+proc gettreeline
+proc showfile
+proc getblobline
+proc mark_ctext_line
+proc mergediff
+proc startdiff
+proc showinlinediff
+# If the filename (name) is under any of the passed filter paths
+# then return true to include the file in the listing.
+proc path_filter
+proc addtocflist
+proc diffcmd
+proc gettreediffs
+proc gettreediffline
+# empty string or positive integer
+proc diffcontextvalidate
+proc diffcontextchange
+proc changeignorespace
+proc changeworddiff
+proc initblobdiffvars
+proc getblobdiffs
+proc savecmitpos
+proc savectextpos
+proc maybe_scroll_ctext
+proc setinlist
+proc makediffhdr
+proc blobdiffmaybeseehere
+proc getblobdiffline
+proc parseblobdiffline
+proc changediffdisp
+proc highlightfile
+proc highlightfile_for_scrollpos
+proc prevfile
+proc nextfile
+proc clear_ctext
+proc settabs
+proc incrsearch
+proc dosearch
+proc dosearchback
+proc rehighlight_search_results
+proc searchmark
+proc searchmarkvisible
+proc suppress_highlighting_file_for_current_scrollpos
+proc scrolltext
+proc setcoords
+proc redisplay
+proc parsefont
+proc fontflags
+proc fontname
+proc incrfont
+proc clearsha1
+proc sha1change
+proc gotocommit
+proc lineenter
+proc linemotion
+proc lineleave
+proc linehover
+proc clickisonarrow
+proc arrowjump
+proc lineclick
+proc normalline
+proc selbyid
+proc mstime
+proc rowmenu
+proc markhere
+proc gotomark
+proc replace_by_kids
+proc find_common_desc
+proc compare_commits
+proc getpatchid
+proc do_cmp_commits
+proc diffcommits
+proc diffvssel
+proc diffvsmark
+proc doseldiff
+proc mkpatch
+proc mkpatchrev
+proc mkpatchgo
+proc mkpatchcan
+proc mktag
+proc domktag
+proc redrawtags
+proc mktagcan
+proc mktaggo
+proc writecommit
+proc wrcomgo
+proc wrcomcan
+proc mkbranch
+proc mkbrgo
+proc exec_citool
+proc cherrypick
+proc revert
+proc resethead
+proc readresetstat
+# context menu for a head
+proc headmenu
+proc cobranch
+proc readcheckoutstat
+proc rmbranch
+# Display a list of tags and heads
+proc showrefs
+proc sel_reflist
+proc unsel_reflist
+proc reflistfilter_change
+proc refill_reflist
+# Stuff for finding nearby tags
+proc getallcommits
+# Since most commits have 1 parent and 1 child, we group strings of
+# such commits into "arcs" joining branch/merge points (BMPs), which
+# are commits that either don't have 1 parent or don't have 1 child.
+#
+# arcnos(id) - incoming arcs for BMP, arc we're on for other nodes
+# arcout(id) - outgoing arcs for BMP
+# arcids(a) - list of IDs on arc including end but not start
+# arcstart(a) - BMP ID at start of arc
+# arcend(a) - BMP ID at end of arc
+# growing(a) - arc a is still growing
+# arctags(a) - IDs out of arcids (excluding end) that have tags
+# archeads(a) - IDs out of arcids (excluding end) that have heads
+# The start of an arc is at the descendent end, so "incoming" means
+# coming from descendents, and "outgoing" means going towards ancestors.
+proc getallclines
+proc recalcarc
+proc splitarc
+# Update things for a new commit added that is a child of one
+# existing commit.  Used when cherry-picking.
+proc addnewchild
+# This implements a cache for the topology information.
+# The cache saves, for each arc, the start and end of the arc,
+# the ids on the arc, and the outgoing arcs from the end.
+proc readcache
+proc getcache
+proc dropcache
+proc writecache
+proc savecache
+# Returns 1 if a is an ancestor of b, -1 if b is an ancestor of a,
+# or 0 if neither is true.
+proc anc_or_desc
+# This identifies whether $desc has an ancestor that is
+# a growing tip of the graph and which is not an ancestor of $anc
+# and returns 0 if so and 1 if not.
+# If we subsequently discover a tag on such a growing tip, and that
+# turns out to be a descendent of $anc (which it could, since we
+# don't necessarily see children before parents), then $desc
+# isn't a good choice to display as a descendent tag of
+# $anc (since it is the descendent of another tag which is
+# a descendent of $anc).  Similarly, $anc isn't a good choice to
+# display as a ancestor tag of $desc.
+#
+proc is_certain
+proc validate_arctags
+proc validate_archeads
+# Return the list of IDs that have tags that are descendents of id,
+# ignoring IDs that are descendents of IDs already reported.
+proc desctags
+proc anctags
+# Return the list of IDs that have heads that are descendents of id,
+# including id itself if it has a head.
+proc descheads
+proc addedtag
+proc addedhead
+proc removedhead
+proc movedhead
+proc changedrefs
+proc rereadrefs
+proc listrefs
+proc add_tag_ctext
+proc showtag
+proc showtags
+proc doquit
+proc mkfontdisp
+proc choosefont
+proc centertext
+proc fontok
+proc fontcan
+if
+proc selfontfam
+proc chg_fontparam
+# Create a property sheet tab page
+proc create_prefs_page
+proc prefspage_general
+proc prefspage_colors
+proc prefspage_fonts
+proc doprefs
+proc choose_extdiff
+proc choosecolor
+proc setselbg
+# This sets the background color and the color scheme for the whole UI.
+# For some reason, tk_setPalette chooses a nasty dark red for selectColor
+# if we don't specify one ourselves, which makes the checkbuttons and
+# radiobuttons look bad.  This chooses white for selectColor if the
+# background color is light, or black if it is dark.
+proc setui
+proc setbg
+proc setfg
+proc prefscan
+proc prefsok
+proc formatdate
+# This list of encoding names and aliases is distilled from
+# http:
+# Not all of them are supported by Tcl.
+set encoding_aliases
+proc tcl_encoding
+proc gitattr
+proc cache_gitattr
+proc get_path_encoding
+# First check that Tcl/Tk is recent enough
+if
+# on OSX bring the current Wish process window to front
+if
+# Unset GIT_TRACE var if set
+if
+# defaults...
+set wrcomcmd "git diff-tree --stdin -p --pretty"
+set gitencoding
+catch
+catch
+if
+set tclencoding [tcl_encoding $gitencoding]
+if
+set gui_encoding [encoding system]
+catch
+set log_showroot true
+catch
+if   elseif   else
+set tabstop 8
+set findmergefiles 0
+set maxgraphpct 50
+set maxwidth 16
+set revlistorder 0
+set fastdate 0
+set uparrowlen 5
+set downarrowlen 5
+set mingaplen 100
+set cmitmode "patch"
+set wrapcomment "none"
+set showneartags 1
+set hideremotes 0
+set maxrefs 20
+set maxlinelen 200
+set showlocalchanges 1
+set limitdiffs 1
+set datetimeformat "%Y-%m-%d %H:%M:%S"
+set autoselect 1
+set autosellen 40
+set perfile_attrs 0
+set want_ttk 1
+if   else
+set colors
+if   else
+set diffcolors
+set diffcontext 3
+set mergecolors
+set ignorespace 0
+set worddiff ""
+set markbgcolor "#e0e0ff"
+set headbgcolor green
+set headfgcolor black
+set headoutlinecolor black
+set remotebgcolor #ffddaa
+set tagbgcolor yellow
+set tagfgcolor black
+set tagoutlinecolor black
+set reflinecolor black
+set filesepbgcolor #aaaaaa
+set filesepfgcolor black
+set linehoverbgcolor #ffff80
+set linehoverfgcolor black
+set linehoveroutlinecolor black
+set mainheadcirclecolor yellow
+set workingfilescirclecolor red
+set indexcirclecolor green
+set circlecolors
+set linkfgcolor blue
+set circleoutlinecolor $fgcolor
+set foundbgcolor yellow
+set currentsearchhitbgcolor orange
+# button for popping up context menus
+if   else
+## For msgcat loading, first locate the installation location.
+if   else
+## Internationalization (i18n) through msgcat and gettext. See
+## http:
+package require msgcat
+namespace import ::msgcat::mc
+## And eventually load the actual message catalog
+::msgcat::mcload $gitk_msgsdir
+catch
+parsefont mainfont $mainfont
+eval font create mainfont [fontflags mainfont]
+eval font create mainfontbold [fontflags mainfont 1]
+parsefont textfont $textfont
+eval font create textfont [fontflags textfont]
+eval font create textfontbold [fontflags textfont 1]
+parsefont uifont $uifont
+eval font create uifont [fontflags uifont]
+setui $uicolor
+setoptions
+# check that we can find a .git directory somewhere...
+if
+set selecthead
+set selectheadid
+set revtreeargs
+set cmdline_files
+set i 0
+set revtreeargscmd
+foreach arg $argv
+if
+if
+set nullid "0000000000000000000000000000000000000000"
+set nullid2 "0000000000000000000000000000000000000001"
+set nullfile "/dev/null"
+set have_tk85 [expr ]
+if
+set use_ttk [expr ]
+set NS [expr ]
+regexp  [exec git version] _ git_version
+set show_notes
+if
+set appname "gitk"
+set runq
+set history
+set historyindex 0
+set fh_serial 0
+set nhl_names
+set highlight_paths
+set findpattern
+set searchdirn -forwards
+set boldids
+set boldnameids
+set diffelide
+set markingmatches 0
+set linkentercount 0
+set need_redisplay 0
+set nrows_drawn 0
+set firsttabstop 0
+set nextviewnum 1
+set curview 0
+set selectedview 0
+set selectedhlview [mc "None"]
+set highlight_related [mc "None"]
+set highlight_files
+set viewfiles(0)
+set viewperm(0) 0
+set viewargs(0)
+set viewargscmd(0)
+set selectedline
+set numcommits 0
+set loginstance 0
+set cmdlineok 0
+set stopped 0
+set stuffsaved 0
+set patchnum 0
+set lserial 0
+set hasworktree [hasworktree]
+set cdup
+if
+set worktree [exec git rev-parse --show-toplevel]
+setcoords
+makewindow
+catch
+# wait for the window to become visible
+tkwait visibility .
+wm title . "$appname: [reponame]"
+update
+readrefs
+if
+if
+if
+getcommits
+# Local variables:
+# mode: tcl
+# indent-tabs-mode: t
+# tab-width: 8
+# End:

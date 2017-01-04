@@ -1,0 +1,6 @@
+static inline int atomic_futex_op_xchg_set(int oparg, u32 __user *uaddr, int *_oldval)
+static inline int atomic_futex_op_xchg_add(int oparg, u32 __user *uaddr, int *_oldval)
+static inline int atomic_futex_op_xchg_or(int oparg, u32 __user *uaddr, int *_oldval)
+static inline int atomic_futex_op_xchg_and(int oparg, u32 __user *uaddr, int *_oldval)
+static inline int atomic_futex_op_xchg_xor(int oparg, u32 __user *uaddr, int *_oldval)
+int futex_atomic_op_inuser(int encoded_op, u32 __user *uaddr)

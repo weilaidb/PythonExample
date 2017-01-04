@@ -1,0 +1,61 @@
+#define usbhsp_priv_to_pipeinfo(pr)	(&(pr)->pipe_info)
+#define usbhsp_pipe_to_priv(p)		((p)->priv)
+#define usbhsp_addr_offset(p)	((usbhs_pipe_number(p) - 1) * 2)
+#define usbhsp_is_dcp(p)	((p)->priv->pipe_info.pipe == (p))
+#define usbhsp_flags_set(p, f)	((p)->flags |=  USBHS_PIPE_FLAGS_##f)
+#define usbhsp_flags_clr(p, f)	((p)->flags &= ~USBHS_PIPE_FLAGS_##f)
+#define usbhsp_flags_has(p, f)	((p)->flags &   USBHS_PIPE_FLAGS_##f)
+#define usbhsp_flags_init(p)	do  while (0)
+#define usbhsp_type(p)		((p)->pipe_type)
+#define usbhsp_type_is(p, t)	((p)->pipe_type == t)
+static char *usbhsp_pipe_name[] = ;
+void usbhs_usbreq_get_val(struct usbhs_priv *priv, struct usb_ctrlrequest *req)
+void usbhs_usbreq_set_val(struct usbhs_priv *priv, struct usb_ctrlrequest *req)
+static void usbhsp_pipectrl_set(struct usbhs_pipe *pipe, u16 mask, u16 val)
+static u16 usbhsp_pipectrl_get(struct usbhs_pipe *pipe)
+static void __usbhsp_pipe_xxx_set(struct usbhs_pipe *pipe,
+u16 dcp_reg, u16 pipe_reg,
+u16 mask, u16 val)
+static u16 __usbhsp_pipe_xxx_get(struct usbhs_pipe *pipe,
+u16 dcp_reg, u16 pipe_reg)
+static void usbhsp_pipe_cfg_set(struct usbhs_pipe *pipe, u16 mask, u16 val)
+static void usbhsp_pipe_buf_set(struct usbhs_pipe *pipe, u16 mask, u16 val)
+static void usbhsp_pipe_maxp_set(struct usbhs_pipe *pipe, u16 mask, u16 val)
+static u16 usbhsp_pipe_maxp_get(struct usbhs_pipe *pipe)
+static void usbhsp_pipe_select(struct usbhs_pipe *pipe)
+static int usbhsp_pipe_barrier(struct usbhs_pipe *pipe)
+static int usbhsp_pipe_is_accessible(struct usbhs_pipe *pipe)
+static void __usbhsp_pid_try_nak_if_stall(struct usbhs_pipe *pipe)
+void usbhs_fifo_disable(struct usbhs_pipe *pipe)
+void usbhs_fifo_enable(struct usbhs_pipe *pipe)
+void usbhs_fifo_stall(struct usbhs_pipe *pipe)
+void usbhs_fifo_send_terminator(struct usbhs_pipe *pipe)
+static void usbhsp_fifo_clear(struct usbhs_pipe *pipe)
+static int usbhsp_fifo_barrier(struct usbhs_priv *priv)
+static int usbhsp_fifo_rcv_len(struct usbhs_priv *priv)
+static int usbhsp_fifo_select(struct usbhs_pipe *pipe, int write)
+int usbhs_fifo_prepare_write(struct usbhs_pipe *pipe)
+int usbhs_fifo_write(struct usbhs_pipe *pipe, u8 *buf, int len)
+int usbhs_fifo_prepare_read(struct usbhs_pipe *pipe)
+int usbhs_fifo_read(struct usbhs_pipe *pipe, u8 *buf, int len)
+static int usbhsp_possible_double_buffer(struct usbhs_pipe *pipe)
+static u16 usbhsp_setup_pipecfg(struct usbhs_pipe *pipe,
+const struct usb_endpoint_descriptor *desc,
+int is_host)
+static u16 usbhsp_setup_pipemaxp(struct usbhs_pipe *pipe,
+const struct usb_endpoint_descriptor *desc,
+int is_host)
+static u16 usbhsp_setup_pipebuff(struct usbhs_pipe *pipe,
+const struct usb_endpoint_descriptor *desc,
+int is_host)
+int usbhs_pipe_get_maxpacket(struct usbhs_pipe *pipe)
+int usbhs_pipe_is_dir_in(struct usbhs_pipe *pipe)
+void usbhs_pipe_clear_sequence(struct usbhs_pipe *pipe)
+static struct usbhs_pipe *usbhsp_get_pipe(struct usbhs_priv *priv, u32 type)
+void usbhs_pipe_init(struct usbhs_priv *priv)
+struct usbhs_pipe *usbhs_pipe_malloc(struct usbhs_priv *priv,
+const struct usb_endpoint_descriptor *desc)
+struct usbhs_pipe *usbhs_dcp_malloc(struct usbhs_priv *priv)
+void usbhs_dcp_control_transfer_done(struct usbhs_pipe *pipe)
+int usbhs_pipe_probe(struct usbhs_priv *priv)
+void usbhs_pipe_remove(struct usbhs_priv *priv)

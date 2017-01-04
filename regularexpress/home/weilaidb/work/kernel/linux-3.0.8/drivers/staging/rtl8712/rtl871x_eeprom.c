@@ -1,0 +1,10 @@
+#define _RTL871X_EEPROM_C_
+static void up_clk(struct _adapter *padapter, u16 *x)
+static void down_clk(struct _adapter *padapter, u16 *x)
+static void shift_out_bits(struct _adapter *padapter, u16 data, u16 count)
+static u16 shift_in_bits(struct _adapter *padapter)
+static void standby(struct _adapter *padapter)
+static u16 wait_eeprom_cmd_done(struct _adapter *padapter)
+static void eeprom_clean(struct _adapter *padapter)
+void r8712_eeprom_write16(struct _adapter *padapter, u16 reg, u16 data)
+u16 r8712_eeprom_read16(struct _adapter *padapter, u16 reg)

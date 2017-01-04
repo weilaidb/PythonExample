@@ -1,0 +1,1 @@
+#define __ARCH_H8300_PERCPU__

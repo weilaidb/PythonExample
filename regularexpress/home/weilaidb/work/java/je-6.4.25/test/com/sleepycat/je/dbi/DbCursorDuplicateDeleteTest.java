@@ -1,0 +1,20 @@
+package com.sleepycat.je.dbi;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.util.Hashtable;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.junit.Test;
+import com.sleepycat.je.Cursor;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.LockConflictException;
+import com.sleepycat.je.LockMode;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.VerifyConfig;
+import com.sleepycat.je.junit.JUnitThread;
+import com.sleepycat.je.util.StringDbt;
+import com.sleepycat.utilint.StringUtils;
+public class DbCursorDuplicateDeleteTest extends DbCursorTestBase

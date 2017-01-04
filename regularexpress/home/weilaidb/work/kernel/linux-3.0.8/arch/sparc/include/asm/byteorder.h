@@ -1,0 +1,1 @@
+#define _SPARC_BYTEORDER_H

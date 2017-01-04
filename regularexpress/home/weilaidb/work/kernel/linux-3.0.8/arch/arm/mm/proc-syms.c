@@ -1,0 +1,13 @@
+EXPORT_SYMBOL(cpu_dcache_clean_area);
+EXPORT_SYMBOL(cpu_set_pte_ext);
+EXPORT_SYMBOL(processor);
+EXPORT_SYMBOL(__cpuc_flush_kern_all);
+EXPORT_SYMBOL(__cpuc_flush_user_all);
+EXPORT_SYMBOL(__cpuc_flush_user_range);
+EXPORT_SYMBOL(__cpuc_coherent_kern_range);
+EXPORT_SYMBOL(__cpuc_flush_dcache_area);
+EXPORT_SYMBOL(cpu_cache);
+EXPORT_SYMBOL(__cpu_clear_user_highpage);
+EXPORT_SYMBOL(__cpu_copy_user_highpage);
+EXPORT_SYMBOL(cpu_user);
+EXPORT_SYMBOL(cpu_tlb);

@@ -1,0 +1,12 @@
+DECLARE_WAIT_QUEUE_HEAD(rds_ib_ring_empty_wait);
+void rds_ib_ring_init(struct rds_ib_work_ring *ring, u32 nr)
+static inline u32 __rds_ib_ring_used(struct rds_ib_work_ring *ring)
+void rds_ib_ring_resize(struct rds_ib_work_ring *ring, u32 nr)
+static int __rds_ib_ring_empty(struct rds_ib_work_ring *ring)
+u32 rds_ib_ring_alloc(struct rds_ib_work_ring *ring, u32 val, u32 *pos)
+void rds_ib_ring_free(struct rds_ib_work_ring *ring, u32 val)
+void rds_ib_ring_unalloc(struct rds_ib_work_ring *ring, u32 val)
+int rds_ib_ring_empty(struct rds_ib_work_ring *ring)
+int rds_ib_ring_low(struct rds_ib_work_ring *ring)
+u32 rds_ib_ring_oldest(struct rds_ib_work_ring *ring)
+u32 rds_ib_ring_completed(struct rds_ib_work_ring *ring, u32 wr_id, u32 oldest)

@@ -1,0 +1,5 @@
+#define INTC_BASE		(0xFFD00000)
+#define INTC_INT2PRI7   (INTC_BASE+0x4001C)
+#define INTC_INT2MSKCR	(INTC_BASE+0x4003C)
+#define INTC_INT2MSKCR1	(INTC_BASE+0x400D4)
+void __init init_sh7763rdp_IRQ(void)

@@ -1,0 +1,5 @@
+EditDialog::EditDialog(QTreeWidget *treeWidget, QWidget *parent)
+: QDialog(parent)
+EditDialog::EditDialog(ABItem *item, QWidget *parent)
+: QDialog(parent)
+void EditDialog::accept()

@@ -1,0 +1,20 @@
+package com.sleepycat.persist;
+import java.util.Map;
+import java.util.SortedMap;
+import com.sleepycat.bind.EntityBinding;
+import com.sleepycat.bind.EntryBinding;
+import com.sleepycat.collections.StoredSortedMap;
+import com.sleepycat.compat.DbCompat;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.LockMode;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.SecondaryDatabase;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.TransactionConfig;
+import com.sleepycat.persist.model.DeleteAction;
+import com.sleepycat.persist.model.Relationship;
+import com.sleepycat.persist.model.SecondaryKey;
+public class SecondaryIndex<SK, PK, E> extends BasicIndex<SK, E>

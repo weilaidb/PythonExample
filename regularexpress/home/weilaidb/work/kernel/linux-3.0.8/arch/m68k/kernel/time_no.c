@@ -1,0 +1,7 @@
+#define	TICK_SIZE (tick_nsec / 1000)
+static inline int set_rtc_mmss(unsigned long nowtime)
+irqreturn_t arch_timer_interrupt(int irq, void *dummy)
+static unsigned long read_rtc_mmss(void)
+void read_persistent_clock(struct timespec *ts)
+int update_persistent_clock(struct timespec now)
+void time_init(void)

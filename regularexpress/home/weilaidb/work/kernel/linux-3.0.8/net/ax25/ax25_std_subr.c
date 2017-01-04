@@ -1,0 +1,5 @@
+void ax25_std_nr_error_recovery(ax25_cb *ax25)
+void ax25_std_establish_data_link(ax25_cb *ax25)
+void ax25_std_transmit_enquiry(ax25_cb *ax25)
+void ax25_std_enquiry_response(ax25_cb *ax25)
+void ax25_std_timeout_response(ax25_cb *ax25)

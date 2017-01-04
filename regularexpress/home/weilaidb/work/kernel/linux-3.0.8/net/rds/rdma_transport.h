@@ -1,0 +1,11 @@
+#define _RDMA_TRANSPORT_H
+#define RDS_RDMA_RESOLVE_TIMEOUT_MS     5000
+int rds_rdma_conn_connect(struct rds_connection *conn);
+int rds_rdma_cm_event_handler(struct rdma_cm_id *cm_id,
+struct rdma_cm_event *event);
+extern struct rds_transport rds_ib_transport;
+int rds_ib_init(void);
+void rds_ib_exit(void);
+extern struct rds_transport rds_iw_transport;
+int rds_iw_init(void);
+void rds_iw_exit(void);

@@ -1,0 +1,31 @@
+static const struct proto_ops l2cap_sock_ops;
+static void l2cap_sock_timeout(unsigned long arg)
+void l2cap_sock_set_timer(struct sock *sk, long timeout)
+void l2cap_sock_clear_timer(struct sock *sk)
+static int l2cap_sock_bind(struct socket *sock, struct sockaddr *addr, int alen)
+static int l2cap_sock_connect(struct socket *sock, struct sockaddr *addr, int alen, int flags)
+static int l2cap_sock_listen(struct socket *sock, int backlog)
+static int l2cap_sock_accept(struct socket *sock, struct socket *newsock, int flags)
+static int l2cap_sock_getname(struct socket *sock, struct sockaddr *addr, int *len, int peer)
+static int l2cap_sock_getsockopt_old(struct socket *sock, int optname, char __user *optval, int __user *optlen)
+static int l2cap_sock_getsockopt(struct socket *sock, int level, int optname, char __user *optval, int __user *optlen)
+static int l2cap_sock_setsockopt_old(struct socket *sock, int optname, char __user *optval, unsigned int optlen)
+static int l2cap_sock_setsockopt(struct socket *sock, int level, int optname, char __user *optval, unsigned int optlen)
+static int l2cap_sock_sendmsg(struct kiocb *iocb, struct socket *sock, struct msghdr *msg, size_t len)
+static int l2cap_sock_recvmsg(struct kiocb *iocb, struct socket *sock, struct msghdr *msg, size_t len, int flags)
+void l2cap_sock_kill(struct sock *sk)
+static void l2cap_sock_close(struct sock *sk)
+static void l2cap_sock_cleanup_listen(struct sock *parent)
+void __l2cap_sock_close(struct sock *sk, int reason)
+static int l2cap_sock_shutdown(struct socket *sock, int how)
+static int l2cap_sock_release(struct socket *sock)
+static void l2cap_sock_destruct(struct sock *sk)
+void l2cap_sock_init(struct sock *sk, struct sock *parent)
+static struct proto l2cap_proto = ;
+struct sock *l2cap_sock_alloc(struct net *net, struct socket *sock, int proto, gfp_t prio)
+static int l2cap_sock_create(struct net *net, struct socket *sock, int protocol,
+int kern)
+static const struct proto_ops l2cap_sock_ops = ;
+static const struct net_proto_family l2cap_sock_family_ops = ;
+int __init l2cap_init_sockets(void)
+void l2cap_cleanup_sockets(void)

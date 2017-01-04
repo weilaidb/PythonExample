@@ -1,0 +1,18 @@
+const u32 yuv_offset[IVTV_YUV_BUFFERS] = ;
+static int ivtv_yuv_prep_user_dma(struct ivtv *itv, struct ivtv_user_dma *dma,
+struct ivtv_dma_frame *args)
+int ivtv_yuv_filter_check(struct ivtv *itv)
+static void ivtv_yuv_filter(struct ivtv *itv, int h_filter, int v_filter_1, int v_filter_2)
+static void ivtv_yuv_handle_horizontal(struct ivtv *itv, struct yuv_frame_info *f)
+static void ivtv_yuv_handle_vertical(struct ivtv *itv, struct yuv_frame_info *f)
+static u32 ivtv_yuv_window_setup(struct ivtv *itv, struct yuv_frame_info *f)
+void ivtv_yuv_work_handler(struct ivtv *itv)
+static void ivtv_yuv_init(struct ivtv *itv)
+static void ivtv_yuv_next_free(struct ivtv *itv)
+static void ivtv_yuv_setup_frame(struct ivtv *itv, struct ivtv_dma_frame *args)
+void ivtv_yuv_frame_complete(struct ivtv *itv)
+static int ivtv_yuv_udma_frame(struct ivtv *itv, struct ivtv_dma_frame *args)
+void ivtv_yuv_setup_stream_frame(struct ivtv *itv)
+int ivtv_yuv_udma_stream_frame(struct ivtv *itv, void __user *src)
+int ivtv_yuv_prep_frame(struct ivtv *itv, struct ivtv_dma_frame *args)
+void ivtv_yuv_close(struct ivtv *itv)

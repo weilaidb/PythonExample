@@ -1,0 +1,1 @@
+#define __ARCH_SPARC_PERCPU__

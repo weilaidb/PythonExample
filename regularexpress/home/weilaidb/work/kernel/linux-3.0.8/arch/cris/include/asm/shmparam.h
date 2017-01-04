@@ -1,0 +1,2 @@
+#define _ASM_CRIS_SHMPARAM_H
+#define	SHMLBA PAGE_SIZE

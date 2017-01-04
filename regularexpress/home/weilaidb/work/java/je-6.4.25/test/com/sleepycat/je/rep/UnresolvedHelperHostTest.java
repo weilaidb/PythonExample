@@ -1,0 +1,20 @@
+package com.sleepycat.je.rep;
+import static com.sleepycat.je.rep.impl.RepParams.SKIP_HELPER_HOST_RESOLUTION;
+import static org.hamcrest.core.IsNull.nullValue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeThat;
+import java.io.File;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.rep.impl.RepTestBase;
+import com.sleepycat.je.rep.utilint.LocalAliasNameService;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+public class UnresolvedHelperHostTest extends RepTestBase

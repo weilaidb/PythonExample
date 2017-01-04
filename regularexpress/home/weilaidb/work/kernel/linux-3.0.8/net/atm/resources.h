@@ -1,0 +1,13 @@
+#define NET_ATM_RESOURCES_H
+extern struct list_head atm_devs;
+extern struct mutex atm_dev_mutex;
+int atm_dev_ioctl(unsigned int cmd, void __user *arg, int compat);
+void *atm_dev_seq_start(struct seq_file *seq, loff_t *pos);
+void atm_dev_seq_stop(struct seq_file *seq, void *v);
+void *atm_dev_seq_next(struct seq_file *seq, void *v, loff_t *pos);
+int atm_proc_dev_register(struct atm_dev *dev);
+void atm_proc_dev_deregister(struct atm_dev *dev);
+static inline int atm_proc_dev_register(struct atm_dev *dev)
+static inline void atm_proc_dev_deregister(struct atm_dev *dev)
+int atm_register_sysfs(struct atm_dev *adev, struct device *parent);
+void atm_unregister_sysfs(struct atm_dev *adev);

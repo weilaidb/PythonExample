@@ -1,0 +1,19 @@
+#define __rio_host_h__
+#define	MAX_EXTRA_UNITS	64
+struct Host ;
+#define Control      CardP->DpControl
+#define SetInt       CardP->DpSetInt
+#define ResetTpu     CardP->DpResetTpu
+#define ResetInt     CardP->DpResetInt
+#define Signature    CardP->DpSignature
+#define Sram1        CardP->DpSram1
+#define Sram2        CardP->DpSram2
+#define Sram3        CardP->DpSram3
+#define Scratch      CardP->DpScratch
+#define __ParmMapR   CardP->DpParmMapR
+#define SLX          CardP->DpSlx
+#define Revision     CardP->DpRevision
+#define Unique       CardP->DpUnique
+#define Year         CardP->DpYear
+#define Week         CardP->DpWeek
+#define RIO_DUMBPARM 0x0860

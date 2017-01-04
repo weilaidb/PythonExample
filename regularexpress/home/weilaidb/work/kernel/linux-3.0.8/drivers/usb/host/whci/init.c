@@ -1,0 +1,5 @@
+static void whc_hw_reset(struct whc *whc)
+static void whc_hw_init_di_buf(struct whc *whc)
+static void whc_hw_init_dn_buf(struct whc *whc)
+int whc_init(struct whc *whc)
+void whc_clean_up(struct whc *whc)

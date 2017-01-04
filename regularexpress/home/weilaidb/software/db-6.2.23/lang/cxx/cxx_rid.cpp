@@ -1,0 +1,5 @@
+DbHeapRecordId::DbHeapRecordId()
+DbHeapRecordId::DbHeapRecordId(db_pgno_t pgno_arg, db_indx_t indx_arg)
+DbHeapRecordId::~DbHeapRecordId()
+DbHeapRecordId::DbHeapRecordId(const DbHeapRecordId &that)
+DbHeapRecordId &DbHeapRecordId::operator = (const DbHeapRecordId &that)

@@ -1,0 +1,8 @@
+static bool ignored_gdt(unsigned int num)
+static void fixup_gdt_table(struct lg_cpu *cpu, unsigned start, unsigned end)
+void setup_default_gdt_entries(struct lguest_ro_state *state)
+void setup_guest_gdt(struct lg_cpu *cpu)
+void copy_gdt_tls(const struct lg_cpu *cpu, struct desc_struct *gdt)
+void copy_gdt(const struct lg_cpu *cpu, struct desc_struct *gdt)
+void load_guest_gdt_entry(struct lg_cpu *cpu, u32 num, u32 lo, u32 hi)
+void guest_load_tls(struct lg_cpu *cpu, unsigned long gtls)

@@ -1,0 +1,25 @@
+package com.sleepycat.je.rep.impl.node;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import com.sleepycat.je.ThreadInterruptedException;
+import com.sleepycat.je.rep.MasterTransferFailureException;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.elections.Elections;
+import com.sleepycat.je.rep.elections.Learner;
+import com.sleepycat.je.rep.elections.MasterValue;
+import com.sleepycat.je.rep.elections.Proposer.Proposal;
+import com.sleepycat.je.rep.elections.Proposer.WinningProposal;
+import com.sleepycat.je.rep.elections.TimebasedProposalGenerator;
+import com.sleepycat.je.rep.impl.RepGroupImpl;
+import com.sleepycat.je.rep.impl.RepNodeImpl;
+import com.sleepycat.je.rep.utilint.RepUtils.ExceptionAwareBlockingQueue;
+import com.sleepycat.je.utilint.LoggerUtils;
+import com.sleepycat.je.utilint.VLSN;
+public class MasterTransfer

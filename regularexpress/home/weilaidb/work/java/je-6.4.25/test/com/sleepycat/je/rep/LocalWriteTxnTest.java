@@ -1,0 +1,26 @@
+package com.sleepycat.je.rep;
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import com.sleepycat.bind.tuple.IntegerBinding;
+import com.sleepycat.je.CommitToken;
+import com.sleepycat.je.Cursor;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.Durability;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.ReplicaConsistencyPolicy;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.TransactionConfig;
+import com.sleepycat.je.rep.impl.RepImpl;
+import com.sleepycat.je.rep.impl.RepTestBase;
+import com.sleepycat.je.rep.impl.node.RepNode;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import org.junit.Test;
+public class LocalWriteTxnTest extends RepTestBase

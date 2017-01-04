@@ -1,0 +1,6 @@
+#define CONFIG_APCI_035 1
+#define ADDIDATA_WATCHDOG 2
+#define ADDIDATA_DRIVER_NAME	"addi_apci_035"
+MODULE_AUTHOR("Comedi http:
+MODULE_DESCRIPTION("Comedi low-level driver");
+MODULE_LICENSE("GPL");

@@ -1,0 +1,8 @@
+ProjectListWidget::ProjectListWidget(QWidget *parent)
+: QListWidget(parent)
+void ProjectListWidget::mousePressEvent(QMouseEvent *event)
+void ProjectListWidget::mouseMoveEvent(QMouseEvent *event)
+void ProjectListWidget::dragEnterEvent(QDragEnterEvent *event)
+void ProjectListWidget::dragMoveEvent(QDragMoveEvent *event)
+void ProjectListWidget::dropEvent(QDropEvent *event)
+void ProjectListWidget::performDrag()

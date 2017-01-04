@@ -1,0 +1,3 @@
+#define _ASM_PROC_PROC_H
+#define PROCESSOR_VENDOR_NAME	"Panasonic"
+#define PROCESSOR_MODEL_NAME	"mn103e010"

@@ -1,0 +1,33 @@
+#define AVCODEC_VC1_H
+#define AC_VLC_BITS 9
+enum QuantMode ;
+enum DQProfile ;
+enum DQSingleEdge ;
+enum DQDoubleEdge ;
+enum MVModes ;
+enum MBModesIntfr ;
+enum BMVTypes ;
+enum TransformTypes ;
+enum CodingSet ;
+enum COTypes ;
+enum FrameCodingMode ;
+enum Imode ;
+typedef struct VC1Context VC1Context;
+int ff_vc1_decode_sequence_header(AVCodecContext *avctx, VC1Context *v, GetBitContext *gb);
+int ff_vc1_decode_entry_point(AVCodecContext *avctx, VC1Context *v, GetBitContext *gb);
+int ff_vc1_parse_frame_header    (VC1Context *v, GetBitContext *gb);
+int ff_vc1_parse_frame_header_adv(VC1Context *v, GetBitContext *gb);
+int ff_vc1_init_common(VC1Context *v);
+int  ff_vc1_decode_init_alloc_tables(VC1Context *v);
+void ff_vc1_init_transposed_scantables(VC1Context *v);
+int  ff_vc1_decode_end(AVCodecContext *avctx);
+void ff_vc1_decode_blocks(VC1Context *v);
+void ff_vc1_loop_filter_iblk(VC1Context *v, int pq);
+void ff_vc1_loop_filter_iblk_delayed(VC1Context *v, int pq);
+void ff_vc1_smooth_overlap_filter_iblk(VC1Context *v);
+void ff_vc1_apply_p_loop_filter(VC1Context *v);
+void ff_vc1_mc_1mv(VC1Context *v, int dir);
+void ff_vc1_mc_4mv_luma(VC1Context *v, int n, int dir, int avg);
+void ff_vc1_mc_4mv_chroma(VC1Context *v, int dir);
+void ff_vc1_mc_4mv_chroma4(VC1Context *v, int dir, int dir2, int avg);
+void ff_vc1_interp_mc(VC1Context *v);

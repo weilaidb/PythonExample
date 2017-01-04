@@ -1,0 +1,28 @@
+#define _LINUX_FS_NOTIFY_H
+static inline void fsnotify_d_instantiate(struct dentry *dentry,
+struct inode *inode)
+static inline int fsnotify_parent(struct path *path, struct dentry *dentry, __u32 mask)
+static inline int fsnotify_perm(struct file *file, int mask)
+static inline void fsnotify_d_move(struct dentry *dentry)
+static inline void fsnotify_link_count(struct inode *inode)
+static inline void fsnotify_move(struct inode *old_dir, struct inode *new_dir,
+const unsigned char *old_name,
+int isdir, struct inode *target, struct dentry *moved)
+static inline void fsnotify_inode_delete(struct inode *inode)
+static inline void fsnotify_vfsmount_delete(struct vfsmount *mnt)
+static inline void fsnotify_nameremove(struct dentry *dentry, int isdir)
+static inline void fsnotify_inoderemove(struct inode *inode)
+static inline void fsnotify_create(struct inode *inode, struct dentry *dentry)
+static inline void fsnotify_link(struct inode *dir, struct inode *inode, struct dentry *new_dentry)
+static inline void fsnotify_mkdir(struct inode *inode, struct dentry *dentry)
+static inline void fsnotify_access(struct file *file)
+static inline void fsnotify_modify(struct file *file)
+static inline void fsnotify_open(struct file *file)
+static inline void fsnotify_close(struct file *file)
+static inline void fsnotify_xattr(struct dentry *dentry)
+static inline void fsnotify_change(struct dentry *dentry, unsigned int ia_valid)
+#if defined(CONFIG_FSNOTIFY)
+static inline const unsigned char *fsnotify_oldname_init(const unsigned char *name)
+static inline void fsnotify_oldname_free(const unsigned char *old_name)
+static inline const char *fsnotify_oldname_init(const unsigned char *name)
+static inline void fsnotify_oldname_free(const unsigned char *old_name)

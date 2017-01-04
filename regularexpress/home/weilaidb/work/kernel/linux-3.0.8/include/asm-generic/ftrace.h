@@ -1,0 +1,1 @@
+#define __ASM_GENERIC_FTRACE_H__

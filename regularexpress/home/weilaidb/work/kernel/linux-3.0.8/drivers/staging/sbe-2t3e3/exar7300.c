@@ -1,0 +1,7 @@
+void exar7300_init(struct channel *sc)
+void exar7300_set_loopback(struct channel *sc, u32 mode)
+void exar7300_set_frame_type(struct channel *sc, u32 type)
+void exar7300_transmit_all_ones_onoff(struct channel *sc, u32 mode)
+void exar7300_receive_equalization_onoff(struct channel *sc, u32 mode)
+void exar7300_line_build_out_onoff(struct channel *sc, u32 mode)
+void exar7300_unipolar_onoff(struct channel *sc, u32 mode)

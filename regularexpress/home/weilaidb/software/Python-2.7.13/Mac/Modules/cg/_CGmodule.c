@@ -1,0 +1,91 @@
+#define PyMac_PRECHECK(rtn) do  while(0)
+extern int GrafObj_Convert(PyObject *, GrafPtr *);
+PyObject *CGPoint_New(CGPoint *itself)
+int
+CGPoint_Convert(PyObject *v, CGPoint *p_itself)
+PyObject *CGRect_New(CGRect *itself)
+int
+CGRect_Convert(PyObject *v, CGRect *p_itself)
+PyObject *CGAffineTransform_New(CGAffineTransform *itself)
+int
+CGAffineTransform_Convert(PyObject *v, CGAffineTransform *p_itself)
+static PyObject *CG_Error;
+PyTypeObject CGContextRef_Type;
+#define CGContextRefObj_Check(x) ((x)->ob_type == &CGContextRef_Type || PyObject_TypeCheck((x), &CGContextRef_Type))
+typedef struct CGContextRefObject  CGContextRefObject;
+PyObject *CGContextRefObj_New(CGContextRef itself)
+int CGContextRefObj_Convert(PyObject *v, CGContextRef *p_itself)
+static void CGContextRefObj_dealloc(CGContextRefObject *self)
+static PyObject *CGContextRefObj_CGContextSaveGState(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextRestoreGState(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextScaleCTM(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextTranslateCTM(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextRotateCTM(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextConcatCTM(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextGetCTM(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetLineWidth(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetLineCap(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetLineJoin(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetMiterLimit(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetFlatness(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetAlpha(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextBeginPath(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextMoveToPoint(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextAddLineToPoint(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextAddCurveToPoint(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextAddQuadCurveToPoint(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextClosePath(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextAddRect(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextAddArc(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextAddArcToPoint(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextIsPathEmpty(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextGetPathCurrentPoint(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextGetPathBoundingBox(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextDrawPath(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextFillPath(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextEOFillPath(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextStrokePath(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextFillRect(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextStrokeRect(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextStrokeRectWithWidth(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextClearRect(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextClip(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextEOClip(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextClipToRect(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetGrayFillColor(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetGrayStrokeColor(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetRGBFillColor(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetRGBStrokeColor(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetCMYKFillColor(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetCMYKStrokeColor(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextGetInterpolationQuality(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetInterpolationQuality(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetCharacterSpacing(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetTextPosition(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextGetTextPosition(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetTextMatrix(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextGetTextMatrix(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetTextDrawingMode(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetFontSize(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSelectFont(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextShowText(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextShowTextAtPoint(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextEndPage(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextFlush(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSynchronize(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_CGContextSetShouldAntialias(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_SyncCGContextOriginWithPort(CGContextRefObject *_self, PyObject *_args)
+static PyObject *CGContextRefObj_ClipCGContextToRegion(CGContextRefObject *_self, PyObject *_args)
+static PyMethodDef CGContextRefObj_methods[] = ;
+#define CGContextRefObj_getsetlist NULL
+#define CGContextRefObj_compare NULL
+#define CGContextRefObj_repr NULL
+#define CGContextRefObj_hash NULL
+#define CGContextRefObj_tp_init 0
+#define CGContextRefObj_tp_alloc PyType_GenericAlloc
+static PyObject *CGContextRefObj_tp_new(PyTypeObject *type, PyObject *_args, PyObject *_kwds)
+#define CGContextRefObj_tp_free PyObject_Del
+PyTypeObject CGContextRef_Type = ;
+static PyObject *CG_CreateCGContextForPort(PyObject *_self, PyObject *_args)
+static PyMethodDef CG_methods[] = ;
+void init_CG(void)

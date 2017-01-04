@@ -1,0 +1,7 @@
+zmq::poller_base_t::poller_base_t ()
+zmq::poller_base_t::~poller_base_t ()
+int zmq::poller_base_t::get_load ()
+void zmq::poller_base_t::adjust_load (int amount_)
+void zmq::poller_base_t::add_timer (int timeout_, i_poll_events *sink_, int id_)
+void zmq::poller_base_t::cancel_timer (i_poll_events *sink_, int id_)
+uint64_t zmq::poller_base_t::execute_timers ()

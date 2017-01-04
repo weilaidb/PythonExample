@@ -1,0 +1,23 @@
+cvmx_spinlock_t cvmx_l2c_spinlock;
+int cvmx_l2c_get_core_way_partition(uint32_t core)
+int cvmx_l2c_set_core_way_partition(uint32_t core, uint32_t mask)
+int cvmx_l2c_set_hw_way_partition(uint32_t mask)
+int cvmx_l2c_get_hw_way_partition(void)
+void cvmx_l2c_config_perf(uint32_t counter, enum cvmx_l2c_event event,
+uint32_t clear_on_read)
+uint64_t cvmx_l2c_read_perf(uint32_t counter)
+static void fault_in(uint64_t addr, int len)
+int cvmx_l2c_lock_line(uint64_t addr)
+int cvmx_l2c_lock_mem_region(uint64_t start, uint64_t len)
+void cvmx_l2c_flush(void)
+int cvmx_l2c_unlock_line(uint64_t address)
+int cvmx_l2c_unlock_mem_region(uint64_t start, uint64_t len)
+union __cvmx_l2c_tag ;
+static union __cvmx_l2c_tag __read_l2_tag(uint64_t assoc, uint64_t index)
+union cvmx_l2c_tag cvmx_l2c_get_tag(uint32_t association, uint32_t index)
+uint32_t cvmx_l2c_address_to_index(uint64_t addr)
+int cvmx_l2c_get_cache_size_bytes(void)
+int cvmx_l2c_get_set_bits(void)
+int cvmx_l2c_get_num_sets(void)
+int cvmx_l2c_get_num_assoc(void)
+void cvmx_l2c_flush_line(uint32_t assoc, uint32_t index)

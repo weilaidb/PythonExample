@@ -1,0 +1,1 @@
+#define _LINUX_VIRTIO_RNG_H

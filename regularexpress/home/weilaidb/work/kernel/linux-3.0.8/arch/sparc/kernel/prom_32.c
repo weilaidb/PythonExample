@@ -1,0 +1,12 @@
+void * __init prom_early_alloc(unsigned long size)
+static void __init sparc32_path_component(struct device_node *dp, char *tmp_buf)
+static void __init sbus_path_component(struct device_node *dp, char *tmp_buf)
+static void __init pci_path_component(struct device_node *dp, char *tmp_buf)
+static void __init ebus_path_component(struct device_node *dp, char *tmp_buf)
+static void __init ambapp_path_component(struct device_node *dp, char *tmp_buf)
+static void __init __build_path_component(struct device_node *dp, char *tmp_buf)
+char * __init build_path_component(struct device_node *dp)
+extern void restore_current(void);
+void __init of_console_init(void)
+void __init of_fill_in_cpu_data(void)
+void __init irq_trans_init(struct device_node *dp)

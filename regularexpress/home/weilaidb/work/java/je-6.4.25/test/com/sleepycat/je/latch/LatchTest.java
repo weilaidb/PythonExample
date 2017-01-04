@@ -1,0 +1,20 @@
+package com.sleepycat.je.latch;
+import static com.sleepycat.je.latch.LatchStatDefinition.LATCH_CONTENTION;
+import static com.sleepycat.je.latch.LatchStatDefinition.LATCH_NOWAIT_SUCCESS;
+import static com.sleepycat.je.latch.LatchStatDefinition.LATCH_NOWAIT_UNSUCCESS;
+import static com.sleepycat.je.latch.LatchStatDefinition.LATCH_NO_WAITERS;
+import static com.sleepycat.je.latch.LatchStatDefinition.LATCH_RELEASES;
+import static com.sleepycat.je.latch.LatchStatDefinition.LATCH_SELF_OWNED;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.junit.After;
+import org.junit.Test;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.dbi.EnvironmentFailureReason;
+import com.sleepycat.je.junit.JUnitThread;
+import com.sleepycat.je.utilint.StatGroup;
+import com.sleepycat.util.test.TestBase;
+public class LatchTest extends TestBase

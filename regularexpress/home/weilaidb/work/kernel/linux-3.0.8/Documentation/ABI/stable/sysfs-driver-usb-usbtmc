@@ -1,0 +1,39 @@
+What:		/sys/bus/usb/drivers/usbtmc/devicesdevice_capabilities
+Date:		August 2008
+Contact:	Greg Kroah-Hartman <gregkh@suse.de>
+Description:
+These files show the various USB TMC capabilities as described
+by the device itself.  The full description of the bitfields
+can be found in the USB TMC documents from the USB-IF entitled
+"Universal Serial Bus Test and Measurement Class Specification
+(USBTMC) Revision 1.0" section 4.2.1.8.
+The files are read only.
+What:		/sys/bus/usb/drivers/usbtmc/devicesusb488_device_capabilities
+Date:		August 2008
+Contact:	Greg Kroah-Hartman <gregkh@suse.de>
+Description:
+These files show the various USB TMC capabilities as described
+by the device itself.  The full description of the bitfields
+can be found in the USB TMC documents from the USB-IF entitled
+"Universal Serial Bus Test and Measurement Class, Subclass
+USB488 Specification (USBTMC-USB488) Revision 1.0" section
+4.2.2.
+The files are read only.
+What:		/sys/bus/usb/drivers/usbtmc/devicesTermCharEnabled
+Date:		August 2008
+Contact:	Greg Kroah-Hartman <gregkh@suse.de>
+Description:
+This file determines if the TermChar is to be sent to the
+device on every transaction or not.  For more details about
+this, please see the document, "Universal Serial Bus Test and
+Measurement Class Specification (USBTMC) Revision 1.0" as
+published by the USB-IF.
+What:		/sys/bus/usb/drivers/usbtmc/devices/*/auto_abort
+Date:		August 2008
+Contact:	Greg Kroah-Hartman <gregkh@suse.de>
+Description:
+This file determines if the the transaction of the USB TMC
+device is to be automatically aborted if there is any error.
+For more details about this, please see the document,
+"Universal Serial Bus Test and Measurement Class Specification
+(USBTMC) Revision 1.0" as published by the USB-IF.

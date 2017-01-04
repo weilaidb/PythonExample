@@ -1,0 +1,15 @@
+DBPRIVATE
+PREFIX	__repmgr
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+BEGIN member		52	200
+ARG	version         u_int32_t       lu
+ARG	prev_status	u_int32_t	lu
+ARG	status		u_int32_t	lu
+DBT	host		DBT		s
+ARG	port		u_int32_t	lu
+END

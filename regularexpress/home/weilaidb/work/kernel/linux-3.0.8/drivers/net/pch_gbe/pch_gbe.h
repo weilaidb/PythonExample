@@ -1,0 +1,201 @@
+#define _PCH_GBE_H_
+#define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
+struct pch_gbe_regs_mac_adr ;
+struct pch_gbe_regs ;
+#define PCH_GBE_INT_RX_DMA_CMPLT  0x00000001
+#define PCH_GBE_INT_RX_VALID      0x00000002
+#define PCH_GBE_INT_RX_FRAME_ERR  0x00000004
+#define PCH_GBE_INT_RX_FIFO_ERR   0x00000008
+#define PCH_GBE_INT_RX_DMA_ERR    0x00000010
+#define PCH_GBE_INT_RX_DSC_EMP    0x00000020
+#define PCH_GBE_INT_TX_CMPLT      0x00000100
+#define PCH_GBE_INT_TX_DMA_CMPLT  0x00000200
+#define PCH_GBE_INT_TX_FIFO_ERR   0x00000400
+#define PCH_GBE_INT_TX_DMA_ERR    0x00000800
+#define PCH_GBE_INT_PAUSE_CMPLT   0x00001000
+#define PCH_GBE_INT_MIIM_CMPLT    0x00010000
+#define PCH_GBE_INT_PHY_INT       0x00100000
+#define PCH_GBE_INT_WOL_DET       0x01000000
+#define PCH_GBE_INT_TCPIP_ERR     0x10000000
+#define PCH_GBE_MODE_MII_ETHER      0x00000000
+#define PCH_GBE_MODE_GMII_ETHER     0x80000000
+#define PCH_GBE_MODE_HALF_DUPLEX    0x00000000
+#define PCH_GBE_MODE_FULL_DUPLEX    0x40000000
+#define PCH_GBE_MODE_FR_BST         0x04000000
+#define PCH_GBE_ALL_RST         0x80000000
+#define PCH_GBE_TX_RST          0x40000000
+#define PCH_GBE_RX_RST          0x04000000
+#define PCH_GBE_EX_LIST_EN      0x00000008
+#define PCH_GBE_RX_TCPIPACC_OFF 0x00000004
+#define PCH_GBE_TX_TCPIPACC_EN  0x00000002
+#define PCH_GBE_RX_TCPIPACC_EN  0x00000001
+#define PCH_GBE_MRE_MAC_RX_EN   0x00000001
+#define PCH_GBE_FL_CTRL_EN      0x80000000
+#define PCH_GBE_PS_PKT_RQ       0x80000000
+#define PCH_GBE_ADD_FIL_EN      0x80000000
+#define PCH_GBE_MLT_FIL_EN      0x40000000
+#define PCH_GBE_RH_ALM_EMP_4    0x00000000
+#define PCH_GBE_RH_ALM_EMP_8    0x00004000
+#define PCH_GBE_RH_ALM_EMP_16   0x00008000
+#define PCH_GBE_RH_ALM_EMP_32   0x0000C000
+#define PCH_GBE_RH_ALM_FULL_4   0x00000000
+#define PCH_GBE_RH_ALM_FULL_8   0x00001000
+#define PCH_GBE_RH_ALM_FULL_16  0x00002000
+#define PCH_GBE_RH_ALM_FULL_32  0x00003000
+#define PCH_GBE_RH_RD_TRG_4     0x00000000
+#define PCH_GBE_RH_RD_TRG_8     0x00000200
+#define PCH_GBE_RH_RD_TRG_16    0x00000400
+#define PCH_GBE_RH_RD_TRG_32    0x00000600
+#define PCH_GBE_RH_RD_TRG_64    0x00000800
+#define PCH_GBE_RH_RD_TRG_128   0x00000A00
+#define PCH_GBE_RH_RD_TRG_256   0x00000C00
+#define PCH_GBE_RH_RD_TRG_512   0x00000E00
+#define PCH_GBE_RXD_ACC_STAT_BCAST          0x00000400
+#define PCH_GBE_RXD_ACC_STAT_MCAST          0x00000200
+#define PCH_GBE_RXD_ACC_STAT_UCAST          0x00000100
+#define PCH_GBE_RXD_ACC_STAT_TCPIPOK        0x000000C0
+#define PCH_GBE_RXD_ACC_STAT_IPOK           0x00000080
+#define PCH_GBE_RXD_ACC_STAT_TCPOK          0x00000040
+#define PCH_GBE_RXD_ACC_STAT_IP6ERR         0x00000020
+#define PCH_GBE_RXD_ACC_STAT_OFLIST         0x00000010
+#define PCH_GBE_RXD_ACC_STAT_TYPEIP         0x00000008
+#define PCH_GBE_RXD_ACC_STAT_MACL           0x00000004
+#define PCH_GBE_RXD_ACC_STAT_PPPOE          0x00000002
+#define PCH_GBE_RXD_ACC_STAT_VTAGT          0x00000001
+#define PCH_GBE_RXD_GMAC_STAT_PAUSE         0x0200
+#define PCH_GBE_RXD_GMAC_STAT_MARBR         0x0100
+#define PCH_GBE_RXD_GMAC_STAT_MARMLT        0x0080
+#define PCH_GBE_RXD_GMAC_STAT_MARIND        0x0040
+#define PCH_GBE_RXD_GMAC_STAT_MARNOTMT      0x0020
+#define PCH_GBE_RXD_GMAC_STAT_TLONG         0x0010
+#define PCH_GBE_RXD_GMAC_STAT_TSHRT         0x0008
+#define PCH_GBE_RXD_GMAC_STAT_NOTOCTAL      0x0004
+#define PCH_GBE_RXD_GMAC_STAT_NBLERR        0x0002
+#define PCH_GBE_RXD_GMAC_STAT_CRCERR        0x0001
+#define PCH_GBE_TXD_CTRL_TCPIP_ACC_OFF      0x0008
+#define PCH_GBE_TXD_CTRL_ITAG               0x0004
+#define PCH_GBE_TXD_CTRL_ICRC               0x0002
+#define PCH_GBE_TXD_CTRL_APAD               0x0001
+#define PCH_GBE_TXD_WORDS_SHIFT             2
+#define PCH_GBE_TXD_GMAC_STAT_CMPLT         0x2000
+#define PCH_GBE_TXD_GMAC_STAT_ABT           0x1000
+#define PCH_GBE_TXD_GMAC_STAT_EXCOL         0x0800
+#define PCH_GBE_TXD_GMAC_STAT_SNGCOL        0x0400
+#define PCH_GBE_TXD_GMAC_STAT_MLTCOL        0x0200
+#define PCH_GBE_TXD_GMAC_STAT_CRSER         0x0100
+#define PCH_GBE_TXD_GMAC_STAT_TLNG          0x0080
+#define PCH_GBE_TXD_GMAC_STAT_TSHRT         0x0040
+#define PCH_GBE_TXD_GMAC_STAT_LTCOL         0x0020
+#define PCH_GBE_TXD_GMAC_STAT_TFUNDFLW      0x0010
+#define PCH_GBE_TXD_GMAC_STAT_RTYCNT_MASK   0x000F
+#define PCH_GBE_TM_NO_RTRY     0x80000000
+#define PCH_GBE_TM_LONG_PKT    0x40000000
+#define PCH_GBE_TM_ST_AND_FD   0x20000000
+#define PCH_GBE_TM_SHORT_PKT   0x10000000
+#define PCH_GBE_TM_LTCOL_RETX  0x08000000
+#define PCH_GBE_TM_TH_TX_STRT_4    0x00000000
+#define PCH_GBE_TM_TH_TX_STRT_8    0x00004000
+#define PCH_GBE_TM_TH_TX_STRT_16   0x00008000
+#define PCH_GBE_TM_TH_TX_STRT_32   0x0000C000
+#define PCH_GBE_TM_TH_ALM_EMP_4    0x00000000
+#define PCH_GBE_TM_TH_ALM_EMP_8    0x00000800
+#define PCH_GBE_TM_TH_ALM_EMP_16   0x00001000
+#define PCH_GBE_TM_TH_ALM_EMP_32   0x00001800
+#define PCH_GBE_TM_TH_ALM_EMP_64   0x00002000
+#define PCH_GBE_TM_TH_ALM_EMP_128  0x00002800
+#define PCH_GBE_TM_TH_ALM_EMP_256  0x00003000
+#define PCH_GBE_TM_TH_ALM_EMP_512  0x00003800
+#define PCH_GBE_TM_TH_ALM_FULL_4   0x00000000
+#define PCH_GBE_TM_TH_ALM_FULL_8   0x00000200
+#define PCH_GBE_TM_TH_ALM_FULL_16  0x00000400
+#define PCH_GBE_TM_TH_ALM_FULL_32  0x00000600
+#define PCH_GBE_RF_ALM_FULL     0x80000000
+#define PCH_GBE_RF_ALM_EMP      0x40000000
+#define PCH_GBE_RF_RD_TRG       0x20000000
+#define PCH_GBE_RF_STRWD        0x1FFE0000
+#define PCH_GBE_RF_RCVING       0x00010000
+#define PCH_GBE_BUSY                0x80000000
+#define PCH_GBE_MIIM_OPER_WRITE     0x04000000
+#define PCH_GBE_MIIM_OPER_READ      0x00000000
+#define PCH_GBE_MIIM_OPER_READY     0x04000000
+#define PCH_GBE_MIIM_PHY_ADDR_SHIFT 21
+#define PCH_GBE_MIIM_REG_ADDR_SHIFT 16
+#define PCH_GBE_LINK_UP             0x80000008
+#define PCH_GBE_RXC_SPEED_MSK       0x00000006
+#define PCH_GBE_RXC_SPEED_2_5M      0x00000000
+#define PCH_GBE_RXC_SPEED_25M       0x00000002
+#define PCH_GBE_RXC_SPEED_125M      0x00000004
+#define PCH_GBE_DUPLEX_FULL         0x00000001
+#define PCH_GBE_CRS_SEL             0x00000010
+#define PCH_GBE_RGMII_RATE_125M     0x00000000
+#define PCH_GBE_RGMII_RATE_25M      0x00000008
+#define PCH_GBE_RGMII_RATE_2_5M     0x0000000C
+#define PCH_GBE_RGMII_MODE_GMII     0x00000000
+#define PCH_GBE_RGMII_MODE_RGMII    0x00000002
+#define PCH_GBE_CHIP_TYPE_EXTERNAL  0x00000000
+#define PCH_GBE_CHIP_TYPE_INTERNAL  0x00000001
+#define PCH_GBE_RX_DMA_EN       0x00000002
+#define PCH_GBE_TX_DMA_EN       0x00000001
+#define PCH_GBE_WLS_BR          0x00000008
+#define PCH_GBE_WLS_MLT         0x00000004
+#define PCH_GBE_WLS_IND         0x00000002
+#define PCH_GBE_WLS_MP          0x00000001
+#define PCH_GBE_WLC_WOL_MODE    0x00010000
+#define PCH_GBE_WLC_IGN_TLONG   0x00000100
+#define PCH_GBE_WLC_IGN_TSHRT   0x00000080
+#define PCH_GBE_WLC_IGN_OCTER   0x00000040
+#define PCH_GBE_WLC_IGN_NBLER   0x00000020
+#define PCH_GBE_WLC_IGN_CRCER   0x00000010
+#define PCH_GBE_WLC_BR          0x00000008
+#define PCH_GBE_WLC_MLT         0x00000004
+#define PCH_GBE_WLC_IND         0x00000002
+#define PCH_GBE_WLC_MP          0x00000001
+#define PCH_GBE_WLA_BUSY        0x80000000
+#define PCH_GBE_MAX_TXD                     4096
+#define PCH_GBE_DEFAULT_TXD                  256
+#define PCH_GBE_MIN_TXD                        8
+#define PCH_GBE_MAX_RXD                     4096
+#define PCH_GBE_DEFAULT_RXD                  256
+#define PCH_GBE_MIN_RXD                        8
+#define PCH_GBE_TX_DESC_MULTIPLE               8
+#define PCH_GBE_RX_DESC_MULTIPLE               8
+#define PCH_GBE_HAL_MIIM_READ          ((u32)0x00000000)
+#define PCH_GBE_HAL_MIIM_WRITE         ((u32)0x04000000)
+#define PCH_GBE_FC_NONE			0
+#define PCH_GBE_FC_RX_PAUSE		1
+#define PCH_GBE_FC_TX_PAUSE		2
+#define PCH_GBE_FC_FULL			3
+#define PCH_GBE_FC_DEFAULT		PCH_GBE_FC_FULL
+struct pch_gbe_hw;
+struct pch_gbe_functions ;
+struct pch_gbe_mac_info ;
+struct pch_gbe_phy_info ;
+struct pch_gbe_bus_info ;
+struct pch_gbe_hw ;
+struct pch_gbe_rx_desc ;
+struct pch_gbe_tx_desc ;
+struct pch_gbe_buffer ;
+struct pch_gbe_tx_ring ;
+struct pch_gbe_rx_ring ;
+struct pch_gbe_hw_stats ;
+struct pch_gbe_adapter ;
+extern const char pch_driver_version[];
+extern int pch_gbe_up(struct pch_gbe_adapter *adapter);
+extern void pch_gbe_down(struct pch_gbe_adapter *adapter);
+extern void pch_gbe_reinit_locked(struct pch_gbe_adapter *adapter);
+extern void pch_gbe_reset(struct pch_gbe_adapter *adapter);
+extern int pch_gbe_setup_tx_resources(struct pch_gbe_adapter *adapter,
+struct pch_gbe_tx_ring *txdr);
+extern int pch_gbe_setup_rx_resources(struct pch_gbe_adapter *adapter,
+struct pch_gbe_rx_ring *rxdr);
+extern void pch_gbe_free_tx_resources(struct pch_gbe_adapter *adapter,
+struct pch_gbe_tx_ring *tx_ring);
+extern void pch_gbe_free_rx_resources(struct pch_gbe_adapter *adapter,
+struct pch_gbe_rx_ring *rx_ring);
+extern void pch_gbe_update_stats(struct pch_gbe_adapter *adapter);
+extern void pch_gbe_check_options(struct pch_gbe_adapter *adapter);
+extern void pch_gbe_set_ethtool_ops(struct net_device *netdev);
+extern s32 pch_gbe_mac_force_mac_fc(struct pch_gbe_hw *hw);
+extern s32 pch_gbe_mac_read_mac_addr(struct pch_gbe_hw *hw);
+extern u16 pch_gbe_mac_ctrl_miim(struct pch_gbe_hw *hw,
+u32 addr, u32 dir, u32 reg, u16 data);

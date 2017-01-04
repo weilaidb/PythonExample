@@ -1,0 +1,19 @@
+#!/bin/sh
+# wrap-for-bin.sh: Template for git executable wrapper scripts
+# to run test suite against sandbox, but with only bindir-installed
+# executables in PATH.  The Makefile copies this into various
+# files in bin-wrappers, substituting
+# /home/weilaidb/software/git-2.0.5 and test-wildmatch.
+GIT_EXEC_PATH='/home/weilaidb/software/git-2.0.5'
+if test -n "$NO_SET_GIT_TEMPLATE_DIR"
+then
+unset GIT_TEMPLATE_DIR
+else
+GIT_TEMPLATE_DIR='/home/weilaidb/software/git-2.0.5/templates/blt'
+export GIT_TEMPLATE_DIR
+fi
+GITPERLLIB='/home/weilaidb/software/git-2.0.5/perl/blib/lib'"$"
+GIT_TEXTDOMAINDIR='/home/weilaidb/software/git-2.0.5/po/build/locale'
+PATH='/home/weilaidb/software/git-2.0.5/bin-wrappers:'"$PATH"
+export GIT_EXEC_PATH GITPERLLIB PATH GIT_TEXTDOMAINDIR
+exec "$/test-wildmatch" "$@"

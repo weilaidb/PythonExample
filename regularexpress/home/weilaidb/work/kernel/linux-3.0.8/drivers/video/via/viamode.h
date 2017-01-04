@@ -1,0 +1,23 @@
+#define __VIAMODE_H__
+struct VPITTable ;
+struct VideoModeTable ;
+struct patch_table ;
+extern int NUM_TOTAL_CN400_ModeXregs;
+extern int NUM_TOTAL_CN700_ModeXregs;
+extern int NUM_TOTAL_KM400_ModeXregs;
+extern int NUM_TOTAL_CX700_ModeXregs;
+extern int NUM_TOTAL_VX855_ModeXregs;
+extern int NUM_TOTAL_CLE266_ModeXregs;
+extern int NUM_TOTAL_PATCH_MODE;
+extern struct io_reg CN400_ModeXregs[];
+extern struct io_reg CN700_ModeXregs[];
+extern struct io_reg KM400_ModeXregs[];
+extern struct io_reg CX700_ModeXregs[];
+extern struct io_reg VX800_ModeXregs[];
+extern struct io_reg VX855_ModeXregs[];
+extern struct io_reg CLE266_ModeXregs[];
+extern struct io_reg PM1024x768[];
+extern struct patch_table res_patch_table[];
+extern struct VPITTable VPIT;
+struct VideoModeTable *viafb_get_mode(int hres, int vres);
+struct VideoModeTable *viafb_get_rb_mode(int hres, int vres);

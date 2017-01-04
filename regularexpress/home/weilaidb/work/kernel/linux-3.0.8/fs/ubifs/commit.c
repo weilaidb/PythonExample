@@ -1,0 +1,12 @@
+static int nothing_to_commit(struct ubifs_info *c)
+static int do_commit(struct ubifs_info *c)
+static int run_bg_commit(struct ubifs_info *c)
+int ubifs_bg_thread(void *info)
+void ubifs_commit_required(struct ubifs_info *c)
+void ubifs_request_bg_commit(struct ubifs_info *c)
+static int wait_for_commit(struct ubifs_info *c)
+int ubifs_run_commit(struct ubifs_info *c)
+int ubifs_gc_should_commit(struct ubifs_info *c)
+struct idx_node ;
+int dbg_old_index_check_init(struct ubifs_info *c, struct ubifs_zbranch *zroot)
+int dbg_check_old_index(struct ubifs_info *c, struct ubifs_zbranch *zroot)

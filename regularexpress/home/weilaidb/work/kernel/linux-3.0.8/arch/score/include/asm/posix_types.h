@@ -1,0 +1,1 @@
+#define _ASM_SCORE_POSIX_TYPES_H

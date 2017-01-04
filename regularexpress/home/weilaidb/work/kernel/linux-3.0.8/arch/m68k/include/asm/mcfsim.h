@@ -1,0 +1,12 @@
+#define	mcfsim_h
+#if defined(CONFIG_M5206) || defined(CONFIG_M5206e)
+#elif defined(CONFIG_M520x)
+#elif defined(CONFIG_M523x)
+#elif defined(CONFIG_M5249)
+#elif defined(CONFIG_M527x)
+#elif defined(CONFIG_M5272)
+#elif defined(CONFIG_M528x)
+#elif defined(CONFIG_M5307)
+#elif defined(CONFIG_M532x)
+#elif defined(CONFIG_M5407)
+#elif defined(CONFIG_M54xx)

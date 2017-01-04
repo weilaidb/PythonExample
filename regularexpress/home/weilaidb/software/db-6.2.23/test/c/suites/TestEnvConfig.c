@@ -1,0 +1,18 @@
+struct context ;
+#define	ENV
+int TestEnvConfigSuiteSetup(CuSuite *ct)
+int TestEnvConfigSuiteTeardown(CuSuite *ct)
+int TestEnvConfigTestSetup(CuTest *ct)
+int TestEnvConfigTestTeardown(CuTest *ct)
+int TestSetTxMax(CuTest *ct)
+int TestSetLogMax(CuTest *ct)
+int TestSetLogBufferSize(CuTest *ct)
+int TestSetLogRegionSize(CuTest *ct)
+int TestGetLockConflicts(CuTest *ct)
+int TestSetLockDetect(CuTest *ct)
+int TestLockMaxLocks(CuTest *ct)
+int TestLockMaxLockers(CuTest *ct)
+int TestSetLockMaxObjects(CuTest *ct)
+int TestSetLockTimeout(CuTest *ct)
+int TestSetTransactionTimeout(CuTest *ct)
+int TestSetCachesize(CuTest *ct)

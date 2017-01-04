@@ -1,0 +1,24 @@
+package com.sleepycat.je.log;
+import static com.sleepycat.je.log.LogStatDefinition.LBFP_BUFFER_BYTES;
+import static com.sleepycat.je.log.LogStatDefinition.LBFP_LOG_BUFFERS;
+import static com.sleepycat.je.log.LogStatDefinition.LBFP_MISS;
+import static com.sleepycat.je.log.LogStatDefinition.LBFP_NOT_RESIDENT;
+import static com.sleepycat.je.log.LogStatDefinition.LBFP_NO_FREE_BUFFER;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.Iterator;
+import java.util.LinkedList;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.StatsConfig;
+import com.sleepycat.je.config.EnvironmentParams;
+import com.sleepycat.je.dbi.DbConfigManager;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.latch.Latch;
+import com.sleepycat.je.latch.LatchFactory;
+import com.sleepycat.je.utilint.AtomicLongStat;
+import com.sleepycat.je.utilint.DbLsn;
+import com.sleepycat.je.utilint.IntStat;
+import com.sleepycat.je.utilint.LongStat;
+import com.sleepycat.je.utilint.StatGroup;
+class LogBufferPool

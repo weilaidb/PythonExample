@@ -1,0 +1,16 @@
+diff --git a/main.c b/main.c
+new file mode 100644
+--- /dev/null
++++ b/main.c
+@@ -0,0 +1,23 @@
++
++
++int func(int num);
++void print_int(int num);
++
++int main()
++
++int func(int num)
++
++void print_int(int num)
++

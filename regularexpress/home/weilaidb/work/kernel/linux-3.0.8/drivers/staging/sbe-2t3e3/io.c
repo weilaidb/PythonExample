@@ -1,0 +1,12 @@
+#define cpld_write_nolock(channel, reg, val)			\
+bootrom_write((channel), CPLD_MAP_REG(reg, channel), val)
+u32 cpld_read(struct channel *channel, u32 reg)
+u32 bootrom_read(struct channel *channel, u32 reg)
+void bootrom_write(struct channel *channel, u32 reg, u32 val)
+static u32 serialrom_read_bit(struct channel *channel)
+static void serialrom_write_bit(struct channel *channel, u32 bit)
+u32 t3e3_eeprom_read_word(struct channel *channel, u32 address)
+u32 exar7250_read(struct channel *channel, u32 reg)
+void exar7250_write(struct channel *channel, u32 reg, u32 val)
+u32 exar7300_read(struct channel *channel, u32 reg)
+void exar7300_write(struct channel *channel, u32 reg, u32 val)

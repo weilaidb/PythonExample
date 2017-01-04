@@ -1,0 +1,19 @@
+#define OMAP_VOUTDEF_H
+#define YUYV_BPP        2
+#define RGB565_BPP      2
+#define RGB24_BPP       3
+#define RGB32_BPP       4
+#define TILE_SIZE       32
+#define YUYV_VRFB_BPP   2
+#define RGB_VRFB_BPP    1
+#define MAX_CID		3
+#define MAC_VRFB_CTXS	4
+#define MAX_VOUT_DEV	2
+#define MAX_OVLS	3
+#define MAX_DISPLAYS	3
+#define MAX_MANAGERS	3
+enum dss_rotation ;
+struct vid_vrfb_dma ;
+struct omapvideo_info ;
+struct omap2video_device ;
+struct omap_vout_device ;

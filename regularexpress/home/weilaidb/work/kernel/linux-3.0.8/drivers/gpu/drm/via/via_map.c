@@ -1,0 +1,5 @@
+static int via_do_init_map(struct drm_device *dev, drm_via_init_t *init)
+int via_do_cleanup_map(struct drm_device *dev)
+int via_map_init(struct drm_device *dev, void *data, struct drm_file *file_priv)
+int via_driver_load(struct drm_device *dev, unsigned long chipset)
+int via_driver_unload(struct drm_device *dev)

@@ -1,0 +1,27 @@
+#define _ASM_X86_LOCAL_H
+typedef struct  local_t;
+#define LOCAL_INIT(i)
+#define local_read(l)	atomic_long_read(&(l)->a)
+#define local_set(l, i)	atomic_long_set(&(l)->a, (i))
+static inline void local_inc(local_t *l)
+static inline void local_dec(local_t *l)
+static inline void local_add(long i, local_t *l)
+static inline void local_sub(long i, local_t *l)
+static inline int local_sub_and_test(long i, local_t *l)
+static inline int local_dec_and_test(local_t *l)
+static inline int local_inc_and_test(local_t *l)
+static inline int local_add_negative(long i, local_t *l)
+static inline long local_add_return(long i, local_t *l)
+static inline long local_sub_return(long i, local_t *l)
+#define local_inc_return(l)  (local_add_return(1, l))
+#define local_dec_return(l)  (local_sub_return(1, l))
+#define local_cmpxchg(l, o, n) \
+(cmpxchg_local(&((l)->a.counter), (o), (n)))
+#define local_xchg(l, n) (xchg(&((l)->a.counter), (n)))
+#define local_add_unless(l, a, u)				\
+()
+#define local_inc_not_zero(l) local_add_unless((l), 1, 0)
+#define __local_inc(l)		local_inc(l)
+#define __local_dec(l)		local_dec(l)
+#define __local_add(i, l)	local_add((i), (l))
+#define __local_sub(i, l)	local_sub((i), (l))

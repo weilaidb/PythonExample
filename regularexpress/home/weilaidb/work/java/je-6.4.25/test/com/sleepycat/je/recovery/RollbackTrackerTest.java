@@ -1,0 +1,25 @@
+package com.sleepycat.je.recovery;
+import static com.sleepycat.je.utilint.VLSN.NULL_VLSN;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import org.junit.Test;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.dbi.EnvironmentFailureReason;
+import com.sleepycat.je.recovery.RollbackTracker.RollbackPeriod;
+import com.sleepycat.je.txn.RollbackEnd;
+import com.sleepycat.je.txn.RollbackStart;
+import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.je.utilint.DbLsn;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class RollbackTrackerTest extends TestBase

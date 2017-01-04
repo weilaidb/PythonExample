@@ -1,0 +1,25 @@
+#define RTC_BASE	0xb0000000
+#define RTC_SEC1	(RTC_BASE + 0)
+#define RTC_SEC10	(RTC_BASE + 1)
+#define RTC_MIN1	(RTC_BASE + 2)
+#define RTC_MIN10	(RTC_BASE + 3)
+#define RTC_HOU1	(RTC_BASE + 4)
+#define RTC_HOU10	(RTC_BASE + 5)
+#define RTC_WEE1	(RTC_BASE + 6)
+#define RTC_DAY1	(RTC_BASE + 7)
+#define RTC_DAY10	(RTC_BASE + 8)
+#define RTC_MON1	(RTC_BASE + 9)
+#define RTC_MON10	(RTC_BASE + 10)
+#define RTC_YEA1	(RTC_BASE + 11)
+#define RTC_YEA10	(RTC_BASE + 12)
+#define RTC_YEA100	(RTC_BASE + 13)
+#define RTC_YEA1000	(RTC_BASE + 14)
+#define RTC_CTL		(RTC_BASE + 15)
+#define RTC_BUSY	1
+#define RTC_STOP	2
+static DEFINE_SPINLOCK(sh03_rtc_lock);
+unsigned long get_cmos_time(void)
+void sh03_rtc_gettimeofday(struct timespec *tv)
+static int set_rtc_mmss(unsigned long nowtime)
+int sh03_rtc_settimeofday(const time_t secs)
+void sh03_time_init(void)

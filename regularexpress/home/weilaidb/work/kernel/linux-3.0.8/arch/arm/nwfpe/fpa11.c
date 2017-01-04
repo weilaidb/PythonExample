@@ -1,0 +1,5 @@
+static void resetFPA11(void)
+int8 SetRoundingMode(const unsigned int opcode)
+int8 SetRoundingPrecision(const unsigned int opcode)
+void nwfpe_init_fpa(union fp_state *fp)
+unsigned int EmulateAll(unsigned int opcode)

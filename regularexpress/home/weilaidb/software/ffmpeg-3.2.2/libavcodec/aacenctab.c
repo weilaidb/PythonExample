@@ -1,0 +1,17 @@
+static const uint8_t swb_size_128_96[] = ;
+static const uint8_t swb_size_128_64[] = ;
+static const uint8_t swb_size_128_48[] = ;
+static const uint8_t swb_size_128_24[] = ;
+static const uint8_t swb_size_128_16[] = ;
+static const uint8_t swb_size_128_8[] = ;
+static const uint8_t swb_size_1024_96[] = ;
+static const uint8_t swb_size_1024_64[] = ;
+static const uint8_t swb_size_1024_48[] = ;
+static const uint8_t swb_size_1024_32[] = ;
+static const uint8_t swb_size_1024_24[] = ;
+static const uint8_t swb_size_1024_16[] = ;
+static const uint8_t swb_size_1024_8[] = ;
+const uint8_t *ff_aac_swb_size_128[] = ;
+const uint8_t *ff_aac_swb_size_1024[] = ;
+const int ff_aac_swb_size_128_len  = FF_ARRAY_ELEMS(ff_aac_swb_size_128);
+const int ff_aac_swb_size_1024_len = FF_ARRAY_ELEMS(ff_aac_swb_size_1024);

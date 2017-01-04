@@ -1,0 +1,23 @@
+package com.sleepycat.je.recovery;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import java.io.File;
+import javax.transaction.xa.XAException;
+import org.junit.Test;
+import com.sleepycat.bind.tuple.IntegerBinding;
+import com.sleepycat.je.CheckpointConfig;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.XAEnvironment;
+import com.sleepycat.je.log.LogUtils.XidImpl;
+import com.sleepycat.je.utilint.DbLsn;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+import com.sleepycat.utilint.StringUtils;
+public class Rollback2PCTest extends TestBase

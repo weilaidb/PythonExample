@@ -1,0 +1,25 @@
+package com.sleepycat.je.rep;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+import org.junit.Test;
+import com.sleepycat.bind.tuple.StringBinding;
+import com.sleepycat.je.CommitToken;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.rep.impl.RepImplStatDefinition;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.je.util.DbTruncateLog;
+import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.je.utilint.PollCondition;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class RepEnvMultiSubDirTest extends TestBase

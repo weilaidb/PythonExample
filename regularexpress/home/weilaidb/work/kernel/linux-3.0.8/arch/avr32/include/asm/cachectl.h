@@ -1,0 +1,2 @@
+#define __ASM_AVR32_CACHECTL_H
+#define CACHE_IFLUSH	0

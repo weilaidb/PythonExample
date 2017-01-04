@@ -1,0 +1,32 @@
+#define _ISERIES_VPD_AREAS_H
+#define ItVpdCecVpd				0
+#define ItVpdDynamicSpace			1
+#define ItVpdExtVpd				2
+#define ItVpdExtVpdOnPanel			3
+#define ItVpdFirstPaca				4
+#define ItVpdIoVpd				5
+#define ItVpdIplParms				6
+#define ItVpdMsVpd				7
+#define ItVpdPanelVpd				8
+#define ItVpdLpNaca				9
+#define ItVpdBackplaneAndMaybeClockCardVpd	10
+#define ItVpdRecoveryLogBuffer			11
+#define ItVpdSpCommArea				12
+#define ItVpdSpLogBuffer			13
+#define ItVpdSpLogBufferSave			14
+#define ItVpdSpCardVpd				15
+#define ItVpdFirstProcVpd			16
+#define ItVpdApModelVpd				17
+#define ItVpdClockCardVpd			18
+#define ItVpdBusExtCardVpd			19
+#define ItVpdProcCapacityVpd			20
+#define ItVpdInteractiveCapacityVpd		21
+#define ItVpdFirstSlotLabel			22
+#define ItVpdFirstLpQueue			23
+#define ItVpdFirstL3CacheVpd			24
+#define ItVpdFirstProcFruVpd			25
+#define ItVpdMaxEntries				26
+#define ItDmaMaxEntries				10
+#define ItVpdAreasMaxSlotLabels			192
+struct ItVpdAreas ;
+extern const struct ItVpdAreas	itVpdAreas;

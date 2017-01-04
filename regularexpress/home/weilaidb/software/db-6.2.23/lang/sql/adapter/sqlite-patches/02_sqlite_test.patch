@@ -1,0 +1,117 @@
+--- src/test1.c
++++ src/test1.c
+@@ -3602,7 +3602,7 @@
+if( bytes>=0 )
+-    if( (int)strlen(zTail)<bytes ){
++    if(bytes>-1 && (int)strlen(zTail)<(unsigned int)bytes )
+Tcl_ObjSetVar2(interp, objv[4], 0, Tcl_NewStringObj(zTail, bytes), 0);
+@@ -6696,8 +6696,6 @@
+extern int sqlite3_hostid_num;
+extern int sqlite3_max_blobsize;
+-  extern int sqlite3BtreeSharedCacheReport(void*,
+-                                          Tcl_Interp*,int,Tcl_Obj*CONST*);
+static int iZero = 0;
+static struct
++static int t2_tcl_function_stub(
++  void *NotUsed,
++  Tcl_Interp *interp,
++  int argc,
++  const char **argv
++)
++
+int Sqlitetest2_Init(Tcl_Interp *interp){
+-  extern int sqlite3_io_error_persist;
+-  extern int sqlite3_io_error_pending;
+-  extern int sqlite3_io_error_hit;
+-  extern int sqlite3_io_error_hardhit;
+-  extern int sqlite3_diskfull_pending;
+-  extern int sqlite3_diskfull;
+static struct  aCmd[] = ;
+int i;
+for(i=0; i<sizeof(aCmd)/sizeof(aCmd[0]); i++)
+-  Tcl_LinkVar(interp, "sqlite_io_error_pending",
+-     (char*)&sqlite3_io_error_pending, TCL_LINK_INT);
+-  Tcl_LinkVar(interp, "sqlite_io_error_persist",
+-     (char*)&sqlite3_io_error_persist, TCL_LINK_INT);
+-  Tcl_LinkVar(interp, "sqlite_io_error_hit",
+-     (char*)&sqlite3_io_error_hit, TCL_LINK_INT);
+-  Tcl_LinkVar(interp, "sqlite_io_error_hardhit",
+-     (char*)&sqlite3_io_error_hardhit, TCL_LINK_INT);
+-  Tcl_LinkVar(interp, "sqlite_diskfull_pending",
+-     (char*)&sqlite3_diskfull_pending, TCL_LINK_INT);
+-  Tcl_LinkVar(interp, "sqlite_diskfull",
+-     (char*)&sqlite3_diskfull, TCL_LINK_INT);
+Tcl_LinkVar(interp, "sqlite_pending_byte",
+(char*)&sqlite3PendingByte, TCL_LINK_INT | TCL_LINK_READ_ONLY);
+--- src/test3.c
++++ src/test3.c
+@@ -19,6 +19,15 @@
++static int t3_tcl_function_stub(
++  void *NotUsed,
++  Tcl_Interp *interp,
++  int argc,
++  const char **argv
++)
++
+extern const char *sqlite3ErrName(int);
+-static int btree_eof(
+-  void *NotUsed,
+-  Tcl_Interp *interp,
+-  int argc,
+-  const char **argv
+-)
+-
+-
+){
+BtCursor *pCur;
+-  int n2;
+-  u64 n1;
++  int n1;
+char zBuf[50];
+if( argc!=2 )
+-static int btree_varint_test(
+-  void *NotUsed,
+-  Tcl_Interp *interp,
+-  int argc,
+-  const char **argv
+-)
+-
+-
+-static int btree_ismemdb(
+-  void *NotUsed,
+-  Tcl_Interp *interp,
+-  int argc,
+-  const char **argv
+-)
+-
+-
+-static int btree_set_cache_size(
+-  void *NotUsed,
+-  Tcl_Interp *interp,
+-  int argc,
+-  const char **argv
+-)
+-
+-
+-
+-
+-
+-
+-int sqlite3BtreeSharedCacheReport(
+-  void * clientData,
+-  Tcl_Interp *interp,
+-  int objc,
+-  Tcl_Obj *CONST objv[]
+-)
+-
+-
+-void sqlite3BtreeCursorList(Btree *p)
+--- src/test_malloc.c
++++ src/test_malloc.c
+@@ -756,7 +756,7 @@
+int isNew;
+int aKey[MALLOC_LOG_KEYINTS];
+-    unsigned int nKey = sizeof(int)*MALLOC_LOG_KEYINTS;
++    unsigned int nKey = sizeof(int)*MALLOC_LOG_FRAMES;
+memset(aKey, 0, nKey);
+if( (sizeof(void*)*nFrame)<nKey ){

@@ -1,0 +1,5 @@
+Application::Application(int &argc, char *argv[])
+: QApplication(argc, argv)
+void Application::setTicTacToe(TicTacToe *toe)
+void Application::saveState(QSessionManager &sessionManager)
+void Application::commitData(QSessionManager &sessionManager)

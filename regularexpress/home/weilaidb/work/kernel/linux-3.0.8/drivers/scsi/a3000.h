@@ -1,0 +1,21 @@
+#define A3000_H
+#define CMD_PER_LUN		2
+#define CAN_QUEUE		16
+#define A3000_XFER_MASK		(0x00000003)
+struct a3000_scsiregs ;
+#define DAWR_A3000		(3)
+#define CNTR_TCEN		(1<<5)
+#define CNTR_PREST		(1<<4)
+#define CNTR_PDMD		(1<<3)
+#define CNTR_INTEN		(1<<2)
+#define CNTR_DDIR		(1<<1)
+#define CNTR_IO_DX		(1<<0)
+#define ISTR_INTX		(1<<8)
+#define ISTR_INT_F		(1<<7)
+#define ISTR_INTS		(1<<6)
+#define ISTR_E_INT		(1<<5)
+#define ISTR_INT_P		(1<<4)
+#define ISTR_UE_INT		(1<<3)
+#define ISTR_OE_INT		(1<<2)
+#define ISTR_FF_FLG		(1<<1)
+#define ISTR_FE_FLG		(1<<0)

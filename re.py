@@ -100,8 +100,9 @@ if __name__=="__main__":
 	print "deal result:" + text
 	
 	writefilewithcontent(savefilename, text)
-	# delete(savefilename)
-	# os.remove(savefilename)
+	delete(savefilename)
+	os.remove(savefilename)
+	os.rename(savefilename +'.re.txt', savefilename)
 	
 	print '=' * 3 + "end" + '=' * 3
 	

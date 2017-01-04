@@ -1,0 +1,30 @@
+#define _IFX6X60_H
+#define DRVNAME				"ifx6x60"
+#define TTYNAME				"ttyIFX"
+#define IFX_SPI_MAX_MINORS		1
+#define IFX_SPI_TRANSFER_SIZE		2048
+#define IFX_SPI_FIFO_SIZE		4096
+#define IFX_SPI_HEADER_OVERHEAD		4
+#define IFX_RESET_TIMEOUT		msecs_to_jiffies(50)
+#define IFX_SPI_STATE_PRESENT		0
+#define IFX_SPI_STATE_IO_IN_PROGRESS	1
+#define IFX_SPI_STATE_IO_READY		2
+#define IFX_SPI_STATE_TIMER_PENDING	3
+#define IFX_SPI_DCD			0
+#define IFX_SPI_CTS			1
+#define IFX_SPI_DSR			2
+#define IFX_SPI_RI			3
+#define IFX_SPI_DTR			4
+#define IFX_SPI_RTS			5
+#define IFX_SPI_TX_FC			6
+#define IFX_SPI_RX_FC			7
+#define IFX_SPI_UPDATE			8
+#define IFX_SPI_PAYLOAD_SIZE		(IFX_SPI_TRANSFER_SIZE - \
+IFX_SPI_HEADER_OVERHEAD)
+#define IFX_SPI_IRQ_TYPE		DETECT_EDGE_RISING
+#define IFX_SPI_GPIO_TARGET		0
+#define IFX_SPI_GPIO0			0x105
+#define IFX_SPI_STATUS_TIMEOUT		(2000*HZ)
+#define IFX_SPI_POWER_DATA_PENDING	1
+#define IFX_SPI_POWER_SRDY		2
+struct ifx_spi_device ;

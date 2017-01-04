@@ -1,0 +1,2 @@
+#define _ASMSPARC_PARAM_H
+#define EXEC_PAGESIZE	8192

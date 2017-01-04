@@ -1,0 +1,30 @@
+DBPRIVATE
+PREFIX	__crdel
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+BEGIN metasub		42	142
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+PGDBT	page		DBT		s
+POINTER	lsn		DB_LSN *	lu
+END
+BEGIN	inmem_create	44	138
+ARG	fileid	int32_t		ld
+DBT	name	DBT		s
+DBT	fid	DBT		s
+ARG	pgsize	u_int32_t	lu
+END
+BEGIN	inmem_rename	44	139
+DBT	oldname		DBT		s
+DBT	newname		DBT		s
+DBT	fid		DBT		s
+END
+BEGIN	inmem_remove	44	140
+DBT	name		DBT		s
+DBT	fid		DBT		s
+END

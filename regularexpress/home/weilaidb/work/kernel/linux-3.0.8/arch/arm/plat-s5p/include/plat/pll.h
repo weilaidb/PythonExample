@@ -1,0 +1,38 @@
+#define PLL45XX_MDIV_MASK	(0x3FF)
+#define PLL45XX_PDIV_MASK	(0x3F)
+#define PLL45XX_SDIV_MASK	(0x7)
+#define PLL45XX_MDIV_SHIFT	(16)
+#define PLL45XX_PDIV_SHIFT	(8)
+#define PLL45XX_SDIV_SHIFT	(0)
+enum pll45xx_type_t ;
+static inline unsigned long s5p_get_pll45xx(unsigned long baseclk, u32 pll_con,
+enum pll45xx_type_t pll_type)
+#define PLL46XX_KDIV_MASK	(0xFFFF)
+#define PLL4650C_KDIV_MASK	(0xFFF)
+#define PLL46XX_MDIV_MASK	(0x1FF)
+#define PLL46XX_PDIV_MASK	(0x3F)
+#define PLL46XX_SDIV_MASK	(0x7)
+#define PLL46XX_MDIV_SHIFT	(16)
+#define PLL46XX_PDIV_SHIFT	(8)
+#define PLL46XX_SDIV_SHIFT	(0)
+enum pll46xx_type_t ;
+static inline unsigned long s5p_get_pll46xx(unsigned long baseclk,
+u32 pll_con0, u32 pll_con1,
+enum pll46xx_type_t pll_type)
+#define PLL90XX_MDIV_MASK	(0xFF)
+#define PLL90XX_PDIV_MASK	(0x3F)
+#define PLL90XX_SDIV_MASK	(0x7)
+#define PLL90XX_KDIV_MASK	(0xffff)
+#define PLL90XX_MDIV_SHIFT	(16)
+#define PLL90XX_PDIV_SHIFT	(8)
+#define PLL90XX_SDIV_SHIFT	(0)
+#define PLL90XX_KDIV_SHIFT	(0)
+static inline unsigned long s5p_get_pll90xx(unsigned long baseclk,
+u32 pll_con, u32 pll_conk)
+#define PLL65XX_MDIV_MASK	(0x3FF)
+#define PLL65XX_PDIV_MASK	(0x3F)
+#define PLL65XX_SDIV_MASK	(0x7)
+#define PLL65XX_MDIV_SHIFT	(16)
+#define PLL65XX_PDIV_SHIFT	(8)
+#define PLL65XX_SDIV_SHIFT	(0)
+static inline unsigned long s5p_get_pll65xx(unsigned long baseclk, u32 pll_con)

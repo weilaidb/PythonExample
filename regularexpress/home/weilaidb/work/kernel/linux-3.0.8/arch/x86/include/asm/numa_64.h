@@ -1,0 +1,2 @@
+#define _ASM_X86_NUMA_64_H
+extern unsigned long numa_free_all_bootmem(void);

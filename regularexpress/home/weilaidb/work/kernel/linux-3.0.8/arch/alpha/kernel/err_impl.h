@@ -1,0 +1,34 @@
+union el_timestamp;
+struct el_subpacket;
+struct ev7_lf_subpackets;
+struct el_subpacket_annotation ;
+#define SUBPACKET_ANNOTATION(c, t, r, d, a)
+struct el_subpacket_handler ;
+#define SUBPACKET_HANDLER_INIT(c, h)
+#define EXTRACT(u, f) (((u) >> f##__S) & f##__M)
+#define GEN_MASK(f) ((u64)f##__M << f##__S)
+extern char *err_print_prefix;
+extern void mchk_dump_mem(void *, size_t, char **);
+extern void mchk_dump_logout_frame(struct el_common *);
+extern void el_print_timestamp(union el_timestamp *);
+extern void el_process_subpackets(struct el_subpacket *, int);
+extern struct el_subpacket *el_process_subpacket(struct el_subpacket *);
+extern void el_annotate_subpacket(struct el_subpacket *);
+extern void cdl_check_console_data_log(void);
+extern int cdl_register_subpacket_annotation(struct el_subpacket_annotation *);
+extern int cdl_register_subpacket_handler(struct el_subpacket_handler *);
+extern struct ev7_lf_subpackets *
+ev7_collect_logout_frame_subpackets(struct el_subpacket *,
+struct ev7_lf_subpackets *);
+extern void ev7_register_error_handlers(void);
+extern void ev7_machine_check(unsigned long, unsigned long);
+extern void ev6_register_error_handlers(void);
+extern int ev6_process_logout_frame(struct el_common *, int);
+extern void ev6_machine_check(unsigned long, unsigned long);
+extern void marvel_machine_check(unsigned long, unsigned long);
+extern void marvel_register_error_handlers(void);
+extern int titan_process_logout_frame(struct el_common *, int);
+extern void titan_machine_check(unsigned long, unsigned long);
+extern void titan_register_error_handlers(void);
+extern int privateer_process_logout_frame(struct el_common *, int);
+extern void privateer_machine_check(unsigned long, unsigned long);

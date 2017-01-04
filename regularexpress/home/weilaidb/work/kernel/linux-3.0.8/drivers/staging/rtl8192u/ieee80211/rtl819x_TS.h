@@ -1,0 +1,10 @@
+#define _TSTYPE_H_
+#define TS_SETUP_TIMEOUT	60
+#define TS_INACT_TIMEOUT	60
+#define TS_ADDBA_DELAY		60
+#define TOTAL_TS_NUM		16
+#define TCLAS_NUM		4
+typedef enum _TR_SELECT  TR_SELECT, *PTR_SELECT;
+typedef struct _TS_COMMON_INFO TS_COMMON_INFO, *PTS_COMMON_INFO;
+typedef struct _TX_TS_RECORD TX_TS_RECORD, *PTX_TS_RECORD;
+typedef struct _RX_TS_RECORD  RX_TS_RECORD, *PRX_TS_RECORD;

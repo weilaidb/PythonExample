@@ -1,0 +1,19 @@
+package com.sleepycat.je.rep.txn;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.LockConflictException;
+import com.sleepycat.je.LockNotAvailableException;
+import com.sleepycat.je.ReplicaConsistencyPolicy;
+import com.sleepycat.je.ThreadInterruptedException;
+import com.sleepycat.je.TransactionConfig;
+import com.sleepycat.je.dbi.DatabaseImpl;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.log.ReplicationContext;
+import com.sleepycat.je.rep.MasterStateException;
+import com.sleepycat.je.rep.ReplicaConsistencyException;
+import com.sleepycat.je.rep.ReplicaWriteException;
+import com.sleepycat.je.rep.ReplicatedEnvironment.State;
+import com.sleepycat.je.rep.impl.RepImpl;
+import com.sleepycat.je.txn.LockResult;
+import com.sleepycat.je.txn.LockType;
+import com.sleepycat.je.txn.Txn;
+public class ReadonlyTxn extends Txn

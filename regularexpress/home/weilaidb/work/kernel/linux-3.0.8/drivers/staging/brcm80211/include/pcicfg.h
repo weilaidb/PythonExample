@@ -1,0 +1,17 @@
+#define	_h_pcicfg_
+#define PCI_SZPCR		256
+#define PCI_BAR0_WIN		0x80
+#define PCI_SPROM_CONTROL	0x88
+#define PCI_INT_MASK		0x94
+#define  PCI_SBIM_SHIFT		8
+#define PCI_BAR0_WIN2		0xac
+#define PCI_GPIO_IN		0xb0
+#define PCI_GPIO_OUT		0xb4
+#define PCI_GPIO_OUTEN		0xb8
+#define PCI_BAR0_SPROM_OFFSET	(4 * 1024)
+#define PCI_BAR0_PCIREGS_OFFSET	(6 * 1024)
+#define PCI_BAR0_PCISBR_OFFSET	(4 * 1024)
+#define PCI_BAR0_WINSZ		(16 * 1024)
+#define PCI_16KB0_PCIREGS_OFFSET (8 * 1024)
+#define PCI_16KB0_CCREGS_OFFSET	(12 * 1024)
+#define PCI_SBIM_STATUS_SERR	0x4

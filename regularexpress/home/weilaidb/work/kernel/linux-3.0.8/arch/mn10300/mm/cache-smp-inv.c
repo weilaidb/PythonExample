@@ -1,0 +1,8 @@
+void mn10300_icache_inv(void)
+void mn10300_icache_inv_page(unsigned long start)
+void mn10300_icache_inv_range(unsigned long start, unsigned long end)
+void mn10300_icache_inv_range2(unsigned long start, unsigned long size)
+void mn10300_dcache_inv(void)
+void mn10300_dcache_inv_page(unsigned long start)
+void mn10300_dcache_inv_range(unsigned long start, unsigned long end)
+void mn10300_dcache_inv_range2(unsigned long start, unsigned long size)

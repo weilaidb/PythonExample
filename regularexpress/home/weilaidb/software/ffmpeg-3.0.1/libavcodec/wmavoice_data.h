@@ -1,0 +1,24 @@
+#define AVCODEC_WMAVOICE_DATA_H
+static const uint8_t wmavoice_dq_lsp10i[0xf00] = ;
+static const uint8_t wmavoice_dq_lsp16i1[0x640] = ;
+static const uint8_t wmavoice_dq_lsp16i2[0x3c0] = ;
+static const uint8_t wmavoice_dq_lsp16i3[0x300] = ;
+static const uint8_t wmavoice_dq_lsp10r[0x1400] = ;
+static const uint8_t wmavoice_dq_lsp16r1[0x500] = ;
+static const uint8_t wmavoice_dq_lsp16r2[0x500] = ;
+static const uint8_t wmavoice_dq_lsp16r3[0x600] = ;
+static const float wmavoice_lsp10_intercoeff_a[32][2][10] = ;
+static const float wmavoice_lsp10_intercoeff_b[32][2][10] = ;
+static const float wmavoice_lsp16_intercoeff_a[32][2][16] = ;
+static const float wmavoice_lsp16_intercoeff_b[32][2][16] = ;
+static const double wmavoice_mean_lsf10[2][10] = ;
+static const double wmavoice_mean_lsf16[2][16] = ;
+static const float wmavoice_std_codebook[1000] = ;
+static const float wmavoice_gain_silence[256] = ;
+static const float wmavoice_gain_universal[64] = ;
+static const float wmavoice_gain_codebook_acb[128] = ;
+static const float wmavoice_gain_codebook_fcb[128] = ;
+static const float wmavoice_ipol1_coeffs[17*9] = ;
+static const float wmavoice_ipol2_coeffs[32] = ;
+static const float wmavoice_energy_table[128] = ;
+static const float wmavoice_denoise_power_table[12][64] = ;

@@ -1,0 +1,41 @@
+static int show_version(struct seq_file *m, struct super_block *sb)
+#define SF( x ) ( r -> x )
+#define SFP( x ) SF( s_proc_info_data.x )
+#define SFPL( x ) SFP( x[ level ] )
+#define SFPF( x ) SFP( scan_bitmap.x )
+#define SFPJ( x ) SFP( journal.x )
+#define D2C( x ) le16_to_cpu( x )
+#define D4C( x ) le32_to_cpu( x )
+#define DF( x ) D2C( rs -> s_v1.x )
+#define DFL( x ) D4C( rs -> s_v1.x )
+#define objectid_map( s, rs ) (old_format_only (s) ?				\
+(__le32 *)((struct reiserfs_super_block_v1 *)rs + 1) :	\
+(__le32 *)(rs + 1))
+#define MAP( i ) D4C( objectid_map( sb, rs )[ i ] )
+#define DJF( x ) le32_to_cpu( rs -> x )
+#define DJV( x ) le32_to_cpu( s_v1 -> x )
+#define DJP( x ) le32_to_cpu( jp -> x )
+#define JF( x ) ( r -> s_journal -> x )
+static int show_super(struct seq_file *m, struct super_block *sb)
+static int show_per_level(struct seq_file *m, struct super_block *sb)
+static int show_bitmap(struct seq_file *m, struct super_block *sb)
+static int show_on_disk_super(struct seq_file *m, struct super_block *sb)
+static int show_oidmap(struct seq_file *m, struct super_block *sb)
+static int show_journal(struct seq_file *m, struct super_block *sb)
+static int test_sb(struct super_block *sb, void *data)
+static int set_sb(struct super_block *sb, void *data)
+static void *r_start(struct seq_file *m, loff_t * pos)
+static void *r_next(struct seq_file *m, void *v, loff_t * pos)
+static void r_stop(struct seq_file *m, void *v)
+static int r_show(struct seq_file *m, void *v)
+static const struct seq_operations r_ops = ;
+static int r_open(struct inode *inode, struct file *file)
+static const struct file_operations r_file_operations = ;
+static struct proc_dir_entry *proc_info_root = NULL;
+static const char proc_info_root_name[] = "fs/reiserfs";
+static void add_file(struct super_block *sb, char *name,
+int (*func) (struct seq_file *, struct super_block *))
+int reiserfs_proc_info_init(struct super_block *sb)
+int reiserfs_proc_info_done(struct super_block *sb)
+int reiserfs_proc_info_global_init(void)
+int reiserfs_proc_info_global_done(void)

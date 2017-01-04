@@ -1,0 +1,13 @@
+#define GL_MULTISAMPLE 0x809D
+VowelCube::VowelCube(QWidget *parent)
+: QGLWidget(parent)
+VowelCube::~VowelCube()
+void VowelCube::paintEvent(QPaintEvent *)
+void VowelCube::mousePressEvent(QMouseEvent *event)
+void VowelCube::mouseMoveEvent(QMouseEvent *event)
+void VowelCube::wheelEvent(QWheelEvent *event)
+void VowelCube::createGradient()
+void VowelCube::createGLObject()
+void VowelCube::drawBackground(QPainter *painter)
+void VowelCube::drawCube()
+void VowelCube::drawLegend(QPainter *painter)

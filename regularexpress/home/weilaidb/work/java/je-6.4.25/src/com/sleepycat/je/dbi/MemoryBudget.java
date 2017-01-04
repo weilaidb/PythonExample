@@ -1,0 +1,22 @@
+package com.sleepycat.je.dbi;
+import static com.sleepycat.je.dbi.DbiStatDefinition.MB_ADMIN_BYTES;
+import static com.sleepycat.je.dbi.DbiStatDefinition.MB_DATA_BYTES;
+import static com.sleepycat.je.dbi.DbiStatDefinition.MB_DATA_ADMIN_BYTES;
+import static com.sleepycat.je.dbi.DbiStatDefinition.MB_DOS_BYTES;
+import static com.sleepycat.je.dbi.DbiStatDefinition.MB_GROUP_DESC;
+import static com.sleepycat.je.dbi.DbiStatDefinition.MB_GROUP_NAME;
+import static com.sleepycat.je.dbi.DbiStatDefinition.MB_LOCK_BYTES;
+import static com.sleepycat.je.dbi.DbiStatDefinition.MB_SHARED_CACHE_TOTAL_BYTES;
+import static com.sleepycat.je.dbi.DbiStatDefinition.MB_TOTAL_BYTES;
+import java.lang.management.ManagementFactory;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
+import com.sleepycat.bind.tuple.TupleOutput;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.EnvironmentMutableConfig;
+import com.sleepycat.je.config.EnvironmentParams;
+import com.sleepycat.je.tree.IN;
+import com.sleepycat.je.utilint.LoggerUtils;
+import com.sleepycat.je.utilint.LongStat;
+import com.sleepycat.je.utilint.StatGroup;
+public class MemoryBudget implements EnvConfigObserver

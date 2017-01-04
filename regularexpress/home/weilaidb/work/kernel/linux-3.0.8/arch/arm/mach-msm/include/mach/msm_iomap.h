@@ -1,0 +1,11 @@
+#define __ASM_ARCH_MSM_IOMAP_H
+#define IOMEM(x)	x
+#define IOMEM(x)	((void __force __iomem *)(x))
+#if defined(CONFIG_ARCH_MSM7X30)
+#elif defined(CONFIG_ARCH_QSD8X50)
+#elif defined(CONFIG_ARCH_MSM8X60)
+#define MSM_CSR_BASE		IOMEM(0xE0001000)
+#define MSM_QGIC_DIST_BASE	IOMEM(0xF0000000)
+#define MSM_QGIC_CPU_BASE	IOMEM(0xF0001000)
+#define MSM_TMR_BASE		IOMEM(0xF0200000)
+#define MSM_TMR0_BASE		IOMEM(0xF0201000)

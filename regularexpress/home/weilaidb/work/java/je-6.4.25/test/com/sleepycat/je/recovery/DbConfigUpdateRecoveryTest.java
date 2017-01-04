@@ -1,0 +1,26 @@
+package com.sleepycat.je.recovery;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.io.File;
+import org.junit.After;
+import org.junit.Test;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.log.LNFileReader;
+import com.sleepycat.je.log.LogEntryType;
+import com.sleepycat.je.log.LogManager;
+import com.sleepycat.je.log.ReplicationContext;
+import com.sleepycat.je.log.Trace;
+import com.sleepycat.je.log.entry.DbOperationType;
+import com.sleepycat.je.log.entry.LogEntry;
+import com.sleepycat.je.log.entry.NameLNLogEntry;
+import com.sleepycat.je.log.entry.TraceLogEntry;
+import com.sleepycat.je.util.DbTruncateLog;
+import com.sleepycat.je.utilint.DbLsn;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class DbConfigUpdateRecoveryTest extends TestBase

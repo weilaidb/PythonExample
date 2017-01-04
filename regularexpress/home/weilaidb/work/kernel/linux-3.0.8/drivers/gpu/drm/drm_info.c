@@ -1,0 +1,10 @@
+int drm_name_info(struct seq_file *m, void *data)
+int drm_vm_info(struct seq_file *m, void *data)
+int drm_queues_info(struct seq_file *m, void *data)
+int drm_bufs_info(struct seq_file *m, void *data)
+int drm_vblank_info(struct seq_file *m, void *data)
+int drm_clients_info(struct seq_file *m, void *data)
+int drm_gem_one_name_info(int id, void *ptr, void *data)
+int drm_gem_name_info(struct seq_file *m, void *data)
+#if DRM_DEBUG_CODE
+int drm_vma_info(struct seq_file *m, void *data)

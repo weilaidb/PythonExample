@@ -1,0 +1,2 @@
+EXPORT_SYMBOL(mx1_camera_sof_fiq_start);
+EXPORT_SYMBOL(mx1_camera_sof_fiq_end);

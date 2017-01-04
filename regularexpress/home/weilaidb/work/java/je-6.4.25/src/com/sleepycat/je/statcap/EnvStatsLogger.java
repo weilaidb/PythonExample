@@ -1,0 +1,22 @@
+package com.sleepycat.je.statcap;
+import java.io.File;
+import java.io.IOException;
+import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryMXBean;
+import java.lang.management.OperatingSystemMXBean;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import java.util.logging.Logger;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.EnvironmentMutableConfig;
+import com.sleepycat.je.JEVersion;
+import com.sleepycat.je.config.EnvironmentParams;
+import com.sleepycat.je.dbi.DbConfigManager;
+import com.sleepycat.je.dbi.EnvConfigObserver;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.utilint.LoggerUtils;
+import com.sleepycat.utilint.StatLogger;
+public class EnvStatsLogger implements EnvConfigObserver

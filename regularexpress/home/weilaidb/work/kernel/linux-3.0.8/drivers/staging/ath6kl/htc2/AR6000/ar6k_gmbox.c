@@ -1,0 +1,25 @@
+#define GMBOX_INT_STATUS_ENABLE_REG     0x488
+#define GMBOX_INT_STATUS_RX_DATA        (1 << 0)
+#define GMBOX_INT_STATUS_TX_OVERFLOW    (1 << 1)
+#define GMBOX_INT_STATUS_RX_OVERFLOW    (1 << 2)
+#define GMBOX_LOOKAHEAD_MUX_REG         0x498
+#define GMBOX_LA_MUX_OVERRIDE_2_3       (1 << 0)
+#define AR6K_GMBOX_CREDIT_DEC_ADDRESS   (COUNT_DEC_ADDRESS + 4 * AR6K_GMBOX_CREDIT_COUNTER)
+#define AR6K_GMBOX_CREDIT_SIZE_ADDRESS  (COUNT_ADDRESS     + AR6K_GMBOX_CREDIT_SIZE_COUNTER)
+extern void AR6KFreeIOPacket(struct ar6k_device *pDev, struct htc_packet *pPacket);
+extern struct htc_packet *AR6KAllocIOPacket(struct ar6k_device *pDev);
+static void DevGMboxIRQActionAsyncHandler(void *Context, struct htc_packet *pPacket)
+static int DevGMboxCounterEnableDisable(struct ar6k_device *pDev, GMBOX_IRQ_ACTION_TYPE IrqAction, bool AsyncMode)
+int DevGMboxIRQAction(struct ar6k_device *pDev, GMBOX_IRQ_ACTION_TYPE IrqAction, bool AsyncMode)
+void DevCleanupGMbox(struct ar6k_device *pDev)
+int DevSetupGMbox(struct ar6k_device *pDev)
+int DevCheckGMboxInterrupts(struct ar6k_device *pDev)
+int DevGMboxWrite(struct ar6k_device *pDev, struct htc_packet *pPacket, u32 WriteLength)
+int DevGMboxRead(struct ar6k_device *pDev, struct htc_packet *pPacket, u32 ReadLength)
+static int ProcessCreditCounterReadBuffer(u8 *pBuffer, int Length)
+static void DevGMboxReadCreditsAsyncHandler(void *Context, struct htc_packet *pPacket)
+int DevGMboxReadCreditCounter(struct ar6k_device *pDev, bool AsyncMode, int *pCredits)
+int DevGMboxReadCreditSize(struct ar6k_device *pDev, int *pCreditSize)
+void DevNotifyGMboxTargetFailure(struct ar6k_device *pDev)
+int DevGMboxRecvLookAheadPeek(struct ar6k_device *pDev, u8 *pLookAheadBuffer, int *pLookAheadBytes)
+int DevGMboxSetTargetInterrupt(struct ar6k_device *pDev, int Signal, int AckTimeoutMS)

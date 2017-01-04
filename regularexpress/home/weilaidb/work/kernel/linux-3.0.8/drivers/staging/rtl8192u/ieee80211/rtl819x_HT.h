@@ -1,0 +1,48 @@
+#define _RTL819XU_HTTYPE_H_
+#define HT_OPMODE_NO_PROTECT		0
+#define HT_OPMODE_OPTIONAL		1
+#define HT_OPMODE_40MHZ_PROTECT	2
+#define HT_OPMODE_MIXED			3
+#define MIMO_PS_STATIC				0
+#define MIMO_PS_DYNAMIC			1
+#define MIMO_PS_NOLIMIT			3
+#define sHTCLng	4
+#define HT_SUPPORTED_MCS_1SS_BITMAP					0x000000ff
+#define HT_SUPPORTED_MCS_2SS_BITMAP					0x0000ff00
+#define HT_SUPPORTED_MCS_1SS_2SS_BITMAP			HT_MCS_1SS_BITMAP|HT_MCS_1SS_2SS_BITMAP
+typedef enum _HT_MCS_RATEHT_MCS_RATE,*PHT_MCS_RATE;
+typedef enum _HT_CHANNEL_WIDTHHT_CHANNEL_WIDTH, *PHT_CHANNEL_WIDTH;
+typedef enum _HT_EXTCHNL_OFFSETHT_EXTCHNL_OFFSET, *PHT_EXTCHNL_OFFSET;
+typedef enum _CHNLOP CHNLOP, *PCHNLOP;
+#define CHHLOP_IN_PROGRESS(_pHTInfo)	\
+((_pHTInfo)->ChnlOp > CHNLOP_NONE) ? TRUE : FALSE
+typedef enum _HT_ACTION HT_ACTION, *PHT_ACTION;
+typedef enum _HT_Bandwidth_40MHZ_Sub_CarrierHT_BW40_SC_E;
+typedef	struct _HT_CAPABILITY_ELE __attribute__ ((packed)) HT_CAPABILITY_ELE, *PHT_CAPABILITY_ELE;
+typedef struct _HT_INFORMATION_ELE __attribute__ ((packed)) HT_INFORMATION_ELE, *PHT_INFORMATION_ELE;
+typedef struct _MIMOPS_CTRL MIMOPS_CTRL, *PMIMOPS_CTRL;
+typedef enum _HT_SPEC_VERHT_SPEC_VER, *PHT_SPEC_VER;
+typedef enum _HT_AGGRE_MODE_EHT_AGGRE_MODE_E, *PHT_AGGRE_MODE_E;
+typedef struct _RT_HIGH_THROUGHPUT __attribute__ ((packed)) RT_HIGH_THROUGHPUT, *PRT_HIGH_THROUGHPUT;
+typedef struct _RT_HTINFO_STA_ENTRYRT_HTINFO_STA_ENTRY, *PRT_HTINFO_STA_ENTRY;
+typedef struct _BSS_HT __attribute__ ((packed)) BSS_HT, *PBSS_HT;
+typedef struct _MIMO_RSSIMIMO_RSSI, *PMIMO_RSSI;
+typedef struct _MIMO_EVMMIMO_EVM, *PMIMO_EVM;
+typedef struct _FALSE_ALARM_STATISTICSFALSE_ALARM_STATISTICS, *PFALSE_ALARM_STATISTICS;
+extern u8 MCS_FILTER_ALL[16];
+extern u8 MCS_FILTER_1SS[16];
+#define PICK_RATE(_nLegacyRate, _nMcsRate)	\
+(_nMcsRate==0)?(_nLegacyRate&0x7f):(_nMcsRate)
+#define	LEGACY_WIRELESS_MODE	IEEE_MODE_MASK
+#define CURRENT_RATE(WirelessMode, LegacyRate, HTRate)	\
+((WirelessMode & (LEGACY_WIRELESS_MODE))!=0)?\
+(LegacyRate):\
+(PICK_RATE(LegacyRate, HTRate))
+#define	RATE_ADPT_1SS_MASK 		0xFF
+#define	RATE_ADPT_2SS_MASK		0xF0
+#define	RATE_ADPT_MCS32_MASK		0x01
+#define 	IS_11N_MCS_RATE(rate)		(rate&0x80)
+typedef enum _HT_AGGRE_SIZEHT_AGGRE_SIZE_E, *PHT_AGGRE_SIZE_E;
+typedef enum _HT_IOT_PEER
+HT_IOT_PEER_E, *PHTIOT_PEER_E;
+typedef enum _HT_IOT_ACTIONHT_IOT_ACTION_E, *PHT_IOT_ACTION_E;

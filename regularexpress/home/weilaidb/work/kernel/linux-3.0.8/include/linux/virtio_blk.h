@@ -1,0 +1,23 @@
+#define _LINUX_VIRTIO_BLK_H
+#define VIRTIO_BLK_F_BARRIER	0
+#define VIRTIO_BLK_F_SIZE_MAX	1
+#define VIRTIO_BLK_F_SEG_MAX	2
+#define VIRTIO_BLK_F_GEOMETRY	4
+#define VIRTIO_BLK_F_RO		5
+#define VIRTIO_BLK_F_BLK_SIZE	6
+#define VIRTIO_BLK_F_SCSI	7
+#define VIRTIO_BLK_F_FLUSH	9
+#define VIRTIO_BLK_F_TOPOLOGY	10
+#define VIRTIO_BLK_ID_BYTES	20
+struct virtio_blk_config  __attribute__((packed));
+#define VIRTIO_BLK_T_IN		0
+#define VIRTIO_BLK_T_OUT	1
+#define VIRTIO_BLK_T_SCSI_CMD	2
+#define VIRTIO_BLK_T_FLUSH	4
+#define VIRTIO_BLK_T_GET_ID    8
+#define VIRTIO_BLK_T_BARRIER	0x80000000
+struct virtio_blk_outhdr ;
+struct virtio_scsi_inhdr ;
+#define VIRTIO_BLK_S_OK		0
+#define VIRTIO_BLK_S_IOERR	1
+#define VIRTIO_BLK_S_UNSUPP	2

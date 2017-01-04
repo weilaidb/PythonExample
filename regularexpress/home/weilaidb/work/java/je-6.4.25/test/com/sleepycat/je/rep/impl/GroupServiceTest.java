@@ -1,0 +1,23 @@
+package com.sleepycat.je.rep.impl;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertSame;
+import java.net.InetSocketAddress;
+import java.util.Set;
+import org.junit.Test;
+import com.sleepycat.je.rep.NodeType;
+import com.sleepycat.je.rep.RepInternal;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.impl.RepGroupProtocol.EnsureOK;
+import com.sleepycat.je.rep.impl.RepGroupProtocol.Fail;
+import com.sleepycat.je.rep.impl.RepGroupProtocol.FailReason;
+import com.sleepycat.je.rep.impl.RepGroupProtocol.GroupResponse;
+import com.sleepycat.je.rep.impl.TextProtocol.MessageExchange;
+import com.sleepycat.je.rep.impl.TextProtocol.OK;
+import com.sleepycat.je.rep.impl.TextProtocol.ResponseMessage;
+import com.sleepycat.je.rep.impl.node.NameIdPair;
+import com.sleepycat.je.rep.impl.node.RepNode;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.je.rep.utilint.ServiceDispatcher;
+public class GroupServiceTest extends RepTestBase

@@ -1,0 +1,3 @@
+typedef struct SDL_joylist_item
+SDL_joylist_item;
+typedef SDL_joylist_item joystick_hwdata;

@@ -1,0 +1,17 @@
+static const struct  pll_table[] = ;
+static void lx_set_dotpll(u32 pllval)
+static void lx_set_clock(struct fb_info *info)
+static void lx_graphics_disable(struct fb_info *info)
+static void lx_graphics_enable(struct fb_info *info)
+unsigned int lx_framebuffer_size(void)
+void lx_set_mode(struct fb_info *info)
+void lx_set_palette_reg(struct fb_info *info, unsigned regno,
+unsigned red, unsigned green, unsigned blue)
+int lx_blank_display(struct fb_info *info, int blank_mode)
+static void lx_save_regs(struct lxfb_par *par)
+static void lx_restore_gfx_proc(struct lxfb_par *par)
+static void lx_restore_display_ctlr(struct lxfb_par *par)
+static void lx_restore_video_proc(struct lxfb_par *par)
+static void lx_restore_regs(struct lxfb_par *par)
+int lx_powerdown(struct fb_info *info)
+int lx_powerup(struct fb_info *info)

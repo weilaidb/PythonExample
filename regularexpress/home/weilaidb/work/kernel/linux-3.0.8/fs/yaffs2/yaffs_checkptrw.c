@@ -1,0 +1,18 @@
+struct yaffs_checkpt_chunk_hdr  ;
+static int apply_chunk_offset(struct yaffs_dev *dev, int chunk)
+static int apply_block_offset(struct yaffs_dev *dev, int block)
+static void yaffs2_do_endian_hdr(struct yaffs_dev *dev,
+struct yaffs_checkpt_chunk_hdr *hdr)
+static void yaffs2_checkpt_init_chunk_hdr(struct yaffs_dev *dev)
+static int yaffs2_checkpt_check_chunk_hdr(struct yaffs_dev *dev)
+static int yaffs2_checkpt_space_ok(struct yaffs_dev *dev)
+static int yaffs_checkpt_erase(struct yaffs_dev *dev)
+static void yaffs2_checkpt_find_erased_block(struct yaffs_dev *dev)
+static void yaffs2_checkpt_find_block(struct yaffs_dev *dev)
+int yaffs2_checkpt_open(struct yaffs_dev *dev, int writing)
+int yaffs2_get_checkpt_sum(struct yaffs_dev *dev, u32 * sum)
+static int yaffs2_checkpt_flush_buffer(struct yaffs_dev *dev)
+int yaffs2_checkpt_wr(struct yaffs_dev *dev, const void *data, int n_bytes)
+int yaffs2_checkpt_rd(struct yaffs_dev *dev, void *data, int n_bytes)
+int yaffs_checkpt_close(struct yaffs_dev *dev)
+int yaffs2_checkpt_invalidate_stream(struct yaffs_dev *dev)

@@ -1,0 +1,10 @@
+#define DIRECT_BLOCK ((inode->i_size + uspi->s_bsize - 1) >> uspi->s_bshift)
+#define DIRECT_FRAGMENT ((inode->i_size + uspi->s_fsize - 1) >> uspi->s_fshift)
+static int ufs_trunc_direct(struct inode *inode)
+static int ufs_trunc_indirect(struct inode *inode, u64 offset, void *p)
+static int ufs_trunc_dindirect(struct inode *inode, u64 offset, void *p)
+static int ufs_trunc_tindirect(struct inode *inode)
+static int ufs_alloc_lastblock(struct inode *inode)
+int ufs_truncate(struct inode *inode, loff_t old_i_size)
+int ufs_setattr(struct dentry *dentry, struct iattr *attr)
+const struct inode_operations ufs_file_inode_operations = ;

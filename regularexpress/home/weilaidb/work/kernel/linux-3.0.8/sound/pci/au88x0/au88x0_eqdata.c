@@ -1,0 +1,9 @@
+static u16 asEqCoefsZeros[50] = ;
+static u16 asEqCoefsPipes[64] = ;
+static auxxEqCoeffSet_t asEqCoefsNormal = ;
+static u16 eq_gains_normal[20] = ;
+static u16 eq_gains_zero[10] = ;
+static u16 eq_gains_current[12] = ;
+static u16 eq_states_zero[2] = ;
+static u16 asEqOutStateZeros[48] = ;
+static u16 eq_levels[64] = ;

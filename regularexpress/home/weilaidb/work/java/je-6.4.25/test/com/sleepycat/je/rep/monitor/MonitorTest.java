@@ -1,0 +1,24 @@
+package com.sleepycat.je.rep.monitor;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static com.sleepycat.je.rep.impl.RepParams.TEST_JE_VERSION;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.util.Properties;
+import org.junit.Test;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.rep.NodeType;
+import com.sleepycat.je.rep.RepInternal;
+import com.sleepycat.je.rep.ReplicationNetworkConfig;
+import com.sleepycat.je.rep.ReplicationConfig;
+import com.sleepycat.je.rep.ReplicationGroup;
+import com.sleepycat.je.rep.ReplicationNode;
+import com.sleepycat.je.rep.impl.RepGroupImpl;
+import com.sleepycat.je.rep.impl.RepGroupProtocol;
+import com.sleepycat.je.rep.impl.RepParams;
+import com.sleepycat.je.rep.impl.node.RepNode;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+public class MonitorTest extends MonitorTestBase

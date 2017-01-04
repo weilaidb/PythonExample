@@ -1,0 +1,61 @@
+#define __LINUX_VIDEOCODEC_H
+#define CODEC_DO_COMPRESSION 0
+#define CODEC_DO_EXPANSION   1
+#define CODEC_FLAG_JPEG      0x00000001L
+#define CODEC_FLAG_MPEG      0x00000002L
+#define CODEC_FLAG_DIVX      0x00000004L
+#define CODEC_FLAG_WAVELET   0x00000008L
+#define CODEC_FLAG_MAGIC     0x00000800L
+#define CODEC_FLAG_HARDWARE  0x00001000L
+#define CODEC_FLAG_VFE       0x00002000L
+#define CODEC_FLAG_ENCODER   0x00004000L
+#define CODEC_FLAG_DECODER   0x00008000L
+#define CODEC_FLAG_NEEDIRQ   0x00010000L
+#define CODEC_FLAG_RDWRPIC   0x00020000L
+#define CODEC_MODE_BJPG      0x0001
+#define CODEC_MODE_LJPG      0x0002
+#define CODEC_MODE_MPEG1     0x0003
+#define CODEC_MODE_MPEG2     0x0004
+#define CODEC_MODE_MPEG4     0x0005
+#define CODEC_MODE_MSDIVX    0x0006
+#define CODEC_MODE_ODIVX     0x0007
+#define CODEC_MODE_WAVELET   0x0008
+#define CODEC_TYPE_NONE    0
+#define CODEC_TYPE_L64702  1
+#define CODEC_TYPE_ZR36050 2
+#define CODEC_TYPE_ZR36016 3
+#define CODEC_TYPE_ZR36060 4
+#define CODEC_G_STATUS         0x0000
+#define CODEC_S_CODEC_MODE     0x0001
+#define CODEC_G_CODEC_MODE     0x8001
+#define CODEC_S_VFE            0x0002
+#define CODEC_G_VFE            0x8002
+#define CODEC_S_MMAP           0x0003
+#define CODEC_S_JPEG_TDS_BYTE  0x0010
+#define CODEC_G_JPEG_TDS_BYTE  0x8010
+#define CODEC_S_JPEG_SCALE     0x0011
+#define CODEC_G_JPEG_SCALE     0x8011
+#define CODEC_S_JPEG_HDT_DATA  0x0018
+#define CODEC_G_JPEG_HDT_DATA  0x8018
+#define CODEC_S_JPEG_QDT_DATA  0x0019
+#define CODEC_G_JPEG_QDT_DATA  0x8019
+#define CODEC_S_JPEG_APP_DATA  0x001A
+#define CODEC_G_JPEG_APP_DATA  0x801A
+#define CODEC_S_JPEG_COM_DATA  0x001B
+#define CODEC_G_JPEG_COM_DATA  0x801B
+#define CODEC_S_PRIVATE        0x1000
+#define CODEC_G_PRIVATE        0x9000
+#define CODEC_G_FLAG           0x8000
+#define CODEC_TRANSFER_KERNEL 0
+#define CODEC_TRANSFER_USER   1
+struct vfe_polarity ;
+struct vfe_settings ;
+struct tvnorm ;
+struct jpeg_com_marker ;
+struct jpeg_app_marker ;
+struct videocodec ;
+struct videocodec_master ;
+extern struct videocodec *videocodec_attach(struct videocodec_master *);
+extern int videocodec_detach(struct videocodec *);
+extern int videocodec_register(const struct videocodec *);
+extern int videocodec_unregister(const struct videocodec *);

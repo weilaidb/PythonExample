@@ -1,0 +1,30 @@
+#define _NET_BATMAN_ADV_PACKET_H_
+#define ETH_P_BATMAN  0x4305
+#define BAT_PACKET       0x01
+#define BAT_ICMP         0x02
+#define BAT_UNICAST      0x03
+#define BAT_BCAST        0x04
+#define BAT_VIS          0x05
+#define BAT_UNICAST_FRAG 0x06
+#define COMPAT_VERSION 12
+#define DIRECTLINK 0x40
+#define VIS_SERVER 0x20
+#define PRIMARIES_FIRST_HOP 0x10
+#define ECHO_REPLY 0
+#define DESTINATION_UNREACHABLE 3
+#define ECHO_REQUEST 8
+#define TTL_EXCEEDED 11
+#define PARAMETER_PROBLEM 12
+#define VIS_TYPE_SERVER_SYNC		0
+#define VIS_TYPE_CLIENT_UPDATE		1
+#define UNI_FRAG_HEAD 0x01
+#define UNI_FRAG_LARGETAIL 0x02
+struct batman_packet  __packed;
+#define BAT_PACKET_LEN sizeof(struct batman_packet)
+struct icmp_packet  __packed;
+#define BAT_RR_LEN 16
+struct icmp_packet_rr  __packed;
+struct unicast_packet  __packed;
+struct unicast_frag_packet  __packed;
+struct bcast_packet  __packed;
+struct vis_packet  __packed;

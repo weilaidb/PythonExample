@@ -1,0 +1,18 @@
+struct usbmix_dB_map ;
+struct usbmix_name_map ;
+struct usbmix_selector_map ;
+struct usbmix_ctl_map ;
+static struct usbmix_name_map extigy_map[] = ;
+static struct usbmix_dB_map mp3plus_dB_1 = ;
+static struct usbmix_dB_map mp3plus_dB_2 = ;
+static struct usbmix_name_map mp3plus_map[] = ;
+static struct usbmix_name_map audigy2nx_map[] = ;
+static struct usbmix_selector_map audigy2nx_selectors[] = ;
+static struct usbmix_name_map live24ext_map[] = ;
+static struct usbmix_name_map linex_map[] = ;
+static struct usbmix_name_map maya44_map[] = ;
+static struct usbmix_name_map justlink_map[] = ;
+static struct usbmix_name_map aureon_51_2_map[] = ;
+static struct usbmix_name_map scratch_live_map[] = ;
+static struct usbmix_name_map hercules_usb51_map[] = ;
+static struct usbmix_ctl_map usbmix_ctl_maps[] = ;

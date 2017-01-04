@@ -1,0 +1,21 @@
+package com.sleepycat.je.recovery;
+import static org.junit.Assert.assertEquals;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import org.junit.Test;
+import com.sleepycat.je.Cursor;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.LockMode;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.config.EnvironmentParams;
+import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.utilint.StringUtils;
+public class RecoveryTest extends RecoveryTestBase

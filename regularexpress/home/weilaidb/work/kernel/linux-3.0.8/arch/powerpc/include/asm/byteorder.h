@@ -1,0 +1,1 @@
+#define _ASM_POWERPC_BYTEORDER_H

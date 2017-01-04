@@ -1,0 +1,20 @@
+static int is_clear_halt_cmd(struct urb *urb)
+static int is_set_interface_cmd(struct urb *urb)
+static int is_set_configuration_cmd(struct urb *urb)
+static int is_reset_device_cmd(struct urb *urb)
+static int tweak_clear_halt_cmd(struct urb *urb)
+static int tweak_set_interface_cmd(struct urb *urb)
+static int tweak_set_configuration_cmd(struct urb *urb)
+static int tweak_reset_device_cmd(struct urb *urb)
+static void tweak_special_requests(struct urb *urb)
+static int stub_recv_cmd_unlink(struct stub_device *sdev,
+struct usbip_header *pdu)
+static int valid_request(struct stub_device *sdev, struct usbip_header *pdu)
+static struct stub_priv *stub_priv_alloc(struct stub_device *sdev,
+struct usbip_header *pdu)
+static int get_pipe(struct stub_device *sdev, int epnum, int dir)
+static void masking_bogus_flags(struct urb *urb)
+static void stub_recv_cmd_submit(struct stub_device *sdev,
+struct usbip_header *pdu)
+static void stub_rx_pdu(struct usbip_device *ud)
+int stub_rx_loop(void *data)

@@ -1,0 +1,14 @@
+const uint8_t ff_eac3_bits_vs_hebap[20] = ;
+const int16_t ff_eac3_gaq_remap_1[12] = ;
+const int16_t ff_eac3_gaq_remap_2_4_a[9][2] = ;
+const int16_t ff_eac3_gaq_remap_2_4_b[9][2] = ;
+static const int16_t vq_hebap1[4][6] = ;
+static const int16_t vq_hebap2[8][6] = ;
+static const int16_t vq_hebap3[16][6] = ;
+static const int16_t vq_hebap4[32][6] = ;
+static const int16_t vq_hebap5[128][6] = ;
+static const int16_t vq_hebap6[256][6] = ;
+static const int16_t vq_hebap7[512][6] = ;
+const int16_t (* const ff_eac3_mantissa_vq[8])[6] = ;
+const uint8_t ff_eac3_frm_expstr[32][6] = ;
+const float ff_eac3_spx_atten_tab[32][3] = ;

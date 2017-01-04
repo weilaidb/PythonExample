@@ -1,0 +1,15 @@
+#define PALMCONNECT_VID		0x0830
+#define PALMCONNECT_PID		0x0080
+#define KLSI_VID		0x05e9
+#define KLSI_KL5KUSB105D_PID	0x00c0
+enum ;
+#define kl5kusb105a_dtb_7   7
+#define kl5kusb105a_dtb_8   8
+#define KL5KUSB105A_SIO_SET_DATA  1
+#define KL5KUSB105A_SIO_POLL      2
+#define KL5KUSB105A_SIO_CONFIGURE      3
+#define KL5KUSB105A_SIO_CONFIGURE_READ_ON      3
+#define KL5KUSB105A_SIO_CONFIGURE_READ_OFF     2
+#define KL5KUSB105A_DSR			((1<<4) | (1<<5))
+#define KL5KUSB105A_CTS			((1<<5) | (1<<4))
+#define KL5KUSB105A_WANTS_TO_SEND	0x30

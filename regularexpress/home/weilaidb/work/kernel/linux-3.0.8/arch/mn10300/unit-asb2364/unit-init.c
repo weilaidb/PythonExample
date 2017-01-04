@@ -1,0 +1,6 @@
+#define TTYS0_SERIAL_IER	__SYSREG(SERIAL_PORT0_BASE_ADDRESS + UART_IER * 2, u8)
+#define LAN_IRQ_CFG		__SYSREG(SMSC911X_BASE + 0x54, u32)
+#define LAN_INT_EN		__SYSREG(SMSC911X_BASE + 0x5c, u32)
+asmlinkage void __init unit_init(void)
+asmlinkage void __init unit_setup(void)
+void __init unit_init_IRQ(void)

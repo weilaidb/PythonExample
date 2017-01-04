@@ -1,0 +1,8 @@
+void nr_clear_queues(struct sock *sk)
+void nr_frames_acked(struct sock *sk, unsigned short nr)
+void nr_requeue_frames(struct sock *sk)
+int nr_validate_nr(struct sock *sk, unsigned short nr)
+int nr_in_rx_window(struct sock *sk, unsigned short ns)
+void nr_write_internal(struct sock *sk, int frametype)
+void __nr_transmit_reply(struct sk_buff *skb, int mine, unsigned char cmdflags)
+void nr_disconnect(struct sock *sk, int reason)

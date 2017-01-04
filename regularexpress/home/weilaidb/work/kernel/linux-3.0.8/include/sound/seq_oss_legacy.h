@@ -1,0 +1,2 @@
+#define __SOUND_SEQ_OSS_LEGACY_H
+#define SAMPLE_TYPE_AWE32		0x20

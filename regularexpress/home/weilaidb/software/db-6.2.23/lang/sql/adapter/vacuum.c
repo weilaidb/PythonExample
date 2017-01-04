@@ -1,0 +1,6 @@
+#if !defined(SQLITE_OMIT_VACUUM)
+void sqlite3Vacuum(Parse *pParse)
+int btreeVacuum(Btree *p, char **pzErrMsg)
+void btreeFreeVacuumInfo(Btree *p)
+int btreeIncrVacuum(Btree *p, u_int32_t *truncatedPages)
+int sqlite3RunVacuum(char **pzErrMsg, sqlite3 *db)

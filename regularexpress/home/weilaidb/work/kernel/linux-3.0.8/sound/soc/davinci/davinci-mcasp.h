@@ -1,0 +1,6 @@
+#define DAVINCI_MCASP_H
+#define DAVINCI_MCASP_RATES	SNDRV_PCM_RATE_8000_96000
+#define DAVINCI_MCASP_I2S_DAI	0
+#define DAVINCI_MCASP_DIT_DAI	1
+enum ;
+struct davinci_audio_dev ;

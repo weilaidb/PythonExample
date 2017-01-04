@@ -1,0 +1,12 @@
+static int check_asic_status(struct echoaudio *chip)
+static inline u32 get_frq_reg(struct echoaudio *chip)
+static int write_control_reg(struct echoaudio *chip, u32 ctl, u32 frq,
+char force)
+static int set_digital_mode(struct echoaudio *chip, u8 mode)
+static u32 set_spdif_bits(struct echoaudio *chip, u32 control_reg, u32 rate)
+static int set_professional_spdif(struct echoaudio *chip, char prof)
+static u32 detect_input_clocks(const struct echoaudio *chip)
+static int load_asic(struct echoaudio *chip)
+static int set_sample_rate(struct echoaudio *chip, u32 rate)
+static int set_input_clock(struct echoaudio *chip, u16 clock)
+static int dsp_set_digital_mode(struct echoaudio *chip, u8 mode)

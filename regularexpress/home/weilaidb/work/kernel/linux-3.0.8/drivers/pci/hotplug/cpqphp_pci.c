@@ -1,0 +1,21 @@
+u8 cpqhp_nic_irq;
+u8 cpqhp_disk_irq;
+static u16 unused_IRQ;
+static void __iomem *detect_HRT_floating_pointer(void __iomem *begin, void __iomem *end)
+int cpqhp_configure_device (struct controller* ctrl, struct pci_func* func)
+int cpqhp_unconfigure_device(struct pci_func* func)
+static int PCI_RefinedAccessConfig(struct pci_bus *bus, unsigned int devfn, u8 offset, u32 *value)
+int cpqhp_set_irq (u8 bus_num, u8 dev_num, u8 int_pin, u8 irq_num)
+static int PCI_ScanBusForNonBridge(struct controller *ctrl, u8 bus_num, u8 * dev_num)
+static int PCI_GetBusDevHelper(struct controller *ctrl, u8 *bus_num, u8 *dev_num, u8 slot, u8 nobridge)
+int cpqhp_get_bus_dev (struct controller *ctrl, u8 * bus_num, u8 * dev_num, u8 slot)
+int cpqhp_save_config(struct controller *ctrl, int busnumber, int is_hot_plug)
+int cpqhp_save_slot_config (struct controller *ctrl, struct pci_func * new_slot)
+int cpqhp_save_base_addr_length(struct controller *ctrl, struct pci_func * func)
+int cpqhp_save_used_resources (struct controller *ctrl, struct pci_func * func)
+int cpqhp_configure_board(struct controller *ctrl, struct pci_func * func)
+int cpqhp_valid_replace(struct controller *ctrl, struct pci_func * func)
+int cpqhp_find_available_resources(struct controller *ctrl, void __iomem *rom_start)
+int cpqhp_return_board_resources(struct pci_func * func, struct resource_lists * resources)
+void cpqhp_destroy_resource_list (struct resource_lists * resources)
+void cpqhp_destroy_board_resources (struct pci_func * func)

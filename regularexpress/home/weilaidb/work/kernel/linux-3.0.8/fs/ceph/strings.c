@@ -1,0 +1,6 @@
+const char *ceph_mds_state_name(int s)
+const char *ceph_session_op_name(int op)
+const char *ceph_mds_op_name(int op)
+const char *ceph_cap_op_name(int op)
+const char *ceph_lease_op_name(int o)
+const char *ceph_snap_op_name(int o)

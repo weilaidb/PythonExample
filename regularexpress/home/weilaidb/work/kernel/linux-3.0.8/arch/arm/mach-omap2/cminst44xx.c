@@ -1,0 +1,15 @@
+static u32 _cm_bases[OMAP4_MAX_PRCM_PARTITIONS] = ;
+u32 omap4_cminst_read_inst_reg(u8 part, s16 inst, u16 idx)
+void omap4_cminst_write_inst_reg(u32 val, u8 part, s16 inst, u16 idx)
+u32 omap4_cminst_rmw_inst_reg_bits(u32 mask, u32 bits, u8 part, s16 inst,
+s16 idx)
+u32 omap4_cminst_set_inst_reg_bits(u32 bits, u8 part, s16 inst, s16 idx)
+u32 omap4_cminst_clear_inst_reg_bits(u32 bits, u8 part, s16 inst, s16 idx)
+u32 omap4_cminst_read_inst_reg_bits(u8 part, u16 inst, s16 idx, u32 mask)
+static void _clktrctrl_write(u8 c, u8 part, s16 inst, u16 cdoffs)
+bool omap4_cminst_is_clkdm_in_hwsup(u8 part, s16 inst, u16 cdoffs)
+void omap4_cminst_clkdm_enable_hwsup(u8 part, s16 inst, u16 cdoffs)
+void omap4_cminst_clkdm_disable_hwsup(u8 part, s16 inst, u16 cdoffs)
+void omap4_cminst_clkdm_force_sleep(u8 part, s16 inst, u16 cdoffs)
+void omap4_cminst_clkdm_force_wakeup(u8 part, s16 inst, u16 cdoffs)
+int omap4_cm_wait_module_ready(void __iomem *clkctrl_reg)

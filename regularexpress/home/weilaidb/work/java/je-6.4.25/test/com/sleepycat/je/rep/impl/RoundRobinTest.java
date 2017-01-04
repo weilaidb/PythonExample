@@ -1,0 +1,33 @@
+package com.sleepycat.je.rep.impl;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import java.io.File;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Logger;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+import com.sleepycat.bind.tuple.IntegerBinding;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.Durability;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.config.EnvironmentParams;
+import com.sleepycat.je.rep.InsufficientReplicasException;
+import com.sleepycat.je.rep.RepInternal;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.impl.node.LocalCBVLSNUpdater;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.je.utilint.LoggerUtils;
+import com.sleepycat.je.utilint.VLSN;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+@RunWith(Parameterized.class)
+public class RoundRobinTest extends TestBase

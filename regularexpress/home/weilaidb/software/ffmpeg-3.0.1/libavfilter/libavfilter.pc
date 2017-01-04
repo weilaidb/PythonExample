@@ -1,0 +1,13 @@
+prefix=/usr/local/ffmpeg
+exec_prefix=$
+libdir=$/lib
+includedir=$/include
+Name: libavfilter
+Description: FFmpeg audio/video filtering library
+Version: 6.31.100
+Requires: libswscale >= 4.0.100, libavformat >= 57.25.100, libavcodec >= 57.24.102, libswresample >= 2.0.101, libavutil >= 55.17.103
+Requires.private:
+Conflicts:
+Libs: -L$  -lavfilter -lm -lz -pthread -lrt
+Libs.private:
+Cflags: -I$

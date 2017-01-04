@@ -1,0 +1,21 @@
+#define CAN_H
+#define CAN_EFF_FLAG 0x80000000U
+#define CAN_RTR_FLAG 0x40000000U
+#define CAN_ERR_FLAG 0x20000000U
+#define CAN_SFF_MASK 0x000007FFU
+#define CAN_EFF_MASK 0x1FFFFFFFU
+#define CAN_ERR_MASK 0x1FFFFFFFU
+typedef __u32 canid_t;
+typedef __u32 can_err_mask_t;
+struct can_frame ;
+#define CAN_RAW		1
+#define CAN_BCM		2
+#define CAN_TP16	3
+#define CAN_TP20	4
+#define CAN_MCNET	5
+#define CAN_ISOTP	6
+#define CAN_NPROTO	7
+#define SOL_CAN_BASE 100
+struct sockaddr_can ;
+struct can_filter ;
+#define CAN_INV_FILTER 0x20000000U

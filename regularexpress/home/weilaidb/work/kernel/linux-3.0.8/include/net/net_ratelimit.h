@@ -1,0 +1,2 @@
+#define _LINUX_NET_RATELIMIT_H
+extern struct ratelimit_state net_ratelimit_state;

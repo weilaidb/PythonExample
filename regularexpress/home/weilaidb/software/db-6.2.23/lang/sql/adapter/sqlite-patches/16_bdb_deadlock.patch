@@ -1,0 +1,15 @@
+--- src/vdbe.c
++++ src/vdbe.c
+@@ -1322,7 +1322,10 @@
+** The statement transaction is never a top-level transaction.  Hence
+** the RELEASE call below can never fail.
+*/
+-  assert( p->iStatement==0 || db->flags&SQLITE_CountRows );
++
+rc = sqlite3VdbeCloseStatement(p, SAVEPOINT_RELEASE);
+if( NEVER(rc!=SQLITE_OK) )
+-    if( pOp->p2 && p->usesStmtJournal
++    if( pOp->p2 && (!db->aVTrans || p->usesStmtJournal)
+&& (db->autoCommit==0 || db->nVdbeRead>1)
+)
+pBlob->flags = flags;

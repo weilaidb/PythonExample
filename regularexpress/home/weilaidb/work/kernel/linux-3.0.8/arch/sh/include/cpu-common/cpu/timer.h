@@ -1,0 +1,1 @@
+#define __ASM_CPU_SH2_TIMER_H

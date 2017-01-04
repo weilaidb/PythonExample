@@ -1,0 +1,5 @@
+static void parse_string_list(struct string_list *list, const char *arg)
+static void write_list(const struct string_list *list)
+static void write_list_compact(const struct string_list *list)
+static int prefix_cb(struct string_list_item *item, void *cb_data)
+int main(int argc, char **argv)

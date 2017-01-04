@@ -1,0 +1,6 @@
+int hfs_find_init(struct hfs_btree *tree, struct hfs_find_data *fd)
+void hfs_find_exit(struct hfs_find_data *fd)
+int __hfs_brec_find(struct hfs_bnode *bnode, struct hfs_find_data *fd)
+int hfs_brec_find(struct hfs_find_data *fd)
+int hfs_brec_read(struct hfs_find_data *fd, void *rec, int rec_len)
+int hfs_brec_goto(struct hfs_find_data *fd, int cnt)

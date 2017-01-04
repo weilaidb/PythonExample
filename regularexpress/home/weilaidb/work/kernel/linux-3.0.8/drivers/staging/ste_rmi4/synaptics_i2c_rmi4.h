@@ -1,0 +1,2 @@
+#define _SYNAPTICS_RMI4_H_INCLUDED_
+struct synaptics_rmi4_platform_data ;

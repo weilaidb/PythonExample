@@ -1,0 +1,4 @@
+#define _ASM_POLL_H
+#define POLLWRNORM	POLLOUT
+#define POLLWRBAND	256
+#undef POLLREMOVE

@@ -1,0 +1,19 @@
+package com.sleepycat.je.rep.elections;
+import java.util.Arrays;
+import java.util.HashSet;
+import org.junit.After;
+import org.junit.Before;
+import com.sleepycat.je.JEVersion;
+import com.sleepycat.je.log.LogEntryType;
+import com.sleepycat.je.rep.elections.Proposer.Proposal;
+import com.sleepycat.je.rep.elections.Protocol.StringValue;
+import com.sleepycat.je.rep.elections.Protocol.Value;
+import com.sleepycat.je.rep.elections.Protocol.ValueParser;
+import com.sleepycat.je.rep.impl.TextProtocol;
+import com.sleepycat.je.rep.impl.TextProtocol.Message;
+import com.sleepycat.je.rep.impl.TextProtocolTestBase;
+import com.sleepycat.je.rep.impl.node.NameIdPair;
+import com.sleepycat.je.rep.net.DataChannelFactory;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.net.DataChannelFactoryBuilder;
+public class ProtocolTest extends TextProtocolTestBase

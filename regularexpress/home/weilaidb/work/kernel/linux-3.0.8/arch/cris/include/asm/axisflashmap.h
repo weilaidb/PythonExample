@@ -1,0 +1,18 @@
+#define __ASM_AXISFLASHMAP_H
+#define FLASH_BOOT_MAGIC 0xbeefcace
+#define BOOTPARAM_OFFSET 0xc000
+#define PARTITION_TABLE_OFFSET 10
+#define PARTITION_TABLE_MAGIC 0xbeef
+struct partitiontable_head ;
+struct partitiontable_entry ;
+#define PARTITIONTABLE_END_MARKER 0xFFFFFFFF
+#define PARTITIONTABLE_END_MARKER_SIZE 4
+#define PARTITIONTABLE_END_PAD	10
+struct partitiontable ;
+#define PARTITION_TYPE_PARAM  0x0001
+#define PARTITION_TYPE_KERNEL 0x0002
+#define PARTITION_TYPE_JFFS   0x0003
+#define PARTITION_TYPE_JFFS2  0x0000
+#define	PARTITION_FLAGS_READONLY_MASK	0x0001
+#define	PARTITION_FLAGS_READONLY	0x0001
+extern struct mtd_info *axisflash_mtd;

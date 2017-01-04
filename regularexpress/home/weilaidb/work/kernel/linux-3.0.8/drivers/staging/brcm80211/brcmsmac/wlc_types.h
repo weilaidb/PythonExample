@@ -1,0 +1,11 @@
+#define _wlc_types_h_
+struct wlc_info;
+struct wlc_hw_info;
+struct wlc_if;
+struct wl_if;
+struct ampdu_info;
+struct antsel_info;
+struct bmac_pmq;
+struct d11init;
+#define _hnddma_pub_
+struct hnddma_pub;

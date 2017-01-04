@@ -1,0 +1,34 @@
+#define _ASMPPC_HYDRA_H
+struct Hydra ;
+extern volatile struct Hydra __iomem *Hydra;
+#define HYDRA_FC_SCC_CELL_EN	0x00000001
+#define HYDRA_FC_SCSI_CELL_EN	0x00000002
+#define HYDRA_FC_SCCA_ENABLE	0x00000004
+#define HYDRA_FC_SCCB_ENABLE	0x00000008
+#define HYDRA_FC_ARB_BYPASS	0x00000010
+#define HYDRA_FC_RESET_SCC	0x00000020
+#define HYDRA_FC_MPIC_ENABLE	0x00000040
+#define HYDRA_FC_SLOW_SCC_PCLK	0x00000080
+#define HYDRA_FC_MPIC_IS_MASTER	0x00000100
+#define HYDRA_INT_SIO		0
+#define HYDRA_INT_SCSI_DMA	1
+#define HYDRA_INT_SCCA_TX_DMA	2
+#define HYDRA_INT_SCCA_RX_DMA	3
+#define HYDRA_INT_SCCB_TX_DMA	4
+#define HYDRA_INT_SCCB_RX_DMA	5
+#define HYDRA_INT_SCSI		6
+#define HYDRA_INT_SCCA		7
+#define HYDRA_INT_SCCB		8
+#define HYDRA_INT_VIA		9
+#define HYDRA_INT_ADB		10
+#define HYDRA_INT_ADB_NMI	11
+#define HYDRA_INT_EXT1		12
+#define HYDRA_INT_EXT2		13
+#define HYDRA_INT_EXT3		14
+#define HYDRA_INT_EXT4		15
+#define HYDRA_INT_EXT5		16
+#define HYDRA_INT_EXT6		17
+#define HYDRA_INT_EXT7		18
+#define HYDRA_INT_SPARE		19
+extern int hydra_init(void);
+extern void macio_adb_init(void);

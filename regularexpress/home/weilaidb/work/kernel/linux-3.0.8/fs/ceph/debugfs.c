@@ -1,0 +1,16 @@
+static int mdsmap_show(struct seq_file *s, void *p)
+static int mdsc_show(struct seq_file *s, void *p)
+static int caps_show(struct seq_file *s, void *p)
+static int dentry_lru_show(struct seq_file *s, void *ptr)
+CEPH_DEFINE_SHOW_FUNC(mdsmap_show)
+CEPH_DEFINE_SHOW_FUNC(mdsc_show)
+CEPH_DEFINE_SHOW_FUNC(caps_show)
+CEPH_DEFINE_SHOW_FUNC(dentry_lru_show)
+static int congestion_kb_set(void *data, u64 val)
+static int congestion_kb_get(void *data, u64 *val)
+DEFINE_SIMPLE_ATTRIBUTE(congestion_kb_fops, congestion_kb_get,
+congestion_kb_set, "%llu\n");
+void ceph_fs_debugfs_cleanup(struct ceph_fs_client *fsc)
+int ceph_fs_debugfs_init(struct ceph_fs_client *fsc)
+int ceph_fs_debugfs_init(struct ceph_fs_client *fsc)
+void ceph_fs_debugfs_cleanup(struct ceph_fs_client *fsc)

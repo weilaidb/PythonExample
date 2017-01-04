@@ -1,0 +1,59 @@
+static struct clkdm_dep gfx_sgx_wkdeps[] = ;
+static struct clkdm_dep dsp_24xx_wkdeps[] = ;
+static struct clkdm_dep mpu_24xx_wkdeps[] = ;
+static struct clkdm_dep core_24xx_wkdeps[] = ;
+static struct clkdm_dep mdm_2430_wkdeps[] = ;
+static struct clkdm_dep per_wkdeps[] = ;
+static struct clkdm_dep usbhost_wkdeps[] = ;
+static struct clkdm_dep mpu_3xxx_wkdeps[] = ;
+static struct clkdm_dep iva2_wkdeps[] = ;
+static struct clkdm_dep cam_wkdeps[] = ;
+static struct clkdm_dep dss_wkdeps[] = ;
+static struct clkdm_dep neon_wkdeps[] = ;
+static struct clkdm_dep dss_sleepdeps[] = ;
+static struct clkdm_dep per_sleepdeps[] = ;
+static struct clkdm_dep usbhost_sleepdeps[] = ;
+static struct clkdm_dep cam_sleepdeps[] = ;
+static struct clkdm_dep gfx_sgx_sleepdeps[] = ;
+static struct clockdomain wkup_clkdm = ;
+static struct clockdomain prm_clkdm = ;
+static struct clockdomain cm_clkdm = ;
+#if defined(CONFIG_SOC_OMAP2420)
+static struct clockdomain mpu_2420_clkdm = ;
+static struct clockdomain iva1_2420_clkdm = ;
+static struct clockdomain dsp_2420_clkdm = ;
+static struct clockdomain gfx_2420_clkdm = ;
+static struct clockdomain core_l3_2420_clkdm = ;
+static struct clockdomain core_l4_2420_clkdm = ;
+static struct clockdomain dss_2420_clkdm = ;
+#if defined(CONFIG_SOC_OMAP2430)
+static struct clockdomain mpu_2430_clkdm = ;
+static struct clockdomain mdm_clkdm = ;
+static struct clockdomain dsp_2430_clkdm = ;
+static struct clockdomain gfx_2430_clkdm = ;
+static struct clockdomain core_l3_2430_clkdm = ;
+static struct clockdomain core_l4_2430_clkdm = ;
+static struct clockdomain dss_2430_clkdm = ;
+#if defined(CONFIG_ARCH_OMAP3)
+static struct clockdomain mpu_3xxx_clkdm = ;
+static struct clockdomain neon_clkdm = ;
+static struct clockdomain iva2_clkdm = ;
+static struct clockdomain gfx_3430es1_clkdm = ;
+static struct clockdomain sgx_clkdm = ;
+static struct clockdomain d2d_clkdm = ;
+static struct clockdomain core_l3_3xxx_clkdm = ;
+static struct clockdomain core_l4_3xxx_clkdm = ;
+static struct clockdomain dss_3xxx_clkdm = ;
+static struct clockdomain cam_clkdm = ;
+static struct clockdomain usbhost_clkdm = ;
+static struct clockdomain per_clkdm = ;
+static struct clockdomain emu_clkdm = ;
+static struct clockdomain dpll1_clkdm = ;
+static struct clockdomain dpll2_clkdm = ;
+static struct clockdomain dpll3_clkdm = ;
+static struct clockdomain dpll4_clkdm = ;
+static struct clockdomain dpll5_clkdm = ;
+static struct clkdm_autodep clkdm_autodeps[] = ;
+static struct clockdomain *clockdomains_omap2[] __initdata = ;
+void __init omap2xxx_clockdomains_init(void)
+void __init omap3xxx_clockdomains_init(void)

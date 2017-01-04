@@ -1,0 +1,1 @@
+#define _ASM_S390_TERMBITS_H

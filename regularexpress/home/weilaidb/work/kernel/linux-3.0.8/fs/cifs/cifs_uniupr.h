@@ -1,0 +1,14 @@
+signed char CifsUniUpperTable[512] = ;
+static signed char UniCaseRangeU03a0[47] = ;
+static signed char UniCaseRangeU0430[48] = ;
+static signed char UniCaseRangeU0490[61] = ;
+static signed char UniCaseRangeU1e00[509] = ;
+static signed char UniCaseRangeUff40[27] = ;
+const struct UniCaseRange CifsUniUpperRange[] = ;
+signed char CifsUniLowerTable[512] = ;
+static signed char UniCaseRangeL0380[44] = ;
+static signed char UniCaseRangeL0400[48] = ;
+static signed char UniCaseRangeL0490[60] = ;
+static signed char UniCaseRangeL1e00[504] = ;
+static signed char UniCaseRangeLff20[27] = ;
+const struct UniCaseRange CifsUniLowerRange[] = ;

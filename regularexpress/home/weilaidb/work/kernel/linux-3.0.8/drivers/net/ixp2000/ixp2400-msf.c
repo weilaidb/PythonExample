@@ -1,0 +1,6 @@
+static void ixp2400_pll_init(struct ixp2400_msf_parameters *mp)
+static void ixp2400_msf_free_rbuf_entries(struct ixp2400_msf_parameters *mp)
+static u32 ixp2400_msf_valid_channels(u32 reg)
+static void ixp2400_msf_enable_rx(struct ixp2400_msf_parameters *mp)
+static void ixp2400_msf_enable_tx(struct ixp2400_msf_parameters *mp)
+void ixp2400_msf_init(struct ixp2400_msf_parameters *mp)

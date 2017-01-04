@@ -1,0 +1,20 @@
+package com.sleepycat.je.trigger;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.TransactionConfig;
+import com.sleepycat.je.dbi.DatabaseImpl;
+import com.sleepycat.je.dbi.TriggerManager.MapOver;
+public class InvokeTest extends TestBase

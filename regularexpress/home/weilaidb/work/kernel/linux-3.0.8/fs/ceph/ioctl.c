@@ -1,0 +1,6 @@
+static long ceph_ioctl_get_layout(struct file *file, void __user *arg)
+static long ceph_ioctl_set_layout(struct file *file, void __user *arg)
+static long ceph_ioctl_set_layout_policy (struct file *file, void __user *arg)
+static long ceph_ioctl_get_dataloc(struct file *file, void __user *arg)
+static long ceph_ioctl_lazyio(struct file *file)
+long ceph_ioctl(struct file *file, unsigned int cmd, unsigned long arg)

@@ -1,0 +1,20 @@
+#define _LINUX_DLM_DEVICE_H
+#define DLM_USER_LVB_LEN	32
+#define DLM_DEVICE_VERSION_MAJOR 6
+#define DLM_DEVICE_VERSION_MINOR 0
+#define DLM_DEVICE_VERSION_PATCH 1
+struct dlm_lock_params ;
+struct dlm_lspace_params ;
+struct dlm_purge_params ;
+struct dlm_write_request ;
+struct dlm_device_version ;
+struct dlm_lock_result ;
+#define DLM_USER_LOCK         1
+#define DLM_USER_UNLOCK       2
+#define DLM_USER_QUERY        3
+#define DLM_USER_CREATE_LOCKSPACE  4
+#define DLM_USER_REMOVE_LOCKSPACE  5
+#define DLM_USER_PURGE        6
+#define DLM_USER_DEADLOCK     7
+#define DLM_USER_LSFLG_AUTOFREE   1
+#define DLM_USER_LSFLG_FORCEFREE  2

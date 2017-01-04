@@ -1,0 +1,4 @@
+--- src/test_demovfs.c
++++ src/test_demovfs.c
+@@ -118,6 +118,7 @@
++

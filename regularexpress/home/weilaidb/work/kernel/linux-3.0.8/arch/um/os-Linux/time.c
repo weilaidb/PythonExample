@@ -1,0 +1,15 @@
+int set_interval(void)
+int timer_one_shot(int ticks)
+static inline long long timeval_to_ns(const struct timeval *tv)
+long long disable_timer(void)
+long long os_nsecs(void)
+static int after_sleep_interval(struct timespec *ts)
+static void deliver_alarm(void)
+static unsigned long long sleep_time(unsigned long long nsecs)
+unsigned long long last_tick;
+unsigned long long skew;
+static void deliver_alarm(void)
+static unsigned long long sleep_time(unsigned long long nsecs)
+static inline long long timespec_to_us(const struct timespec *ts)
+static int after_sleep_interval(struct timespec *ts)
+void idle_sleep(unsigned long long nsecs)

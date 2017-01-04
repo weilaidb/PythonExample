@@ -1,0 +1,22 @@
+#define _CTCM_FSMS_H_
+enum ctc_ch_events ;
+enum ctc_ch_states ;
+extern const char *ctc_ch_event_names[];
+extern const char *ctc_ch_state_names[];
+void ctcm_ccw_check_rc(struct channel *ch, int rc, char *msg);
+void ctcm_purge_skb_queue(struct sk_buff_head *q);
+void fsm_action_nop(fsm_instance *fi, int event, void *arg);
+void ctcm_chx_txidle(fsm_instance *fi, int event, void *arg);
+extern const fsm_node ch_fsm[];
+extern int ch_fsm_len;
+void ctcmpc_chx_rxidle(fsm_instance *fi, int event, void *arg);
+extern const fsm_node ctcmpc_ch_fsm[];
+extern int mpc_ch_fsm_len;
+enum dev_states ;
+extern const char *dev_state_names[];
+enum dev_events ;
+extern const char *dev_event_names[];
+extern const fsm_node dev_fsm[];
+extern int dev_fsm_len;
+enum mpcg_events ;
+enum mpcg_states ;

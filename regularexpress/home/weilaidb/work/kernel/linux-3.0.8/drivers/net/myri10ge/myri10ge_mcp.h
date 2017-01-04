@@ -1,0 +1,44 @@
+#define __MYRI10GE_MCP_H__
+#define MXGEFW_VERSION_MAJOR	1
+#define MXGEFW_VERSION_MINOR	4
+struct mcp_dma_addr ;
+struct mcp_slot ;
+struct mcp_cmd ;
+struct mcp_cmd_response ;
+#define MXGEFW_FLAGS_SMALL      0x1
+#define MXGEFW_FLAGS_TSO_HDR    0x1
+#define MXGEFW_FLAGS_FIRST      0x2
+#define MXGEFW_FLAGS_ALIGN_ODD  0x4
+#define MXGEFW_FLAGS_CKSUM      0x8
+#define MXGEFW_FLAGS_TSO_LAST   0x8
+#define MXGEFW_FLAGS_NO_TSO     0x10
+#define MXGEFW_FLAGS_TSO_CHOP   0x10
+#define MXGEFW_FLAGS_TSO_PLD    0x20
+#define MXGEFW_SEND_SMALL_SIZE  1520
+#define MXGEFW_MAX_MTU          9400
+union mcp_pso_or_cumlen ;
+#define	MXGEFW_MAX_SEND_DESC 12
+#define MXGEFW_PAD	    2
+struct mcp_kreq_ether_send ;
+struct mcp_kreq_ether_recv ;
+#define	MXGEFW_BOOT_HANDOFF	0xfc0000
+#define	MXGEFW_BOOT_DUMMY_RDMA	0xfc01c0
+#define	MXGEFW_ETH_CMD		0xf80000
+#define	MXGEFW_ETH_SEND_4	0x200000
+#define	MXGEFW_ETH_SEND_1	0x240000
+#define	MXGEFW_ETH_SEND_2	0x280000
+#define	MXGEFW_ETH_SEND_3	0x2c0000
+#define	MXGEFW_ETH_RECV_SMALL	0x300000
+#define	MXGEFW_ETH_RECV_BIG	0x340000
+#define	MXGEFW_ETH_SEND_GO	0x380000
+#define	MXGEFW_ETH_SEND_STOP	0x3C0000
+#define	MXGEFW_ETH_SEND(n)		(0x200000 + (((n) & 0x03) * 0x40000))
+#define	MXGEFW_ETH_SEND_OFFSET(n)	(MXGEFW_ETH_SEND(n) - MXGEFW_ETH_SEND_4)
+enum myri10ge_mcp_cmd_type ;
+enum myri10ge_mcp_cmd_status ;
+#define MXGEFW_OLD_IRQ_DATA_LEN 40
+struct mcp_irq_data ;
+#define MXGEFW_NETQ_FILTERTYPE_NONE 0
+#define MXGEFW_NETQ_FILTERTYPE_MACADDR 1
+#define MXGEFW_NETQ_FILTERTYPE_VLAN 2
+#define MXGEFW_NETQ_FILTERTYPE_VLANMACADDR 3

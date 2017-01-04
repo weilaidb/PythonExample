@@ -1,0 +1,20 @@
+static void llc_pdu_decode_pdu_type(struct sk_buff *skb, u8 *type);
+static u8 llc_pdu_get_pf_bit(struct llc_pdu_sn *pdu);
+void llc_pdu_set_cmd_rsp(struct sk_buff *skb, u8 pdu_type)
+void llc_pdu_set_pf_bit(struct sk_buff *skb, u8 bit_value)
+void llc_pdu_decode_pf_bit(struct sk_buff *skb, u8 *pf_bit)
+void llc_pdu_init_as_disc_cmd(struct sk_buff *skb, u8 p_bit)
+void llc_pdu_init_as_i_cmd(struct sk_buff *skb, u8 p_bit, u8 ns, u8 nr)
+void llc_pdu_init_as_rej_cmd(struct sk_buff *skb, u8 p_bit, u8 nr)
+void llc_pdu_init_as_rnr_cmd(struct sk_buff *skb, u8 p_bit, u8 nr)
+void llc_pdu_init_as_rr_cmd(struct sk_buff *skb, u8 p_bit, u8 nr)
+void llc_pdu_init_as_sabme_cmd(struct sk_buff *skb, u8 p_bit)
+void llc_pdu_init_as_dm_rsp(struct sk_buff *skb, u8 f_bit)
+void llc_pdu_init_as_frmr_rsp(struct sk_buff *skb, struct llc_pdu_sn *prev_pdu,
+u8 f_bit, u8 vs, u8 vr, u8 vzyxw)
+void llc_pdu_init_as_rr_rsp(struct sk_buff *skb, u8 f_bit, u8 nr)
+void llc_pdu_init_as_rej_rsp(struct sk_buff *skb, u8 f_bit, u8 nr)
+void llc_pdu_init_as_rnr_rsp(struct sk_buff *skb, u8 f_bit, u8 nr)
+void llc_pdu_init_as_ua_rsp(struct sk_buff *skb, u8 f_bit)
+static void llc_pdu_decode_pdu_type(struct sk_buff *skb, u8 *type)
+static u8 llc_pdu_get_pf_bit(struct llc_pdu_sn *pdu)

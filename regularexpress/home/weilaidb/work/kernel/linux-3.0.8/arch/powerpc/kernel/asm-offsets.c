@@ -1,0 +1,5 @@
+#if defined(CONFIG_KVM) || defined(CONFIG_KVM_GUEST)
+#if defined(CONFIG_KVM) && defined(CONFIG_PPC_BOOK3S)
+#if defined(CONFIG_BOOKE) || defined(CONFIG_40x)
+#if defined(CONFIG_PPC_FSL_BOOK3E)
+int main(void)

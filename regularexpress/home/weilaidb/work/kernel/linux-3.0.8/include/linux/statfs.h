@@ -1,0 +1,12 @@
+#define _LINUX_STATFS_H
+struct kstatfs ;
+#define ST_RDONLY	0x0001
+#define ST_NOSUID	0x0002
+#define ST_NODEV	0x0004
+#define ST_NOEXEC	0x0008
+#define ST_SYNCHRONOUS	0x0010
+#define ST_VALID	0x0020
+#define ST_MANDLOCK	0x0040
+#define ST_NOATIME	0x0400
+#define ST_NODIRATIME	0x0800
+#define ST_RELATIME	0x1000

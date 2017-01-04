@@ -1,0 +1,26 @@
+#define ZMII_FER_MDI(idx)	(0x80000000 >> ((idx) * 4))
+#define ZMII_FER_MDI_ALL	(ZMII_FER_MDI(0) | ZMII_FER_MDI(1) | \
+ZMII_FER_MDI(2) | ZMII_FER_MDI(3))
+#define ZMII_FER_SMII(idx)	(0x40000000 >> ((idx) * 4))
+#define ZMII_FER_RMII(idx)	(0x20000000 >> ((idx) * 4))
+#define ZMII_FER_MII(idx)	(0x10000000 >> ((idx) * 4))
+#define ZMII_SSR_SCI(idx)	(0x40000000 >> ((idx) * 4))
+#define ZMII_SSR_FSS(idx)	(0x20000000 >> ((idx) * 4))
+#define ZMII_SSR_SP(idx)	(0x10000000 >> ((idx) * 4))
+static inline int zmii_valid_mode(int mode)
+static inline const char *zmii_mode_name(int mode)
+static inline u32 zmii_mode_mask(int mode, int input)
+int __devinit zmii_attach(struct platform_device *ofdev, int input, int *mode)
+void zmii_get_mdio(struct platform_device *ofdev, int input)
+void zmii_put_mdio(struct platform_device *ofdev, int input)
+void zmii_set_speed(struct platform_device *ofdev, int input, int speed)
+void zmii_detach(struct platform_device *ofdev, int input)
+int zmii_get_regs_len(struct platform_device *ofdev)
+void *zmii_dump_regs(struct platform_device *ofdev, void *buf)
+static int __devinit zmii_probe(struct platform_device *ofdev)
+static int __devexit zmii_remove(struct platform_device *ofdev)
+static struct of_device_id zmii_match[] =
+;
+static struct platform_driver zmii_driver = ;
+int __init zmii_init(void)
+void zmii_exit(void)

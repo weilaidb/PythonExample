@@ -1,0 +1,7 @@
+#define ICT_COUNT (PAGE_SIZE/sizeof(u32))
+void iwl_free_isr_ict(struct iwl_priv *priv)
+int iwl_alloc_isr_ict(struct iwl_priv *priv)
+int iwl_reset_ict(struct iwl_priv *priv)
+void iwl_disable_ict(struct iwl_priv *priv)
+static irqreturn_t iwl_isr(int irq, void *data)
+irqreturn_t iwl_isr_ict(int irq, void *data)

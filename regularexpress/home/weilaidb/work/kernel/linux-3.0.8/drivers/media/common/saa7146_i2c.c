@@ -1,0 +1,10 @@
+static u32 saa7146_i2c_func(struct i2c_adapter *adapter)
+static inline u32 saa7146_i2c_status(struct saa7146_dev *dev)
+static int saa7146_i2c_msg_prepare(const struct i2c_msg *m, int num, __le32 *op)
+static int saa7146_i2c_msg_cleanup(const struct i2c_msg *m, int num, __le32 *op)
+static int saa7146_i2c_reset(struct saa7146_dev *dev)
+static int saa7146_i2c_writeout(struct saa7146_dev *dev, __le32 *dword, int short_delay)
+static int saa7146_i2c_transfer(struct saa7146_dev *dev, const struct i2c_msg *msgs, int num, int retries)
+static int saa7146_i2c_xfer(struct i2c_adapter* adapter, struct i2c_msg *msg, int num)
+static struct i2c_algorithm saa7146_algo = ;
+int saa7146_i2c_adapter_prepare(struct saa7146_dev *dev, struct i2c_adapter *i2c_adapter, u32 bitrate)

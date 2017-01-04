@@ -1,0 +1,6 @@
+HttpGet::HttpGet(QObject *parent)
+: QObject(parent)
+void HttpGet::startRequest(const QUrl &url)
+bool HttpGet::getFile(const QUrl &url)
+void HttpGet::httpFinished()
+void HttpGet::httpReadyRead()

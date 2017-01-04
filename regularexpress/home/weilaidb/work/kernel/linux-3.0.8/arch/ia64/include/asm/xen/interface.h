@@ -1,0 +1,77 @@
+#define _ASM_IA64_XEN_INTERFACE_H
+#define __DEFINE_GUEST_HANDLE(name, type)	\
+typedef struct  __guest_handle_ ## name
+#define DEFINE_GUEST_HANDLE_STRUCT(name)	\
+__DEFINE_GUEST_HANDLE(name, struct name)
+#define DEFINE_GUEST_HANDLE(name)	__DEFINE_GUEST_HANDLE(name, name)
+#define GUEST_HANDLE(name)		__guest_handle_ ## name
+#define GUEST_HANDLE_64(name)		GUEST_HANDLE(name)
+#define set_xen_guest_handle(hnd, val)	do  while (0)
+__DEFINE_GUEST_HANDLE(uchar, unsigned char);
+__DEFINE_GUEST_HANDLE(uint, unsigned int);
+__DEFINE_GUEST_HANDLE(ulong, unsigned long);
+__DEFINE_GUEST_HANDLE(u64, unsigned long);
+DEFINE_GUEST_HANDLE(char);
+DEFINE_GUEST_HANDLE(int);
+DEFINE_GUEST_HANDLE(long);
+DEFINE_GUEST_HANDLE(void);
+typedef unsigned long xen_pfn_t;
+DEFINE_GUEST_HANDLE(xen_pfn_t);
+#define PRI_xen_pfn	"lx"
+#define VIRQ_ITC	VIRQ_ARCH_0
+#define VIRQ_MCA_CMC	VIRQ_ARCH_1
+#define VIRQ_MCA_CPE	VIRQ_ARCH_2
+#define MAX_VIRT_CPUS	64
+#define INVALID_MFN	(~0UL)
+union vac ;
+union vdc ;
+struct mapped_regs ;
+struct arch_vcpu_info ;
+struct xen_ia64_memmap_info ;
+struct arch_shared_info ;
+struct xen_callback ;
+typedef struct xen_callback xen_callback_t;
+#define XSI_SHIFT			14
+#define XSI_SIZE			(1 << XSI_SHIFT)
+#define XMAPPEDREGS_SHIFT		12
+#define XMAPPEDREGS_SIZE		(1 << XMAPPEDREGS_SHIFT)
+#define XMAPPEDREGS_OFS			XSI_SIZE
+#define HYPERPRIVOP_START		0x1
+#define HYPERPRIVOP_RFI			(HYPERPRIVOP_START + 0x0)
+#define HYPERPRIVOP_RSM_DT		(HYPERPRIVOP_START + 0x1)
+#define HYPERPRIVOP_SSM_DT		(HYPERPRIVOP_START + 0x2)
+#define HYPERPRIVOP_COVER		(HYPERPRIVOP_START + 0x3)
+#define HYPERPRIVOP_ITC_D		(HYPERPRIVOP_START + 0x4)
+#define HYPERPRIVOP_ITC_I		(HYPERPRIVOP_START + 0x5)
+#define HYPERPRIVOP_SSM_I		(HYPERPRIVOP_START + 0x6)
+#define HYPERPRIVOP_GET_IVR		(HYPERPRIVOP_START + 0x7)
+#define HYPERPRIVOP_GET_TPR		(HYPERPRIVOP_START + 0x8)
+#define HYPERPRIVOP_SET_TPR		(HYPERPRIVOP_START + 0x9)
+#define HYPERPRIVOP_EOI			(HYPERPRIVOP_START + 0xa)
+#define HYPERPRIVOP_SET_ITM		(HYPERPRIVOP_START + 0xb)
+#define HYPERPRIVOP_THASH		(HYPERPRIVOP_START + 0xc)
+#define HYPERPRIVOP_PTC_GA		(HYPERPRIVOP_START + 0xd)
+#define HYPERPRIVOP_ITR_D		(HYPERPRIVOP_START + 0xe)
+#define HYPERPRIVOP_GET_RR		(HYPERPRIVOP_START + 0xf)
+#define HYPERPRIVOP_SET_RR		(HYPERPRIVOP_START + 0x10)
+#define HYPERPRIVOP_SET_KR		(HYPERPRIVOP_START + 0x11)
+#define HYPERPRIVOP_FC			(HYPERPRIVOP_START + 0x12)
+#define HYPERPRIVOP_GET_CPUID		(HYPERPRIVOP_START + 0x13)
+#define HYPERPRIVOP_GET_PMD		(HYPERPRIVOP_START + 0x14)
+#define HYPERPRIVOP_GET_EFLAG		(HYPERPRIVOP_START + 0x15)
+#define HYPERPRIVOP_SET_EFLAG		(HYPERPRIVOP_START + 0x16)
+#define HYPERPRIVOP_RSM_BE		(HYPERPRIVOP_START + 0x17)
+#define HYPERPRIVOP_GET_PSR		(HYPERPRIVOP_START + 0x18)
+#define HYPERPRIVOP_SET_RR0_TO_RR4	(HYPERPRIVOP_START + 0x19)
+#define HYPERPRIVOP_MAX			(0x1a)
+#define __HYPERVISOR_ia64_fast_eoi	__HYPERVISOR_arch_1
+#define XENCOMM_INLINE_MASK		0xf800000000000000UL
+#define XENCOMM_INLINE_FLAG		0x8000000000000000UL
+#define __HYPERVISOR_opt_feature	0x700UL
+#define XEN_IA64_OPTF_OFF		0x0
+#define XEN_IA64_OPTF_ON		0x1
+#define XEN_IA64_OPTF_IDENT_MAP_REG7	1
+#define XEN_IA64_OPTF_IDENT_MAP_REG4	2
+#define XEN_IA64_OPTF_IDENT_MAP_REG5	3
+#define XEN_IA64_OPTF_IDENT_MAP_NOT_SET	 (0)
+struct xen_ia64_opt_feature ;

@@ -1,0 +1,10 @@
+#define _COMPONENT          ACPI_PARSER
+ACPI_MODULE_NAME("psutils")
+union acpi_parse_object *acpi_ps_create_scope_op(void)
+void acpi_ps_init_op(union acpi_parse_object *op, u16 opcode)
+union acpi_parse_object *acpi_ps_alloc_op(u16 opcode)
+void acpi_ps_free_op(union acpi_parse_object *op)
+u8 acpi_ps_is_leading_char(u32 c)
+u8 acpi_ps_is_prefix_char(u32 c)
+u32 acpi_ps_get_name(union acpi_parse_object * op)
+void acpi_ps_set_name(union acpi_parse_object *op, u32 name)

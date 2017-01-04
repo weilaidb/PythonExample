@@ -1,0 +1,38 @@
+#define _MC683XX_SERIAL_H
+struct serial_struct ;
+#define S_CLOSING_WAIT_INF	0
+#define S_CLOSING_WAIT_NONE	65535
+#define S_HUP_NOTIFY 0x0001
+#define S_FOURPORT  0x0002
+#define S_SAK	0x0004
+#define S_SPLIT_TERMIOS 0x0008
+#define S_SPD_MASK	0x0030
+#define S_SPD_HI	0x0010
+#define S_SPD_VHI	0x0020
+#define S_SPD_CUST	0x0030
+#define S_SKIP_TEST	0x0040
+#define S_AUTO_IRQ  0x0080
+#define S_SESSION_LOCKOUT 0x0100
+#define S_PGRP_LOCKOUT    0x0200
+#define S_CALLOUT_NOHUP   0x0400
+#define S_FLAGS	0x0FFF
+#define S_USR_MASK 0x0430
+#define S_INITIALIZED	0x80000000
+#define S_CALLOUT_ACTIVE	0x40000000
+#define S_NORMAL_ACTIVE	0x20000000
+#define S_BOOT_AUTOCONF	0x10000000
+#define S_CLOSING		0x08000000
+#define S_CTS_FLOW		0x04000000
+#define S_CHECK_CD		0x02000000
+#define USTCNT_TX_INTR_MASK (USTCNT_TXEE)
+#if defined(CONFIG_M68EZ328) || defined(CONFIG_M68VZ328)
+#define USTCNT_RX_INTR_MASK (USTCNT_RXHE | USTCNT_ODEN)
+#elif defined(CONFIG_M68328)
+#define USTCNT_RX_INTR_MASK (USTCNT_RXRE)
+#error Please, define the Rx interrupt events for your CPU
+struct m68k_serial ;
+#define SERIAL_MAGIC 0x5301
+#define SERIAL_XMIT_SIZE 4096
+#define RS_EVENT_WRITE_WAKEUP	0
+#define NR_PORTS 1
+#define UART_IRQ_DEFNS

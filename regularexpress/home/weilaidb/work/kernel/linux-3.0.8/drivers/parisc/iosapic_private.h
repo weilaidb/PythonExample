@@ -1,0 +1,20 @@
+struct irt_entry ;
+#define IRT_IOSAPIC_TYPE   139
+#define IRT_IOSAPIC_LENGTH 16
+#define IRT_VECTORED_INTR  0
+#define IRT_PO_MASK        0x3
+#define IRT_ACTIVE_HI      1
+#define IRT_ACTIVE_LO      3
+#define IRT_EL_MASK        0x3
+#define IRT_EL_SHIFT       2
+#define IRT_EDGE_TRIG      1
+#define IRT_LEVEL_TRIG     3
+#define IRT_IRQ_MASK       0x3
+#define IRT_DEV_MASK       0x1f
+#define IRT_DEV_SHIFT      2
+#define IRT_IRQ_DEVNO_MASK	((IRT_DEV_MASK << IRT_DEV_SHIFT) | IRT_IRQ_MASK)
+struct iosapic_irt ;
+struct vector_info ;
+struct iosapic_info ;
+struct local_sapic_info ;
+struct sapic_info ;

@@ -1,0 +1,148 @@
+DBPRIVATE
+PREFIX	__ham
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+BEGIN insdel		50	21
+ARG	opcode		u_int32_t	lu
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+ARG	ndx		u_int32_t	lu
+POINTER	pagelsn		DB_LSN *	lu
+OP	keytype		u_int32_t	lu
+HDR	key		DBT		s
+OP	datatype	u_int32_t	lu
+HDR	data		DBT		s
+END
+BEGIN_COMPAT insdel		42	21
+ARG	opcode		u_int32_t	lu
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+ARG	ndx		u_int32_t	lu
+POINTER	pagelsn		DB_LSN *	lu
+DBT	key		DBT		s
+DBT	data		DBT		s
+END
+BEGIN newpage		42	22
+ARG	opcode		u_int32_t	lu
+DB	fileid		int32_t		ld
+ARG	prev_pgno	db_pgno_t	lu
+POINTER	prevlsn		DB_LSN *	lu
+ARG	new_pgno	db_pgno_t	lu
+POINTER	pagelsn		DB_LSN *	lu
+ARG	next_pgno	db_pgno_t	lu
+POINTER	nextlsn		DB_LSN *	lu
+END
+BEGIN splitdata		42	24
+DB	fileid		int32_t		ld
+ARG	opcode		u_int32_t	lu
+ARG	pgno		db_pgno_t	lu
+PGDBT	pageimage	DBT		s
+POINTER	pagelsn		DB_LSN *	lu
+END
+BEGIN replace		50	25
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+ARG	ndx		u_int32_t	lu
+POINTER	pagelsn		DB_LSN *	lu
+ARG	off		int32_t		ld
+OP	oldtype		u_int32_t	lu
+HDR	olditem		DBT		s
+OP	newtype		u_int32_t	lu
+HDR	newitem		DBT		s
+END
+BEGIN_COMPAT replace		42	25
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+ARG	ndx		u_int32_t	lu
+POINTER	pagelsn		DB_LSN *	lu
+ARG	off		int32_t		ld
+DBT	olditem		DBT		s
+DBT	newitem		DBT		s
+ARG	makedup		u_int32_t	lu
+END
+BEGIN copypage		42	28
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+POINTER	pagelsn		DB_LSN *	lu
+ARG	next_pgno	db_pgno_t	lu
+POINTER	nextlsn		DB_LSN *	lu
+ARG	nnext_pgno	db_pgno_t	lu
+POINTER	nnextlsn	DB_LSN *	lu
+PGDBT	page		DBT		s
+END
+BEGIN_COMPAT metagroup		42	29
+DB	fileid		int32_t		ld
+ARG	bucket		u_int32_t	lu
+ARG	 mmpgno		db_pgno_t	lu
+POINTER	mmetalsn	DB_LSN *	lu
+ARG	mpgno		db_pgno_t	lu
+POINTER	metalsn		DB_LSN *	lu
+ARG	pgno		db_pgno_t	lu
+POINTER	pagelsn		DB_LSN *	lu
+ARG	newalloc	u_int32_t	lu
+END
+BEGIN metagroup		43	29
+DB	fileid		int32_t		ld
+ARG	bucket		u_int32_t	lu
+ARG	 mmpgno		db_pgno_t	lu
+POINTER	mmetalsn	DB_LSN *	lu
+ARG	mpgno		db_pgno_t	lu
+POINTER	metalsn		DB_LSN *	lu
+ARG	pgno		db_pgno_t	lu
+POINTER	pagelsn		DB_LSN *	lu
+ARG	newalloc	u_int32_t	lu
+ARG	last_pgno	db_pgno_t	lu
+END
+BEGIN_COMPAT groupalloc	42	32
+DB	fileid		int32_t		ld
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	start_pgno	db_pgno_t	lu
+ARG	num		u_int32_t	lu
+ARG	free		db_pgno_t	lu
+END
+BEGIN groupalloc	43	32
+DB	fileid		int32_t		ld
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	start_pgno	db_pgno_t	lu
+ARG	num		u_int32_t	lu
+ARG	unused		db_pgno_t	lu
+ARG	last_pgno	db_pgno_t	lu
+END
+BEGIN changeslot	50 35
+DB	fileid		int32_t		ld
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	slot		u_int32_t	lu
+ARG	old		db_pgno_t	lu
+ARG	new		db_pgno_t	lu
+END
+BEGIN contract		50 37
+DB	fileid		int32_t		ld
+ARG	meta		db_pgno_t	lu
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	bucket		u_int32_t	lu
+ARG	pgno		db_pgno_t	lu
+END
+BEGIN curadj	42	33
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+ARG	indx		u_int32_t	lu
+ARG	len		u_int32_t	lu
+ARG	dup_off		u_int32_t	lu
+ARG	add		int		ld
+ARG	is_dup		int		ld
+ARG	order		u_int32_t	lu
+END
+BEGIN chgpg	42	34
+DB	fileid		int32_t		ld
+ARG	mode		db_ham_mode	ld
+ARG	old_pgno	db_pgno_t	lu
+ARG	new_pgno	db_pgno_t	lu
+ARG	old_indx	u_int32_t	lu
+ARG	new_indx	u_int32_t	lu
+END

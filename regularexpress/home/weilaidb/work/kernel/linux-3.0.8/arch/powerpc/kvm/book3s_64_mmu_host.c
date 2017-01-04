@@ -1,0 +1,11 @@
+#define PTE_SIZE 12
+void kvmppc_mmu_invalidate_pte(struct kvm_vcpu *vcpu, struct hpte_cache *pte)
+static u16 kvmppc_sid_hash(struct kvm_vcpu *vcpu, u64 gvsid)
+static struct kvmppc_sid_map *find_sid_vsid(struct kvm_vcpu *vcpu, u64 gvsid)
+int kvmppc_mmu_map_page(struct kvm_vcpu *vcpu, struct kvmppc_pte *orig_pte)
+static struct kvmppc_sid_map *create_sid_map(struct kvm_vcpu *vcpu, u64 gvsid)
+static int kvmppc_mmu_next_segment(struct kvm_vcpu *vcpu, ulong esid)
+int kvmppc_mmu_map_segment(struct kvm_vcpu *vcpu, ulong eaddr)
+void kvmppc_mmu_flush_segments(struct kvm_vcpu *vcpu)
+void kvmppc_mmu_destroy(struct kvm_vcpu *vcpu)
+int kvmppc_mmu_init(struct kvm_vcpu *vcpu)

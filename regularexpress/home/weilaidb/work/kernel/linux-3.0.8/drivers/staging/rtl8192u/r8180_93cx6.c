@@ -1,0 +1,6 @@
+void eprom_cs(struct net_device *dev, short bit)
+void eprom_ck_cycle(struct net_device *dev)
+void eprom_w(struct net_device *dev,short bit)
+short eprom_r(struct net_device *dev)
+void eprom_send_bits_string(struct net_device *dev, short b[], int len)
+u32 eprom_read(struct net_device *dev, u32 addr)

@@ -1,0 +1,14 @@
+#define MAC_IOSIZE 0x10000
+#define NUM_RX_DMA 4
+#define NUM_TX_DMA 4
+#define NUM_RX_BUFFS 4
+#define NUM_TX_BUFFS 4
+#define MAX_BUF_SIZE 2048
+#define ETH_TX_TIMEOUT (HZ/4)
+#define MAC_MIN_PKT_SIZE 64
+#define MULTICAST_FILTER_LIMIT 64
+struct db_dest ;
+struct tx_dma ;
+struct rx_dma ;
+struct mac_reg ;
+struct au1000_private ;

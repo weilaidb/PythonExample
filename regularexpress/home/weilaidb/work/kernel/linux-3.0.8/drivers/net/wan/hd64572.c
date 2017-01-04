@@ -1,0 +1,38 @@
+#define NAPI_WEIGHT		16
+#define get_msci(port)	  (port->chan ?   MSCI1_OFFSET :   MSCI0_OFFSET)
+#define get_dmac_rx(port) (port->chan ? DMAC1RX_OFFSET : DMAC0RX_OFFSET)
+#define get_dmac_tx(port) (port->chan ? DMAC1TX_OFFSET : DMAC0TX_OFFSET)
+#define sca_in(reg, card)	     readb(card->scabase + (reg))
+#define sca_out(value, reg, card)    writeb(value, card->scabase + (reg))
+#define sca_inw(reg, card)	     readw(card->scabase + (reg))
+#define sca_outw(value, reg, card)   writew(value, card->scabase + (reg))
+#define sca_inl(reg, card)	     readl(card->scabase + (reg))
+#define sca_outl(value, reg, card)   writel(value, card->scabase + (reg))
+static int sca_poll(struct napi_struct *napi, int budget);
+static inline port_t* dev_to_port(struct net_device *dev)
+static inline void enable_intr(port_t *port)
+static inline void disable_intr(port_t *port)
+static inline u16 desc_abs_number(port_t *port, u16 desc, int transmit)
+static inline u16 desc_offset(port_t *port, u16 desc, int transmit)
+static inline pkt_desc __iomem *desc_address(port_t *port, u16 desc,
+int transmit)
+static inline u32 buffer_offset(port_t *port, u16 desc, int transmit)
+static inline void sca_set_carrier(port_t *port)
+static void sca_init_port(port_t *port)
+static inline void sca_msci_intr(port_t *port)
+static inline void sca_rx(card_t *card, port_t *port, pkt_desc __iomem *desc,
+u16 rxin)
+static inline int sca_rx_done(port_t *port, int budget)
+static inline void sca_tx_done(port_t *port)
+static int sca_poll(struct napi_struct *napi, int budget)
+static irqreturn_t sca_intr(int irq, void *dev_id)
+static void sca_set_port(port_t *port)
+static void sca_open(struct net_device *dev)
+static void sca_close(struct net_device *dev)
+static int sca_attach(struct net_device *dev, unsigned short encoding,
+unsigned short parity)
+static void sca_dump_rings(struct net_device *dev)
+static netdev_tx_t sca_xmit(struct sk_buff *skb, struct net_device *dev)
+static u32 __devinit sca_detect_ram(card_t *card, u8 __iomem *rambase,
+u32 ramsize)
+static void __devinit sca_init(card_t *card, int wait_states)

@@ -1,0 +1,1 @@
+#define _ASM_M32R_TOPOLOGY_H

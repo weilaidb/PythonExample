@@ -1,0 +1,22 @@
+#define __LINUX_USB_WUSB_WA_H
+enum ;
+enum ;
+enum ;
+enum ;
+enum ;
+enum rpipe_crs ;
+struct usb_rpipe_descriptor  __attribute__ ((packed));
+enum wa_notif_type ;
+struct wa_notif_hdr  __attribute__((packed));
+struct hwa_notif_dn  __attribute__((packed));
+enum wa_xfer_type ;
+struct wa_xfer_hdr  __attribute__((packed));
+struct wa_xfer_ctl  __attribute__((packed));
+struct wa_xfer_bi  __attribute__((packed));
+struct wa_xfer_hwaiso  __attribute__((packed));
+struct wa_xfer_abort  __attribute__((packed));
+struct wa_notif_xfer  __attribute__((packed));
+enum ;
+struct wa_xfer_result  __attribute__((packed));
+struct usb_wa_descriptor  __attribute__((packed));
+struct hwa_dev_info  __attribute__((packed));

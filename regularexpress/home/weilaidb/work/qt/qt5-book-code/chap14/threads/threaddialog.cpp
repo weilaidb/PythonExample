@@ -1,0 +1,5 @@
+ThreadDialog::ThreadDialog(QWidget *parent)
+: QDialog(parent)
+void ThreadDialog::startOrStopThreadA()
+void ThreadDialog::startOrStopThreadB()
+void ThreadDialog::closeEvent(QCloseEvent *event)

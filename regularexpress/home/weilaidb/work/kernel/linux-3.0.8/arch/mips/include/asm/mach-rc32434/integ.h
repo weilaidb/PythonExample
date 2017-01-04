@@ -1,0 +1,15 @@
+#define __RC32434_INTEG_H__
+#define INTEG0_BASE_ADDR	0x18030030
+struct integ ;
+#define RC32434_ERR_WTO		0
+#define RC32434_ERR_WNE		1
+#define RC32434_ERR_UCW		2
+#define RC32434_ERR_UCR		3
+#define RC32434_ERR_UPW		4
+#define RC32434_ERR_UPR		5
+#define RC32434_ERR_UDW		6
+#define RC32434_ERR_UDR		7
+#define RC32434_ERR_SAE		8
+#define RC32434_ERR_WRE		9
+#define RC32434_WTC_EN		0
+#define RC32434_WTC_TO		1

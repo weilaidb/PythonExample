@@ -1,0 +1,23 @@
+package com.sleepycat.je.rep.vlsn;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import org.junit.Test;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.Durability;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.log.LogEntryType;
+import com.sleepycat.je.recovery.RecoveryInfo;
+import com.sleepycat.je.rep.impl.node.NameIdPair;
+import com.sleepycat.je.rep.util.TestLogItem;
+import com.sleepycat.je.rep.vlsn.VLSNIndex.ForwardVLSNScanner;
+import com.sleepycat.je.utilint.DbLsn;
+import com.sleepycat.je.utilint.VLSN;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class VLSNIndexTruncateTest extends TestBase

@@ -1,0 +1,35 @@
+package com.sleepycat.bind.test;
+import static org.junit.Assert.assertTrue;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Serializable;
+import java.io.Writer;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.List;
+import javax.xml.parsers.SAXParserFactory;
+import org.junit.After;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+import org.xml.sax.InputSource;
+import org.xml.sax.XMLReader;
+import com.sleepycat.bind.serial.SerialInput;
+import com.sleepycat.bind.serial.SerialOutput;
+import com.sleepycat.bind.serial.test.TestClassCatalog;
+import com.sleepycat.bind.tuple.TupleInput;
+import com.sleepycat.bind.tuple.TupleOutput;
+import com.sleepycat.util.FastInputStream;
+import com.sleepycat.util.FastOutputStream;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+@RunWith(Parameterized.class)
+public class BindingSpeedTest extends TestBase

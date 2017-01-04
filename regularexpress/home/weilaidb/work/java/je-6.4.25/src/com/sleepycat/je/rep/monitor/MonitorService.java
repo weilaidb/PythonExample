@@ -1,0 +1,20 @@
+package com.sleepycat.je.rep.monitor;
+import static com.sleepycat.je.utilint.TestHookExecute.doHookIfSet;
+import java.io.IOException;
+import java.util.logging.Formatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import com.sleepycat.je.rep.ReplicationGroup;
+import com.sleepycat.je.rep.impl.TextProtocol.RequestMessage;
+import com.sleepycat.je.rep.impl.TextProtocol.ResponseMessage;
+import com.sleepycat.je.rep.monitor.Protocol.GroupChange;
+import com.sleepycat.je.rep.monitor.Protocol.JoinGroup;
+import com.sleepycat.je.rep.monitor.Protocol.LeaveGroup;
+import com.sleepycat.je.rep.net.DataChannel;
+import com.sleepycat.je.rep.utilint.ReplicationFormatter;
+import com.sleepycat.je.rep.utilint.ServiceDispatcher;
+import com.sleepycat.je.rep.utilint.ServiceDispatcher.ExecutingService;
+import com.sleepycat.je.rep.utilint.ServiceDispatcher.ExecutingRunnable;
+import com.sleepycat.je.utilint.LoggerUtils;
+import com.sleepycat.je.utilint.TestHook;
+public class MonitorService extends ExecutingService

@@ -1,0 +1,4 @@
+#define __H8300_POLL_H
+#define POLLWRNORM	POLLOUT
+#define POLLWRBAND	256
+#undef POLLREMOVE

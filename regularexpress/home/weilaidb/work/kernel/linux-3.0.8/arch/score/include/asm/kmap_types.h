@@ -1,0 +1,1 @@
+#define _ASM_SCORE_KMAP_TYPES_H

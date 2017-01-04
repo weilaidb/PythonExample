@@ -1,0 +1,5 @@
+int __init tx4939_report_pciclk(void)
+void __init tx4939_report_pci1clk(void)
+int __init tx4939_pcic1_map_irq(const struct pci_dev *dev, u8 slot)
+int __init tx4939_pci_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+void __init tx4939_setup_pcierr_irq(void)

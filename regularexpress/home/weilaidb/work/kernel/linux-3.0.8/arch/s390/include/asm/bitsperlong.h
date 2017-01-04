@@ -1,0 +1,3 @@
+#define __ASM_S390_BITSPERLONG_H
+#define __BITS_PER_LONG 32
+#define __BITS_PER_LONG 64

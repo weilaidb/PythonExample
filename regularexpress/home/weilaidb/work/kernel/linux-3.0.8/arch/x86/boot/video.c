@@ -1,0 +1,12 @@
+static void store_cursor_position(void)
+static void store_video_mode(void)
+static void store_mode_params(void)
+static unsigned int get_entry(void)
+static void display_menu(void)
+#define H(x)	((x)-'a'+10)
+#define SCAN	((H('s')<<12)+(H('c')<<8)+(H('a')<<4)+H('n'))
+static unsigned int mode_menu(void)
+static struct saved_screen  saved;
+static void save_screen(void)
+static void restore_screen(void)
+void set_video(void)

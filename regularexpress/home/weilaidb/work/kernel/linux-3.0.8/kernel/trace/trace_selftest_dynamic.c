@@ -1,0 +1,2 @@
+int DYN_FTRACE_TEST_NAME(void)
+int DYN_FTRACE_TEST_NAME2(void)

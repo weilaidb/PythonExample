@@ -1,0 +1,6 @@
+static void setup_cmd_submit_pdu(struct usbip_header *pdup,  struct urb *urb)
+static struct vhci_priv *dequeue_from_priv_tx(struct vhci_device *vdev)
+static int vhci_send_cmd_submit(struct vhci_device *vdev)
+static struct vhci_unlink *dequeue_from_unlink_tx(struct vhci_device *vdev)
+static int vhci_send_cmd_unlink(struct vhci_device *vdev)
+int vhci_tx_loop(void *data)

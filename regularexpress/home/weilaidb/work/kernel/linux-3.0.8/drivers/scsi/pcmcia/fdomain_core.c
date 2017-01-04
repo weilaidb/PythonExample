@@ -1,0 +1,1 @@
+#define PCMCIA 1

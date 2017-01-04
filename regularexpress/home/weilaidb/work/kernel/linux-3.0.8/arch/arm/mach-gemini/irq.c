@@ -1,0 +1,18 @@
+#define IRQ_SOURCE(base_addr)	(base_addr + 0x00)
+#define IRQ_MASK(base_addr)	(base_addr + 0x04)
+#define IRQ_CLEAR(base_addr)	(base_addr + 0x08)
+#define IRQ_TMODE(base_addr)	(base_addr + 0x0C)
+#define IRQ_TLEVEL(base_addr)	(base_addr + 0x10)
+#define IRQ_STATUS(base_addr)	(base_addr + 0x14)
+#define FIQ_SOURCE(base_addr)	(base_addr + 0x20)
+#define FIQ_MASK(base_addr)	(base_addr + 0x24)
+#define FIQ_CLEAR(base_addr)	(base_addr + 0x28)
+#define FIQ_TMODE(base_addr)	(base_addr + 0x2C)
+#define FIQ_LEVEL(base_addr)	(base_addr + 0x30)
+#define FIQ_STATUS(base_addr)	(base_addr + 0x34)
+static void gemini_ack_irq(struct irq_data *d)
+static void gemini_mask_irq(struct irq_data *d)
+static void gemini_unmask_irq(struct irq_data *d)
+static struct irq_chip gemini_irq_chip = ;
+static struct resource irq_resource = ;
+void __init gemini_init_irq(void)

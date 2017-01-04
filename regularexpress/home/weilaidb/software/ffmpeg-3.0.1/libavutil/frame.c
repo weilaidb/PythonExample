@@ -1,0 +1,47 @@
+MAKE_ACCESSORS(AVFrame, frame, int64_t, best_effort_timestamp)
+MAKE_ACCESSORS(AVFrame, frame, int64_t, pkt_duration)
+MAKE_ACCESSORS(AVFrame, frame, int64_t, pkt_pos)
+MAKE_ACCESSORS(AVFrame, frame, int64_t, channel_layout)
+MAKE_ACCESSORS(AVFrame, frame, int,     channels)
+MAKE_ACCESSORS(AVFrame, frame, int,     sample_rate)
+MAKE_ACCESSORS(AVFrame, frame, AVDictionary *, metadata)
+MAKE_ACCESSORS(AVFrame, frame, int,     decode_error_flags)
+MAKE_ACCESSORS(AVFrame, frame, int,     pkt_size)
+MAKE_ACCESSORS(AVFrame, frame, enum AVColorSpace, colorspace)
+MAKE_ACCESSORS(AVFrame, frame, enum AVColorRange, color_range)
+#define CHECK_CHANNELS_CONSISTENCY(frame) \
+av_assert2(!(frame)->channel_layout || \
+(frame)->channels == \
+av_get_channel_layout_nb_channels((frame)->channel_layout))
+AVDictionary **avpriv_frame_get_metadatap(AVFrame *frame) ;
+#if FF_API_FRAME_QP
+int av_frame_set_qp_table(AVFrame *f, AVBufferRef *buf, int stride, int qp_type)
+int8_t *av_frame_get_qp_table(AVFrame *f, int *stride, int *type)
+const char *av_get_colorspace_name(enum AVColorSpace val)
+static void get_frame_defaults(AVFrame *frame)
+static void free_side_data(AVFrameSideData **ptr_sd)
+static void wipe_side_data(AVFrame *frame)
+AVFrame *av_frame_alloc(void)
+void av_frame_free(AVFrame **frame)
+static int get_video_buffer(AVFrame *frame, int align)
+static int get_audio_buffer(AVFrame *frame, int align)
+int av_frame_get_buffer(AVFrame *frame, int align)
+static int frame_copy_props(AVFrame *dst, const AVFrame *src, int force_copy)
+int av_frame_ref(AVFrame *dst, const AVFrame *src)
+AVFrame *av_frame_clone(const AVFrame *src)
+void av_frame_unref(AVFrame *frame)
+void av_frame_move_ref(AVFrame *dst, AVFrame *src)
+int av_frame_is_writable(AVFrame *frame)
+int av_frame_make_writable(AVFrame *frame)
+int av_frame_copy_props(AVFrame *dst, const AVFrame *src)
+AVBufferRef *av_frame_get_plane_buffer(AVFrame *frame, int plane)
+AVFrameSideData *av_frame_new_side_data(AVFrame *frame,
+enum AVFrameSideDataType type,
+int size)
+AVFrameSideData *av_frame_get_side_data(const AVFrame *frame,
+enum AVFrameSideDataType type)
+static int frame_copy_video(AVFrame *dst, const AVFrame *src)
+static int frame_copy_audio(AVFrame *dst, const AVFrame *src)
+int av_frame_copy(AVFrame *dst, const AVFrame *src)
+void av_frame_remove_side_data(AVFrame *frame, enum AVFrameSideDataType type)
+const char *av_frame_side_data_name(enum AVFrameSideDataType type)

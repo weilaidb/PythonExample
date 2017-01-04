@@ -1,0 +1,8 @@
+int ieee754sp_class(ieee754sp x)
+int ieee754sp_isnan(ieee754sp x)
+int ieee754sp_issnan(ieee754sp x)
+ieee754sp ieee754sp_xcpt(ieee754sp r, const char *op, ...)
+ieee754sp ieee754sp_nanxcpt(ieee754sp r, const char *op, ...)
+ieee754sp ieee754sp_bestnan(ieee754sp x, ieee754sp y)
+static unsigned get_rounding(int sn, unsigned xm)
+ieee754sp ieee754sp_format(int sn, int xe, unsigned xm)

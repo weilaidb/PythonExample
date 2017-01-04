@@ -1,0 +1,1 @@
+#define __PARISC_CPUTIME_H

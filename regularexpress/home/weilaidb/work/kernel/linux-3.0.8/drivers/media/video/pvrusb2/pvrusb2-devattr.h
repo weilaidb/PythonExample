@@ -1,0 +1,28 @@
+#define __PVRUSB2_DEVATTR_H
+#define PVR2_CLIENT_ID_NULL 0
+#define PVR2_CLIENT_ID_MSP3400 1
+#define PVR2_CLIENT_ID_CX25840 2
+#define PVR2_CLIENT_ID_SAA7115 3
+#define PVR2_CLIENT_ID_TUNER 4
+#define PVR2_CLIENT_ID_CS53L32A 5
+#define PVR2_CLIENT_ID_WM8775 6
+#define PVR2_CLIENT_ID_DEMOD 7
+struct pvr2_device_client_desc ;
+struct pvr2_device_client_table ;
+struct pvr2_string_table ;
+#define PVR2_ROUTING_SCHEME_HAUPPAUGE 0
+#define PVR2_ROUTING_SCHEME_GOTVIEW 1
+#define PVR2_ROUTING_SCHEME_ONAIR 2
+#define PVR2_ROUTING_SCHEME_AV400 3
+#define PVR2_DIGITAL_SCHEME_NONE 0
+#define PVR2_DIGITAL_SCHEME_HAUPPAUGE 1
+#define PVR2_DIGITAL_SCHEME_ONAIR 2
+#define PVR2_LED_SCHEME_NONE 0
+#define PVR2_LED_SCHEME_HAUPPAUGE 1
+#define PVR2_IR_SCHEME_NONE 0
+#define PVR2_IR_SCHEME_24XXX 1
+#define PVR2_IR_SCHEME_ZILOG 2
+#define PVR2_IR_SCHEME_24XXX_MCE 3
+#define PVR2_IR_SCHEME_29XXX 4
+struct pvr2_device_desc ;
+extern struct usb_device_id pvr2_device_table[];

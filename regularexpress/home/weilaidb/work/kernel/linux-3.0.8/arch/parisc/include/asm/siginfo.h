@@ -1,0 +1,3 @@
+#define _PARISC_SIGINFO_H
+#undef NSIGTRAP
+#define NSIGTRAP	4

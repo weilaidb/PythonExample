@@ -1,0 +1,6 @@
+#define BCMRING_UART_0_DR (*(volatile unsigned int *)MM_ADDR_IO_UARTA)
+#define BCMRING_UART_0_FR (*(volatile unsigned int *)(MM_ADDR_IO_UARTA + 0x18))
+static inline void putc(int c)
+static inline void flush(void)
+#define arch_decomp_setup()
+#define arch_decomp_wdog()

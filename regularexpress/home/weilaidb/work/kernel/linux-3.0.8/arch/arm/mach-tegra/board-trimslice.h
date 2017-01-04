@@ -1,0 +1,4 @@
+#define _MACH_TEGRA_BOARD_TRIMSLICE_H
+#define TRIMSLICE_GPIO_SD4_CD	TEGRA_GPIO_PP1
+#define TRIMSLICE_GPIO_SD4_WP	TEGRA_GPIO_PP2
+void trimslice_pinmux_init(void);

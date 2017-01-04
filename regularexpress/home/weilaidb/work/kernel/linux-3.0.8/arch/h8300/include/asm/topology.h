@@ -1,0 +1,1 @@
+#define _ASM_H8300_TOPOLOGY_H

@@ -1,0 +1,91 @@
+#define BITS_PER_BYTE 8
+#define LOG_BITS_PER_BYTE 3
+#define BYTE_MASK ((1U<<BITS_PER_BYTE)-1)
+#if defined(__TMS320C55X__) || defined(_TMS320C5XX)
+#define BITS_PER_AU 16
+#define LOG_BITS_PER_AU 4
+#define FMT_UI32 "0x%lx"
+#define FMT8_UI32 "%08lx"
+#define BITS_PER_AU 8
+#define LOG_BITS_PER_AU 3
+#define FMT_UI32 "0x%x"
+#define FMT8_UI32 "%08x"
+#define SWAP32BY16(zz) (((zz) << 16) | ((zz) >> 16))
+#define SWAP16BY8(zz) (((zz) << 8) | ((zz) >> 8))
+#if TMS32060
+#define MEMORG          0x0L
+#define MEMSIZE         0x0L
+#define CINIT_ALIGN     8
+#define CINIT_COUNT	4
+#define CINIT_ADDRESS	4
+#define CINIT_PAGE_BITS	0
+#define LENIENT_SIGNED_RELEXPS 0
+#undef TARGET_ENDIANNESS
+#define TARGET_WORD_ALIGN(zz) (((zz) + 0x3) & -0x4)
+#define TARGET_AU_BITS 8
+#define LOG_TARGET_AU_BITS 3
+#define CINIT_DEFAULT_PAGE 0
+#define DATA_RUN2LOAD(zz) (zz)
+#define DBG_LIST_PAGE 0
+#define TARGET_WORD_ALIGN(zz) (zz)
+#define TDATA_TO_TADDR(zz) (zz)
+#define TADDR_TO_TDATA(zz) (zz)
+#define TDATA_AU_BITS	TARGET_AU_BITS
+#define LOG_TDATA_AU_BITS	LOG_TARGET_AU_BITS
+#if LOG_BITS_PER_AU == LOG_TARGET_AU_BITS
+#define TADDR_TO_HOST(x) (x)
+#define HOST_TO_TADDR(x) (x)
+#elif LOG_BITS_PER_AU > LOG_TARGET_AU_BITS
+#define TADDR_TO_HOST(x) ((x) >> (LOG_BITS_PER_AU-LOG_TARGET_AU_BITS))
+#define HOST_TO_TADDR(x) ((x) << (LOG_BITS_PER_AU-LOG_TARGET_AU_BITS))
+#define TADDR_TO_HOST(x) ((x) << (LOG_TARGET_AU_BITS-LOG_BITS_PER_AU))
+#define HOST_TO_TADDR(x) ((x) >> (LOG_TARGET_AU_BITS-LOG_BITS_PER_AU))
+#if LOG_BITS_PER_AU == LOG_TDATA_AU_BITS
+#define TDATA_TO_HOST(x) (x)
+#define HOST_TO_TDATA(x) (x)
+#define HOST_TO_TDATA_ROUND(x) (x)
+#define BYTE_TO_HOST_TDATA_ROUND(x) BYTE_TO_HOST_ROUND(x)
+#elif LOG_BITS_PER_AU > LOG_TDATA_AU_BITS
+#define TDATA_TO_HOST(x) ((x) >> (LOG_BITS_PER_AU-LOG_TDATA_AU_BITS))
+#define HOST_TO_TDATA(x) ((x) << (LOG_BITS_PER_AU-LOG_TDATA_AU_BITS))
+#define HOST_TO_TDATA_ROUND(x) ((x) << (LOG_BITS_PER_AU-LOG_TDATA_AU_BITS))
+#define BYTE_TO_HOST_TDATA_ROUND(x) BYTE_TO_HOST_ROUND(x)
+#define TDATA_TO_HOST(x) ((x) << (LOG_TDATA_AU_BITS-LOG_BITS_PER_AU))
+#define HOST_TO_TDATA(x) ((x) >> (LOG_TDATA_AU_BITS-LOG_BITS_PER_AU))
+#define HOST_TO_TDATA_ROUND(x) (((x) +\
+(1<<(LOG_TDATA_AU_BITS-LOG_BITS_PER_AU))-1) >>\
+(LOG_TDATA_AU_BITS-LOG_BITS_PER_AU))
+#define BYTE_TO_HOST_TDATA_ROUND(x) (BYTE_TO_HOST((x) +\
+(1<<(LOG_TDATA_AU_BITS-LOG_BITS_PER_BYTE))-1) &\
+-(TDATA_AU_BITS/BITS_PER_AU))
+#if LOG_BITS_PER_AU == LOG_BITS_PER_BYTE
+#define BYTE_TO_HOST(x) (x)
+#define BYTE_TO_HOST_ROUND(x) (x)
+#define HOST_TO_BYTE(x) (x)
+#elif LOG_BITS_PER_AU >= LOG_BITS_PER_BYTE
+#define BYTE_TO_HOST(x) ((x) >> (LOG_BITS_PER_AU - LOG_BITS_PER_BYTE))
+#define BYTE_TO_HOST_ROUND(x) ((x + (BITS_PER_AU/BITS_PER_BYTE-1)) >>\
+(LOG_BITS_PER_AU - LOG_BITS_PER_BYTE))
+#define HOST_TO_BYTE(x) ((x) << (LOG_BITS_PER_AU - LOG_BITS_PER_BYTE))
+#if LOG_TARGET_AU_BITS == LOG_BITS_PER_BYTE
+#define TADDR_TO_BYTE(x) (x)
+#define BYTE_TO_TADDR(x) (x)
+#elif LOG_TARGET_AU_BITS > LOG_BITS_PER_BYTE
+#define TADDR_TO_BYTE(x) ((x) << (LOG_TARGET_AU_BITS-LOG_BITS_PER_BYTE))
+#define BYTE_TO_TADDR(x) ((x) >> (LOG_TARGET_AU_BITS-LOG_BITS_PER_BYTE))
+#define HOST_ENDIANNESS 1
+#define HOST_ENDIANNESS 0
+#define TARGET_ENDIANNESS_DIFFERS(rtend) (HOST_ENDIANNESS^TARGET_ENDIANNESS)
+#elif HOST_ENDIANNESS
+#define TARGET_ENDIANNESS_DIFFERS(rtend) (!(rtend))
+#define TARGET_ENDIANNESS_DIFFERS(rtend) (rtend)
+#if TARGET_AU_BITS <= 8
+typedef u8 tgt_au_t;
+#elif TARGET_AU_BITS <= 16
+typedef u16 tgt_au_t;
+typedef u32 tgt_au_t;
+#if TARGET_AU_BITS < BITS_PER_AU
+#define TGTAU_BITS BITS_PER_AU
+#define LOG_TGTAU_BITS LOG_BITS_PER_AU
+#define TGTAU_BITS TARGET_AU_BITS
+#define LOG_TGTAU_BITS LOG_TARGET_AU_BITS

@@ -1,0 +1,6 @@
+av_cold void ff_mlz_init_dict(void* context, MLZ *mlz)
+av_cold void ff_mlz_flush_dict(MLZ *mlz)
+static void set_new_entry_dict(MLZDict* dict, int string_code, int parent_code, int char_code)
+static int decode_string(MLZ* mlz, unsigned char *buff, int string_code, int *first_char_code, unsigned long bufsize)
+static int input_code(GetBitContext* gb, int len)
+int ff_mlz_decompression(MLZ* mlz, GetBitContext* gb, int size, unsigned char *buff)

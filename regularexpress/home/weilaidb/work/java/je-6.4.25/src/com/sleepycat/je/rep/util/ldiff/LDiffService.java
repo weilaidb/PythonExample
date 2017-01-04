@@ -1,0 +1,22 @@
+package com.sleepycat.je.rep.util.ldiff;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicBoolean;
+import com.sleepycat.je.Cursor;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseNotFoundException;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.impl.RepImpl;
+import com.sleepycat.je.rep.impl.node.NameIdPair;
+import com.sleepycat.je.rep.net.DataChannel;
+import com.sleepycat.je.rep.util.ldiff.Protocol.DbBlocks;
+import com.sleepycat.je.rep.util.ldiff.Protocol.EnvDiff;
+import com.sleepycat.je.rep.util.ldiff.Protocol.RemoteDiffRequest;
+import com.sleepycat.je.rep.utilint.ServiceDispatcher;
+import com.sleepycat.je.rep.utilint.BinaryProtocol.Message;
+import com.sleepycat.je.rep.utilint.BinaryProtocol.ProtocolException;
+import com.sleepycat.je.rep.utilint.ServiceDispatcher.ExecutingService;
+public class LDiffService extends ExecutingService

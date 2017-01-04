@@ -1,0 +1,1 @@
+double atof(char *s)

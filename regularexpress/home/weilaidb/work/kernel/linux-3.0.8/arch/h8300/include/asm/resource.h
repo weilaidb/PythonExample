@@ -1,0 +1,1 @@
+#define _H8300_RESOURCE_H

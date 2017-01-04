@@ -1,0 +1,21 @@
+#define _XT_OSF_H
+#define MAXGENRELEN		32
+#define XT_OSF_GENRE		(1<<0)
+#define	XT_OSF_TTL		(1<<1)
+#define XT_OSF_LOG		(1<<2)
+#define XT_OSF_INVERT		(1<<3)
+#define XT_OSF_LOGLEVEL_ALL	0
+#define XT_OSF_LOGLEVEL_FIRST	1
+#define XT_OSF_LOGLEVEL_ALL_KNOWN	2
+#define XT_OSF_TTL_TRUE		0
+#define XT_OSF_TTL_LESS		1
+#define XT_OSF_TTL_NOCHECK	2
+struct xt_osf_info ;
+struct xt_osf_wc ;
+struct xt_osf_opt ;
+struct xt_osf_user_finger ;
+struct xt_osf_nlmsg ;
+enum iana_options ;
+enum xt_osf_window_size_options ;
+enum xt_osf_msg_types ;
+enum xt_osf_attr_type ;

@@ -1,0 +1,1 @@
+#define __RTL8712_BITDEF_H__

@@ -1,0 +1,101 @@
+--- extfunc.c.orig	2010-04-09 09:30:28.000000000 +0200
++++ extfunc.c	2010-04-09 09:24:27.000000000 +0200
+@@ -116,7 +116,6 @@
+#define HAVE_COSH 1
+#define HAVE_TANH 1
+#define HAVE_LOG10 1
+-#define HAVE_ISBLANK 1
+#define SQLITE_SOUNDEX 1
+#define HAVE_TRIM 1
+@@ -127,7 +126,6 @@
+-
+@@ -160,40 +158,39 @@
+typedef struct map map;
+-map map_make(cmp_func cmp);
++static map map_make(cmp_func cmp);
+-void map_insert(map *m, void *e);
++static void map_insert(map *m, void *e);
+-void map_iterate(map *m, map_iterator iter, void* p);
++static void map_iterate(map *m, map_iterator iter, void* p);
+-void map_destroy(map *m);
++static void map_destroy(map *m);
+-int int_cmp(const void *a, const void *b);
++static int int_cmp(const void *a, const void *b);
+-int double_cmp(const void *a, const void *b);
++static int double_cmp(const void *a, const void *b);
+@@ -244,6 +241,26 @@
+3, 3, 3, 3, 3, 3, 3, 3,     4, 4, 4, 4, 4, 4, 4, 4,
+};
++
++
++static int toupper(int c)
++
++static int tolower(int c)
++
++static int isalpha(int c)
+-
+-int isblank(char c)
+-
+-
+static void properFunc(sqlite3_context *context, int argc, sqlite3_value **argv){
+const unsigned char *z;
+unsigned char *zo;
+@@ -736,7 +743,7 @@
+zt = zo;
+while( (r = *(z++))!=0 ){
+-    if( isblank(r) ){
++    if( (r==' ') || (r=='\t') )else{
+if( c==1 )
++static void* xcalloc(size_t nmemb, size_t size)
++
++static void xfree(void* p)
++
+*(p->m) = map_make(int_cmp);
+@@ -1440,12 +1456,12 @@
+if( 0==p->is_double )else
+@@ -1531,7 +1547,7 @@
+if( p && p->m ){
+map_iterate(p->m, modeIterate, p);
+map_destroy(p->m);
+-    free(p->m);
++    xfree(p->m);
+if( 1==p->mn ){
+if( 0==p->is_double )
+@@ -1552,7 +1568,7 @@
+p->done=0;
+map_iterate(p->m, medianIterate, p);
+map_destroy(p->m);
+-    free(p->m);
++    xfree(p->m);
+if( 0==p->is_double )
+if( 1==p->mn )
+@@ -1705,7 +1721,7 @@
+** functions.  This should be the only routine in this file with
+** external linkage.
+*/
+-int RegisterExtensionFunctions(sqlite3 *db){
++static int RegisterExtensionFunctions(sqlite3 *db){
+static const struct FuncDef
+-map map_make(cmp_func cmp){
++static map map_make(cmp_func cmp)
+-void* xcalloc(size_t nmemb, size_t size, char* s)
+-
+-void xfree(void* p)
+-
+-void node_insert(node** n, cmp_func cmp, void *e){
++static void node_insert(node** n, cmp_func cmp, void *e)
+-void map_insert(map *m, void *e){
++static void map_insert(map *m, void *e)
+-void node_iterate(node *n, map_iterator iter, void* p){
++static void node_iterate(node *n, map_iterator iter, void* p)
+-void map_iterate(map *m, map_iterator iter, void* p){
++static void map_iterate(map *m, map_iterator iter, void* p)
+-void node_destroy(node *n){
++static void node_destroy(node *n)
+-void map_destroy(map *m){
++static void map_destroy(map *m)
+-int int_cmp(const void *a, const void *b){
++static int int_cmp(const void *a, const void *b)
+-int double_cmp(const void *a, const void *b){
++static int double_cmp(const void *a, const void *b)
+-void print_elem(void *e, int64_t c, void* p)

@@ -1,0 +1,2 @@
+#define __BFIN_MACH_SERIAL_H__
+#define BFIN_UART_NR_PORTS	3

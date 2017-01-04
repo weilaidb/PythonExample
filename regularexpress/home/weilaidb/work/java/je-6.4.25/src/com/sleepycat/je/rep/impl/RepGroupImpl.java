@@ -1,0 +1,19 @@
+package com.sleepycat.je.rep.impl;
+import java.io.Serializable;
+import java.net.InetSocketAddress;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+import com.sleepycat.bind.tuple.TupleBinding;
+import com.sleepycat.bind.tuple.TupleInput;
+import com.sleepycat.bind.tuple.TupleOutput;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.JEVersion;
+import com.sleepycat.je.rep.MemberNotFoundException;
+import com.sleepycat.je.rep.impl.RepGroupDB.NodeBinding;
+import com.sleepycat.je.utilint.VLSN;
+public class RepGroupImpl

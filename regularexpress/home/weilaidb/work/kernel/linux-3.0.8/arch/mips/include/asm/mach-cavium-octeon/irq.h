@@ -1,0 +1,8 @@
+#define __OCTEON_IRQ_H__
+#define NR_IRQS OCTEON_IRQ_LAST
+#define MIPS_CPU_IRQ_BASE OCTEON_IRQ_SW0
+enum octeon_irq ;
+#define OCTEON_IRQ_MSI_BIT0	(OCTEON_IRQ_RST + 1)
+#define OCTEON_IRQ_MSI_LAST      (OCTEON_IRQ_MSI_BIT0 + 255)
+#define OCTEON_IRQ_LAST          (OCTEON_IRQ_MSI_LAST + 1)
+#define OCTEON_IRQ_LAST         (OCTEON_IRQ_RST + 1)

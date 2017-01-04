@@ -1,0 +1,6 @@
+void ubifs_set_inode_flags(struct inode *inode)
+static int ioctl2ubifs(int ioctl_flags)
+static int ubifs2ioctl(int ubifs_flags)
+static int setflags(struct inode *inode, int flags)
+long ubifs_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
+long ubifs_compat_ioctl(struct file *file, unsigned int cmd, unsigned long arg)

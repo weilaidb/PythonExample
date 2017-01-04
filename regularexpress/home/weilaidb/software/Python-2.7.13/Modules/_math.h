@@ -1,0 +1,14 @@
+double _Py_acosh(double x);
+double _Py_asinh(double x);
+double _Py_atanh(double x);
+double _Py_expm1(double x);
+double _Py_log1p(double x);
+#define m_acosh acosh
+#define m_acosh _Py_acosh
+#define m_asinh asinh
+#define m_asinh _Py_asinh
+#define m_atanh atanh
+#define m_atanh _Py_atanh
+#define m_expm1 expm1
+#define m_expm1 _Py_expm1
+#define m_log1p _Py_log1p

@@ -1,0 +1,16 @@
+#define _VNIC_ENIC_H_
+#define INTR_COALESCE_USEC_TO_HW(usec) ((usec) * 2/3)
+#define INTR_COALESCE_HW_TO_USEC(usec) ((usec) * 3/2)
+struct vnic_enet_config ;
+#define VENETF_TSO		0x1
+#define VENETF_LRO		0x2
+#define VENETF_RXCSUM		0x4
+#define VENETF_TXCSUM		0x8
+#define VENETF_RSS		0x10
+#define VENETF_RSSHASH_IPV4	0x20
+#define VENETF_RSSHASH_TCPIPV4	0x40
+#define VENETF_RSSHASH_IPV6	0x80
+#define VENETF_RSSHASH_TCPIPV6	0x100
+#define VENETF_RSSHASH_IPV6_EX	0x200
+#define VENETF_RSSHASH_TCPIPV6_EX 0x400
+#define VENETF_LOOP		0x800

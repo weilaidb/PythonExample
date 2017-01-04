@@ -1,0 +1,2 @@
+#define __INCLUDE_ATMEL_PWM_BL_H
+struct atmel_pwm_bl_platform_data ;

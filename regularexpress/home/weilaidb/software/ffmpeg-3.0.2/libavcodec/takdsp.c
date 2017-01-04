@@ -1,0 +1,5 @@
+static void decorrelate_ls(int32_t *p1, int32_t *p2, int length)
+static void decorrelate_sr(int32_t *p1, int32_t *p2, int length)
+static void decorrelate_sm(int32_t *p1, int32_t *p2, int length)
+static void decorrelate_sf(int32_t *p1, int32_t *p2, int length, int dshift, int dfactor)
+av_cold void ff_takdsp_init(TAKDSPContext *c)

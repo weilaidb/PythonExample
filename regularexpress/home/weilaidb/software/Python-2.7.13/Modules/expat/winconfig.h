@@ -1,0 +1,8 @@
+#define WINCONFIG_H
+#define WIN32_LEAN_AND_MEAN
+#undef WIN32_LEAN_AND_MEAN
+#define XML_NS 1
+#define XML_DTD 1
+#define XML_CONTEXT_BYTES 1024
+#define BYTEORDER 1234
+#define HAVE_MEMMOVE

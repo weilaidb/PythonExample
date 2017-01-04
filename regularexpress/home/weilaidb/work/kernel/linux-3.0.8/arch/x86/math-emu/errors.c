@@ -1,0 +1,20 @@
+#undef PRINT_MESSAGES
+void FPU_illegal(void)
+void FPU_printall(void)
+static struct  exception_names[] = ;
+asmlinkage void FPU_exception(int n)
+int real_1op_NaN(FPU_REG *a)
+int real_2op_NaN(FPU_REG const *b, u_char tagb,
+int deststnr, FPU_REG const *defaultNaN)
+asmlinkage int arith_invalid(int deststnr)
+asmlinkage int FPU_divide_by_zero(int deststnr, u_char sign)
+int set_precision_flag(int flags)
+asmlinkage void set_precision_flag_up(void)
+asmlinkage void set_precision_flag_down(void)
+asmlinkage int denormal_operand(void)
+asmlinkage int arith_overflow(FPU_REG *dest)
+asmlinkage int arith_underflow(FPU_REG *dest)
+void FPU_stack_overflow(void)
+void FPU_stack_underflow(void)
+void FPU_stack_underflow_i(int i)
+void FPU_stack_underflow_pop(int i)

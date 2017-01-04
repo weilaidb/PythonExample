@@ -1,0 +1,11 @@
+static inline const char * pcid_name (struct pci_dev *pdev)
+static void eeh_disable_irq(struct pci_dev *dev)
+static void eeh_enable_irq(struct pci_dev *dev)
+static int eeh_report_error(struct pci_dev *dev, void *userdata)
+static int eeh_report_mmio_enabled(struct pci_dev *dev, void *userdata)
+static int eeh_report_reset(struct pci_dev *dev, void *userdata)
+static int eeh_report_resume(struct pci_dev *dev, void *userdata)
+static int eeh_report_failure(struct pci_dev *dev, void *userdata)
+static int eeh_reset_device (struct pci_dn *pe_dn, struct pci_bus *bus)
+#define MAX_WAIT_FOR_RECOVERY 150
+struct pci_dn * handle_eeh_events (struct eeh_event *event)

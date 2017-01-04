@@ -1,0 +1,17 @@
+const uint8_t ff_vp56_b2p[]   = ;
+const uint8_t ff_vp56_b6to4[] = ;
+const uint8_t ff_vp56_coeff_parse_table[6][11] = ;
+const uint8_t ff_vp56_def_mb_types_stats[3][10][2] = ;
+const VP56Tree ff_vp56_pva_tree[] = ;
+const VP56Tree ff_vp56_pc_tree[] = ;
+const uint8_t ff_vp56_coeff_bias[] = ;
+const uint8_t ff_vp56_coeff_bit_length[] = ;
+const VP56Frame ff_vp56_reference_frame[] = ;
+const uint8_t ff_vp56_ac_dequant[64] = ;
+const uint8_t ff_vp56_dc_dequant[64] = ;
+const uint8_t ff_vp56_pre_def_mb_type_stats[16][3][10][2] = ;
+const uint8_t ff_vp56_filter_threshold[] = ;
+const uint8_t ff_vp56_mb_type_model_model[] = ;
+const VP56Tree ff_vp56_pmbtm_tree[] = ;
+const VP56Tree ff_vp56_pmbt_tree[] = ;
+const int8_t ff_vp56_candidate_predictor_pos[12][2] = ;

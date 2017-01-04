@@ -1,0 +1,2 @@
+package com.sleepycat.je;
+public class SequenceNotFoundException extends OperationFailureException

@@ -1,0 +1,4 @@
+#define _SPARC_SYSEN_H
+#define SENABLE_DVMA   0x20
+#define SENABLE_CACHE  0x10
+#define SENABLE_RESET  0x04

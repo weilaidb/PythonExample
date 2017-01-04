@@ -1,0 +1,27 @@
+package com.sleepycat.je;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileFilter;
+import java.io.FileReader;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.concurrent.atomic.AtomicLong;
+import org.junit.Test;
+import com.sleepycat.je.config.EnvironmentParams;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.ReplicatedEnvironmentStats;
+import com.sleepycat.je.rep.ReplicationConfig;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.je.rep.utilint.StatCaptureRepDefinitions;
+import com.sleepycat.je.statcap.EnvStatsLogger;
+import com.sleepycat.je.statcap.StatCapture;
+import com.sleepycat.je.statcap.StatCaptureDefinitions;
+import com.sleepycat.je.statcap.StatFile;
+import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class StatCaptureTest extends TestBase

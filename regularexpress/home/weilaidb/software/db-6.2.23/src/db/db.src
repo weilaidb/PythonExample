@@ -1,0 +1,208 @@
+DBPRIVATE
+PREFIX	__db
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+BEGIN addrem		50	41
+OP	opcode		u_int32_t	lu
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+ARG	indx		u_int32_t	lu
+ARG	nbytes		u_int32_t	lu
+HDR	hdr		DBT		s
+DBT	dbt		DBT		s
+POINTER	pagelsn		DB_LSN *	lu
+END
+BEGIN_COMPAT addrem		42	41
+ARG	opcode		u_int32_t	lu
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+ARG	indx		u_int32_t	lu
+ARG	nbytes		u_int32_t	lu
+DBT	hdr		DBT		s
+DBT	dbt		DBT		s
+POINTER	pagelsn		DB_LSN *	lu
+END
+BEGIN big		50	43
+OP	opcode		u_int32_t	lu
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+ARG	prev_pgno	db_pgno_t	lu
+ARG	next_pgno	db_pgno_t	lu
+HDR	dbt		DBT		s
+POINTER	pagelsn		DB_LSN *	lu
+POINTER	prevlsn		DB_LSN *	lu
+POINTER	nextlsn		DB_LSN *	lu
+END
+BEGIN_COMPAT big		42	43
+ARG	opcode		u_int32_t	lu
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+ARG	prev_pgno	db_pgno_t	lu
+ARG	next_pgno	db_pgno_t	lu
+DBT	dbt		DBT		s
+POINTER	pagelsn		DB_LSN *	lu
+POINTER	prevlsn		DB_LSN *	lu
+POINTER	nextlsn		DB_LSN *	lu
+END
+BEGIN ovref		42	44
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+ARG	adjust		int32_t		ld
+POINTER	lsn		DB_LSN *	lu
+END
+BEGIN_COMPAT relink		42	45
+ARG	opcode		u_int32_t	lu
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+POINTER	lsn		DB_LSN *	lu
+ARG	prev		db_pgno_t	lu
+POINTER	lsn_prev	DB_LSN *	lu
+ARG	next		db_pgno_t	lu
+POINTER	lsn_next	DB_LSN *	lu
+END
+BEGIN debug		42	47
+DBT	op		DBT		s
+ARG	fileid		int32_t		ld
+DBT	key		DBT		s
+DBT	data		DBT		s
+ARG	arg_flags	u_int32_t	lu
+END
+BEGIN noop		42	48
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+POINTER	prevlsn		DB_LSN *	lu
+END
+BEGIN_COMPAT pg_alloc	42	49
+DB	fileid		int32_t		ld
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	meta_pgno	db_pgno_t	lu
+POINTER	page_lsn	DB_LSN *	lu
+ARG	pgno		db_pgno_t	lu
+ARG	ptype		u_int32_t	lu
+ARG	next		db_pgno_t	lu
+END
+BEGIN pg_alloc	43	49
+DB	fileid		int32_t		ld
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	meta_pgno	db_pgno_t	lu
+POINTER	page_lsn	DB_LSN *	lu
+ARG	pgno		db_pgno_t	lu
+ARG	ptype		u_int32_t	lu
+ARG	next		db_pgno_t	lu
+ARG	last_pgno	db_pgno_t	lu
+END
+BEGIN_COMPAT pg_free		42	50
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	meta_pgno	db_pgno_t	lu
+PGDBT	header		DBT		s
+ARG	next		db_pgno_t	lu
+END
+BEGIN pg_free		43	50
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	meta_pgno	db_pgno_t	lu
+PGDBT	header		DBT		s
+ARG	next		db_pgno_t	lu
+ARG	last_pgno	db_pgno_t	lu
+END
+BEGIN cksum		42	51
+END
+BEGIN_COMPAT pg_freedata		42	52
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	meta_pgno	db_pgno_t	lu
+PGDBT	header		DBT		s
+ARG	next		db_pgno_t	lu
+PGDDBT	data		DBT		s
+END
+BEGIN pg_freedata		43	52
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	meta_pgno	db_pgno_t	lu
+PGDBT	header		DBT		s
+ARG	next		db_pgno_t	lu
+ARG	last_pgno	db_pgno_t	lu
+PGDDBT	data		DBT		s
+END
+X BEGIN pg_prepare		42	53
+X DB	fileid		int32_t		ld
+X ARG	pgno		db_pgno_t	lu
+X END
+X BEGIN pg_new		42	54
+X DB	fileid		int32_t		ld
+X ARG	pgno		db_pgno_t	lu
+X POINTER	meta_lsn	DB_LSN *	lu
+X ARG	meta_pgno	db_pgno_t	lu
+X PGDBT	header		DBT		s
+X ARG	next		db_pgno_t	lu
+X END
+BEGIN pg_init		43	60
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+PGDBT	header		DBT		s
+PGDDBT	data		DBT		s
+END
+BEGIN_COMPAT pg_sort		44	61
+DB	fileid		int32_t		ld
+ARG	meta		db_pgno_t	lu
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	last_free	db_pgno_t	lu
+POINTER	last_lsn	DB_LSN *	lu
+ARG	last_pgno	db_pgno_t	lu
+DBT	list		DBT		s
+END
+BEGIN pg_trunc		50	66
+DB	fileid		int32_t		ld
+ARG	meta		db_pgno_t	lu
+POINTER	meta_lsn	DB_LSN *	lu
+ARG	last_free	db_pgno_t	lu
+POINTER	last_lsn	DB_LSN *	lu
+ARG	next_free	db_pgno_t	lu
+ARG	last_pgno	db_pgno_t	lu
+PGLIST	list		DBT		s
+END
+BEGIN realloc		50	36
+DB	fileid		int32_t		ld
+ARG	prev_pgno	db_pgno_t	lu
+POINTER	page_lsn	DB_LSN *	lu
+ARG	next_free	db_pgno_t	lu
+ARG	ptype		u_int32_t	lu
+PGLIST	list		DBT		s
+END
+BEGIN relink		44	147
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+ARG	new_pgno	db_pgno_t	lu
+ARG	prev_pgno	db_pgno_t	lu
+POINTER	lsn_prev	DB_LSN *	lu
+ARG	next_pgno	db_pgno_t	lu
+POINTER	lsn_next	DB_LSN *	lu
+END
+BEGIN merge		47	148
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+POINTER	lsn		DB_LSN *	lu
+ARG	npgno		db_pgno_t	lu
+POINTER nlsn		DB_LSN *	lu
+PGDBT	hdr		DBT		s
+PGDDBT	data		DBT		s
+ARG	pg_copy		int32_t		lu
+END
+BEGIN pgno		44	149
+DB	fileid		int32_t		ld
+ARG	pgno		db_pgno_t	lu
+POINTER	lsn		DB_LSN *	lu
+ARG	indx		u_int32_t	lu
+ARG	opgno		db_pgno_t	lu
+ARG	npgno		db_pgno_t	lu
+END

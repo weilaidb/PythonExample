@@ -1,0 +1,7 @@
+static int x25_queue_rx_frame(struct sock *sk, struct sk_buff *skb, int more)
+static int x25_state1_machine(struct sock *sk, struct sk_buff *skb, int frametype)
+static int x25_state2_machine(struct sock *sk, struct sk_buff *skb, int frametype)
+static int x25_state3_machine(struct sock *sk, struct sk_buff *skb, int frametype, int ns, int nr, int q, int d, int m)
+static int x25_state4_machine(struct sock *sk, struct sk_buff *skb, int frametype)
+int x25_process_rx_frame(struct sock *sk, struct sk_buff *skb)
+int x25_backlog_rcv(struct sock *sk, struct sk_buff *skb)

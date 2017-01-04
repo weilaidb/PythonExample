@@ -1,0 +1,2 @@
+#define __ASM_ARM_ARCH_TEGRA_SDHCI_H
+struct tegra_sdhci_platform_data ;

@@ -1,0 +1,2 @@
+#define __LINUX_POWER_GPIO_CHARGER_H__
+struct gpio_charger_platform_data ;

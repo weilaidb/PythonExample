@@ -1,0 +1,2 @@
+struct fsyscall_gtod_data_t  ____cacheline_aligned;
+struct itc_jitter_data_t  ____cacheline_aligned;

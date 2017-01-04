@@ -1,0 +1,12 @@
+--- test/incrvacuum.test
++++ test/incrvacuum.test
+@@ -444,6 +444,8 @@
+list [expr ]
+}
++  if  break
++
+do_test incrvacuum-7.$.3
+do_test incrvacuum-15.1
+}
++
++finish_test

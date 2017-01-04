@@ -1,0 +1,412 @@
+#!/usr/bin/perl -w
+use strict;
+## Copyright (c) 1998 Michael Zucchi, All Rights Reserved        ##
+## Copyright (C) 2000, 1  Tim Waugh <twaugh@redhat.com>          ##
+## Copyright (C) 2001  Simon Huggins                             ##
+## Copyright (C) 2005-2010  Randy Dunlap                         ##
+## 								 ##
+## #define enhancements by Armin Kuster <akuster@mvista.com>	 ##
+## Copyright (c) 2000 MontaVista Software, Inc.			 ##
+## 								 ##
+## This software falls under the GNU General Public License.     ##
+## Please read the COPYING file for more information             ##
+# 18/01/2001 - 	Cleanups
+# 		Functions prototyped as foo(void) same as foo()
+# 		Stop eval'ing where we don't need to.
+# -- huggie@earth.li
+# 27/06/2001 -  Allowed whitespace after initial "
+#
+# So .. the trivial example would be:
+#
+#
+#
+# If the Description: header tag is omitted, then there must be a blank line
+# after the last parameter specification.
+# e.g.
+#
+#
+#  or, could also use:
+#
+# etc.
+#
+# Besides functions you can also write documentation for structs, unions,
+# enums and typedefs. Instead of the function name you must write the name
+# of the declaration;  the struct/union/enum/typedef must always precede
+# the name. Nesting of declarations is not supported.
+# Use the argument mechanism to document members or constants.
+# e.g.
+#
+# struct my_struct ;
+#
+# All descriptions can be multiline, except the short function description.
+#
+# You can also add additional sections. When documenting kernel functions you
+# should document the "Context:" of the function, e.g. whether the functions
+# can be called form interrupts. Unlike other sections you can end it with an
+# empty line.
+# Example-sections should contain the string EXAMPLE so that they are marked
+# appropriately in DocBook.
+#
+# Example:
+#
+# ...
+#
+#
+# All descriptive text is further processed, scanning for the following special
+# patterns, which are highlighted appropriately.
+#
+# 'funcname()' - function
+# '$ENVVAR' - environmental variable
+# '&struct_name' - name of a structure (up to two words including 'struct')
+# '@parameter' - name of a parameter
+# '%CONST' - name of a constant.
+## init lots of data
+my $errors = 0;
+my $warnings = 0;
+my $anon_struct_union = 0;
+# match expressions used to find embedded type information
+my $type_constant = '\%([-_\w]+)';
+my $type_func = '(\w+)\(\)';
+my $type_param = '\@(\w+)';
+my $type_struct = '\&((struct\s*)*[_\w]+)';
+my $type_struct_xml = '\\&amp;((struct\s*)*[_\w]+)';
+my $type_env = '(\$\w+)';
+# Output conversion substitutions.
+#  One for each output format
+# these work fairly well
+my %highlights_html = ( $type_constant, "<i>\$1</i>",
+$type_func, "<b>\$1</b>",
+$type_struct_xml, "<i>\$1</i>",
+$type_env, "<b><i>\$1</i></b>",
+$type_param, "<tt><b>\$1</b></tt>" );
+my $local_lt = "\\\\\\\\lt:";
+my $local_gt = "\\\\\\\\gt:";
+my $blankline_html = $local_lt . "p" . $local_gt;	# was "<p>"
+# XML, docbook format
+my %highlights_xml = ( "([^=])\\\"([^\\\"<]+)\\\"", "\$1<quote>\$2</quote>",
+$type_constant, "<constant>\$1</constant>",
+$type_func, "<function>\$1</function>",
+$type_struct_xml, "<structname>\$1</structname>",
+$type_env, "<envar>\$1</envar>",
+$type_param, "<parameter>\$1</parameter>" );
+my $blankline_xml = $local_lt . "/para" . $local_gt . $local_lt . "para" . $local_gt . "\n";
+# gnome, docbook format
+my %highlights_gnome = ( $type_constant, "<replaceable class=\"option\">\$1</replaceable>",
+$type_func, "<function>\$1</function>",
+$type_struct, "<structname>\$1</structname>",
+$type_env, "<envar>\$1</envar>",
+$type_param, "<parameter>\$1</parameter>" );
+my $blankline_gnome = "</para><para>\n";
+# these are pretty rough
+my %highlights_man = ( $type_constant, "\$1",
+$type_func, "\\\\fB\$1\\\\fP",
+$type_struct, "\\\\fI\$1\\\\fP",
+$type_param, "\\\\fI\$1\\\\fP" );
+my $blankline_man = "";
+# text-mode
+my %highlights_text = ( $type_constant, "\$1",
+$type_func, "\$1",
+$type_struct, "\$1",
+$type_param, "\$1" );
+my $blankline_text = "";
+# list mode
+my %highlights_list = ( $type_constant, "\$1",
+$type_func, "\$1",
+$type_struct, "\$1",
+$type_param, "\$1" );
+my $blankline_list = "";
+# read arguments
+if ($#ARGV == -1)
+my $kernelversion;
+my $dohighlight = "";
+my $verbose = 0;
+my $output_mode = "man";
+my $no_doc_sections = 0;
+my %highlights = %highlights_man;
+my $blankline = $blankline_man;
+my $modulename = "Kernel API";
+my $function_only = 0;
+my $man_date = ('January', 'February', 'March', 'April', 'May', 'June',
+'July', 'August', 'September', 'October',
+'November', 'December')[(localtime)[4]] .
+" " . ((localtime)[5]+1900);
+# Essentially these are globals.
+# They probably want to be tidied up, made more localised or something.
+# CAVEAT EMPTOR!  Some of the others I localised may not want to be, which
+# could cause "use of undefined value" or other bugs.
+my ($function, %function_table, %parametertypes, $declaration_purpose);
+my ($type, $declaration_name, $return_type);
+my ($newsection, $newcontents, $prototype, $brcount, %source_map);
+if (defined($ENV))
+# Generated docbook code is inserted in a template at a point where
+# docbook v3.1 requires a non-zero sequence of RefEntry's; see:
+# http:
+# We keep track of number of generated entries and generate a dummy
+# if needs be to ensure the expanded template can be postprocessed
+# into html.
+my $section_counter = 0;
+my $lineprefix="";
+# states
+# 0 - normal code
+# 1 - looking for function name
+# 2 - scanning field start.
+# 3 - scanning prototype.
+# 4 - documentation block
+my $state;
+my $in_doc_sect;
+#declaration types: can be
+# 'function', 'struct', 'union', 'enum', 'typedef'
+my $decl_type;
+my $doc_special = "\@\%\$\&";
+my $doc_start = '^/\*\*\s*$'; # Allow whitespace at end of comment start.
+my $doc_end = '\*/';
+my $doc_com = '\s*\*\s*';
+my $doc_decl = $doc_com . '(\w+)';
+my $doc_sect = $doc_com . '([' . $doc_special . ']?[\w\s]+):(.*)';
+my $doc_content = $doc_com . '(.*)';
+my $doc_block = $doc_com . 'DOC:\s*(.*)?';
+my %constants;
+my %parameterdescs;
+my @parameterlist;
+my %sections;
+my @sectionlist;
+my $sectcheck;
+my $struct_actual;
+my $contents = "";
+my $section_default = "Description";	# default section
+my $section_intro = "Introduction";
+my $section = $section_default;
+my $section_context = "Context";
+my $undescribed = "-- undescribed --";
+reset_state();
+while ($ARGV[0] =~ m/^-(.*)/)
+# continue execution near EOF;
+sub usage
+# get kernel version from env
+sub get_kernel_version()
+##
+# dumps section contents to arrays/hashes intended for that purpose.
+#
+sub dump_section
+##
+# dump DOC: section after checking that it should go out
+#
+sub dump_doc_section
+##
+# output function
+#
+# parameterdescs, a hash.
+#  function => "function name"
+#  parameterlist => @list of parameters
+#  parameterdescs => %parameter descriptions
+#  sectionlist => @list of sections
+#  sections => %section descriptions
+#
+sub output_highlight
+#output sections in html
+sub output_section_html(%)
+# output enum in html
+sub output_enum_html(%)
+# output typedef in html
+sub output_typedef_html(%)
+# output struct in html
+sub output_struct_html(%)
+# output function in html
+sub output_function_html(%)
+# output DOC: block header in html
+sub output_blockhead_html(%)
+sub output_section_xml(%)
+# output function in XML DocBook
+sub output_function_xml(%)
+# output struct in XML DocBook
+sub output_struct_xml(%)
+# output enum in XML DocBook
+sub output_enum_xml(%)
+# output typedef in XML DocBook
+sub output_typedef_xml(%)
+# output in XML DocBook
+sub output_blockhead_xml(%)
+# output in XML DocBook
+sub output_function_gnome
+##
+# output function in man
+sub output_function_man(%)
+##
+# output enum in man
+sub output_enum_man(%)
+##
+# output struct in man
+sub output_struct_man(%)
+##
+# output typedef in man
+sub output_typedef_man(%)
+sub output_blockhead_man(%)
+##
+# output in text
+sub output_function_text(%)
+#output sections in text
+sub output_section_text(%)
+# output enum in text
+sub output_enum_text(%)
+# output typedef in text
+sub output_typedef_text(%)
+# output struct as text
+sub output_struct_text(%)
+sub output_blockhead_text(%)
+## list mode output functions
+sub output_function_list(%)
+# output enum in list
+sub output_enum_list(%)
+# output typedef in list
+sub output_typedef_list(%)
+# output struct as list
+sub output_struct_list(%)
+sub output_blockhead_list(%)
+##
+# generic output function for all types (function, struct/union, typedef, enum);
+# calls the generated, variable output_ function name based on
+# functype and output_mode
+sub output_declaration
+##
+# generic output function - calls the right one based on current output mode.
+sub output_blockhead
+##
+# takes a declaration (struct, union, enum, typedef) and
+# invokes the right handler. NOT called for functions.
+sub dump_declaration($$)
+sub dump_union($$)
+sub dump_struct($$)
+sub dump_enum($$)
+sub dump_typedef($$)
+sub save_struct_actual($)
+sub create_parameterlist($$$)
+sub push_parameter($$$) ")) ; from anon. struct/union
+}
+$anon_struct_union = 0;
+my $param_name = $param;
+$param_name =~ s/\[.*
+if ($type eq "" && $param =~ /\.\.\.$/)
+elsif ($type eq "" && ($param eq "" or $param eq "void"))
+elsif ($type eq "" && ($param eq "struct" or $param eq "union"))
+# handle unnamed (anonymous) union or struct:
+# warn if parameter has no description
+# (but ignore ones starting with # as these are not parameters
+# but inline preprocessor statements);
+# also ignore unnamed structs/unions;
+if (!$anon_struct_union)
+$param = xml_escape($param);
+# strip spaces from $param so that it is one continuous string
+# on @parameterlist;
+# this fixes a problem where check_sections() cannot find
+# a parameter like "addr[6 + 2]" because it actually appears
+# as "addr[6", "+", "2]" on the parameter list;
+# but it's better to maintain the param string unchanged for output,
+# so just weaken the string compare in check_sections() to ignore
+# "[blah" in a parameter string;
+###$param =~ s/\s*
+push @parameterlist, $param;
+$parametertypes = $type;
+}
+sub check_sections($$$$$$)
+##
+# takes a function prototype and the name of the current file being
+# processed and spits out all the details stored in the global
+# arrays/hashes.
+sub dump_function($$) {
+my $prototype = shift;
+my $file = shift;
+$prototype =~ s/^static +
+$prototype =~ s/^extern +
+$prototype =~ s/^asmlinkage +
+$prototype =~ s/^inline +
+$prototype =~ s/^__inline__ +
+$prototype =~ s/^__inline +
+$prototype =~ s/^__always_inline +
+$prototype =~ s/^noinline +
+$prototype =~ s/__devinit +
+$prototype =~ s/__init +
+$prototype =~ s/__init_or_module +
+$prototype =~ s/^#\s*define\s+
+$prototype =~ s/__attribute__\s*\(\([a-z,]*\)\)
+# Yes, this truly is vile.  We are looking for:
+# 1. Return type (may be nothing if we're looking at a macro)
+# 2. Function name
+# 3. Function parameters.
+#
+# All the while we have to watch out for function pointer parameters
+# (which IIRC is what the two sections are for), C types (these
+# regexps don't even start to express all the possibilities), and
+# so on.
+#
+# If you mess with these regexps, it's a good idea to check that
+# the following functions' documentation still comes out right:
+# - parport_register_device (function pointer parameters)
+# - atomic_set (macro)
+# - pci_match_device, __copy_to_user (long return type)
+if ($prototype =~ m/^()([a-zA-Z0-9_~:]+)\s*\(([^\(]*)\)/ ||
+$prototype =~ m/^(\w+)\s+([a-zA-Z0-9_~:]+)\s*\(([^\(]*)\)/ ||
+$prototype =~ m/^(\w+\s*\*)\s*([a-zA-Z0-9_~:]+)\s*\(([^\(]*)\)/ ||
+$prototype =~ m/^(\w+\s+\w+)\s+([a-zA-Z0-9_~:]+)\s*\(([^\(]*)\)/ ||
+$prototype =~ m/^(\w+\s+\w+\s*\*+)\s*([a-zA-Z0-9_~:]+)\s*\(([^\(]*)\)/ ||
+$prototype =~ m/^(\w+\s+\w+\s+\w+)\s+([a-zA-Z0-9_~:]+)\s*\(([^\(]*)\)/ ||
+$prototype =~ m/^(\w+\s+\w+\s+\w+\s*\*)\s*([a-zA-Z0-9_~:]+)\s*\(([^\(]*)\)/ ||
+$prototype =~ m/^()([a-zA-Z0-9_~:]+)\s*\(([^\{]*)\)/ ||
+$prototype =~ m/^(\w+)\s+([a-zA-Z0-9_~:]+)\s*\(([^\{]*)\)/ ||
+$prototype =~ m/^(\w+\s*\*)\s*([a-zA-Z0-9_~:]+)\s*\(([^\{]*)\)/ ||
+$prototype =~ m/^(\w+\s+\w+)\s+([a-zA-Z0-9_~:]+)\s*\(([^\{]*)\)/ ||
+$prototype =~ m/^(\w+\s+\w+\s*\*)\s*([a-zA-Z0-9_~:]+)\s*\(([^\{]*)\)/ ||
+$prototype =~ m/^(\w+\s+\w+\s+\w+)\s+([a-zA-Z0-9_~:]+)\s*\(([^\{]*)\)/ ||
+$prototype =~ m/^(\w+\s+\w+\s+\w+\s*\*)\s*([a-zA-Z0-9_~:]+)\s*\(([^\{]*)\)/ ||
+$prototype =~ m/^(\w+\s+\w+\s+\w+\s+\w+)\s+([a-zA-Z0-9_~:]+)\s*\(([^\{]*)\)/ ||
+$prototype =~ m/^(\w+\s+\w+\s+\w+\s+\w+\s*\*)\s*([a-zA-Z0-9_~:]+)\s*\(([^\{]*)\)/ ||
+$prototype =~ m/^(\w+\s+\w+\s*\*\s*\w+\s*\*\s*)\s*([a-zA-Z0-9_~:]+)\s*\(([^\
+sub reset_state
+sub tracepoint_munge($)
+sub syscall_munge() {
+my $void = 0;
+$prototype =~ s@[\r\n\t]+@ @gos; # strip newlines/CR's/tabs
+##	if ($prototype =~ m/SYSCALL_DEFINE0\s*\(\s*(a-zA-Z0-9_)*\s*\)/)
+sub process_state3_function($$) {
+my $x = shift;
+my $file = shift;
+$x =~ s@\/\/.*$@@gos; # strip C99-style comments to end of line
+if ($x =~ m#\s*/\*\s+MACDOC\s*#io || ($x =~ /^#/ && $x !~ /^#\s*define/))
+elsif ($x =~ /([^\{]*)/)
+if (($x =~ /\
+sub process_state3_type($$)
+# xml_escape: replace <, >, and & in the text stream;
+#
+# however, formatting controls that are generated internally/locally in the
+# kernel-doc script are not escaped here; instead, they begin life like
+# $blankline_html (4 of '\' followed by a mnemonic + ':'), then these strings
+# are converted to their mnemonic-expected output, without the 4 * '\' & ':',
+# just before actual output; (this is done by local_unescape())
+sub xml_escape($)
+# convert local escape strings to html
+# local escape strings look like:  '\\\\menmonic:' (that's 4 backslashes)
+sub local_unescape($)
+sub process_file($) {
+my $file;
+my $identifier;
+my $func;
+my $descr;
+my $in_purpose = 0;
+my $initial_section_counter = $section_counter;
+if (defined($ENV))
+else
+if (defined($source_map))
+if (!open(IN,"<$file"))
+$. = 1;
+$section_counter = 0;
+while (<IN>)
+$kernelversion = get_kernel_version();
+# generate a sequence of code that will splice in highlighting information
+# using the s
+foreach my $pattern (keys %highlights)
+# Read the file that maps relative names to absolute names for
+# separate source and object directories and for shadow trees.
+if (open(SOURCE_MAP, "<.tmp_filelist.txt"))
+foreach (@ARGV)
+if ($verbose && $errors)
+if ($verbose && $warnings)
+exit($errors);

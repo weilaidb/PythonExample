@@ -1,0 +1,5 @@
+BOARD_VEC(jmr3927_vec)
+BOARD_VEC(rbtx4927_vec)
+BOARD_VEC(rbtx4937_vec)
+BOARD_VEC(rbtx4938_vec)
+BOARD_VEC(rbtx4939_vec)

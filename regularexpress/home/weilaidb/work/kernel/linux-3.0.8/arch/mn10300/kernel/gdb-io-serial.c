@@ -1,0 +1,5 @@
+void gdbstub_io_init(void)
+void gdbstub_io_set_baud(unsigned baud)
+int gdbstub_io_rx_char(unsigned char *_ch, int nonblock)
+void gdbstub_io_tx_char(unsigned char ch)
+void gdbstub_io_tx_flush(void)

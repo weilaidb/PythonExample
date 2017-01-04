@@ -1,0 +1,26 @@
+package com.sleepycat.je.dbi;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import java.io.File;
+import com.sleepycat.je.CacheMode;
+import com.sleepycat.je.CheckpointConfig;
+import com.sleepycat.je.Cursor;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DbInternal;
+import com.sleepycat.je.Durability;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.EnvironmentConfig;
+import com.sleepycat.je.OperationStatus;
+import com.sleepycat.je.Transaction;
+import com.sleepycat.je.TransactionConfig;
+import com.sleepycat.je.evictor.Evictor;
+import com.sleepycat.je.evictor.OffHeapCache;
+import com.sleepycat.je.tree.BIN;
+import com.sleepycat.je.util.DualTestCase;
+import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.util.test.SharedTestUtils;
+import org.junit.Test;
+public class EmbeddedOpsTest extends DualTestCase

@@ -1,0 +1,1 @@
+#define SCSI_G_NCR5380_MEM

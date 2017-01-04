@@ -1,0 +1,2 @@
+#define __MACH_TEGRA_VMALLOC_H
+#define VMALLOC_END        0xFE000000UL

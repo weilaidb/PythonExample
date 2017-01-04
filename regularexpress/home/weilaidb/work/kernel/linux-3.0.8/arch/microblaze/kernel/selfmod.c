@@ -1,0 +1,16 @@
+#undef DEBUG
+#if __GNUC__ > 3
+#error GCC 4 unsupported SELFMOD. Please disable SELFMOD from menuconfig.
+#define OPCODE_IMM		0xB0000000
+#define OPCODE_LWI		0xE8000000
+#define OPCODE_LWI_MASK		0xEC000000
+#define OPCODE_RTSD		0xB60F0008
+#define OPCODE_ADDIK		0x30000000
+#define OPCODE_ADDIK_MASK	0xFC000000
+#define IMM_BASE	(OPCODE_IMM | (BARRIER_BASE_ADDR >> 16))
+#define LWI_BASE	(OPCODE_LWI | (BARRIER_BASE_ADDR & 0x0000ff00))
+#define LWI_BASE_MASK	(OPCODE_LWI_MASK | (BARRIER_BASE_ADDR & 0x0000ff00))
+#define ADDIK_BASE	(OPCODE_ADDIK | (BARRIER_BASE_ADDR & 0x0000ff00))
+#define ADDIK_BASE_MASK	(OPCODE_ADDIK_MASK | (BARRIER_BASE_ADDR & 0x0000ff00))
+#define MODIFY_INSTR
+void selfmod_function(const int *arr_fce, const unsigned int base)

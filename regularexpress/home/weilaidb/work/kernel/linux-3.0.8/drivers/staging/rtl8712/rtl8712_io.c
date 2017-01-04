@@ -1,0 +1,11 @@
+#define _RTL8712_IO_C_
+u8 r8712_read8(struct _adapter *adapter, u32 addr)
+u16 r8712_read16(struct _adapter *adapter, u32 addr)
+u32 r8712_read32(struct _adapter *adapter, u32 addr)
+void r8712_write8(struct _adapter *adapter, u32 addr, u8 val)
+void r8712_write16(struct _adapter *adapter, u32 addr, u16 val)
+void r8712_write32(struct _adapter *adapter, u32 addr, u32 val)
+void r8712_read_mem(struct _adapter *adapter, u32 addr, u32 cnt, u8 *pmem)
+void r8712_write_mem(struct _adapter *adapter, u32 addr, u32 cnt, u8 *pmem)
+void r8712_read_port(struct _adapter *adapter, u32 addr, u32 cnt, u8 *pmem)
+void r8712_write_port(struct _adapter *adapter, u32 addr, u32 cnt, u8 *pmem)

@@ -1,0 +1,79 @@
+#define _ASM_S390X_COMPAT_H
+#define PSW32_MASK_PER		0x40000000UL
+#define PSW32_MASK_DAT		0x04000000UL
+#define PSW32_MASK_IO		0x02000000UL
+#define PSW32_MASK_EXT		0x01000000UL
+#define PSW32_MASK_KEY		0x00F00000UL
+#define PSW32_MASK_MCHECK	0x00040000UL
+#define PSW32_MASK_WAIT		0x00020000UL
+#define PSW32_MASK_PSTATE	0x00010000UL
+#define PSW32_MASK_ASC		0x0000C000UL
+#define PSW32_MASK_CC		0x00003000UL
+#define PSW32_MASK_PM		0x00000f00UL
+#define PSW32_ADDR_AMODE31	0x80000000UL
+#define PSW32_ADDR_INSN		0x7FFFFFFFUL
+#define PSW32_BASE_BITS		0x00080000UL
+#define PSW32_ASC_PRIMARY	0x00000000UL
+#define PSW32_ASC_ACCREG	0x00004000UL
+#define PSW32_ASC_SECONDARY	0x00008000UL
+#define PSW32_ASC_HOME		0x0000C000UL
+#define PSW32_MASK_MERGE(CURRENT,NEW) \
+(((CURRENT) & ~(PSW32_MASK_CC|PSW32_MASK_PM)) | \
+((NEW) & (PSW32_MASK_CC|PSW32_MASK_PM)))
+extern long psw32_user_bits;
+#define COMPAT_USER_HZ		100
+#define COMPAT_UTS_MACHINE	"s390\0\0\0\0"
+typedef u32		compat_size_t;
+typedef s32		compat_ssize_t;
+typedef s32		compat_time_t;
+typedef s32		compat_clock_t;
+typedef s32		compat_pid_t;
+typedef u16		__compat_uid_t;
+typedef u16		__compat_gid_t;
+typedef u32		__compat_uid32_t;
+typedef u32		__compat_gid32_t;
+typedef u16		compat_mode_t;
+typedef u32		compat_ino_t;
+typedef u16		compat_dev_t;
+typedef s32		compat_off_t;
+typedef s64		compat_loff_t;
+typedef u16		compat_nlink_t;
+typedef u16		compat_ipc_pid_t;
+typedef s32		compat_daddr_t;
+typedef u32		compat_caddr_t;
+typedef __kernel_fsid_t	compat_fsid_t;
+typedef s32		compat_key_t;
+typedef s32		compat_timer_t;
+typedef s32		compat_int_t;
+typedef s32		compat_long_t;
+typedef s64		compat_s64;
+typedef u32		compat_uint_t;
+typedef u32		compat_ulong_t;
+typedef u64		compat_u64;
+struct compat_timespec ;
+struct compat_timeval ;
+struct compat_stat ;
+struct compat_flock ;
+#define F_GETLK64       12
+#define F_SETLK64       13
+#define F_SETLKW64      14
+struct compat_flock64 ;
+struct compat_statfs ;
+#define COMPAT_RLIM_OLD_INFINITY	0x7fffffff
+#define COMPAT_RLIM_INFINITY		0xffffffff
+typedef u32		compat_old_sigset_t;
+#define _COMPAT_NSIG		64
+#define _COMPAT_NSIG_BPW	32
+typedef u32		compat_sigset_word;
+#define COMPAT_OFF_T_MAX	0x7fffffff
+#define COMPAT_LOFF_T_MAX	0x7fffffffffffffffL
+typedef	u32		compat_uptr_t;
+static inline void __user *compat_ptr(compat_uptr_t uptr)
+static inline compat_uptr_t ptr_to_compat(void __user *uptr)
+static inline int is_compat_task(void)
+static inline int is_compat_task(void)
+static inline void __user *arch_compat_alloc_user_space(long len)
+struct compat_ipc64_perm ;
+struct compat_semid64_ds ;
+struct compat_msqid64_ds ;
+struct compat_shmid64_ds ;

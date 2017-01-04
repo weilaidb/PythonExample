@@ -1,0 +1,5 @@
+#define UTS_MACHINE "arm"
+#define UTS_VERSION "#6 Wed Aug 17 08:52:08 PDT 2016"
+#define LINUX_COMPILE_BY "weilaidb"
+#define LINUX_COMPILE_HOST "localhost.localdomain"
+#define LINUX_COMPILER "gcc version 4.5.2 (Sourcery G++ Lite 2011.03-42) "

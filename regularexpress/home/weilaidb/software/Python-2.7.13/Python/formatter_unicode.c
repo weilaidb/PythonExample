@@ -1,0 +1,1 @@
+#define FORMAT_STRING _PyUnicode_FormatAdvanced

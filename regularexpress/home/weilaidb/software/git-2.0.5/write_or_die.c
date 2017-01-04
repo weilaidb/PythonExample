@@ -1,0 +1,6 @@
+static void check_pipe(int err)
+void maybe_flush_or_die(FILE *f, const char *desc)
+void fsync_or_die(int fd, const char *msg)
+void write_or_die(int fd, const void *buf, size_t count)
+int write_or_whine_pipe(int fd, const void *buf, size_t count, const char *msg)
+int write_or_whine(int fd, const void *buf, size_t count, const char *msg)

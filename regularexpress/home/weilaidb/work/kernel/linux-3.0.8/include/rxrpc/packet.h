@@ -1,0 +1,43 @@
+#define _LINUX_RXRPC_PACKET_H
+typedef u32	rxrpc_seq_t;
+typedef u32	rxrpc_serial_t;
+typedef __be32	rxrpc_seq_net_t;
+typedef __be32	rxrpc_serial_net_t;
+struct rxrpc_header  __packed;
+#define __rxrpc_header_off(X) offsetof(struct rxrpc_header,X)
+extern const char *rxrpc_pkts[];
+struct rxrpc_jumbo_header ;
+#define RXRPC_JUMBO_DATALEN	1412
+struct rxrpc_ackpacket  __packed;
+struct rxrpc_ackinfo ;
+struct rxkad_challenge  __packed;
+struct rxkad_response  __packed;
+#define RX_CALL_DEAD		-1
+#define RX_INVALID_OPERATION	-2
+#define RX_CALL_TIMEOUT		-3
+#define RX_EOF			-4
+#define RX_PROTOCOL_ERROR	-5
+#define RX_USER_ABORT		-6
+#define RX_ADDRINUSE		-7
+#define RX_DEBUGI_BADTYPE	-8
+#define	RXGEN_CC_MARSHAL    -450
+#define	RXGEN_CC_UNMARSHAL  -451
+#define	RXGEN_SS_MARSHAL    -452
+#define	RXGEN_SS_UNMARSHAL  -453
+#define	RXGEN_DECODE	    -454
+#define	RXGEN_OPCODE	    -455
+#define	RXGEN_SS_XDRFREE    -456
+#define	RXGEN_CC_XDRFREE    -457
+#define RXKADINCONSISTENCY	19270400
+#define RXKADPACKETSHORT	19270401
+#define RXKADLEVELFAIL		19270402
+#define RXKADTICKETLEN		19270403
+#define RXKADOUTOFSEQUENCE	19270404
+#define RXKADNOAUTH		19270405
+#define RXKADBADKEY		19270406
+#define RXKADBADTICKET		19270407
+#define RXKADUNKNOWNKEY		19270408
+#define RXKADEXPIRED		19270409
+#define RXKADSEALEDINCON	19270410
+#define RXKADDATALEN		19270411
+#define RXKADILLEGALLEVEL	19270412

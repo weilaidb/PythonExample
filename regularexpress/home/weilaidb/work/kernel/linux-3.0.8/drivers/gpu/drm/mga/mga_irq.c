@@ -1,0 +1,8 @@
+u32 mga_get_vblank_counter(struct drm_device *dev, int crtc)
+irqreturn_t mga_driver_irq_handler(DRM_IRQ_ARGS)
+int mga_enable_vblank(struct drm_device *dev, int crtc)
+void mga_disable_vblank(struct drm_device *dev, int crtc)
+int mga_driver_fence_wait(struct drm_device *dev, unsigned int *sequence)
+void mga_driver_irq_preinstall(struct drm_device *dev)
+int mga_driver_irq_postinstall(struct drm_device *dev)
+void mga_driver_irq_uninstall(struct drm_device *dev)

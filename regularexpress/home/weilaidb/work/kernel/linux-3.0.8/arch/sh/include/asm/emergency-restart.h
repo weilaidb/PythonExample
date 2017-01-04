@@ -1,0 +1,1 @@
+#define _ASM_EMERGENCY_RESTART_H

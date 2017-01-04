@@ -1,0 +1,22 @@
+package com.sleepycat.je.rep.impl.networkRestore;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.Channels;
+import java.nio.channels.WritableByteChannel;
+import java.util.Arrays;
+import java.util.zip.CheckedInputStream;
+import java.util.zip.CheckedOutputStream;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.je.log.LogUtils;
+import com.sleepycat.je.rep.impl.networkRestore.Protocol.FileStart;
+import com.sleepycat.je.rep.impl.node.NameIdPair;
+import com.sleepycat.je.rep.util.TestChannel;
+import com.sleepycat.je.rep.utilint.BinaryProtocol.Message;
+import com.sleepycat.je.utilint.Adler32;
+import com.sleepycat.je.utilint.VLSN;
+import com.sleepycat.util.test.TestBase;
+public class ProtocolTest  extends TestBase

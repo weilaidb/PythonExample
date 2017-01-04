@@ -1,0 +1,31 @@
+package com.sleepycat.collections.test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import java.util.Map;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.bind.serial.StoredClassCatalog;
+import com.sleepycat.bind.serial.test.MarshalledObject;
+import com.sleepycat.collections.StoredCollection;
+import com.sleepycat.collections.StoredContainer;
+import com.sleepycat.collections.StoredIterator;
+import com.sleepycat.collections.StoredMap;
+import com.sleepycat.collections.TransactionRunner;
+import com.sleepycat.collections.TransactionWorker;
+import com.sleepycat.collections.TupleSerialFactory;
+import com.sleepycat.compat.DbCompat;
+import com.sleepycat.je.Database;
+import com.sleepycat.je.DatabaseConfig;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.SecondaryConfig;
+import com.sleepycat.je.SecondaryDatabase;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+import com.sleepycat.util.test.TestEnv;
+public class JoinTest extends TestBase
+implements TransactionWorker

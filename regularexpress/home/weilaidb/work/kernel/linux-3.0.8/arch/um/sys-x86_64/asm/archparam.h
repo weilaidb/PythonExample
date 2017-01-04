@@ -1,0 +1,3 @@
+#define __UM_ARCHPARAM_X86_64_H
+#define FIXADDR_USER_START	0
+#define FIXADDR_USER_END	0

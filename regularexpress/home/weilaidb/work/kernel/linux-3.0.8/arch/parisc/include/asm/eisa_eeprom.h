@@ -1,0 +1,56 @@
+#define ASM_EISA_EEPROM_H
+extern void __iomem *eisa_eeprom_addr;
+#define HPEE_MAX_LENGTH       0x2000
+#define HPEE_SLOT_INFO(slot) (20+(48*slot))
+struct eeprom_header
+__attribute__ ((packed));
+struct eeprom_eisa_slot_info
+__attribute__ ((packed));
+#define HPEE_MEMORY_MAX_ENT   9
+#define HPEE_MEMORY_WRITABLE  0x01
+#define HPEE_MEMORY_CACHABLE  0x02
+#define HPEE_MEMORY_TYPE_MASK 0x18
+#define HPEE_MEMORY_TYPE_SYS  0x00
+#define HPEE_MEMORY_TYPE_EXP  0x08
+#define HPEE_MEMORY_TYPE_VIR  0x10
+#define HPEE_MEMORY_TYPE_OTH  0x18
+#define HPEE_MEMORY_SHARED    0x20
+#define HPEE_MEMORY_MORE      0x80
+#define HPEE_MEMORY_WIDTH_MASK 0x03
+#define HPEE_MEMORY_WIDTH_BYTE 0x00
+#define HPEE_MEMORY_WIDTH_WORD 0x01
+#define HPEE_MEMORY_WIDTH_DWORD 0x02
+#define HPEE_MEMORY_DECODE_MASK 0x0c
+#define HPEE_MEMORY_DECODE_20BITS 0x00
+#define HPEE_MEMORY_DECODE_24BITS 0x04
+#define HPEE_MEMORY_DECODE_32BITS 0x08
+#define HPEE_IRQ_MAX_ENT      7
+#define HPEE_IRQ_CHANNEL_MASK 0xf
+#define HPEE_IRQ_TRIG_LEVEL   0x20
+#define HPEE_IRQ_MORE         0x80
+#define HPEE_DMA_MAX_ENT     4
+#define HPEE_DMA_CHANNEL_MASK 7
+#define HPEE_DMA_SIZE_MASK	0xc
+#define HPEE_DMA_SIZE_BYTE	0x0
+#define HPEE_DMA_SIZE_WORD	0x4
+#define HPEE_DMA_SIZE_DWORD	0x8
+#define HPEE_DMA_SHARED      0x40
+#define HPEE_DMA_MORE        0x80
+#define HPEE_DMA_TIMING_MASK 0x30
+#define HPEE_DMA_TIMING_ISA	0x0
+#define HPEE_DMA_TIMING_TYPEA 0x10
+#define HPEE_DMA_TIMING_TYPEB 0x20
+#define HPEE_DMA_TIMING_TYPEC 0x30
+#define HPEE_PORT_MAX_ENT 20
+#define HPEE_PORT_SIZE_MASK 0x1f
+#define HPEE_PORT_SHARED    0x40
+#define HPEE_PORT_MORE      0x80
+#define HPEE_PORT_INIT_MAX_LEN     60
+#define HPEE_PORT_INIT_WIDTH_MASK  0x3
+#define HPEE_PORT_INIT_WIDTH_BYTE  0x0
+#define HPEE_PORT_INIT_WIDTH_WORD  0x1
+#define HPEE_PORT_INIT_WIDTH_DWORD 0x2
+#define HPEE_PORT_INIT_MASK        0x4
+#define HPEE_PORT_INIT_MORE        0x80
+#define HPEE_SELECTION_MAX_ENT 26
+#define HPEE_TYPE_MAX_LEN    80

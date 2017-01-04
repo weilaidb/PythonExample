@@ -1,0 +1,16 @@
+#if __LINUX_ARM_ARCH__ < 7
+static inline void tauros2_clean_pa(unsigned long addr)
+static inline void tauros2_clean_inv_pa(unsigned long addr)
+static inline void tauros2_inv_pa(unsigned long addr)
+#define CACHE_LINE_SIZE		32
+static void tauros2_inv_range(unsigned long start, unsigned long end)
+static void tauros2_clean_range(unsigned long start, unsigned long end)
+static void tauros2_flush_range(unsigned long start, unsigned long end)
+static inline u32 __init read_extra_features(void)
+static inline void __init write_extra_features(u32 u)
+static void __init disable_l2_prefetch(void)
+static inline int __init cpuid_scheme(void)
+static inline u32 __init read_mmfr3(void)
+static inline u32 __init read_actlr(void)
+static inline void __init write_actlr(u32 actlr)
+void __init tauros2_init(void)

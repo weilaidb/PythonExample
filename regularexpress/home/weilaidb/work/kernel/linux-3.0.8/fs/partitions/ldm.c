@@ -1,0 +1,46 @@
+#define ldm_debug(...)	do  while (0)
+#define ldm_debug(f, a...) _ldm_printk (KERN_DEBUG, __func__, f, ##a)
+#define ldm_crit(f, a...)  _ldm_printk (KERN_CRIT,  __func__, f, ##a)
+#define ldm_error(f, a...) _ldm_printk (KERN_ERR,   __func__, f, ##a)
+#define ldm_info(f, a...)  _ldm_printk (KERN_INFO,  __func__, f, ##a)
+__attribute__ ((format (printf, 3, 4)))
+static void _ldm_printk (const char *level, const char *function,
+const char *fmt, ...)
+static int ldm_parse_hexbyte (const u8 *src)
+static bool ldm_parse_guid (const u8 *src, u8 *dest)
+static bool ldm_parse_privhead(const u8 *data, struct privhead *ph)
+static bool ldm_parse_tocblock (const u8 *data, struct tocblock *toc)
+static bool ldm_parse_vmdb (const u8 *data, struct vmdb *vm)
+static bool ldm_compare_privheads (const struct privhead *ph1,
+const struct privhead *ph2)
+static bool ldm_compare_tocblocks (const struct tocblock *toc1,
+const struct tocblock *toc2)
+static bool ldm_validate_privheads(struct parsed_partitions *state,
+struct privhead *ph1)
+static bool ldm_validate_tocblocks(struct parsed_partitions *state,
+unsigned long base, struct ldmdb *ldb)
+static bool ldm_validate_vmdb(struct parsed_partitions *state,
+unsigned long base, struct ldmdb *ldb)
+static bool ldm_validate_partition_table(struct parsed_partitions *state)
+static struct vblk * ldm_get_disk_objid (const struct ldmdb *ldb)
+static bool ldm_create_data_partitions (struct parsed_partitions *pp,
+const struct ldmdb *ldb)
+static int ldm_relative(const u8 *buffer, int buflen, int base, int offset)
+static u64 ldm_get_vnum (const u8 *block)
+static int ldm_get_vstr (const u8 *block, u8 *buffer, int buflen)
+static bool ldm_parse_cmp3 (const u8 *buffer, int buflen, struct vblk *vb)
+static int ldm_parse_dgr3 (const u8 *buffer, int buflen, struct vblk *vb)
+static bool ldm_parse_dgr4 (const u8 *buffer, int buflen, struct vblk *vb)
+static bool ldm_parse_dsk3 (const u8 *buffer, int buflen, struct vblk *vb)
+static bool ldm_parse_dsk4 (const u8 *buffer, int buflen, struct vblk *vb)
+static bool ldm_parse_prt3(const u8 *buffer, int buflen, struct vblk *vb)
+static bool ldm_parse_vol5(const u8 *buffer, int buflen, struct vblk *vb)
+static bool ldm_parse_vblk (const u8 *buf, int len, struct vblk *vb)
+static bool ldm_ldmdb_add (u8 *data, int len, struct ldmdb *ldb)
+static bool ldm_frag_add (const u8 *data, int size, struct list_head *frags)
+static void ldm_frag_free (struct list_head *list)
+static bool ldm_frag_commit (struct list_head *frags, struct ldmdb *ldb)
+static bool ldm_get_vblks(struct parsed_partitions *state, unsigned long base,
+struct ldmdb *ldb)
+static void ldm_free_vblks (struct list_head *lh)
+int ldm_partition(struct parsed_partitions *state)

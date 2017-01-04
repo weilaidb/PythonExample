@@ -1,0 +1,11 @@
+diff --git a/main.c b/main.c
+--- a/main.c
++++ b/main.c
+@@ -1,13 +1,14 @@
+int func(int num);
+-void print_int(int num);
++int func2(int num);
+int main()
+-void print_int(int num) {
+-	printf("%d", num);
++int func2(int num)

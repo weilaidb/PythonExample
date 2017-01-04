@@ -1,0 +1,1 @@
+#define __ASM_ARCH_IOP32X_GPIO_H

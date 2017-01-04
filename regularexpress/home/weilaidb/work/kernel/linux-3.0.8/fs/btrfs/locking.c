@@ -1,0 +1,10 @@
+static inline void spin_nested(struct extent_buffer *eb)
+void btrfs_set_lock_blocking(struct extent_buffer *eb)
+void btrfs_clear_lock_blocking(struct extent_buffer *eb)
+static int btrfs_spin_on_block(struct extent_buffer *eb)
+int btrfs_try_spin_lock(struct extent_buffer *eb)
+static int btrfs_wake_function(wait_queue_t *wait, unsigned mode,
+int sync, void *key)
+int btrfs_tree_lock(struct extent_buffer *eb)
+int btrfs_tree_unlock(struct extent_buffer *eb)
+void btrfs_assert_tree_locked(struct extent_buffer *eb)

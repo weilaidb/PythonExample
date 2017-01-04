@@ -1,0 +1,2 @@
+#define __LINUX_RFKILL_REGULATOR_H
+struct rfkill_regulator_platform_data ;

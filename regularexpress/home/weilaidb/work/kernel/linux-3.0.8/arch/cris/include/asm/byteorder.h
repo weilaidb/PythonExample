@@ -1,0 +1,1 @@
+#define _CRIS_BYTEORDER_H

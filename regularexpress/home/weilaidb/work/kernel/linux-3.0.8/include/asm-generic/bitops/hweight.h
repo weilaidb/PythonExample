@@ -1,0 +1,1 @@
+#define _ASM_GENERIC_BITOPS_HWEIGHT_H_

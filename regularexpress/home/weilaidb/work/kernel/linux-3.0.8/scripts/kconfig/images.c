@@ -1,0 +1,15 @@
+static const char *xpm_load[] = ;
+static const char *xpm_save[] = ;
+static const char *xpm_back[] = ;
+static const char *xpm_tree_view[] = ;
+static const char *xpm_single_view[] = ;
+static const char *xpm_split_view[] = ;
+static const char *xpm_symbol_no[] = ;
+static const char *xpm_symbol_mod[] = ;
+static const char *xpm_symbol_yes[] = ;
+static const char *xpm_choice_no[] = ;
+static const char *xpm_choice_yes[] = ;
+static const char *xpm_menu[] = ;
+static const char *xpm_menu_inv[] = ;
+static const char *xpm_menuback[] = ;
+static const char *xpm_void[] = ;

@@ -1,0 +1,20 @@
+package com.sleepycat.je.log.entry;
+import java.lang.reflect.Constructor;
+import java.nio.ByteBuffer;
+import java.util.Arrays;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.dbi.DatabaseId;
+import com.sleepycat.je.dbi.DatabaseImpl;
+import com.sleepycat.je.dbi.DupKeyData;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.log.LogEntryHeader;
+import com.sleepycat.je.log.LogEntryType;
+import com.sleepycat.je.log.LogUtils;
+import com.sleepycat.je.tree.Key;
+import com.sleepycat.je.tree.LN;
+import com.sleepycat.je.tree.VersionedLN;
+import com.sleepycat.je.txn.Txn;
+import com.sleepycat.je.utilint.DbLsn;
+import com.sleepycat.je.utilint.VLSN;
+public class LNLogEntry<T extends LN> extends BaseReplicableEntry<T>

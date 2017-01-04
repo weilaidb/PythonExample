@@ -1,0 +1,4 @@
+#define _ASMPARISC_SIGCONTEXT_H
+#define PARISC_SC_FLAG_ONSTACK 1<<0
+#define PARISC_SC_FLAG_IN_SYSCALL 1<<1
+struct sigcontext ;

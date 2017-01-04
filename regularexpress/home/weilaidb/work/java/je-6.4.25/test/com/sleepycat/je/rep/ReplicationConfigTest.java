@@ -1,0 +1,21 @@
+package com.sleepycat.je.rep;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.io.File;
+import java.net.InetSocketAddress;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.je.CommitToken;
+import com.sleepycat.je.ReplicaConsistencyPolicy;
+import com.sleepycat.je.rep.impl.PointConsistencyPolicy;
+import com.sleepycat.je.rep.impl.RepParams;
+import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.je.utilint.VLSN;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class ReplicationConfigTest extends TestBase

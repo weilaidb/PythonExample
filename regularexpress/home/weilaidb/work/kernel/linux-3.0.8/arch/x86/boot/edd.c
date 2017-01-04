@@ -1,0 +1,5 @@
+#if defined(CONFIG_EDD) || defined(CONFIG_EDD_MODULE)
+static int read_mbr(u8 devno, void *buf)
+static u32 read_mbr_sig(u8 devno, struct edd_info *ei, u32 *mbrsig)
+static int get_edd_info(u8 devno, struct edd_info *ei)
+void query_edd(void)

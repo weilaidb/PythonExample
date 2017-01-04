@@ -1,0 +1,11 @@
+#define AES_BLOCK_SIZE (16)
+typedef struct AVAESCTR  AVAESCTR;
+struct AVAESCTR *av_aes_ctr_alloc(void)
+void av_aes_ctr_set_iv(struct AVAESCTR *a, const uint8_t* iv)
+const uint8_t* av_aes_ctr_get_iv(struct AVAESCTR *a)
+void av_aes_ctr_set_random_iv(struct AVAESCTR *a)
+int av_aes_ctr_init(struct AVAESCTR *a, const uint8_t *key)
+void av_aes_ctr_free(struct AVAESCTR *a)
+static void av_aes_ctr_increment_be64(uint8_t* counter)
+void av_aes_ctr_increment_iv(struct AVAESCTR *a)
+void av_aes_ctr_crypt(struct AVAESCTR *a, uint8_t *dst, const uint8_t *src, int count)

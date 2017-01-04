@@ -1,0 +1,46 @@
+#define gpio_get_value	__gpio_get_value
+#define gpio_set_value	__gpio_set_value
+#define gpio_cansleep	__gpio_cansleep
+#define gpio_to_irq	__gpio_to_irq
+#define S3C64XX_GPIO_A_NR	(8)
+#define S3C64XX_GPIO_B_NR	(7)
+#define S3C64XX_GPIO_C_NR	(8)
+#define S3C64XX_GPIO_D_NR	(5)
+#define S3C64XX_GPIO_E_NR	(5)
+#define S3C64XX_GPIO_F_NR	(16)
+#define S3C64XX_GPIO_G_NR	(7)
+#define S3C64XX_GPIO_H_NR	(10)
+#define S3C64XX_GPIO_I_NR	(16)
+#define S3C64XX_GPIO_J_NR	(12)
+#define S3C64XX_GPIO_K_NR	(16)
+#define S3C64XX_GPIO_L_NR	(15)
+#define S3C64XX_GPIO_M_NR	(6)
+#define S3C64XX_GPIO_N_NR	(16)
+#define S3C64XX_GPIO_O_NR	(16)
+#define S3C64XX_GPIO_P_NR	(15)
+#define S3C64XX_GPIO_Q_NR	(9)
+#define S3C64XX_GPIO_NEXT(__gpio) \
+((__gpio##_START) + (__gpio##_NR) + CONFIG_S3C_GPIO_SPACE + 1)
+enum s3c_gpio_number ;
+#define S3C64XX_GPA(_nr)	(S3C64XX_GPIO_A_START + (_nr))
+#define S3C64XX_GPB(_nr)	(S3C64XX_GPIO_B_START + (_nr))
+#define S3C64XX_GPC(_nr)	(S3C64XX_GPIO_C_START + (_nr))
+#define S3C64XX_GPD(_nr)	(S3C64XX_GPIO_D_START + (_nr))
+#define S3C64XX_GPE(_nr)	(S3C64XX_GPIO_E_START + (_nr))
+#define S3C64XX_GPF(_nr)	(S3C64XX_GPIO_F_START + (_nr))
+#define S3C64XX_GPG(_nr)	(S3C64XX_GPIO_G_START + (_nr))
+#define S3C64XX_GPH(_nr)	(S3C64XX_GPIO_H_START + (_nr))
+#define S3C64XX_GPI(_nr)	(S3C64XX_GPIO_I_START + (_nr))
+#define S3C64XX_GPJ(_nr)	(S3C64XX_GPIO_J_START + (_nr))
+#define S3C64XX_GPK(_nr)	(S3C64XX_GPIO_K_START + (_nr))
+#define S3C64XX_GPL(_nr)	(S3C64XX_GPIO_L_START + (_nr))
+#define S3C64XX_GPM(_nr)	(S3C64XX_GPIO_M_START + (_nr))
+#define S3C64XX_GPN(_nr)	(S3C64XX_GPIO_N_START + (_nr))
+#define S3C64XX_GPO(_nr)	(S3C64XX_GPIO_O_START + (_nr))
+#define S3C64XX_GPP(_nr)	(S3C64XX_GPIO_P_START + (_nr))
+#define S3C64XX_GPQ(_nr)	(S3C64XX_GPIO_Q_START + (_nr))
+#define S3C64XX_GPIO_END	(S3C64XX_GPQ(S3C64XX_GPIO_Q_NR) + 1)
+#define S3C_GPIO_END		S3C64XX_GPIO_END
+#define GPIO_BOARD_START (S3C64XX_GPQ(S3C64XX_GPIO_Q_NR) + 1)
+#define BOARD_NR_GPIOS 16
+#define ARCH_NR_GPIOS	(GPIO_BOARD_START + BOARD_NR_GPIOS)

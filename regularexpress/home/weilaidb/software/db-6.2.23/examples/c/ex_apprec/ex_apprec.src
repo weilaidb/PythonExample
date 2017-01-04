@@ -1,0 +1,5 @@
+PREFIX	ex_apprec
+INCLUDE
+BEGIN mkdir	42	10000
+DBT	dirname		DBT		s
+END

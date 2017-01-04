@@ -1,0 +1,1 @@
+#define __ASM_MACH_HARDWARE_H

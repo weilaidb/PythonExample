@@ -1,0 +1,6 @@
+__NR_acct,
+__NR_swapon,
+__NR_quotactl,
+__NR_truncate,
+__NR_truncate64,
+__NR_bind,

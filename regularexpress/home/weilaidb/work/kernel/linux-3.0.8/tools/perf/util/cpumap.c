@@ -1,0 +1,6 @@
+static struct cpu_map *cpu_map__default_new(void)
+static struct cpu_map *cpu_map__trim_new(int nr_cpus, int *tmp_cpus)
+static struct cpu_map *cpu_map__read_all_cpu_map(void)
+struct cpu_map *cpu_map__new(const char *cpu_list)
+struct cpu_map *cpu_map__dummy_new(void)
+void cpu_map__delete(struct cpu_map *map)

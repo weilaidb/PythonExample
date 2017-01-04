@@ -1,0 +1,16 @@
+#define __ASM_SH_BITOPS_OP32_H
+#if defined(__BIG_ENDIAN)
+#define BITOP_LE_SWIZZLE	((BITS_PER_LONG-1) & ~0x7)
+#define BYTE_NUMBER(nr)		((nr ^ BITOP_LE_SWIZZLE) / BITS_PER_BYTE)
+#define BYTE_OFFSET(nr)		((nr ^ BITOP_LE_SWIZZLE) % BITS_PER_BYTE)
+#define BYTE_NUMBER(nr)		((nr) / BITS_PER_BYTE)
+#define BYTE_OFFSET(nr)		((nr) % BITS_PER_BYTE)
+#define IS_IMMEDIATE(nr)	(__builtin_constant_p(nr))
+static inline void __set_bit(int nr, volatile unsigned long *addr)
+static inline void __clear_bit(int nr, volatile unsigned long *addr)
+static inline void __change_bit(int nr, volatile unsigned long *addr)
+static inline int __test_and_set_bit(int nr, volatile unsigned long *addr)
+static inline int __test_and_clear_bit(int nr, volatile unsigned long *addr)
+static inline int __test_and_change_bit(int nr,
+volatile unsigned long *addr)
+static inline int test_bit(int nr, const volatile unsigned long *addr)

@@ -1,0 +1,8 @@
+static int mantis_hif_sbuf_opdone_wait(struct mantis_ca *ca)
+static int mantis_hif_write_wait(struct mantis_ca *ca)
+int mantis_hif_read_mem(struct mantis_ca *ca, u32 addr)
+int mantis_hif_write_mem(struct mantis_ca *ca, u32 addr, u8 data)
+int mantis_hif_read_iom(struct mantis_ca *ca, u32 addr)
+int mantis_hif_write_iom(struct mantis_ca *ca, u32 addr, u8 data)
+int mantis_hif_init(struct mantis_ca *ca)
+void mantis_hif_exit(struct mantis_ca *ca)

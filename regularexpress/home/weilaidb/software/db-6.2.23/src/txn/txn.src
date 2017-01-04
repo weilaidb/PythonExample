@@ -1,0 +1,57 @@
+DBPRIVATE
+PREFIX	__txn
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+BEGIN_COMPAT regop		42	10
+ARG	opcode		u_int32_t	lu
+TIME	timestamp	int32_t		ld
+LOCKS	locks		DBT		s
+END
+BEGIN regop		44	10
+ARG	opcode		u_int32_t	lu
+TIME	timestamp	int32_t		ld
+ARG	envid		u_int32_t	lu
+LOCKS	locks		DBT		s
+END
+BEGIN_COMPAT ckp		42	11
+POINTER	ckp_lsn		DB_LSN *	lu
+POINTER	last_ckp	DB_LSN *	lu
+TIME	timestamp	int32_t		ld
+ARG	rep_gen		u_int32_t	lu
+END
+BEGIN ckp		43	11
+POINTER	ckp_lsn		DB_LSN *	lu
+POINTER	last_ckp	DB_LSN *	lu
+TIME	timestamp	int32_t		ld
+ARG	envid		u_int32_t	lu
+ARG	spare		u_int32_t	lu
+END
+BEGIN child		42	12
+ARG	child	u_int32_t	lx
+POINTER	c_lsn	DB_LSN *	lu
+END
+BEGIN_COMPAT xa_regop		42	13
+ARG	opcode		u_int32_t	lu
+DBT	xid		DBT		s
+ARG	formatID	int32_t		ld
+ARG	gtrid		u_int32_t	lu
+ARG	bqual		u_int32_t	lu
+POINTER	begin_lsn	DB_LSN *	lu
+LOCKS	locks		DBT		s
+END
+BEGIN prepare		48		13
+ARG	opcode		u_int32_t	lu
+DBT	gid		DBT	s
+POINTER	begin_lsn	DB_LSN *	lu
+LOCKS	locks		DBT		s
+END
+BEGIN recycle		42	14
+ARG	min		u_int32_t	lu
+ARG	max		u_int32_t	lu
+END

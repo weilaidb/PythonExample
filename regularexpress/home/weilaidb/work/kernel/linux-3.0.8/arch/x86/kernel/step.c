@@ -1,0 +1,7 @@
+unsigned long convert_ip_to_linear(struct task_struct *child, struct pt_regs *regs)
+static int is_setting_trap_flag(struct task_struct *child, struct pt_regs *regs)
+static int enable_single_step(struct task_struct *child)
+static void enable_step(struct task_struct *child, bool block)
+void user_enable_single_step(struct task_struct *child)
+void user_enable_block_step(struct task_struct *child)
+void user_disable_single_step(struct task_struct *child)

@@ -1,0 +1,7 @@
+int fdt_check_header(const void *fdt)
+const void *fdt_offset_ptr(const void *fdt, int offset, int len)
+uint32_t fdt_next_tag(const void *fdt, int offset, int *nextoffset)
+int _fdt_check_node_offset(const void *fdt, int offset)
+int fdt_next_node(const void *fdt, int offset, int *depth)
+const char *_fdt_find_string(const char *strtab, int tabsize, const char *s)
+int fdt_move(const void *fdt, void *buf, int bufsize)

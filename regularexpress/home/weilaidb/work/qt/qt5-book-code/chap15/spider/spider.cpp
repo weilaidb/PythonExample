@@ -1,0 +1,6 @@
+Spider::Spider(QObject *parent)
+: QObject(parent)
+bool Spider::getDirectory(const QUrl &url)
+void Spider::ftpDone(bool error)
+void Spider::ftpListInfo(const QUrlInfo &urlInfo)
+void Spider::processNextDirectory()

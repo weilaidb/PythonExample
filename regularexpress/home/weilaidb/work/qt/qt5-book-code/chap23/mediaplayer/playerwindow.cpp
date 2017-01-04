@@ -1,0 +1,7 @@
+PlayerWindow::PlayerWindow()
+void PlayerWindow::timerEvent(QTimerEvent *event)
+void PlayerWindow::onPlayStateChange(int, int newState)
+void PlayerWindow::onReadyStateChange(ReadyStateConstants ready)
+void PlayerWindow::onPositionChange(double, double newPos)
+void PlayerWindow::sliderValueChanged(int newValue)
+void PlayerWindow::openFile()

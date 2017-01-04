@@ -1,0 +1,15 @@
+#define _LINUX_FLAT_H
+#define	FLAT_VERSION			0x00000004L
+#define	MAX_SHARED_LIBS			(4)
+#define	MAX_SHARED_LIBS			(1)
+struct flat_hdr ;
+#define FLAT_FLAG_RAM    0x0001
+#define FLAT_FLAG_GOTPIC 0x0002
+#define FLAT_FLAG_GZIP   0x0004
+#define FLAT_FLAG_GZDATA 0x0008
+#define FLAT_FLAG_KTRACE 0x0010
+#define	OLD_FLAT_VERSION			0x00000002L
+#define OLD_FLAT_RELOC_TYPE_TEXT	0
+#define OLD_FLAT_RELOC_TYPE_DATA	1
+#define OLD_FLAT_RELOC_TYPE_BSS		2
+typedef union  flat_v2_reloc_t;

@@ -1,0 +1,42 @@
+int __cpu_number_map[NR_CPUS];
+int __cpu_logical_map[NR_CPUS];
+struct plat_smp_ops *mp_ops = NULL;
+DEFINE_PER_CPU(int, cpu_state) = ;
+void __cpuinit register_smp_ops(struct plat_smp_ops *ops)
+static inline void __cpuinit smp_store_cpu_info(unsigned int cpu)
+void __init smp_prepare_cpus(unsigned int max_cpus)
+void __init smp_prepare_boot_cpu(void)
+void native_cpu_die(unsigned int cpu)
+int native_cpu_disable(unsigned int cpu)
+void play_dead_common(void)
+void native_play_dead(void)
+int __cpu_disable(void)
+int native_cpu_disable(unsigned int cpu)
+void native_cpu_die(unsigned int cpu)
+void native_play_dead(void)
+asmlinkage void __cpuinit start_secondary(void)
+extern struct  stack_start;
+int __cpuinit __cpu_up(unsigned int cpu)
+void __init smp_cpus_done(unsigned int max_cpus)
+void smp_send_reschedule(int cpu)
+void smp_send_stop(void)
+void arch_send_call_function_ipi_mask(const struct cpumask *mask)
+void arch_send_call_function_single_ipi(int cpu)
+void smp_timer_broadcast(const struct cpumask *mask)
+static void ipi_timer(void)
+void smp_message_recv(unsigned int msg)
+int setup_profiling_timer(unsigned int multiplier)
+static void flush_tlb_all_ipi(void *info)
+void flush_tlb_all(void)
+static void flush_tlb_mm_ipi(void *mm)
+void flush_tlb_mm(struct mm_struct *mm)
+struct flush_tlb_data ;
+static void flush_tlb_range_ipi(void *info)
+void flush_tlb_range(struct vm_area_struct *vma,
+unsigned long start, unsigned long end)
+static void flush_tlb_kernel_range_ipi(void *info)
+void flush_tlb_kernel_range(unsigned long start, unsigned long end)
+static void flush_tlb_page_ipi(void *info)
+void flush_tlb_page(struct vm_area_struct *vma, unsigned long page)
+static void flush_tlb_one_ipi(void *info)
+void flush_tlb_one(unsigned long asid, unsigned long vaddr)

@@ -1,0 +1,5 @@
+#define __WINBOND_WB35RX_F_H
+unsigned char		Wb35Rx_initial(  struct hw_data * pHwData );
+void		Wb35Rx_destroy(  struct hw_data * pHwData );
+void		Wb35Rx_stop(  struct hw_data * pHwData );
+void		Wb35Rx_start(struct ieee80211_hw *hw);

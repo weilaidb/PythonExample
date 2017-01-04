@@ -1,0 +1,1 @@
+#define SNDRV_STB

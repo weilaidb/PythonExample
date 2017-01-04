@@ -1,0 +1,22 @@
+package com.sleepycat.je.log;
+import java.nio.ByteBuffer;
+import java.util.HashMap;
+import java.util.Map;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.cleaner.BaseUtilizationTracker;
+import com.sleepycat.je.cleaner.FileSummary;
+import com.sleepycat.je.cleaner.INSummary;
+import com.sleepycat.je.dbi.DatabaseId;
+import com.sleepycat.je.dbi.DatabaseImpl;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.log.entry.BINDeltaLogEntry;
+import com.sleepycat.je.log.entry.OldBINDeltaLogEntry;
+import com.sleepycat.je.log.entry.INLogEntry;
+import com.sleepycat.je.log.entry.LNLogEntry;
+import com.sleepycat.je.log.entry.LogEntry;
+import com.sleepycat.je.tree.BIN;
+import com.sleepycat.je.tree.OldBINDelta;
+import com.sleepycat.je.tree.IN;
+import com.sleepycat.je.utilint.DbLsn;
+import com.sleepycat.je.utilint.VLSN;
+public class CleanerFileReader extends FileReader

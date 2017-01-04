@@ -1,0 +1,1 @@
+#define _PARISC_HARDIRQ_H

@@ -1,0 +1,10 @@
+static int set_audclk_freq(struct cx18 *cx, u32 freq)
+void cx18_av_audio_set_path(struct cx18 *cx)
+static void set_volume(struct cx18 *cx, int volume)
+static void set_bass(struct cx18 *cx, int bass)
+static void set_treble(struct cx18 *cx, int treble)
+static void set_balance(struct cx18 *cx, int balance)
+static void set_mute(struct cx18 *cx, int mute)
+int cx18_av_s_clock_freq(struct v4l2_subdev *sd, u32 freq)
+static int cx18_av_audio_s_ctrl(struct v4l2_ctrl *ctrl)
+const struct v4l2_ctrl_ops cx18_av_audio_ctrl_ops = ;

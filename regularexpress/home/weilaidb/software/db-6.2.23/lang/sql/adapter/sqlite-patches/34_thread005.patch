@@ -1,0 +1,9 @@
+--- test/thread005.test
++++ test/thread005.test
+@@ -175,7 +175,9 @@
+}
+set ::DB [sqlite3_open test.db]
+-
++  if
+execsql
+set result "ok"

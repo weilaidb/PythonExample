@@ -1,0 +1,9 @@
+#define __SOUND_USX2Y_COMMON_H
+#define USX2Y_DRIVER_VERSION	0x0100
+#define SND_USX2Y_LOADER_ID		"USX2Y Loader"
+#define SND_USX2Y_USBPCM_ID		"USX2Y USBPCM"
+enum ;
+#define USB_ID_US122 0x8007
+#define USB_ID_US224 0x8005
+#define USB_ID_US428 0x8001
+enum ;

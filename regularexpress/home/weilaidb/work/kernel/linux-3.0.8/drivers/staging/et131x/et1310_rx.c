@@ -1,0 +1,13 @@
+void nic_return_rfd(struct et131x_adapter *etdev, struct rfd *rfd);
+int et131x_rx_dma_memory_alloc(struct et131x_adapter *adapter)
+void et131x_rx_dma_memory_free(struct et131x_adapter *adapter)
+int et131x_init_recv(struct et131x_adapter *adapter)
+void ConfigRxDmaRegs(struct et131x_adapter *etdev)
+void SetRxDmaTimer(struct et131x_adapter *etdev)
+void et131x_rx_dma_disable(struct et131x_adapter *etdev)
+void et131x_rx_dma_enable(struct et131x_adapter *etdev)
+struct rfd * nic_rx_pkts(struct et131x_adapter *etdev)
+void et131x_reset_recv(struct et131x_adapter *etdev)
+void et131x_handle_recv_interrupt(struct et131x_adapter *etdev)
+static inline u32 bump_fbr(u32 *fbr, u32 limit)
+void nic_return_rfd(struct et131x_adapter *etdev, struct rfd *rfd)

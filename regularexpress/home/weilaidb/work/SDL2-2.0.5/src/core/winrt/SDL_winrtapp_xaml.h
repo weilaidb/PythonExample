@@ -1,0 +1,1 @@
+#define _SDL_winrtapp_xaml_h

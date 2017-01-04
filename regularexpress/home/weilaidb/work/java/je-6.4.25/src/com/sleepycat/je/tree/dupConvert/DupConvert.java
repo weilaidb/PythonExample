@@ -1,0 +1,25 @@
+package com.sleepycat.je.tree.dupConvert;
+import java.util.ArrayList;
+import com.sleepycat.je.CacheMode;
+import com.sleepycat.je.EnvironmentFailureException;
+import com.sleepycat.je.PreloadConfig;
+import com.sleepycat.je.cleaner.LocalUtilizationTracker;
+import com.sleepycat.je.config.EnvironmentParams;
+import com.sleepycat.je.dbi.DatabaseId;
+import com.sleepycat.je.dbi.DatabaseImpl;
+import com.sleepycat.je.dbi.DbTree;
+import com.sleepycat.je.dbi.DupKeyData;
+import com.sleepycat.je.dbi.EnvironmentImpl;
+import com.sleepycat.je.log.LogEntryType;
+import com.sleepycat.je.tree.BIN;
+import com.sleepycat.je.tree.ChildReference;
+import com.sleepycat.je.tree.IN;
+import com.sleepycat.je.tree.Key;
+import com.sleepycat.je.tree.LN;
+import com.sleepycat.je.tree.Node;
+import com.sleepycat.je.txn.BasicLocker;
+import com.sleepycat.je.txn.LockGrantType;
+import com.sleepycat.je.txn.LockResult;
+import com.sleepycat.je.txn.LockType;
+import com.sleepycat.je.utilint.DbLsn;
+public class DupConvert

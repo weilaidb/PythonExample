@@ -1,0 +1,8 @@
+klinfo_t *find_component(lboard_t *brd, klinfo_t *kli, unsigned char struct_type)
+klinfo_t *find_first_component(lboard_t *brd, unsigned char struct_type)
+lboard_t *find_lboard(lboard_t *start, unsigned char brd_type)
+lboard_t *find_lboard_class(lboard_t *start, unsigned char brd_type)
+cnodeid_t get_cpu_cnode(cpuid_t cpu)
+klcpu_t *nasid_slice_to_cpuinfo(nasid_t nasid, int slice)
+klcpu_t *sn_get_cpuinfo(cpuid_t cpu)
+int get_cpu_slice(cpuid_t cpu)

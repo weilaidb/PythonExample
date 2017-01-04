@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# Copyright (c) 2012 James Almer
+# Copyright (c) 2013 Tiancheng "Timothy" Gu
+#
+# This file is part of FFmpeg.
+#
+# FFmpeg is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# FFmpeg is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with FFmpeg; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+## Help
+die()
+# Script to generate all:
+# (to remove prefix '# ' and add 'tools/' as prefix: sed -r 's/^./tools\
+# gen-rc libavutil     "FFmpeg utility library"
+# gen-rc libavcodec    "FFmpeg codec library"
+# gen-rc libavformat   "FFmpeg container format library"
+# gen-rc libavdevice   "FFmpeg device handling library"
+# gen-rc libavfilter   "FFmpeg audio/video filtering library"
+# gen-rc libpostproc   "FFmpeg postprocessing library"
+# gen-rc libavresample "Libav audio resampling library"
+# gen-rc libswscale    "FFmpeg image rescaling library"
+# gen-rc libswresample "FFmpeg audio resampling library"
+## Sanity checks and argument parsing
+if test $# -lt 2 || test $# -gt 3; then
+die
+fi
+name=$1
+shortname=$
+comment=$2
+capname=`echo $name | awk ''`
+version=$_VERSION
+mkdir -p "$name"
+output="$name/$res.rc"
+## REAL magic
+cat <<EOF > $output
+1 VERSIONINFO
+FILEVERSION     $_MAJOR, $_MINOR, $_MICRO, 0
+PRODUCTVERSION  $_MAJOR, $_MINOR, $_MICRO, 0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_DLL
+EOF

@@ -1,0 +1,86 @@
+--- test/tester.tcl
++++ test/tester.tcl
+@@ -138,7 +138,7 @@
+# NOTE: Return the default number of retries for [file] operations.  A
+#       value of zero or less here means "disabled".
+#
+-    return [expr ]
++    return [expr ]
+}
+return $::G(file-retries)
+}
+@@ -500,6 +500,9 @@
+forcedelete test.db-journal
+forcedelete test.db-wal
+sqlite3 db ./test.db
++  if
+set ::DB [sqlite3_connection_pointer db]
+if
+}
++# Pull in the list of test cases that are excluded and ignored when running
++# with Berkeley DB.
++#
++source $testdir/../../../../test/sql/bdb_excl.test
++
+# Record the fact that a sequence of tests were omitted.
+#
+proc omit_test
+-proc run_ioerr_prep
+-
+# Usage: do_ioerr_test <test number> <options...>
+#
+# This proc is used to implement test cases that check that IO errors
+@@ -1392,25 +1392,9 @@
+# a couple of obscure IO errors that do not return them.
+set ::ioerropts(-erc) 0
+-  # Create a single TCL script from the TCL and SQL specified
+-  # as the body of the test.
+-  set ::ioerrorbody
+-  if
+-  if
+-
+-  save_prng_state
+-  if
+-
+set ::go 1
+#reset_prng_state
++  save_prng_state
+for    ] $n
++
++    # Create a single TCL script from the TCL and SQL specified
++    # as the body of the test.
++    set ::ioerrorbody
++    if
++    if
+-    # Execute the TCL script created for the body of this test. If
+-    # at least N IO operations performed by SQLite as a result of
+-    # the script, the Nth will fail.
++    # Execute the TCL Script created in the above block. If
++    # there are at least N IO operations performed by SQLite as
++    # a result of the script, the Nth will fail.
+do_test $testname.$n.3  1
++        cksum
++      } $checksum
+}
+set ::sqlite_io_error_hardhit 0
+@@ -1747,6 +1748,7 @@
+$db eval
+do_test $testname [list $db eval "PRAGMA main.journal_mode"]
+}
++  catch
+}
+proc permutation
++  forcedelete test.db-journal/__db.register
+}
+proc db_restore_and_reopen  {
+catch
+--- Makefile.in
++++ Makefile.in
+@@ -445,7 +445,6 @@
+$(TOP)/ext/fts3/fts3.c \
+$(TOP)/ext/fts3/fts3_aux.c \
+$(TOP)/ext/fts3/fts3_expr.c \
+-  $(TOP)/ext/fts3/fts3_term.c \
+$(TOP)/ext/fts3/fts3_tokenizer.c \
+$(TOP)/ext/fts3/fts3_write.c \
+$(TOP)/ext/async/sqlite3async.c

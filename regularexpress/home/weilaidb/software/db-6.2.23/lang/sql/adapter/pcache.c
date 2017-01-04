@@ -1,0 +1,8 @@
+int sqlite3PcacheInitialize(void)
+void sqlite3PcacheShutdown(void)
+void sqlite3PCacheBufferSetup(void *p, int sz, int n)
+void sqlite3PCacheSetDefault(void)
+void sqlite3PcacheStats(int *a,int *b,int *c,int *d)
+int sqlite3HeaderSizePcache(void)
+int sqlite3HeaderSizePcache1(void)
+sqlite3_mutex *sqlite3Pcache1Mutex(void)

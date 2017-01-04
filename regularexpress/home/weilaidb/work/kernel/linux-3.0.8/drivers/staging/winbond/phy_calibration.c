@@ -1,0 +1,36 @@
+#define LOOP_TIMES      20
+#define US              1000
+#define AG_CONST        0.6072529350
+#define FIXED(X)        ((s32)((X) * 32768.0))
+#define DEG2RAD(X)      0.017453 * (X)
+static const s32 Angles[] = ;
+s32 _s13_to_s32(u32 data)
+u32 _s32_to_s13(s32 data)
+s32 _s4_to_s32(u32 data)
+u32 _s32_to_s4(s32 data)
+s32 _s5_to_s32(u32 data)
+u32 _s32_to_s5(s32 data)
+s32 _s6_to_s32(u32 data)
+u32 _s32_to_s6(s32 data)
+s32 _s9_to_s32(u32 data)
+u32 _s32_to_s9(s32 data)
+s32 _floor(s32 n)
+u32 _sqrt(u32 sqsum)
+void _sin_cos(s32 angle, s32 *sin, s32 *cos)
+static unsigned char hal_get_dxx_reg(struct hw_data *pHwData, u16 number, u32 * pValue)
+#define hw_get_dxx_reg(_A, _B, _C) hal_get_dxx_reg(_A, _B, (u32 *)_C)
+static unsigned char hal_set_dxx_reg(struct hw_data *pHwData, u16 number, u32 value)
+#define hw_set_dxx_reg(_A, _B, _C) hal_set_dxx_reg(_A, _B, (u32)_C)
+void _reset_rx_cal(struct hw_data *phw_data)
+void _rxadc_dc_offset_cancellation_winbond(struct hw_data *phw_data, u32 frequency)
+void _txidac_dc_offset_cancellation_winbond(struct hw_data *phw_data)
+void _txqdac_dc_offset_cacellation_winbond(struct hw_data *phw_data)
+u8 _tx_iq_calibration_loop_winbond(struct hw_data *phw_data,
+s32 a_2_threshold,
+s32 b_2_threshold)
+void _tx_iq_calibration_winbond(struct hw_data *phw_data)
+u8 _rx_iq_calibration_loop_winbond(struct hw_data *phw_data, u16 factor, u32 frequency)
+void _rx_iq_calibration_winbond(struct hw_data *phw_data, u32 frequency)
+void phy_calibration_winbond(struct hw_data *phw_data, u32 frequency)
+void phy_set_rf_data(struct hw_data *pHwData, u32 index, u32 value)
+unsigned char adjust_TXVGA_for_iq_mag(struct hw_data *phw_data)

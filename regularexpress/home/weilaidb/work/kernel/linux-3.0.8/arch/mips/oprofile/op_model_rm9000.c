@@ -1,0 +1,22 @@
+#define RM9K_COUNTER1_EVENT(event)	((event) << 0)
+#define RM9K_COUNTER1_SUPERVISOR	(1ULL    <<  7)
+#define RM9K_COUNTER1_KERNEL		(1ULL    <<  8)
+#define RM9K_COUNTER1_USER		(1ULL    <<  9)
+#define RM9K_COUNTER1_ENABLE		(1ULL    << 10)
+#define RM9K_COUNTER1_OVERFLOW		(1ULL    << 15)
+#define RM9K_COUNTER2_EVENT(event)	((event) << 16)
+#define RM9K_COUNTER2_SUPERVISOR	(1ULL    << 23)
+#define RM9K_COUNTER2_KERNEL		(1ULL    << 24)
+#define RM9K_COUNTER2_USER		(1ULL    << 25)
+#define RM9K_COUNTER2_ENABLE		(1ULL    << 26)
+#define RM9K_COUNTER2_OVERFLOW		(1ULL    << 31)
+extern unsigned int rm9000_perfcount_irq;
+static struct rm9k_register_config  reg;
+static void rm9000_reg_setup(struct op_counter_config *ctr)
+static void rm9000_cpu_setup(void *args)
+static void rm9000_cpu_start(void *args)
+static void rm9000_cpu_stop(void *args)
+static irqreturn_t rm9000_perfcount_handler(int irq, void *dev_id)
+static int __init rm9000_init(void)
+static void rm9000_exit(void)
+struct op_mips_model op_model_rm9000_ops = ;

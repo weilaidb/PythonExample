@@ -1,0 +1,20 @@
+package com.sleepycat.je.rep.impl.node;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import com.sleepycat.je.CommitToken;
+import com.sleepycat.je.rep.GroupShutdownException;
+import com.sleepycat.je.rep.NoConsistencyRequiredPolicy;
+import com.sleepycat.je.rep.NodeType;
+import com.sleepycat.je.rep.ReplicatedEnvironment;
+import com.sleepycat.je.rep.impl.RepParams;
+import com.sleepycat.je.rep.impl.RepTestBase;
+import com.sleepycat.je.rep.utilint.RepTestUtils;
+import com.sleepycat.je.rep.utilint.RepTestUtils.RepEnvInfo;
+import com.sleepycat.je.utilint.TestHookAdapter;
+public class GroupShutdownTest extends RepTestBase

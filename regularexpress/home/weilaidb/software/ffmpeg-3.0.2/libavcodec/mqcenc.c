@@ -1,0 +1,8 @@
+static void byteout(MqcState *mqc)
+static void renorme(MqcState *mqc)
+static void setbits(MqcState *mqc)
+void ff_mqc_initenc(MqcState *mqc, uint8_t *bp)
+void ff_mqc_encode(MqcState *mqc, uint8_t *cxstate, int d)
+int ff_mqc_length(MqcState *mqc)
+int ff_mqc_flush(MqcState *mqc)
+int ff_mqc_flush_to(MqcState *mqc, uint8_t *dst, int *dst_len)

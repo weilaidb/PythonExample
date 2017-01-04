@@ -1,0 +1,13 @@
+static void qpolicy_simple_push(struct sock *sk, struct sk_buff *skb)
+static bool qpolicy_simple_full(struct sock *sk)
+static struct sk_buff *qpolicy_simple_top(struct sock *sk)
+static struct sk_buff *qpolicy_prio_best_skb(struct sock *sk)
+static struct sk_buff *qpolicy_prio_worst_skb(struct sock *sk)
+static bool qpolicy_prio_full(struct sock *sk)
+static struct dccp_qpolicy_operations  qpol_table[DCCPQ_POLICY_MAX] = ;
+void dccp_qpolicy_push(struct sock *sk, struct sk_buff *skb)
+bool dccp_qpolicy_full(struct sock *sk)
+void dccp_qpolicy_drop(struct sock *sk, struct sk_buff *skb)
+struct sk_buff *dccp_qpolicy_top(struct sock *sk)
+struct sk_buff *dccp_qpolicy_pop(struct sock *sk)
+bool dccp_qpolicy_param_ok(struct sock *sk, __be32 param)

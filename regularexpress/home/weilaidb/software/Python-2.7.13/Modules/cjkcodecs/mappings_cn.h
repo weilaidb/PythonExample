@@ -1,0 +1,11 @@
+static const ucs2_t __gb2312_decmap[7482] = ;
+static const struct dbcs_index gb2312_decmap[256] = ;
+static const ucs2_t __gbkext_decmap[14531] = ;
+static const struct dbcs_index gbkext_decmap[256] = ;
+static const DBCHAR __gbcommon_encmap[23231] = ;
+static const struct unim_index gbcommon_encmap[256] = ;
+static const ucs2_t __gb18030ext_decmap[2729] = ;
+static const struct dbcs_index gb18030ext_decmap[256] = ;
+static const DBCHAR __gb18030ext_encmap[3227] = ;
+static const struct unim_index gb18030ext_encmap[256] = ;
+static const struct _gb18030_to_unibmp_ranges  gb18030_to_unibmp_ranges[] = ;

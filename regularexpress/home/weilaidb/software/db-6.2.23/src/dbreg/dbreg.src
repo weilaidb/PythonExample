@@ -1,0 +1,29 @@
+DBPRIVATE
+PREFIX	__dbreg
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+INCLUDE
+BEGIN_COMPAT register		42	2
+DBOP	opcode		u_int32_t	lu
+DBT	name		DBT		s
+DBT	uid		DBT		s
+ARG	fileid		int32_t		ld
+ARG	ftype		DBTYPE		lx
+ARG	meta_pgno	db_pgno_t	lu
+ARG	id		u_int32_t	lx
+END
+BEGIN register		61	2
+DBOP	opcode		u_int32_t	lu
+DBT	name		DBT		s
+DBT	uid		DBT		s
+ARG	fileid		int32_t		ld
+ARG	ftype		DBTYPE		lx
+ARG	meta_pgno	db_pgno_t	lu
+ARG	id		u_int32_t	lx
+ARG	blob_fid_lo	u_int32_t	lu
+ARG	blob_fid_hi	u_int32_t	lu
+END

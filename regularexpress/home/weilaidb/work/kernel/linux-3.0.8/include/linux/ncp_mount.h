@@ -1,0 +1,14 @@
+#define _LINUX_NCP_MOUNT_H
+#define NCP_MOUNT_VERSION 3
+#define NCP_MOUNT_SOFT		0x0001
+#define NCP_MOUNT_INTR		0x0002
+#define NCP_MOUNT_STRONG	0x0004
+#define NCP_MOUNT_NO_OS2	0x0008
+#define NCP_MOUNT_NO_NFS	0x0010
+#define NCP_MOUNT_EXTRAS	0x0020
+#define NCP_MOUNT_SYMLINKS	0x0040
+#define NCP_MOUNT_NFS_EXTRAS	0x0080
+struct ncp_mount_data ;
+#define NCP_MOUNT_VERSION_V4	(4)
+struct ncp_mount_data_v4 ;
+#define NCP_MOUNT_VERSION_V5	(5)

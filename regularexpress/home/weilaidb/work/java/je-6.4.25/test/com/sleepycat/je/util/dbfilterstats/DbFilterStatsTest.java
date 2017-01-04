@@ -1,0 +1,20 @@
+package com.sleepycat.je.util.dbfilterstats;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintStream;
+import java.io.StringReader;
+import java.util.Map.Entry;
+import java.util.SortedMap;
+import org.junit.Test;
+import com.sleepycat.je.statcap.StatFile;
+import com.sleepycat.je.util.DbFilterStats;
+import com.sleepycat.je.util.Splitter;
+import com.sleepycat.util.test.SharedTestUtils;
+import com.sleepycat.util.test.TestBase;
+public class DbFilterStatsTest extends TestBase

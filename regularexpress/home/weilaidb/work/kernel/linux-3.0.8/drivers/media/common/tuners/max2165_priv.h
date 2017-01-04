@@ -1,0 +1,19 @@
+#define __MAX2165_PRIV_H__
+#define REG_NDIV_INT 0x00
+#define REG_NDIV_FRAC2 0x01
+#define REG_NDIV_FRAC1 0x02
+#define REG_NDIV_FRAC0 0x03
+#define REG_TRACK_FILTER 0x04
+#define REG_LNA 0x05
+#define REG_PLL_CFG 0x06
+#define REG_TEST 0x07
+#define REG_SHUTDOWN 0x08
+#define REG_VCO_CTRL 0x09
+#define REG_BASEBAND_CTRL 0x0A
+#define REG_DC_OFFSET_CTRL 0x0B
+#define REG_DC_OFFSET_DAC 0x0C
+#define REG_ROM_TABLE_ADDR 0x0D
+#define REG_ROM_TABLE_DATA 0x10
+#define REG_STATUS 0x11
+#define REG_AUTOTUNE 0x12
+struct max2165_priv ;

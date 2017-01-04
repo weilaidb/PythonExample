@@ -1,0 +1,3 @@
+#define _ASM_AVR32_UNALIGNED_H
+#define get_unaligned	__get_unaligned_be
+#define put_unaligned	__put_unaligned_be

@@ -1,0 +1,95 @@
+diff -r fff253f6cfea SQLite.Interop/src/contrib/extension-functions.c
+--- SQLite.Interop/src/contrib/extension-functions.c	Tue Apr 15 16:41:07 2014 +0800
++++ SQLite.Interop/src/contrib/extension-functions.c	Tue Apr 15 17:13:26 2014 +0800
+@@ -126,7 +126,13 @@
+#if !defined(_WIN32_WCE) || defined(HAVE_ERRNO_H)
++#if defined(_WIN32_WCE)
++
++#define	strerror	__db_Cstrerror
++extern char *strerror(int errnum);
++
++#undef errno
+int errno;
+#define strerror(x)		""
+@@ -141,8 +147,8 @@
+typedef signed char int8_t;
+typedef unsigned char uint8_t;
+-typedef signed int int16_t;
+-typedef unsigned int uint16_t;
++typedef signed short int16_t;
++typedef unsigned short uint16_t;
+typedef signed long int int32_t;
+typedef unsigned long int uint32_t;
+typedef signed long long int int64_t;
+diff -r fff253f6cfea SQLite.Interop/src/win/interop.c
+--- SQLite.Interop/src/win/interop.c	Tue Apr 15 16:41:07 2014 +0800
++++ SQLite.Interop/src/win/interop.c	Tue Apr 15 17:13:26 2014 +0800
+@@ -43,9 +43,6 @@
+#if defined(SQLITE_OS_WIN)
+-#if defined(INTEROP_CODEC) && !defined(INTEROP_INCLUDE_SEE)
+-
+-
+@@ -932,7 +929,7 @@
+int ret = -1;
+if (!p || !db) return ret;
+-  sqlite3_mutex_enter(db->mutex);
++
+return ret;
+}
+diff -r fff253f6cfea System.Data.SQLite/SQLiteConnection.cs
+--- System.Data.SQLite/SQLiteConnection.cs	Tue Apr 15 16:41:07 2014 +0800
++++ System.Data.SQLite/SQLiteConnection.cs	Tue Apr 15 17:13:26 2014 +0800
+@@ -2680,14 +2680,14 @@
+cmd.CommandText = String.Format(CultureInfo.InvariantCulture, "PRAGMA max_page_count=", intValue);
+cmd.ExecuteNonQuery();
+}
+-
+-                  strValue = FindKey(opts, "Legacy Format", DefaultLegacyFormat.ToString());
+-                  boolValue = SQLiteConvert.ToBoolean(strValue);
+-                  if (boolValue != DefaultLegacyFormat)
+-
++
++
++
++
++
++
++
++
+strValue = FindKey(opts, "Synchronous", DefaultSynchronous.ToString());
+enumValue = TryParseEnum(typeof(SQLiteSynchronousEnum), strValue, true);
+@@ -2709,8 +2709,9 @@
+enumValue = TryParseEnum(typeof(SQLiteJournalModeEnum), strValue, true);
+if (!(enumValue is SQLiteJournalModeEnum) || ((SQLiteJournalModeEnum)enumValue != DefaultJournalMode))
+strValue = FindKey(opts, "Foreign Keys", DefaultForeignKeys.ToString());
+diff -r fff253f6cfea test/TestCases.cs
+--- test/TestCases.cs	Tue Apr 15 16:41:07 2014 +0800
++++ test/TestCases.cs	Tue Apr 15 17:13:26 2014 +0800
+@@ -1254,7 +1254,8 @@
+CheckLocked();
+}
+-    [Test(Sequence = 60)]
++
++
+internal void LockTest()
+-    [Test(Sequence=11)]
++
++
+internal void MultithreadingTest()
+{
+using (DbCommand cmd = _cnn.CreateCommand())
+diff -r fff253f6cfea testce/TestCases.cs
+--- testce/TestCases.cs	Tue Apr 15 16:41:07 2014 +0800
++++ testce/TestCases.cs	Tue Apr 15 17:13:26 2014 +0800
+@@ -252,9 +252,10 @@
+try
+catch (Exception)
+-      total++;
+-      try
+-      catch (Exception)
++
++
++
++
+total++;
+try

@@ -1,0 +1,7 @@
+int fileno(FILE *f)
+int isatty(int fn)
+bits unixtime(bits ld,bits ex)
+int acorntime(bits *ex, bits *ld, time_t utime)
+int isdir(char *fn)
+int isfile(char *fn)
+int object_exists(char *fn)

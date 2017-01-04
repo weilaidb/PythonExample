@@ -1,0 +1,22 @@
+#define OFFS_CON	(0x00)
+#define OFFS_DAT	(0x04)
+#define OFFS_UP		(0x08)
+static void s3c_gpio_pm_1bit_save(struct s3c_gpio_chip *chip)
+static void s3c_gpio_pm_1bit_resume(struct s3c_gpio_chip *chip)
+struct s3c_gpio_pm s3c_gpio_pm_1bit = ;
+static void s3c_gpio_pm_2bit_save(struct s3c_gpio_chip *chip)
+static inline int is_sfn(unsigned long con)
+static inline int is_in(unsigned long con)
+static inline int is_out(unsigned long con)
+static void s3c_gpio_pm_2bit_resume(struct s3c_gpio_chip *chip)
+struct s3c_gpio_pm s3c_gpio_pm_2bit = ;
+#if defined(CONFIG_ARCH_S3C64XX) || defined(CONFIG_PLAT_S5P)
+static void s3c_gpio_pm_4bit_save(struct s3c_gpio_chip *chip)
+static u32 s3c_gpio_pm_4bit_mask(u32 old_gpcon, u32 gps_gpcon)
+static void s3c_gpio_pm_4bit_con(struct s3c_gpio_chip *chip, int index)
+static void s3c_gpio_pm_4bit_resume(struct s3c_gpio_chip *chip)
+struct s3c_gpio_pm s3c_gpio_pm_4bit = ;
+static void s3c_pm_save_gpio(struct s3c_gpio_chip *ourchip)
+void s3c_pm_save_gpios(void)
+static void s3c_pm_resume_gpio(struct s3c_gpio_chip *ourchip)
+void s3c_pm_restore_gpios(void)

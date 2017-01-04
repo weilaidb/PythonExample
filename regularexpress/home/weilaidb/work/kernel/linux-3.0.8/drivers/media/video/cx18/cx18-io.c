@@ -1,0 +1,7 @@
+void cx18_memset_io(struct cx18 *cx, void __iomem *addr, int val, size_t count)
+void cx18_sw1_irq_enable(struct cx18 *cx, u32 val)
+void cx18_sw1_irq_disable(struct cx18 *cx, u32 val)
+void cx18_sw2_irq_enable(struct cx18 *cx, u32 val)
+void cx18_sw2_irq_disable(struct cx18 *cx, u32 val)
+void cx18_sw2_irq_disable_cpu(struct cx18 *cx, u32 val)
+void cx18_setup_page(struct cx18 *cx, u32 addr)

@@ -1,0 +1,5 @@
+char *aa_split_fqname(char *fqname, char **ns_name)
+void aa_info_message(const char *str)
+void *kvmalloc(size_t size)
+static void do_vfree(struct work_struct *work)
+void kvfree(void *buffer)

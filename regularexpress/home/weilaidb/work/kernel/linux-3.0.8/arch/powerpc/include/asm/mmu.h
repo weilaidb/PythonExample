@@ -1,0 +1,73 @@
+#define _ASM_POWERPC_MMU_H_
+#define MMU_FTR_HPTE_TABLE		ASM_CONST(0x00000001)
+#define MMU_FTR_TYPE_8xx		ASM_CONST(0x00000002)
+#define MMU_FTR_TYPE_40x		ASM_CONST(0x00000004)
+#define MMU_FTR_TYPE_44x		ASM_CONST(0x00000008)
+#define MMU_FTR_TYPE_FSL_E		ASM_CONST(0x00000010)
+#define MMU_FTR_TYPE_3E			ASM_CONST(0x00000020)
+#define MMU_FTR_TYPE_47x		ASM_CONST(0x00000040)
+#define MMU_FTR_USE_HIGH_BATS		ASM_CONST(0x00010000)
+#define MMU_FTR_BIG_PHYS		ASM_CONST(0x00020000)
+#define MMU_FTR_USE_TLBIVAX_BCAST	ASM_CONST(0x00040000)
+#define MMU_FTR_USE_TLBILX		ASM_CONST(0x00080000)
+#define MMU_FTR_LOCK_BCAST_INVAL	ASM_CONST(0x00100000)
+#define MMU_FTR_NEED_DTLB_SW_LRU	ASM_CONST(0x00200000)
+#define MMU_FTR_USE_TLBRSRV		ASM_CONST(0x00800000)
+#define MMU_FTR_USE_PAIRED_MAS		ASM_CONST(0x01000000)
+#define MMU_FTR_SLB			ASM_CONST(0x02000000)
+#define MMU_FTR_16M_PAGE		ASM_CONST(0x04000000)
+#define MMU_FTR_TLBIEL			ASM_CONST(0x08000000)
+#define MMU_FTR_LOCKLESS_TLBIE		ASM_CONST(0x10000000)
+#define MMU_FTR_CI_LARGE_PAGE		ASM_CONST(0x20000000)
+#define MMU_FTR_1T_SEGMENT		ASM_CONST(0x40000000)
+#define MMU_FTR_NO_SLBIE_B		ASM_CONST(0x80000000)
+#define MMU_FTRS_DEFAULT_HPTE_ARCH_V2	\
+MMU_FTR_HPTE_TABLE | MMU_FTR_PPCAS_ARCH_V2
+#define MMU_FTRS_POWER4		MMU_FTRS_DEFAULT_HPTE_ARCH_V2
+#define MMU_FTRS_PPC970		MMU_FTRS_POWER4
+#define MMU_FTRS_POWER5		MMU_FTRS_POWER4 | MMU_FTR_LOCKLESS_TLBIE
+#define MMU_FTRS_POWER6		MMU_FTRS_POWER4 | MMU_FTR_LOCKLESS_TLBIE
+#define MMU_FTRS_POWER7		MMU_FTRS_POWER4 | MMU_FTR_LOCKLESS_TLBIE
+#define MMU_FTRS_CELL		MMU_FTRS_DEFAULT_HPTE_ARCH_V2 | \
+MMU_FTR_CI_LARGE_PAGE
+#define MMU_FTRS_PA6T		MMU_FTRS_DEFAULT_HPTE_ARCH_V2 | \
+MMU_FTR_CI_LARGE_PAGE | MMU_FTR_NO_SLBIE_B
+#define MMU_FTRS_A2		MMU_FTR_TYPE_3E | MMU_FTR_USE_TLBILX | \
+MMU_FTR_USE_TLBIVAX_BCAST | \
+MMU_FTR_LOCK_BCAST_INVAL | \
+MMU_FTR_USE_TLBRSRV | \
+MMU_FTR_USE_PAIRED_MAS | \
+MMU_FTR_TLBIEL | \
+MMU_FTR_16M_PAGE
+static inline int mmu_has_feature(unsigned long feature)
+extern unsigned int __start___mmu_ftr_fixup, __stop___mmu_ftr_fixup;
+extern void early_init_mmu(void);
+extern void early_init_mmu_secondary(void);
+extern void setup_initial_memory_limit(phys_addr_t first_memblock_base,
+phys_addr_t first_memblock_size);
+extern u64 ppc64_rma_size;
+#define MMU_PAGE_4K	0
+#define MMU_PAGE_16K	1
+#define MMU_PAGE_64K	2
+#define MMU_PAGE_64K_AP	3
+#define MMU_PAGE_256K	4
+#define MMU_PAGE_1M	5
+#define MMU_PAGE_8M	6
+#define MMU_PAGE_16M	7
+#define MMU_PAGE_256M	8
+#define MMU_PAGE_1G	9
+#define MMU_PAGE_16G	10
+#define MMU_PAGE_64G	11
+#define MMU_PAGE_COUNT	12
+#if defined(CONFIG_PPC_STD_MMU_64)
+#  include <asm/mmu-hash64.h>
+#elif defined(CONFIG_PPC_STD_MMU_32)
+#  include <asm/mmu-hash32.h>
+#elif defined(CONFIG_40x)
+#  include <asm/mmu-40x.h>
+#elif defined(CONFIG_44x)
+#  include <asm/mmu-44x.h>
+#elif defined(CONFIG_PPC_BOOK3E_MMU)
+#  include <asm/mmu-book3e.h>
+#elif defined (CONFIG_PPC_8xx)
+#  include <asm/mmu-8xx.h>

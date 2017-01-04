@@ -1,0 +1,185 @@
+6af1f0192ff8740fe77db7cf02c739ccfbdf119c (from 2bc2564145835996734d6ed5d1880f85b17233d6)
+diff --git a/Documentation/git-ls-tree.txt b/Documentation/git-ls-tree.txt
+--- a/Documentation/git-ls-tree.txt
++++ b/Documentation/git-ls-tree.txt
+@@ -4,23 +4,26 @@ v0.1, May 2005
+NAME
+----
+-git-ls-tree - Displays a tree object in human readable form
++git-ls-tree - Lists the contents of a tree object.
+SYNOPSIS
+--------
+-'git-ls-tree' [-r] [-z] <tree-ish> [paths...]
++'git-ls-tree' [-d] [-r] [-z] <tree-ish> [paths...]
+DESCRIPTION
+-----------
+-Converts the tree object to a human readable (and script processable)
+-form.
++Lists the contents of a tree object, like what "/bin/ls -a" does
++in the current working directory.
+OPTIONS
+-------
+<tree-ish>::
+Id of a tree.
++-d::
++	show only the named tree entry itself, not its children
++
+-r::
+recurse into sub-trees
+@@ -28,18 +31,19 @@ OPTIONS
+\0 line termination on output
+paths::
+-	Optionally, restrict the output of git-ls-tree to specific
+-	paths. Directories will only list their tree blob ids.
+-	Implies -r.
++	When paths are given, shows them.  Otherwise implicitly
++	uses the root level of the tree as the sole path argument.
++
+Output Format
+-------------
+-        <mode>\t	<type>\t	<object>\t	<file>
++        <mode> SP <type> SP <object> TAB <file>
+Author
+------
+Written by Linus Torvalds <torvalds@osdl.org>
++Completely rewritten from scratch by Junio C Hamano <junkio@cox.net>
+Documentation
+--------------
+diff --git a/ls-tree.c b/ls-tree.c
+dissimilarity index 82%
+--- ls-tree.c
++++ ls-tree.c
+@@ -1,212 +1,247 @@
+-
+-
+-
+-static int line_termination = '\n';
+-static int recursive = 0;
+-
+-struct path_prefix ;
+-
+-#define DEBUG(fmt, ...)
+-
+-static int string_path_prefix(char *buff, size_t blen, struct path_prefix *prefix)
+-
+-
+-static void print_path_prefix(struct path_prefix *prefix)
+-
+-
+-
+-static int pathcmp(const char *path, struct path_prefix *prefix)
+-
+-
+-
+-static void list_recursive(void *buffer,
+-			   const char *type,
+-			   unsigned long size,
+-			   struct path_prefix *prefix,
+-			   char **match, int matches)
+-
+-
+-static int qcmp(const void *a, const void *b)
+-
+-
+-static int list(unsigned char *sha1,char **path)
+-
+-
+-static const char *ls_tree_usage = "git-ls-tree [-r] [-z] <key> [paths...]";
+-
+-int main(int argc, char **argv)
+-
++
++
++
++
++
++static int line_termination = '\n';
++#define LS_RECURSIVE 1
++#define LS_TREE_ONLY 2
++static int ls_options = 0;
++
++static struct tree_entry_list root_entry;
++
++static void prepare_root(unsigned char *sha1)
++
++
++static int prepare_children(struct tree_entry_list *elem)
++
++
++static struct tree_entry_list *find_entry_0(struct tree_entry_list *elem,
++					    const char *path,
++					    const char *path_end)
++
++
++static struct tree_entry_list *find_entry(const char *path,
++					  const char *path_end)
++
++
++static void show_entry_name(struct tree_entry_list *e)
++
++
++static const char *entry_type(struct tree_entry_list *e)
++
++
++static const char *entry_hex(struct tree_entry_list *e)
++
++
++
++static int show_entry(struct tree_entry_list *, int);
++
++static int show_children(struct tree_entry_list *e, int level)
++
++
++static int show_entry(struct tree_entry_list *e, int level)
++
++
++static int list_one(const char *path, const char *path_end)
++
++
++static int list(char **path)
++
++
++static const char *ls_tree_usage =
++	"git-ls-tree [-d] [-r] [-z] <tree-ish> [path...]";
++
++int main(int argc, char **argv)
++
+diff --git a/t/t3100-ls-tree-restrict.sh b/t/t3100-ls-tree-restrict.sh
+--- a/t/t3100-ls-tree-restrict.sh
++++ b/t/t3100-ls-tree-restrict.sh
+@@ -74,8 +74,8 @@ test_expect_success \
+'ls-tree filtered' \
+'git-ls-tree $tree path1 path0 >current &&
+cat >expected <<\EOF &&
+-100644 blob X	path0
+120000 blob X	path1
++100644 blob X	path0
+EOF
+test_output'
+@@ -85,7 +85,6 @@ test_expect_success \
+cat >expected <<\EOF &&
+040000 tree X	path2
+040000 tree X	path2/baz
+-100644 blob X	path2/baz/b
+120000 blob X	path2/bazbo
+100644 blob X	path2/foo
+EOF
+diff --git a/tree.c b/tree.c
+--- a/tree.c
++++ b/tree.c
+@@ -133,7 +133,7 @@ int parse_tree_buffer(struct tree *item,
+}
+if (obj)
+add_ref(&item->object, obj);
+-
++		entry->parent = NULL;
+*list_p = entry;
+list_p = &entry->next;
+}
+diff --git a/tree.h b/tree.h
+--- a/tree.h
++++ b/tree.h
+@@ -16,6 +16,7 @@ struct tree_entry_list  item;
++	struct tree_entry_list *parent;
+};
+struct tree {

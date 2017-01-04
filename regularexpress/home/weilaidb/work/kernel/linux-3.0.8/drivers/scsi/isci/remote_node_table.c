@@ -1,0 +1,48 @@
+static u32 sci_remote_node_table_get_group_index(
+struct sci_remote_node_table *remote_node_table,
+u32 group_table_index)
+static void sci_remote_node_table_clear_group_index(
+struct sci_remote_node_table *remote_node_table,
+u32 group_table_index,
+u32 group_index)
+static void sci_remote_node_table_set_group_index(
+struct sci_remote_node_table *remote_node_table,
+u32 group_table_index,
+u32 group_index)
+static void sci_remote_node_table_set_node_index(
+struct sci_remote_node_table *remote_node_table,
+u32 remote_node_index)
+static void sci_remote_node_table_clear_node_index(
+struct sci_remote_node_table *remote_node_table,
+u32 remote_node_index)
+static void sci_remote_node_table_clear_group(
+struct sci_remote_node_table *remote_node_table,
+u32 group_index)
+static void sci_remote_node_table_set_group(
+struct sci_remote_node_table *remote_node_table,
+u32 group_index)
+static u8 sci_remote_node_table_get_group_value(
+struct sci_remote_node_table *remote_node_table,
+u32 group_index)
+void sci_remote_node_table_initialize(
+struct sci_remote_node_table *remote_node_table,
+u32 remote_node_entries)
+static u16 sci_remote_node_table_allocate_single_remote_node(
+struct sci_remote_node_table *remote_node_table,
+u32 group_table_index)
+static u16 sci_remote_node_table_allocate_triple_remote_node(
+struct sci_remote_node_table *remote_node_table,
+u32 group_table_index)
+u16 sci_remote_node_table_allocate_remote_node(
+struct sci_remote_node_table *remote_node_table,
+u32 remote_node_count)
+static void sci_remote_node_table_release_single_remote_node(
+struct sci_remote_node_table *remote_node_table,
+u16 remote_node_index)
+static void sci_remote_node_table_release_triple_remote_node(
+struct sci_remote_node_table *remote_node_table,
+u16 remote_node_index)
+void sci_remote_node_table_release_remote_node_index(
+struct sci_remote_node_table *remote_node_table,
+u32 remote_node_count,
+u16 remote_node_index)
