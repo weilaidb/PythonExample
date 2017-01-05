@@ -1,0 +1,20 @@
+package org.apache.hadoop.registry;
+import org.apache.commons.io.FileUtils;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.service.Service;
+import org.apache.hadoop.yarn.conf.YarnConfiguration;
+import org.apache.hadoop.registry.client.api.RegistryConstants;
+import org.apache.hadoop.registry.server.services.AddingCompositeService;
+import org.apache.hadoop.registry.server.services.MicroZookeeperService;
+import org.apache.hadoop.registry.server.services.MicroZookeeperServiceKeys;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.rules.TestName;
+import org.junit.rules.Timeout;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import java.io.File;
+import java.io.IOException;
+public class AbstractZKRegistryTest extends RegistryTestHelper

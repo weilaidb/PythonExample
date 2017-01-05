@@ -1,0 +1,21 @@
+package org.apache.hadoop.ipc;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import org.junit.Assert;
+import org.junit.Assume;
+import org.junit.Test;
+import org.junit.Before;
+import org.junit.After;
+import java.util.List;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import org.apache.hadoop.classification.InterfaceAudience;
+import org.apache.hadoop.security.UserGroupInformation;
+import org.apache.hadoop.io.Writable;
+import org.apache.hadoop.fs.CommonConfigurationKeys;
+import org.apache.hadoop.conf.Configuration;
+public class TestIdentityProviders

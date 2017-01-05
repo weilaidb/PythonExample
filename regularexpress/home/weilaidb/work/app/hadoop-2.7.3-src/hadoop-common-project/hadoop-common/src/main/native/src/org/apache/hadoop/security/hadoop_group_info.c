@@ -1,0 +1,8 @@
+#define INITIAL_GROUP_BUFFER_SIZE (8*1024)
+#define MAX_GROUP_BUFFER_SIZE (2*1024*1024)
+struct hadoop_group_info *hadoop_group_info_alloc(void)
+void hadoop_group_info_clear(struct hadoop_group_info *ginfo)
+void hadoop_group_info_free(struct hadoop_group_info *ginfo)
+static int getgrgid_error_translate(int err)
+int hadoop_group_info_fetch(struct hadoop_group_info *ginfo, gid_t gid)
+int main(int argc, char **argv)

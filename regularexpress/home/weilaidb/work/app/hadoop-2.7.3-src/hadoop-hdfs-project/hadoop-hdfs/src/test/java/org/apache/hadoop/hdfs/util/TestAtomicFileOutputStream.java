@@ -1,0 +1,22 @@
+package org.apache.hadoop.hdfs.util;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeTrue;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import org.apache.hadoop.fs.FileUtil;
+import org.apache.hadoop.hdfs.DFSTestUtil;
+import org.apache.hadoop.io.IOUtils;
+import org.apache.hadoop.test.PathUtils;
+import org.apache.hadoop.util.Shell;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import com.google.common.base.Joiner;
+public class TestAtomicFileOutputStream

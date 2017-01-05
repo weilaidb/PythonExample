@@ -1,0 +1,22 @@
+package org.apache.hadoop.lib.service.instrumentation;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.io.StringWriter;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.lib.server.Server;
+import org.apache.hadoop.lib.service.Instrumentation;
+import org.apache.hadoop.lib.service.scheduler.SchedulerService;
+import org.apache.hadoop.test.HTestCase;
+import org.apache.hadoop.test.TestDir;
+import org.apache.hadoop.test.TestDirHelper;
+import org.apache.hadoop.util.StringUtils;
+import org.apache.hadoop.util.Time;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.junit.Test;
+public class TestInstrumentationService extends HTestCase

@@ -1,0 +1,22 @@
+package org.apache.hadoop.fs;
+import static org.apache.hadoop.fs.FileContextTestHelper.createFile;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.fs.FileSystem.Statistics;
+import org.apache.hadoop.test.GenericTestUtils;
+import org.junit.Assert;
+import org.junit.Test;
+import com.google.common.base.Supplier;
+import com.google.common.util.concurrent.Uninterruptibles;
+public abstract class FCStatisticsBaseTest

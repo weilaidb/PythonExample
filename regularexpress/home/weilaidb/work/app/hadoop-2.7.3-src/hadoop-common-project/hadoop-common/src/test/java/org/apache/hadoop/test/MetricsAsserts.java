@@ -1,0 +1,23 @@
+package org.apache.hadoop.test;
+import static com.google.common.base.Preconditions.*;
+import org.hamcrest.Description;
+import org.junit.Assert;
+import static org.mockito.AdditionalMatchers.geq;
+import static org.mockito.Mockito.*;
+import org.mockito.stubbing.Answer;
+import org.mockito.internal.matchers.GreaterThan;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.ArgumentCaptor;
+import org.mockito.ArgumentMatcher;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.metrics2.MetricsInfo;
+import org.apache.hadoop.metrics2.MetricsCollector;
+import org.apache.hadoop.metrics2.MetricsSource;
+import org.apache.hadoop.metrics2.MetricsRecordBuilder;
+import org.apache.hadoop.metrics2.MetricsSystem;
+import org.apache.hadoop.metrics2.lib.DefaultMetricsSystem;
+import org.apache.hadoop.metrics2.lib.MutableQuantiles;
+import org.apache.hadoop.metrics2.util.Quantile;
+import static org.apache.hadoop.metrics2.lib.Interns.*;
+public class MetricsAsserts

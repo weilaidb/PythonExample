@@ -1,0 +1,20 @@
+package org.apache.hadoop.fs.s3native;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import static org.junit.Assert.*;
+import static org.junit.Assume.*;
+import org.junit.Before;
+import org.junit.After;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URI;
+import java.security.DigestInputStream;
+import java.security.DigestOutputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+public class TestJets3tNativeFileSystemStore

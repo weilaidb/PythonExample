@@ -1,0 +1,8 @@
+package org.apache.hadoop.yarn.server.api.protocolrecords.impl.pb;
+import java.util.HashSet;
+import java.util.Set;
+import org.apache.hadoop.yarn.proto.YarnServerResourceManagerServiceProtos.RemoveFromClusterNodeLabelsRequestProtoOrBuilder;
+import org.apache.hadoop.yarn.proto.YarnServerResourceManagerServiceProtos.RemoveFromClusterNodeLabelsRequestProto;
+import org.apache.hadoop.yarn.server.api.protocolrecords.RemoveFromClusterNodeLabelsRequest;
+public class RemoveFromClusterNodeLabelsRequestPBImpl extends
+RemoveFromClusterNodeLabelsRequest

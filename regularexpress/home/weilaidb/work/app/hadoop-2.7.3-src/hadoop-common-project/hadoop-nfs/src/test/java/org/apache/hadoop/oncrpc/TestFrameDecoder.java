@@ -1,0 +1,20 @@
+package org.apache.hadoop.oncrpc;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import java.nio.ByteBuffer;
+import java.util.Random;
+import org.apache.hadoop.oncrpc.RpcUtil.RpcFrameDecoder;
+import org.apache.hadoop.oncrpc.security.CredentialsNone;
+import org.apache.hadoop.oncrpc.security.VerifierNone;
+import org.apache.log4j.Level;
+import org.apache.commons.logging.impl.Log4JLogger;
+import org.jboss.netty.buffer.ByteBufferBackedChannelBuffer;
+import org.jboss.netty.buffer.ChannelBuffer;
+import org.jboss.netty.buffer.ChannelBuffers;
+import org.jboss.netty.channel.Channel;
+import org.jboss.netty.channel.ChannelException;
+import org.jboss.netty.channel.ChannelHandlerContext;
+import org.junit.Test;
+import org.mockito.Mockito;
+public class TestFrameDecoder

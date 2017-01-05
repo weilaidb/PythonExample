@@ -1,0 +1,6 @@
+package org.apache.hadoop.yarn.server.api.protocolrecords.impl.pb;
+import org.apache.hadoop.yarn.proto.YarnServerCommonServiceProtos.SCMUploaderCanUploadRequestProto;
+import org.apache.hadoop.yarn.proto.YarnServerCommonServiceProtos.SCMUploaderCanUploadRequestProtoOrBuilder;
+import org.apache.hadoop.yarn.server.api.protocolrecords.SCMUploaderCanUploadRequest;
+public class SCMUploaderCanUploadRequestPBImpl
+extends SCMUploaderCanUploadRequest

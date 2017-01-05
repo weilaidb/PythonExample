@@ -1,0 +1,20 @@
+package org.apache.hadoop.ha;
+import static org.junit.Assert.*;
+import java.security.NoSuchAlgorithmException;
+import org.apache.commons.logging.impl.Log4JLogger;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.ha.HAServiceProtocol.HAServiceState;
+import org.apache.hadoop.ha.HAServiceProtocol.StateChangeRequestInfo;
+import org.apache.hadoop.ha.HealthMonitor.State;
+import org.apache.hadoop.ha.MiniZKFCCluster.DummyZKFC;
+import org.apache.hadoop.test.GenericTestUtils;
+import org.apache.hadoop.util.Time;
+import org.apache.log4j.Level;
+import org.apache.zookeeper.KeeperException;
+import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.data.Stat;
+import org.apache.zookeeper.server.auth.DigestAuthenticationProvider;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mockito;
+public class TestZKFailoverController extends ClientBaseWithFixes

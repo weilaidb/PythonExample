@@ -1,0 +1,20 @@
+package org.apache.hadoop.ha;
+import java.io.Closeable;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.CommonConfigurationKeys;
+import org.apache.hadoop.ha.HAServiceProtocol.HAServiceState;
+import org.apache.hadoop.ha.HAServiceProtocol.StateChangeRequestInfo;
+import org.apache.hadoop.ha.HAServiceProtocol.RequestSource;
+import org.apache.hadoop.ha.TestNodeFencer.AlwaysSucceedFencer;
+import org.apache.hadoop.ha.TestNodeFencer.AlwaysFailFencer;
+import static org.apache.hadoop.ha.TestNodeFencer.setupFencer;
+import org.apache.hadoop.security.AccessControlException;
+import org.junit.Test;
+import org.mockito.Mockito;
+import org.mockito.internal.stubbing.answers.ThrowsException;
+import static org.junit.Assert.*;
+public class TestFailoverController

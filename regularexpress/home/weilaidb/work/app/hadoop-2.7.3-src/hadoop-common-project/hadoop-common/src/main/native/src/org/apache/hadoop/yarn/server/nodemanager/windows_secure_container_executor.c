@@ -1,0 +1,55 @@
+static jclass wps_class = NULL;
+JNIEXPORT void JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_initWsceNative(
+JNIEnv *env, jclass clazz)
+static jmethodID wps_constructor = NULL;
+static jfieldID wps_hProcess = NULL;
+static jfieldID wps_hThread = NULL;
+static jfieldID wps_disposed = NULL;
+extern void throw_ioe(JNIEnv* env, int errnum);
+void winutils_process_stub_init(JNIEnv *env)
+void winutils_process_stub_deinit(JNIEnv *env)
+jobject winutils_process_stub_create(JNIEnv *env,
+jlong hProcess, jlong hThread, jlong hStdIn, jlong hStdOut, jlong hStdErr)
+JNIEXPORT jobject JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_createTaskAsUser0(JNIEnv* env,
+jclass clazz, jstring jcwd, jstring jjobName, jstring juser, jstring jpidFile, jstring jcmdLine)
+JNIEXPORT void JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024Elevated_elevatedKillTaskImpl(JNIEnv* env,
+jclass clazz, jstring jtask_name)
+JNIEXPORT void JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024Elevated_elevatedChownImpl(JNIEnv* env,
+jclass clazz, jstring jpath, jstring juser, jstring jgroup)
+JNIEXPORT void JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024Elevated_elevatedMkDirImpl(JNIEnv* env,
+jclass clazz, jstring jpath)
+JNIEXPORT void JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024Elevated_elevatedChmodImpl(JNIEnv* env,
+jclass clazz, jstring jpath, jint jmode)
+JNIEXPORT void JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024Elevated_elevatedCopyImpl(JNIEnv* env,
+jclass clazz, jint joperation, jstring jsourcePath, jstring jdestinationPath, jboolean replaceExisting)
+JNIEXPORT jlong JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024Elevated_elevatedCreateImpl(JNIEnv* env,
+jclass clazz, jstring jpath, jlong jdesired_access, jlong jshare_mode, jlong jcreation_disposition, jlong jflags)
+JNIEXPORT jboolean JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024Elevated_elevatedDeletePathImpl(JNIEnv* env,
+jclass clazz, jstring jpath, jboolean jIsDir)
+JNIEXPORT void JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024WinutilsProcessStub_destroy(
+JNIEnv *env, jobject objSelf)
+JNIEXPORT void JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024WinutilsProcessStub_waitFor(
+JNIEnv *env, jobject objSelf)
+JNIEXPORT void JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024WinutilsProcessStub_resume(
+JNIEnv *env, jobject objSelf)
+JNIEXPORT jint JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024WinutilsProcessStub_exitValue(
+JNIEnv *env, jobject objSelf)
+JNIEXPORT void JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024WinutilsProcessStub_dispose(
+JNIEnv *env, jobject objSelf)
+JNIEXPORT jobject JNICALL
+Java_org_apache_hadoop_yarn_server_nodemanager_WindowsSecureContainerExecutor_00024Native_00024WinutilsProcessStub_getFileDescriptorFromHandle(
+JNIEnv *env, jclass klass, jlong handle)

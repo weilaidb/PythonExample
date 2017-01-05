@@ -1,0 +1,27 @@
+package org.apache.hadoop.lib.service.hadoop;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Arrays;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.CommonConfigurationKeysPublic;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.lib.server.Server;
+import org.apache.hadoop.lib.server.ServiceException;
+import org.apache.hadoop.lib.service.FileSystemAccess;
+import org.apache.hadoop.lib.service.FileSystemAccessException;
+import org.apache.hadoop.lib.service.instrumentation.InstrumentationService;
+import org.apache.hadoop.lib.service.scheduler.SchedulerService;
+import org.apache.hadoop.test.HFSTestCase;
+import org.apache.hadoop.test.TestDir;
+import org.apache.hadoop.test.TestDirHelper;
+import org.apache.hadoop.test.TestException;
+import org.apache.hadoop.test.TestHdfs;
+import org.apache.hadoop.test.TestHdfsHelper;
+import org.apache.hadoop.util.StringUtils;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+public class TestFileSystemAccessService extends HFSTestCase

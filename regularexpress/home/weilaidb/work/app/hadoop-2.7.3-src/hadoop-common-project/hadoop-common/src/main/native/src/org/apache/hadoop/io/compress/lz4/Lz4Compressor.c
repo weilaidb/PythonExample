@@ -1,0 +1,15 @@
+static jfieldID Lz4Compressor_clazz;
+static jfieldID Lz4Compressor_uncompressedDirectBuf;
+static jfieldID Lz4Compressor_uncompressedDirectBufLen;
+static jfieldID Lz4Compressor_compressedDirectBuf;
+static jfieldID Lz4Compressor_directBufferSize;
+JNIEXPORT void JNICALL Java_org_apache_hadoop_io_compress_lz4_Lz4Compressor_initIDs
+(JNIEnv *env, jclass clazz)
+JNIEXPORT jint JNICALL Java_org_apache_hadoop_io_compress_lz4_Lz4Compressor_compressBytesDirect
+(JNIEnv *env, jobject thisj)
+JNIEXPORT jstring JNICALL
+Java_org_apache_hadoop_io_compress_lz4_Lz4Compressor_getLibraryName(
+JNIEnv *env, jclass class
+)
+JNIEXPORT jint JNICALL Java_org_apache_hadoop_io_compress_lz4_Lz4Compressor_compressBytesDirectHC
+(JNIEnv *env, jobject thisj)

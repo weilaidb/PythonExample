@@ -1,0 +1,22 @@
+package org.apache.hadoop.mapreduce;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
+import org.apache.hadoop.fs.LocalDirAllocator;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.mapred.Task.CombineOutputCollector;
+import org.apache.hadoop.io.compress.CompressionCodec;
+import org.apache.hadoop.util.Progress;
+import org.apache.hadoop.mapred.Reporter;
+import org.apache.hadoop.util.ReflectionUtils;
+import org.apache.hadoop.mapreduce.task.reduce.Shuffle;
+import org.apache.hadoop.mapred.Counters.Counter;
+import org.apache.hadoop.mapred.MapOutputFile;
+import org.apache.hadoop.mapred.JobConf;
+import org.apache.hadoop.mapred.Task;
+import org.apache.hadoop.mapred.ReduceTask;
+import org.apache.hadoop.mapred.TaskStatus;
+import org.apache.hadoop.mapred.TaskUmbilicalProtocol;
+import org.apache.hadoop.mapred.ShuffleConsumerPlugin;
+import org.apache.hadoop.mapred.RawKeyValueIterator;
+public class TestShufflePlugin<K, V>

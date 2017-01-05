@@ -1,0 +1,8 @@
+package org.apache.hadoop.mapred;
+import java.io.DataInput;
+import java.io.IOException;
+import org.apache.hadoop.classification.InterfaceAudience;
+import org.apache.hadoop.classification.InterfaceStability;
+@InterfaceAudience.Public
+@InterfaceStability.Stable
+public class JobID extends org.apache.hadoop.mapreduce.JobID

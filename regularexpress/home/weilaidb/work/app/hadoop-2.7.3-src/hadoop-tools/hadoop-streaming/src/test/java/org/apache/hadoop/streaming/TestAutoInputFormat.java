@@ -1,0 +1,20 @@
+package org.apache.hadoop.streaming;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.SequenceFile;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.InputSplit;
+import org.apache.hadoop.mapred.JobConf;
+import org.apache.hadoop.mapred.FileInputFormat;
+import org.apache.hadoop.mapred.RecordReader;
+import org.apache.hadoop.mapred.Reporter;
+import org.apache.hadoop.streaming.AutoInputFormat;
+import org.junit.Test;
+import static org.junit.Assert.*;
+public class TestAutoInputFormat

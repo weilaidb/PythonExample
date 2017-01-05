@@ -1,0 +1,10 @@
+int check_configuration_permissions(const char* file_name);
+char *resolve_config_path(const char* file_name, const char *root);
+void read_config(const char* config_file);
+char *get_value(const char* key);
+char ** get_values(const char* key);
+char ** extract_values(char *value);
+void free_values(char** values);
+void free_configurations();
+int get_kv_key(const char *input, char *out, size_t out_len);
+int get_kv_value(const char *input, char *out, size_t out_len);

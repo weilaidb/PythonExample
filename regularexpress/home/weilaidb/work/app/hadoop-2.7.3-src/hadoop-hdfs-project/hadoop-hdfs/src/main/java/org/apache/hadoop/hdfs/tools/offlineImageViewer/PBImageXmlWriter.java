@@ -1,0 +1,37 @@
+package org.apache.hadoop.hdfs.tools.offlineImageViewer;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintStream;
+import java.io.RandomAccessFile;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import org.apache.hadoop.classification.InterfaceAudience;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos.CacheDirectiveInfoExpirationProto;
+import org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos.CacheDirectiveInfoProto;
+import org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos.CachePoolInfoProto;
+import org.apache.hadoop.hdfs.protocol.proto.HdfsProtos.BlockProto;
+import org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode;
+import org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf.SectionName;
+import org.apache.hadoop.hdfs.server.namenode.FSImageUtil;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.CacheManagerSection;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.FileSummary;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.FilesUnderConstructionSection.FileUnderConstructionEntry;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.INodeDirectorySection;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.INodeSection;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.INodeSection.INodeDirectory;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.INodeSection.INodeSymlink;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.INodeReferenceSection;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.NameSystemSection;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.SecretManagerSection;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.SnapshotDiffSection;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.SnapshotSection;
+import org.apache.hadoop.hdfs.server.namenode.FsImageProto.StringTableSection;
+import org.apache.hadoop.hdfs.util.XMLUtils;
+import org.apache.hadoop.util.LimitInputStream;
+import com.google.common.collect.Lists;
+@InterfaceAudience.Private
+public final class PBImageXmlWriter

@@ -1,0 +1,21 @@
+package org.apache.hadoop.io.file.tfile;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.EOFException;
+import java.io.IOException;
+import java.util.Random;
+import org.junit.Assert;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.WritableUtils;
+import org.apache.hadoop.io.compress.zlib.ZlibFactory;
+import org.apache.hadoop.io.file.tfile.TFile.Reader;
+import org.apache.hadoop.io.file.tfile.TFile.Writer;
+import org.apache.hadoop.io.file.tfile.TFile.Reader.Location;
+import org.apache.hadoop.io.file.tfile.TFile.Reader.Scanner;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+public class TestTFileByteArrays

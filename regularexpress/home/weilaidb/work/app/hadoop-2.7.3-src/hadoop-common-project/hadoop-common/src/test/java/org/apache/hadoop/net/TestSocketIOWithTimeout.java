@@ -1,0 +1,20 @@
+package org.apache.hadoop.net;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InterruptedIOException;
+import java.io.OutputStream;
+import java.net.SocketTimeoutException;
+import java.nio.channels.Pipe;
+import java.util.Arrays;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.test.GenericTestUtils;
+import org.apache.hadoop.test.MultithreadedTestUtil;
+import org.apache.hadoop.test.MultithreadedTestUtil.TestContext;
+import org.apache.hadoop.test.MultithreadedTestUtil.TestingThread;
+import org.apache.hadoop.util.Time;
+import org.apache.hadoop.util.Shell;
+import org.apache.hadoop.io.nativeio.NativeIO;
+import org.junit.Test;
+import static org.junit.Assert.*;
+public class TestSocketIOWithTimeout

@@ -1,0 +1,5 @@
+static uint32_t simple_hash(const void *key, uint32_t size)
+static int simple_compare(const void *a, const void *b)
+static void expect_102(void *f, void *k, void *v)
+static void *htable_pop_val(struct htable *ht, void *key)
+int main(void)

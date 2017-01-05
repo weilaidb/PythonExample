@@ -1,0 +1,20 @@
+package org.apache.hadoop.yarn.webapp.test;
+import org.apache.hadoop.yarn.webapp.Controller;
+import org.apache.hadoop.yarn.webapp.SubView;
+import org.apache.hadoop.yarn.webapp.View;
+import org.apache.hadoop.yarn.webapp.WebAppException;
+import java.lang.reflect.Method;
+import java.util.Map;
+import com.google.inject.Module;
+import com.google.inject.Scopes;
+import com.google.inject.servlet.RequestScoped;
+import com.google.inject.AbstractModule;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.Provides;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import static org.mockito.Mockito.*;
+public class WebAppTests

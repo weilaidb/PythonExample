@@ -1,0 +1,22 @@
+package org.apache.hadoop.tools;
+import java.io.IOException;
+import java.net.URI;
+import java.util.Map;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.CommonConfigurationKeys;
+import org.apache.hadoop.fs.FSDataInputStream;
+import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileStatus;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.permission.FsPermission;
+import org.apache.hadoop.hdfs.DFSConfigKeys;
+import org.apache.hadoop.hdfs.MiniDFSCluster;
+import org.apache.hadoop.io.IOUtils;
+import org.apache.hadoop.tools.util.DistCpTestUtils;
+import org.apache.hadoop.util.Progressable;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import com.google.common.collect.Maps;
+public class TestDistCpWithXAttrs

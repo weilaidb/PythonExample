@@ -1,0 +1,23 @@
+package org.apache.hadoop.util;
+import static org.apache.hadoop.util.ApplicationClassLoader.constructUrlsFromClasspath;
+import static org.apache.hadoop.util.ApplicationClassLoader.isSystemClass;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.List;
+import java.util.jar.JarOutputStream;
+import java.util.zip.ZipEntry;
+import org.apache.commons.io.IOUtils;
+import org.apache.hadoop.fs.FileUtil;
+import org.junit.Before;
+import org.junit.Test;
+import com.google.common.base.Splitter;
+import com.google.common.collect.Lists;
+public class TestApplicationClassLoader

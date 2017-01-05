@@ -1,0 +1,5 @@
+static void print_env_vars(void)
+static void init_protectedpaths(dfs_context *dfs)
+static void dfsPrintOptions(FILE *fp, const struct options *o)
+void *dfs_init(struct fuse_conn_info *conn)
+void dfs_destroy(void *ptr)

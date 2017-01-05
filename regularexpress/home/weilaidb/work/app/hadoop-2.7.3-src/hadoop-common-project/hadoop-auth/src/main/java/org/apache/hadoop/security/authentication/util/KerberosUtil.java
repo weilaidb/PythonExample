@@ -1,0 +1,20 @@
+package org.apache.hadoop.security.authentication.util;
+import static org.apache.hadoop.util.PlatformName.IBM_JAVA;
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Set;
+import java.util.regex.Pattern;
+import org.apache.directory.server.kerberos.shared.keytab.Keytab;
+import org.apache.directory.server.kerberos.shared.keytab.KeytabEntry;
+import org.ietf.jgss.GSSException;
+import org.ietf.jgss.Oid;
+public class KerberosUtil

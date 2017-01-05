@@ -1,0 +1,6 @@
+package org.apache.hadoop.yarn.api.protocolrecords.impl.pb;
+import org.apache.hadoop.yarn.api.protocolrecords.UseSharedCacheResourceResponse;
+import org.apache.hadoop.yarn.proto.YarnServiceProtos.UseSharedCacheResourceResponseProto;
+import org.apache.hadoop.yarn.proto.YarnServiceProtos.UseSharedCacheResourceResponseProtoOrBuilder;
+public class UseSharedCacheResourceResponsePBImpl extends
+UseSharedCacheResourceResponse

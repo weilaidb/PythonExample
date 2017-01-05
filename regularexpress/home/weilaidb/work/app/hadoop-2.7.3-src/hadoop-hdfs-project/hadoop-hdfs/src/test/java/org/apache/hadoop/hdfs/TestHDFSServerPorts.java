@@ -1,0 +1,21 @@
+package org.apache.hadoop.hdfs;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.FileUtil;
+import org.apache.hadoop.hdfs.server.common.HdfsServerConstants.StartupOption;
+import org.apache.hadoop.hdfs.server.datanode.DataNode;
+import org.apache.hadoop.hdfs.server.namenode.BackupNode;
+import org.apache.hadoop.hdfs.server.namenode.NameNode;
+import org.apache.hadoop.metrics2.lib.DefaultMetricsSystem;
+import org.apache.hadoop.net.DNS;
+import org.apache.hadoop.test.PathUtils;
+import org.junit.Test;
+import java.io.File;
+import java.io.IOException;
+import java.net.UnknownHostException;
+import static org.apache.hadoop.hdfs.server.common.Util.fileAsURI;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+public class TestHDFSServerPorts

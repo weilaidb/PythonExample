@@ -1,0 +1,23 @@
+package org.apache.hadoop.fs;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.shell.FsCommand;
+import org.apache.hadoop.fs.shell.PathData;
+import org.apache.hadoop.io.IOUtils;
+import static org.apache.hadoop.fs.CommonConfigurationKeysPublic.FS_DEFAULT_NAME_KEY;
+import org.apache.hadoop.util.Shell;
+import org.junit.BeforeClass;
+import org.junit.Test;
+public class TestFsShellReturnCode

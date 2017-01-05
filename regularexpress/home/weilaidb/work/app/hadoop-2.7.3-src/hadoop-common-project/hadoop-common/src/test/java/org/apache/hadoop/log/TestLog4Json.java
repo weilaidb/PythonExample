@@ -1,0 +1,26 @@
+package org.apache.hadoop.log;
+import junit.framework.TestCase;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.util.Time;
+import org.apache.log4j.Appender;
+import org.apache.log4j.Category;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.WriterAppender;
+import org.apache.log4j.spi.HierarchyEventListener;
+import org.apache.log4j.spi.LoggerFactory;
+import org.apache.log4j.spi.LoggerRepository;
+import org.apache.log4j.spi.ThrowableInformation;
+import org.codehaus.jackson.JsonFactory;
+import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.map.MappingJsonFactory;
+import org.codehaus.jackson.node.ContainerNode;
+import org.junit.Test;
+import java.io.IOException;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.net.NoRouteToHostException;
+import java.util.Enumeration;
+import java.util.Vector;
+public class TestLog4Json extends TestCase

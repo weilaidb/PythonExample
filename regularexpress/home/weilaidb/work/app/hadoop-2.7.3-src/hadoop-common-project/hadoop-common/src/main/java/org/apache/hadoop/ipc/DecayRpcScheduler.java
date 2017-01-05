@@ -1,0 +1,20 @@
+package org.apache.hadoop.ipc;
+import java.lang.ref.WeakReference;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.CommonConfigurationKeys;
+import org.apache.hadoop.metrics2.util.MBeans;
+import org.codehaus.jackson.map.ObjectMapper;
+import com.google.common.annotations.VisibleForTesting;
+public class DecayRpcScheduler implements RpcScheduler, DecayRpcSchedulerMXBean

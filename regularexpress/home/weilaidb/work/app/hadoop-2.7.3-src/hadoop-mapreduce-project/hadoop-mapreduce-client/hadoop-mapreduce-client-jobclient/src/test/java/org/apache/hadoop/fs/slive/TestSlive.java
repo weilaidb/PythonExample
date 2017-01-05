@@ -1,0 +1,25 @@
+package org.apache.hadoop.fs.slive;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.slive.ArgumentParser.ParsedOutput;
+import org.apache.hadoop.fs.slive.Constants.OperationType;
+import org.apache.hadoop.fs.slive.DataVerifier.VerifyOutput;
+import org.apache.hadoop.fs.slive.DataWriter.GenerateOutput;
+import org.apache.hadoop.util.ToolRunner;
+import org.junit.Before;
+import org.junit.Test;
+public class TestSlive

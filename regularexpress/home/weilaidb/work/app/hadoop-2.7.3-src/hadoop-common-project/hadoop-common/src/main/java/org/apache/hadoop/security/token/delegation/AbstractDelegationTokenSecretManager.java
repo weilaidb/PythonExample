@@ -1,0 +1,29 @@
+package org.apache.hadoop.security.token.delegation;
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import javax.crypto.SecretKey;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.classification.InterfaceAudience;
+import org.apache.hadoop.classification.InterfaceStability;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.security.AccessControlException;
+import org.apache.hadoop.security.HadoopKerberosName;
+import org.apache.hadoop.security.token.SecretManager;
+import org.apache.hadoop.security.token.Token;
+import org.apache.hadoop.util.Daemon;
+import org.apache.hadoop.util.Time;
+import com.google.common.base.Preconditions;
+@InterfaceAudience.LimitedPrivate()
+@InterfaceStability.Evolving
+public abstract
+class AbstractDelegationTokenSecretManager<TokenIdent
+extends AbstractDelegationTokenIdentifier>
+extends SecretManager<TokenIdent>

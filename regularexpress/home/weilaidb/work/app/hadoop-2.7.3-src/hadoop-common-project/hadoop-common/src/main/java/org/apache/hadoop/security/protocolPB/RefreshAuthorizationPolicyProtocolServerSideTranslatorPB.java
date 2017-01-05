@@ -1,0 +1,9 @@
+package org.apache.hadoop.security.protocolPB;
+import java.io.IOException;
+import org.apache.hadoop.security.authorize.RefreshAuthorizationPolicyProtocol;
+import org.apache.hadoop.security.proto.RefreshAuthorizationPolicyProtocolProtos.RefreshServiceAclRequestProto;
+import org.apache.hadoop.security.proto.RefreshAuthorizationPolicyProtocolProtos.RefreshServiceAclResponseProto;
+import com.google.protobuf.RpcController;
+import com.google.protobuf.ServiceException;
+public class RefreshAuthorizationPolicyProtocolServerSideTranslatorPB implements
+RefreshAuthorizationPolicyProtocolPB

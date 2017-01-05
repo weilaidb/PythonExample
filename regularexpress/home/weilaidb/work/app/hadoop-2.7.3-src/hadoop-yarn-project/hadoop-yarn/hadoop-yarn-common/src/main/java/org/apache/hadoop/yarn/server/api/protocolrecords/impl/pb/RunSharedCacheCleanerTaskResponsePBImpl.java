@@ -1,0 +1,6 @@
+package org.apache.hadoop.yarn.server.api.protocolrecords.impl.pb;
+import org.apache.hadoop.yarn.server.api.protocolrecords.RunSharedCacheCleanerTaskResponse;
+import org.apache.hadoop.yarn.proto.YarnServiceProtos.RunSharedCacheCleanerTaskResponseProto;
+import org.apache.hadoop.yarn.proto.YarnServiceProtos.RunSharedCacheCleanerTaskResponseProtoOrBuilder;
+public class RunSharedCacheCleanerTaskResponsePBImpl extends
+RunSharedCacheCleanerTaskResponse

@@ -1,0 +1,25 @@
+package org.apache.hadoop.yarn.server.applicationhistoryservice.webapp;
+import static org.apache.hadoop.yarn.webapp.Params.TITLE;
+import static org.mockito.Mockito.mock;
+import java.util.Map;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.yarn.api.ApplicationBaseProtocol;
+import org.apache.hadoop.yarn.api.records.ApplicationAttemptId;
+import org.apache.hadoop.yarn.api.records.ApplicationId;
+import org.apache.hadoop.yarn.api.records.ContainerId;
+import org.apache.hadoop.yarn.api.records.YarnApplicationState;
+import org.apache.hadoop.yarn.conf.YarnConfiguration;
+import org.apache.hadoop.yarn.server.applicationhistoryservice.ApplicationHistoryClientService;
+import org.apache.hadoop.yarn.server.applicationhistoryservice.ApplicationHistoryManager;
+import org.apache.hadoop.yarn.server.applicationhistoryservice.ApplicationHistoryManagerImpl;
+import org.apache.hadoop.yarn.server.applicationhistoryservice.ApplicationHistoryStore;
+import org.apache.hadoop.yarn.server.applicationhistoryservice.ApplicationHistoryStoreTestUtils;
+import org.apache.hadoop.yarn.server.applicationhistoryservice.MemoryApplicationHistoryStore;
+import org.apache.hadoop.yarn.util.StringHelper;
+import org.apache.hadoop.yarn.webapp.YarnWebParams;
+import org.apache.hadoop.yarn.webapp.test.WebAppTests;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import com.google.inject.Injector;
+public class TestAHSWebApp extends ApplicationHistoryStoreTestUtils
