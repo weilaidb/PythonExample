@@ -20,6 +20,7 @@ do
 	((per=$i*100/$totalnum))
 	# echo "no: $((i)), totalnum: $totalnum, %$((per))"
 	echo "%$((per))"
+	echo "========================"$line"========================" >> $savefile
 	cat $line >> $savefile
 done < filelist
 
