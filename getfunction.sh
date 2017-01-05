@@ -33,7 +33,7 @@ GETFUNCTIONS()
 {
 	echo "parse dir : $1"
 	SAVEFILELIST=filelist
-	find $1 -type f | grep ".c$\|.cpp$\|.h$\|.java$"> $SAVEFILELIST
+	find $1 -type f | grep "[.]c$\|[.]cpp$\|[.]h$\|[.]java$"> $SAVEFILELIST
 	
 	while read line
 	do
