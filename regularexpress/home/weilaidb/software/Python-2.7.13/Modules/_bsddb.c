@@ -1,6 +1,6 @@
 #define COMPILING_BSDDB_C
 #undef COMPILING_BSDDB_C
-static char *rcs_id = "$Id$";
+static char *rcs_id = ;
 #if (PY_VERSION_HEX < 0x02050000)
 typedef int Py_ssize_t;
 #if (PY_VERSION_HEX < 0x02060000)
@@ -63,7 +63,7 @@ static PyObject* DBRepUnavailError;
 #if (DBVER < 48)
 #define DB_GID_SIZE DB_XIDDATASIZE
 #if PYTHON_API_VERSION < 1010
-#error "Python 2.1 or later required"
+#error
 #define DEFAULT_GET_RETURNS_NONE                1
 #define DEFAULT_CURSOR_SET_RETURNS_NONE         1
 #define staticforward static
@@ -136,7 +136,7 @@ unsigned int our_strlcpy(char* dest, const char* src, unsigned int n)
 static char _db_errmsg[1024];
 static void _db_errorCallback(const DB_ENV *db_env,
 const char* prefix, const char* msg)
-static const char *DummyString = "This string is a simple placeholder";
+static const char *DummyString = ;
 static PyObject *Build_PyString(const char *p,int s)
 static PyObject *BuildValue_S(const void *p,int s)
 static PyObject *BuildValue_SS(const void *p1,int s1,const void *p2,int s2)
@@ -859,7 +859,7 @@ static PyMethodDef bsddb_methods[] = ;
 static BSDDB_api bsddb_api;
 #define ADD_INT(dict, NAME)         _addIntToDict(dict, #NAME, NAME)
 #define MODULE_NAME_MAX_LEN     11
-static char _bsddbModuleName[MODULE_NAME_MAX_LEN+1] = "_bsddb";
+static char _bsddbModuleName[MODULE_NAME_MAX_LEN+1] = ;
 #if (PY_VERSION_HEX >= 0x03000000)
 static struct PyModuleDef bsddbmodule = ;
 #if (PY_VERSION_HEX < 0x03000000)

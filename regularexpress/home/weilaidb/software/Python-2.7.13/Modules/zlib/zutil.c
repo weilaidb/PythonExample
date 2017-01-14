@@ -1,4 +1,4 @@
-#  include "gzguts.h"
+#  include
 struct internal_state      ;
 z_const char * const z_errmsg[10] = ;
 const char * ZEXPORT zlibVersion()

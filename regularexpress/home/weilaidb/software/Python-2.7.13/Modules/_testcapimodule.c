@@ -186,9 +186,9 @@ static int _pending_callback(void *arg)
 PyObject *pending_threadfunc(PyObject *self, PyObject *arg)
 static PyObject *
 test_string_from_format(PyObject *self, PyObject *args)
-static const char *capsule_name = "capsule name";
-static       char *capsule_pointer = "capsule pointer";
-static       char *capsule_context = "capsule context";
+static const char *capsule_name = ;
+static       char *capsule_pointer = ;
+static       char *capsule_context = ;
 static const char *capsule_error = NULL;
 static int
 capsule_destructor_call_count = 0;

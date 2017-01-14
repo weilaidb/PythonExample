@@ -11,7 +11,7 @@
 #define PyCurses_API_pointers 4
 typedef struct  PyCursesWindowObject;
 #define PyCursesWindow_Check(v)	 (Py_TYPE(v) == &PyCursesWindow_Type)
-#define PyCurses_CAPSULE_NAME "_curses._C_API"
+#define PyCurses_CAPSULE_NAME
 static void **PyCurses_API;
 #define PyCursesWindow_Type (*(PyTypeObject *) PyCurses_API[0])
 #define PyCursesSetupTermCalled
@@ -19,8 +19,8 @@ static void **PyCurses_API;
 #define PyCursesInitialisedColor
 #define import_curses() \
 PyCurses_API = (void **)PyCapsule_Import(PyCurses_CAPSULE_NAME, 1);
-static char *catchall_ERR  = "curses function returned ERR";
-static char *catchall_NULL = "curses function returned NULL";
+static char *catchall_ERR  = ;
+static char *catchall_NULL = ;
 #define NoArgNoReturnFunction(X) \
 static PyObject *PyCurses_ ## X (PyObject *self) \
 #define NoArgOrFlagNoReturnFunction(X) \

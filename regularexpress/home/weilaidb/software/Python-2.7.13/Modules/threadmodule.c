@@ -1,6 +1,6 @@
-#error "Error!  The rest of Python is not compiled with thread support."
-#error "Rerun configure, adding a --with-threads option."
-#error "Then run `make clean' followed by `make'."
+#error
+#error
+#error
 static PyObject *ThreadError;
 static PyObject *str_dict;
 static long nb_threads = 0;

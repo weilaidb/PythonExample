@@ -39,19 +39,19 @@ static SHAobject *
 newSHA512object(void)
 static void
 SHA512_dealloc(PyObject *ptr)
-PyDoc_STRVAR(SHA512_copy__doc__, "Return a copy of the hash object.");
+PyDoc_STRVAR(SHA512_copy__doc__, );
 static PyObject *
 SHA512_copy(SHAobject *self, PyObject *unused)
 PyDoc_STRVAR(SHA512_digest__doc__,
-"Return the digest value as a string of binary data.");
+);
 static PyObject *
 SHA512_digest(SHAobject *self, PyObject *unused)
 PyDoc_STRVAR(SHA512_hexdigest__doc__,
-"Return the digest value as a string of hexadecimal digits.");
+);
 static PyObject *
 SHA512_hexdigest(SHAobject *self, PyObject *unused)
 PyDoc_STRVAR(SHA512_update__doc__,
-"Update this hash object's state with the provided string.");
+);
 static PyObject *
 SHA512_update(SHAobject *self, PyObject *args)
 static PyMethodDef SHA_methods[] = ;
@@ -64,11 +64,11 @@ static PyMemberDef SHA_members[] = ;
 static PyTypeObject SHA384type = ;
 static PyTypeObject SHA512type = ;
 PyDoc_STRVAR(SHA512_new__doc__,
-"Return a new SHA-512 hash object; optionally initialized with a string.");
+);
 static PyObject *
 SHA512_new(PyObject *self, PyObject *args, PyObject *kwdict)
 PyDoc_STRVAR(SHA384_new__doc__,
-"Return a new SHA-384 hash object; optionally initialized with a string.");
+);
 static PyObject *
 SHA384_new(PyObject *self, PyObject *args, PyObject *kwdict)
 static struct PyMethodDef SHA_functions[] = ;

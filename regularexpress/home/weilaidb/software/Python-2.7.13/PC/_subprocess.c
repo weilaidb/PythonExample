@@ -5,9 +5,9 @@ static PyObject*
 sp_handle_new(HANDLE handle)
 #if defined(MS_WIN32) && !defined(MS_WIN64)
 #define HANDLE_TO_PYNUM(handle) PyInt_FromLong((long) handle)
-#define PY_HANDLE_PARAM "l"
+#define PY_HANDLE_PARAM
 #define HANDLE_TO_PYNUM(handle) PyLong_FromLongLong((long long) handle)
-#define PY_HANDLE_PARAM "L"
+#define PY_HANDLE_PARAM
 static PyObject*
 sp_handle_detach(sp_handle_object* self, PyObject* args)
 static PyObject*

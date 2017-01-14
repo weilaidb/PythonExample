@@ -5,7 +5,7 @@ static unsigned long smallmax[] = ;
 static int digitlimit[] = ;
 #elif SIZEOF_LONG == 8
 static int digitlimit[] = ;
-#error "Need table for SIZEOF_LONG"
+#error
 unsigned long
 PyOS_strtoul(register char *str, char **ptr, int base)
 #define PY_ABS_LONG_MIN         (0-(unsigned long)LONG_MIN)

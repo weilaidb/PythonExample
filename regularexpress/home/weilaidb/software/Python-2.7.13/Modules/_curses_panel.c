@@ -1,4 +1,4 @@
-static char *PyCursesVersion = "2.1";
+static char *PyCursesVersion = ;
 static PyObject *PyCursesError;
 static PyObject *
 PyCursesCheckERR(int code, char *fname)
@@ -24,7 +24,7 @@ Panel_NoArgNoReturnFunction(hide_panel)
 Panel_NoArgNoReturnFunction(show_panel)
 Panel_NoArgNoReturnFunction(top_panel)
 Panel_NoArgTrueFalseFunction(panel_hidden)
-Panel_TwoArgNoReturnFunction(move_panel, int, "ii;y,x")
+Panel_TwoArgNoReturnFunction(move_panel, int, )
 static PyObject *
 PyCursesPanel_New(PANEL *pan, PyCursesWindowObject *wo)
 static void

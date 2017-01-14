@@ -7,7 +7,7 @@
 #undef  THREAD_STACK_SIZE
 #define THREAD_STACK_SIZE       0x400000
 #define THREAD_STACK_MIN        0x8000
-#error "THREAD_STACK_SIZE defined but _POSIX_THREAD_ATTR_STACKSIZE undefined"
+#error
 #if (_POSIX_SEMAPHORES+0) == -1
 #define HAVE_BROKEN_POSIX_SEMAPHORES
 #if __FreeBSD_version >= 500000 && __FreeBSD_version < 504101

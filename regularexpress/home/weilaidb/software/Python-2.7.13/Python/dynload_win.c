@@ -13,7 +13,7 @@ int num_dict_off, import_off;
 if (hModule == NULL)
 dllbase = (unsigned char *)hModule;
 pe_offset = DWORD_AT(dllbase + 0x3C);
-if (memcmp(dllbase+pe_offset,"PE\0\0",4))
+if (memcmp(dllbase+pe_offset,,4))
 opt_offset = pe_offset + 4 + 20;
 opt_magic = WORD_AT(dllbase+opt_offset);
 if (opt_magic == 0x10B)  else if (opt_magic == 0x20B)  else

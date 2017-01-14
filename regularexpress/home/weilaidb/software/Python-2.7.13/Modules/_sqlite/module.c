@@ -12,7 +12,7 @@ PyDoc_STRVAR(module_connect_doc,
 "connect(database[, timeout, isolation_level, detect_types, factory])\n\
 \n\
 Opens a connection to the SQLite database file *database*. You can use\n\
-\":memory:\" to open a database connection to a database that resides in\n\
+\ to open a database connection to a database that resides in\n\
 RAM instead of on disk.");
 static PyObject* module_complete(PyObject* self, PyObject* args, PyObject*
 kwargs)

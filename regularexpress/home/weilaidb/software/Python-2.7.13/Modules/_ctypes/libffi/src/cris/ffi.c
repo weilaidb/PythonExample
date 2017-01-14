@@ -13,15 +13,15 @@ ffi_prep_cif_machdep (ffi_cif * cif)
 extern void ffi_call_SYSV (int (*)(char *, extended_cif *),
 extended_cif *,
 unsigned, unsigned, unsigned *, void (*fn) ())
-__attribute__ ((__visibility__ ("hidden")));
+__attribute__ ((__visibility__ ()));
 void
 ffi_call (ffi_cif * cif, void (*fn) (), void *rvalue, void **avalue)
 extern const char ffi_cris_trampoline_template[]
-__attribute__ ((__visibility__ ("hidden")));
+__attribute__ ((__visibility__ ()));
 extern const int ffi_cris_trampoline_fn_offset
-__attribute__ ((__visibility__ ("hidden")));
+__attribute__ ((__visibility__ ()));
 extern const int ffi_cris_trampoline_closure_offset
-__attribute__ ((__visibility__ ("hidden")));
+__attribute__ ((__visibility__ ()));
 static unsigned long long
 ffi_prep_closure_inner (void **params, ffi_closure* closure)
 ffi_status

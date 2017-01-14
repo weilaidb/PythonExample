@@ -1,5 +1,5 @@
 #define LIBFFI_TARGET_H
-#error "Please do not include ffitarget.h directly into your source.  Use ffi.h instead."
+#error
 #if defined (__s390x__)
 #define S390X
 typedef unsigned long          ffi_arg;

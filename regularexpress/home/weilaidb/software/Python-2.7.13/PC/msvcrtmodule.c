@@ -95,7 +95,7 @@ msvcrt_ungetch(PyObject *self, PyObject *args)
 PyDoc_STRVAR(ungetch_doc,
 "ungetch(char) -> None\n\
 \n\
-Cause the character char to be \"pushed back\" into the console buffer;\n\
+Cause the character char to be \ into the console buffer;\n\
 it will be the next character read by getch() or getche().");
 static PyObject *
 msvcrt_ungetwch(PyObject *self, PyObject *args)

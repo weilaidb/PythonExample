@@ -1,8 +1,8 @@
 #define _BSDDB_H_
 #define DBVER (DB_VERSION_MAJOR * 10 + DB_VERSION_MINOR)
 #if DB_VERSION_MINOR > 9
-#error "eek! DBVER can't handle minor versions > 9"
-#define PY_BSDDB_VERSION "5.3.0"
+#error
+#define PY_BSDDB_VERSION
 struct behaviourFlags ;
 struct DBObject;
 struct DBCursorObject;

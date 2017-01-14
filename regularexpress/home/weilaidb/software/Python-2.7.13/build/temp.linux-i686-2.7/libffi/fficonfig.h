@@ -1,4 +1,4 @@
-#define EH_FRAME_FLAGS "a"
+#define EH_FRAME_FLAGS
 #define HAVE_ALLOCA 1
 #define HAVE_ALLOCA_H 1
 #define HAVE_AS_ASCII_PSEUDO_OP 1
@@ -24,19 +24,19 @@
 #define HAVE_SYS_STAT_H 1
 #define HAVE_SYS_TYPES_H 1
 #define HAVE_UNISTD_H 1
-#define LT_OBJDIR ".libs/"
-#define PACKAGE "libffi"
+#define LT_OBJDIR
+#define PACKAGE
 #define PACKAGE_BUGREPORT "http:
-#define PACKAGE_NAME "libffi"
-#define PACKAGE_STRING "libffi 3.1"
-#define PACKAGE_TARNAME "libffi"
-#define PACKAGE_URL ""
-#define PACKAGE_VERSION "3.1"
+#define PACKAGE_NAME
+#define PACKAGE_STRING
+#define PACKAGE_TARNAME
+#define PACKAGE_URL
+#define PACKAGE_VERSION
 #define SIZEOF_DOUBLE 8
 #define SIZEOF_LONG_DOUBLE 12
 #define SIZEOF_SIZE_T 4
 #define STDC_HEADERS 1
-#define VERSION "3.1"
+#define VERSION
 #if defined AC_APPLE_UNIVERSAL_BUILD
 # if defined __BIG_ENDIAN__
 #  define WORDS_BIGENDIAN 1
@@ -44,6 +44,6 @@
 # ifndef WORDS_BIGENDIAN
 # endif
 #define FFI_HIDDEN(name) .hidden name
-#define FFI_HIDDEN __attribute__ ((visibility ("hidden")))
+#define FFI_HIDDEN __attribute__ ((visibility ()))
 #define FFI_HIDDEN(name)
 #define FFI_HIDDEN

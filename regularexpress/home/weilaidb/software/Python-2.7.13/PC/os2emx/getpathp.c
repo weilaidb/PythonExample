@@ -2,8 +2,8 @@
 #define INCL_DOS
 #if HAVE_UNISTD_H
 #if defined(PYCC_GCC)
-#define LANDMARK "lib/os.py"
-#define LANDMARK "lib\\os.py"
+#define LANDMARK
+#define LANDMARK
 static char prefix[MAXPATHLEN+1];
 static char progpath[MAXPATHLEN+1];
 static char *module_search_path = NULL;

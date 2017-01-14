@@ -73,7 +73,7 @@ defined(__VMS) || !defined(HAVE_GETADDRINFO))
 #define ACQUIRE_GETADDRINFO_LOCK
 #define RELEASE_GETADDRINFO_LOCK
 #if defined(USE_GETHOSTBYNAME_LOCK) || defined(USE_GETADDRINFO_LOCK)
-# include "pythread.h"
+# include
 #if defined(PYCC_VACPP)
 # include <types.h>
 # include <io.h>
@@ -122,7 +122,7 @@ int h_errno;
 # define O_NONBLOCK O_NDELAY
 #if defined(__sgi) && _COMPILER_VERSION>700 && defined(_SS_ALIGNSIZE)
 #elif defined(_MSC_VER) && _MSC_VER>1201
-#  include "addrinfo.h"
+#  include
 #if !defined(NTDDI_VERSION) || (NTDDI_VERSION < NTDDI_LONGHORN)
 int inet_pton(int af, const char *src, void *dst);
 const char *inet_ntop(int af, const void *src, char *dst, socklen_t size);
@@ -287,9 +287,9 @@ int optname;
 int res;
 PyObject *buf;
 socklen_t buflen = 0;
-PyErr_SetString(socket_error, "getsockopt not supported");
+PyErr_SetString(socket_error, );
 return NULL;
-if (!PyArg_ParseTuple(args, "ii|i:getsockopt",
+if (!PyArg_ParseTuple(args, ,
 &level, &optname, &buflen))
 return NULL;
 if (buflen == 0)

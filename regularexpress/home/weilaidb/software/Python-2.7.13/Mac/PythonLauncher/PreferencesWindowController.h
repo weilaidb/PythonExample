@@ -1,5 +1,5 @@
 #import <Cocoa/Cocoa.h>
-#import "FileSettings.h"
+#import
 @interface PreferencesWindowController : NSWindowController <FileSettingsSource>
 + getPreferencesWindow;
 - (IBAction)do_reset:(id)sender;

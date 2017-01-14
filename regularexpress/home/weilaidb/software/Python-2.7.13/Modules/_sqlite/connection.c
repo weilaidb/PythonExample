@@ -56,7 +56,7 @@ pysqlite_connection_enter(pysqlite_Connection* self, PyObject* args)
 static PyObject *
 pysqlite_connection_exit(pysqlite_Connection* self, PyObject* args)
 static char connection_doc[] =
-PyDoc_STR("SQLite database connection object.");
+PyDoc_STR();
 static PyGetSetDef connection_getset[] = ;
 static PyMethodDef connection_methods[] = ;
 static struct PyMemberDef connection_members[] =

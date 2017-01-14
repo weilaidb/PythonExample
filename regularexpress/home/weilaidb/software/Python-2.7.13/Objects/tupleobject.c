@@ -69,11 +69,9 @@ tuplesubscript(PyTupleObject* self, PyObject* item)
 static PyObject *
 tuple_getnewargs(PyTupleObject *v)
 PyDoc_STRVAR(index_doc,
-"T.index(value, [start, [stop]]) -> integer -- return first index of value.\n"
-"Raises ValueError if the value is not present."
 );
 PyDoc_STRVAR(count_doc,
-"T.count(value) -> integer -- return number of occurrences of value");
+);
 static PyMethodDef tuple_methods[] = ;
 static PyMappingMethods tuple_as_mapping = ;
 static PyObject *tuple_iter(PyObject *seq);
@@ -93,7 +91,7 @@ static PyObject *
 tupleiter_next(tupleiterobject *it)
 static PyObject *
 tupleiter_len(tupleiterobject *it)
-PyDoc_STRVAR(length_hint_doc, "Private method returning an estimate of len(list(it)).");
+PyDoc_STRVAR(length_hint_doc, );
 static PyMethodDef tupleiter_methods[] = ;
 PyTypeObject PyTupleIter_Type = ;
 static PyObject *

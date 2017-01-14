@@ -102,16 +102,7 @@ static int
 _tscmp(const unsigned char *a, const unsigned char *b,
 Py_ssize_t len_a, Py_ssize_t len_b)
 PyDoc_STRVAR(compare_digest__doc__,
-"compare_digest(a, b) -> bool\n"
-"\n"
-"Return 'a == b'.  This function uses an approach designed to prevent\n"
-"timing analysis, making it appropriate for cryptography.\n"
-"a and b must both be of the same type: either str (ASCII only),\n"
-"or any type that supports the buffer protocol (e.g. bytes).\n"
-"\n"
-"Note: If a and b are of different lengths, or if an error occurs,\n"
-"a timing attack could theoretically reveal information about the\n"
-"types and lengths of a and b--but not their values.\n");
+);
 static PyObject*
 compare_digest(PyObject *self, PyObject *args)
 static struct PyMethodDef operator_methods[] = ;

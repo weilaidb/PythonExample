@@ -36,19 +36,19 @@ static void
 EVP_dealloc(EVPobject *self)
 static int
 locked_EVP_MD_CTX_copy(EVP_MD_CTX *new_ctx_p, EVPobject *self)
-PyDoc_STRVAR(EVP_copy__doc__, "Return a copy of the hash object.");
+PyDoc_STRVAR(EVP_copy__doc__, );
 static PyObject *
 EVP_copy(EVPobject *self, PyObject *unused)
 PyDoc_STRVAR(EVP_digest__doc__,
-"Return the digest value as a string of binary data.");
+);
 static PyObject *
 EVP_digest(EVPobject *self, PyObject *unused)
 PyDoc_STRVAR(EVP_hexdigest__doc__,
-"Return the digest value as a string of hexadecimal digits.");
+);
 static PyObject *
 EVP_hexdigest(EVPobject *self, PyObject *unused)
 PyDoc_STRVAR(EVP_update__doc__,
-"Update this hash object's state with the provided string.");
+);
 static PyObject *
 EVP_update(EVPobject *self, PyObject *args)
 static PyMethodDef EVP_methods[] = ;

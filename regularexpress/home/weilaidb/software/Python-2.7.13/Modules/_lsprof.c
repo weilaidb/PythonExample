@@ -1,10 +1,10 @@
 #if !defined(HAVE_LONG_LONG)
-#error "This module requires long longs!"
+#error
 static PY_LONG_LONG
 hpTimer(void)
 static double
 hpTimerUnit(void)
-#error "This module requires gettimeofday() on non-Windows platforms!"
+#error
 #if (defined(PYOS_OS2) && defined(PYCC_GCC))
 static PY_LONG_LONG
 hpTimer(void)

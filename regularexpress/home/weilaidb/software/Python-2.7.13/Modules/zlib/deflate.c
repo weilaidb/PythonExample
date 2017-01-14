@@ -1,5 +1,5 @@
 const char deflate_copyright[] =
-" deflate 1.2.8 Copyright 1995-2013 Jean-loup Gailly and Mark Adler ";
+;
 typedef enum  block_state;
 typedef block_state (*compress_func) OF((deflate_state *s, int flush));
 local void fill_window    OF((deflate_state *s));

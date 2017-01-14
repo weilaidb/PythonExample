@@ -37,27 +37,27 @@ PyCStructType_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
 static PyObject *
 UnionType_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
 static char from_address_doc[] =
-"C.from_address(integer) -> C instance\naccess a C instance at the specified address";
+;
 static PyObject *
 CDataType_from_address(PyObject *type, PyObject *value)
 static char from_buffer_doc[] =
-"C.from_buffer(object, offset=0) -> C instance\ncreate a C instance from a writeable buffer";
+;
 static int
 KeepRef(CDataObject *target, Py_ssize_t index, PyObject *keep);
 static PyObject *
 CDataType_from_buffer(PyObject *type, PyObject *args)
 static char from_buffer_copy_doc[] =
-"C.from_buffer_copy(object, offset=0) -> C instance\ncreate a C instance from a readable buffer";
+;
 static PyObject *
 GenericPyCData_new(PyTypeObject *type, PyObject *args, PyObject *kwds);
 static PyObject *
 CDataType_from_buffer_copy(PyObject *type, PyObject *args)
 static char in_dll_doc[] =
-"C.in_dll(dll, name) -> C instance\naccess a C instance in a dll";
+;
 static PyObject *
 CDataType_in_dll(PyObject *type, PyObject *args)
 static char from_param_doc[] =
-"Convert a Python object into a function call parameter.";
+;
 static PyObject *
 CDataType_from_param(PyObject *type, PyObject *value)
 static PyMethodDef CDataType_methods[] = ;
@@ -108,7 +108,7 @@ PyCArrayType_paramfunc(CDataObject *self)
 static PyObject *
 PyCArrayType_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
 PyTypeObject PyCArrayType_Type = ;
-static char *SIMPLE_TYPE_CHARS = "cbBhHiIlLdfuzZqQPXOv?g";
+static char *SIMPLE_TYPE_CHARS = ;
 static PyObject *
 c_wchar_p_from_param(PyObject *type, PyObject *value)
 static PyObject *
@@ -308,8 +308,8 @@ Pointer_nonzero(CDataObject *self)
 static PyNumberMethods Pointer_as_number = ;
 PyTypeObject PyCPointer_Type = ;
 static char *module_docs =
-"Create and manipulate C compatible data types in Python.";
-static char comerror_doc[] = "Raised when a COM method call failed.";
+;
+static char comerror_doc[] = ;
 static PyObject *
 comerror_init(PyObject *self, PyObject *args)
 static PyMethodDef comerror_methods[] = ;

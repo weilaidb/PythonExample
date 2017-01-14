@@ -13,9 +13,9 @@
 #  define SET_BINARY_MODE(file)
 #  define snprintf _snprintf
 #  define unlink delete
-#  define GZ_SUFFIX "-gz"
+#  define GZ_SUFFIX
 #  define unlink remove
-#  define GZ_SUFFIX "-gz"
+#  define GZ_SUFFIX
 #  define fileno(file) file->__file
 #if defined(__MWERKS__) && __dest_os != __be_os && __dest_os != __win32_os
 #  include <unix.h>
@@ -28,7 +28,7 @@ static char *strwinerror (error)
 DWORD error;
 static void pwinerror (s)
 const char *s;
-#  define GZ_SUFFIX ".gz"
+#  define GZ_SUFFIX
 #define SUFFIX_LEN (sizeof(GZ_SUFFIX)-1)
 #define BUFLEN      16384
 #define MAX_NAME_LEN 1024

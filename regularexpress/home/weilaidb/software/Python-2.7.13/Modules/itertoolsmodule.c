@@ -42,7 +42,7 @@ static int
 teedataobject_clear(teedataobject *tdo)
 static void
 teedataobject_dealloc(teedataobject *tdo)
-PyDoc_STRVAR(teedataobject_doc, "Data container common to multiple tee objects.");
+PyDoc_STRVAR(teedataobject_doc, );
 static PyTypeObject teedataobject_type = ;
 static PyTypeObject tee_type;
 static PyObject *
@@ -51,7 +51,7 @@ static int
 tee_traverse(teeobject *to, visitproc visit, void *arg)
 static PyObject *
 tee_copy(teeobject *to)
-PyDoc_STRVAR(teecopy_doc, "Returns an independent iterator.");
+PyDoc_STRVAR(teecopy_doc, );
 static PyObject *
 tee_fromiterable(PyObject *iterable)
 static PyObject *
@@ -61,13 +61,13 @@ tee_clear(teeobject *to)
 static void
 tee_dealloc(teeobject *to)
 PyDoc_STRVAR(teeobject_doc,
-"Iterator wrapped to make it copyable");
+);
 static PyMethodDef tee_methods[] = ;
 static PyTypeObject tee_type = ;
 static PyObject *
 tee(PyObject *self, PyObject *args)
 PyDoc_STRVAR(tee_doc,
-"tee(iterable, n=2) --> tuple of n independent iterators.");
+);
 typedef struct  cycleobject;
 static PyTypeObject cycle_type;
 static PyObject *
@@ -336,7 +336,7 @@ static PyObject *
 count_repr(countobject *lz)
 static PyObject *
 count_reduce(countobject *lz)
-PyDoc_STRVAR(count_reduce_doc, "Return state information for pickling.");
+PyDoc_STRVAR(count_reduce_doc, );
 static PyMethodDef count_methods[] = ;
 PyDoc_STRVAR(count_doc,
 "count(start=0, step=1) --> count object\n\
@@ -383,7 +383,7 @@ static PyObject *
 repeat_repr(repeatobject *ro)
 static PyObject *
 repeat_len(repeatobject *ro)
-PyDoc_STRVAR(length_hint_doc, "Private method returning an estimate of len(list(it)).");
+PyDoc_STRVAR(length_hint_doc, );
 static PyMethodDef repeat_methods[] = ;
 PyDoc_STRVAR(repeat_doc,
 "repeat(object [,times]) -> create an iterator which returns the object\n\

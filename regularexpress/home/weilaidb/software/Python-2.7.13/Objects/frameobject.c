@@ -37,7 +37,7 @@ frame_clear(PyFrameObject *f)
 static PyObject *
 frame_sizeof(PyFrameObject *f)
 PyDoc_STRVAR(sizeof__doc__,
-"F.__sizeof__() -> size of F in memory, in bytes");
+);
 static PyMethodDef frame_methods[] = ;
 PyTypeObject PyFrame_Type = ;
 static PyObject *builtin_object;

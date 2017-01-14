@@ -7,7 +7,7 @@
 #define ASM_SIZE_DIRECTIVE(name) .size name,.-name
 #define CALL_MCOUNT							      \
 .pushsection;								      \
-.section ".data";							      \
+.section ;							      \
 .align ALIGNARG(2);							      \
 0:.long 0;								      \
 .previous;								      \
@@ -18,7 +18,7 @@ mflr  %r11;								      \
 lwz   %r0,0b@got(%r11);						      \
 bl    JUMPTARGET(_mcount);
 #define CALL_MCOUNT							      \
-.section ".data";							      \
+.section ;							      \
 .align ALIGNARG(2);							      \
 0:.long 0;								      \
 .previous;								      \

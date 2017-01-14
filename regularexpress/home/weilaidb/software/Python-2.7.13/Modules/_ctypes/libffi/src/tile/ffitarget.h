@@ -1,5 +1,5 @@
 #define LIBFFI_TARGET_H
-#error "Please do not include ffitarget.h directly into your source.  Use ffi.h instead."
+#error
 typedef uint_reg_t ffi_arg;
 typedef int_reg_t  ffi_sarg;
 typedef enum ffi_abi  ffi_abi;

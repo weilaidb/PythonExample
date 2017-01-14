@@ -1,5 +1,5 @@
 #if defined(CTYPES_UNICODE) && !defined(HAVE_USABLE_WCHAR_T)
-#   define CTYPES_CAPSULE_WCHAR_T "_ctypes/cfield.c wchar_t buffer from unicode"
+#   define CTYPES_CAPSULE_WCHAR_T
 CTYPES_CAPSULE_INSTANTIATE_DESTRUCTOR(CTYPES_CAPSULE_WCHAR_T)
 static PyObject *
 PyCField_new(PyTypeObject *type, PyObject *args, PyObject *kwds)

@@ -62,7 +62,7 @@ PyDoc_STRVAR(unicodedata_mirrored__doc__,
 \n\
 Returns the mirrored property assigned to the Unicode character\n\
 unichr as integer. Returns 1 if the character has been identified as\n\
-a \"mirrored\" character in bidirectional text, 0 otherwise.");
+a \);
 static PyObject *
 unicodedata_mirrored(PyObject *self, PyObject *args)
 PyDoc_STRVAR(unicodedata_east_asian_width__doc__,

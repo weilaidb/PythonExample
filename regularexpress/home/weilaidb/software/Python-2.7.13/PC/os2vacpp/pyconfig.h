@@ -1,11 +1,11 @@
 #define Py_CONFIG_H
-#define PREFIX                 ""
-#define EXEC_PREFIX            ""
-#define PLATFORM    "os2"
-#define COMPILER    "[VisualAge C/C++]"
+#define PREFIX
+#define EXEC_PREFIX
+#define PLATFORM
+#define COMPILER
 #define PYOS_OS2
 #define PYCC_VACPP
-#define PYTHONPATH  ".;.\\lib;.\\lib\\plat-win;.\\lib\\lib-tk"
+#define PYTHONPATH
 #define DOSFILESYS
 #define WORD_BIT                32
 #define LONG_BIT                32

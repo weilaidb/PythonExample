@@ -1,5 +1,5 @@
 #if (FLT_RADIX != 2 && FLT_RADIX != 16)
-#error "Modules/cmathmodule.c expects FLT_RADIX to be 2 or 16"
+#error
 #define M_LN2 (0.6931471805599453094)
 #define M_LN10 (2.302585092994045684)
 #define CM_LARGE_DOUBLE (DBL_MAX/4.)
@@ -34,106 +34,76 @@ static Py_complex acos_special_values[7][7];
 static Py_complex
 c_acos(Py_complex z)
 PyDoc_STRVAR(c_acos_doc,
-"acos(x)\n"
-"\n"
-"Return the arc cosine of x.");
+);
 static Py_complex acosh_special_values[7][7];
 static Py_complex
 c_acosh(Py_complex z)
 PyDoc_STRVAR(c_acosh_doc,
-"acosh(x)\n"
-"\n"
-"Return the inverse hyperbolic cosine of x.");
+);
 static Py_complex
 c_asin(Py_complex z)
 PyDoc_STRVAR(c_asin_doc,
-"asin(x)\n"
-"\n"
-"Return the arc sine of x.");
+);
 static Py_complex asinh_special_values[7][7];
 static Py_complex
 c_asinh(Py_complex z)
 PyDoc_STRVAR(c_asinh_doc,
-"asinh(x)\n"
-"\n"
-"Return the inverse hyperbolic sine of x.");
+);
 static Py_complex
 c_atan(Py_complex z)
 static double
 c_atan2(Py_complex z)
 PyDoc_STRVAR(c_atan_doc,
-"atan(x)\n"
-"\n"
-"Return the arc tangent of x.");
+);
 static Py_complex atanh_special_values[7][7];
 static Py_complex
 c_atanh(Py_complex z)
 PyDoc_STRVAR(c_atanh_doc,
-"atanh(x)\n"
-"\n"
-"Return the inverse hyperbolic tangent of x.");
+);
 static Py_complex
 c_cos(Py_complex z)
 PyDoc_STRVAR(c_cos_doc,
-"cos(x)\n"
-"\n"
-"Return the cosine of x.");
+);
 static Py_complex cosh_special_values[7][7];
 static Py_complex
 c_cosh(Py_complex z)
 PyDoc_STRVAR(c_cosh_doc,
-"cosh(x)\n"
-"\n"
-"Return the hyperbolic cosine of x.");
+);
 static Py_complex exp_special_values[7][7];
 static Py_complex
 c_exp(Py_complex z)
 PyDoc_STRVAR(c_exp_doc,
-"exp(x)\n"
-"\n"
-"Return the exponential value e**x.");
+);
 static Py_complex log_special_values[7][7];
 static Py_complex
 c_log(Py_complex z)
 static Py_complex
 c_log10(Py_complex z)
 PyDoc_STRVAR(c_log10_doc,
-"log10(x)\n"
-"\n"
-"Return the base-10 logarithm of x.");
+);
 static Py_complex
 c_sin(Py_complex z)
 PyDoc_STRVAR(c_sin_doc,
-"sin(x)\n"
-"\n"
-"Return the sine of x.");
+);
 static Py_complex sinh_special_values[7][7];
 static Py_complex
 c_sinh(Py_complex z)
 PyDoc_STRVAR(c_sinh_doc,
-"sinh(x)\n"
-"\n"
-"Return the hyperbolic sine of x.");
+);
 static Py_complex sqrt_special_values[7][7];
 static Py_complex
 c_sqrt(Py_complex z)
 PyDoc_STRVAR(c_sqrt_doc,
-"sqrt(x)\n"
-"\n"
-"Return the square root of x.");
+);
 static Py_complex
 c_tan(Py_complex z)
 PyDoc_STRVAR(c_tan_doc,
-"tan(x)\n"
-"\n"
-"Return the tangent of x.");
+);
 static Py_complex tanh_special_values[7][7];
 static Py_complex
 c_tanh(Py_complex z)
 PyDoc_STRVAR(c_tanh_doc,
-"tanh(x)\n"
-"\n"
-"Return the hyperbolic tangent of x.");
+);
 static PyObject *
 cmath_log(PyObject *self, PyObject *args)
 PyDoc_STRVAR(cmath_log_doc,
@@ -188,8 +158,7 @@ PyDoc_STRVAR(cmath_isinf_doc,
 "isinf(z) -> bool\n\
 Checks if the real or imaginary part of z is infinite.");
 PyDoc_STRVAR(module_doc,
-"This module is always available. It provides access to mathematical\n"
-"functions for complex numbers.");
+);
 static PyMethodDef cmath_methods[] = ;
 PyMODINIT_FUNC
 initcmath(void)

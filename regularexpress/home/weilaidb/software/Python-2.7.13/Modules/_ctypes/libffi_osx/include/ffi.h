@@ -4,9 +4,9 @@
 #	elif defined(__ppc__) || defined(__ppc64__)
 #		define POWERPC_DARWIN
 #	else
-#	error "Unsupported MacOS X CPU type"
+#	error
 #	endif
-#error "Unsupported OS type"
+#error
 #	define FFI_LONG_LONG_MAX LONG_LONG_MAX
 #	ifdef LLONG_MAX
 #		define FFI_LONG_LONG_MAX LLONG_MAX
@@ -18,14 +18,14 @@
 #if SCHAR_MAX == 127
 #	define ffi_type_uchar	ffi_type_uint8
 #	define ffi_type_schar	ffi_type_sint8
-#error "char size not supported"
+#error
 #if SHRT_MAX == 32767
 #	define ffi_type_ushort	ffi_type_uint16
 #	define ffi_type_sshort	ffi_type_sint16
 #elif SHRT_MAX == 2147483647
 #	define ffi_type_ushort	ffi_type_uint32
 #	define ffi_type_sshort	ffi_type_sint32
-#error "short size not supported"
+#error
 #if INT_MAX == 32767
 #	define ffi_type_uint	ffi_type_uint16
 #	define ffi_type_sint	ffi_type_sint16
@@ -35,15 +35,15 @@
 #elif INT_MAX == 9223372036854775807
 #	define ffi_type_uint	ffi_type_uint64
 #	define ffi_type_sint	ffi_type_sint64
-#error "int size not supported"
+#error
 #define ffi_type_ulong	ffi_type_uint64
 #define ffi_type_slong	ffi_type_sint64
 #if LONG_MAX == 2147483647
 #	if FFI_LONG_LONG_MAX != 9223372036854775807
-#		error "no 64-bit data type supported"
+#		error
 #	endif
 #elif LONG_MAX != 9223372036854775807
-#error "long size not supported"
+#error
 typedef struct _ffi_type  ffi_type;
 extern ffi_type	ffi_type_void;
 extern ffi_type	ffi_type_uint8;

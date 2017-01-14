@@ -23,7 +23,7 @@ static nfagrammar *
 newnfagrammar(void)
 static nfa *
 addnfa(nfagrammar *gr, char *name)
-static char REQNFMT[] = "metacompile: less than %d children\n";
+static char REQNFMT[] = ;
 #define REQN(i, count) do  while (0)
 #define REQN(i, count)
 static nfagrammar *

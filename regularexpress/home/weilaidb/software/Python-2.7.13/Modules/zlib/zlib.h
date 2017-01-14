@@ -1,5 +1,5 @@
 #define ZLIB_H
-#define ZLIB_VERSION "1.2.8"
+#define ZLIB_VERSION
 #define ZLIB_VERNUM 0x1280
 #define ZLIB_VER_MAJOR 1
 #define ZLIB_VER_MINOR 2

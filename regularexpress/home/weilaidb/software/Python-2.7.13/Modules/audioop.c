@@ -4,7 +4,7 @@ typedef unsigned int Py_UInt32;
 #if SIZEOF_LONG == 4
 typedef long Py_Int32;
 typedef unsigned long Py_UInt32;
-#error "No 4-byte integral type"
+#error
 typedef short PyInt16;
 #if defined(__CHAR_UNSIGNED__)
 #if defined(signed)

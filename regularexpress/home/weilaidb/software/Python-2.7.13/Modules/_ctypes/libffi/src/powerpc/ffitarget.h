@@ -1,5 +1,5 @@
 #define LIBFFI_TARGET_H
-#error "Please do not include ffitarget.h directly into your source.  Use ffi.h instead."
+#error
 #if defined (POWERPC) && defined (__powerpc64__)
 #define POWERPC64
 #elif defined (POWERPC_DARWIN) && defined (__ppc64__)

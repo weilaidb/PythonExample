@@ -32,6 +32,6 @@ null_richcompare(PyObject *self, PyObject *other, int op)
 static PyTypeObject Null_Type = ;
 static PyMethodDef xx_methods[] = ;
 PyDoc_STRVAR(module_doc,
-"This is a template module just for instruction.");
+);
 PyMODINIT_FUNC
 initxx(void)

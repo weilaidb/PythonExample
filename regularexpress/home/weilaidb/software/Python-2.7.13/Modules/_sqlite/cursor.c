@@ -1,5 +1,5 @@
 PyObject* pysqlite_cursor_iternext(pysqlite_Cursor* self);
-static char* errmsg_fetch_across_rollback = "Cursor needed to be reset because of commit/rollback and can no longer be fetched from.";
+static char* errmsg_fetch_across_rollback = ;
 static pysqlite_StatementKind detect_statement_type(char* statement)
 static int pysqlite_cursor_init(pysqlite_Cursor* self, PyObject* args, PyObject* kwargs)
 static void pysqlite_cursor_dealloc(pysqlite_Cursor* self)
@@ -24,6 +24,6 @@ static PyMethodDef cursor_methods[] = ;
 static struct PyMemberDef cursor_members[] =
 ;
 static char cursor_doc[] =
-PyDoc_STR("SQLite database cursor class.");
+PyDoc_STR();
 PyTypeObject pysqlite_CursorType = ;
 extern int pysqlite_cursor_setup_types(void)

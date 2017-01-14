@@ -114,7 +114,7 @@ merge_force_collapse(MergeState *ms)
 static Py_ssize_t
 merge_compute_minrun(Py_ssize_t n)
 typedef struct  sortwrapperobject;
-PyDoc_STRVAR(sortwrapper_doc, "Object wrapper with a custom sort key.");
+PyDoc_STRVAR(sortwrapper_doc, );
 static PyObject *
 sortwrapper_richcompare(sortwrapperobject *, sortwrapperobject *, int);
 static void
@@ -133,7 +133,7 @@ static void
 cmpwrapper_dealloc(cmpwrapperobject *co)
 static PyObject *
 cmpwrapper_call(cmpwrapperobject *co, PyObject *args, PyObject *kwds)
-PyDoc_STRVAR(cmpwrapper_doc, "cmp() wrapper for sort with custom keys.");
+PyDoc_STRVAR(cmpwrapper_doc, );
 static PyTypeObject cmpwrapper_type = ;
 static PyObject *
 build_cmpwrapper(PyObject *cmpfunc)
@@ -166,30 +166,27 @@ list_sizeof(PyListObject *self)
 static PyObject *list_iter(PyObject *seq);
 static PyObject *list_reversed(PyListObject* seq, PyObject* unused);
 PyDoc_STRVAR(getitem_doc,
-"x.__getitem__(y) <==> x[y]");
+);
 PyDoc_STRVAR(reversed_doc,
-"L.__reversed__() -- return a reverse iterator over the list");
+);
 PyDoc_STRVAR(sizeof_doc,
-"L.__sizeof__() -- size of L in memory, in bytes");
+);
 PyDoc_STRVAR(append_doc,
-"L.append(object) -- append object to end");
+);
 PyDoc_STRVAR(extend_doc,
-"L.extend(iterable) -- extend list by appending elements from the iterable");
+);
 PyDoc_STRVAR(insert_doc,
-"L.insert(index, object) -- insert object before index");
+);
 PyDoc_STRVAR(pop_doc,
-"L.pop([index]) -> item -- remove and return item at index (default last).\n"
-"Raises IndexError if list is empty or index is out of range.");
+);
 PyDoc_STRVAR(remove_doc,
-"L.remove(value) -- remove first occurrence of value.\n"
-"Raises ValueError if the value is not present.");
+);
 PyDoc_STRVAR(index_doc,
-"L.index(value, [start, [stop]]) -> integer -- return first index of value.\n"
-"Raises ValueError if the value is not present.");
+);
 PyDoc_STRVAR(count_doc,
-"L.count(value) -> integer -- return number of occurrences of value");
+);
 PyDoc_STRVAR(reverse_doc,
-"L.reverse() -- reverse *IN PLACE*");
+);
 PyDoc_STRVAR(sort_doc,
 "L.sort(cmp=None, key=None, reverse=False) -- stable sort *IN PLACE*;\n\
 cmp(x, y) -> -1, 0, 1");
@@ -197,8 +194,7 @@ static PyObject *list_subscript(PyListObject*, PyObject*);
 static PyMethodDef list_methods[] = ;
 static PySequenceMethods list_as_sequence = ;
 PyDoc_STRVAR(list_doc,
-"list() -> new empty list\n"
-"list(iterable) -> new list initialized from iterable's items");
+);
 static PyObject *
 list_subscript(PyListObject* self, PyObject* item)
 static int
@@ -211,7 +207,7 @@ static void listiter_dealloc(listiterobject *);
 static int listiter_traverse(listiterobject *, visitproc, void *);
 static PyObject *listiter_next(listiterobject *);
 static PyObject *listiter_len(listiterobject *);
-PyDoc_STRVAR(length_hint_doc, "Private method returning an estimate of len(list(it)).");
+PyDoc_STRVAR(length_hint_doc, );
 static PyMethodDef listiter_methods[] = ;
 PyTypeObject PyListIter_Type = ;
 static PyObject *

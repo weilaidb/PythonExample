@@ -110,6 +110,99 @@ ElementObject* self = (ElementObject*) self_;
 if (PyInt_Check(item) || PyLong_Check(item))
 static int
 element_ass_subscr(PyObject* self_, PyObject* item, PyObject* value)
+{
+ElementObject* self = (ElementObject*) self_;
+#if (PY_VERSION_HEX < 0x02050000)
+if (PyInt_Check(item) || PyLong_Check(item))
+static PyMethodDef element_methods[] = ;
+static PyObject*
+element_getattr(ElementObject* self, char* name)
+static int
+element_setattr(ElementObject* self, const char* name, PyObject* value)
+static PySequenceMethods element_as_sequence = ;
+static PyMappingMethods element_as_mapping = ;
+statichere PyTypeObject Element_Type = ;
+typedef struct  TreeBuilderObject;
+staticforward PyTypeObject TreeBuilder_Type;
+#define TreeBuilder_CheckExact(op) (Py_TYPE(op) == &TreeBuilder_Type)
+LOCAL(PyObject*)
+treebuilder_new(void)
+static PyObject*
+treebuilder(PyObject* self_, PyObject* args)
+static void
+treebuilder_dealloc(TreeBuilderObject* self)
+LOCAL(int)
+treebuilder_append_event(TreeBuilderObject *self, PyObject *action,
+PyObject *node)
+LOCAL(PyObject*)
+treebuilder_handle_xml(TreeBuilderObject* self, PyObject* encoding,
+PyObject* standalone)
+LOCAL(PyObject*)
+treebuilder_handle_start(TreeBuilderObject* self, PyObject* tag,
+PyObject* attrib)
+LOCAL(PyObject*)
+treebuilder_handle_data(TreeBuilderObject* self, PyObject* data)
+LOCAL(PyObject*)
+treebuilder_handle_end(TreeBuilderObject* self, PyObject* tag)
+static PyObject*
+treebuilder_data(TreeBuilderObject* self, PyObject* args)
+static PyObject*
+treebuilder_end(TreeBuilderObject* self, PyObject* args)
+LOCAL(PyObject*)
+treebuilder_done(TreeBuilderObject* self)
+static PyObject*
+treebuilder_close(TreeBuilderObject* self, PyObject* args)
+static PyObject*
+treebuilder_start(TreeBuilderObject* self, PyObject* args)
+static PyObject*
+treebuilder_xml(TreeBuilderObject* self, PyObject* args)
+static PyMethodDef treebuilder_methods[] = ;
+static PyObject*
+treebuilder_getattr(TreeBuilderObject* self, char* name)
+statichere PyTypeObject TreeBuilder_Type = ;
+#if defined(USE_EXPAT)
+#if defined(USE_PYEXPAT_CAPI)
+static struct PyExpat_CAPI* expat_capi;
+#define EXPAT(func) (expat_capi->func)
+#define EXPAT(func) (XML_##func)
+typedef struct  XMLParserObject;
+staticforward PyTypeObject XMLParser_Type;
+#if defined(Py_USING_UNICODE)
+LOCAL(int)
+checkstring(const char* string, int size)
+LOCAL(PyObject*)
+makestring(const char* string, int size)
+LOCAL(PyObject*)
+makeuniversal(XMLParserObject* self, const char* string)
+static void
+expat_set_error(const char* message, int line, int column)
+static void
+expat_default_handler(XMLParserObject* self, const XML_Char* data_in,
+int data_len)
+static void
+expat_start_handler(XMLParserObject* self, const XML_Char* tag_in,
+const XML_Char **attrib_in)
+static void
+expat_data_handler(XMLParserObject* self, const XML_Char* data_in,
+int data_len)
+static void
+expat_end_handler(XMLParserObject* self, const XML_Char* tag_in)
+static void
+expat_start_ns_handler(XMLParserObject* self, const XML_Char* prefix,
+const XML_Char *uri)
+static void
+expat_end_ns_handler(XMLParserObject* self, const XML_Char* prefix_in)
+static void
+expat_comment_handler(XMLParserObject* self, const XML_Char* comment_in)
+static void
+expat_pi_handler(XMLParserObject* self, const XML_Char* target_in,
+const XML_Char* data_in)
+#if defined(Py_USING_UNICODE)
+static int
+expat_unknown_encoding_handler(XMLParserObject *self, const XML_Char *name,
+XML_Encoding *info)
+static PyObject*
+xmlparser(PyObject* self_, PyObject* args, PyObject* kw)
 static void
 xmlparser_dealloc(XMLParserObject* self)
 LOCAL(PyObject*)

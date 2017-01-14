@@ -28,14 +28,14 @@ ffi_type;
 #if SCHAR_MAX == 127
 # define ffi_type_uchar                ffi_type_uint8
 # define ffi_type_schar                ffi_type_sint8
-#error "char size not supported"
+#error
 #if SHRT_MAX == 32767
 # define ffi_type_ushort       ffi_type_uint16
 # define ffi_type_sshort       ffi_type_sint16
 #elif SHRT_MAX == 2147483647
 # define ffi_type_ushort       ffi_type_uint32
 # define ffi_type_sshort       ffi_type_sint32
-#error "short size not supported"
+#error
 #if INT_MAX == 32767
 # define ffi_type_uint         ffi_type_uint16
 # define ffi_type_sint         ffi_type_sint16
@@ -45,20 +45,20 @@ ffi_type;
 #elif INT_MAX == 9223372036854775807
 # define ffi_type_uint         ffi_type_uint64
 # define ffi_type_sint         ffi_type_sint64
-#error "int size not supported"
+#error
 #if LONG_MAX == 2147483647
 # if FFI_LONG_LONG_MAX != FFI_64_BIT_MAX
-#error "no 64-bit data type supported"
+#error
 # endif
 #elif LONG_MAX != FFI_64_BIT_MAX
-#error "long size not supported"
+#error
 #if LONG_MAX == 2147483647
 # define ffi_type_ulong        ffi_type_uint32
 # define ffi_type_slong        ffi_type_sint32
 #elif LONG_MAX == FFI_64_BIT_MAX
 # define ffi_type_ulong        ffi_type_uint64
 # define ffi_type_slong        ffi_type_sint64
-#error "long size not supported"
+#error
 #if defined _MSC_VER && !defined FFI_BUILDING
 #define FFI_EXTERN extern __declspec(dllimport)
 #define FFI_EXTERN extern

@@ -1,5 +1,5 @@
 #define STRINGLIB_SPLIT_H
-#error must include "stringlib/fastsearch.h" before including this module
+#error must include  before including this module
 #define MAX_PREALLOC 12
 #define PREALLOC_SIZE(maxsplit) \
 (maxsplit >= MAX_PREALLOC ? MAX_PREALLOC : maxsplit+1)

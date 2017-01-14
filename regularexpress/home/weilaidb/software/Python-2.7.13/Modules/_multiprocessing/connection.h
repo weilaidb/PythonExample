@@ -36,7 +36,5 @@ connection_writable(ConnectionObject *self, void *closure)
 static PyMethodDef connection_methods[] = ;
 static PyGetSetDef connection_getset[] = ;
 PyDoc_STRVAR(connection_doc,
-"Connection type whose constructor signature is\n\n"
-"    Connection(handle, readable=True, writable=True).\n\n"
-"The constructor does *not* duplicate the handle.");
+);
 PyTypeObject CONNECTION_TYPE = ;

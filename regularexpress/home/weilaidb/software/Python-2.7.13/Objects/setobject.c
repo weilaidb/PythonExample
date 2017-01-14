@@ -62,7 +62,7 @@ static int
 setiter_traverse(setiterobject *si, visitproc visit, void *arg)
 static PyObject *
 setiter_len(setiterobject *si)
-PyDoc_STRVAR(length_hint_doc, "Private method returning an estimate of len(list(it)).");
+PyDoc_STRVAR(length_hint_doc, );
 static PyMethodDef setiter_methods[] = ;
 static PyObject *setiter_iternext(setiterobject *si)
 static PyTypeObject PySetIter_Type = ;
@@ -73,7 +73,7 @@ set_update_internal(PySetObject *so, PyObject *other)
 static PyObject *
 set_update(PySetObject *so, PyObject *args)
 PyDoc_STRVAR(update_doc,
-"Update a set with the union of itself and others.");
+);
 static PyObject *
 make_new_set(PyTypeObject *type, PyObject *iterable)
 static PyObject *emptyfrozenset = NULL;
@@ -89,10 +89,10 @@ static PyObject *
 set_copy(PySetObject *so)
 static PyObject *
 frozenset_copy(PySetObject *so)
-PyDoc_STRVAR(copy_doc, "Return a shallow copy of a set.");
+PyDoc_STRVAR(copy_doc, );
 static PyObject *
 set_clear(PySetObject *so)
-PyDoc_STRVAR(clear_doc, "Remove all elements from this set.");
+PyDoc_STRVAR(clear_doc, );
 static PyObject *
 set_union(PySetObject *so, PyObject *args)
 PyDoc_STRVAR(union_doc,
@@ -116,7 +116,7 @@ set_intersection_update(PySetObject *so, PyObject *other)
 static PyObject *
 set_intersection_update_multi(PySetObject *so, PyObject *args)
 PyDoc_STRVAR(intersection_update_doc,
-"Update a set with the intersection of itself and another.");
+);
 static PyObject *
 set_and(PySetObject *so, PyObject *other)
 static PyObject *
@@ -124,13 +124,13 @@ set_iand(PySetObject *so, PyObject *other)
 static PyObject *
 set_isdisjoint(PySetObject *so, PyObject *other)
 PyDoc_STRVAR(isdisjoint_doc,
-"Return True if two sets have a null intersection.");
+);
 static int
 set_difference_update_internal(PySetObject *so, PyObject *other)
 static PyObject *
 set_difference_update(PySetObject *so, PyObject *args)
 PyDoc_STRVAR(difference_update_doc,
-"Remove all elements of another set from this set.");
+);
 static PyObject *
 set_difference(PySetObject *so, PyObject *other)
 static PyObject *
@@ -146,7 +146,7 @@ set_isub(PySetObject *so, PyObject *other)
 static PyObject *
 set_symmetric_difference_update(PySetObject *so, PyObject *other)
 PyDoc_STRVAR(symmetric_difference_update_doc,
-"Update a set with the symmetric difference of itself and another.");
+);
 static PyObject *
 set_symmetric_difference(PySetObject *so, PyObject *other)
 PyDoc_STRVAR(symmetric_difference_doc,
@@ -159,10 +159,10 @@ static PyObject *
 set_ixor(PySetObject *so, PyObject *other)
 static PyObject *
 set_issubset(PySetObject *so, PyObject *other)
-PyDoc_STRVAR(issubset_doc, "Report whether another set contains this set.");
+PyDoc_STRVAR(issubset_doc, );
 static PyObject *
 set_issuperset(PySetObject *so, PyObject *other)
-PyDoc_STRVAR(issuperset_doc, "Report whether this set contains another set.");
+PyDoc_STRVAR(issuperset_doc, );
 static PyObject *
 set_richcompare(PySetObject *v, PyObject *w, int op)
 static int
@@ -177,7 +177,7 @@ static int
 set_contains(PySetObject *so, PyObject *key)
 static PyObject *
 set_direct_contains(PySetObject *so, PyObject *key)
-PyDoc_STRVAR(contains_doc, "x.__contains__(y) <==> y in x.");
+PyDoc_STRVAR(contains_doc, );
 static PyObject *
 set_remove(PySetObject *so, PyObject *key)
 PyDoc_STRVAR(remove_doc,
@@ -192,10 +192,10 @@ PyDoc_STRVAR(discard_doc,
 If the element is not a member, do nothing.");
 static PyObject *
 set_reduce(PySetObject *so)
-PyDoc_STRVAR(reduce_doc, "Return state information for pickling.");
+PyDoc_STRVAR(reduce_doc, );
 static PyObject *
 set_sizeof(PySetObject *so)
-PyDoc_STRVAR(sizeof_doc, "S.__sizeof__() -> size of S in memory, in bytes");
+PyDoc_STRVAR(sizeof_doc, );
 static int
 set_init(PySetObject *self, PyObject *args, PyObject *kwds)
 static PySequenceMethods set_as_sequence = ;

@@ -1,5 +1,5 @@
 #if defined(HAVE_POLL) && !defined(HAVE_BROKEN_POLL)
-#  include "poll.h"
+#  include
 #  define WRITE(h, buffer, length) send((SOCKET)h, buffer, length, 0)
 #  define READ(h, buffer, length) recv((SOCKET)h, buffer, length, 0)
 #  define CLOSE(h) closesocket((SOCKET)h)
@@ -19,5 +19,5 @@ conn_recv_string(ConnectionObject *conn, char *buffer,
 size_t buflength, char **newbuffer, size_t maxlength)
 static int
 conn_poll(ConnectionObject *conn, double timeout, PyThreadState *_save)
-#define CONNECTION_NAME "Connection"
+#define CONNECTION_NAME
 #define CONNECTION_TYPE ConnectionType

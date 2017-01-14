@@ -38,29 +38,29 @@ typedef sem_t *SEM_HANDLE;
 typedef int Py_ssize_t;
 #  define PY_SSIZE_T_MAX INT_MAX
 #  define PY_SSIZE_T_MIN INT_MIN
-#  define F_PY_SSIZE_T "i"
+#  define F_PY_SSIZE_T
 #  define PyInt_FromSsize_t(n) PyInt_FromLong((long)n)
-#  define F_PY_SSIZE_T "n"
+#  define F_PY_SSIZE_T
 #if SIZEOF_VOID_P == SIZEOF_LONG
-#  define F_POINTER "k"
+#  define F_POINTER
 #  define T_POINTER T_ULONG
 #elif defined(HAVE_LONG_LONG) && (SIZEOF_VOID_P == SIZEOF_LONG_LONG)
-#  define F_POINTER "K"
+#  define F_POINTER
 #  define T_POINTER T_ULONGLONG
-#  error "can't find format code for unsigned integer of same size as void*"
+#  error
 #  define F_HANDLE F_POINTER
 #  define T_HANDLE T_POINTER
 #  define F_SEM_HANDLE F_HANDLE
 #  define T_SEM_HANDLE T_HANDLE
-#  define F_DWORD "k"
+#  define F_DWORD
 #  define T_DWORD T_ULONG
-#  define F_HANDLE "i"
+#  define F_HANDLE
 #  define T_HANDLE T_INT
 #  define F_SEM_HANDLE F_POINTER
 #  define T_SEM_HANDLE T_POINTER
 #if PY_VERSION_HEX >= 0x03000000
-#  define F_RBUFFER "y"
-#  define F_RBUFFER "s"
+#  define F_RBUFFER
+#  define F_RBUFFER
 #define MP_SUCCESS (0)
 #define MP_STANDARD_ERROR (-1)
 #define MP_MEMORY_ERROR (-1001)
@@ -79,11 +79,11 @@ extern PyTypeObject ConnectionType;
 extern PyTypeObject PipeConnectionType;
 extern HANDLE sigint_event;
 #if PY_VERSION_HEX >= 0x03000000
-#  define PICKLE_MODULE "pickle"
+#  define PICKLE_MODULE
 #  define FROM_FORMAT PyUnicode_FromFormat
 #  define PyInt_FromLong PyLong_FromLong
 #  define PyInt_FromSsize_t PyLong_FromSsize_t
-#  define PICKLE_MODULE "cPickle"
+#  define PICKLE_MODULE
 #  define FROM_FORMAT PyString_FromFormat
 #  define PyVarObject_HEAD_INIT(type, size) PyObject_HEAD_INIT(type) size,
 #  define Py_TPFLAGS_HAVE_WEAKREFS 0

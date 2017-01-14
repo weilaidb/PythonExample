@@ -1,5 +1,5 @@
 #define PY_SSIZE_T_CLEAN
-char _PyByteArray_empty_string[] = "";
+char _PyByteArray_empty_string[] = ;
 void
 PyByteArray_Fini(void)
 int
@@ -341,7 +341,7 @@ static int
 hex_digit_to_int(char c)
 static PyObject *
 bytearray_fromhex(PyObject *cls, PyObject *args)
-PyDoc_STRVAR(reduce_doc, "Return state information for pickling.");
+PyDoc_STRVAR(reduce_doc, );
 static PyObject *
 bytearray_reduce(PyByteArrayObject *self)
 PyDoc_STRVAR(sizeof_doc,
@@ -382,7 +382,7 @@ bytearrayiter_next(bytesiterobject *it)
 static PyObject *
 bytesarrayiter_length_hint(bytesiterobject *it)
 PyDoc_STRVAR(length_hint_doc,
-"Private method returning an estimate of len(list(it)).");
+);
 static PyMethodDef bytearrayiter_methods[] = ;
 PyTypeObject PyByteArrayIter_Type = ;
 static PyObject *

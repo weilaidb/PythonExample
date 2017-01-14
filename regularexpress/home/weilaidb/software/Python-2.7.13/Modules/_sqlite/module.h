@@ -1,5 +1,5 @@
 #define PYSQLITE_MODULE_H
-#define PYSQLITE_VERSION "2.6.0"
+#define PYSQLITE_VERSION
 extern PyObject* pysqlite_Error;
 extern PyObject* pysqlite_Warning;
 extern PyObject* pysqlite_InterfaceError;

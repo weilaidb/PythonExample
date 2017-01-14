@@ -179,20 +179,20 @@ static PyTypeObject kqueue_queue_Type;
 #   define T_UINTPTRT         T_ULONGLONG
 #   define T_INTPTRT          T_LONGLONG
 #   define PyLong_AsUintptr_t PyLong_AsUnsignedLongLong
-#   define UINTPTRT_FMT_UNIT  "K"
-#   define INTPTRT_FMT_UNIT   "L"
+#   define UINTPTRT_FMT_UNIT
+#   define INTPTRT_FMT_UNIT
 #elif (SIZEOF_UINTPTR_T == SIZEOF_LONG)
 #   define T_UINTPTRT         T_ULONG
 #   define T_INTPTRT          T_LONG
 #   define PyLong_AsUintptr_t PyLong_AsUnsignedLong
-#   define UINTPTRT_FMT_UNIT  "k"
-#   define INTPTRT_FMT_UNIT   "l"
+#   define UINTPTRT_FMT_UNIT
+#   define INTPTRT_FMT_UNIT
 #elif (SIZEOF_UINTPTR_T == SIZEOF_INT)
 #   define T_UINTPTRT         T_UINT
 #   define T_INTPTRT          T_INT
 #   define PyLong_AsUintptr_t PyLong_AsUnsignedLong
-#   define UINTPTRT_FMT_UNIT  "I"
-#   define INTPTRT_FMT_UNIT   "i"
+#   define UINTPTRT_FMT_UNIT
+#   define INTPTRT_FMT_UNIT
 #   error uintptr_t does not match int, long, or long long!
 #if !defined(__OpenBSD__)
 #   define IDENT_TYPE	T_UINTPTRT
@@ -203,7 +203,7 @@ static PyTypeObject kqueue_queue_Type;
 #   define IDENT_TYPE	T_UINT
 #   define IDENT_CAST	int
 #   define DATA_TYPE	T_INT
-#   define DATA_FMT_UNIT "i"
+#   define DATA_FMT_UNIT
 #   define IDENT_AsType	PyLong_AsUnsignedLong
 #define KQ_OFF(x) offsetof(kqueue_event_Object, x)
 static struct PyMemberDef kqueue_event_members[] = ;
@@ -309,14 +309,14 @@ PyMODINIT_FUNC
 initselect(void)
 {
 PyObject *m;
-m = Py_InitModule3("select", select_methods, module_doc);
+m = Py_InitModule3(, select_methods, module_doc);
 if (m == NULL)
 return;
-SelectError = PyErr_NewException("select.error", NULL, NULL);
+SelectError = PyErr_NewException(, NULL, NULL);
 Py_INCREF(SelectError);
-PyModule_AddObject(m, "error", SelectError);
+PyModule_AddObject(m, , SelectError);
 #undef PIPE_BUF
 #define PIPE_BUF 512
-PyModule_AddIntConstant(m, "PIPE_BUF", PIPE_BUF);
+PyModule_AddIntConstant(m, , PIPE_BUF);
 #if defined(HAVE_POLL) && !defined(HAVE_BROKEN_POLL)
 if (select_have_broken_poll())  else

@@ -1,11 +1,10 @@
 #define Py_CONFIG_H
-#define PLATFORM	"os2emx"
-#define COMPILER	"[EMX GCC " __VERSION__ "]"
+#define PLATFORM
+#define COMPILER
 #define PYOS_OS2	1
 #define PYCC_GCC	1
-#define PREFIX		""
-#define PYTHONPATH	"./Lib;./Lib/plat-" PLATFORM \
-";./Lib/lib-dynload;./Lib/site-packages"
+#define PREFIX
+#define PYTHONPATH	 PLATFORM \
 #  define PyAPI_FUNC(RTYPE)	RTYPE
 #  define PyAPI_FUNC(RTYPE)	extern RTYPE
 #define PyAPI_DATA(RTYPE)	extern RTYPE

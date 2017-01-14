@@ -10,7 +10,7 @@ extern char **completion_matches(char *, rl_compentry_func_t *);
 #if !defined(__APPLE__)
 extern char **completion_matches(char *, CPFunction *);
 static int using_libedit_emulation = 0;
-static const char libedit_version_tag[] = "EditLine wrapper";
+static const char libedit_version_tag[] = ;
 static int libedit_history_start = 0;
 static void
 on_completion_display_matches_hook(char **matches,
@@ -215,8 +215,8 @@ readline_until_enter_or_signal(char *prompt, int *signal)
 static char *
 call_readline(FILE *sys_stdin, FILE *sys_stdout, char *prompt)
 PyDoc_STRVAR(doc_module,
-"Importing this module enables command line editing using GNU readline.");
+);
 PyDoc_STRVAR(doc_module_le,
-"Importing this module enables command line editing using libedit readline.");
+);
 PyMODINIT_FUNC
 initreadline(void)

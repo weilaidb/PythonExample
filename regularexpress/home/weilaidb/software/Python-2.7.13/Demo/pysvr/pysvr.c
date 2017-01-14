@@ -10,10 +10,10 @@ static void *service_thread(struct workorder *);
 static void run_interpreter(FILE *, FILE *);
 static int run_command(char *, PyObject *);
 static void ps(void);
-static char *progname = "pysvr";
+static char *progname = ;
 static PyThreadState *gtstate;
 main(int argc, char **argv)
-static char usage_line[] = "usage: %s [port]\n";
+static char usage_line[] = ;
 static void
 usage(void)
 static void

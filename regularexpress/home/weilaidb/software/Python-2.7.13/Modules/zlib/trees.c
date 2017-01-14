@@ -20,7 +20,7 @@ uch _dist_code[DIST_CODE_LEN];
 uch _length_code[MAX_MATCH-MIN_MATCH+1];
 local int base_length[LENGTH_CODES];
 local int base_dist[D_CODES];
-#  include "trees.h"
+#  include
 struct static_tree_desc_s ;
 local static_tree_desc  static_l_desc =
 ;
@@ -62,27 +62,9 @@ local void tr_static_init()
 #    include <stdio.h>
 #  endif
 #  define SEPARATOR(i, last, width) \
-((i) == (last)? "\n};\n\n" :    \
-((i) % (width) == (width)-1 ? ",\n" : ", "))
+((i) == (last)?  :    \
+((i) % (width) == (width)-1 ? ))
 void gen_trees_header()
-{
-FILE *header = fopen("trees.h", "w");
-int i;
-Assert (header != NULL, "Can't open trees.h");
-fprintf(header,
-"\n\n");
-fprintf(header, "local const ct_data static_ltree[L_CODES+2] = {\n");
-for (i = 0; i < L_CODES+2; i++)
-fprintf(header, "local const ct_data static_dtree[D_CODES] = {\n");
-for (i = 0; i < D_CODES; i++)
-fprintf(header, "const uch ZLIB_INTERNAL _dist_code[DIST_CODE_LEN] = {\n");
-for (i = 0; i < DIST_CODE_LEN; i++)
-fprintf(header,
-"const uch ZLIB_INTERNAL _length_code[MAX_MATCH-MIN_MATCH+1]= {\n");
-for (i = 0; i < MAX_MATCH-MIN_MATCH+1; i++)
-fprintf(header, "local const int base_length[LENGTH_CODES] = {\n");
-for (i = 0; i < LENGTH_CODES; i++)
-fprintf(header, "local const int base_dist[D_CODES] =
 void ZLIB_INTERNAL _tr_init(s)
 deflate_state *s;
 local void init_block(s)

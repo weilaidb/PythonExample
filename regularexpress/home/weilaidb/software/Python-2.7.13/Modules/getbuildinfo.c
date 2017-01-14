@@ -1,11 +1,11 @@
 #define DATE __DATE__
-#define DATE "xx/xx/xx"
+#define DATE
 #define TIME __TIME__
-#define TIME "xx:xx:xx"
-#define SVNVERSION "$WCRANGE$$WCMODS?M:$"
-#define HGVERSION ""
-#define HGTAG ""
-#define HGBRANCH ""
+#define TIME
+#define SVNVERSION
+#define HGVERSION
+#define HGTAG
+#define HGBRANCH
 const char *
 Py_GetBuildInfo(void)
 const char *

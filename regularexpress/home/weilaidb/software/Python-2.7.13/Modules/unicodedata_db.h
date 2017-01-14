@@ -1,4 +1,4 @@
-#define UNIDATA_VERSION "5.2.0"
+#define UNIDATA_VERSION
 const _PyUnicode_DatabaseRecord _PyUnicode_Database_Records[] = ;
 #define TOTAL_FIRST 370
 #define TOTAL_LAST 55

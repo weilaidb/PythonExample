@@ -9,7 +9,7 @@ static PyUnicodeObject *unicode_empty = NULL;
 #define _Py_RETURN_UNICODE_EMPTY()                      \
 do  while (0)
 static PyUnicodeObject *unicode_latin1[256] = ;
-static char unicode_default_encoding[100 + 1] = "ascii";
+static char unicode_default_encoding[100 + 1] = ;
 const unsigned char _Py_ascii_whitespace[] = ;
 static unsigned char ascii_linebreak[] = ;
 Py_UNICODE
@@ -20,7 +20,7 @@ PyUnicode_GetMax(void)
 #define BLOOM_WIDTH 64
 #elif LONG_BIT >= 32
 #define BLOOM_WIDTH 32
-#error "LONG_BIT is smaller than 32"
+#error
 #define BLOOM_MASK unsigned long
 static BLOOM_MASK bloom_linebreak = ~(BLOOM_MASK)0;
 #define BLOOM_ADD(mask, ch) ((mask |= (1UL << ((ch) & (BLOOM_WIDTH - 1)))))
@@ -121,7 +121,7 @@ PyUnicodeObject **output, Py_ssize_t *outpos, Py_UNICODE **outptr)
 ((c) >= '0' && (c) <= '9') ? (c) - '0' + 52 :                      \
 (c) == '+' ? 62 : 63)
 #define TO_BASE64(n)  \
-("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(n) & 0x3f])
+([(n) & 0x3f])
 #define DECODE_DIRECT(c)                                \
 ((c) <= 127 && (c) != '+')
 static
@@ -208,7 +208,6 @@ return (PyObject *)v;
 ucnhashError:
 PyErr_SetString(
 PyExc_UnicodeError,
-"\\N escapes not supported (can't load unicodedata module)"
 );
 Py_XDECREF(v);
 Py_XDECREF(errorHandler);

@@ -370,31 +370,19 @@ string_expandtabs(PyStringObject *self, PyObject *args)
 Py_LOCAL_INLINE(PyObject *)
 pad(PyStringObject *self, Py_ssize_t left, Py_ssize_t right, char fill)
 PyDoc_STRVAR(ljust__doc__,
-"S.ljust(width[, fillchar]) -> string\n"
-"\n"
-"Return S left-justified in a string of length width. Padding is\n"
-"done using the specified fill character (default is a space).");
+);
 static PyObject *
 string_ljust(PyStringObject *self, PyObject *args)
 PyDoc_STRVAR(rjust__doc__,
-"S.rjust(width[, fillchar]) -> string\n"
-"\n"
-"Return S right-justified in a string of length width. Padding is\n"
-"done using the specified fill character (default is a space)");
+);
 static PyObject *
 string_rjust(PyStringObject *self, PyObject *args)
 PyDoc_STRVAR(center__doc__,
-"S.center(width[, fillchar]) -> string\n"
-"\n"
-"Return S centered in a string of length width. Padding is\n"
-"done using the specified fill character (default is a space)");
+);
 static PyObject *
 string_center(PyStringObject *self, PyObject *args)
 PyDoc_STRVAR(zfill__doc__,
-"S.zfill(width) -> string\n"
-"\n"
-"Pad a numeric string S with zeros on the left, to fill a field\n"
-"of the specified width.  The string S is never truncated.");
+);
 static PyObject *
 string_zfill(PyStringObject *self, PyObject *args)
 PyDoc_STRVAR(isspace__doc__,
@@ -457,7 +445,7 @@ is given and true.");
 static PyObject*
 string_splitlines(PyStringObject *self, PyObject *args)
 PyDoc_STRVAR(sizeof__doc__,
-"S.__sizeof__() -> size of S in memory, in bytes");
+);
 static PyObject *
 string_sizeof(PyStringObject *v)
 static PyObject *
@@ -486,7 +474,7 @@ basestring_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
 static PyObject *
 string_mod(PyObject *v, PyObject *w)
 PyDoc_STRVAR(basestring_doc,
-"Type basestring cannot be instantiated; it is the base for str and unicode.");
+);
 static PyNumberMethods string_as_number = ;
 PyTypeObject PyBaseString_Type = ;
 PyDoc_STRVAR(string_doc,

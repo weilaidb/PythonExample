@@ -220,13 +220,13 @@
 #define HAVE_ZLIB_COPY 1
 #define MVWDELCH_IS_EXPRESSION 1
 #define PTHREAD_SYSTEM_SCHED_SUPPORTED 1
-#define PY_FORMAT_LONG_LONG "ll"
-#define PY_FORMAT_SIZE_T "z"
+#define PY_FORMAT_LONG_LONG
+#define PY_FORMAT_SIZE_T
 #define PY_UNICODE_TYPE unsigned short
 #define Py_UNICODE_SIZE 2
 #define Py_USING_UNICODE 1
 #define RETSIGTYPE void
-#define SHLIB_EXT ".so"
+#define SHLIB_EXT
 #define SIZEOF_DOUBLE 8
 #define SIZEOF_FLOAT 4
 #define SIZEOF_FPOS_T 16

@@ -1,5 +1,4 @@
 #define NAME_CHARS \
-"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz"
 static int
 all_name_chars(PyObject *o)
 static void

@@ -11,9 +11,9 @@
 #undef CONST
 #define CONST
 #if TK_HEX_VERSION < 0x08030201
-#error "Tk older than 8.3.1 not supported"
+#error
 #if TCL_UTF_MAX != 3 && !(defined(Py_UNICODE_WIDE) && TCL_UTF_MAX==6)
-#error "unsupported Tcl configuration"
+#error
 #if TK_HEX_VERSION >= 0x08050208 && TK_HEX_VERSION < 0x08060000 || \
 TK_HEX_VERSION >= 0x08060200
 #define HAVE_LIBTOMMAMTH
@@ -57,7 +57,7 @@ typedef struct  TkappObject;
 #define Tkapp_Check(v) (Py_TYPE(v) == &Tkapp_Type)
 #define Tkapp_Interp(v) (((TkappObject *) (v))->interp)
 #define Tkapp_Result(v) Tcl_GetStringResult(Tkapp_Interp(v))
-#define DEBUG_REFCNT(v) (printf("DEBUG: id=%p, refcnt=%i\n", \
+#define DEBUG_REFCNT(v) (printf(, \
 (void *) v, Py_REFCNT(v)))
 static PyObject *Tkinter_TclError;
 static int quitMainLoop = 0;
@@ -110,17 +110,17 @@ PyTclObject_str(PyTclObject *self)
 static char*
 PyTclObject_TclString(PyObject *self)
 PyDoc_STRVAR(PyTclObject_string__doc__,
-"the string representation of this object, either as string or Unicode");
+);
 static PyObject *
 PyTclObject_string(PyTclObject *self, void *ignored)
-PyDoc_STRVAR(PyTclObject_unicode__doc__, "convert argument to unicode");
+PyDoc_STRVAR(PyTclObject_unicode__doc__, );
 static PyObject *
 PyTclObject_unicode(PyTclObject *self, void *ignored)
 static PyObject *
 PyTclObject_repr(PyTclObject *self)
 static int
 PyTclObject_cmp(PyTclObject *self, PyTclObject *other)
-PyDoc_STRVAR(get_typename__doc__, "name of the Tcl type");
+PyDoc_STRVAR(get_typename__doc__, );
 static PyObject*
 get_typename(PyTclObject* obj, void* ignored)
 static PyGetSetDef PyTclObject_getsetlist[] = ;

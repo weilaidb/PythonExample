@@ -5,16 +5,16 @@
 defined(DOUBLE_IS_ARM_MIXED_ENDIAN_IEEE754)
 #  define IEEE_MC68k
 #if defined(IEEE_8087) + defined(IEEE_MC68k) != 1
-#error "Exactly one of IEEE_8087 or IEEE_MC68k should be defined."
+#error
 #if defined(WORDS_BIGENDIAN) && (defined(DOUBLE_IS_LITTLE_ENDIAN_IEEE754) || \
 defined(DOUBLE_IS_ARM_MIXED_ENDIAN_IEEE754))
-#error "doubles and ints have incompatible endianness"
+#error
 #if !defined(WORDS_BIGENDIAN) && defined(DOUBLE_IS_BIG_ENDIAN_IEEE754)
-#error "doubles and ints have incompatible endianness"
+#error
 #if defined(HAVE_UINT32_T) && defined(HAVE_INT32_T)
 typedef PY_UINT32_T ULong;
 typedef PY_INT32_T Long;
-#error "Failed to find an exact-width 32-bit integer type"
+#error
 #if defined(HAVE_UINT64_T)
 #define ULLong PY_UINT64_T
 #undef ULLong
@@ -34,9 +34,9 @@ typedef union  U;
 #define MAX_ABS_EXP 1100000000U
 #define MAX_DIGITS 1000000000U
 #if MAX_ABS_EXP > INT_MAX
-#error "MAX_ABS_EXP should fit in an int"
+#error
 #if MAX_DIGITS > INT_MAX
-#error "MAX_DIGITS should fit in an int"
+#error
 #if defined(IEEE_8087)
 #define Storeinc(a,b,c) (((unsigned short *)a)[1] = (unsigned short)b,  \
 ((unsigned short *)a)[0] = (unsigned short)c, a++)

@@ -6,9 +6,9 @@ struct ia64_args
 static inline void *
 endian_adjust (void *addr, size_t len)
 #define stf_spill(addr, value)	\
-asm ("stf.spill %0 = %1%P0" : "=m" (*addr) : "f"(value));
+asm ((value));
 #define ldf_fill(result, addr)	\
-asm ("ldf.fill %0 = %1%P1" : "=f"(result) : "m"(*addr));
+asm ((*addr));
 static size_t
 hfa_type_size (int type)
 static void

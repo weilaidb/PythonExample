@@ -1,5 +1,5 @@
 PyDoc_STRVAR(cPickle_module_documentation,
-"C implementation and optimization of the Python pickle module.");
+);
 #define Py_eval_input eval_input
 #define DEL_LIST_SLICE(list, from, to) (PyList_SetSlice(list, from, to, NULL))
 #define WRITE_BUF_SIZE 256
@@ -59,9 +59,9 @@ PyDoc_STRVAR(cPickle_module_documentation,
 #define LONG1    '\x8a'
 #define LONG4    '\x8b'
 #undef TRUE
-#define TRUE        "I01\n"
+#define TRUE
 #undef FALSE
-#define FALSE       "I00\n"
+#define FALSE
 #define BATCHSIZE 1000
 static char MARKv = MARK;
 static PyObject *PickleError;
@@ -222,7 +222,7 @@ Pickler_get_error(Picklerobject *p)
 static PyMemberDef Pickler_members[] = ;
 static PyGetSetDef Pickler_getsets[] = ;
 PyDoc_STRVAR(Picklertype__doc__,
-"Objects that know how to pickle objects\n");
+);
 static PyTypeObject Picklertype = ;
 static PyObject *
 find_class(PyObject *py_module_name, PyObject *py_global_name, PyObject *fc)
@@ -384,7 +384,7 @@ cpm_load(PyObject *self, PyObject *ob)
 static PyObject *
 cpm_loads(PyObject *self, PyObject *args)
 PyDoc_STRVAR(Unpicklertype__doc__,
-"Objects that know how to unpickle");
+);
 static PyTypeObject Unpicklertype = ;
 static struct PyMethodDef cPickle_methods[] = ;
 static int

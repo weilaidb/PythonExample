@@ -228,4 +228,4 @@
 #define STRICT_SYSV_CURSES
 #define DONT_HAVE_FSTAT 1
 #define DONT_HAVE_STAT  1
-#define PLATFORM "riscos"
+#define PLATFORM

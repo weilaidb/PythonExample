@@ -16,11 +16,11 @@
 #define DONT_HAVE_SIG_PAUSE
 #define LONG_BIT	32
 #define WORD_BIT 32
-#define PREFIX ""
-#define EXEC_PREFIX ""
+#define PREFIX
+#define EXEC_PREFIX
 #define MS_WIN32
 #define MS_WINDOWS
-#	define PYTHONPATH ".\\DLLs;.\\lib;.\\lib\\plat-win;.\\lib\\lib-tk"
+#	define PYTHONPATH
 #define NT_THREADS
 #define WITH_THREAD
 #define USE_SOCKET
@@ -30,19 +30,19 @@
 #define getenv(v) (NULL)
 #define environ (NULL)
 #define _Py_PASTE_VERSION(SUFFIX) \
-("[MSC v." _Py_STRINGIZE(_MSC_VER) " " SUFFIX "]")
+()
 #define _Py_STRINGIZE(X) _Py_STRINGIZE1((X))
 #define _Py_STRINGIZE1(X) _Py_STRINGIZE2 ## X
 #define _Py_STRINGIZE2(X) #X
 #define MS_WIN64
 #if defined(_M_IA64)
-#define COMPILER _Py_PASTE_VERSION("64 bit (Itanium)")
+#define COMPILER _Py_PASTE_VERSION()
 #define MS_WINI64
 #elif defined(_M_X64) || defined(_M_AMD64)
-#define COMPILER ("[ICC v." _Py_STRINGIZE(__INTEL_COMPILER) " 64 bit (amd64) with MSC v." _Py_STRINGIZE(_MSC_VER) " CRT]")
-#define COMPILER _Py_PASTE_VERSION("64 bit (AMD64)")
+#define COMPILER ()
+#define COMPILER _Py_PASTE_VERSION()
 #define MS_WINX64
-#define COMPILER _Py_PASTE_VERSION("64 bit (Unknown)")
+#define COMPILER _Py_PASTE_VERSION()
 #define Py_WINVER _WIN32_WINNT_WINXP
 #define Py_NTDDI NTDDI_WINXP
 #define Py_WINVER _WIN32_WINNT_WIN2K
@@ -57,9 +57,9 @@ typedef __int64 ssize_t;
 typedef _W64 int ssize_t;
 #define HAVE_SSIZE_T 1
 #if defined(MS_WIN32) && !defined(MS_WIN64)
-#define COMPILER ("[ICC v." _Py_STRINGIZE(__INTEL_COMPILER) " 32 bit (Intel) with MSC v." _Py_STRINGIZE(_MSC_VER) " CRT]")
-#define COMPILER _Py_PASTE_VERSION("32 bit (Intel)")
-#define COMPILER _Py_PASTE_VERSION("32 bit (Unknown)")
+#define COMPILER ()
+#define COMPILER _Py_PASTE_VERSION()
+#define COMPILER _Py_PASTE_VERSION()
 typedef int pid_t;
 #define Py_IS_NAN _isnan
 #define Py_IS_INFINITY(X) (!_finite(X) && !_isnan(X))
@@ -68,25 +68,25 @@ typedef int pid_t;
 #if _MSC_VER < 1600
 #define hypot _hypot
 #if defined(_MSC_VER) && _MSC_VER >= 1200
-#define COMPILER "[Borland]"
+#define COMPILER
 typedef int pid_t;
 #undef HAVE_SYS_UTIME_H
 #define HAVE_UTIME_H
 #define HAVE_DIRENT_H
 #define _chsize chsize
 #define _setmode setmode
-#error "Only Win32 and later are supported"
+#error
 #if defined(__GNUC__) && defined(_WIN32)
 #if (__GNUC__==2) && (__GNUC_MINOR__<=91)
-#warning "Please use an up-to-date version of gcc! (>2.91 recommended)"
-#define COMPILER "[gcc]"
+#warning
+#define COMPILER
 #define hypot _hypot
 #define PY_LONG_LONG long long
 #define PY_LLONG_MIN LLONG_MIN
 #define PY_LLONG_MAX LLONG_MAX
 #define PY_ULLONG_MAX ULLONG_MAX
 #if defined(__LCC__)
-#define COMPILER "[lcc-win32]"
+#define COMPILER
 typedef int pid_t;
 #	include <stdio.h>
 #define HAVE_LONG_LONG 1
@@ -101,14 +101,14 @@ typedef int pid_t;
 #	ifndef Py_BUILD_CORE
 #		if defined(_MSC_VER)
 #			ifdef _DEBUG
-#				pragma comment(lib,"python27_d.lib")
+#				pragma comment(lib,)
 #			else
-#				pragma comment(lib,"python27.lib")
+#				pragma comment(lib,)
 #			endif
 #		endif
 #	endif
 #if defined(MS_WIN64)
-#	define PLATFORM "win32"
+#	define PLATFORM
 #	define SIZEOF_VOID_P 8
 #	define SIZEOF_TIME_T 8
 #	define SIZEOF_OFF_T 4
@@ -117,7 +117,7 @@ typedef int pid_t;
 #	define SIZEOF_SIZE_T 8
 #	define HAVE_LARGEFILE_SUPPORT
 #elif defined(MS_WIN32)
-#	define PLATFORM "win32"
+#	define PLATFORM
 #	define HAVE_LARGEFILE_SUPPORT
 #	define SIZEOF_VOID_P 4
 #	define SIZEOF_OFF_T 4

@@ -82,22 +82,20 @@ static PyObject *PySSL_cipher(PySSLSocket *self);
 typedef enum  timeout_state;
 #define STRINGIFY1(x) #x
 #define STRINGIFY2(x) STRINGIFY1(x)
-#define ERRSTR1(x,y,z) (x ":" y ": " z)
-#define ERRSTR(x) ERRSTR1("_ssl.c", STRINGIFY2(__LINE__), x)
+#define ERRSTR1(x,y,z) (x  z)
+#define ERRSTR(x) ERRSTR1(, STRINGIFY2(__LINE__), x)
 PyDoc_STRVAR(SSLError_doc,
-"An error occurred in the SSL implementation.");
+);
 PyDoc_STRVAR(SSLZeroReturnError_doc,
-"SSL/TLS session closed cleanly.");
+);
 PyDoc_STRVAR(SSLWantReadError_doc,
-"Non-blocking SSL socket needs to read more data\n"
-"before the requested operation can be completed.");
+);
 PyDoc_STRVAR(SSLWantWriteError_doc,
-"Non-blocking SSL socket needs to write more data\n"
-"before the requested operation can be completed.");
+);
 PyDoc_STRVAR(SSLSyscallError_doc,
-"System error when attempting SSL operation.");
+);
 PyDoc_STRVAR(SSLEOFError_doc,
-"SSL/TLS connection terminated abruptly.");
+);
 static PyObject *
 SSLError_str(PyEnvironmentErrorObject *self)
 static void

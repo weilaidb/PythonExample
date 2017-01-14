@@ -10,16 +10,10 @@ PySys_SetObject(char *name, PyObject *v)
 static PyObject *
 sys_displayhook(PyObject *self, PyObject *o)
 PyDoc_STRVAR(displayhook_doc,
-"displayhook(object) -> None\n"
-"\n"
-"Print an object to sys.stdout and also save it in __builtin__._\n"
 );
 static PyObject *
 sys_excepthook(PyObject* self, PyObject* args)
 PyDoc_STRVAR(excepthook_doc,
-"excepthook(exctype, value, traceback) -> None\n"
-"\n"
-"Handle an exception by displaying it with a traceback on sys.stderr.\n"
 );
 static PyObject *
 sys_exc_info(PyObject *self, PyObject *noargs)
@@ -128,7 +122,6 @@ n instructions.  This also affects how often thread switches occur."
 static PyObject *
 sys_getcheckinterval(PyObject *self, PyObject *args)
 PyDoc_STRVAR(getcheckinterval_doc,
-"getcheckinterval() -> current check interval; see setcheckinterval()."
 );
 static PyObject *
 sys_settscdump(PyObject *self, PyObject *args)

@@ -36,7 +36,7 @@ partial_setstate(partialobject *pto, PyObject *state)
 static PyMethodDef partial_methods[] = ;
 static PyTypeObject partial_type = ;
 PyDoc_STRVAR(module_doc,
-"Tools that operate on functions.");
+);
 static PyMethodDef module_methods[] = ;
 PyMODINIT_FUNC
 init_functools(void)

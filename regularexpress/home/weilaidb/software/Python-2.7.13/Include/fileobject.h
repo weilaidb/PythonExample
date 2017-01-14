@@ -19,7 +19,7 @@ PyAPI_FUNC(int) PyFile_SoftSpace(PyObject *, int);
 PyAPI_FUNC(int) PyFile_WriteString(const char *, PyObject *);
 PyAPI_FUNC(int) PyObject_AsFileDescriptor(PyObject *);
 PyAPI_DATA(const char *) Py_FileSystemDefaultEncoding;
-#define PY_STDIOTEXTMODE "b"
+#define PY_STDIOTEXTMODE
 char *Py_UniversalNewlineFgets(char *, int, FILE*, PyObject *);
 size_t Py_UniversalNewlineFread(char *, size_t, FILE *, PyObject *);
 int _PyFile_SanitizeMode(char *mode);

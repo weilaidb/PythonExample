@@ -2,8 +2,8 @@
 #define STRINGLIB_IS_UNICODE     0
 #define STRINGLIB_OBJECT         PyStringObject
 #define STRINGLIB_CHAR           char
-#define STRINGLIB_TYPE_NAME      "string"
-#define STRINGLIB_PARSE_CODE     "S"
+#define STRINGLIB_TYPE_NAME
+#define STRINGLIB_PARSE_CODE
 #define STRINGLIB_EMPTY          nullstring
 #define STRINGLIB_ISSPACE        Py_ISSPACE
 #define STRINGLIB_ISLINEBREAK(x) ((x == '\n') || (x == '\r'))

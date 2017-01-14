@@ -126,8 +126,8 @@ The default value is MAP_SHARED.\n\
 \n\
 To map anonymous memory, pass -1 as the fileno (both versions).");
 static PyTypeObject mmap_object_type = ;
-#define _Py_PARSE_OFF_T "L"
-#define _Py_PARSE_OFF_T "l"
+#define _Py_PARSE_OFF_T
+#define _Py_PARSE_OFF_T
 static PyObject *
 new_mmap_object(PyTypeObject *type, PyObject *args, PyObject *kwdict)
 static PyObject *

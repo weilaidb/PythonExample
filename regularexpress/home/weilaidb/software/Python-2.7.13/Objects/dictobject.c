@@ -154,16 +154,16 @@ dict_iteritems(PyDictObject *dict)
 static PyObject *
 dict_sizeof(PyDictObject *mp)
 PyDoc_STRVAR(has_key__doc__,
-"D.has_key(k) -> True if D has a key k, else False");
+);
 PyDoc_STRVAR(contains__doc__,
-"D.__contains__(k) -> True if D has a key k, else False");
-PyDoc_STRVAR(getitem__doc__, "x.__getitem__(y) <==> x[y]");
+);
+PyDoc_STRVAR(getitem__doc__, );
 PyDoc_STRVAR(sizeof__doc__,
-"D.__sizeof__() -> size of D in memory, in bytes");
+);
 PyDoc_STRVAR(get__doc__,
-"D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.");
+);
 PyDoc_STRVAR(setdefault_doc__,
-"D.setdefault(k[,d]) -> D.get(k,d), also set D[k]=d if k not in D");
+);
 PyDoc_STRVAR(pop__doc__,
 "D.pop(k[,d]) -> v, remove specified key and return the corresponding value.\n\
 If key is not found, d is returned if given, otherwise KeyError is raised");
@@ -171,13 +171,12 @@ PyDoc_STRVAR(popitem__doc__,
 "D.popitem() -> (k, v), remove and return some (key, value) pair as a\n\
 2-tuple; but raise KeyError if D is empty.");
 PyDoc_STRVAR(keys__doc__,
-"D.keys() -> list of D's keys");
+);
 PyDoc_STRVAR(items__doc__,
-"D.items() -> list of D's (key, value) pairs, as 2-tuples");
+);
 PyDoc_STRVAR(values__doc__,
-"D.values() -> list of D's values");
+);
 PyDoc_STRVAR(update__doc__,
-"D.update([E, ]**F) -> None.  Update D from dict/iterable E and F.\n"
 "If E present and has a .keys() method, does:     for k in E: D[k] = E[k]\n\
 If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v\n\
 In either case, this is followed by: for k in F: D[k] = F[k]");
@@ -185,24 +184,24 @@ PyDoc_STRVAR(fromkeys__doc__,
 "dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.\n\
 v defaults to None.");
 PyDoc_STRVAR(clear__doc__,
-"D.clear() -> None.  Remove all items from D.");
+);
 PyDoc_STRVAR(copy__doc__,
-"D.copy() -> a shallow copy of D");
+);
 PyDoc_STRVAR(iterkeys__doc__,
-"D.iterkeys() -> an iterator over the keys of D");
+);
 PyDoc_STRVAR(itervalues__doc__,
-"D.itervalues() -> an iterator over the values of D");
+);
 PyDoc_STRVAR(iteritems__doc__,
-"D.iteritems() -> an iterator over the (key, value) items of D");
+);
 static PyObject *dictkeys_new(PyObject *);
 static PyObject *dictitems_new(PyObject *);
 static PyObject *dictvalues_new(PyObject *);
 PyDoc_STRVAR(viewkeys__doc__,
-"D.viewkeys() -> a set-like object providing a view on D's keys");
+);
 PyDoc_STRVAR(viewitems__doc__,
-"D.viewitems() -> a set-like object providing a view on D's items");
+);
 PyDoc_STRVAR(viewvalues__doc__,
-"D.viewvalues() -> an object providing a view on D's values");
+);
 static PyMethodDef mapp_methods[] = ;
 int
 PyDict_Contains(PyObject *op, PyObject *key)
@@ -216,15 +215,7 @@ dict_init(PyObject *self, PyObject *args, PyObject *kwds)
 static PyObject *
 dict_iter(PyDictObject *dict)
 PyDoc_STRVAR(dictionary_doc,
-"dict() -> new empty dictionary\n"
-"dict(mapping) -> new dictionary initialized from a mapping object's\n"
-"    (key, value) pairs\n"
-"dict(iterable) -> new dictionary initialized as if via:\n"
-"    d = \n"
-"    for k, v in iterable:\n"
-"        d[k] = v\n"
-"dict(**kwargs) -> new dictionary initialized with the name=value pairs\n"
-"    in the keyword argument list.  For example:  dict(one=1, two=2)");
+);
 PyTypeObject PyDict_Type = ;
 PyObject *
 PyDict_GetItemString(PyObject *v, const char *key)
@@ -241,7 +232,7 @@ static int
 dictiter_traverse(dictiterobject *di, visitproc visit, void *arg)
 static PyObject *
 dictiter_len(dictiterobject *di)
-PyDoc_STRVAR(length_hint_doc, "Private method returning an estimate of len(list(it)).");
+PyDoc_STRVAR(length_hint_doc, );
 static PyMethodDef dictiter_methods[] = ;
 static PyObject *dictiter_iternextkey(dictiterobject *di)
 PyTypeObject PyDictIterKey_Type = ;

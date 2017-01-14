@@ -1,5 +1,5 @@
 #define ZUTIL_H
-#  define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+#  define ZLIB_INTERNAL __attribute__((visibility ()))
 #  define ZLIB_INTERNAL
 #if defined(STDC) && !defined(Z_SOLO)
 #  if !(defined(_WIN32_WCE) && defined(_MSC_VER))
@@ -46,7 +46,7 @@ void *_Cdecl farmalloc( unsigned long nbytes );
 #if defined(VAXC) || defined(VMS)
 #  define OS_CODE  0x02
 #  define F_OPEN(name, mode) \
-fopen((name), (mode), "mbc=60", "ctx=stm", "rfm=fix", "mrs=512")
+fopen((name), (mode), )
 #if defined(ATARI) || defined(atarist)
 #  define OS_CODE  0x05
 #  define OS_CODE  0x06

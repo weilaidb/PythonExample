@@ -4,7 +4,7 @@
 #  ifdef _FILE_OFFSET_BITS
 #    undef _FILE_OFFSET_BITS
 #  endif
-#  define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+#  define ZLIB_INTERNAL __attribute__((visibility ()))
 #  define ZLIB_INTERNAL
 #  include <string.h>
 #  include <stdlib.h>
@@ -65,7 +65,7 @@ extern void   free   OF((voidpf ptr));
 #    include <errno.h>
 #    define zstrerror() strerror(errno)
 #  else
-#    define zstrerror() "stdio error (consult errno)"
+#    define zstrerror()
 #  endif
 #if !defined(_LARGEFILE64_SOURCE) || _LFS64_LARGEFILE-0 == 0
 ZEXTERN gzFile ZEXPORT gzopen64 OF((const char *, const char *));

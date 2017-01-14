@@ -1,9 +1,9 @@
 #if defined(_DEBUG) || defined(__MINGW32__)
 #define DONT_USE_SEH
-#define CTYPES_CAPSULE_ERROROBJ "_ctypes/callproc.c error object"
+#define CTYPES_CAPSULE_ERROROBJ
 CTYPES_CAPSULE_INSTANTIATE_DESTRUCTOR(CTYPES_CAPSULE_ERROROBJ)
 #if defined(CTYPES_UNICODE) && !defined(HAVE_USABLE_WCHAR_T)
-#  define CTYPES_CAPSULE_WCHAR_T "_ctypes/callproc.c wchar_t buffer from unicode"
+#  define CTYPES_CAPSULE_WCHAR_T
 CTYPES_CAPSULE_INSTANTIATE_DESTRUCTOR(CTYPES_CAPSULE_WCHAR_T)
 PyObject *
 _ctypes_get_errobj(int **pspace)
@@ -59,8 +59,8 @@ PyObject *restype,
 PyObject *checker)
 static int
 _parse_voidp(PyObject *obj, void **address)
-#  define PYBUILD_TSTR "u"
-#  define PYBUILD_TSTR "s"
+#  define PYBUILD_TSTR
+#  define PYBUILD_TSTR
 #  ifndef _T
 #    define _T(text) text
 #  endif
@@ -85,7 +85,7 @@ static PyObject *free_library(PyObject *self, PyObject *args)
 static PyObject *
 call_commethod(PyObject *self, PyObject *args)
 static char copy_com_pointer_doc[] =
-"CopyComPointer(src, dst) -> HRESULT value\n";
+;
 static PyObject *
 copy_com_pointer(PyObject *self, PyObject *args)
 static PyObject *py_dl_open(PyObject *self, PyObject *args)
@@ -96,26 +96,19 @@ call_function(PyObject *self, PyObject *args)
 static PyObject *
 call_cdeclfunction(PyObject *self, PyObject *args)
 static char sizeof_doc[] =
-"sizeof(C type) -> integer\n"
-"sizeof(C instance) -> integer\n"
-"Return the size in bytes of a C instance";
+;
 static PyObject *
 sizeof_func(PyObject *self, PyObject *obj)
 static char alignment_doc[] =
-"alignment(C type) -> integer\n"
-"alignment(C instance) -> integer\n"
-"Return the alignment requirements of a C instance";
+;
 static PyObject *
 align_func(PyObject *self, PyObject *obj)
 static char byref_doc[] =
-"byref(C instance[, offset=0]) -> byref-object\n"
-"Return a pointer lookalike to a C instance, only usable\n"
-"as function argument";
+;
 static PyObject *
 byref(PyObject *self, PyObject *args)
 static char addressof_doc[] =
-"addressof(C instance) -> integer\n"
-"Return the address of the C instance internal buffer";
+;
 static PyObject *
 addressof(PyObject *self, PyObject *obj)
 static int

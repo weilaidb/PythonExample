@@ -1,7 +1,7 @@
 #if defined(MS_WINDOWS) && defined(HAVE_USABLE_WCHAR_T)
-const char *Py_FileSystemDefaultEncoding = "mbcs";
+const char *Py_FileSystemDefaultEncoding = ;
 #elif defined(__APPLE__)
-const char *Py_FileSystemDefaultEncoding = "utf-8";
+const char *Py_FileSystemDefaultEncoding = ;
 const char *Py_FileSystemDefaultEncoding = NULL;
 static PyObject *filterstring(PyObject *, PyObject *);
 static PyObject *filterunicode(PyObject *, PyObject *);
@@ -72,18 +72,14 @@ Note that classes are callable, as are instances with a __call__() method.");
 static PyObject *
 builtin_filter(PyObject *self, PyObject *args)
 PyDoc_STRVAR(filter_doc,
-"filter(function or None, sequence) -> list, tuple, or string\n"
-"\n"
-"Return those items of sequence for which function(item) is true.  If\n"
-"function is None, return the items that are true.  If sequence is a tuple\n"
-"or string, return the same type, else return a list.");
+);
 static PyObject *
 builtin_format(PyObject *self, PyObject *args)
 PyDoc_STRVAR(format_doc,
 "format(value[, format_spec]) -> string\n\
 \n\
 Returns value.__format__(format_spec)\n\
-format_spec defaults to \"\"");
+format_spec defaults to \);
 static PyObject *
 builtin_chr(PyObject *self, PyObject *args)
 PyDoc_STRVAR(chr_doc,
@@ -129,18 +125,7 @@ in addition to any features explicitly specified.");
 static PyObject *
 builtin_dir(PyObject *self, PyObject *args)
 PyDoc_STRVAR(dir_doc,
-"dir([object]) -> list of strings\n"
-"\n"
-"If called without an argument, return the names in the current scope.\n"
-"Else, return an alphabetized list of names comprising (some of) the attributes\n"
-"of the given object, and of attributes reachable from it.\n"
-"If the object supplies a method named __dir__, it will be used; otherwise\n"
-"the default dir() logic is used and returns:\n"
-"  for a module object: the module's attributes.\n"
-"  for a class object:  its attributes, and recursively the attributes\n"
-"    of its bases.\n"
-"  for any other object: its attributes, its class's attributes, and\n"
-"    recursively the attributes of its class's base classes.");
+);
 static PyObject *
 builtin_divmod(PyObject *self, PyObject *args)
 PyDoc_STRVAR(divmod_doc,
@@ -392,7 +377,7 @@ This always returns a floating point number.  Precision may be negative.");
 static PyObject *
 builtin_sorted(PyObject *self, PyObject *args, PyObject *kwds)
 PyDoc_STRVAR(sorted_doc,
-"sorted(iterable, cmp=None, key=None, reverse=False) --> new sorted list");
+);
 static PyObject *
 builtin_vars(PyObject *self, PyObject *args)
 PyDoc_STRVAR(vars_doc,

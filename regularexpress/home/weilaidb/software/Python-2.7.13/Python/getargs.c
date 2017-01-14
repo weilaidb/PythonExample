@@ -40,8 +40,8 @@ int
 PyArg_VaParse(PyObject *args, const char *format, va_list va)
 int
 _PyArg_VaParse_SizeT(PyObject *args, char *format, va_list va)
-#define GETARGS_CAPSULE_NAME_CLEANUP_PTR "getargs.cleanup_ptr"
-#define GETARGS_CAPSULE_NAME_CLEANUP_BUFFER "getargs.cleanup_buffer"
+#define GETARGS_CAPSULE_NAME_CLEANUP_PTR
+#define GETARGS_CAPSULE_NAME_CLEANUP_BUFFER
 static void
 cleanup_ptr(PyObject *self)
 static void
@@ -66,7 +66,7 @@ int *levels, char *msgbuf, size_t bufsize, PyObject **freelist)
 _PyUnicode_AsDefaultEncodedString(arg, NULL)
 static char *
 converterr(const char *expected, PyObject *arg, char *msgbuf, size_t bufsize)
-#define CONV_UNICODE "(unicode conversion error)"
+#define CONV_UNICODE
 static int
 float_argument_warning(PyObject *arg)
 static int

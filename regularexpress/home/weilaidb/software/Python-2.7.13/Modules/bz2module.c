@@ -9,7 +9,7 @@ typedef off_t Py_off_t;
 typedef off_t Py_off_t;
 #elif SIZEOF_FPOS_T >= 8
 typedef fpos_t Py_off_t;
-#error "Large file support, but neither off_t nor fpos_t is large enough."
+#error
 #define BUF(v) PyString_AS_STRING((PyStringObject *)v)
 #define MODE_CLOSED   0
 #define MODE_READ     1
@@ -142,11 +142,11 @@ than once without error.\n\
 static PyObject *
 BZ2File_close(BZ2FileObject *self)
 PyDoc_STRVAR(BZ2File_enter_doc,
-"__enter__() -> self.");
+);
 static PyObject *
 BZ2File_enter(BZ2FileObject *self)
 PyDoc_STRVAR(BZ2File_exit_doc,
-"__exit__(*excinfo) -> None.  Closes the file.");
+);
 static PyObject *
 BZ2File_exit(BZ2FileObject *self, PyObject *args)
 static PyObject *BZ2File_getiter(BZ2FileObject *self);

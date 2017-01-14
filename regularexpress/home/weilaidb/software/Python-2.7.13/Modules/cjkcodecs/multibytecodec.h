@@ -58,4 +58,4 @@ typedef struct  MultibyteStreamWriterObject;
 #define ERROR_DECREF(p) do  while (0);
 #define MBENC_FLUSH             0x0001
 #define MBENC_MAX               MBENC_FLUSH
-#define PyMultibyteCodec_CAPSULE_NAME "multibytecodec.__map_*"
+#define PyMultibyteCodec_CAPSULE_NAME

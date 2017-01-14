@@ -1,2 +1,2 @@
-char* cmd = "import exceptions";
+char* cmd = ;
 int main()

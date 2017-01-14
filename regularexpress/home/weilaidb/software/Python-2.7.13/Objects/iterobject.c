@@ -9,7 +9,7 @@ static PyObject *
 iter_iternext(PyObject *iterator)
 static PyObject *
 iter_len(seqiterobject *it)
-PyDoc_STRVAR(length_hint_doc, "Private method returning an estimate of len(list(it)).");
+PyDoc_STRVAR(length_hint_doc, );
 static PyMethodDef seqiter_methods[] = ;
 PyTypeObject PySeqIter_Type = ;
 typedef struct  calliterobject;

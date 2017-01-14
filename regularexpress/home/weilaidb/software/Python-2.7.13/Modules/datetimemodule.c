@@ -2,7 +2,7 @@
 #define Py_BUILD_CORE
 #undef Py_BUILD_CORE
 #if SIZEOF_INT < 4
-#       error "datetime.c requires that C int have at least 32 bits"
+#       error
 #define MINYEAR 1
 #define MAXYEAR 9999
 #define MAXORDINAL 3652059
@@ -227,7 +227,7 @@ delta_reduce(PyDateTime_Delta* self)
 static PyMemberDef delta_members[] = ;
 static PyMethodDef delta_methods[] = ;
 static char delta_doc[] =
-PyDoc_STR("Difference between two datetime values.");
+PyDoc_STR();
 static PyNumberMethods delta_as_number = ;
 static PyTypeObject PyDateTime_DeltaType = ;
 static PyObject *
@@ -289,7 +289,7 @@ static PyObject *
 date_reduce(PyDateTime_Date *self, PyObject *arg)
 static PyMethodDef date_methods[] = ;
 static char date_doc[] =
-PyDoc_STR("date(year, month, day) --> date object");
+PyDoc_STR();
 static PyNumberMethods date_as_number = ;
 static PyTypeObject PyDateTime_DateType = ;
 static PyObject *
@@ -306,7 +306,7 @@ static PyObject *
 tzinfo_reduce(PyObject *self)
 static PyMethodDef tzinfo_methods[] = ;
 static char tzinfo_doc[] =
-PyDoc_STR("Abstract base class for time zone info objects.");
+PyDoc_STR();
 statichere PyTypeObject PyDateTime_TZInfoType = ;
 static PyObject *
 time_hour(PyDateTime_Time *self, void *unused)

@@ -30,9 +30,9 @@ typedef int socklen_t;
 # include <netpacket/packet.h>
 # include <linux/tipc.h>
 #define Py__SOCKET_H
-#define PySocket_MODULE_NAME    "_socket"
-#define PySocket_CAPI_NAME      "CAPI"
-#define PySocket_CAPSULE_NAME  (PySocket_MODULE_NAME "." PySocket_CAPI_NAME)
+#define PySocket_MODULE_NAME
+#define PySocket_CAPI_NAME
+#define PySocket_CAPSULE_NAME  (PySocket_MODULE_NAME  PySocket_CAPI_NAME)
 typedef SOCKET SOCKET_T;
 #       ifdef MS_WIN64
 #               define SIZEOF_SOCKET_T 8

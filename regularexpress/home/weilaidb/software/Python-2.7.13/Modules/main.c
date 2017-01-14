@@ -1,20 +1,19 @@
 #if defined(MS_WINDOWS) || defined(__CYGWIN__)
 #if (defined(PYOS_OS2) && !defined(PYCC_GCC)) || defined(MS_WINDOWS)
-#define PYTHONHOMEHELP "<prefix>\\lib"
+#define PYTHONHOMEHELP
 #if defined(PYOS_OS2) && defined(PYCC_GCC)
-#define PYTHONHOMEHELP "<prefix>/Lib"
-#define PYTHONHOMEHELP "<prefix>/pythonX.X"
+#define PYTHONHOMEHELP
+#define PYTHONHOMEHELP
 #define COPYRIGHT \
-"Type \"help\", \"copyright\", \"credits\" or \"license\" " \
-"for more information."
+\
 static char **orig_argv;
 static int  orig_argc;
-#define BASE_OPTS "3bBc:dEhiJm:OQ:RsStuUvVW:xX?"
+#define BASE_OPTS
 #define PROGRAM_OPTS BASE_OPTS
-#define PROGRAM_OPTS BASE_OPTS "w"
+#define PROGRAM_OPTS BASE_OPTS
 extern int Py_RISCOSWimpFlag;
 static char *usage_line =
-"usage: %s [option] ... [-c cmd | -m mod | file | -] [arg] ...\n";
+;
 static char *usage_1 = "\
 Options and arguments (and corresponding environment variables):\n\
 -B     : don't write .py[co] files on import; also PYTHONDONTWRITEBYTECODE=x\n\

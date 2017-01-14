@@ -2,8 +2,8 @@
 #define STRINGLIB_IS_UNICODE     1
 #define STRINGLIB_OBJECT         PyUnicodeObject
 #define STRINGLIB_CHAR           Py_UNICODE
-#define STRINGLIB_TYPE_NAME      "unicode"
-#define STRINGLIB_PARSE_CODE     "U"
+#define STRINGLIB_TYPE_NAME
+#define STRINGLIB_PARSE_CODE
 #define STRINGLIB_EMPTY          unicode_empty
 #define STRINGLIB_ISSPACE        Py_UNICODE_ISSPACE
 #define STRINGLIB_ISLINEBREAK    BLOOM_LINEBREAK

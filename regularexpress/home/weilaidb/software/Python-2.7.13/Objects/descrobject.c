@@ -144,15 +144,15 @@ static PyObject * property_copy(PyObject *, PyObject *, PyObject *,
 PyObject *);
 static PyMemberDef property_members[] = ;
 PyDoc_STRVAR(getter_doc,
-"Descriptor to change the getter on a property.");
+);
 static PyObject *
 property_getter(PyObject *self, PyObject *getter)
 PyDoc_STRVAR(setter_doc,
-"Descriptor to change the setter on a property.");
+);
 static PyObject *
 property_setter(PyObject *self, PyObject *setter)
 PyDoc_STRVAR(deleter_doc,
-"Descriptor to change the deleter on a property.");
+);
 static PyObject *
 property_deleter(PyObject *self, PyObject *deleter)
 static PyMethodDef property_methods[] = ;
@@ -167,29 +167,6 @@ property_copy(PyObject *old, PyObject *get, PyObject *set, PyObject *del)
 static int
 property_init(PyObject *self, PyObject *args, PyObject *kwds)
 PyDoc_STRVAR(property_doc,
-"property(fget=None, fset=None, fdel=None, doc=None) -> property attribute\n"
-"\n"
-"fget is a function to be used for getting an attribute value, and likewise\n"
-"fset is a function for setting, and fdel a function for del'ing, an\n"
-"attribute.  Typical use is to define a managed attribute x:\n\n"
-"class C(object):\n"
-"    def getx(self): return self._x\n"
-"    def setx(self, value): self._x = value\n"
-"    def delx(self): del self._x\n"
-"    x = property(getx, setx, delx, \"I'm the 'x' property.\")\n"
-"\n"
-"Decorators make defining new properties or modifying existing ones easy:\n\n"
-"class C(object):\n"
-"    @property\n"
-"    def x(self):\n"
-"        \"I am the 'x' property.\"\n"
-"        return self._x\n"
-"    @x.setter\n"
-"    def x(self, value):\n"
-"        self._x = value\n"
-"    @x.deleter\n"
-"    def x(self):\n"
-"        del self._x\n"
 );
 static int
 property_traverse(PyObject *self, visitproc visit, void *arg)

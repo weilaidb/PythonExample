@@ -9,7 +9,7 @@ typedef int Py_ssize_t;
 #define Py_IS_FINITE(X) (!Py_IS_INFINITY(X) && !Py_IS_NAN(X))
 #define UNUSED __attribute__((__unused__))
 #define UNUSED
-#define DEFAULT_ENCODING "utf-8"
+#define DEFAULT_ENCODING
 #define PyScanner_Check(op) PyObject_TypeCheck(op, &PyScannerType)
 #define PyScanner_CheckExact(op) (Py_TYPE(op) == &PyScannerType)
 #define PyEncoder_Check(op) PyObject_TypeCheck(op, &PyEncoderType)
@@ -95,23 +95,10 @@ scanstring_str(PyObject *pystr, Py_ssize_t end, char *encoding, int strict, Py_s
 static PyObject *
 scanstring_unicode(PyObject *pystr, Py_ssize_t end, int strict, Py_ssize_t *next_end_ptr)
 PyDoc_STRVAR(pydoc_scanstring,
-"scanstring(basestring, end, encoding, strict=True) -> (str, end)\n"
-"\n"
-"Scan the string s for a JSON string. End is the index of the\n"
-"character in s after the quote that started the JSON string.\n"
-"Unescapes all valid JSON string escape sequences and raises ValueError\n"
-"on attempt to decode an invalid string. If strict is False then literal\n"
-"control characters are allowed in the string.\n"
-"\n"
-"Returns a tuple of the decoded string and the index of the character in s\n"
-"after the end quote."
 );
 static PyObject *
 py_scanstring(PyObject* self UNUSED, PyObject *args)
 PyDoc_STRVAR(pydoc_encode_basestring_ascii,
-"encode_basestring_ascii(basestring) -> str\n"
-"\n"
-"Return an ASCII-only JSON representation of a Python string"
 );
 static PyObject *
 py_encode_basestring_ascii(PyObject* self UNUSED, PyObject *pystr)
@@ -195,7 +182,7 @@ static PyObject *
 scanner_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
 static int
 scanner_init(PyObject *self, PyObject *args, PyObject *kwds)
-PyDoc_STRVAR(scanner_doc, "JSON scanner object");
+PyDoc_STRVAR(scanner_doc, );
 static
 PyTypeObject PyScannerType = ;
 static PyObject *
@@ -224,11 +211,11 @@ static int
 encoder_traverse(PyObject *self, visitproc visit, void *arg)
 static int
 encoder_clear(PyObject *self)
-PyDoc_STRVAR(encoder_doc, "_iterencode(obj, _current_indent_level) -> iterable");
+PyDoc_STRVAR(encoder_doc, );
 static
 PyTypeObject PyEncoderType = ;
 static PyMethodDef speedups_methods[] = ;
 PyDoc_STRVAR(module_doc,
-"json speedups\n");
+);
 void
 init_json(void)

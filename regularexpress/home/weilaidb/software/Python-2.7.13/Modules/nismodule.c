@@ -72,6 +72,6 @@ static PyObject *
 nis_maps (PyObject *self, PyObject *args, PyObject *kwdict)
 static PyMethodDef nis_methods[] = ;
 PyDoc_STRVAR(nis__doc__,
-"This module contains functions for accessing NIS maps.\n");
+);
 void
 initnis (void)

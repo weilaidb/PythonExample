@@ -35,7 +35,7 @@ S. Out of bounds indices are clipped in a manner consistent with the\n\
 handling of normal slices.");
 static PyObject *
 slice_reduce(PySliceObject* self)
-PyDoc_STRVAR(reduce_doc, "Return state information for pickling.");
+PyDoc_STRVAR(reduce_doc, );
 static PyMethodDef slice_methods[] = ;
 static int
 slice_compare(PySliceObject *v, PySliceObject *w)

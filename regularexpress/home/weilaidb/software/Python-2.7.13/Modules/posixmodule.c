@@ -102,18 +102,18 @@ extern int lstat(const char *, struct stat *);
 #define WAIT_TYPE int
 #define WAIT_STATUS_INT(s) (s)
 #if !defined(SIZEOF_PID_T) || SIZEOF_PID_T == SIZEOF_INT
-#define PARSE_PID "i"
+#define PARSE_PID
 #define PyLong_FromPid PyInt_FromLong
 #define PyLong_AsPid PyInt_AsLong
 #elif SIZEOF_PID_T == SIZEOF_LONG
-#define PARSE_PID "l"
+#define PARSE_PID
 #define PyLong_FromPid PyInt_FromLong
 #define PyLong_AsPid PyInt_AsLong
 #elif defined(SIZEOF_LONG_LONG) && SIZEOF_PID_T == SIZEOF_LONG_LONG
-#define PARSE_PID "L"
+#define PARSE_PID
 #define PyLong_FromPid PyLong_FromLongLong
 #define PyLong_AsPid PyInt_AsLongLong
-#error "sizeof(pid_t) is neither sizeof(int), sizeof(long) or sizeof(long long)"
+#error
 #if defined(HAVE_CTERMID_R) && defined(WITH_THREAD)
 #define USE_CTERMID_R
 #if defined(HAVE_TMPNAM_R) && defined(WITH_THREAD)
@@ -557,9 +557,9 @@ Return 0 to child process and PID of child to parent process.");
 static PyObject *
 posix_fork(PyObject *self, PyObject *noargs)
 #if defined(HAVE_DEV_PTC) && !defined(HAVE_DEV_PTMX)
-#define DEV_PTY_FILE "/dev/ptc"
+#define DEV_PTY_FILE
 #define HAVE_DEV_PTMX
-#define DEV_PTY_FILE "/dev/ptmx"
+#define DEV_PTY_FILE
 #if defined(HAVE_OPENPTY) || defined(HAVE_FORKPTY) || defined(HAVE_DEV_PTMX)
 #if defined(HAVE_OPENPTY) || defined(HAVE__GETPTY) || defined(HAVE_DEV_PTMX)
 PyDoc_STRVAR(posix_openpty__doc__,
@@ -652,7 +652,7 @@ Kill a process with a signal.");
 static PyObject *
 win32_kill(PyObject *self, PyObject *args)
 PyDoc_STRVAR(posix__isdir__doc__,
-"Return true if the pathname refers to an existing directory.");
+);
 static PyObject *
 posix__isdir(PyObject *self, PyObject *args)
 PyDoc_STRVAR(posix_plock__doc__,
@@ -776,8 +776,7 @@ static PyObject *
 posix_waitpid(PyObject *self, PyObject *args)
 #elif defined(HAVE_CWAIT)
 PyDoc_STRVAR(posix_waitpid__doc__,
-"waitpid(pid, options) -> (pid, status << 8)\n\n"
-"Wait for completion of a given process.  options is ignored on Windows.");
+);
 static PyObject *
 posix_waitpid(PyObject *self, PyObject *args)
 PyDoc_STRVAR(posix_wait__doc__,
@@ -1083,19 +1082,19 @@ PyDoc_STRVAR(win32_startfile__doc__,
 "startfile(filepath [, operation]) - Start a file with its associated\n\
 application.\n\
 \n\
-When \"operation\" is not specified or \"open\", this acts like\n\
+When \, this acts like\n\
 double-clicking the file in Explorer, or giving the file name as an\n\
-argument to the DOS \"start\" command: the file is opened with whatever\n\
+argument to the DOS \ command: the file is opened with whatever\n\
 application (if any) its extension is associated.\n\
-When another \"operation\" is given, it specifies what should be done with\n\
-the file.  A typical operation is \"print\".\n\
+When another \ is given, it specifies what should be done with\n\
+the file.  A typical operation is \.\n\
 \n\
 startfile returns as soon as the associated application is launched.\n\
 There is no option to wait for the application to close, and no way\n\
 to retrieve the application's exit status.\n\
 \n\
 The filepath is relative to the current directory.  If you want to use\n\
-an absolute path, make sure the first character is not a slash (\"/\");\n\
+an absolute path, make sure the first character is not a slash (\);\n\
 the underlying Win32 ShellExecute function doesn't work if it is.");
 static PyObject *
 win32_startfile(PyObject *self, PyObject *args)
@@ -1140,11 +1139,11 @@ static int
 all_ins(PyObject *d)
 #if (defined(_MSC_VER) || defined(__WATCOMC__) || defined(__BORLANDC__)) && !defined(__QNX__)
 #define INITFUNC initnt
-#define MODNAME "nt"
+#define MODNAME
 #elif defined(PYOS_OS2)
 #define INITFUNC initos2
-#define MODNAME "os2"
+#define MODNAME
 #define INITFUNC initposix
-#define MODNAME "posix"
+#define MODNAME
 PyMODINIT_FUNC
 INITFUNC(void)

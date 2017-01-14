@@ -2,11 +2,7 @@
 #define doubletime(TV) ((double)(TV).tv_sec + (TV).tv_usec * 0.000001)
 static PyObject *ResourceError;
 PyDoc_STRVAR(struct_rusage__doc__,
-"struct_rusage: Result from getrusage.\n\n"
-"This object may be accessed either as a tuple of\n"
-"    (utime,stime,maxrss,ixrss,idrss,isrss,minflt,majflt,\n"
-"    nswap,inblock,oublock,msgsnd,msgrcv,nsignals,nvcsw,nivcsw)\n"
-"or via the attributes ru_utime, ru_stime, ru_maxrss, and so on.");
+);
 static PyStructSequence_Field struct_rusage_fields[] = ;
 static PyStructSequence_Desc struct_rusage_desc = ;
 static int initialized;

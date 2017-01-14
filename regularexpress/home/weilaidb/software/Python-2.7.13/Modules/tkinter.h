@@ -10,4 +10,3 @@
 #if TK_HEX_VERSION < 0x0804020e
 #define TKINTER_PROTECT_LOADTK
 #define TKINTER_LOADTK_ERRMSG \
-"Calling Tk_Init again after a previous call failed might deadlock"

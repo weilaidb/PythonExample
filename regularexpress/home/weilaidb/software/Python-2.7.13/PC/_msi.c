@@ -83,6 +83,6 @@ static PyObject* msiopendb(PyObject *obj, PyObject *args)
 static PyObject*
 createrecord(PyObject *o, PyObject *args)
 static PyMethodDef msi_methods[] = ;
-static char msi_doc[] = "Documentation";
+static char msi_doc[] = ;
 PyMODINIT_FUNC
 init_msi(void)

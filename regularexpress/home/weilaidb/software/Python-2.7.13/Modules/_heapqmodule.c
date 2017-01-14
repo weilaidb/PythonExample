@@ -7,11 +7,11 @@ _siftup(PyListObject *heap, Py_ssize_t pos)
 static PyObject *
 heappush(PyObject *self, PyObject *args)
 PyDoc_STRVAR(heappush_doc,
-"heappush(heap, item) -> None. Push item onto heap, maintaining the heap invariant.");
+);
 static PyObject *
 heappop(PyObject *self, PyObject *heap)
 PyDoc_STRVAR(heappop_doc,
-"Pop the smallest item off the heap, maintaining the heap invariant.");
+);
 static PyObject *
 heapreplace(PyObject *self, PyObject *args)
 PyDoc_STRVAR(heapreplace_doc,
@@ -32,7 +32,7 @@ heappush() followed by a separate call to heappop().");
 static PyObject *
 heapify(PyObject *self, PyObject *heap)
 PyDoc_STRVAR(heapify_doc,
-"Transform list into a heap, in-place, in O(len(heap)) time.");
+);
 static PyObject *
 nlargest(PyObject *self, PyObject *args)
 PyDoc_STRVAR(nlargest_doc,
@@ -111,11 +111,11 @@ of such tournaments, we do not need to trace the history of a winner.\n\
 To be more memory efficient, when a winner is promoted, we try to\n\
 replace it by something else at a lower level, and the rule becomes\n\
 that a cell and the two cells it tops contain three different items,\n\
-but the top cell \"wins\" over the two topped cells.\n"
+but the top cell \
 "\n\
 If this heap invariant is protected at all time, index 0 is clearly\n\
 the overall winner.  The simplest algorithmic way to remove it and\n\
-find the \"next\" winner is to move some loser (let's say cell 30 in the\n\
+find the \ winner is to move some loser (let's say cell 30 in the\n\
 diagram above) into the 0 position, and then percolate this new 0 down\n\
 the tree, exchanging values, until the invariant is re-established.\n\
 This is clearly logarithmic on the total number of items in the tree.\n\
@@ -123,9 +123,9 @@ By iterating over all items, you get an O(n ln n) sort.\n"
 "\n\
 A nice feature of this sort is that you can efficiently insert new\n\
 items while the sort is going on, provided that the inserted items are\n\
-not \"better\" than the last 0'th element you extracted.  This is\n\
+not \ than the last 0'th element you extracted.  This is\n\
 especially useful in simulation contexts, where the tree holds all\n\
-incoming events, and the \"win\" condition means the smallest scheduled\n\
+incoming events, and the \ condition means the smallest scheduled\n\
 time.  When an event schedule other events for execution, they are\n\
 scheduled into the future, so they can easily go into the heap.  So, a\n\
 heap is a good structure for implementing schedulers (this is what I\n\
@@ -138,7 +138,7 @@ than the average case.  However, there are other representations which\n\
 are more efficient overall, yet the worst cases might be terrible.\n"
 "\n\
 Heaps are also very useful in big disk sorts.  You most probably all\n\
-know that a big sort implies producing \"runs\" (which are pre-sorted\n\
+know that a big sort implies producing \ (which are pre-sorted\n\
 sequences, which size is usually related to the amount of CPU memory),\n\
 followed by a merging passes for these runs, which merging is often\n\
 very cleverly organised[1].  It is very important that the initial\n\
@@ -149,7 +149,7 @@ produce runs which are twice the size of the memory for random input,\n\
 and much better for input fuzzily ordered.\n"
 "\n\
 Moreover, if you output the 0'th item on disk and get an input which\n\
-may not fit in the current tournament (because the value \"wins\" over\n\
+may not fit in the current tournament (because the value \ over\n\
 the last output value), it cannot fit in the heap, so the size of the\n\
 heap decreases.  The freed memory could be cleverly reused immediately\n\
 for progressively building a second heap, which grows at exactly the\n\
@@ -168,7 +168,7 @@ capabilities of the disks.  On devices which cannot seek, like big\n\
 tape drives, the story was quite different, and one had to be very\n\
 clever to ensure (far in advance) that each tape movement will be the\n\
 most effective possible (that is, will best participate at\n\
-\"progressing\" the merge).  Some tapes were even able to read\n\
+\ the merge).  Some tapes were even able to read\n\
 backwards, and this was also used to avoid the rewinding time.\n\
 Believe me, real good tape sorts were quite spectacular to watch!\n\
 From all times, sorting has always been a Great Art! :-)\n");

@@ -1,10 +1,7 @@
 #define GLOBAL_AFTER_ASSIGN \
-"name '%.400s' is assigned to before global declaration"
 #define GLOBAL_AFTER_USE \
-"name '%.400s' is used prior to global declaration"
-#define IMPORT_STAR_WARNING "import * only allowed at module level"
+#define IMPORT_STAR_WARNING
 #define RETURN_VAL_IN_GENERATOR \
-"'return' with argument inside generator"
 static PySTEntryObject *
 ste_new(struct symtable *st, identifier name, _Py_block_ty block,
 void *key, int lineno)
@@ -39,7 +36,6 @@ dictcomp = NULL;
 #define GET_IDENTIFIER(VAR) \
 ((VAR) ? (VAR) : ((VAR) = PyString_InternFromString(# VAR)))
 #define DUPLICATE_ARGUMENT \
-"duplicate argument '%s' in function definition"
 static struct symtable *
 symtable_new(void)
 struct symtable *

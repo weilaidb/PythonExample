@@ -228,7 +228,7 @@ array.tostring().decode() to obtain a unicode string from\n\
 an array of some other type.");
 static PyObject *
 array_reduce(arrayobject *array)
-PyDoc_STRVAR(reduce_doc, "Return state information for pickling.");
+PyDoc_STRVAR(reduce_doc, );
 static PyObject *
 array_sizeof(arrayobject *self, PyObject *unused)
 PyDoc_STRVAR(sizeof_doc,
@@ -248,7 +248,7 @@ array_subscr(arrayobject* self, PyObject* item)
 static int
 array_ass_subscr(arrayobject* self, PyObject* item, PyObject* value)
 static PyMappingMethods array_as_mapping = ;
-static const void *emptybuf = "";
+static const void *emptybuf = ;
 static Py_ssize_t
 array_buffer_getreadbuf(arrayobject *self, Py_ssize_t index, const void **ptr)
 static Py_ssize_t

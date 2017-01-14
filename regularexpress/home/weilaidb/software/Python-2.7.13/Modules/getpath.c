@@ -1,11 +1,11 @@
 #if !defined(PREFIX) || !defined(EXEC_PREFIX) || !defined(VERSION) || !defined(VPATH)
-#error "PREFIX, EXEC_PREFIX, VERSION, and VPATH must be constant defined"
-#define LANDMARK "os.py"
+#error
+#define LANDMARK
 static char prefix[MAXPATHLEN+1];
 static char exec_prefix[MAXPATHLEN+1];
 static char progpath[MAXPATHLEN+1];
 static char *module_search_path = NULL;
-static char lib_python[] = "lib/python" VERSION;
+static char lib_python[] =  VERSION;
 static void
 reduce(char *dir)
 static int

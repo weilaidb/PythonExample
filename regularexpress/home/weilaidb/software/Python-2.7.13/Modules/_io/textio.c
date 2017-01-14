@@ -1,63 +1,33 @@
 #define PY_SSIZE_T_CLEAN
 PyDoc_STRVAR(textiobase_doc,
-"Base class for text I/O.\n"
-"\n"
-"This class provides a character and line based interface to stream\n"
-"I/O. There is no readinto method because Python's character strings\n"
-"are immutable. There is no public constructor.\n"
 );
 static PyObject *
 _unsupported(const char *message)
 PyDoc_STRVAR(textiobase_detach_doc,
-"Separate the underlying buffer from the TextIOBase and return it.\n"
-"\n"
-"After the underlying buffer has been detached, the TextIO is in an\n"
-"unusable state.\n"
 );
 static PyObject *
 textiobase_detach(PyObject *self)
 PyDoc_STRVAR(textiobase_read_doc,
-"Read at most n characters from stream.\n"
-"\n"
-"Read from underlying buffer until we have n characters or we hit EOF.\n"
-"If n is negative or omitted, read until EOF.\n"
 );
 static PyObject *
 textiobase_read(PyObject *self, PyObject *args)
 PyDoc_STRVAR(textiobase_readline_doc,
-"Read until newline or EOF.\n"
-"\n"
-"Returns an empty string if EOF is hit immediately.\n"
 );
 static PyObject *
 textiobase_readline(PyObject *self, PyObject *args)
 PyDoc_STRVAR(textiobase_write_doc,
-"Write string to stream.\n"
-"Returns the number of characters written (which is always equal to\n"
-"the length of the string).\n"
 );
 static PyObject *
 textiobase_write(PyObject *self, PyObject *args)
 PyDoc_STRVAR(textiobase_encoding_doc,
-"Encoding of the text stream.\n"
-"\n"
-"Subclasses should override.\n"
 );
 static PyObject *
 textiobase_encoding_get(PyObject *self, void *context)
 PyDoc_STRVAR(textiobase_newlines_doc,
-"Line endings translated so far.\n"
-"\n"
-"Only line endings translated during reading are considered.\n"
-"\n"
-"Subclasses should override.\n"
 );
 static PyObject *
 textiobase_newlines_get(PyObject *self, void *context)
 PyDoc_STRVAR(textiobase_errors_doc,
-"The error setting of the decoder or encoder.\n"
-"\n"
-"Subclasses should override.\n"
 );
 static PyObject *
 textiobase_errors_get(PyObject *self, void *context)
@@ -65,13 +35,6 @@ static PyMethodDef textiobase_methods[] = ;
 static PyGetSetDef textiobase_getset[] = ;
 PyTypeObject PyTextIOBase_Type = ;
 PyDoc_STRVAR(incrementalnewlinedecoder_doc,
-"Codec used when reading a file in universal newlines mode.  It wraps\n"
-"another incremental decoder, translating \\r\\n and \\r into \\n.  It also\n"
-"records the types of newlines encountered.  When used with\n"
-"translate=False, it ensures that the newline sequence is returned in\n"
-"one piece. When used with decoder=None, it expects unicode strings as\n"
-"decode input and translates newlines without first invoking an external\n"
-"decoder.\n"
 );
 typedef struct  nldecoder_object;
 static int
@@ -103,33 +66,6 @@ static PyMethodDef incrementalnewlinedecoder_methods[] = ;
 static PyGetSetDef incrementalnewlinedecoder_getset[] = ;
 PyTypeObject PyIncrementalNewlineDecoder_Type = ;
 PyDoc_STRVAR(textiowrapper_doc,
-"Character and line based layer over a BufferedIOBase object, buffer.\n"
-"\n"
-"encoding gives the name of the encoding that the stream will be\n"
-"decoded or encoded with. It defaults to locale.getpreferredencoding.\n"
-"\n"
-"errors determines the strictness of encoding and decoding (see the\n"
-"codecs.register) and defaults to \"strict\".\n"
-"\n"
-"newline controls how line endings are handled. It can be None, '',\n"
-"'\\n', '\\r', and '\\r\\n'.  It works as follows:\n"
-"\n"
-"* On input, if newline is None, universal newlines mode is\n"
-"  enabled. Lines in the input can end in '\\n', '\\r', or '\\r\\n', and\n"
-"  these are translated into '\\n' before being returned to the\n"
-"  caller. If it is '', universal newline mode is enabled, but line\n"
-"  endings are returned to the caller untranslated. If it has any of\n"
-"  the other legal values, input lines are only terminated by the given\n"
-"  string, and the line ending is returned to the caller untranslated.\n"
-"\n"
-"* On output, if newline is None, any '\\n' characters written are\n"
-"  translated to the system default line separator, os.linesep. If\n"
-"  newline is '', no translation takes place. If newline is any of the\n"
-"  other legal values, any '\\n' characters written are translated to\n"
-"  the given string.\n"
-"\n"
-"If line_buffering is True, a call to flush is implied when a call to\n"
-"write contains a newline character."
 );
 typedef PyObject *
 (*encodefunc_t)(PyObject *, PyObject *);

@@ -67,22 +67,8 @@ MarkupIterator_next(MarkupIterator *self, SubString *literal,
 int *field_present, SubString *field_name,
 SubString *format_spec, STRINGLIB_CHAR *conversion,
 int *format_spec_needs_expanding)
-') && (at_end || (c != *self->str.ptr))) ' encountered "
-"in format string");
-return 0;
-}
-if (at_end && c == '{') {
-PyErr_SetString(PyExc_ValueError, "Single '
-if (!at_end)
-literal->ptr = start;
-literal->end = start + len;
-if (!markup_follows)
-return 2;
-*field_present = 1;
-count = 1;
-start = self->str.ptr;
-while (self->str.ptr < self->str.end)
-PyErr_SetString(PyExc_ValueError, "unmatched '
+') && (at_end || (c != *self->str.ptr)))
+if (at_end && c == '
 static PyObject *
 do_conversion(PyObject *obj, STRINGLIB_CHAR conversion)
 static int

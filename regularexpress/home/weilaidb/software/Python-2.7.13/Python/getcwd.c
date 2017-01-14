@@ -4,6 +4,6 @@
 extern char *getwd(char *);
 char *
 getcwd(char *buf, int size)
-#define PWD_CMD "/bin/pwd"
+#define PWD_CMD
 char *
 getcwd(char *buf, int size)

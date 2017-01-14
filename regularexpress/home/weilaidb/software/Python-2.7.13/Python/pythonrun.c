@@ -2,7 +2,7 @@
 #undef BYTE
 #define PRINT_TOTAL_REFS()
 #define PRINT_TOTAL_REFS() fprintf(stderr,                              \
-"[%" PY_FORMAT_SIZE_T "d refs]\n",                   \
+,                   \
 _Py_GetRefTotal())
 extern char *Py_GetPath(void);
 extern grammar _PyParser_Grammar;
@@ -57,7 +57,7 @@ PyThreadState *
 Py_NewInterpreter(void)
 void
 Py_EndInterpreter(PyThreadState *tstate)
-static char *progname = "python";
+static char *progname = ;
 void
 Py_SetProgramName(char *pn)
 char *

@@ -1,7 +1,7 @@
-static char visible_length_key[] = "n_sequence_fields";
-static char real_length_key[] = "n_fields";
-static char unnamed_fields_key[] = "n_unnamed_fields";
-char *PyStructSequence_UnnamedField = "unnamed field";
+static char visible_length_key[] = ;
+static char real_length_key[] = ;
+static char unnamed_fields_key[] = ;
+char *PyStructSequence_UnnamedField = ;
 #define VISIBLE_SIZE(op) Py_SIZE(op)
 #define VISIBLE_SIZE_TP(tp) PyInt_AsLong( \
 PyDict_GetItemString((tp)->tp_dict, visible_length_key))

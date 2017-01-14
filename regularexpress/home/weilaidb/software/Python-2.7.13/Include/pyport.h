@@ -37,31 +37,31 @@ typedef long            Py_intptr_t;
 #elif defined(HAVE_LONG_LONG) && (SIZEOF_VOID_P <= SIZEOF_LONG_LONG)
 typedef unsigned PY_LONG_LONG   Py_uintptr_t;
 typedef PY_LONG_LONG            Py_intptr_t;
-#   error "Python needs a typedef for Py_uintptr_t in pyport.h."
+#   error
 typedef ssize_t         Py_ssize_t;
 #elif SIZEOF_VOID_P == SIZEOF_SIZE_T
 typedef Py_intptr_t     Py_ssize_t;
-#   error "Python needs a typedef for Py_ssize_t in pyport.h."
+#   error
 #define PY_SIZE_MAX SIZE_MAX
 #define PY_SIZE_MAX ((size_t)-1)
 #define PY_SSIZE_T_MAX ((Py_ssize_t)(((size_t)-1)>>1))
 #define PY_SSIZE_T_MIN (-PY_SSIZE_T_MAX-1)
 #if SIZEOF_PID_T > SIZEOF_LONG
-#   error "Python doesn't support sizeof(pid_t) > sizeof(long)"
+#   error
 #   if SIZEOF_SIZE_T == SIZEOF_INT && !defined(__APPLE__)
-#       define PY_FORMAT_SIZE_T ""
+#       define PY_FORMAT_SIZE_T
 #   elif SIZEOF_SIZE_T == SIZEOF_LONG
-#       define PY_FORMAT_SIZE_T "l"
+#       define PY_FORMAT_SIZE_T
 #   elif defined(MS_WINDOWS)
-#       define PY_FORMAT_SIZE_T "I"
+#       define PY_FORMAT_SIZE_T
 #   else
-#       error "This platform's pyconfig.h needs to define PY_FORMAT_SIZE_T"
+#       error
 #   endif
 #   ifndef PY_FORMAT_LONG_LONG
 #       if defined(MS_WIN64) || defined(MS_WINDOWS)
-#           define PY_FORMAT_LONG_LONG "I64"
+#           define PY_FORMAT_LONG_LONG
 #       else
-#           error "This platform's pyconfig.h needs to define PY_FORMAT_LONG_LONG"
+#           error
 #       endif
 #   endif
 #undef USE_INLINE
@@ -174,7 +174,7 @@ extern pid_t forkpty(int *, char *, struct termios *, struct winsize *);
 #               else
 #                       define PyAPI_DATA(RTYPE) extern __declspec(dllimport) RTYPE
 #                       if defined(__cplusplus)
-#                               define PyMODINIT_FUNC extern "C" __declspec(dllexport) void
+#                               define PyMODINIT_FUNC extern  __declspec(dllexport) void
 #                       else
 #                               define PyMODINIT_FUNC __declspec(dllexport) void
 #                       endif
@@ -183,7 +183,7 @@ extern pid_t forkpty(int *, char *, struct termios *, struct winsize *);
 #       define PyAPI_FUNC(RTYPE) RTYPE
 #       define PyAPI_DATA(RTYPE) extern RTYPE
 #       if defined(__cplusplus)
-#               define PyMODINIT_FUNC extern "C" void
+#               define PyMODINIT_FUNC extern  void
 #       else
 #               define PyMODINIT_FUNC void
 #       endif
@@ -210,11 +210,11 @@ typedef struct fd_set  fd_set;
 #define LONG_MAX 0X7FFFFFFFL
 #elif SIZEOF_LONG == 8
 #define LONG_MAX 0X7FFFFFFFFFFFFFFFL
-#error "could not set LONG_MAX in pyport.h"
+#error
 #define LONG_MIN (-LONG_MAX-1)
 #define LONG_BIT (8 * SIZEOF_LONG)
 #if LONG_BIT != 8 * SIZEOF_LONG
-#error "LONG_BIT definition appears wrong for platform (bad gcc/glibc config?)."
+#error
 #if (!defined(__GNUC__) || __GNUC__ < 2 || \
 (__GNUC__ == 2 && __GNUC_MINOR__ < 7) ) && \
 !defined(RISCOS)

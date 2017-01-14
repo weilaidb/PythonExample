@@ -164,8 +164,7 @@ static PyObject *
 type_subclasses(PyTypeObject *type, PyObject *args_ignored)
 static PyMethodDef type_methods[] = ;
 PyDoc_STRVAR(type_doc,
-"type(object) -> the object's type\n"
-"type(name, bases, dict) -> a new type");
+);
 static int
 type_traverse(PyTypeObject *type, visitproc visit, void *arg)
 static int
@@ -213,12 +212,7 @@ object_reduce_ex(PyObject *self, PyObject *args)
 static PyObject *
 object_subclasshook(PyObject *cls, PyObject *args)
 PyDoc_STRVAR(object_subclasshook_doc,
-"Abstract classes can override this to customize issubclass().\n"
-"\n"
-"This is invoked early on by abc.ABCMeta.__subclasscheck__().\n"
-"It should return True, False or NotImplemented.  If it returns\n"
-"NotImplemented, the normal algorithm is used.  Otherwise, it\n"
-"overrides the normal algorithm (and the outcome is cached).\n");
+);
 static PyObject *
 object_format(PyObject *self, PyObject *args)
 {
@@ -226,7 +220,7 @@ PyObject *format_spec;
 PyObject *self_as_str = NULL;
 PyObject *result = NULL;
 Py_ssize_t format_len;
-if (!PyArg_ParseTuple(args, "O:__format__", &format_spec))
+if (!PyArg_ParseTuple(args, , &format_spec))
 return NULL;
 if (PyUnicode_Check(format_spec))  else if (PyString_Check(format_spec))
 static PyObject *
@@ -244,8 +238,8 @@ static void
 inherit_special(PyTypeObject *type, PyTypeObject *base)
 static int
 overrides_name(PyTypeObject *type, char *name)
-#define OVERRIDES_HASH(x)       overrides_name(x, "__hash__")
-#define OVERRIDES_EQ(x)         overrides_name(x, "__eq__")
+#define OVERRIDES_HASH(x)       overrides_name(x, )
+#define OVERRIDES_EQ(x)         overrides_name(x, )
 static void
 inherit_slots(PyTypeObject *type, PyTypeObject *base)
 static int add_operators(PyTypeObject *);
@@ -365,57 +359,57 @@ slot_sq_ass_slice(PyObject *self, Py_ssize_t i, Py_ssize_t j, PyObject *value)
 static int
 slot_sq_contains(PyObject *self, PyObject *value)
 #define slot_mp_length slot_sq_length
-SLOT1(slot_mp_subscript, "__getitem__", PyObject *, "O")
+SLOT1(slot_mp_subscript, )
 static int
 slot_mp_ass_subscript(PyObject *self, PyObject *key, PyObject *value)
-SLOT1BIN(slot_nb_add, nb_add, "__add__", "__radd__")
-SLOT1BIN(slot_nb_subtract, nb_subtract, "__sub__", "__rsub__")
-SLOT1BIN(slot_nb_multiply, nb_multiply, "__mul__", "__rmul__")
-SLOT1BIN(slot_nb_divide, nb_divide, "__div__", "__rdiv__")
-SLOT1BIN(slot_nb_remainder, nb_remainder, "__mod__", "__rmod__")
-SLOT1BIN(slot_nb_divmod, nb_divmod, "__divmod__", "__rdivmod__")
+SLOT1BIN(slot_nb_add, nb_add, )
+SLOT1BIN(slot_nb_subtract, nb_subtract, )
+SLOT1BIN(slot_nb_multiply, nb_multiply, )
+SLOT1BIN(slot_nb_divide, nb_divide, )
+SLOT1BIN(slot_nb_remainder, nb_remainder, )
+SLOT1BIN(slot_nb_divmod, nb_divmod, )
 static PyObject *slot_nb_power(PyObject *, PyObject *, PyObject *);
 SLOT1BINFULL(slot_nb_power_binary, slot_nb_power,
-nb_power, "__pow__", "__rpow__")
+nb_power, )
 static PyObject *
 slot_nb_power(PyObject *self, PyObject *other, PyObject *modulus)
-SLOT0(slot_nb_negative, "__neg__")
-SLOT0(slot_nb_positive, "__pos__")
-SLOT0(slot_nb_absolute, "__abs__")
+SLOT0(slot_nb_negative, )
+SLOT0(slot_nb_positive, )
+SLOT0(slot_nb_absolute, )
 static int
 slot_nb_nonzero(PyObject *self)
 static PyObject *
 slot_nb_index(PyObject *self)
-SLOT0(slot_nb_invert, "__invert__")
-SLOT1BIN(slot_nb_lshift, nb_lshift, "__lshift__", "__rlshift__")
-SLOT1BIN(slot_nb_rshift, nb_rshift, "__rshift__", "__rrshift__")
-SLOT1BIN(slot_nb_and, nb_and, "__and__", "__rand__")
-SLOT1BIN(slot_nb_xor, nb_xor, "__xor__", "__rxor__")
-SLOT1BIN(slot_nb_or, nb_or, "__or__", "__ror__")
+SLOT0(slot_nb_invert, )
+SLOT1BIN(slot_nb_lshift, nb_lshift, )
+SLOT1BIN(slot_nb_rshift, nb_rshift, )
+SLOT1BIN(slot_nb_and, nb_and, )
+SLOT1BIN(slot_nb_xor, nb_xor, )
+SLOT1BIN(slot_nb_or, nb_or, )
 static int
 slot_nb_coerce(PyObject **a, PyObject **b)
-SLOT0(slot_nb_int, "__int__")
-SLOT0(slot_nb_long, "__long__")
-SLOT0(slot_nb_float, "__float__")
-SLOT0(slot_nb_oct, "__oct__")
-SLOT0(slot_nb_hex, "__hex__")
-SLOT1(slot_nb_inplace_add, "__iadd__", PyObject *, "O")
-SLOT1(slot_nb_inplace_subtract, "__isub__", PyObject *, "O")
-SLOT1(slot_nb_inplace_multiply, "__imul__", PyObject *, "O")
-SLOT1(slot_nb_inplace_divide, "__idiv__", PyObject *, "O")
-SLOT1(slot_nb_inplace_remainder, "__imod__", PyObject *, "O")
+SLOT0(slot_nb_int, )
+SLOT0(slot_nb_long, )
+SLOT0(slot_nb_float, )
+SLOT0(slot_nb_oct, )
+SLOT0(slot_nb_hex, )
+SLOT1(slot_nb_inplace_add, )
+SLOT1(slot_nb_inplace_subtract, )
+SLOT1(slot_nb_inplace_multiply, )
+SLOT1(slot_nb_inplace_divide, )
+SLOT1(slot_nb_inplace_remainder, )
 static PyObject *
 slot_nb_inplace_power(PyObject *self, PyObject * arg1, PyObject *arg2)
-SLOT1(slot_nb_inplace_lshift, "__ilshift__", PyObject *, "O")
-SLOT1(slot_nb_inplace_rshift, "__irshift__", PyObject *, "O")
-SLOT1(slot_nb_inplace_and, "__iand__", PyObject *, "O")
-SLOT1(slot_nb_inplace_xor, "__ixor__", PyObject *, "O")
-SLOT1(slot_nb_inplace_or, "__ior__", PyObject *, "O")
+SLOT1(slot_nb_inplace_lshift, )
+SLOT1(slot_nb_inplace_rshift, )
+SLOT1(slot_nb_inplace_and, )
+SLOT1(slot_nb_inplace_xor, )
+SLOT1(slot_nb_inplace_or, )
 SLOT1BIN(slot_nb_floor_divide, nb_floor_divide,
-"__floordiv__", "__rfloordiv__")
-SLOT1BIN(slot_nb_true_divide, nb_true_divide, "__truediv__", "__rtruediv__")
-SLOT1(slot_nb_inplace_floor_divide, "__ifloordiv__", PyObject *, "O")
-SLOT1(slot_nb_inplace_true_divide, "__itruediv__", PyObject *, "O")
+)
+SLOT1BIN(slot_nb_true_divide, nb_true_divide, )
+SLOT1(slot_nb_inplace_floor_divide, )
+SLOT1(slot_nb_inplace_true_divide, )
 static int
 half_compare(PyObject *self, PyObject *other)
 int
@@ -477,22 +471,22 @@ ETSLOT(NAME, as_mapping.SLOT, FUNCTION, WRAPPER, DOC)
 ETSLOT(NAME, as_number.SLOT, FUNCTION, WRAPPER, DOC)
 #define UNSLOT(NAME, SLOT, FUNCTION, WRAPPER, DOC) \
 ETSLOT(NAME, as_number.SLOT, FUNCTION, WRAPPER, \
-"x." NAME "() <==> " DOC)
+DOC)
 #define IBSLOT(NAME, SLOT, FUNCTION, WRAPPER, DOC) \
 ETSLOT(NAME, as_number.SLOT, FUNCTION, WRAPPER, \
-"x." NAME "(y) <==> x" DOC "y")
+)
 #define BINSLOT(NAME, SLOT, FUNCTION, DOC) \
 ETSLOT(NAME, as_number.SLOT, FUNCTION, wrap_binaryfunc_l, \
-"x." NAME "(y) <==> x" DOC "y")
+)
 #define RBINSLOT(NAME, SLOT, FUNCTION, DOC) \
 ETSLOT(NAME, as_number.SLOT, FUNCTION, wrap_binaryfunc_r, \
-"x." NAME "(y) <==> y" DOC "x")
+)
 #define BINSLOTNOTINFIX(NAME, SLOT, FUNCTION, DOC) \
 ETSLOT(NAME, as_number.SLOT, FUNCTION, wrap_binaryfunc_l, \
-"x." NAME "(y) <==> " DOC)
+DOC)
 #define RBINSLOTNOTINFIX(NAME, SLOT, FUNCTION, DOC) \
 ETSLOT(NAME, as_number.SLOT, FUNCTION, wrap_binaryfunc_r, \
-"x." NAME "(y) <==> " DOC)
+DOC)
 static slotdef slotdefs[] = ;
 static void **
 slotptr(PyTypeObject *type, int ioffset)
@@ -534,13 +528,7 @@ super_descr_get(PyObject *self, PyObject *obj, PyObject *type)
 static int
 super_init(PyObject *self, PyObject *args, PyObject *kwds)
 PyDoc_STRVAR(super_doc,
-"super(type, obj) -> bound super object; requires isinstance(obj, type)\n"
-"super(type) -> unbound super object\n"
-"super(type, type2) -> bound super object; requires issubclass(type2, type)\n"
-"Typical use to call a cooperative superclass method:\n"
-"class C(B):\n"
-"    def meth(self, arg):\n"
-"        super(C, self).meth(arg)");
+);
 static int
 super_traverse(PyObject *self, visitproc visit, void *arg)
 PyTypeObject PySuper_Type = ;

@@ -46,5 +46,5 @@ typedef unsigned __int32 UINT32;
 typedef signed __int32   SINT32;
 typedef unsigned __int64 UINT64;
 typedef signed __int64   SINT64;
-#error "Need typedefs here"
+#error
 typedef float FLOAT32;

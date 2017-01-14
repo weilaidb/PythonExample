@@ -1,14 +1,14 @@
 #if defined(HAVE_NDBM_H)
 #if defined(PYOS_OS2) && !defined(PYCC_GCC)
-static char *which_dbm = "ndbm";
-static char *which_dbm = "GNU gdbm";
+static char *which_dbm = ;
+static char *which_dbm = ;
 #elif defined(HAVE_GDBM_NDBM_H)
-static char *which_dbm = "GNU gdbm";
+static char *which_dbm = ;
 #elif defined(HAVE_GDBM_DASH_NDBM_H)
-static char *which_dbm = "GNU gdbm";
+static char *which_dbm = ;
 #elif defined(HAVE_BERKDB_H)
-static char *which_dbm = "Berkeley DB";
-#error "No ndbm.h available!"
+static char *which_dbm = ;
+#error
 typedef struct  dbmobject;
 static PyTypeObject Dbmtype;
 #define is_dbmobject(v) (Py_TYPE(v) == &Dbmtype)
@@ -38,10 +38,7 @@ static PyObject *
 dbm_get(register dbmobject *dp, PyObject *args)
 static PyObject *
 dbm_setdefault(register dbmobject *dp, PyObject *args)
-static PyMethodDef dbm_methods[] = ,
-,
-,
-};
+static PyMethodDef dbm_methods[] = ;
 static PyObject *
 dbm_getattr(dbmobject *dp, char *name)
 static PyTypeObject Dbmtype = ;

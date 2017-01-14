@@ -7,10 +7,10 @@ static void
 ppc_getcounter(uint64 *v)
 #elif defined(__i386__)
 #define READ_TIMESTAMP(val) \
-__asm__ __volatile__("rdtsc" : "=A" (val))
+__asm__ __volatile__( (val))
 #elif defined(__x86_64__)
 #define READ_TIMESTAMP(val) do  while(0)
-#error "Don't know how to implement timestamp counter for this architecture"
+#error
 void dump_tsc(int opcode, int ticked, uint64 inst0, uint64 inst1,
 uint64 loop0, uint64 loop1, uint64 intr0, uint64 intr1)
 #define LLTRACE  1
@@ -53,14 +53,10 @@ PyFrameObject *, unsigned char *);
 static PyObject * kwd_as_string(PyObject *);
 static PyObject * special_lookup(PyObject *, char *, PyObject **);
 #define NAME_ERROR_MSG \
-"name '%.200s' is not defined"
 #define GLOBAL_NAME_ERROR_MSG \
-"global name '%.200s' is not defined"
 #define UNBOUNDLOCAL_ERROR_MSG \
-"local variable '%.200s' referenced before assignment"
 #define UNBOUNDFREE_ERROR_MSG \
-"free variable '%.200s' referenced before assignment" \
-" in enclosing scope"
+\
 static long dxpairs[257][256];
 #define dxp dxpairs[256]
 static long dxp[256];
@@ -235,8 +231,7 @@ assign_slice(PyObject *u, PyObject *v, PyObject *w, PyObject *x)
 #define Py3kExceptionClass_Check(x)     \
 (PyType_Check((x)) &&               \
 PyType_FastSubclass((PyTypeObject*)(x), Py_TPFLAGS_BASE_EXC_SUBCLASS))
-#define CANNOT_CATCH_MSG "catching classes that don't inherit from " \
-"BaseException is not allowed in 3.x"
+#define CANNOT_CATCH_MSG  \
 static PyObject *
 cmp_outcome(int op, register PyObject *v, register PyObject *w)
 static PyObject *

@@ -1,6 +1,6 @@
 extern BOOL PyWin_IsWin32s(void);
 #if HAVE_UNISTD_H
-#define LANDMARK "lib\\os.py"
+#define LANDMARK
 static char prefix[MAXPATHLEN+1];
 static char exec_prefix[MAXPATHLEN+1];
 static char progpath[MAXPATHLEN+1];

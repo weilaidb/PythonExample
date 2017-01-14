@@ -81,12 +81,12 @@ rc = PyInt_AsLong(rv);, rc, \
 (xmlparseobject *)userData)
 VOID_HANDLER(EndElement,
 (void *userData, const XML_Char *name),
-("(N)", string_intern(self, name)))
+(, string_intern(self, name)))
 VOID_HANDLER(ProcessingInstruction,
 (void *userData,
 const XML_Char *target,
 const XML_Char *data),
-("(NO&)", string_intern(self, target), STRING_CONV_FUNC,data))
+(, string_intern(self, target), STRING_CONV_FUNC,data))
 VOID_HANDLER(UnparsedEntityDecl,
 (void *userData,
 const XML_Char *entityName,
@@ -94,7 +94,7 @@ const XML_Char *base,
 const XML_Char *systemId,
 const XML_Char *publicId,
 const XML_Char *notationName),
-("(NNNNN)",
+(,
 string_intern(self, entityName), string_intern(self, base),
 string_intern(self, systemId), string_intern(self, publicId),
 string_intern(self, notationName)))
@@ -108,7 +108,7 @@ const XML_Char *base,
 const XML_Char *systemId,
 const XML_Char *publicId,
 const XML_Char *notationName),
-("NiNNNNN",
+(,
 string_intern(self, entityName), is_parameter_entity,
 conv_string_len_to_utf8(value, value_length),
 string_intern(self, base), string_intern(self, systemId),
@@ -124,7 +124,7 @@ const XML_Char *base,
 const XML_Char *systemId,
 const XML_Char *publicId,
 const XML_Char *notationName),
-("NiNNNNN",
+(,
 string_intern(self, entityName), is_parameter_entity,
 (self->returns_unicode
 ? conv_string_len_to_unicode(value, value_length)
@@ -137,7 +137,7 @@ VOID_HANDLER(XmlDecl,
 const XML_Char *version,
 const XML_Char *encoding,
 int standalone),
-("(O&O&i)",
+(,
 STRING_CONV_FUNC,version, STRING_CONV_FUNC,encoding,
 standalone))
 static PyObject *
@@ -154,7 +154,7 @@ const XML_Char *attname,
 const XML_Char *att_type,
 const XML_Char *dflt,
 int isrequired),
-("(NNO&O&i)",
+(,
 string_intern(self, elname), string_intern(self, attname),
 STRING_CONV_FUNC,att_type, STRING_CONV_FUNC,dflt,
 isrequired))
@@ -163,7 +163,7 @@ VOID_HANDLER(SkippedEntity,
 (void *userData,
 const XML_Char *entityName,
 int is_parameter_entity),
-("Ni",
+(,
 string_intern(self, entityName), is_parameter_entity))
 VOID_HANDLER(NotationDecl,
 (void *userData,
@@ -171,47 +171,47 @@ const XML_Char *notationName,
 const XML_Char *base,
 const XML_Char *systemId,
 const XML_Char *publicId),
-("(NNNN)",
+(,
 string_intern(self, notationName), string_intern(self, base),
 string_intern(self, systemId), string_intern(self, publicId)))
 VOID_HANDLER(StartNamespaceDecl,
 (void *userData,
 const XML_Char *prefix,
 const XML_Char *uri),
-("(NN)",
+(,
 string_intern(self, prefix), string_intern(self, uri)))
 VOID_HANDLER(EndNamespaceDecl,
 (void *userData,
 const XML_Char *prefix),
-("(N)", string_intern(self, prefix)))
+(, string_intern(self, prefix)))
 VOID_HANDLER(Comment,
 (void *userData, const XML_Char *data),
-("(O&)", STRING_CONV_FUNC,data))
+(, STRING_CONV_FUNC,data))
 VOID_HANDLER(StartCdataSection,
 (void *userData),
-("()"))
+())
 VOID_HANDLER(EndCdataSection,
 (void *userData),
-("()"))
+())
 VOID_HANDLER(Default,
 (void *userData, const XML_Char *s, int len),
-("(N)", conv_string_len_to_utf8(s,len)))
+(, conv_string_len_to_utf8(s,len)))
 VOID_HANDLER(DefaultHandlerExpand,
 (void *userData, const XML_Char *s, int len),
-("(N)", conv_string_len_to_utf8(s,len)))
+(, conv_string_len_to_utf8(s,len)))
 VOID_HANDLER(Default,
 (void *userData, const XML_Char *s, int len),
-("(N)", (self->returns_unicode
+(, (self->returns_unicode
 ? conv_string_len_to_unicode(s,len)
 : conv_string_len_to_utf8(s,len))))
 VOID_HANDLER(DefaultHandlerExpand,
 (void *userData, const XML_Char *s, int len),
-("(N)", (self->returns_unicode
+(, (self->returns_unicode
 ? conv_string_len_to_unicode(s,len)
 : conv_string_len_to_utf8(s,len))))
 INT_HANDLER(NotStandalone,
 (void *userData),
-("()"))
+())
 RC_HANDLER(int, ExternalEntityRef,
 (XML_Parser parser,
 const XML_Char *context,
@@ -219,7 +219,7 @@ const XML_Char *base,
 const XML_Char *systemId,
 const XML_Char *publicId),
 int rc=0;,
-("(O&NNN)",
+(,
 STRING_CONV_FUNC,context, string_intern(self, base),
 string_intern(self, systemId), string_intern(self, publicId)),
 rc = PyInt_AsLong(rv);, rc,
@@ -228,10 +228,10 @@ VOID_HANDLER(StartDoctypeDecl,
 (void *userData, const XML_Char *doctypeName,
 const XML_Char *sysid, const XML_Char *pubid,
 int has_internal_subset),
-("(NNNi)", string_intern(self, doctypeName),
+(, string_intern(self, doctypeName),
 string_intern(self, sysid), string_intern(self, pubid),
 has_internal_subset))
-VOID_HANDLER(EndDoctypeDecl, (void *userData), ("()"))
+VOID_HANDLER(EndDoctypeDecl, (void *userData), ())
 static PyObject *
 get_parse_result(xmlparseobject *self, int rv)
 PyDoc_STRVAR(xmlparse_Parse__doc__,
@@ -316,7 +316,7 @@ static int
 xmlparse_traverse(xmlparseobject *op, visitproc visit, void *arg)
 static int
 xmlparse_clear(xmlparseobject *op)
-PyDoc_STRVAR(Xmlparsetype__doc__, "XML parser");
+PyDoc_STRVAR(Xmlparsetype__doc__, );
 static PyTypeObject Xmlparsetype = ;
 PyDoc_STRVAR(pyexpat_ParserCreate__doc__,
 "ParserCreate([encoding[, namespace_separator]]) -> parser\n\
@@ -330,8 +330,8 @@ static PyObject *
 pyexpat_ErrorString(PyObject *self, PyObject *args)
 static struct PyMethodDef pyexpat_methods[] = ;
 PyDoc_STRVAR(pyexpat_module_documentation,
-"Python wrapper for Expat parser.");
-#define MODULE_NAME "pyexpat"
+);
+#define MODULE_NAME
 #define MODULE_INITFUNC initpyexpat
 #   ifdef MS_WINDOWS
 #       define PyMODINIT_FUNC __declspec(dllexport) void

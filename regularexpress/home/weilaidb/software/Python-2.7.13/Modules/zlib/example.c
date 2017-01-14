@@ -1,11 +1,11 @@
 #  include <string.h>
 #  include <stdlib.h>
 #if defined(VMS) || defined(RISCOS)
-#  define TESTFILE "foo-gz"
-#  define TESTFILE "foo.gz"
+#  define TESTFILE
+#  define TESTFILE
 #define CHECK_ERR(err, msg)
-z_const char hello[] = "hello, hello!";
-const char dictionary[] = "hello";
+z_const char hello[] = ;
+const char dictionary[] = ;
 uLong dictId;
 void test_deflate       OF((Byte *compr, uLong comprLen));
 void test_inflate       OF((Byte *compr, uLong comprLen,

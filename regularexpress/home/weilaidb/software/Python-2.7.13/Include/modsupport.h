@@ -25,7 +25,7 @@ PyAPI_FUNC(int) PyModule_AddStringConstant(PyObject *, const char *, const char 
 #define PyModule_AddIntMacro(m, c) PyModule_AddIntConstant(m, #c, c)
 #define PyModule_AddStringMacro(m, c) PyModule_AddStringConstant(m, #c, c)
 #define PYTHON_API_VERSION 1013
-#define PYTHON_API_STRING "1013"
+#define PYTHON_API_STRING
 #if SIZEOF_SIZE_T != SIZEOF_INT
 #define Py_InitModule4 Py_InitModule4_64
 #if SIZEOF_SIZE_T != SIZEOF_INT

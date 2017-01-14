@@ -1,4 +1,4 @@
-#define LANDMARK "lib\\os.py"
+#define LANDMARK
 static char prefix[MAXPATHLEN+1];
 static char progpath[MAXPATHLEN+1];
 static char dllpath[MAXPATHLEN+1];

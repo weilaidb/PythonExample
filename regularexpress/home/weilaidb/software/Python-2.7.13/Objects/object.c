@@ -172,7 +172,7 @@ void *
 PyMem_Realloc(void *p, size_t nbytes)
 void
 PyMem_Free(void *p)
-#define KEY "Py_Repr"
+#define KEY
 int
 Py_ReprEnter(PyObject *obj)
 void

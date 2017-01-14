@@ -8,7 +8,7 @@
 #define STRINGLIB_BLOOM_WIDTH 64
 #elif LONG_BIT >= 32
 #define STRINGLIB_BLOOM_WIDTH 32
-#error "LONG_BIT is smaller than 32"
+#error
 #define STRINGLIB_BLOOM_ADD(mask, ch) \
 ((mask |= (1UL << ((ch) & (STRINGLIB_BLOOM_WIDTH -1)))))
 #define STRINGLIB_BLOOM(mask, ch)     \

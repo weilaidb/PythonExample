@@ -148,7 +148,7 @@ static DBCHAR
 find_pairencmap(ucs2_t body, ucs2_t modifier,
 const struct pair_encodemap *haystack, int haystacksize)
 #define IMPORT_MAP(locale, charset, encmap, decmap) \
-importmap("_codecs_" #locale, "__map_" #charset, \
+importmap( #charset, \
 (const void**)encmap, (const void**)decmap)
 static int
 importmap(const char *modname, const char *symbol,

@@ -1,5 +1,5 @@
 #define Py_CSTRINGIO_H
-#define PycStringIO_CAPSULE_NAME "cStringIO.cStringIO_CAPI"
+#define PycStringIO_CAPSULE_NAME
 #define PycString_IMPORT \
 PycStringIO = ((struct PycStringIO_CAPI*)PyCapsule_Import(\
 PycStringIO_CAPSULE_NAME, 0))

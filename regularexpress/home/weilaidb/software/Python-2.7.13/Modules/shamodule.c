@@ -45,19 +45,19 @@ static SHAobject *
 newSHAobject(void)
 static void
 SHA_dealloc(PyObject *ptr)
-PyDoc_STRVAR(SHA_copy__doc__, "Return a copy of the hashing object.");
+PyDoc_STRVAR(SHA_copy__doc__, );
 static PyObject *
 SHA_copy(SHAobject *self, PyObject *unused)
 PyDoc_STRVAR(SHA_digest__doc__,
-"Return the digest value as a string of binary data.");
+);
 static PyObject *
 SHA_digest(SHAobject *self, PyObject *unused)
 PyDoc_STRVAR(SHA_hexdigest__doc__,
-"Return the digest value as a string of hexadecimal digits.");
+);
 static PyObject *
 SHA_hexdigest(SHAobject *self, PyObject *unused)
 PyDoc_STRVAR(SHA_update__doc__,
-"Update this hashing object's state with the provided string.");
+);
 static PyObject *
 SHA_update(SHAobject *self, PyObject *args)
 static PyMethodDef SHA_methods[] = ;

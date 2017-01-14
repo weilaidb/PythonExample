@@ -121,7 +121,7 @@ static PyObject *
 proxy_iter(PyWeakReference *proxy)
 static PyObject *
 proxy_iternext(PyWeakReference *proxy)
-WRAP_METHOD(proxy_unicode, "__unicode__");
+WRAP_METHOD(proxy_unicode, );
 static PyMethodDef proxy_methods[] = ;
 static PyNumberMethods proxy_as_number = ;
 static PySequenceMethods proxy_as_sequence = ;

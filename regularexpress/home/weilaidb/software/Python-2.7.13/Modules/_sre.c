@@ -1,9 +1,9 @@
 static char copyright[] =
-" SRE 2.2.2 Copyright (c) 1997-2002 by Secret Labs AB ";
+;
 #define PY_SSIZE_T_CLEAN
 #if !defined(SRE_MODULE)
-#define SRE_MODULE "sre"
-#define SRE_PY_MODULE "re"
+#define SRE_MODULE
+#define SRE_PY_MODULE
 #undef VERBOSE
 #if PY_VERSION_HEX >= 0x01060000
 #if PY_VERSION_HEX  < 0x02020000 || defined(Py_USING_UNICODE)
@@ -256,7 +256,7 @@ PyDoc_STRVAR(pattern_subn_doc,
 Return the tuple (new_string, number_of_subs_made) found by replacing\n\
 the leftmost non-overlapping occurrences of pattern with the\n\
 replacement repl.");
-PyDoc_STRVAR(pattern_doc, "Compiled regular expression objects");
+PyDoc_STRVAR(pattern_doc, );
 static PyMethodDef pattern_methods[] = ;
 #define PAT_OFF(x) offsetof(PatternObject, x)
 static PyMemberDef pattern_members[] = ;

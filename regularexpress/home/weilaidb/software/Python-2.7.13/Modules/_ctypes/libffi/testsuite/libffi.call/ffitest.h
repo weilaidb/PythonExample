@@ -28,40 +28,40 @@
 #  define MAP_FAILED -1
 # endif
 # define USING_MMAP
-#define PRIdLL "I64d"
-#define PRIuLL "I64u"
-#define PRIdLL "lld"
-#define PRIuLL "llu"
+#define PRIdLL
+#define PRIuLL
+#define PRIdLL
+#define PRIuLL
 #if defined(__alpha__) && defined(__osf__)
 #undef PRIdLL
-#define PRIdLL "ld"
+#define PRIdLL
 #undef PRIuLL
-#define PRIuLL "lu"
-#define PRId8 "hd"
-#define PRIu8 "hu"
-#define PRId64 "ld"
-#define PRIu64 "lu"
-#define PRIuPTR "lu"
+#define PRIuLL
+#define PRId8
+#define PRIu8
+#define PRId64
+#define PRIu64
+#define PRIuPTR
 #if defined(__hppa__) && defined(__hpux__) && !defined(PRIuPTR)
-#define PRIuPTR "lu"
+#define PRIuPTR
 #if defined(__sgi)
-#define PRId8 "hhd"
-#define PRIu8 "hhu"
+#define PRId8
+#define PRIu8
 #if (_MIPS_SZLONG == 32)
-#define PRId64 "lld"
-#define PRIu64 "llu"
+#define PRId64
+#define PRIu64
 #if (_MIPS_SZLONG == 64)
-#define PRId64 "ld"
-#define PRIu64 "lu"
-#define PRIuPTR "lu"
+#define PRId64
+#define PRIu64
+#define PRIuPTR
 #if defined(__sun__) && defined(__svr4__) && !defined(PRIuPTR)
 #if defined(__arch64__) || defined (__x86_64__)
-#define PRIuPTR "lu"
-#define PRIuPTR "u"
+#define PRIuPTR
+#define PRIuPTR
 #if defined _MSC_VER
-#define PRIuPTR "lu"
-#define PRIu8 "u"
-#define PRId8 "d"
-#define PRIu64 "I64u"
-#define PRId64 "I64d"
-#define PRIuPTR "u"
+#define PRIuPTR
+#define PRIu8
+#define PRId8
+#define PRIu64
+#define PRId64
+#define PRIuPTR

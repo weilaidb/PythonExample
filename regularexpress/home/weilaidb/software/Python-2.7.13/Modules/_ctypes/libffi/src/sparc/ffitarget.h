@@ -1,5 +1,5 @@
 #define LIBFFI_TARGET_H
-#error "Please do not include ffitarget.h directly into your source.  Use ffi.h instead."
+#error
 #if defined(__arch64__) || defined(__sparcv9)
 #define SPARC64
 typedef unsigned long          ffi_arg;

@@ -56,7 +56,7 @@ w_pstring(const char *s, Py_ssize_t n, WFILE *p)
 #define PyLong_MARSHAL_BASE ((short)1 << PyLong_MARSHAL_SHIFT)
 #define PyLong_MARSHAL_MASK (PyLong_MARSHAL_BASE - 1)
 #if PyLong_SHIFT % PyLong_MARSHAL_SHIFT != 0
-#error "PyLong_SHIFT must be a multiple of PyLong_MARSHAL_SHIFT"
+#error
 #define PyLong_MARSHAL_RATIO (PyLong_SHIFT / PyLong_MARSHAL_SHIFT)
 static void
 w_PyLong(const PyLongObject *ob, WFILE *p)

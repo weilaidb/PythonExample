@@ -3,13 +3,13 @@
 #define FIRST_ARG_SLOT  9
 #define DEBUG_LEVEL   0
 #define fldw(addr, fpreg) \
-__asm__ volatile ("fldw 0(%0), %%" #fpreg "L" : : "r"(addr) : #fpreg)
+__asm__ volatile ((addr) : #fpreg)
 #define fstw(fpreg, addr) \
-__asm__ volatile ("fstw %%" #fpreg "L, 0(%0)" : : "r"(addr))
+__asm__ volatile ((addr))
 #define fldd(addr, fpreg) \
-__asm__ volatile ("fldd 0(%0), %%" #fpreg : : "r"(addr) : #fpreg)
+__asm__ volatile ((addr) : #fpreg)
 #define fstd(fpreg, addr) \
-__asm__ volatile ("fstd %%" #fpreg "L, 0(%0)" : : "r"(addr))
+__asm__ volatile ((addr))
 #define debug(lvl, x...) do  while (0)
 static inline int ffi_struct_type(ffi_type *t)
 void ffi_prep_args_pa32(UINT32 *stack, extended_cif *ecif, unsigned bytes)

@@ -94,7 +94,7 @@ static PyObject *
 float_long(PyObject *v)
 #if DBL_MANT_DIG == 53
 #define FIVE_POW_LIMIT 22
-#error "C doubles do not appear to be IEEE 754 binary64 format"
+#error
 PyObject *
 _Py_double_round(double x, int ndigits)
 #undef FIVE_POW_LIMIT
@@ -132,18 +132,7 @@ Create a floating-point number from a hexadecimal string.\n\
 static PyObject *
 float_as_integer_ratio(PyObject *v, PyObject *unused)
 PyDoc_STRVAR(float_as_integer_ratio_doc,
-"float.as_integer_ratio() -> (int, int)\n"
-"\n"
-"Return a pair of integers, whose ratio is exactly equal to the original\n"
-"float and with a positive denominator.\n"
-"Raise OverflowError on infinities and a ValueError on NaNs.\n"
-"\n"
-">>> (10.0).as_integer_ratio()\n"
-"(10, 1)\n"
-">>> (0.0).as_integer_ratio()\n"
-"(0, 1)\n"
-">>> (-.25).as_integer_ratio()\n"
-"(-1, 4)");
+);
 static PyObject *
 float_subtype_new(PyTypeObject *type, PyObject *args, PyObject *kwds);
 static PyObject *
@@ -158,36 +147,17 @@ static float_format_type detected_double_format, detected_float_format;
 static PyObject *
 float_getformat(PyTypeObject *v, PyObject* arg)
 PyDoc_STRVAR(float_getformat_doc,
-"float.__getformat__(typestr) -> string\n"
-"\n"
-"You probably don't want to use this function.  It exists mainly to be\n"
-"used in Python's test suite.\n"
-"\n"
-"typestr must be 'double' or 'float'.  This function returns whichever of\n"
-"'unknown', 'IEEE, big-endian' or 'IEEE, little-endian' best describes the\n"
-"format of floating point numbers used by the C type named by typestr.");
+);
 static PyObject *
 float_setformat(PyTypeObject *v, PyObject* args)
 PyDoc_STRVAR(float_setformat_doc,
-"float.__setformat__(typestr, fmt) -> None\n"
-"\n"
-"You probably don't want to use this function.  It exists mainly to be\n"
-"used in Python's test suite.\n"
-"\n"
-"typestr must be 'double' or 'float'.  fmt must be one of 'unknown',\n"
-"'IEEE, big-endian' or 'IEEE, little-endian', and in addition can only be\n"
-"one of the latter two if it appears to match the underlying C reality.\n"
-"\n"
-"Override the automatic determination of C-level floating point type.\n"
-"This affects how floats are converted to and from binary strings.");
+);
 static PyObject *
 float_getzero(PyObject *v, void *closure)
 static PyObject *
 float__format__(PyObject *self, PyObject *args)
 PyDoc_STRVAR(float__format__doc,
-"float.__format__(format_spec) -> string\n"
-"\n"
-"Formats the float according to format_spec.");
+);
 static PyMethodDef float_methods[] = ;
 static PyGetSetDef float_getset[] = ;
 PyDoc_STRVAR(float_doc,

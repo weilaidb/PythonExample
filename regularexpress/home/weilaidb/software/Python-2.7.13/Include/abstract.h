@@ -169,9 +169,9 @@ PyAPI_FUNC(Py_ssize_t) PyMapping_Length(PyObject *o);
 #define PyMapping_DelItem(O,K) PyObject_DelItem((O),(K))
 PyAPI_FUNC(int) PyMapping_HasKeyString(PyObject *o, char *key);
 PyAPI_FUNC(int) PyMapping_HasKey(PyObject *o, PyObject *key);
-#define PyMapping_Keys(O) PyObject_CallMethod(O,"keys",NULL)
-#define PyMapping_Values(O) PyObject_CallMethod(O,"values",NULL)
-#define PyMapping_Items(O) PyObject_CallMethod(O,"items",NULL)
+#define PyMapping_Keys(O) PyObject_CallMethod(O,,NULL)
+#define PyMapping_Values(O) PyObject_CallMethod(O,,NULL)
+#define PyMapping_Items(O) PyObject_CallMethod(O,,NULL)
 PyAPI_FUNC(PyObject *) PyMapping_GetItemString(PyObject *o, char *key);
 PyAPI_FUNC(int) PyMapping_SetItemString(PyObject *o, char *key,
 PyObject *value);

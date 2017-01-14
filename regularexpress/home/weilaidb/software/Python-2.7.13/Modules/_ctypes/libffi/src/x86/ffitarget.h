@@ -1,5 +1,5 @@
 #define LIBFFI_TARGET_H
-#error "Please do not include ffitarget.h directly into your source.  Use ffi.h instead."
+#error
 #define X86_ANY
 #if defined (X86_64) && defined (__i386__)
 #undef X86_64

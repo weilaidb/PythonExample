@@ -1,7 +1,7 @@
-#define MODULE_NAME "_warnings"
+#define MODULE_NAME
 PyDoc_STRVAR(warnings__doc__,
-MODULE_NAME " provides basic warning filtering support.\n"
-"It is a helper module to speed up interpreter start-up.");
+MODULE_NAME
+);
 static PyObject *_filters;
 static PyObject *_once_registry;
 static PyObject *_default_action;
@@ -51,9 +51,9 @@ PyErr_WarnExplicit(PyObject *category, const char *text,
 const char *filename_str, int lineno,
 const char *module_str, PyObject *registry)
 PyDoc_STRVAR(warn_doc,
-"Issue a warning, or maybe ignore it or raise an exception.");
+);
 PyDoc_STRVAR(warn_explicit_doc,
-"Low-level inferface to warnings functionality.");
+);
 static PyMethodDef warnings_functions[] = ;
 static PyObject *
 create_filter(PyObject *category, const char *action)

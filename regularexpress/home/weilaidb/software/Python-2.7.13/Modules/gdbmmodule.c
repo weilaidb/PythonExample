@@ -118,10 +118,7 @@ The optional mode argument is the Unix mode of the file, used only\n\
 when the database has to be created. It defaults to octal 0666. ");
 static PyObject *
 dbmopen(PyObject *self, PyObject *args)
-static char dbmmodule_open_flags[] = "rwcn"
-"f"
-"s"
-"u"
+static char dbmmodule_open_flags[] =
 ;
 static PyMethodDef dbmmodule_methods[] = ;
 PyMODINIT_FUNC

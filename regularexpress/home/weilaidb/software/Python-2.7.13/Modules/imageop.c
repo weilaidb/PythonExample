@@ -5,7 +5,7 @@ typedef unsigned int Py_UInt32;
 #if SIZEOF_LONG == 4
 typedef long Py_Int32;
 typedef unsigned long Py_UInt32;
-#error "No 4-byte integral type"
+#error
 #define CHARP(cp, xmax, x, y) ((char *)(cp+y*xmax+x))
 #define SHORTP(cp, xmax, x, y) ((short *)(cp+2*(y*xmax+x)))
 #define LONGP(cp, xmax, x, y) ((Py_Int32 *)(cp+4*(y*xmax+x)))

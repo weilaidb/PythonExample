@@ -93,15 +93,11 @@ complex_float(PyObject *v)
 static PyObject *
 complex_conjugate(PyObject *self)
 PyDoc_STRVAR(complex_conjugate_doc,
-"complex.conjugate() -> complex\n"
-"\n"
-"Return the complex conjugate of its argument. (3-4j).conjugate() == 3+4j.");
+);
 static PyObject *
 complex_getnewargs(PyComplexObject *v)
 PyDoc_STRVAR(complex__format__doc,
-"complex.__format__() -> str\n"
-"\n"
-"Convert to a string according to format_spec.");
+);
 static PyObject *
 complex__format__(PyObject* self, PyObject* args)
 static PyMethodDef complex_methods[] = ;
@@ -111,9 +107,6 @@ complex_subtype_from_string(PyTypeObject *type, PyObject *v)
 static PyObject *
 complex_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
 PyDoc_STRVAR(complex_doc,
-"complex(real[, imag]) -> complex number\n"
-"\n"
-"Create a complex number from a real part and an optional imaginary part.\n"
-"This is equivalent to (real + imag*1j) where imag defaults to 0.");
+);
 static PyNumberMethods complex_as_number = ;
 PyTypeObject PyComplex_Type = ;

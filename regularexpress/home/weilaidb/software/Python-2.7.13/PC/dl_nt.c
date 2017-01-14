@@ -1,4 +1,4 @@
-char dllVersionBuffer[16] = "";
+char dllVersionBuffer[16] = ;
 HMODULE PyWin_DLLhModule = NULL;
 const char *PyWin_DLLVersionString = dllVersionBuffer;
 typedef BOOL (WINAPI * PFN_GETCURRENTACTCTX)(HANDLE *);

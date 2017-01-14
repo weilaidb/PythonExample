@@ -202,7 +202,7 @@ extern size_t getpagesize();
 #define MMAP_FLAGS           (MAP_PRIVATE)
 static int dev_zero_fd = -1;
 #define CALL_MMAP(s) ((dev_zero_fd < 0) ? \
-(dev_zero_fd = open("/dev/zero", O_RDWR), \
+(dev_zero_fd = open(, O_RDWR), \
 mmap(0, (s), MMAP_PROT, MMAP_FLAGS, dev_zero_fd, 0)) : \
 mmap(0, (s), MMAP_PROT, MMAP_FLAGS, dev_zero_fd, 0))
 #define DIRECT_MMAP(s)       CALL_MMAP(s)

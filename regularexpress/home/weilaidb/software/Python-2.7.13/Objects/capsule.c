@@ -3,7 +3,7 @@ static int
 _is_legal_capsule(PyCapsule *capsule, const char *invalid_capsule)
 #define is_legal_capsule(capsule, name) \
 (_is_legal_capsule(capsule, \
-name " called with invalid PyCapsule object"))
+name ))
 static int
 name_matches(const char *name1, const char *name2)
 PyObject *
@@ -33,7 +33,7 @@ capsule_dealloc(PyObject *o)
 static PyObject *
 capsule_repr(PyObject *o)
 PyDoc_STRVAR(PyCapsule_Type__doc__,
-"Capsule objects let you wrap a C \"void *\" pointer in a Python\n\
+pointer in a Python\n\
 object.  They're a way of passing data through the Python interpreter\n\
 without creating your own custom type.\n\
 \n\

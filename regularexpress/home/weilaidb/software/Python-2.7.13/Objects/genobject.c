@@ -10,7 +10,7 @@ return next yielded value or raise StopIteration.");
 static PyObject *
 gen_send(PyGenObject *gen, PyObject *arg)
 PyDoc_STRVAR(close_doc,
-"close() -> raise GeneratorExit inside generator.");
+);
 static PyObject *
 gen_close(PyGenObject *gen, PyObject *args)
 static void
@@ -27,7 +27,7 @@ gen_repr(PyGenObject *gen)
 static PyObject *
 gen_get_name(PyGenObject *gen)
 PyDoc_STRVAR(gen__name__doc__,
-"Return the name of the generator's associated code object.");
+);
 static PyGetSetDef gen_getsetlist[] = ;
 static PyMemberDef gen_memberlist[] = ;
 static PyMethodDef gen_methods[] = ;

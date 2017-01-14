@@ -85,72 +85,39 @@ collect(int generation)
 static Py_ssize_t
 collect_generations(void)
 PyDoc_STRVAR(gc_enable__doc__,
-"enable() -> None\n"
-"\n"
-"Enable automatic garbage collection.\n");
+);
 static PyObject *
 gc_enable(PyObject *self, PyObject *noargs)
 PyDoc_STRVAR(gc_disable__doc__,
-"disable() -> None\n"
-"\n"
-"Disable automatic garbage collection.\n");
+);
 static PyObject *
 gc_disable(PyObject *self, PyObject *noargs)
 PyDoc_STRVAR(gc_isenabled__doc__,
-"isenabled() -> status\n"
-"\n"
-"Returns true if automatic garbage collection is enabled.\n");
+);
 static PyObject *
 gc_isenabled(PyObject *self, PyObject *noargs)
 PyDoc_STRVAR(gc_collect__doc__,
-"collect([generation]) -> n\n"
-"\n"
-"With no arguments, run a full collection.  The optional argument\n"
-"may be an integer specifying which generation to collect.  A ValueError\n"
-"is raised if the generation number is invalid.\n\n"
-"The number of unreachable objects is returned.\n");
+);
 static PyObject *
 gc_collect(PyObject *self, PyObject *args, PyObject *kws)
 PyDoc_STRVAR(gc_set_debug__doc__,
-"set_debug(flags) -> None\n"
-"\n"
-"Set the garbage collection debugging flags. Debugging information is\n"
-"written to sys.stderr.\n"
-"\n"
-"flags is an integer and can have the following bits turned on:\n"
-"\n"
-"  DEBUG_STATS - Print statistics during collection.\n"
-"  DEBUG_COLLECTABLE - Print collectable objects found.\n"
-"  DEBUG_UNCOLLECTABLE - Print unreachable but uncollectable objects found.\n"
-"  DEBUG_INSTANCES - Print instance objects.\n"
-"  DEBUG_OBJECTS - Print objects other than instances.\n"
-"  DEBUG_SAVEALL - Save objects to gc.garbage rather than freeing them.\n"
-"  DEBUG_LEAK - Debug leaking programs (everything but STATS).\n");
+);
 static PyObject *
 gc_set_debug(PyObject *self, PyObject *args)
 PyDoc_STRVAR(gc_get_debug__doc__,
-"get_debug() -> flags\n"
-"\n"
-"Get the garbage collection debugging flags.\n");
+);
 static PyObject *
 gc_get_debug(PyObject *self, PyObject *noargs)
 PyDoc_STRVAR(gc_set_thresh__doc__,
-"set_threshold(threshold0, [threshold1, threshold2]) -> None\n"
-"\n"
-"Sets the collection thresholds.  Setting threshold0 to zero disables\n"
-"collection.\n");
+);
 static PyObject *
 gc_set_thresh(PyObject *self, PyObject *args)
 PyDoc_STRVAR(gc_get_thresh__doc__,
-"get_threshold() -> (threshold0, threshold1, threshold2)\n"
-"\n"
-"Return the current collection thresholds\n");
+);
 static PyObject *
 gc_get_thresh(PyObject *self, PyObject *noargs)
 PyDoc_STRVAR(gc_get_count__doc__,
-"get_count() -> (count0, count1, count2)\n"
-"\n"
-"Return the current collection counts\n");
+);
 static PyObject *
 gc_get_count(PyObject *self, PyObject *noargs)
 static int
@@ -170,36 +137,15 @@ Return the list of objects that are directly referred to by objs.");
 static PyObject *
 gc_get_referents(PyObject *self, PyObject *args)
 PyDoc_STRVAR(gc_get_objects__doc__,
-"get_objects() -> [...]\n"
-"\n"
-"Return a list of objects tracked by the collector (excluding the list\n"
-"returned).\n");
+);
 static PyObject *
 gc_get_objects(PyObject *self, PyObject *noargs)
 PyDoc_STRVAR(gc_is_tracked__doc__,
-"is_tracked(obj) -> bool\n"
-"\n"
-"Returns true if the object is tracked by the garbage collector.\n"
-"Simple atomic objects will return false.\n"
 );
 static PyObject *
 gc_is_tracked(PyObject *self, PyObject *obj)
 PyDoc_STRVAR(gc__doc__,
-"This module provides access to the garbage collector for reference cycles.\n"
-"\n"
-"enable() -- Enable automatic garbage collection.\n"
-"disable() -- Disable automatic garbage collection.\n"
-"isenabled() -- Returns true if automatic collection is enabled.\n"
-"collect() -- Do a full collection right now.\n"
-"get_count() -- Return the current collection counts.\n"
-"set_debug() -- Set debugging flags.\n"
-"get_debug() -- Get debugging flags.\n"
-"set_threshold() -- Set the collection thresholds.\n"
-"get_threshold() -- Return the current the collection thresholds.\n"
-"get_objects() -- Return a list of all objects tracked by the collector.\n"
-"is_tracked() -- Returns true if a given object is tracked.\n"
-"get_referrers() -- Return the list of objects that refer to an object.\n"
-"get_referents() -- Return the list of objects that an object refers to.\n");
+);
 static PyMethodDef GcMethods[] = ;
 PyMODINIT_FUNC
 initgc(void)

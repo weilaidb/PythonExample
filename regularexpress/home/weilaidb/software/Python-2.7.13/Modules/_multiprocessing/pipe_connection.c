@@ -6,5 +6,5 @@ conn_recv_string(ConnectionObject *conn, char *buffer,
 size_t buflength, char **newbuffer, size_t maxlength)
 static int
 conn_poll(ConnectionObject *conn, double timeout, PyThreadState *_save)
-#define CONNECTION_NAME "PipeConnection"
+#define CONNECTION_NAME
 #define CONNECTION_TYPE PipeConnectionType

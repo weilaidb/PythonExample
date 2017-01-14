@@ -40,7 +40,7 @@ static int expr_constant(expr_ty e);
 static int compiler_with(struct compiler *, stmt_ty);
 static PyCodeObject *assemble(struct compiler *, int addNone);
 static PyObject *__doc__;
-#define COMPILER_CAPSULE_NAME_COMPILER_UNIT "compile.c compiler unit"
+#define COMPILER_CAPSULE_NAME_COMPILER_UNIT
 PyObject *
 _Py_Mangle(PyObject *privateobj, PyObject *ident)
 static int

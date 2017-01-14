@@ -2,9 +2,8 @@
 static PyTypeObject PyStructType;
 #if (PY_VERSION_HEX < 0x02050000)
 typedef int Py_ssize_t;
-#define FLOAT_COERCE_WARN "integer argument expected, got float"
-#define NON_INTEGER_WARN "integer argument expected, got non-integer " \
-"(implicit conversion using __int__ is deprecated)"
+#define FLOAT_COERCE_WARN
+#define NON_INTEGER_WARN  \
 typedef struct _formatdef  formatdef;
 typedef struct _formatcode  formatcode;
 typedef struct  PyStructObject;
@@ -31,7 +30,7 @@ typedef struct  s_bool;
 #define BOOL_TYPE char
 #define BOOL_ALIGN 0
 #define STRINGIFY(x)    #x
-static char *integer_codes = "bBhHiIlLqQ";
+static char *integer_codes = ;
 static PyObject *
 get_pylong(PyObject *v)
 static int
@@ -221,11 +220,11 @@ s_get_format(PyStructObject *self, void *unused)
 static PyObject *
 s_get_size(PyStructObject *self, void *unused)
 PyDoc_STRVAR(s_sizeof__doc__,
-"S.__sizeof__() -> size of S in memory, in bytes");
+);
 static PyObject *
 s_sizeof(PyStructObject *self, void *unused)
 static struct PyMethodDef s_methods[] = ;
-PyDoc_STRVAR(s__doc__, "Compiled struct object");
+PyDoc_STRVAR(s__doc__, );
 #define OFF(x) offsetof(PyStructObject, x)
 static PyGetSetDef s_getsetlist[] = ;
 static
@@ -235,15 +234,15 @@ static PyObject *cache = NULL;
 static PyObject *
 cache_struct(PyObject *fmt)
 PyDoc_STRVAR(clearcache_doc,
-"Clear the internal cache.");
+);
 static PyObject *
 clearcache(PyObject *self)
 PyDoc_STRVAR(calcsize_doc,
-"Return size of C struct described by format string fmt.");
+);
 static PyObject *
 calcsize(PyObject *self, PyObject *fmt)
 PyDoc_STRVAR(pack_doc,
-"Return string containing values v1, v2, ... packed according to fmt.");
+);
 static PyObject *
 pack(PyObject *self, PyObject *args)
 PyDoc_STRVAR(pack_into_doc,

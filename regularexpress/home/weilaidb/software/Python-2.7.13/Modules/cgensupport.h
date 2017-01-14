@@ -3,7 +3,7 @@ typedef char *string;
 #define mknewlongobject(x) PyInt_FromLong(x)
 #define mknewshortobject(x) PyInt_FromLong((long)x)
 #define mknewfloatobject(x) PyFloat_FromDouble(x)
-#define mknewcharobject(ch) Py_BuildValue("c", ch)
+#define mknewcharobject(ch) Py_BuildValue(, ch)
 #define getichararg PyArg_GetChar
 #define getidoublearray PyArg_GetDoubleArray
 #define getifloatarg PyArg_GetFloat

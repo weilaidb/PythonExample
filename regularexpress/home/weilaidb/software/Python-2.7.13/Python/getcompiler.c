@@ -1,3 +1,3 @@
-#define COMPILER "\n[GCC " __VERSION__ "]"
+#define COMPILER
 const char *
 Py_GetCompiler(void)

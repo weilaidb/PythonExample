@@ -7,8 +7,8 @@ University, Blacksburg, Virginia, USA, and Fred L. Drake, Jr., Reston,\n\
 Virginia, USA.  Portions copyright 1991-1995 by Stichting Mathematisch\n\
 Centrum, Amsterdam, The Netherlands.";
 PyDoc_STRVAR(parser_doc_string,
-"This is an interface to Python's internal parser.");
-static char parser_version_string[] = "0.5";
+);
+static char parser_version_string[] = ;
 typedef PyObject* (*SeqMaker) (Py_ssize_t length);
 typedef int (*SeqInserter) (PyObject* sequence,
 Py_ssize_t index,
@@ -87,22 +87,22 @@ build_node_children(PyObject *tuple, node *root, int *line_num)
 static node*
 build_node_tree(PyObject *tuple)
 static int validate_terminal(node *terminal, int type, char *string);
-#define validate_ampersand(ch)  validate_terminal(ch,      AMPER, "&")
-#define validate_circumflex(ch) validate_terminal(ch, CIRCUMFLEX, "^")
-#define validate_colon(ch)      validate_terminal(ch,      COLON, ":")
-#define validate_comma(ch)      validate_terminal(ch,      COMMA, ",")
-#define validate_dedent(ch)     validate_terminal(ch,     DEDENT, "")
-#define validate_equal(ch)      validate_terminal(ch,      EQUAL, "=")
+#define validate_ampersand(ch)  validate_terminal(ch,      AMPER, )
+#define validate_circumflex(ch) validate_terminal(ch, CIRCUMFLEX, )
+#define validate_colon(ch)      validate_terminal(ch,      COLON, )
+#define validate_comma(ch)      validate_terminal(ch,      COMMA, )
+#define validate_dedent(ch)     validate_terminal(ch,     DEDENT, )
+#define validate_equal(ch)      validate_terminal(ch,      EQUAL, )
 #define validate_indent(ch)     validate_terminal(ch,     INDENT, (char*)NULL)
-#define validate_lparen(ch)     validate_terminal(ch,       LPAR, "(")
+#define validate_lparen(ch)     validate_terminal(ch,       LPAR, )
 #define validate_newline(ch)    validate_terminal(ch,    NEWLINE, (char*)NULL)
-#define validate_rparen(ch)     validate_terminal(ch,       RPAR, ")")
-#define validate_semi(ch)       validate_terminal(ch,       SEMI, ";")
-#define validate_star(ch)       validate_terminal(ch,       STAR, "*")
-#define validate_vbar(ch)       validate_terminal(ch,       VBAR, "|")
-#define validate_doublestar(ch) validate_terminal(ch, DOUBLESTAR, "**")
-#define validate_dot(ch)        validate_terminal(ch,        DOT, ".")
-#define validate_at(ch)         validate_terminal(ch,         AT, "@")
+#define validate_rparen(ch)     validate_terminal(ch,       RPAR, )
+#define validate_semi(ch)       validate_terminal(ch,       SEMI, )
+#define validate_star(ch)       validate_terminal(ch,       STAR, )
+#define validate_vbar(ch)       validate_terminal(ch,       VBAR, )
+#define validate_doublestar(ch) validate_terminal(ch, DOUBLESTAR, )
+#define validate_dot(ch)        validate_terminal(ch,        DOT, )
+#define validate_at(ch)         validate_terminal(ch,         AT, )
 #define validate_name(ch, str)  validate_terminal(ch,       NAME, str)
 #define VALIDATER(n)    static int validate_##n(node *tree)
 VALIDATER(node);                VALIDATER(small_stmt);

@@ -24,7 +24,7 @@ static PySequenceMethods range_as_sequence = ;
 static PyObject * range_iter(PyObject *seq);
 static PyObject * range_reverse(PyObject *seq);
 PyDoc_STRVAR(reverse_doc,
-"Returns a reverse iterator.");
+);
 static PyMethodDef range_methods[] = ;
 PyTypeObject PyRange_Type = ;
 typedef struct  rangeiterobject;
@@ -32,7 +32,7 @@ static PyObject *
 rangeiter_next(rangeiterobject *r)
 static PyObject *
 rangeiter_len(rangeiterobject *r)
-PyDoc_STRVAR(length_hint_doc, "Private method returning an estimate of len(list(it)).");
+PyDoc_STRVAR(length_hint_doc, );
 static PyMethodDef rangeiter_methods[] = ;
 static PyTypeObject Pyrangeiter_Type = ;
 static PyObject *

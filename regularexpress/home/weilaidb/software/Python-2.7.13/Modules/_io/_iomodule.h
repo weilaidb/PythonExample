@@ -34,7 +34,7 @@ typedef PY_LONG_LONG Py_off_t;
 # define PY_OFF_T_MAX       PY_LLONG_MAX
 # define PY_OFF_T_MIN       PY_LLONG_MIN
 # define PY_OFF_T_COMPAT    PY_LONG_LONG
-# define PY_PRIdOFF         "lld"
+# define PY_PRIdOFF
 typedef off_t Py_off_t;
 #if (SIZEOF_OFF_T == SIZEOF_SIZE_T)
 # define PyLong_AsOff_t     PyLong_AsSsize_t
@@ -42,21 +42,21 @@ typedef off_t Py_off_t;
 # define PY_OFF_T_MAX       PY_SSIZE_T_MAX
 # define PY_OFF_T_MIN       PY_SSIZE_T_MIN
 # define PY_OFF_T_COMPAT    Py_ssize_t
-# define PY_PRIdOFF         "zd"
+# define PY_PRIdOFF
 #elif (HAVE_LONG_LONG && SIZEOF_OFF_T == SIZEOF_LONG_LONG)
 # define PyLong_AsOff_t     PyLong_AsLongLong
 # define PyLong_FromOff_t   PyLong_FromLongLong
 # define PY_OFF_T_MAX       PY_LLONG_MAX
 # define PY_OFF_T_MIN       PY_LLONG_MIN
 # define PY_OFF_T_COMPAT    PY_LONG_LONG
-# define PY_PRIdOFF         "lld"
+# define PY_PRIdOFF
 #elif (SIZEOF_OFF_T == SIZEOF_LONG)
 # define PyLong_AsOff_t     PyLong_AsLong
 # define PyLong_FromOff_t   PyLong_FromLong
 # define PY_OFF_T_MAX       LONG_MAX
 # define PY_OFF_T_MIN       LONG_MIN
 # define PY_OFF_T_COMPAT    long
-# define PY_PRIdOFF         "ld"
+# define PY_PRIdOFF
 # error off_t does not match either size_t, long, or long long!
 extern Py_off_t PyNumber_AsOff_t(PyObject *item, PyObject *err);
 extern PyObject *_PyIO_os_module;

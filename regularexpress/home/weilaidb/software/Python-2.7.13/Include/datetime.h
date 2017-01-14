@@ -47,7 +47,7 @@ PyDateTime_DateTime;
 (((PyDateTime_Time*)o)->data[4] << 8)  |           \
 ((PyDateTime_Time*)o)->data[5])
 typedef struct  PyDateTime_CAPI;
-#define PyDateTime_CAPSULE_NAME "datetime.datetime_CAPI"
+#define PyDateTime_CAPSULE_NAME
 #define DATETIME_API_MAGIC 0x414548d5
 #define PyDate_Check(op) PyObject_TypeCheck(op, &PyDateTime_DateType)
 #define PyDate_CheckExact(op) (Py_TYPE(op) == &PyDateTime_DateType)

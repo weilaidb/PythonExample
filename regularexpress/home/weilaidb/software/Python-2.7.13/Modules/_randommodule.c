@@ -28,9 +28,9 @@ static PyObject *
 random_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
 static PyMethodDef random_methods[] = ;
 PyDoc_STRVAR(random_doc,
-"Random() -> create a random number generator with its own internal state.");
+);
 static PyTypeObject Random_Type = ;
 PyDoc_STRVAR(module_doc,
-"Module implements the Mersenne Twister random number generator.");
+);
 PyMODINIT_FUNC
 init_random(void)

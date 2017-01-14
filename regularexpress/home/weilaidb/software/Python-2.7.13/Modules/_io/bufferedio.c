@@ -1,64 +1,24 @@
 #define PY_SSIZE_T_CLEAN
 PyDoc_STRVAR(bufferediobase_doc,
-"Base class for buffered IO objects.\n"
-"\n"
-"The main difference with RawIOBase is that the read() method\n"
-"supports omitting the size argument, and does not have a default\n"
-"implementation that defers to readinto().\n"
-"\n"
-"In addition, read(), readinto() and write() may raise\n"
-"BlockingIOError if the underlying raw stream is in non-blocking\n"
-"mode and not ready; unlike their raw counterparts, they will never\n"
-"return None.\n"
-"\n"
-"A typical implementation should not inherit from a RawIOBase\n"
-"implementation, but wrap one.\n"
 );
 static PyObject *
 bufferediobase_readinto(PyObject *self, PyObject *args)
 static PyObject *
 bufferediobase_unsupported(const char *message)
 PyDoc_STRVAR(bufferediobase_detach_doc,
-"Disconnect this buffer from its underlying raw stream and return it.\n"
-"\n"
-"After the raw stream has been detached, the buffer is in an unusable\n"
-"state.\n");
+);
 static PyObject *
 bufferediobase_detach(PyObject *self)
 PyDoc_STRVAR(bufferediobase_read_doc,
-"Read and return up to n bytes.\n"
-"\n"
-"If the argument is omitted, None, or negative, reads and\n"
-"returns all data until EOF.\n"
-"\n"
-"If the argument is positive, and the underlying raw stream is\n"
-"not 'interactive', multiple raw reads may be issued to satisfy\n"
-"the byte count (unless EOF is reached first).  But for\n"
-"interactive raw streams (as well as sockets and pipes), at most\n"
-"one raw read will be issued, and a short result does not imply\n"
-"that EOF is imminent.\n"
-"\n"
-"Returns an empty bytes object on EOF.\n"
-"\n"
-"Returns None if the underlying raw stream was open in non-blocking\n"
-"mode and no data is available at the moment.\n");
+);
 static PyObject *
 bufferediobase_read(PyObject *self, PyObject *args)
 PyDoc_STRVAR(bufferediobase_read1_doc,
-"Read and return up to n bytes, with at most one read() call\n"
-"to the underlying raw stream. A short result does not imply\n"
-"that EOF is imminent.\n"
-"\n"
-"Returns an empty bytes object on EOF.\n");
+);
 static PyObject *
 bufferediobase_read1(PyObject *self, PyObject *args)
 PyDoc_STRVAR(bufferediobase_write_doc,
-"Write the given buffer to the IO stream.\n"
-"\n"
-"Returns the number of bytes written, which is always len(b).\n"
-"\n"
-"Raises BlockingIOError if the buffer is full and the\n"
-"underlying raw stream cannot accept more data at the moment.\n");
+);
 static PyObject *
 bufferediobase_write(PyObject *self, PyObject *args)
 static PyMethodDef bufferediobase_methods[] = ;
@@ -189,7 +149,7 @@ buffered_iternext(buffered *self)
 static PyObject *
 buffered_repr(buffered *self)
 PyDoc_STRVAR(bufferedreader_doc,
-"Create a new buffered reader using the given readable raw IO object.");
+);
 static void _bufferedreader_reset_buf(buffered *self)
 static int
 bufferedreader_init(buffered *self, PyObject *args, PyObject *kwds)
@@ -212,11 +172,6 @@ PyTypeObject PyBufferedReader_Type = ;
 static int
 complain_about_max_buffer_size(void)
 PyDoc_STRVAR(bufferedwriter_doc,
-"A buffer for a writeable sequential RawIO object.\n"
-"\n"
-"The constructor creates a BufferedWriter for the given writeable raw\n"
-"stream. If the buffer_size is not given, it defaults to\n"
-"DEFAULT_BUFFER_SIZE. max_buffer_size isn't used anymore.\n"
 );
 static void
 _bufferedwriter_reset_buf(buffered *self)
@@ -233,15 +188,6 @@ static PyMemberDef bufferedwriter_members[] = ;
 static PyGetSetDef bufferedwriter_getset[] = ;
 PyTypeObject PyBufferedWriter_Type = ;
 PyDoc_STRVAR(bufferedrwpair_doc,
-"A buffered reader and writer object together.\n"
-"\n"
-"A buffered reader object and buffered writer object put together to\n"
-"form a sequential IO object that can read and write. This is typically\n"
-"used with a socket or two-way pipe.\n"
-"\n"
-"reader and writer are RawIOBase objects that are readable and\n"
-"writeable respectively. If the buffer_size is omitted it defaults to\n"
-"DEFAULT_BUFFER_SIZE.\n"
 );
 typedef struct  rwpair;
 static int
@@ -280,11 +226,6 @@ static PyMethodDef bufferedrwpair_methods[] = ;
 static PyGetSetDef bufferedrwpair_getset[] = ;
 PyTypeObject PyBufferedRWPair_Type = ;
 PyDoc_STRVAR(bufferedrandom_doc,
-"A buffered interface to random access streams.\n"
-"\n"
-"The constructor creates a reader and writer for a seekable stream,\n"
-"raw, given in the first argument. If the buffer_size is omitted it\n"
-"defaults to DEFAULT_BUFFER_SIZE. max_buffer_size isn't used anymore.\n"
 );
 static int
 bufferedrandom_init(buffered *self, PyObject *args, PyObject *kwds)

@@ -10,11 +10,11 @@ HANDLE sigint_event = NULL;
 static BOOL WINAPI
 ProcessingCtrlHandler(DWORD dwCtrlType)
 #if HAVE_FD_TRANSFER
-PyErr_SetString(PyExc_RuntimeError, "No file descriptor received");
+PyErr_SetString(PyExc_RuntimeError, );
 return NULL;
 }
 fd = * (int *) CMSG_DATA(cmsg);
-return Py_BuildValue("i", fd);
+return Py_BuildValue(, fd);
 }
 static PyObject*
 multiprocessing_address_of_buffer(PyObject *self, PyObject *obj)
