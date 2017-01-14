@@ -48,6 +48,7 @@ def regrexheader(text):
 	astr = re.sub(r'#ifdef\s+__cplusplus([\s\S]*?)#endif', '', astr)  ##del __cplusplus
 	astr = re.sub(r'#if 0([\s\S]*?)#endif', '', astr)  ##del  #if 0 ~ #endif
 	astr = re.sub(r'\s*#include.*', '', astr)  ##del #include
+	astr = re.sub(r'"(.*)"', '',astr)  ##del "   "
 	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
 	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
 	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
