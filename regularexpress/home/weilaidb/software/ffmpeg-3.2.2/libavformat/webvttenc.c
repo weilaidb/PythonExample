@@ -1,4 +1,4 @@
-static void webvtt_write_time(AVIOContext *pb, int64_t millisec)
-static int webvtt_write_header(AVFormatContext *ctx)
-static int webvtt_write_packet(AVFormatContext *ctx, AVPacket *pkt)
+webvtt_write_time
+webvtt_write_header
+webvtt_write_packet
 AVOutputFormat ff_webvtt_muxer = ;

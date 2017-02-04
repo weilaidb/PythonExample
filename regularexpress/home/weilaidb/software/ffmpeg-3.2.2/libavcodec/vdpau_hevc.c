@@ -1,8 +1,6 @@
-static int vdpau_hevc_start_frame(AVCodecContext *avctx,
-const uint8_t *buffer, uint32_t size)
+vdpau_hevc_start_frame
 static const uint8_t start_code_prefix[3] = ;
-static int vdpau_hevc_decode_slice(AVCodecContext *avctx,
-const uint8_t *buffer, uint32_t size)
-static int vdpau_hevc_end_frame(AVCodecContext *avctx)
-static int vdpau_hevc_init(AVCodecContext *avctx)
+vdpau_hevc_decode_slice
+vdpau_hevc_end_frame
+vdpau_hevc_init
 AVHWAccel ff_hevc_vdpau_hwaccel = ;

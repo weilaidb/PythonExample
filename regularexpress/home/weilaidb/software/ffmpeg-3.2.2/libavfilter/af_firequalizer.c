@@ -6,30 +6,53 @@ enum Scale ;
 typedef struct  GainEntry;
 typedef struct  OverlapIndex;
 typedef struct  FIREqualizerContext;
-#define OFFSET(x) offsetof(FIREqualizerContext, x)
+OFFSET offsetof(FIREqualizerContext, x)
 #define FLAGS AV_OPT_FLAG_AUDIO_PARAM|AV_OPT_FLAG_FILTERING_PARAM
-static const AVOption firequalizer_options[] = ;
+static const AVOption firequalizer_options[] = ,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+};
 AVFILTER_DEFINE_CLASS(firequalizer);
-static void common_uninit(FIREqualizerContext *s)
-static av_cold void uninit(AVFilterContext *ctx)
-static int query_formats(AVFilterContext *ctx)
-static void fast_convolute(FIREqualizerContext *s, const float *kernel_buf, float *conv_buf,
-OverlapIndex *idx, float *data, int nsamples)
-static void dump_fir(AVFilterContext *ctx, FILE *fp, int ch)
-static double entry_func(void *p, double freq, double gain)
-static int gain_entry_compare(const void *key, const void *memb)
-static double gain_interpolate_func(void *p, double freq)
-static double cubic_interpolate_func(void *p, double freq)
+common_uninit
+uninit
+query_formats
+fast_convolute
+dump_fir
+entry_func
+gain_entry_compare
+gain_interpolate_func
+cubic_interpolate_func
 static const char *const var_names[] = ;
 enum VarOffset ;
-static int generate_kernel(AVFilterContext *ctx, const char *gain, const char *gain_entry)
-#define SELECT_GAIN(s) (s->gain_cmd ? s->gain_cmd : s->gain)
-#define SELECT_GAIN_ENTRY(s) (s->gain_entry_cmd ? s->gain_entry_cmd : s->gain_entry)
-static int config_input(AVFilterLink *inlink)
-static int filter_frame(AVFilterLink *inlink, AVFrame *frame)
-static int request_frame(AVFilterLink *outlink)
-static int process_command(AVFilterContext *ctx, const char *cmd, const char *args,
-char *res, int res_len, int flags)
+generate_kernel
+SELECT_GAIN (s->gain_cmd ? s->gain_cmd : s->gain)
+SELECT_GAIN_ENTRY (s->gain_entry_cmd ? s->gain_entry_cmd : s->gain_entry)
+config_input
+filter_frame
+request_frame
+process_command
 static const AVFilterPad firequalizer_inputs[] = ;
 static const AVFilterPad firequalizer_outputs[] = ;
 AVFilter ff_af_firequalizer = ;

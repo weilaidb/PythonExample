@@ -27,15 +27,17 @@ uint8_t *video_buf;
 size_t video_buf_size;
 uint64_t last_frame_time;
 volatile sig_atomic_t nsignals;
-static void catchsignal(int signal)
-static av_cold int bktr_init(const char *video_device, int width, int height,
-int format, int *video_fd, int *tuner_fd, int idev, double frequency)
-static void bktr_getframe(uint64_t per_frame)
-static int grab_read_packet(AVFormatContext *s1, AVPacket *pkt)
-static int grab_read_header(AVFormatContext *s1)
-static int grab_read_close(AVFormatContext *s1)
-#define OFFSET(x) offsetof(VideoData, x)
+catchsignal
+bktr_init
+bktr_getframe
+grab_read_packet
+grab_read_header
+grab_read_close
+OFFSET offsetof(VideoData, x)
 #define DEC AV_OPT_FLAG_DECODING_PARAM
-static const AVOption options[] = ;
+static const AVOption options[] = ,
+,
+,
+};
 static const AVClass bktr_class = ;
 AVInputFormat ff_bktr_demuxer = ;

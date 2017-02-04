@@ -1,3 +1,3 @@
-static int lrc_write_header(AVFormatContext *s)
-static int lrc_write_packet(AVFormatContext *s, AVPacket *pkt)
+lrc_write_header
+lrc_write_packet
 AVOutputFormat ff_lrc_muxer = ;

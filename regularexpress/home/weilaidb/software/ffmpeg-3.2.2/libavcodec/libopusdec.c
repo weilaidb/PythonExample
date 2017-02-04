@@ -1,9 +1,8 @@
 struct libopus_context ;
 #define OPUS_HEAD_SIZE 19
-static av_cold int libopus_decode_init(AVCodecContext *avc)
-static av_cold int libopus_decode_close(AVCodecContext *avc)
+libopus_decode_init
+libopus_decode_close
 #define MAX_FRAME_SIZE (960 * 6)
-static int libopus_decode(AVCodecContext *avc, void *data,
-int *got_frame_ptr, AVPacket *pkt)
-static void libopus_flush(AVCodecContext *avc)
+libopus_decode
+libopus_flush
 AVCodec ff_libopus_decoder = ;

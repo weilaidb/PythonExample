@@ -1,6 +1,6 @@
 #define COMPAT_MSVCRT_SNPRINTF_H
-int avpriv_snprintf(char *s, size_t n, const char *fmt, ...);
-int avpriv_vsnprintf(char *s, size_t n, const char *fmt, va_list ap);
+avpriv_snprintf;
+avpriv_vsnprintf;
 #undef snprintf
 #undef _snprintf
 #undef vsnprintf

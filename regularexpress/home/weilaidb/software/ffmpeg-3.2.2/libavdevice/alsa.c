@@ -1,9 +1,9 @@
-static av_cold snd_pcm_format_t codec_id_to_pcm_format(int codec_id)
-#define MAKE_REORDER_FUNC(NAME, TYPE, CHANNELS, LAYOUT, MAP)                \
+codec_id_to_pcm_format
+MAKE_REORDER_FUNC                \
 static void alsa_reorder_ ## NAME ## _ ## LAYOUT(const void *in_v,          \
 void *out_v,               \
 int n)                     \
-#define MAKE_REORDER_FUNCS(CHANNELS, LAYOUT, MAP) \
+MAKE_REORDER_FUNCS \
 MAKE_REORDER_FUNC(int8,  int8_t,  CHANNELS, LAYOUT, MAP) \
 MAKE_REORDER_FUNC(int16, int16_t, CHANNELS, LAYOUT, MAP) \
 MAKE_REORDER_FUNC(int32, int32_t, CHANNELS, LAYOUT, MAP) \
@@ -37,13 +37,11 @@ out[7] = in[7]; \
 #define FORMAT_I16 1
 #define FORMAT_I32 2
 #define FORMAT_F32 3
-#define PICK_REORDER(layout)\
+PICK_REORDER\
 switch(format)
-static av_cold int find_reorder_func(AlsaData *s, int codec_id, uint64_t layout, int out)
-av_cold int ff_alsa_open(AVFormatContext *ctx, snd_pcm_stream_t mode,
-unsigned int *sample_rate,
-int channels, enum AVCodecID *codec_id)
-av_cold int ff_alsa_close(AVFormatContext *s1)
-int ff_alsa_xrun_recover(AVFormatContext *s1, int err)
-int ff_alsa_extend_reorder_buf(AlsaData *s, int min_size)
-int ff_alsa_get_device_list(AVDeviceInfoList *device_list, snd_pcm_stream_t stream_type)
+find_reorder_func
+ff_alsa_open
+ff_alsa_close
+ff_alsa_xrun_recover
+ff_alsa_extend_reorder_buf
+ff_alsa_get_device_list

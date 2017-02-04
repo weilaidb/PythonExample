@@ -1,5 +1,5 @@
 #define SWSCALE_PPC_YUV2RGB_ALTIVEC_H
-#define YUV2PACKEDX_HEADER(suffix)                                  \
+YUV2PACKEDX_HEADER                                  \
 void ff_yuv2 ## suffix ## _X_altivec(SwsContext *c,             \
 const int16_t *lumFilter,  \
 const int16_t **lumSrc,    \

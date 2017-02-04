@@ -17,4 +17,4 @@ extern VLC  ff_dca_vlc_st_grid;
 extern VLC  ff_dca_vlc_grid_2;
 extern VLC  ff_dca_vlc_grid_3;
 extern VLC  ff_dca_vlc_rsd;
-av_cold void ff_dca_init_vlcs(void);
+ff_dca_init_vlcs;

@@ -1,17 +1,17 @@
-double avpriv_get_gamma_from_trc(enum AVColorTransferCharacteristic trc)
+avpriv_get_gamma_from_trc
 #define BT709_alpha 1.099296826809442
 #define BT709_beta 0.018053968510807
-static double avpriv_trc_bt709(double Lc)
-static double avpriv_trc_gamma22(double Lc)
-static double avpriv_trc_gamma28(double Lc)
-static double avpriv_trc_smpte240M(double Lc)
-static double avpriv_trc_linear(double Lc)
-static double avpriv_trc_log(double Lc)
-static double avpriv_trc_log_sqrt(double Lc)
-static double avpriv_trc_iec61966_2_4(double Lc)
-static double avpriv_trc_bt1361(double Lc)
-static double avpriv_trc_iec61966_2_1(double Lc)
-static double avpriv_trc_smpte_st2084(double Lc)
-static double avpriv_trc_smpte_st428_1(double Lc)
-static double avpriv_trc_arib_std_b67(double Lc)
-avpriv_trc_function avpriv_get_trc_function_from_trc(enum AVColorTransferCharacteristic trc)
+avpriv_trc_bt709
+avpriv_trc_gamma22
+avpriv_trc_gamma28
+avpriv_trc_smpte240M
+avpriv_trc_linear
+avpriv_trc_log
+avpriv_trc_log_sqrt
+avpriv_trc_iec61966_2_4
+avpriv_trc_bt1361
+avpriv_trc_iec61966_2_1
+avpriv_trc_smpte_st2084
+avpriv_trc_smpte_st428_1
+avpriv_trc_arib_std_b67
+avpriv_get_trc_function_from_trc

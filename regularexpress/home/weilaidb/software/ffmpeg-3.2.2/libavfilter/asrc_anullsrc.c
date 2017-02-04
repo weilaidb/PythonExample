@@ -1,11 +1,17 @@
 typedef struct  ANullContext;
-#define OFFSET(x) offsetof(ANullContext, x)
+OFFSET offsetof(ANullContext, x)
 #define FLAGS AV_OPT_FLAG_AUDIO_PARAM|AV_OPT_FLAG_FILTERING_PARAM
-static const AVOption anullsrc_options[]= ;
+static const AVOption anullsrc_options[]= ,
+, 0, 0, FLAGS },
+, 0, 0, FLAGS },
+, 0, 0, FLAGS },
+,
+,
+};
 AVFILTER_DEFINE_CLASS(anullsrc);
-static av_cold int init(AVFilterContext *ctx)
-static int query_formats(AVFilterContext *ctx)
-static int config_props(AVFilterLink *outlink)
-static int request_frame(AVFilterLink *outlink)
+init
+query_formats
+config_props
+request_frame
 static const AVFilterPad avfilter_asrc_anullsrc_outputs[] = ;
 AVFilter ff_asrc_anullsrc = ;

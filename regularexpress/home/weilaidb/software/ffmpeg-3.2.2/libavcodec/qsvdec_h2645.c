@@ -1,13 +1,12 @@
 enum LoadPlugin ;
 typedef struct QSVH2645Context  QSVH2645Context;
-static void qsv_clear_buffers(QSVH2645Context *s)
-static av_cold int qsv_decode_close(AVCodecContext *avctx)
-static av_cold int qsv_decode_init(AVCodecContext *avctx)
-static int qsv_init_bsf(AVCodecContext *avctx, QSVH2645Context *s)
-static int qsv_decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame, AVPacket *avpkt)
-static void qsv_decode_flush(AVCodecContext *avctx)
-#define OFFSET(x) offsetof(QSVH2645Context, x)
+qsv_clear_buffers
+qsv_decode_close
+qsv_decode_init
+qsv_init_bsf
+qsv_decode_frame
+qsv_decode_flush
+OFFSET offsetof(QSVH2645Context, x)
 #define VD AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_DECODING_PARAM
 #if CONFIG_HEVC_QSV_DECODER
 AVHWAccel ff_hevc_qsv_hwaccel = ;

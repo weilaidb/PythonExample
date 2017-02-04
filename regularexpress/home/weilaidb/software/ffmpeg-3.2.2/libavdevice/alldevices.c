@@ -1,4 +1,4 @@
-#define REGISTER_OUTDEV(X, x)                                           \
-#define REGISTER_INDEV(X, x)                                            \
-#define REGISTER_INOUTDEV(X, x) REGISTER_OUTDEV(X, x); REGISTER_INDEV(X, x)
-void avdevice_register_all(void)
+REGISTER_OUTDEV                                           \
+REGISTER_INDEV                                            \
+REGISTER_INOUTDEV REGISTER_OUTDEV(X, x); REGISTER_INDEV(X, x)
+avdevice_register_all

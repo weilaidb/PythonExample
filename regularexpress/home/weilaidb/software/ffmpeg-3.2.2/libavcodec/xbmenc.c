@@ -1,3 +1,2 @@
-static int xbm_encode_frame(AVCodecContext *avctx, AVPacket *pkt,
-const AVFrame *p, int *got_packet)
+xbm_encode_frame
 AVCodec ff_xbm_encoder = ;

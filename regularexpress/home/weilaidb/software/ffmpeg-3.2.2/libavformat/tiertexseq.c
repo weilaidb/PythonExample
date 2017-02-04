@@ -7,11 +7,11 @@
 #define SEQ_FRAME_RATE         25
 typedef struct TiertexSeqFrameBuffer  TiertexSeqFrameBuffer;
 typedef struct SeqDemuxContext  SeqDemuxContext;
-static int seq_probe(AVProbeData *p)
-static int seq_init_frame_buffers(SeqDemuxContext *seq, AVIOContext *pb)
-static int seq_fill_buffer(SeqDemuxContext *seq, AVIOContext *pb, int buffer_num, unsigned int data_offs, int data_size)
-static int seq_parse_frame_data(SeqDemuxContext *seq, AVIOContext *pb)
-static int seq_read_header(AVFormatContext *s)
-static int seq_read_packet(AVFormatContext *s, AVPacket *pkt)
-static int seq_read_close(AVFormatContext *s)
+seq_probe
+seq_init_frame_buffers
+seq_fill_buffer
+seq_parse_frame_data
+seq_read_header
+seq_read_packet
+seq_read_close
 AVInputFormat ff_tiertexseq_demuxer = ;

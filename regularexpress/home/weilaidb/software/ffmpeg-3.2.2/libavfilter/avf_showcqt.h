@@ -4,4 +4,4 @@ typedef struct  RGBFloat;
 typedef struct  YUVFloat;
 typedef union  ColorFloat;
 typedef struct  ShowCQTContext;
-void ff_showcqt_init_x86(ShowCQTContext *s);
+ff_showcqt_init_x86;

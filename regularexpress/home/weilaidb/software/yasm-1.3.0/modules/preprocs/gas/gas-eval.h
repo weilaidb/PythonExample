@@ -21,7 +21,7 @@ struct tokenval ;
 typedef int (*scanner) (void *private_data, struct tokenval *tv);
 enum ;
 #define CRITICAL 0x100
-typedef yasm_expr *(*evalfunc) (scanner sc, void *scprivate, struct tokenval *tv,
+* (scanner sc, void *scprivate, struct tokenval *tv,
 int critical, efunc error, yasm_symtab *symtab);
 yasm_expr *evaluate (scanner sc, void *scprivate, struct tokenval *tv,
 void *eprivate, int critical, efunc report_error,

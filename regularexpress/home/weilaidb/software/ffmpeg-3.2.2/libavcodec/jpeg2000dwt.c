@@ -9,23 +9,22 @@
 #define I_LFTG_K       80621ll
 #define I_LFTG_X       53274ll
 #define I_PRESHIFT 8
-static inline void extend53(int *p, int i0, int i1)
-static inline void extend97_float(float *p, int i0, int i1)
-static inline void extend97_int(int32_t *p, int i0, int i1)
-static void sd_1d53(int *p, int i0, int i1)
-static void dwt_encode53(DWTContext *s, int *t)
-static void sd_1d97_float(float *p, int i0, int i1)
-static void dwt_encode97_float(DWTContext *s, float *t)
-static void sd_1d97_int(int *p, int i0, int i1)
-static void dwt_encode97_int(DWTContext *s, int *t)
-static void sr_1d53(int *p, int i0, int i1)
-static void dwt_decode53(DWTContext *s, int *t)
-static void sr_1d97_float(float *p, int i0, int i1)
-static void dwt_decode97_float(DWTContext *s, float *t)
-static void sr_1d97_int(int32_t *p, int i0, int i1)
-static void dwt_decode97_int(DWTContext *s, int32_t *t)
-int ff_jpeg2000_dwt_init(DWTContext *s, int border[2][2],
-int decomp_levels, int type)
-int ff_dwt_encode(DWTContext *s, void *t)
-int ff_dwt_decode(DWTContext *s, void *t)
-void ff_dwt_destroy(DWTContext *s)
+extend53
+extend97_float
+extend97_int
+sd_1d53
+dwt_encode53
+sd_1d97_float
+dwt_encode97_float
+sd_1d97_int
+dwt_encode97_int
+sr_1d53
+dwt_decode53
+sr_1d97_float
+dwt_decode97_float
+sr_1d97_int
+dwt_decode97_int
+ff_jpeg2000_dwt_init
+ff_dwt_encode
+ff_dwt_decode
+ff_dwt_destroy

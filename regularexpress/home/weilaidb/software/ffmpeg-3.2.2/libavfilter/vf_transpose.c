@@ -1,14 +1,13 @@
 typedef enum  PassthroughType;
 enum TransposeDir ;
 typedef struct TransContext  TransContext;
-static int query_formats(AVFilterContext *ctx)
-static int config_props_output(AVFilterLink *outlink)
-static AVFrame *get_video_buffer(AVFilterLink *inlink, int w, int h)
+query_formats
+config_props_output
+*get_video_buffer
 typedef struct ThreadData  ThreadData;
-static int filter_slice(AVFilterContext *ctx, void *arg, int jobnr,
-int nb_jobs)
-static int filter_frame(AVFilterLink *inlink, AVFrame *in)
-#define OFFSET(x) offsetof(TransContext, x)
+filter_slice
+filter_frame
+OFFSET offsetof(TransContext, x)
 #define FLAGS AV_OPT_FLAG_FILTERING_PARAM|AV_OPT_FLAG_VIDEO_PARAM
 static const AVOption transpose_options[] = ;
 AVFILTER_DEFINE_CLASS(transpose);

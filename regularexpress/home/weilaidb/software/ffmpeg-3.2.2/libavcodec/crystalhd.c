@@ -8,21 +8,17 @@ typedef enum  CopyRet;
 typedef struct OpaqueList  OpaqueList;
 typedef struct  CHDContext;
 static const AVOption options[] = ;
-static inline BC_MEDIA_SUBTYPE id2subtype(CHDContext *priv, enum AVCodecID id)
-static inline void print_frame_info(CHDContext *priv, BC_DTS_PROC_OUT *output)
-static uint64_t opaque_list_push(CHDContext *priv, uint64_t reordered_opaque,
-uint8_t pic_type)
-static OpaqueList *opaque_list_pop(CHDContext *priv, uint64_t fake_timestamp)
-static void flush(AVCodecContext *avctx)
-static av_cold int uninit(AVCodecContext *avctx)
-static av_cold int init_bsf(AVCodecContext *avctx, const char *bsf_name)
-static av_cold int init(AVCodecContext *avctx)
-static inline CopyRet copy_frame(AVCodecContext *avctx,
-BC_DTS_PROC_OUT *output,
-void *data, int *got_frame)
-static inline CopyRet receive_frame(AVCodecContext *avctx,
-void *data, int *got_frame)
-static int decode(AVCodecContext *avctx, void *data, int *got_frame, AVPacket *avpkt)
+id2subtype
+print_frame_info
+opaque_list_push
+*opaque_list_pop
+flush
+uninit
+init_bsf
+init
+copy_frame
+receive_frame
+decode
 #if CONFIG_H264_CRYSTALHD_DECODER
 static AVClass h264_class = ;
 AVCodec ff_h264_crystalhd_decoder = ;

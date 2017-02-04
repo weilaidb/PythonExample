@@ -1,5 +1,5 @@
-#define RIFF_TAG MKTAG('R', 'I', 'F', 'F')
-#define CDXA_TAG MKTAG('C', 'D', 'X', 'A')
+MKTAG
+MKTAG
 #define RAW_CD_SECTOR_SIZE      2352
 #define RAW_CD_SECTOR_DATA_SIZE 2304
 #define VIDEO_DATA_CHUNK_SIZE   0x7E0
@@ -13,9 +13,8 @@
 typedef struct StrChannel  StrChannel;
 typedef struct StrDemuxContext  StrDemuxContext;
 static const uint8_t sync_header[12] = ;
-static int str_probe(AVProbeData *p)
-static int str_read_header(AVFormatContext *s)
-static int str_read_packet(AVFormatContext *s,
-AVPacket *ret_pkt)
-static int str_read_close(AVFormatContext *s)
+str_probe
+str_read_header
+str_read_packet
+str_read_close
 AVInputFormat ff_str_demuxer = ;

@@ -1,1 +1,1 @@
-int ff_get_cpu_flags_aarch64(void)
+ff_get_cpu_flags_aarch64

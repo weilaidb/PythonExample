@@ -6,4 +6,4 @@
 #undef TEMPLATE_RESAMPLE_FLT
 #define TEMPLATE_RESAMPLE_DBL
 #undef TEMPLATE_RESAMPLE_DBL
-void swri_resample_dsp_init(ResampleContext *c)
+swri_resample_dsp_init

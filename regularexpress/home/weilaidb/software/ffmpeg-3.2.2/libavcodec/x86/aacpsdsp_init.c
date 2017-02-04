@@ -5,10 +5,10 @@ float *src1, int n);
 void ff_ps_hybrid_analysis_sse (float (*out)[2], float (*in)[2],
 const float (*filter)[8][2],
 int stride, int n);
-void ff_ps_hybrid_analysis_sse3(float (*out)[2], float (*in)[2],
+ff_ps_hybrid_analysis_sse3[2], float (*in)[2],
 const float (*filter)[8][2],
 int stride, int n);
-void ff_ps_stereo_interpolate_sse3(float (*l)[2], float (*r)[2],
+ff_ps_stereo_interpolate_sse3[2], float (*r)[2],
 float h[2][4], float h_step[2][4],
 int len);
-av_cold void ff_psdsp_init_x86(PSDSPContext *s)
+ff_psdsp_init_x86

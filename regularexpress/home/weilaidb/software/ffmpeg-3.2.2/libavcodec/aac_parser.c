@@ -1,4 +1,3 @@
-static int aac_sync(uint64_t state, AACAC3ParseContext *hdr_info,
-int *need_next_header, int *new_frame_start)
-static av_cold int aac_parse_init(AVCodecParserContext *s1)
+aac_sync
+aac_parse_init
 AVCodecParser ff_aac_parser = ;

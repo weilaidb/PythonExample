@@ -1,8 +1,8 @@
 #if CONFIG_AVFILTER
-# include "libavfilter/avfilter.h"
-# include "libavfilter/buffersink.h"
-# include "libavfilter/buffersrc.h"
-const char program_name[] = "ffplay";
+# include
+# include
+# include
+const char program_name[] = ;
 const int program_birth_year = 2003;
 #define MAX_QUEUE_SIZE (15 * 1024 * 1024)
 #define MIN_FRAMES 25
@@ -30,7 +30,7 @@ typedef struct PacketQueue  PacketQueue;
 #define VIDEO_PICTURE_QUEUE_SIZE 3
 #define SUBPICTURE_QUEUE_SIZE 16
 #define SAMPLE_QUEUE_SIZE 9
-#define FRAME_QUEUE_SIZE FFMAX(SAMPLE_QUEUE_SIZE, FFMAX(VIDEO_PICTURE_QUEUE_SIZE, SUBPICTURE_QUEUE_SIZE))
+FFMAX)
 typedef struct AudioParams  AudioParams;
 typedef struct Clock  Clock;
 typedef struct Frame  Frame;
@@ -85,118 +85,114 @@ static AVPacket flush_pkt;
 static SDL_Window *window;
 static SDL_Renderer *renderer;
 #if CONFIG_AVFILTER
-static int opt_add_vfilter(void *optctx, const char *opt, const char *arg)
+opt_add_vfilter
 static inline
-int cmp_audio_fmts(enum AVSampleFormat fmt1, int64_t channel_count1,
-enum AVSampleFormat fmt2, int64_t channel_count2)
+cmp_audio_fmts
 static inline
-int64_t get_valid_channel_layout(int64_t channel_layout, int channels)
-static void free_picture(Frame *vp);
-static int packet_queue_put_private(PacketQueue *q, AVPacket *pkt)
-static int packet_queue_put(PacketQueue *q, AVPacket *pkt)
-static int packet_queue_put_nullpacket(PacketQueue *q, int stream_index)
-static int packet_queue_init(PacketQueue *q)
-static void packet_queue_flush(PacketQueue *q)
-static void packet_queue_destroy(PacketQueue *q)
-static void packet_queue_abort(PacketQueue *q)
-static void packet_queue_start(PacketQueue *q)
-static int packet_queue_get(PacketQueue *q, AVPacket *pkt, int block, int *serial)
-static void decoder_init(Decoder *d, AVCodecContext *avctx, PacketQueue *queue, SDL_cond *empty_queue_cond)
-static int decoder_decode_frame(Decoder *d, AVFrame *frame, AVSubtitle *sub)
-static void decoder_destroy(Decoder *d)
-static void frame_queue_unref_item(Frame *vp)
-static int frame_queue_init(FrameQueue *f, PacketQueue *pktq, int max_size, int keep_last)
-static void frame_queue_destory(FrameQueue *f)
-static void frame_queue_signal(FrameQueue *f)
-static Frame *frame_queue_peek(FrameQueue *f)
-static Frame *frame_queue_peek_next(FrameQueue *f)
-static Frame *frame_queue_peek_last(FrameQueue *f)
-static Frame *frame_queue_peek_writable(FrameQueue *f)
-static Frame *frame_queue_peek_readable(FrameQueue *f)
-static void frame_queue_push(FrameQueue *f)
-static void frame_queue_next(FrameQueue *f)
-static int frame_queue_nb_remaining(FrameQueue *f)
-static int64_t frame_queue_last_pos(FrameQueue *f)
-static void decoder_abort(Decoder *d, FrameQueue *fq)
-static inline void fill_rectangle(int x, int y, int w, int h)
-static void free_picture(Frame *vp)
-static int realloc_texture(SDL_Texture **texture, Uint32 new_format, int new_width, int new_height, SDL_BlendMode blendmode, int init_texture)
-static void calculate_display_rect(SDL_Rect *rect,
-int scr_xleft, int scr_ytop, int scr_width, int scr_height,
-int pic_width, int pic_height, AVRational pic_sar)
-static int upload_texture(SDL_Texture *tex, AVFrame *frame, struct SwsContext **img_convert_ctx)
-static void video_image_display(VideoState *is)
-static inline int compute_mod(int a, int b)
-static void video_audio_display(VideoState *s)
-static void stream_component_close(VideoState *is, int stream_index)
-static void stream_close(VideoState *is)
-static void do_exit(VideoState *is)
-static void sigterm_handler(int sig)
-static void set_default_window_size(int width, int height, AVRational sar)
-static int video_open(VideoState *is, Frame *vp)
-static void video_display(VideoState *is)
-static double get_clock(Clock *c)
-static void set_clock_at(Clock *c, double pts, int serial, double time)
-static void set_clock(Clock *c, double pts, int serial)
-static void set_clock_speed(Clock *c, double speed)
-static void init_clock(Clock *c, int *queue_serial)
-static void sync_clock_to_slave(Clock *c, Clock *slave)
-static int get_master_sync_type(VideoState *is)
-static double get_master_clock(VideoState *is)
-static void check_external_clock_speed(VideoState *is)
-static void stream_seek(VideoState *is, int64_t pos, int64_t rel, int seek_by_bytes)
-static void stream_toggle_pause(VideoState *is)
-static void toggle_pause(VideoState *is)
-static void toggle_mute(VideoState *is)
-static void update_volume(VideoState *is, int sign, int step)
-static void step_to_next_frame(VideoState *is)
-static double compute_target_delay(double delay, VideoState *is)
-static double vp_duration(VideoState *is, Frame *vp, Frame *nextvp)
-static void update_video_pts(VideoState *is, double pts, int64_t pos, int serial)
-static void video_refresh(void *opaque, double *remaining_time)
-static void alloc_picture(VideoState *is)
-static int queue_picture(VideoState *is, AVFrame *src_frame, double pts, double duration, int64_t pos, int serial)
-static int get_video_frame(VideoState *is, AVFrame *frame)
+get_valid_channel_layout
+free_picture;
+packet_queue_put_private
+packet_queue_put
+packet_queue_put_nullpacket
+packet_queue_init
+packet_queue_flush
+packet_queue_destroy
+packet_queue_abort
+packet_queue_start
+packet_queue_get
+decoder_init
+decoder_decode_frame
+decoder_destroy
+frame_queue_unref_item
+frame_queue_init
+frame_queue_destory
+frame_queue_signal
+*frame_queue_peek
+*frame_queue_peek_next
+*frame_queue_peek_last
+*frame_queue_peek_writable
+*frame_queue_peek_readable
+frame_queue_push
+frame_queue_next
+frame_queue_nb_remaining
+frame_queue_last_pos
+decoder_abort
+fill_rectangle
+free_picture
+realloc_texture
+calculate_display_rect
+upload_texture
+video_image_display
+compute_mod
+video_audio_display
+stream_component_close
+stream_close
+do_exit
+sigterm_handler
+set_default_window_size
+video_open
+video_display
+get_clock
+set_clock_at
+set_clock
+set_clock_speed
+init_clock
+sync_clock_to_slave
+get_master_sync_type
+get_master_clock
+check_external_clock_speed
+stream_seek
+stream_toggle_pause
+toggle_pause
+toggle_mute
+update_volume
+step_to_next_frame
+compute_target_delay
+vp_duration
+update_video_pts
+video_refresh
+alloc_picture
+queue_picture
+get_video_frame
 #if CONFIG_AVFILTER
-static int configure_filtergraph(AVFilterGraph *graph, const char *filtergraph,
-AVFilterContext *source_ctx, AVFilterContext *sink_ctx)
-static int configure_video_filters(AVFilterGraph *graph, VideoState *is, const char *vfilters, AVFrame *frame)
-static int configure_audio_filters(VideoState *is, const char *afilters, int force_output_format)
-static int audio_thread(void *arg)
-static int decoder_start(Decoder *d, int (*fn)(void *), void *arg)
-static int video_thread(void *arg)
-static int subtitle_thread(void *arg)
-static void update_sample_display(VideoState *is, short *samples, int samples_size)
-static int synchronize_audio(VideoState *is, int nb_samples)
-static int audio_decode_frame(VideoState *is)
-static void sdl_audio_callback(void *opaque, Uint8 *stream, int len)
-static int audio_open(void *opaque, int64_t wanted_channel_layout, int wanted_nb_channels, int wanted_sample_rate, struct AudioParams *audio_hw_params)
-static int stream_component_open(VideoState *is, int stream_index)
-static int decode_interrupt_cb(void *ctx)
-static int stream_has_enough_packets(AVStream *st, int stream_id, PacketQueue *queue)
-static int is_realtime(AVFormatContext *s)
-static int read_thread(void *arg)
-static VideoState *stream_open(const char *filename, AVInputFormat *iformat)
-static void stream_cycle_channel(VideoState *is, int codec_type)
-static void toggle_full_screen(VideoState *is)
-static void toggle_audio_display(VideoState *is)
-static void refresh_loop_wait_event(VideoState *is, SDL_Event *event)
-static void seek_chapter(VideoState *is, int incr)
-static void event_loop(VideoState *cur_stream)
-static int opt_frame_size(void *optctx, const char *opt, const char *arg)
-static int opt_width(void *optctx, const char *opt, const char *arg)
-static int opt_height(void *optctx, const char *opt, const char *arg)
-static int opt_format(void *optctx, const char *opt, const char *arg)
-static int opt_frame_pix_fmt(void *optctx, const char *opt, const char *arg)
-static int opt_sync(void *optctx, const char *opt, const char *arg)
-static int opt_seek(void *optctx, const char *opt, const char *arg)
-static int opt_duration(void *optctx, const char *opt, const char *arg)
-static int opt_show_mode(void *optctx, const char *opt, const char *arg)
-static void opt_input_file(void *optctx, const char *filename)
-static int opt_codec(void *optctx, const char *opt, const char *arg)
+configure_filtergraph
+configure_video_filters
+configure_audio_filters
+audio_thread
+decoder_start(void *), void *arg)
+video_thread
+subtitle_thread
+update_sample_display
+synchronize_audio
+audio_decode_frame
+sdl_audio_callback
+audio_open
+stream_component_open
+decode_interrupt_cb
+stream_has_enough_packets
+is_realtime
+read_thread
+*stream_open
+stream_cycle_channel
+toggle_full_screen
+toggle_audio_display
+refresh_loop_wait_event
+seek_chapter
+event_loop
+opt_frame_size
+opt_width
+opt_height
+opt_format
+opt_frame_pix_fmt
+opt_sync
+opt_seek
+opt_duration
+opt_show_mode
+opt_input_file
+opt_codec
 static int dummy;
 static const OptionDef options[] = ;
-static void show_usage(void)
-void show_help_default(const char *opt, const char *arg)
-static int lockmgr(void **mtx, enum AVLockOp op)
-int main(int argc, char **argv)
+show_usage
+show_help_default
+lockmgr
+main

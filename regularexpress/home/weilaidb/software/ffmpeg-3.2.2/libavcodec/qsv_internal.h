@@ -6,13 +6,12 @@
 #define QSV_VERSION_MINOR 9
 #define ASYNC_DEPTH_DEFAULT 4
 #define QSV_MAX_ENC_PAYLOAD 2
-#define QSV_VERSION_ATLEAST(MAJOR, MINOR)   \
+QSV_VERSION_ATLEAST   \
 (MFX_VERSION_MAJOR > (MAJOR) ||         \
 MFX_VERSION_MAJOR == (MAJOR) && MFX_VERSION_MINOR >= (MINOR))
 typedef struct QSVFrame  QSVFrame;
 typedef struct QSVSession  QSVSession;
-int ff_qsv_error(int mfx_err);
-int ff_qsv_codec_id_to_mfx(enum AVCodecID codec_id);
-int ff_qsv_init_internal_session(AVCodecContext *avctx, QSVSession *qs,
-const char *load_plugins);
-int ff_qsv_close_internal_session(QSVSession *qs);
+ff_qsv_error;
+ff_qsv_codec_id_to_mfx;
+ff_qsv_init_internal_session;
+ff_qsv_close_internal_session;

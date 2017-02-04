@@ -1,131 +1,102 @@
 #if CONFIG_ZLIB
 typedef struct MOVParseTableEntry  MOVParseTableEntry;
-static int mov_read_default(MOVContext *c, AVIOContext *pb, MOVAtom atom);
-static int mov_read_mfra(MOVContext *c, AVIOContext *f);
-static int mov_metadata_track_or_disc_number(MOVContext *c, AVIOContext *pb,
-unsigned len, const char *key)
-static int mov_metadata_int8_bypass_padding(MOVContext *c, AVIOContext *pb,
-unsigned len, const char *key)
-static int mov_metadata_int8_no_padding(MOVContext *c, AVIOContext *pb,
-unsigned len, const char *key)
-static int mov_metadata_gnre(MOVContext *c, AVIOContext *pb,
-unsigned len, const char *key)
+mov_read_default;
+mov_read_mfra;
+mov_metadata_track_or_disc_number
+mov_metadata_int8_bypass_padding
+mov_metadata_int8_no_padding
+mov_metadata_gnre
 static const uint32_t mac_to_unicode[128] = ;
-static int mov_read_mac_string(MOVContext *c, AVIOContext *pb, int len,
-char *dst, int dstlen)
-static int mov_read_covr(MOVContext *c, AVIOContext *pb, int type, int len)
-static int mov_metadata_loci(MOVContext *c, AVIOContext *pb, unsigned len)
-static int mov_metadata_hmmt(MOVContext *c, AVIOContext *pb, unsigned len)
-static int mov_read_udta_string(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_chpl(MOVContext *c, AVIOContext *pb, MOVAtom atom)
+mov_read_mac_string
+mov_read_covr
+mov_metadata_loci
+mov_metadata_hmmt
+mov_read_udta_string
+mov_read_chpl
 #define MIN_DATA_ENTRY_BOX_SIZE 12
-static int mov_read_dref(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_hdlr(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-int ff_mov_read_esds(AVFormatContext *fc, AVIOContext *pb)
-static int mov_read_esds(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_dac3(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_dec3(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_ddts(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_chan(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_wfex(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_pasp(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_mdat(MOVContext *c, AVIOContext *pb, MOVAtom atom)
+mov_read_dref
+mov_read_hdlr
+ff_mov_read_esds
+mov_read_esds
+mov_read_dac3
+mov_read_dec3
+mov_read_ddts
+mov_read_chan
+mov_read_wfex
+mov_read_pasp
+mov_read_mdat
 #define DRM_BLOB_SIZE 56
-static int mov_read_adrm(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int aax_filter(uint8_t *input, int size, MOVContext *c)
-static int mov_read_ftyp(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_moov(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_moof(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static void mov_metadata_creation_time(AVDictionary **metadata, int64_t time)
-static int mov_read_mdhd(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_mvhd(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_enda(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_colr(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_fiel(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_realloc_extradata(AVCodecParameters *par, MOVAtom atom)
-static int64_t mov_read_atom_into_extradata(MOVContext *c, AVIOContext *pb, MOVAtom atom,
-AVCodecParameters *par, uint8_t *buf)
-static int mov_read_extradata(MOVContext *c, AVIOContext *pb, MOVAtom atom,
-enum AVCodecID codec_id)
-static int mov_read_alac(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_avss(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_jp2h(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_dpxe(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_avid(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_targa_y216(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_ares(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_aclr(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_svq3(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_wave(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_glbl(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_dvc1(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_strf(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_stco(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-enum AVCodecID ff_mov_get_lpcm_codec_id(int bps, int flags)
-static int mov_codec_id(AVStream *st, uint32_t format)
-static void mov_parse_stsd_video(MOVContext *c, AVIOContext *pb,
-AVStream *st, MOVStreamContext *sc)
-static void mov_parse_stsd_audio(MOVContext *c, AVIOContext *pb,
-AVStream *st, MOVStreamContext *sc)
-static void mov_parse_stsd_subtitle(MOVContext *c, AVIOContext *pb,
-AVStream *st, MOVStreamContext *sc,
-int64_t size)
-static uint32_t yuv_to_rgba(uint32_t ycbcr)
-static int mov_rewrite_dvd_sub_extradata(AVStream *st)
-static int mov_parse_stsd_data(MOVContext *c, AVIOContext *pb,
-AVStream *st, MOVStreamContext *sc,
-int64_t size)
-static int mov_finalize_stsd_codec(MOVContext *c, AVIOContext *pb,
-AVStream *st, MOVStreamContext *sc)
-static int mov_skip_multiple_stsd(MOVContext *c, AVIOContext *pb,
-int codec_tag, int format,
-int64_t size)
-int ff_mov_read_stsd_entries(MOVContext *c, AVIOContext *pb, int entries)
-static int mov_read_stsd(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_stsc(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static inline int mov_get_stsc_samples(MOVStreamContext *sc, int index)
-static int mov_read_stps(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_stss(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_stsz(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_stts(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static void mov_update_dts_shift(MOVStreamContext *sc, int duration)
-static int mov_read_ctts(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_sbgp(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int get_edit_list_entry(MOVContext *mov,
-const MOVStreamContext *msc,
-unsigned int edit_list_index,
-int64_t *edit_list_media_time,
-int64_t *edit_list_duration,
-int64_t global_timescale)
-static int64_t find_prev_closest_keyframe_index(AVStream *st,
-AVIndexEntry *e_old,
-int nb_old,
-int64_t timestamp,
-int flag)
-static int64_t add_index_entry(AVStream *st, int64_t pos, int64_t timestamp,
-int size, int distance, int flags)
-static void fix_index_entry_timestamps(AVStream* st, int end_index, int64_t end_ts,
-int64_t* frame_duration_buffer,
-int frame_duration_buffer_size)
-static int64_t add_ctts_entry(MOVStts** ctts_data, unsigned int* ctts_count, unsigned int* allocated_size,
-int count, int duration)
-static void mov_fix_index(MOVContext *mov, AVStream *st)
-static void mov_build_index(MOVContext *mov, AVStream *st)
-static int test_same_origin(const char *src, const char *ref)
-static int mov_open_dref(MOVContext *c, AVIOContext **pb, const char *src, MOVDref *ref)
-static void fix_timescale(MOVContext *c, MOVStreamContext *sc)
-static int mov_read_trak(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_ilst(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_keys(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_custom(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_meta(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_tkhd(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_tfhd(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_chap(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_trex(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_tfdt(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_trun(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_sidx(MOVContext *c, AVIOContext *pb, MOVAtom atom)
+mov_read_adrm
+aax_filter
+mov_read_ftyp
+mov_read_moov
+mov_read_moof
+mov_metadata_creation_time
+mov_read_mdhd
+mov_read_mvhd
+mov_read_enda
+mov_read_colr
+mov_read_fiel
+mov_realloc_extradata
+mov_read_atom_into_extradata
+mov_read_extradata
+mov_read_alac
+mov_read_avss
+mov_read_jp2h
+mov_read_dpxe
+mov_read_avid
+mov_read_targa_y216
+mov_read_ares
+mov_read_aclr
+mov_read_svq3
+mov_read_wave
+mov_read_glbl
+mov_read_dvc1
+mov_read_strf
+mov_read_stco
+ff_mov_get_lpcm_codec_id
+mov_codec_id
+mov_parse_stsd_video
+mov_parse_stsd_audio
+mov_parse_stsd_subtitle
+yuv_to_rgba
+mov_rewrite_dvd_sub_extradata
+mov_parse_stsd_data
+mov_finalize_stsd_codec
+mov_skip_multiple_stsd
+ff_mov_read_stsd_entries
+mov_read_stsd
+mov_read_stsc
+mov_get_stsc_samples
+mov_read_stps
+mov_read_stss
+mov_read_stsz
+mov_read_stts
+mov_update_dts_shift
+mov_read_ctts
+mov_read_sbgp
+get_edit_list_entry
+find_prev_closest_keyframe_index
+add_index_entry
+fix_index_entry_timestamps
+add_ctts_entry
+mov_fix_index
+mov_build_index
+test_same_origin
+mov_open_dref
+fix_timescale
+mov_read_trak
+mov_read_ilst
+mov_read_keys
+mov_read_custom
+mov_read_meta
+mov_read_tkhd
+mov_read_tfhd
+mov_read_chap
+mov_read_trex
+mov_read_tfdt
+mov_read_trun
+mov_read_sidx
 if (avio_rb32(pb) != 0)
 atom.type = avio_rl32(pb);
 atom.size -= 8;
@@ -133,39 +104,38 @@ if (atom.type != MKTAG('m','d','a','t'))
 err = mov_read_mdat(c, pb, atom);
 return err;
 }
-static int mov_read_cmov(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_elst(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_tmcd(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_uuid(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_free(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_frma(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_senc(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_read_saiz(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int cenc_filter(MOVContext *c, MOVStreamContext *sc, uint8_t *input, int size)
-static int mov_seek_auxiliary_info(AVFormatContext *s, MOVStreamContext *sc)
+mov_read_cmov
+mov_read_elst
+mov_read_tmcd
+mov_read_uuid
+mov_read_free
+mov_read_frma
+mov_read_senc
+mov_read_saiz
+cenc_filter
+mov_seek_auxiliary_info
 static const MOVParseTableEntry mov_default_parse_table[] = ;
-static int mov_read_default(MOVContext *c, AVIOContext *pb, MOVAtom atom)
-static int mov_probe(AVProbeData *p)
-static void mov_read_chapters(AVFormatContext *s)
-static int parse_timecode_in_framenum_format(AVFormatContext *s, AVStream *st,
-uint32_t value, int flags)
-static int mov_read_rtmd_track(AVFormatContext *s, AVStream *st)
-static int mov_read_timecode_track(AVFormatContext *s, AVStream *st)
-static int mov_read_close(AVFormatContext *s)
-static int tmcd_is_referenced(AVFormatContext *s, int tmcd_id)
-static void export_orphan_timecode(AVFormatContext *s)
-static int read_tfra(MOVContext *mov, AVIOContext *f)
-static int mov_read_mfra(MOVContext *c, AVIOContext *f)
-static int mov_read_header(AVFormatContext *s)
-static AVIndexEntry *mov_find_next_sample(AVFormatContext *s, AVStream **st)
-static int should_retry(AVIOContext *pb, int error_code)
-static int mov_switch_root(AVFormatContext *s, int64_t target)
-static int mov_change_extradata(MOVStreamContext *sc, AVPacket *pkt)
-static int mov_read_packet(AVFormatContext *s, AVPacket *pkt)
-static int mov_seek_fragment(AVFormatContext *s, AVStream *st, int64_t timestamp)
-static int mov_seek_stream(AVFormatContext *s, AVStream *st, int64_t timestamp, int flags)
-static int mov_read_seek(AVFormatContext *s, int stream_index, int64_t sample_time, int flags)
-#define OFFSET(x) offsetof(MOVContext, x)
+mov_read_default
+mov_probe
+mov_read_chapters
+parse_timecode_in_framenum_format
+mov_read_rtmd_track
+mov_read_timecode_track
+mov_read_close
+tmcd_is_referenced
+export_orphan_timecode
+read_tfra
+mov_read_mfra
+mov_read_header
+*mov_find_next_sample
+should_retry
+mov_switch_root
+mov_change_extradata
+mov_read_packet
+mov_seek_fragment
+mov_seek_stream
+mov_read_seek
+OFFSET offsetof(MOVContext, x)
 #define FLAGS AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_DECODING_PARAM
 static const AVOption mov_options[] = ;
 static const AVClass mov_class = ;

@@ -14,20 +14,23 @@
 typedef struct dc1394_data  dc1394_data;
 static const struct dc1394_frame_format  dc1394_frame_formats[] = ;
 static const struct dc1394_frame_rate  dc1394_frame_rates[] = ;
-#define OFFSET(x) offsetof(dc1394_data, x)
+OFFSET offsetof(dc1394_data, x)
 #define DEC AV_OPT_FLAG_DECODING_PARAM
-static const AVOption options[] = ;
+static const AVOption options[] = ,
+, 0, 0, DEC },
+, 0, 0, DEC },
+,
+};
 static const AVClass libdc1394_class = ;
-static inline int dc1394_read_common(AVFormatContext *c,
-const struct dc1394_frame_format **select_fmt, const struct dc1394_frame_rate **select_fps)
+dc1394_read_common
 #if HAVE_LIBDC1394_1
-static int dc1394_v1_read_header(AVFormatContext *c)
-static int dc1394_v1_read_packet(AVFormatContext *c, AVPacket *pkt)
-static int dc1394_v1_close(AVFormatContext * context)
+dc1394_v1_read_header
+dc1394_v1_read_packet
+dc1394_v1_close
 #elif HAVE_LIBDC1394_2
-static int dc1394_v2_read_header(AVFormatContext *c)
-static int dc1394_v2_read_packet(AVFormatContext *c, AVPacket *pkt)
-static int dc1394_v2_close(AVFormatContext * context)
+dc1394_v2_read_header
+dc1394_v2_read_packet
+dc1394_v2_close
 AVInputFormat ff_libdc1394_demuxer = ;
 #if HAVE_LIBDC1394_1
 AVInputFormat ff_libdc1394_demuxer = ;

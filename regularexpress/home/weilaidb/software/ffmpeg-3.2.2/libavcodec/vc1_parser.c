@@ -2,13 +2,8 @@
 #define UNESCAPED_LIMIT 144
 typedef enum  VC1ParseSearchState;
 typedef struct VC1ParseContext  VC1ParseContext;
-static void vc1_extract_header(AVCodecParserContext *s, AVCodecContext *avctx,
-const uint8_t *buf, int buf_size)
-static int vc1_parse(AVCodecParserContext *s,
-AVCodecContext *avctx,
-const uint8_t **poutbuf, int *poutbuf_size,
-const uint8_t *buf, int buf_size)
-static int vc1_split(AVCodecContext *avctx,
-const uint8_t *buf, int buf_size)
-static av_cold int vc1_parse_init(AVCodecParserContext *s)
+vc1_extract_header
+vc1_parse
+vc1_split
+vc1_parse_init
 AVCodecParser ff_vc1_parser = ;

@@ -1,9 +1,9 @@
-int ff_raw_write_packet(AVFormatContext *s, AVPacket *pkt)
-static int force_one_stream(AVFormatContext *s)
+ff_raw_write_packet
+force_one_stream
 #if CONFIG_AC3_MUXER
 AVOutputFormat ff_ac3_muxer = ;
 #if CONFIG_ADX_MUXER
-static int adx_write_trailer(AVFormatContext *s)
+adx_write_trailer
 AVOutputFormat ff_adx_muxer = ;
 #if CONFIG_CAVSVIDEO_MUXER
 AVOutputFormat ff_cavsvideo_muxer = ;
@@ -28,10 +28,10 @@ AVOutputFormat ff_h261_muxer = ;
 #if CONFIG_H263_MUXER
 AVOutputFormat ff_h263_muxer = ;
 #if CONFIG_H264_MUXER
-static int h264_check_bitstream(struct AVFormatContext *s, const AVPacket *pkt)
+h264_check_bitstream
 AVOutputFormat ff_h264_muxer = ;
 #if CONFIG_HEVC_MUXER
-static int hevc_check_bitstream(struct AVFormatContext *s, const AVPacket *pkt)
+hevc_check_bitstream
 AVOutputFormat ff_hevc_muxer = ;
 #if CONFIG_M4V_MUXER
 AVOutputFormat ff_m4v_muxer = ;

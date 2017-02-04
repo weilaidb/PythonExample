@@ -1,418 +1,119 @@
 static const uint8_t mc_filt_mask_arr[16 * 3] = ;
 static const int8_t vp9_bilinear_filters_msa[15][2] = ;
-#define FILT_8TAP_DPADD_S_H(vec0, vec1, vec2, vec3,             \
-filt0, filt1, filt2, filt3)         \
+FILT_8TAP_DPADD_S_H         \
 (  )
-#define HORIZ_8TAP_FILT(src0, src1, mask0, mask1, mask2, mask3,          \
-filt_h0, filt_h1, filt_h2, filt_h3)              \
+HORIZ_8TAP_FILT              \
 (  )
-#define HORIZ_8TAP_4WID_4VECS_FILT(src0, src1, src2, src3,                  \
-mask0, mask1, mask2, mask3,              \
-filt0, filt1, filt2, filt3,              \
-out0, out1)                              \
-#define HORIZ_8TAP_8WID_4VECS_FILT(src0, src1, src2, src3,                    \
-mask0, mask1, mask2, mask3,                \
-filt0, filt1, filt2, filt3,                \
-out0, out1, out2, out3)                    \
-#define PCKEV_XORI128_AVG_ST_UB(in0, in1, dst, pdst)  \
-#define PCKEV_AVG_ST_UB(in0, in1, dst, pdst)                  \
-#define PCKEV_AVG_ST8x4_UB(in1, dst0, in2, dst1, in3, dst2, in4, dst3,  \
-pdst, stride)                                \
-static void common_hz_8t_4x4_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_hz_8t_4x8_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_hz_8t_4x16_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_hz_8t_4w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-static void common_hz_8t_8x4_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_hz_8t_8x8mult_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-static void common_hz_8t_8w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-static void common_hz_8t_16w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-static void common_hz_8t_32w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-static void common_hz_8t_64w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-static void common_vt_8t_4w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-static void common_vt_8t_8w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-static void common_vt_8t_16w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-static void common_vt_8t_16w_mult_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-int32_t width)
-static void common_vt_8t_32w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-static void common_vt_8t_64w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-static void common_hv_8ht_8vt_4w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert,
-int32_t height)
-static void common_hv_8ht_8vt_8w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert,
-int32_t height)
-static void common_hv_8ht_8vt_16w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert,
-int32_t height)
-static void common_hv_8ht_8vt_32w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert,
-int32_t height)
-static void common_hv_8ht_8vt_64w_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert,
-int32_t height)
-static void common_hz_8t_and_aver_dst_4x4_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_hz_8t_and_aver_dst_4x8_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_hz_8t_and_aver_dst_4w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-static void common_hz_8t_and_aver_dst_8w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-static void common_hz_8t_and_aver_dst_16w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-static void common_hz_8t_and_aver_dst_32w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-static void common_hz_8t_and_aver_dst_64w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-static void common_vt_8t_and_aver_dst_4w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-static void common_vt_8t_and_aver_dst_8w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-static void common_vt_8t_and_aver_dst_16w_mult_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter,
-int32_t height,
-int32_t width)
-static void common_vt_8t_and_aver_dst_16w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-static void common_vt_8t_and_aver_dst_32w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-static void common_vt_8t_and_aver_dst_64w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-static void common_hv_8ht_8vt_and_aver_dst_4w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert,
-int32_t height)
-static void common_hv_8ht_8vt_and_aver_dst_8w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert,
-int32_t height)
-static void common_hv_8ht_8vt_and_aver_dst_16w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert,
-int32_t height)
-static void common_hv_8ht_8vt_and_aver_dst_32w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert,
-int32_t height)
-static void common_hv_8ht_8vt_and_aver_dst_64w_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert,
-int32_t height)
-static void common_hz_2t_4x4_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_hz_2t_4x8_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-void ff_put_bilin_4h_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void common_hz_2t_8x4_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_hz_2t_8x8mult_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-void ff_put_bilin_8h_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_put_bilin_16h_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_put_bilin_32h_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_put_bilin_64h_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void common_vt_2t_4x4_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_vt_2t_4x8_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-void ff_put_bilin_4v_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void common_vt_2t_8x4_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_vt_2t_8x8mult_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height)
-void ff_put_bilin_8v_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_put_bilin_16v_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_put_bilin_32v_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_put_bilin_64v_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void common_hv_2ht_2vt_4x4_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter_horiz, const int8_t *filter_vert)
-static void common_hv_2ht_2vt_4x8_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter_horiz, const int8_t *filter_vert)
-void ff_put_bilin_4hv_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void common_hv_2ht_2vt_8x4_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter_horiz, const int8_t *filter_vert)
-static void common_hv_2ht_2vt_8x8mult_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter_horiz, const int8_t *filter_vert,
-int32_t height)
-void ff_put_bilin_8hv_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_put_bilin_16hv_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_put_bilin_32hv_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_put_bilin_64hv_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void common_hz_2t_and_aver_dst_4x4_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_hz_2t_and_aver_dst_4x8_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-void ff_avg_bilin_4h_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void common_hz_2t_and_aver_dst_8x4_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_hz_2t_and_aver_dst_8x8mult_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-void ff_avg_bilin_8h_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_avg_bilin_16h_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_avg_bilin_32h_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_avg_bilin_64h_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void common_vt_2t_and_aver_dst_4x4_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-static void common_vt_2t_and_aver_dst_4x8_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter)
-void ff_avg_bilin_4v_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void common_vt_2t_and_aver_dst_8x4_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter)
-static void common_vt_2t_and_aver_dst_8x8mult_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter,
-int32_t height)
-void ff_avg_bilin_8v_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_avg_bilin_16v_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_avg_bilin_32v_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_avg_bilin_64v_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void common_hv_2ht_2vt_and_aver_dst_4x4_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert)
-static void common_hv_2ht_2vt_and_aver_dst_4x8_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert)
-void ff_avg_bilin_4hv_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void common_hv_2ht_2vt_and_aver_dst_8x4_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert)
-static void common_hv_2ht_2vt_and_aver_dst_8x8mult_msa(const uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_horiz,
-const int8_t *filter_vert,
-int32_t height)
-void ff_avg_bilin_8hv_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_avg_bilin_16hv_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_avg_bilin_32hv_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-void ff_avg_bilin_64hv_msa(uint8_t *dst, ptrdiff_t dst_stride,
-const uint8_t *src, ptrdiff_t src_stride,
-int height, int mx, int my)
-static void copy_width8_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void copy_16multx8mult_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height, int32_t width)
-static void copy_width16_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void copy_width32_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void copy_width64_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void avg_width4_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void avg_width8_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void avg_width16_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void avg_width32_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void avg_width64_msa(const uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
+HORIZ_8TAP_4WID_4VECS_FILT                              \
+HORIZ_8TAP_8WID_4VECS_FILT                    \
+PCKEV_XORI128_AVG_ST_UB  \
+PCKEV_AVG_ST_UB                  \
+PCKEV_AVG_ST8x4_UB                                \
+common_hz_8t_4x4_msa
+common_hz_8t_4x8_msa
+common_hz_8t_4x16_msa
+common_hz_8t_4w_msa
+common_hz_8t_8x4_msa
+common_hz_8t_8x8mult_msa
+common_hz_8t_8w_msa
+common_hz_8t_16w_msa
+common_hz_8t_32w_msa
+common_hz_8t_64w_msa
+common_vt_8t_4w_msa
+common_vt_8t_8w_msa
+common_vt_8t_16w_msa
+common_vt_8t_16w_mult_msa
+common_vt_8t_32w_msa
+common_vt_8t_64w_msa
+common_hv_8ht_8vt_4w_msa
+common_hv_8ht_8vt_8w_msa
+common_hv_8ht_8vt_16w_msa
+common_hv_8ht_8vt_32w_msa
+common_hv_8ht_8vt_64w_msa
+common_hz_8t_and_aver_dst_4x4_msa
+common_hz_8t_and_aver_dst_4x8_msa
+common_hz_8t_and_aver_dst_4w_msa
+common_hz_8t_and_aver_dst_8w_msa
+common_hz_8t_and_aver_dst_16w_msa
+common_hz_8t_and_aver_dst_32w_msa
+common_hz_8t_and_aver_dst_64w_msa
+common_vt_8t_and_aver_dst_4w_msa
+common_vt_8t_and_aver_dst_8w_msa
+common_vt_8t_and_aver_dst_16w_mult_msa
+common_vt_8t_and_aver_dst_16w_msa
+common_vt_8t_and_aver_dst_32w_msa
+common_vt_8t_and_aver_dst_64w_msa
+common_hv_8ht_8vt_and_aver_dst_4w_msa
+common_hv_8ht_8vt_and_aver_dst_8w_msa
+common_hv_8ht_8vt_and_aver_dst_16w_msa
+common_hv_8ht_8vt_and_aver_dst_32w_msa
+common_hv_8ht_8vt_and_aver_dst_64w_msa
+common_hz_2t_4x4_msa
+common_hz_2t_4x8_msa
+ff_put_bilin_4h_msa
+common_hz_2t_8x4_msa
+common_hz_2t_8x8mult_msa
+ff_put_bilin_8h_msa
+ff_put_bilin_16h_msa
+ff_put_bilin_32h_msa
+ff_put_bilin_64h_msa
+common_vt_2t_4x4_msa
+common_vt_2t_4x8_msa
+ff_put_bilin_4v_msa
+common_vt_2t_8x4_msa
+common_vt_2t_8x8mult_msa
+ff_put_bilin_8v_msa
+ff_put_bilin_16v_msa
+ff_put_bilin_32v_msa
+ff_put_bilin_64v_msa
+common_hv_2ht_2vt_4x4_msa
+common_hv_2ht_2vt_4x8_msa
+ff_put_bilin_4hv_msa
+common_hv_2ht_2vt_8x4_msa
+common_hv_2ht_2vt_8x8mult_msa
+ff_put_bilin_8hv_msa
+ff_put_bilin_16hv_msa
+ff_put_bilin_32hv_msa
+ff_put_bilin_64hv_msa
+common_hz_2t_and_aver_dst_4x4_msa
+common_hz_2t_and_aver_dst_4x8_msa
+ff_avg_bilin_4h_msa
+common_hz_2t_and_aver_dst_8x4_msa
+common_hz_2t_and_aver_dst_8x8mult_msa
+ff_avg_bilin_8h_msa
+ff_avg_bilin_16h_msa
+ff_avg_bilin_32h_msa
+ff_avg_bilin_64h_msa
+common_vt_2t_and_aver_dst_4x4_msa
+common_vt_2t_and_aver_dst_4x8_msa
+ff_avg_bilin_4v_msa
+common_vt_2t_and_aver_dst_8x4_msa
+common_vt_2t_and_aver_dst_8x8mult_msa
+ff_avg_bilin_8v_msa
+ff_avg_bilin_16v_msa
+ff_avg_bilin_32v_msa
+ff_avg_bilin_64v_msa
+common_hv_2ht_2vt_and_aver_dst_4x4_msa
+common_hv_2ht_2vt_and_aver_dst_4x8_msa
+ff_avg_bilin_4hv_msa
+common_hv_2ht_2vt_and_aver_dst_8x4_msa
+common_hv_2ht_2vt_and_aver_dst_8x8mult_msa
+ff_avg_bilin_8hv_msa
+ff_avg_bilin_16hv_msa
+ff_avg_bilin_32hv_msa
+ff_avg_bilin_64hv_msa
+copy_width8_msa
+copy_16multx8mult_msa
+copy_width16_msa
+copy_width32_msa
+copy_width64_msa
+avg_width4_msa
+avg_width8_msa
+avg_width16_msa
+avg_width32_msa
+avg_width64_msa
 static const int8_t vp9_subpel_filters_msa[3][15][8] = ;
-#define VP9_8TAP_MIPS_MSA_FUNC(SIZE, type, type_idx)                           \
+VP9_8TAP_MIPS_MSA_FUNC                           \
 void ff_put_8tap_##type##_##SIZE##h_msa(uint8_t *dst, ptrdiff_t dststride,     \
 const uint8_t *src,                    \
 ptrdiff_t srcstride,                   \
@@ -447,7 +148,7 @@ void ff_avg_8tap_##type##_##SIZE##hv_msa(uint8_t *dst, ptrdiff_t dststride,    \
 const uint8_t *src,                   \
 ptrdiff_t srcstride,                  \
 int h, int mx, int my)                \
-#define VP9_COPY_AVG_MIPS_MSA_FUNC(SIZE)                           \
+VP9_COPY_AVG_MIPS_MSA_FUNC                           \
 void ff_copy##SIZE##_msa(uint8_t *dst, ptrdiff_t dststride,        \
 const uint8_t *src, ptrdiff_t srcstride,  \
 int h, int mx, int my)                    \
@@ -456,7 +157,7 @@ int h, int mx, int my)                    \
 void ff_avg##SIZE##_msa(uint8_t *dst, ptrdiff_t dststride,         \
 const uint8_t *src, ptrdiff_t srcstride,   \
 int h, int mx, int my)                     \
-#define VP9_AVG_MIPS_MSA_FUNC(SIZE)                               \
+VP9_AVG_MIPS_MSA_FUNC                               \
 void ff_avg##SIZE##_msa(uint8_t *dst, ptrdiff_t dststride,        \
 const uint8_t *src, ptrdiff_t srcstride,  \
 int h, int mx, int my)                    \

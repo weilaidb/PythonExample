@@ -1,19 +1,15 @@
-static void put_swf_tag(AVFormatContext *s, int tag)
-static void put_swf_end_tag(AVFormatContext *s)
-static inline void max_nbits(int *nbits_ptr, int val)
-static void put_swf_rect(AVIOContext *pb,
-int xmin, int xmax, int ymin, int ymax)
-static void put_swf_line_edge(PutBitContext *pb, int dx, int dy)
+put_swf_tag
+put_swf_end_tag
+max_nbits
+put_swf_rect
+put_swf_line_edge
 #define FRAC_BITS 16
-static void put_swf_matrix(AVIOContext *pb,
-int a, int b, int c, int d, int tx, int ty)
-static int swf_write_header(AVFormatContext *s)
-static int swf_write_video(AVFormatContext *s,
-AVCodecParameters *par, const uint8_t *buf, int size)
-static int swf_write_audio(AVFormatContext *s,
-AVCodecParameters *par, uint8_t *buf, int size)
-static int swf_write_packet(AVFormatContext *s, AVPacket *pkt)
-static int swf_write_trailer(AVFormatContext *s)
+put_swf_matrix
+swf_write_header
+swf_write_video
+swf_write_audio
+swf_write_packet
+swf_write_trailer
 #if CONFIG_SWF_MUXER
 AVOutputFormat ff_swf_muxer = ;
 #if CONFIG_AVM2_MUXER

@@ -1,10 +1,10 @@
 #define AVUTIL_ARM_CPU_H
-#define have_armv5te(flags) CPUEXT(flags, ARMV5TE)
-#define have_armv6(flags)   CPUEXT(flags, ARMV6)
-#define have_armv6t2(flags) CPUEXT(flags, ARMV6T2)
-#define have_vfp(flags)     CPUEXT(flags, VFP)
-#define have_vfpv3(flags)   CPUEXT(flags, VFPV3)
-#define have_neon(flags)    CPUEXT(flags, NEON)
-#define have_setend(flags)  CPUEXT(flags, SETEND)
-#define have_vfp_vm(flags)                                              \
+have_armv5te CPUEXT(flags, ARMV5TE)
+have_armv6   CPUEXT(flags, ARMV6)
+have_armv6t2 CPUEXT(flags, ARMV6T2)
+have_vfp     CPUEXT(flags, VFP)
+have_vfpv3   CPUEXT(flags, VFPV3)
+have_neon    CPUEXT(flags, NEON)
+have_setend  CPUEXT(flags, SETEND)
+have_vfp_vm                                              \
 (HAVE_VFP && ((flags) & AV_CPU_FLAG_VFP_VM))

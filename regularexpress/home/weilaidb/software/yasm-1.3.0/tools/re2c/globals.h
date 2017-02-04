@@ -14,4 +14,4 @@ extern unsigned int vUsedLabelAlloc;
 extern unsigned char asc2ebc[256];
 extern unsigned char ebc2asc[256];
 extern unsigned char *xlat, *talx;
-char *mystrdup(const char *str);
+*mystrdup;

@@ -1,9 +1,9 @@
-#define OFFSET(x) offsetof(NvencContext, x)
+OFFSET offsetof(NvencContext, x)
 #define VE AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_ENCODING_PARAM
 static const AVOption options[] = ;
 static const AVCodecDefault defaults[] = ;
 #if FF_API_NVENC_OLD_NAME
-static av_cold int nvenc_old_init(AVCodecContext *avctx)
+nvenc_old_init
 #if CONFIG_NVENC_ENCODER
 static const AVClass nvenc_class = ;
 AVCodec ff_nvenc_encoder = ;

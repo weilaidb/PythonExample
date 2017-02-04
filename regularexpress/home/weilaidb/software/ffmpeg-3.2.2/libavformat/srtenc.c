@@ -1,4 +1,4 @@
 typedef struct SRTContext SRTContext;
-static int srt_write_header(AVFormatContext *avf)
-static int srt_write_packet(AVFormatContext *avf, AVPacket *pkt)
+srt_write_header
+srt_write_packet
 AVOutputFormat ff_srt_muxer = ;

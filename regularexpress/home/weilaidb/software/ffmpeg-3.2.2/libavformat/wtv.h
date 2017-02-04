@@ -2,7 +2,7 @@
 #define WTV_SECTOR_BITS    12
 #define WTV_SECTOR_SIZE    (1 << WTV_SECTOR_BITS)
 #define WTV_BIGSECTOR_BITS 18
-#define WTV_PAD8(x) (((x) + 7) & ~7)
+WTV_PAD8 (((x) + 7) & ~7)
 extern const uint8_t ff_timeline_le16[16];
 extern const uint8_t ff_timeline_table_0_entries_Events_le16[62];
 extern const uint8_t ff_table_0_entries_legacy_attrib_le16[58];

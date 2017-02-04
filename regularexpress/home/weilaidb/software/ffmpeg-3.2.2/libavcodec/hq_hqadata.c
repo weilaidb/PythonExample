@@ -106,4 +106,4 @@ static const uint8_t hq_tab_19[] = ;
 static const uint8_t hq_tab_20[] = ;
 static const uint8_t hq_tab_21[] = ;
 const HQProfile ff_hq_profile[NUM_HQ_PROFILES] = ;
-av_cold int ff_hq_init_vlcs(HQContext *c)
+ff_hq_init_vlcs

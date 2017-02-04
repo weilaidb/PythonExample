@@ -18,11 +18,11 @@ typedef int (*rv40_loop_filter_strength_func)(uint8_t *src, ptrdiff_t stride,
 int beta, int beta2, int edge,
 int *p1, int *q1);
 typedef struct RV34DSPContext  RV34DSPContext;
-void ff_rv30dsp_init(RV34DSPContext *c);
-void ff_rv34dsp_init(RV34DSPContext *c);
-void ff_rv40dsp_init(RV34DSPContext *c);
-void ff_rv34dsp_init_arm(RV34DSPContext *c);
-void ff_rv34dsp_init_x86(RV34DSPContext *c);
-void ff_rv40dsp_init_aarch64(RV34DSPContext *c);
-void ff_rv40dsp_init_x86(RV34DSPContext *c);
-void ff_rv40dsp_init_arm(RV34DSPContext *c);
+ff_rv30dsp_init;
+ff_rv34dsp_init;
+ff_rv40dsp_init;
+ff_rv34dsp_init_arm;
+ff_rv34dsp_init_x86;
+ff_rv40dsp_init_aarch64;
+ff_rv40dsp_init_x86;
+ff_rv40dsp_init_arm;

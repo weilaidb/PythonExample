@@ -4,4 +4,4 @@
 #define WV_FLAG_FINAL_BLOCK   (1 << 12)
 #define WV_BLOCK_LIMIT 1048576
 typedef struct WvHeader  WvHeader;
-int ff_wv_parse_header(WvHeader *wv, const uint8_t *data);
+ff_wv_parse_header;

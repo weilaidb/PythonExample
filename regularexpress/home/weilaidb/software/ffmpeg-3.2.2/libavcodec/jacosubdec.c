@@ -1,11 +1,10 @@
 #undef time
-static int insert_text(AVBPrint *dst, const char *in, const char *arg)
-static int insert_datetime(AVBPrint *dst, const char *in, const char *arg)
-static int insert_color(AVBPrint *dst, const char *in, const char *arg)
-static int insert_font(AVBPrint *dst, const char *in, const char *arg)
+insert_text
+insert_datetime
+insert_color
+insert_font
 static const struct  ass_codes_map[] = ;
 enum ;
-static void jacosub_to_ass(AVCodecContext *avctx, AVBPrint *dst, const char *src)
-static int jacosub_decode_frame(AVCodecContext *avctx,
-void *data, int *got_sub_ptr, AVPacket *avpkt)
+jacosub_to_ass
+jacosub_decode_frame
 AVCodec ff_jacosub_decoder = ;

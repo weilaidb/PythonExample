@@ -3,11 +3,11 @@ typedef struct LenscorrectionCtx  LenscorrectionCtx;
 static const AVOption lenscorrection_options[] = ;
 AVFILTER_DEFINE_CLASS(lenscorrection);
 typedef struct ThreadData  ThreadData;
-static int filter_slice(AVFilterContext *ctx, void *arg, int job, int nb_jobs)
-static int query_formats(AVFilterContext *ctx)
-static av_cold void uninit(AVFilterContext *ctx)
-static int config_props(AVFilterLink *outlink)
-static int filter_frame(AVFilterLink *inlink, AVFrame *in)
+filter_slice
+query_formats
+uninit
+config_props
+filter_frame
 static const AVFilterPad lenscorrection_inputs[] = ;
 static const AVFilterPad lenscorrection_outputs[] = ;
 AVFilter ff_vf_lenscorrection = ;

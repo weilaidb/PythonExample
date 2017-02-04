@@ -1,19 +1,19 @@
 #define AVCODEC_X86_HEVCDSP_H
-#define idct_dc_proto(size, bitd, opt) \
+idct_dc_proto \
 void ff_hevc_idct##size##_dc_add_##bitd##_##opt(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride)
-#define PEL_LINK(dst, idx1, idx2, idx3, name, D, opt) \
+PEL_LINK \
 dst[idx1][idx2][idx3] = ff_hevc_put_hevc_ ## name ## _ ## D ## _##opt; \
 dst ## _bi[idx1][idx2][idx3] = ff_hevc_put_hevc_bi_ ## name ## _ ## D ## _##opt; \
 dst ## _uni[idx1][idx2][idx3] = ff_hevc_put_hevc_uni_ ## name ## _ ## D ## _##opt; \
 dst ## _uni_w[idx1][idx2][idx3] = ff_hevc_put_hevc_uni_w_ ## name ## _ ## D ## _##opt; \
 dst ## _bi_w[idx1][idx2][idx3] = ff_hevc_put_hevc_bi_w_ ## name ## _ ## D ## _##opt
-#define PEL_PROTOTYPE(name, D, opt) \
+PEL_PROTOTYPE \
 void ff_hevc_put_hevc_ ## name ## _ ## D ## _##opt(int16_t *dst, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width); \
 void ff_hevc_put_hevc_bi_ ## name ## _ ## D ## _##opt(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, intptr_t mx, intptr_t my, int width); \
 void ff_hevc_put_hevc_uni_ ## name ## _ ## D ## _##opt(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my, int width); \
 void ff_hevc_put_hevc_uni_w_ ## name ## _ ## D ## _##opt(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int height, int denom, int wx, int ox, intptr_t mx, intptr_t my, int width); \
 void ff_hevc_put_hevc_bi_w_ ## name ## _ ## D ## _##opt(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, int denom, int wx0, int wx1, int ox0, int ox1, intptr_t mx, intptr_t my, int width)
-#define EPEL_PROTOTYPES(fname, bitd, opt) \
+EPEL_PROTOTYPES \
 PEL_PROTOTYPE(fname##4,  bitd, opt); \
 PEL_PROTOTYPE(fname##6,  bitd, opt); \
 PEL_PROTOTYPE(fname##8,  bitd, opt); \
@@ -23,7 +23,7 @@ PEL_PROTOTYPE(fname##24, bitd, opt); \
 PEL_PROTOTYPE(fname##32, bitd, opt); \
 PEL_PROTOTYPE(fname##48, bitd, opt); \
 PEL_PROTOTYPE(fname##64, bitd, opt)
-#define QPEL_PROTOTYPES(fname, bitd, opt) \
+QPEL_PROTOTYPES \
 PEL_PROTOTYPE(fname##4,  bitd, opt); \
 PEL_PROTOTYPE(fname##8,  bitd, opt); \
 PEL_PROTOTYPE(fname##12, bitd, opt); \
@@ -32,10 +32,10 @@ PEL_PROTOTYPE(fname##24, bitd, opt); \
 PEL_PROTOTYPE(fname##32, bitd, opt); \
 PEL_PROTOTYPE(fname##48, bitd, opt); \
 PEL_PROTOTYPE(fname##64, bitd, opt)
-#define WEIGHTING_PROTOTYPE(width, bitd, opt) \
+WEIGHTING_PROTOTYPE \
 void ff_hevc_put_hevc_uni_w##width##_##bitd##_##opt(uint8_t *dst, ptrdiff_t dststride, int16_t *_src, int height, int denom,  int _wx, int _ox); \
 void ff_hevc_put_hevc_bi_w##width##_##bitd##_##opt(uint8_t *dst, ptrdiff_t dststride, int16_t *_src, int16_t *_src2, int height, int denom,  int _wx0,  int _wx1, int _ox0, int _ox1)
-#define WEIGHTING_PROTOTYPES(bitd, opt) \
+WEIGHTING_PROTOTYPES \
 WEIGHTING_PROTOTYPE(2, bitd, opt); \
 WEIGHTING_PROTOTYPE(4, bitd, opt); \
 WEIGHTING_PROTOTYPE(6, bitd, opt); \
@@ -49,31 +49,31 @@ WEIGHTING_PROTOTYPE(64, bitd, opt)
 EPEL_PROTOTYPES(pel_pixels ,  8, sse4);
 EPEL_PROTOTYPES(pel_pixels , 10, sse4);
 EPEL_PROTOTYPES(pel_pixels , 12, sse4);
-void ff_hevc_put_hevc_pel_pixels16_8_avx2(int16_t *dst, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_pel_pixels24_8_avx2(int16_t *dst, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_pel_pixels32_8_avx2(int16_t *dst, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_pel_pixels48_8_avx2(int16_t *dst, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_pel_pixels64_8_avx2(int16_t *dst, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_pel_pixels16_10_avx2(int16_t *dst, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_pel_pixels24_10_avx2(int16_t *dst, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_pel_pixels32_10_avx2(int16_t *dst, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_pel_pixels48_10_avx2(int16_t *dst, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_pel_pixels64_10_avx2(int16_t *dst, uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_uni_pel_pixels32_8_avx2(uint8_t *dst, ptrdiff_t dststride,uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_uni_pel_pixels48_8_avx2(uint8_t *dst, ptrdiff_t dststride,uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_uni_pel_pixels64_8_avx2(uint8_t *dst, ptrdiff_t dststride,uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_uni_pel_pixels96_8_avx2(uint8_t *dst, ptrdiff_t dststride,uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_uni_pel_pixels128_8_avx2(uint8_t *dst, ptrdiff_t dststride,uint8_t *_src, ptrdiff_t _srcstride, int height, intptr_t mx, intptr_t my,int width);
-void ff_hevc_put_hevc_bi_pel_pixels16_8_avx2(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, intptr_t mx, intptr_t my, int width);
-void ff_hevc_put_hevc_bi_pel_pixels24_8_avx2(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, intptr_t mx, intptr_t my, int width);
-void ff_hevc_put_hevc_bi_pel_pixels32_8_avx2(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, intptr_t mx, intptr_t my, int width);
-void ff_hevc_put_hevc_bi_pel_pixels48_8_avx2(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, intptr_t mx, intptr_t my, int width);
-void ff_hevc_put_hevc_bi_pel_pixels64_8_avx2(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, intptr_t mx, intptr_t my, int width);
-void ff_hevc_put_hevc_bi_pel_pixels16_10_avx2(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, intptr_t mx, intptr_t my, int width);
-void ff_hevc_put_hevc_bi_pel_pixels24_10_avx2(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, intptr_t mx, intptr_t my, int width);
-void ff_hevc_put_hevc_bi_pel_pixels32_10_avx2(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, intptr_t mx, intptr_t my, int width);
-void ff_hevc_put_hevc_bi_pel_pixels48_10_avx2(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, intptr_t mx, intptr_t my, int width);
-void ff_hevc_put_hevc_bi_pel_pixels64_10_avx2(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride, int16_t *src2, int height, intptr_t mx, intptr_t my, int width);
+ff_hevc_put_hevc_pel_pixels16_8_avx2;
+ff_hevc_put_hevc_pel_pixels24_8_avx2;
+ff_hevc_put_hevc_pel_pixels32_8_avx2;
+ff_hevc_put_hevc_pel_pixels48_8_avx2;
+ff_hevc_put_hevc_pel_pixels64_8_avx2;
+ff_hevc_put_hevc_pel_pixels16_10_avx2;
+ff_hevc_put_hevc_pel_pixels24_10_avx2;
+ff_hevc_put_hevc_pel_pixels32_10_avx2;
+ff_hevc_put_hevc_pel_pixels48_10_avx2;
+ff_hevc_put_hevc_pel_pixels64_10_avx2;
+ff_hevc_put_hevc_uni_pel_pixels32_8_avx2;
+ff_hevc_put_hevc_uni_pel_pixels48_8_avx2;
+ff_hevc_put_hevc_uni_pel_pixels64_8_avx2;
+ff_hevc_put_hevc_uni_pel_pixels96_8_avx2;
+ff_hevc_put_hevc_uni_pel_pixels128_8_avx2;
+ff_hevc_put_hevc_bi_pel_pixels16_8_avx2;
+ff_hevc_put_hevc_bi_pel_pixels24_8_avx2;
+ff_hevc_put_hevc_bi_pel_pixels32_8_avx2;
+ff_hevc_put_hevc_bi_pel_pixels48_8_avx2;
+ff_hevc_put_hevc_bi_pel_pixels64_8_avx2;
+ff_hevc_put_hevc_bi_pel_pixels16_10_avx2;
+ff_hevc_put_hevc_bi_pel_pixels24_10_avx2;
+ff_hevc_put_hevc_bi_pel_pixels32_10_avx2;
+ff_hevc_put_hevc_bi_pel_pixels48_10_avx2;
+ff_hevc_put_hevc_bi_pel_pixels64_10_avx2;
 EPEL_PROTOTYPES(epel_h ,  8, sse4);
 EPEL_PROTOTYPES(epel_h , 10, sse4);
 EPEL_PROTOTYPES(epel_h , 12, sse4);
@@ -155,17 +155,17 @@ PEL_PROTOTYPE(qpel_hv64,10, avx2);
 WEIGHTING_PROTOTYPES(8, sse4);
 WEIGHTING_PROTOTYPES(10, sse4);
 WEIGHTING_PROTOTYPES(12, sse4);
-void ff_hevc_transform_add4_8_mmxext(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add8_8_sse2(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add16_8_sse2(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add32_8_sse2(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add8_8_avx(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add16_8_avx(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add32_8_avx(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add32_8_avx2(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add4_10_mmxext(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add8_10_sse2(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add16_10_sse2(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add32_10_sse2(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add16_10_avx2(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
-void ff_hevc_transform_add32_10_avx2(uint8_t *dst, int16_t *coeffs, ptrdiff_t stride);
+ff_hevc_transform_add4_8_mmxext;
+ff_hevc_transform_add8_8_sse2;
+ff_hevc_transform_add16_8_sse2;
+ff_hevc_transform_add32_8_sse2;
+ff_hevc_transform_add8_8_avx;
+ff_hevc_transform_add16_8_avx;
+ff_hevc_transform_add32_8_avx;
+ff_hevc_transform_add32_8_avx2;
+ff_hevc_transform_add4_10_mmxext;
+ff_hevc_transform_add8_10_sse2;
+ff_hevc_transform_add16_10_sse2;
+ff_hevc_transform_add32_10_sse2;
+ff_hevc_transform_add16_10_avx2;
+ff_hevc_transform_add32_10_avx2;

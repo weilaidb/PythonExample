@@ -1,8 +1,8 @@
 typedef struct HWUploadContext  HWUploadContext;
-static int hwupload_query_formats(AVFilterContext *avctx)
-static int hwupload_config_output(AVFilterLink *outlink)
-static int hwupload_filter_frame(AVFilterLink *link, AVFrame *input)
-static av_cold void hwupload_uninit(AVFilterContext *avctx)
+hwupload_query_formats
+hwupload_config_output
+hwupload_filter_frame
+hwupload_uninit
 static const AVClass hwupload_class = ;
 static const AVFilterPad hwupload_inputs[] = ;
 static const AVFilterPad hwupload_outputs[] = ;

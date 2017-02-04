@@ -1,8 +1,8 @@
 typedef struct VideoMuxData  VideoMuxData;
-static int write_header(AVFormatContext *s)
-static int write_packet(AVFormatContext *s, AVPacket *pkt)
-static int query_codec(enum AVCodecID id, int std_compliance)
-#define OFFSET(x) offsetof(VideoMuxData, x)
+write_header
+write_packet
+query_codec
+OFFSET offsetof(VideoMuxData, x)
 #define ENC AV_OPT_FLAG_ENCODING_PARAM
 static const AVOption muxoptions[] = ;
 #if CONFIG_IMAGE2_MUXER

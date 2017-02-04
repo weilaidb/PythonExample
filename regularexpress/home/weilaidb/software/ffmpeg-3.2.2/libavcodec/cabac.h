@@ -7,5 +7,5 @@ extern const uint8_t ff_h264_cabac_tables[512 + 4*2*64 + 4*64 + 63];
 #define CABAC_BITS 16
 #define CABAC_MASK ((1<<CABAC_BITS)-1)
 typedef struct CABACContextCABACContext;
-void ff_init_cabac_encoder(CABACContext *c, uint8_t *buf, int buf_size);
-int ff_init_cabac_decoder(CABACContext *c, const uint8_t *buf, int buf_size);
+ff_init_cabac_encoder;
+ff_init_cabac_decoder;

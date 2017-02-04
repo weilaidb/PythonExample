@@ -38,18 +38,16 @@ extern const uint8_t     ff_cavs_chroma_qp[64];
 extern const uint8_t     ff_cavs_partition_flags[30];
 extern const cavs_vector ff_cavs_intra_mv;
 extern const cavs_vector ff_cavs_dir_mv;
-static inline void set_mvs(cavs_vector *mv, enum cavs_block size)
-void ff_cavs_filter(AVSContext *h, enum cavs_mb mb_type);
-void ff_cavs_load_intra_pred_luma(AVSContext *h, uint8_t *top, uint8_t **left,
-int block);
-void ff_cavs_load_intra_pred_chroma(AVSContext *h);
-void ff_cavs_modify_mb_i(AVSContext *h, int *pred_mode_uv);
-void ff_cavs_inter(AVSContext *h, enum cavs_mb mb_type);
-void ff_cavs_mv(AVSContext *h, enum cavs_mv_loc nP, enum cavs_mv_loc nC,
-enum cavs_mv_pred mode, enum cavs_block size, int ref);
-void ff_cavs_init_mb(AVSContext *h);
-int  ff_cavs_next_mb(AVSContext *h);
-int ff_cavs_init_pic(AVSContext *h);
-int ff_cavs_init_top_lines(AVSContext *h);
-int ff_cavs_init(AVCodecContext *avctx);
+set_mvs
+ff_cavs_filter;
+ff_cavs_load_intra_pred_luma;
+ff_cavs_load_intra_pred_chroma;
+ff_cavs_modify_mb_i;
+ff_cavs_inter;
+ff_cavs_mv;
+ff_cavs_init_mb;
+ff_cavs_next_mb;
+ff_cavs_init_pic;
+ff_cavs_init_top_lines;
+ff_cavs_init;
 int ff_cavs_end (AVCodecContext *avctx);

@@ -22,38 +22,23 @@ typedef struct RTSPState  RTSPState;
 #define RTSP_FLAG_PREFER_TCP  0x10
 typedef struct RTSPSource  RTSPSource;
 typedef struct RTSPStream  RTSPStream;
-void ff_rtsp_parse_line(AVFormatContext *s,
-RTSPMessageHeader *reply, const char *buf,
-RTSPState *rt, const char *method);
-int ff_rtsp_send_cmd_async(AVFormatContext *s, const char *method,
-const char *url, const char *headers);
-int ff_rtsp_send_cmd_with_content(AVFormatContext *s,
-const char *method, const char *url,
-const char *headers,
-RTSPMessageHeader *reply,
-unsigned char **content_ptr,
-const unsigned char *send_content,
-int send_content_length);
-int ff_rtsp_send_cmd(AVFormatContext *s, const char *method,
-const char *url, const char *headers,
-RTSPMessageHeader *reply, unsigned char **content_ptr);
-int ff_rtsp_read_reply(AVFormatContext *s, RTSPMessageHeader *reply,
-unsigned char **content_ptr,
-int return_on_interleaved_data, const char *method);
-void ff_rtsp_skip_packet(AVFormatContext *s);
-int ff_rtsp_connect(AVFormatContext *s);
-void ff_rtsp_close_streams(AVFormatContext *s);
-void ff_rtsp_close_connections(AVFormatContext *s);
-int ff_rtsp_setup_input_streams(AVFormatContext *s, RTSPMessageHeader *reply);
-int ff_rtsp_setup_output_streams(AVFormatContext *s, const char *addr);
-int ff_rtsp_parse_streaming_commands(AVFormatContext *s);
-int ff_sdp_parse(AVFormatContext *s, const char *content);
-int ff_rtsp_tcp_read_packet(AVFormatContext *s, RTSPStream **prtsp_st,
-uint8_t *buf, int buf_size);
-int ff_rtsp_tcp_write_packet(AVFormatContext *s, RTSPStream *rtsp_st);
-int ff_rtsp_fetch_packet(AVFormatContext *s, AVPacket *pkt);
-int ff_rtsp_make_setup_request(AVFormatContext *s, const char *host, int port,
-int lower_transport, const char *real_challenge);
-void ff_rtsp_undo_setup(AVFormatContext *s, int send_packets);
-int ff_rtsp_open_transport_ctx(AVFormatContext *s, RTSPStream *rtsp_st);
+ff_rtsp_parse_line;
+ff_rtsp_send_cmd_async;
+ff_rtsp_send_cmd_with_content;
+ff_rtsp_send_cmd;
+ff_rtsp_read_reply;
+ff_rtsp_skip_packet;
+ff_rtsp_connect;
+ff_rtsp_close_streams;
+ff_rtsp_close_connections;
+ff_rtsp_setup_input_streams;
+ff_rtsp_setup_output_streams;
+ff_rtsp_parse_streaming_commands;
+ff_sdp_parse;
+ff_rtsp_tcp_read_packet;
+ff_rtsp_tcp_write_packet;
+ff_rtsp_fetch_packet;
+ff_rtsp_make_setup_request;
+ff_rtsp_undo_setup;
+ff_rtsp_open_transport_ctx;
 extern const AVOption ff_rtsp_options[];

@@ -13,4 +13,4 @@ extern VLC ff_mb_ptype_vlc;
 extern VLC ff_mb_btype_vlc;
 extern VLC ff_mb_pat_vlc;
 extern VLC ff_mv_vlc;
-void ff_mpeg12_init_vlcs(void);
+ff_mpeg12_init_vlcs;

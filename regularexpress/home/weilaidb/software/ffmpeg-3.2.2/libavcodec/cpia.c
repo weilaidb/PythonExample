@@ -12,8 +12,7 @@
 #define EOL             0xfd
 #define EOI             0xff
 typedef struct  CpiaContext;
-static int cpia_decode_frame(AVCodecContext *avctx,
-void *data, int *got_frame, AVPacket* avpkt)
-static av_cold int cpia_decode_init(AVCodecContext *avctx)
-static av_cold int cpia_decode_end(AVCodecContext *avctx)
+cpia_decode_frame
+cpia_decode_init
+cpia_decode_end
 AVCodec ff_cpia_decoder = ;

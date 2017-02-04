@@ -13,12 +13,12 @@
 #define AV_WB32 av_write_bswap32
 #define AV_RB64 av_read_bswap64
 #define AV_WB64 av_write_bswap64
-static av_always_inline uint16_t av_read_bswap16(const void *p)
-static av_always_inline void av_write_bswap16(void *p, uint16_t v)
-static av_always_inline uint32_t av_read_bswap32(const void *p)
-static av_always_inline void av_write_bswap32(void *p, uint32_t v)
+av_read_bswap16
+av_write_bswap16
+av_read_bswap32
+av_write_bswap32
 #if HAVE_LDBRX
-static av_always_inline uint64_t av_read_bswap64(const void *p)
-static av_always_inline void av_write_bswap64(void *p, uint64_t v)
-static av_always_inline uint64_t av_read_bswap64(const void *p)
-static av_always_inline void av_write_bswap64(void *p, uint64_t v)
+av_read_bswap64
+av_write_bswap64
+av_read_bswap64
+av_write_bswap64

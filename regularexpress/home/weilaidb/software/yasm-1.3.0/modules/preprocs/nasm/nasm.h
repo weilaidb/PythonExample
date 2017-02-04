@@ -29,19 +29,19 @@ struct tokenval ;
 typedef int (*scanner) (void *private_data, struct tokenval *tv);
 enum ;
 #define CRITICAL 0x100
-typedef yasm_expr *(*evalfunc) (scanner sc, void *scprivate, struct tokenval *tv,
+* (scanner sc, void *scprivate, struct tokenval *tv,
 int critical, efunc error);
 typedef struct  Preproc;
-#define isidstart(c) ( isalpha(c) || (c)=='_' || (c)=='.' || (c)=='?' \
+isidstart ( isalpha(c) || (c)=='_' || (c)=='.' || (c)=='?' \
 || (c)=='@' )
-#define isidchar(c)  ( isidstart(c) || isdigit(c) || (c)=='$' || (c)=='#' \
+isidchar  ( isidstart(c) || isdigit(c) || (c)=='$' || (c)=='#' \
 || (c)=='~' )
-#define isnumstart(c)  ( isdigit(c) || (c)=='$' )
-#define isnumchar(c)   ( isalnum(c) )
-#define numvalue(c)  ((c)>='a' ? (c)-'a'+10 : (c)>='A' ? (c)-'A'+10 : (c)-'0')
+isnumstart  ( isdigit(c) || (c)=='$' )
+isnumchar   ( isalnum(c) )
+numvalue  ((c)>='a' ? (c)-'a'+10 : (c)>='A' ? (c)-'A'+10 : (c)-'0')
 enum ;
-#define elements(x)     ( sizeof(x) / sizeof(*(x)) )
+elements     ( sizeof(x) / sizeof(*(x)) )
 extern int tasm_compatible_mode;
 extern int tasm_locals;
 extern const char *tasm_segment;
-const char *tasm_get_segment_register(const char *segment);
+*tasm_get_segment_register;

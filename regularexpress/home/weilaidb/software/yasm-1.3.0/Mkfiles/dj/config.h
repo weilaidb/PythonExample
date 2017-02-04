@@ -1,7 +1,7 @@
-#define yasm__splitpath(path, tail)     yasm__splitpath_win(path, tail)
-#define yasm__abspath(path)             yasm__abspath_win(path)
-#define yasm__combpath(from, to)        yasm__combpath_win(from, to)
-#define CPP_PROG "gcc -E"
+yasm__splitpath     yasm__splitpath_win(path, tail)
+yasm__abspath             yasm__abspath_win(path)
+yasm__combpath        yasm__combpath_win(from, to)
+#define CPP_PROG
 #define HAVE_ABORT 1
 #define HAVE_FTRUNCATE 1
 #define HAVE_GETCWD 1
@@ -19,11 +19,11 @@
 #define HAVE_SYS_TYPES_H 1
 #define HAVE_TOASCII 1
 #define HAVE_UNISTD_H 1
-#define PACKAGE "yasm"
-#define PACKAGE_BUGREPORT "bug-yasm@tortall.net"
-#define PACKAGE_NAME "yasm"
-#define PACKAGE_TARNAME "yasm"
+#define PACKAGE
+#define PACKAGE_BUGREPORT
+#define PACKAGE_NAME
+#define PACKAGE_TARNAME
 #define PROTOTYPES 1
 #define STDC_HEADERS 1
-#define VERSION "HEAD"
+#define VERSION
 #define __PROTOTYPES 1

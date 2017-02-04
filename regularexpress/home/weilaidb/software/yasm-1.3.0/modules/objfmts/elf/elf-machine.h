@@ -1,23 +1,23 @@
 #define ELF_MACHINE_H_INCLUDED
-#define YASM_WRITE_32I_L(p, i) do  while (0)
-#define YASM_WRITE_64I_L(p, i) do  while (0)
-#define YASM_WRITE_64C_L(p, hi, lo) do  while (0)
-#define YASM_WRITE_64Z_L(p, i)          YASM_WRITE_64C_L(p, 0, i)
-typedef int(*func_accepts_reloc)(size_t val, yasm_symrec *wrt);
-typedef void(*func_write_symtab_entry)(unsigned char *bufp,
+YASM_WRITE_32I_L do  while (0)
+YASM_WRITE_64I_L do  while (0)
+YASM_WRITE_64C_L do  while (0)
+YASM_WRITE_64Z_L          YASM_WRITE_64C_L(p, 0, i)
+int(size_t val, yasm_symrec *wrt);
+void(unsigned char *bufp,
 elf_symtab_entry *entry,
 yasm_intnum *value_intn,
 yasm_intnum *size_intn);
-typedef void(*func_write_secthead)(unsigned char *bufp, elf_secthead *shead);
-typedef void(*func_write_secthead_rel)(unsigned char *bufp,
+void(unsigned char *bufp, elf_secthead *shead);
+void(unsigned char *bufp,
 elf_secthead *shead,
 elf_section_index symtab_idx,
 elf_section_index sindex);
-typedef void(*func_handle_reloc_addend)(yasm_intnum *intn,
+void(yasm_intnum *intn,
 elf_reloc_entry *reloc,
 unsigned long offset);
-typedef unsigned int(*func_map_reloc_info_to_type)(elf_reloc_entry *reloc);
-typedef void(*func_write_reloc)(unsigned char *bufp,
+int(elf_reloc_entry *reloc);
+void(unsigned char *bufp,
 elf_reloc_entry *reloc,
 unsigned int r_type,
 unsigned int r_sym);

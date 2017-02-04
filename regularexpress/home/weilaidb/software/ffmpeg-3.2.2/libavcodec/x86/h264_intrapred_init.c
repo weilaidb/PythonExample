@@ -1,4 +1,4 @@
-#define PRED4x4(TYPE, DEPTH, OPT) \
+PRED4x4 \
 void ff_pred4x4_ ## TYPE ## _ ## DEPTH ## _ ## OPT (uint8_t *src, \
 const uint8_t *topright, \
 ptrdiff_t stride);
@@ -17,7 +17,7 @@ PRED4x4(horizontal_up, 10, mmxext)
 PRED4x4(horizontal_down, 10, sse2)
 PRED4x4(horizontal_down, 10, ssse3)
 PRED4x4(horizontal_down, 10, avx)
-#define PRED8x8(TYPE, DEPTH, OPT) \
+PRED8x8 \
 void ff_pred8x8_ ## TYPE ## _ ## DEPTH ## _ ## OPT (uint8_t *src, \
 ptrdiff_t stride);
 PRED8x8(dc, 10, mmxext)
@@ -26,7 +26,7 @@ PRED8x8(top_dc, 10, sse2)
 PRED8x8(plane, 10, sse2)
 PRED8x8(vertical, 10, sse2)
 PRED8x8(horizontal, 10, sse2)
-#define PRED8x8L(TYPE, DEPTH, OPT)\
+PRED8x8L\
 void ff_pred8x8l_ ## TYPE ## _ ## DEPTH ## _ ## OPT (uint8_t *src, \
 int has_topleft, \
 int has_topright, \
@@ -54,7 +54,7 @@ PRED8x8L(vertical_right, 10, avx)
 PRED8x8L(horizontal_up, 10, sse2)
 PRED8x8L(horizontal_up, 10, ssse3)
 PRED8x8L(horizontal_up, 10, avx)
-#define PRED16x16(TYPE, DEPTH, OPT)\
+PRED16x16\
 void ff_pred16x16_ ## TYPE ## _ ## DEPTH ## _ ## OPT (uint8_t *src, \
 ptrdiff_t stride);
 PRED16x16(dc, 10, mmxext)
@@ -142,6 +142,4 @@ PRED4x4(tm_vp8, 8, mmx)
 PRED4x4(tm_vp8, 8, mmxext)
 PRED4x4(tm_vp8, 8, ssse3)
 PRED4x4(vertical_vp8, 8, mmxext)
-av_cold void ff_h264_pred_init_x86(H264PredContext *h, int codec_id,
-const int bit_depth,
-const int chroma_format_idc)
+ff_h264_pred_init_x86

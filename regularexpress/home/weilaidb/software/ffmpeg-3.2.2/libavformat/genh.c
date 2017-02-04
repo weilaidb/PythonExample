@@ -1,5 +1,5 @@
 typedef struct GENHDemuxContext  GENHDemuxContext;
-static int genh_probe(AVProbeData *p)
-static int genh_read_header(AVFormatContext *s)
-static int genh_read_packet(AVFormatContext *s, AVPacket *pkt)
+genh_probe
+genh_read_header
+genh_read_packet
 AVInputFormat ff_genh_demuxer = ;

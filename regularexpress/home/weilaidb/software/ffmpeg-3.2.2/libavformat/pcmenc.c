@@ -1,42 +1,42 @@
-#define PCMDEF(name_, long_name_, ext, codec)               \
+PCMDEF               \
 AVOutputFormat ff_pcm_ ## name_ ## _muxer = ;
-PCMDEF(f64be, "PCM 64-bit floating-point big-endian",
+PCMDEF(f64be, ,
 NULL, AV_CODEC_ID_PCM_F64BE)
-PCMDEF(f64le, "PCM 64-bit floating-point little-endian",
+PCMDEF(f64le, ,
 NULL, AV_CODEC_ID_PCM_F64LE)
-PCMDEF(f32be, "PCM 32-bit floating-point big-endian",
+PCMDEF(f32be, ,
 NULL, AV_CODEC_ID_PCM_F32BE)
-PCMDEF(f32le, "PCM 32-bit floating-point little-endian",
+PCMDEF(f32le, ,
 NULL, AV_CODEC_ID_PCM_F32LE)
-PCMDEF(s32be, "PCM signed 32-bit big-endian",
+PCMDEF(s32be, ,
 NULL, AV_CODEC_ID_PCM_S32BE)
-PCMDEF(s32le, "PCM signed 32-bit little-endian",
+PCMDEF(s32le, ,
 NULL, AV_CODEC_ID_PCM_S32LE)
-PCMDEF(s24be, "PCM signed 24-bit big-endian",
+PCMDEF(s24be, ,
 NULL, AV_CODEC_ID_PCM_S24BE)
-PCMDEF(s24le, "PCM signed 24-bit little-endian",
+PCMDEF(s24le, ,
 NULL, AV_CODEC_ID_PCM_S24LE)
-PCMDEF(s16be, "PCM signed 16-bit big-endian",
-AV_NE("sw", NULL), AV_CODEC_ID_PCM_S16BE)
-PCMDEF(s16le, "PCM signed 16-bit little-endian",
-AV_NE(NULL, "sw"), AV_CODEC_ID_PCM_S16LE)
-PCMDEF(s8, "PCM signed 8-bit",
-"sb", AV_CODEC_ID_PCM_S8)
-PCMDEF(u32be, "PCM unsigned 32-bit big-endian",
+PCMDEF(s16be, ,
+AV_NE(, NULL), AV_CODEC_ID_PCM_S16BE)
+PCMDEF(s16le, ,
+AV_NE(NULL, ), AV_CODEC_ID_PCM_S16LE)
+PCMDEF(s8, ,
+, AV_CODEC_ID_PCM_S8)
+PCMDEF(u32be, ,
 NULL, AV_CODEC_ID_PCM_U32BE)
-PCMDEF(u32le, "PCM unsigned 32-bit little-endian",
+PCMDEF(u32le, ,
 NULL, AV_CODEC_ID_PCM_U32LE)
-PCMDEF(u24be, "PCM unsigned 24-bit big-endian",
+PCMDEF(u24be, ,
 NULL, AV_CODEC_ID_PCM_U24BE)
-PCMDEF(u24le, "PCM unsigned 24-bit little-endian",
+PCMDEF(u24le, ,
 NULL, AV_CODEC_ID_PCM_U24LE)
-PCMDEF(u16be, "PCM unsigned 16-bit big-endian",
-AV_NE("uw", NULL), AV_CODEC_ID_PCM_U16BE)
-PCMDEF(u16le, "PCM unsigned 16-bit little-endian",
-AV_NE(NULL, "uw"), AV_CODEC_ID_PCM_U16LE)
-PCMDEF(u8, "PCM unsigned 8-bit",
-"ub", AV_CODEC_ID_PCM_U8)
-PCMDEF(alaw, "PCM A-law",
-"al", AV_CODEC_ID_PCM_ALAW)
-PCMDEF(mulaw, "PCM mu-law",
-"ul", AV_CODEC_ID_PCM_MULAW)
+PCMDEF(u16be, ,
+AV_NE(, NULL), AV_CODEC_ID_PCM_U16BE)
+PCMDEF(u16le, ,
+AV_NE(NULL, ), AV_CODEC_ID_PCM_U16LE)
+PCMDEF(u8, ,
+, AV_CODEC_ID_PCM_U8)
+PCMDEF(alaw, ,
+, AV_CODEC_ID_PCM_ALAW)
+PCMDEF(mulaw, ,
+, AV_CODEC_ID_PCM_MULAW)

@@ -1,2 +1,2 @@
-static int dts_probe(AVProbeData *p)
+dts_probe
 AVInputFormat ff_dts_demuxer = ;

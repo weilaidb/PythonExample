@@ -1,4 +1,4 @@
-#define COMPOSE_VERTICAL(ext, align) \
+COMPOSE_VERTICAL \
 void ff_vertical_compose53iL0##ext(int16_t *b0, int16_t *b1, int16_t *b2, int width); \
 void ff_vertical_compose_dirac53iH0##ext(int16_t *b0, int16_t *b1, int16_t *b2, int width); \
 void ff_vertical_compose_dd137iL0##ext(int16_t *b0, int16_t *b1, int16_t *b2, int16_t *b3, int16_t *b4, int width); \
@@ -28,9 +28,8 @@ static void horizontal_compose_haar1i##ext(uint8_t *_b, uint8_t *_tmp, int w)\
 \
 \
 #if HAVE_YASM
-#if !ARCH_X86_64
-COMPOSE_VERTICAL(_mmx, 4)
-COMPOSE_VERTICAL(_sse2, 8)
-void ff_horizontal_compose_dd97i_ssse3(int16_t *_b, int16_t *_tmp, int w);
-static void horizontal_compose_dd97i_ssse3(uint8_t *_b, uint8_t *_tmp, int w)
-void ff_spatial_idwt_init_x86(DWTContext *d, enum dwt_type type)
+COMPOSE_VERTICAL
+COMPOSE_VERTICAL
+ff_horizontal_compose_dd97i_ssse3;
+horizontal_compose_dd97i_ssse3
+ff_spatial_idwt_init_x86

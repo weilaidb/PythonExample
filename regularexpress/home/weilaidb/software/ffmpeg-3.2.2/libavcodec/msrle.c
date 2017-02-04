@@ -1,7 +1,5 @@
 typedef struct MsrleContext  MsrleContext;
-static av_cold int msrle_decode_init(AVCodecContext *avctx)
-static int msrle_decode_frame(AVCodecContext *avctx,
-void *data, int *got_frame,
-AVPacket *avpkt)
-static av_cold int msrle_decode_end(AVCodecContext *avctx)
+msrle_decode_init
+msrle_decode_frame
+msrle_decode_end
 AVCodec ff_msrle_decoder = ;

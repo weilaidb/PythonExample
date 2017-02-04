@@ -12,15 +12,14 @@ enum DCASpeakerMask ;
 #define DCA_SPEAKER_LAYOUT_5POINT1      (DCA_SPEAKER_LAYOUT_5POINT0 | DCA_SPEAKER_MASK_LFE1)
 #define DCA_SPEAKER_LAYOUT_7POINT0_WIDE (DCA_SPEAKER_LAYOUT_5POINT0 | DCA_SPEAKER_MASK_Lw | DCA_SPEAKER_MASK_Rw)
 #define DCA_SPEAKER_LAYOUT_7POINT1_WIDE (DCA_SPEAKER_LAYOUT_7POINT0_WIDE | DCA_SPEAKER_MASK_LFE1)
-#define DCA_HAS_STEREO(mask) \
+DCA_HAS_STEREO \
 ((mask & DCA_SPEAKER_LAYOUT_STEREO) == DCA_SPEAKER_LAYOUT_STEREO)
 enum DCASpeakerPair ;
-static inline int ff_dca_count_chs_for_mask(unsigned int mask)
+ff_dca_count_chs_for_mask
 enum DCARepresentationType ;
 enum DCAExtensionMask ;
 enum DCADownMixType ;
 extern av_export const uint32_t avpriv_dca_sample_rates[16];
 extern const uint32_t ff_dca_sampling_freqs[16];
 extern const uint8_t ff_dca_freq_ranges[16];
-int avpriv_dca_convert_bitstream(const uint8_t *src, int src_size, uint8_t *dst,
-int max_size);
+avpriv_dca_convert_bitstream;

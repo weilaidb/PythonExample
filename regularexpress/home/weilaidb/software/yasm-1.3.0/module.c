@@ -41,13 +41,7 @@ static struct  module_types[] = ;
 typedef struct loaded_module  loaded_module;
 static loaded_module *loaded_modules = NULL;
 static size_t num_loaded_modules = 0;
-void *
-yasm_load_module(yasm_module_type type, const char *keyword)
-void
-yasm_register_module(yasm_module_type type, const char *keyword, void *data)
-static void
-yasm_list_one_module(yasm_module_type type, void *data,
-void (*printfunc) (const char *name, const char *keyword))
-void
-yasm_list_modules(yasm_module_type type,
-void (*printfunc) (const char *name, const char *keyword))
+yasm_load_module
+yasm_register_module
+yasm_list_one_module (const char *name, const char *keyword))
+yasm_list_modules (const char *name, const char *keyword))

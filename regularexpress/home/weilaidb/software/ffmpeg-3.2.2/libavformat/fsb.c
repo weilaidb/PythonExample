@@ -1,4 +1,4 @@
-static int fsb_probe(AVProbeData *p)
-static int fsb_read_header(AVFormatContext *s)
-static int fsb_read_packet(AVFormatContext *s, AVPacket *pkt)
+fsb_probe
+fsb_read_header
+fsb_read_packet
 AVInputFormat ff_fsb_demuxer = ;

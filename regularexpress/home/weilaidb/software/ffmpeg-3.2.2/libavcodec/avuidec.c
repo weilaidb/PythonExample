@@ -1,4 +1,3 @@
-static av_cold int avui_decode_init(AVCodecContext *avctx)
-static int avui_decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame, AVPacket *avpkt)
+avui_decode_init
+avui_decode_frame
 AVCodec ff_avui_decoder = ;

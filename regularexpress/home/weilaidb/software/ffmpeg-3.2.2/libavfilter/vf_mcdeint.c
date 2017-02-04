@@ -1,15 +1,15 @@
 enum MCDeintMode ;
 enum MCDeintParity ;
 typedef struct  MCDeintContext;
-#define OFFSET(x) offsetof(MCDeintContext, x)
+OFFSET offsetof(MCDeintContext, x)
 #define FLAGS AV_OPT_FLAG_VIDEO_PARAM|AV_OPT_FLAG_FILTERING_PARAM
-#define CONST(name, help, val, unit)
+CONST
 static const AVOption mcdeint_options[] = ;
 AVFILTER_DEFINE_CLASS(mcdeint);
-static int config_props(AVFilterLink *inlink)
-static av_cold void uninit(AVFilterContext *ctx)
-static int query_formats(AVFilterContext *ctx)
-static int filter_frame(AVFilterLink *inlink, AVFrame *inpic)
+config_props
+uninit
+query_formats
+filter_frame
 }
 CHECK( 1) CHECK( 2) }} }}
 }
@@ -29,7 +29,7 @@ end:
 av_packet_unref(&pkt);
 av_frame_free(&inpic);
 if (ret < 0)
-return ff_filter_frame(outlink, outpic);
+ff_filter_frame;
 }
 static const AVFilterPad mcdeint_inputs[] = ;
 static const AVFilterPad mcdeint_outputs[] = ;

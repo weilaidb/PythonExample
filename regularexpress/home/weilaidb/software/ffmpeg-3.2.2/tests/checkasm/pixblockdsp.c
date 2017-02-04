@@ -1,9 +1,9 @@
 #define BUF_UNITS 8
 #define BUF_SIZE (BUF_UNITS * 128 + 8 * BUF_UNITS)
-#define randomize_buffers()                 \
+randomize_buffers                 \
 do  while (0)
-#define check_get_pixels(type)                                                             \
+check_get_pixels                                                             \
 do  while (0)
-#define check_diff_pixels(type)                                                            \
+check_diff_pixels                                                            \
 do  while (0)
-void checkasm_check_pixblockdsp(void)
+checkasm_check_pixblockdsp

@@ -26,13 +26,13 @@ enum WP_ID_Flags ;
 enum WP_ID ;
 typedef struct Decorr  Decorr;
 typedef struct WvChannel  WvChannel;
-#define GET_MED(n) ((c->median[n] >> 4) + 1)
-#define DEC_MED(n) c->median[n] -= ((c->median[n] + (128 >> (n)) - 2) / (128 >> (n))) * 2
-#define INC_MED(n) c->median[n] += ((c->median[n] + (128 >> (n))    ) / (128 >> (n))) * 5
-#define UPDATE_WEIGHT_CLIP(weight, delta, samples, in) \
+GET_MED ((c->median[n] >> 4) + 1)
+DEC_MED c->median[n] -= ((c->median[n] + (128 >> (n)) - 2) / (128 >> (n))) * 2
+INC_MED c->median[n] += ((c->median[n] + (128 >> (n))    ) / (128 >> (n))) * 5
+UPDATE_WEIGHT_CLIP \
 if ((samples) && (in))
 static const int wv_rates[16] = ;
 static const uint8_t wp_exp2_table[256] = ;
 static const uint8_t wp_log2_table [] = ;
-static av_always_inline int wp_exp2(int16_t val)
-static av_always_inline int wp_log2(int32_t val)
+wp_exp2
+wp_log2

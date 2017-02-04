@@ -1,8 +1,8 @@
 #define AVUTIL_X86_EMMS_H
-void avpriv_emms_yasm(void);
+avpriv_emms_yasm;
 #if HAVE_MMX_INLINE
 #   define emms_c emms_c
-static av_always_inline void emms_c(void)
+emms_c
 #elif HAVE_MMX && HAVE_MM_EMPTY
 #   include <mmintrin.h>
 #   define emms_c _mm_empty

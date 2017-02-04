@@ -1,18 +1,17 @@
-void ff_hevc_unref_frame(HEVCContext *s, HEVCFrame *frame, int flags)
-RefPicList *ff_hevc_get_ref_list(HEVCContext *s, HEVCFrame *ref, int x0, int y0)
-void ff_hevc_clear_refs(HEVCContext *s)
-void ff_hevc_flush_dpb(HEVCContext *s)
-static HEVCFrame *alloc_frame(HEVCContext *s)
-int ff_hevc_set_new_ref(HEVCContext *s, AVFrame **frame, int poc)
-int ff_hevc_output_frame(HEVCContext *s, AVFrame *out, int flush)
-void ff_hevc_bump_frame(HEVCContext *s)
-static int init_slice_rpl(HEVCContext *s)
-int ff_hevc_slice_rpl(HEVCContext *s)
-static HEVCFrame *find_ref_idx(HEVCContext *s, int poc)
-static void mark_ref(HEVCFrame *frame, int flag)
-static HEVCFrame *generate_missing_ref(HEVCContext *s, int poc)
-static int add_candidate_ref(HEVCContext *s, RefPicList *list,
-int poc, int ref_flag)
-int ff_hevc_frame_rps(HEVCContext *s)
-int ff_hevc_compute_poc(HEVCContext *s, int poc_lsb)
-int ff_hevc_frame_nb_refs(HEVCContext *s)
+ff_hevc_unref_frame
+*ff_hevc_get_ref_list
+ff_hevc_clear_refs
+ff_hevc_flush_dpb
+*alloc_frame
+ff_hevc_set_new_ref
+ff_hevc_output_frame
+ff_hevc_bump_frame
+init_slice_rpl
+ff_hevc_slice_rpl
+*find_ref_idx
+mark_ref
+*generate_missing_ref
+add_candidate_ref
+ff_hevc_frame_rps
+ff_hevc_compute_poc
+ff_hevc_frame_nb_refs

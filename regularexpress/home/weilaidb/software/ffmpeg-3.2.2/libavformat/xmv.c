@@ -9,16 +9,13 @@ XMV_AUDIO_ADPCM51_REARLEFTRIGHT)
 typedef struct XMVVideoPacket  XMVVideoPacket;
 typedef struct XMVAudioPacket  XMVAudioPacket;
 typedef struct XMVDemuxContext  XMVDemuxContext;
-static int xmv_probe(AVProbeData *p)
-static int xmv_read_close(AVFormatContext *s)
-static int xmv_read_header(AVFormatContext *s)
-static void xmv_read_extradata(uint8_t *extradata, AVIOContext *pb)
-static int xmv_process_packet_header(AVFormatContext *s)
-static int xmv_fetch_new_packet(AVFormatContext *s)
-static int xmv_fetch_audio_packet(AVFormatContext *s,
-AVPacket *pkt, uint32_t stream)
-static int xmv_fetch_video_packet(AVFormatContext *s,
-AVPacket *pkt)
-static int xmv_read_packet(AVFormatContext *s,
-AVPacket *pkt)
+xmv_probe
+xmv_read_close
+xmv_read_header
+xmv_read_extradata
+xmv_process_packet_header
+xmv_fetch_new_packet
+xmv_fetch_audio_packet
+xmv_fetch_video_packet
+xmv_read_packet
 AVInputFormat ff_xmv_demuxer = ;

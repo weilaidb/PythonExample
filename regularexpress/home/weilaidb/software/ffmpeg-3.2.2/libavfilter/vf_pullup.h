@@ -3,4 +3,4 @@ typedef struct PullupBuffer  PullupBuffer;
 typedef struct PullupField  PullupField;
 typedef struct PullupFrame  PullupFrame;
 typedef struct PullupContext  PullupContext;
-void ff_pullup_init_x86(PullupContext *s);
+ff_pullup_init_x86;

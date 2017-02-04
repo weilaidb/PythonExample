@@ -1,5 +1,5 @@
 typedef struct ThreadData  ThreadData;
-#define CHECK(j)\
+CHECK\
 \
 CHECK( 1) CHECK( 2) }} }} \
 }\
@@ -20,32 +20,24 @@ next++; \
 prev2++; \
 next2++; \
 }
-static void filter_line_c(void *dst1,
-void *prev1, void *cur1, void *next1,
-int w, int prefs, int mrefs, int parity, int mode)
+filter_line_c
 #define MAX_ALIGN 8
-static void filter_edges(void *dst1, void *prev1, void *cur1, void *next1,
-int w, int prefs, int mrefs, int parity, int mode)
-static void filter_line_c_16bit(void *dst1,
-void *prev1, void *cur1, void *next1,
-int w, int prefs, int mrefs, int parity,
-int mode)
-static void filter_edges_16bit(void *dst1, void *prev1, void *cur1, void *next1,
-int w, int prefs, int mrefs, int parity, int mode)
-static int filter_slice(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
-static void filter(AVFilterContext *ctx, AVFrame *dstpic,
-int parity, int tff)
-static int return_frame(AVFilterContext *ctx, int is_second)
-static int checkstride(YADIFContext *yadif, const AVFrame *a, const AVFrame *b)
-static void fixstride(AVFilterLink *link, AVFrame *f)
-static int filter_frame(AVFilterLink *link, AVFrame *frame)
-static int request_frame(AVFilterLink *link)
-static av_cold void uninit(AVFilterContext *ctx)
-static int query_formats(AVFilterContext *ctx)
-static int config_props(AVFilterLink *link)
-#define OFFSET(x) offsetof(YADIFContext, x)
+filter_edges
+filter_line_c_16bit
+filter_edges_16bit
+filter_slice
+filter
+return_frame
+checkstride
+fixstride
+filter_frame
+request_frame
+uninit
+query_formats
+config_props
+OFFSET offsetof(YADIFContext, x)
 #define FLAGS AV_OPT_FLAG_VIDEO_PARAM|AV_OPT_FLAG_FILTERING_PARAM
-#define CONST(name, help, val, unit)
+CONST
 static const AVOption yadif_options[] = ;
 AVFILTER_DEFINE_CLASS(yadif);
 static const AVFilterPad avfilter_vf_yadif_inputs[] = ;

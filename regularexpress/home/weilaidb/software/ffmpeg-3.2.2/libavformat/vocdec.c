@@ -1,6 +1,5 @@
-static int voc_probe(AVProbeData *p)
-static int voc_read_header(AVFormatContext *s)
-static int voc_read_packet(AVFormatContext *s, AVPacket *pkt)
-static int voc_read_seek(AVFormatContext *s, int stream_index,
-int64_t timestamp, int flags)
+voc_probe
+voc_read_header
+voc_read_packet
+voc_read_seek
 AVInputFormat ff_voc_demuxer = ;

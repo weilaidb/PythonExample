@@ -1,7 +1,7 @@
 #if HAVE_VSX
-void ff_fft_calc_altivec(FFTContext *s, FFTComplex *z);
-void ff_fft_calc_interleave_altivec(FFTContext *s, FFTComplex *z);
+ff_fft_calc_altivec;
+ff_fft_calc_interleave_altivec;
 #if HAVE_GNU_AS && HAVE_ALTIVEC
-static void imdct_half_altivec(FFTContext *s, FFTSample *output, const FFTSample *input)
-static void imdct_calc_altivec(FFTContext *s, FFTSample *output, const FFTSample *input)
-av_cold void ff_fft_init_ppc(FFTContext *s)
+imdct_half_altivec
+imdct_calc_altivec
+ff_fft_init_ppc

@@ -1,4 +1,4 @@
-#define PIXOP2(OPNAME, OP)                                              \
+PIXOP2                                              \
 static inline void OPNAME ## _no_rnd_pixels8_l2_8(uint8_t *dst,         \
 const uint8_t *src1,  \
 const uint8_t *src2,  \
@@ -68,10 +68,9 @@ int src_stride3,     \
 int src_stride4,     \
 int h)               \
 \
-#define op_avg(a, b) a = rnd_avg32(a, b)
-#define op_put(a, b) a = b
-#define put_no_rnd_pixels8_8_c put_pixels8_8_c
-PIXOP2(avg, op_avg)
+op_avg a = rnd_avg32(a, b)
+op_put a = b
+PIXOP2
 PIXOP2(put, op_put)
 #undef op_avg
 #undef op_put

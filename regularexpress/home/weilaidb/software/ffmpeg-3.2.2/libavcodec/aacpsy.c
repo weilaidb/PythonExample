@@ -28,8 +28,8 @@
 #define PSY_3GPP_AH_THR_SHORT   0.63f
 #define PSY_PE_FORGET_SLOPE  511
 enum ;
-#define PSY_3GPP_BITS_TO_PE(bits) ((bits) * 1.18f)
-#define PSY_3GPP_PE_TO_BITS(bits) ((bits) / 1.18f)
+PSY_3GPP_BITS_TO_PE ((bits) * 1.18f)
+PSY_3GPP_PE_TO_BITS ((bits) / 1.18f)
 #define PSY_LAME_FIR_LEN 21
 #define AAC_BLOCK_SIZE_LONG 1024
 #define AAC_BLOCK_SIZE_SHORT 128
@@ -44,36 +44,26 @@ static const PsyLamePreset psy_abr_map[] = ;
 static const PsyLamePreset psy_vbr_map[] = ;
 static const float psy_fir_coeffs[] = ;
 #if ARCH_MIPS
-#   include "mips/aacpsy_mips.h"
-static float lame_calc_attack_threshold(int bitrate)
-static av_cold void lame_window_init(AacPsyContext *ctx, AVCodecContext *avctx)
-static av_cold float calc_bark(float f)
+#   include
+lame_calc_attack_threshold
+lame_window_init
+calc_bark
 #define ATH_ADD 4
-static av_cold float ath(float f, float add)
-static av_cold int psy_3gpp_init(FFPsyContext *ctx)
-static float iir_filter(int in, float state[2])
+ath
+psy_3gpp_init
+iir_filter
 static const uint8_t window_grouping[9] = ;
-static av_unused FFPsyWindowInfo psy_3gpp_window(FFPsyContext *ctx,
-const int16_t *audio,
-const int16_t *la,
-int channel, int prev_type)
-static int calc_bit_demand(AacPsyContext *ctx, float pe, int bits, int size,
-int short_window)
-static float calc_pe_3gpp(AacPsyBand *band)
-static float calc_reduction_3gpp(float a, float desired_pe, float pe,
-float active_lines)
-static float calc_reduced_thr_3gpp(AacPsyBand *band, float min_snr,
-float reduction)
-static void calc_thr_3gpp(const FFPsyWindowInfo *wi, const int num_bands, AacPsyChannel *pch,
-const uint8_t *band_sizes, const float *coefs, const int cutoff)
-static void psy_hp_filter(const float *firbuf, float *hpfsmpl, const float *psy_fir_coeffs)
-static void psy_3gpp_analyze_channel(FFPsyContext *ctx, int channel,
-const float *coefs, const FFPsyWindowInfo *wi)
-static void psy_3gpp_analyze(FFPsyContext *ctx, int channel,
-const float **coeffs, const FFPsyWindowInfo *wi)
-static av_cold void psy_3gpp_end(FFPsyContext *apc)
-static void lame_apply_block_type(AacPsyChannel *ctx, FFPsyWindowInfo *wi, int uselongblock)
-static FFPsyWindowInfo psy_lame_window(FFPsyContext *ctx, const float *audio,
-const float *la, int channel, int prev_type)
+psy_3gpp_window
+calc_bit_demand
+calc_pe_3gpp
+calc_reduction_3gpp
+calc_reduced_thr_3gpp
+calc_thr_3gpp
+psy_hp_filter
+psy_3gpp_analyze_channel
+psy_3gpp_analyze
+psy_3gpp_end
+lame_apply_block_type
+psy_lame_window
 const FFPsyModel ff_aac_psy_model =
 ;

@@ -1,14 +1,14 @@
-static inline uint64_t avg2_no_rnd(uint64_t a, uint64_t b)
-static inline uint64_t avg2(uint64_t a, uint64_t b)
-#define OP(LOAD, STORE)                         \
+avg2_no_rnd
+avg2
+OP                         \
 do  while (--h)
-#define OP_X2(LOAD, STORE)                                      \
+OP_X2                                      \
 do  while (--h)
-#define OP_Y2(LOAD, STORE)                      \
+OP_Y2                      \
 do  while (0)
-#define OP_XY2(LOAD, STORE)                                                 \
+OP_XY2                                                 \
 do  while (0)
-#define MAKE_OP(OPNAME, SUFF, OPKIND, STORE)                                \
+MAKE_OP                                \
 static void OPNAME ## _pixels ## SUFF ## _axp                               \
 (uint8_t *restrict block, const uint8_t *restrict pixels,           \
 ptrdiff_t line_size, int h)                                        \
@@ -17,18 +17,18 @@ ptrdiff_t line_size, int h)                                        \
 static void OPNAME ## _pixels16 ## SUFF ## _axp                             \
 (uint8_t *restrict block, const uint8_t *restrict pixels,           \
 ptrdiff_t line_size, int h)                                        \
-#define PIXOP(OPNAME, STORE)                    \
+PIXOP                    \
 MAKE_OP(OPNAME, ,     OP,     STORE)        \
 MAKE_OP(OPNAME, _x2,  OP_X2,  STORE)        \
 MAKE_OP(OPNAME, _y2,  OP_Y2,  STORE)        \
 MAKE_OP(OPNAME, _xy2, OP_XY2, STORE)
 #define AVG2 avg2
 #define AVG4 avg4
-#define AVG4_ROUNDER BYTE_VEC(0x02)
-#define STORE(l, b) stq(l, b)
+BYTE_VEC
+STORE stq(l, b)
 PIXOP(put, STORE);
 #undef STORE
-#define STORE(l, b) stq(AVG2(l, ldq(b)), b);
+STORE stq(AVG2(l, ldq(b)), b);
 PIXOP(avg, STORE);
 #undef AVG2
 #undef AVG4
@@ -36,12 +36,11 @@ PIXOP(avg, STORE);
 #undef STORE
 #define AVG2 avg2_no_rnd
 #define AVG4 avg4_no_rnd
-#define AVG4_ROUNDER BYTE_VEC(0x01)
-#define STORE(l, b) stq(l, b)
+BYTE_VEC
+STORE stq(l, b)
 PIXOP(put_no_rnd, STORE);
 #undef STORE
-#define STORE(l, b) stq(AVG2(l, ldq(b)), b);
+STORE stq(AVG2(l, ldq(b)), b);
 PIXOP(avg_no_rnd, STORE);
-static void put_pixels16_axp_asm(uint8_t *block, const uint8_t *pixels,
-ptrdiff_t line_size, int h)
-av_cold void ff_hpeldsp_init_alpha(HpelDSPContext *c, int flags)
+put_pixels16_axp_asm
+ff_hpeldsp_init_alpha

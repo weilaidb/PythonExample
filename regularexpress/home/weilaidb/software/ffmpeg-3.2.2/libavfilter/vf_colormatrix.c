@@ -1,10 +1,10 @@
-#define NS(n) ((n) < 0 ? (int)((n)*65536.0-0.5+DBL_EPSILON) : (int)((n)*65536.0+0.5))
-#define CB(n) av_clip_uint8(n)
+NS ((n) < 0 ? (int)((n)*65536.0-0.5+DBL_EPSILON) : (int)((n)*65536.0+0.5))
+CB av_clip_uint8(n)
 static const double yuv_coeff_luma[5][3] = ;
 enum ColorMode ;
 typedef struct  ColorMatrixContext;
 typedef struct ThreadData  ThreadData;
-#define OFFSET(x) offsetof(ColorMatrixContext, x)
+OFFSET offsetof(ColorMatrixContext, x)
 #define FLAGS AV_OPT_FLAG_VIDEO_PARAM|AV_OPT_FLAG_FILTERING_PARAM
 static const AVOption colormatrix_options[] = ;
 AVFILTER_DEFINE_CLASS(colormatrix);
@@ -26,18 +26,18 @@ AVFILTER_DEFINE_CLASS(colormatrix);
 #define img im[2][0]
 #define imh im[2][1]
 #define imi im[2][2]
-static void inverse3x3(double im[3][3], double m[3][3])
-static void solve_coefficients(double cm[3][3], double rgb[3][3], double yuv[3][3])
-static void calc_coefficients(AVFilterContext *ctx)
+inverse3x3
+solve_coefficients
+calc_coefficients
 static const char * const color_modes[] = ;
-static av_cold int init(AVFilterContext *ctx)
-static int process_slice_uyvy422(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
-static int process_slice_yuv444p(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
-static int process_slice_yuv422p(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
-static int process_slice_yuv420p(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
-static int config_input(AVFilterLink *inlink)
-static int query_formats(AVFilterContext *ctx)
-static int filter_frame(AVFilterLink *link, AVFrame *in)
+init
+process_slice_uyvy422
+process_slice_yuv444p
+process_slice_yuv422p
+process_slice_yuv420p
+config_input
+query_formats
+filter_frame
 static const AVFilterPad colormatrix_inputs[] = ;
 static const AVFilterPad colormatrix_outputs[] = ;
 AVFilter ff_vf_colormatrix = ;

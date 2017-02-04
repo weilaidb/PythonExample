@@ -19,5 +19,5 @@ const int16_t yuv_offset[2][8]);
 enum BitDepthIndex ;
 enum ChromaSubsamplingIndex ;
 typedef struct ColorSpaceDSPContext  ColorSpaceDSPContext;
-void ff_colorspacedsp_init(ColorSpaceDSPContext *dsp);
-void ff_colorspacedsp_x86_init(ColorSpaceDSPContext *dsp);
+ff_colorspacedsp_init;
+ff_colorspacedsp_x86_init;

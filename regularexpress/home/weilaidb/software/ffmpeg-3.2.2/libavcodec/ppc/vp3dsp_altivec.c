@@ -28,9 +28,9 @@ vec_s16 b4 = vec_ld(0x40, block);\
 vec_s16 b5 = vec_ld(0x50, block);\
 vec_s16 b6 = vec_ld(0x60, block);\
 vec_s16 b7 = vec_ld(0x70, block);
-static inline vec_s16 M15(vec_s16 a, vec_s16 C)
-static inline vec_s16 M16(vec_s16 a, vec_s16 C)
-#define IDCT_1D(ADD, SHIFT)\
+M15
+M16
+IDCT_1D\
 A = vec_add(M16(b1, C1), M15(b7, C7));\
 B = vec_sub(M15(b1, C7), M16(b7, C1));\
 C = vec_add(M16(b3, C3), M16(b5, C5));\
@@ -68,9 +68,9 @@ b4 = SHIFT(vec_sub(Ed, Dd));\
 \
 b5 = SHIFT(vec_add(Fd, Bdd));\
 b6 = SHIFT(vec_sub(Fd, Bdd));
-#define NOP(a) a
-#define ADD8(a) vec_add(a, eight)
-#define SHIFT4(a) vec_sra(a, four)
-static void vp3_idct_put_altivec(uint8_t *dst, int stride, int16_t block[64])
-static void vp3_idct_add_altivec(uint8_t *dst, int stride, int16_t block[64])
-av_cold void ff_vp3dsp_init_ppc(VP3DSPContext *c, int flags)
+NOP a
+ADD8 vec_add(a, eight)
+SHIFT4 vec_sra(a, four)
+vp3_idct_put_altivec
+vp3_idct_add_altivec
+ff_vp3dsp_init_ppc

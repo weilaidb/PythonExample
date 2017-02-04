@@ -1,4 +1,4 @@
 #define BUF_SIZE 1024
-#define randomize_input(len)                                    \
+randomize_input                                    \
 do  while (0)
-void checkasm_check_fmtconvert(void)
+checkasm_check_fmtconvert

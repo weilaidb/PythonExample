@@ -30,4 +30,4 @@
 struct PPFilter;
 typedef struct PPMode PPMode;
 typedef struct PPContext PPContext;
-static inline void linecpy(void *dest, const void *src, int lines, int stride)
+linecpy

@@ -8,10 +8,21 @@ typedef struct LutContext  LutContext;
 #define G 1
 #define B 2
 #define A 3
-#define OFFSET(x) offsetof(LutContext, x)
+OFFSET offsetof(LutContext, x)
 #define FLAGS AV_OPT_FLAG_FILTERING_PARAM|AV_OPT_FLAG_VIDEO_PARAM
-static const AVOption options[] = ;
-static av_cold void uninit(AVFilterContext *ctx)
+static const AVOption options[] = ,
+, .flags = FLAGS },
+, .flags = FLAGS },
+, .flags = FLAGS },
+, .flags = FLAGS },
+, .flags = FLAGS },
+, .flags = FLAGS },
+, .flags = FLAGS },
+, .flags = FLAGS },
+, .flags = FLAGS },
+, .flags = FLAGS },
+};
+uninit
 #define YUV_FORMATS                                         \
 AV_PIX_FMT_YUV444P,  AV_PIX_FMT_YUV422P,  AV_PIX_FMT_YUV420P,    \
 AV_PIX_FMT_YUV411P,  AV_PIX_FMT_YUV410P,  AV_PIX_FMT_YUV440P,    \
@@ -37,35 +48,32 @@ AV_PIX_FMT_GBRAP16LE
 static const enum AVPixelFormat yuv_pix_fmts[] = ;
 static const enum AVPixelFormat rgb_pix_fmts[] = ;
 static const enum AVPixelFormat all_pix_fmts[] = ;
-static int query_formats(AVFilterContext *ctx)
-static double clip(void *opaque, double val)
-static double compute_gammaval(void *opaque, double gamma)
-static double compute_gammaval709(void *opaque, double gamma)
+query_formats
+clip
+compute_gammaval
+compute_gammaval709
 static double (* const funcs1[])(void *, double) = ;
 static const char * const funcs1_names[] = ;
-static int config_props(AVFilterLink *inlink)
-static int filter_frame(AVFilterLink *inlink, AVFrame *in)
+config_props
+filter_frame
 static const AVFilterPad inputs[] = ;
 static const AVFilterPad outputs[] = ;
-#define DEFINE_LUT_FILTER(name_, description_)                          \
+DEFINE_LUT_FILTER                          \
 AVFilter ff_vf_##name_ =
 #if CONFIG_LUT_FILTER
-#define lut_options options
-AVFILTER_DEFINE_CLASS(lut);
-static int lut_init(AVFilterContext *ctx)
-DEFINE_LUT_FILTER(lut, "Compute and apply a lookup table to the RGB/YUV input video.");
+AVFILTER_DEFINE_CLASS;
+lut_init
+DEFINE_LUT_FILTER(lut, );
 #if CONFIG_LUTYUV_FILTER
-#define lutyuv_options options
-AVFILTER_DEFINE_CLASS(lutyuv);
-static av_cold int lutyuv_init(AVFilterContext *ctx)
-DEFINE_LUT_FILTER(lutyuv, "Compute and apply a lookup table to the YUV input video.");
+AVFILTER_DEFINE_CLASS;
+lutyuv_init
+DEFINE_LUT_FILTER(lutyuv, );
 #if CONFIG_LUTRGB_FILTER
-#define lutrgb_options options
-AVFILTER_DEFINE_CLASS(lutrgb);
-static av_cold int lutrgb_init(AVFilterContext *ctx)
-DEFINE_LUT_FILTER(lutrgb, "Compute and apply a lookup table to the RGB input video.");
+AVFILTER_DEFINE_CLASS;
+lutrgb_init
+DEFINE_LUT_FILTER(lutrgb, );
 #if CONFIG_NEGATE_FILTER
 static const AVOption negate_options[] = ;
 AVFILTER_DEFINE_CLASS(negate);
-static av_cold int negate_init(AVFilterContext *ctx)
-DEFINE_LUT_FILTER(negate, "Negate input video.");
+negate_init
+DEFINE_LUT_FILTER(negate, );

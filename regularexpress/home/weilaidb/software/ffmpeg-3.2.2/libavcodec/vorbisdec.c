@@ -16,57 +16,35 @@ typedef struct vorbis_residue  vorbis_residue;
 typedef struct vorbis_mapping  vorbis_mapping;
 typedef struct vorbis_mode  vorbis_mode;
 typedef struct vorbis_context_s  vorbis_context;
-#define BARK(x) \
-(13.1f * atan(0.00074f * (x)) + 2.24f * atan(1.85e-8f * (x) * (x)) + 1e-4f * (x))
-static const char idx_err_str[] = "Index value %d out of range (0 - %d) for %s at %s:%i\n";
-#define VALIDATE_INDEX(idx, limit) \
+BARK \
+atan * (x)) + 1e-4f * (x))
+static const char idx_err_str[] = ;
+VALIDATE_INDEX \
 if (idx >= limit)
-#define GET_VALIDATED_INDEX(idx, bits, limit) \
-static float vorbisfloat2float(unsigned val)
-static void vorbis_free(vorbis_context *vc)
-static int vorbis_parse_setup_hdr_codebooks(vorbis_context *vc)
-static int vorbis_parse_setup_hdr_tdtransforms(vorbis_context *vc)
-static int vorbis_floor0_decode(vorbis_context *vc,
-vorbis_floor_data *vfu, float *vec);
-static int create_map(vorbis_context *vc, unsigned floor_number);
-static int vorbis_floor1_decode(vorbis_context *vc,
-vorbis_floor_data *vfu, float *vec);
-static int vorbis_parse_setup_hdr_floors(vorbis_context *vc)
-static int vorbis_parse_setup_hdr_residues(vorbis_context *vc)
-static int vorbis_parse_setup_hdr_mappings(vorbis_context *vc)
-static int create_map(vorbis_context *vc, unsigned floor_number)
-static int vorbis_parse_setup_hdr_modes(vorbis_context *vc)
-static int vorbis_parse_setup_hdr(vorbis_context *vc)
-static int vorbis_parse_id_hdr(vorbis_context *vc)
-static av_cold int vorbis_decode_init(AVCodecContext *avctx)
-static int vorbis_floor0_decode(vorbis_context *vc,
-vorbis_floor_data *vfu, float *vec)
-static int vorbis_floor1_decode(vorbis_context *vc,
-vorbis_floor_data *vfu, float *vec)
-static av_always_inline int setup_classifs(vorbis_context *vc,
-vorbis_residue *vr,
-uint8_t *do_not_decode,
-unsigned ch_used,
-int partition_count,
-int ptns_to_read
-)
-static av_always_inline int vorbis_residue_decode_internal(vorbis_context *vc,
-vorbis_residue *vr,
-unsigned ch,
-uint8_t *do_not_decode,
-float *vec,
-unsigned vlen,
-unsigned ch_left,
-int vr_type)
-static inline int vorbis_residue_decode(vorbis_context *vc, vorbis_residue *vr,
-unsigned ch,
-uint8_t *do_not_decode,
-float *vec, unsigned vlen,
-unsigned ch_left)
-void ff_vorbis_inverse_coupling(float *mag, float *ang, intptr_t blocksize)
-static int vorbis_parse_audio_packet(vorbis_context *vc, float **floor_ptr)
-static int vorbis_decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame_ptr, AVPacket *avpkt)
-static av_cold int vorbis_decode_close(AVCodecContext *avctx)
-static av_cold void vorbis_decode_flush(AVCodecContext *avctx)
+GET_VALIDATED_INDEX \
+vorbisfloat2float
+vorbis_free
+vorbis_parse_setup_hdr_codebooks
+vorbis_parse_setup_hdr_tdtransforms
+vorbis_floor0_decode;
+create_map;
+vorbis_floor1_decode;
+vorbis_parse_setup_hdr_floors
+vorbis_parse_setup_hdr_residues
+vorbis_parse_setup_hdr_mappings
+create_map
+vorbis_parse_setup_hdr_modes
+vorbis_parse_setup_hdr
+vorbis_parse_id_hdr
+vorbis_decode_init
+vorbis_floor0_decode
+vorbis_floor1_decode
+setup_classifs
+vorbis_residue_decode_internal
+vorbis_residue_decode
+ff_vorbis_inverse_coupling
+vorbis_parse_audio_packet
+vorbis_decode_frame
+vorbis_decode_close
+vorbis_decode_flush
 AVCodec ff_vorbis_decoder = ;

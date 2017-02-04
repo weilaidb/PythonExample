@@ -1,4 +1,4 @@
-static char *check_nan_suffix(char *s)
+*check_nan_suffix
 #undef strtod
-double strtod(const char *, char **);
-double avpriv_strtod(const char *nptr, char **endptr)
+strtod;
+avpriv_strtod

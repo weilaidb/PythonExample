@@ -4,27 +4,22 @@
 #define Q0 p0_p[ 0*stride]
 #define Q1 p0_p[ 1*stride]
 #define Q2 p0_p[ 2*stride]
-static inline void loop_filter_l2(uint8_t *p0_p,int stride,int alpha, int beta)
-static inline void loop_filter_l1(uint8_t *p0_p, int stride, int alpha, int beta, int tc)
-static inline void loop_filter_c2(uint8_t *p0_p,int stride,int alpha, int beta)
-static inline void loop_filter_c1(uint8_t *p0_p,int stride,int alpha, int beta,
-int tc)
+loop_filter_l2
+loop_filter_l1
+loop_filter_c2
+loop_filter_c1
 #undef P0
 #undef P1
 #undef P2
 #undef Q0
 #undef Q1
 #undef Q2
-static void cavs_filter_lv_c(uint8_t *d, int stride, int alpha, int beta, int tc,
-int bs1, int bs2)
-static void cavs_filter_lh_c(uint8_t *d, int stride, int alpha, int beta, int tc,
-int bs1, int bs2)
-static void cavs_filter_cv_c(uint8_t *d, int stride, int alpha, int beta, int tc,
-int bs1, int bs2)
-static void cavs_filter_ch_c(uint8_t *d, int stride, int alpha, int beta, int tc,
-int bs1, int bs2)
-static void cavs_idct8_add_c(uint8_t *dst, int16_t *block, int stride)
-#define CAVS_SUBPIX(OPNAME, OP, NAME, A, B, C, D, E, F) \
+cavs_filter_lv_c
+cavs_filter_lh_c
+cavs_filter_cv_c
+cavs_filter_ch_c
+cavs_idct8_add_c
+CAVS_SUBPIX \
 static void OPNAME ## cavs_filt8_h_ ## NAME(uint8_t *dst, const uint8_t *src, int dstStride, int srcStride)\
 \
 static void OPNAME ## cavs_filt8_v_  ## NAME(uint8_t *dst, const uint8_t *src, int dstStride, int srcStride)\
@@ -32,11 +27,11 @@ static void OPNAME ## cavs_filt8_v_  ## NAME(uint8_t *dst, const uint8_t *src, i
 static void OPNAME ## cavs_filt16_v_ ## NAME(uint8_t *dst, const uint8_t *src, int dstStride, int srcStride)\
 \
 static void OPNAME ## cavs_filt16_h_ ## NAME(uint8_t *dst, const uint8_t *src, int dstStride, int srcStride)\
-#define CAVS_SUBPIX_HV(OPNAME, OP, NAME, AH, BH, CH, DH, EH, FH, AV, BV, CV, DV, EV, FV, FULL) \
+CAVS_SUBPIX_HV \
 static void OPNAME ## cavs_filt8_hv_ ## NAME(uint8_t *dst, const uint8_t *src1, const uint8_t *src2, int dstStride, int srcStride)\
 \
 static void OPNAME ## cavs_filt16_hv_ ## NAME(uint8_t *dst, const uint8_t *src1, const uint8_t *src2, int dstStride, int srcStride)\
-#define CAVS_MC(OPNAME, SIZE) \
+CAVS_MC \
 static void OPNAME ## cavs_qpel ## SIZE ## _mc10_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)\
 \
 \
@@ -81,15 +76,14 @@ static void OPNAME ## cavs_qpel ## SIZE ## _mc32_c(uint8_t *dst, const uint8_t *
 \
 static void OPNAME ## cavs_qpel ## SIZE ## _mc23_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)\
 \
-#define op_put1(a, b)  a = cm[((b)+4)>>3]
-#define op_put2(a, b)  a = cm[((b)+64)>>7]
-#define op_put3(a, b)  a = cm[((b)+32)>>6]
-#define op_put4(a, b)  a = cm[((b)+512)>>10]
-#define op_avg1(a, b)  a = ((a)+cm[((b)+4)>>3]   +1)>>1
-#define op_avg2(a, b)  a = ((a)+cm[((b)+64)>>7]  +1)>>1
-#define op_avg3(a, b)  a = ((a)+cm[((b)+32)>>6]  +1)>>1
-#define op_avg4(a, b)  a = ((a)+cm[((b)+512)>>10]+1)>>1
-CAVS_SUBPIX(put_   , op_put1, hpel,    0, -1,  5,  5, -1,  0)
+op_put1  a = cm[((b)+4)>>3]
+op_put2  a = cm[((b)+64)>>7]
+op_put3  a = cm[((b)+32)>>6]
+op_put4  a = cm[((b)+512)>>10]
+op_avg1  a = ((a)+cm[((b)+4)>>3]   +1)>>1
+op_avg2  a = ((a)+cm[((b)+64)>>7]  +1)>>1
+op_avg3  a = ((a)+cm[((b)+32)>>6]  +1)>>1
+CAVS_SUBPIX
 CAVS_SUBPIX(put_   , op_put2, qpel_l, -1, -2, 96, 42, -7,  0)
 CAVS_SUBPIX(put_   , op_put2, qpel_r,  0, -7, 42, 96, -2, -1)
 CAVS_SUBPIX_HV(put_, op_put3, jj,      0, -1,  5,  5, -1,  0,  0, -1,  5,  5, -1, 0, 0)
@@ -115,4 +109,4 @@ CAVS_MC(avg_, 16)
 #define avg_cavs_qpel8_mc00_c  ff_avg_pixels8x8_c
 #define put_cavs_qpel16_mc00_c ff_put_pixels16x16_c
 #define avg_cavs_qpel16_mc00_c ff_avg_pixels16x16_c
-av_cold void ff_cavsdsp_init(CAVSDSPContext* c, AVCodecContext *avctx)
+ff_cavsdsp_init

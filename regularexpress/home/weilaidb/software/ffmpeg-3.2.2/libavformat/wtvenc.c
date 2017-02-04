@@ -20,39 +20,39 @@ typedef struct  WtvFile;
 typedef struct  WtvChunkEntry;
 typedef struct  WtvSyncEntry;
 typedef struct  WtvContext;
-static void add_serial_pair(WtvSyncEntry ** list, int * count, int64_t serial, int64_t value)
-typedef int WTVHeaderWriteFunc(AVIOContext *pb);
+add_serial_pair
+WTVHeaderWriteFunc;
 typedef struct  WTVRootEntryTable;
-#define write_pad(pb, size) ffio_fill(pb, 0, size)
-static void write_chunk_header(AVFormatContext *s, const ff_asf_guid *guid, int length, int stream_id)
-static void write_chunk_header2(AVFormatContext *s, const ff_asf_guid *guid, int stream_id)
-static void finish_chunk_noindex(AVFormatContext *s)
-static void write_index(AVFormatContext *s)
-static void finish_chunk(AVFormatContext *s)
-static void put_videoinfoheader2(AVIOContext *pb, AVStream *st)
-static int write_stream_codec_info(AVFormatContext *s, AVStream *st)
-static int write_stream_codec(AVFormatContext *s, AVStream * st)
-static void write_sync(AVFormatContext *s)
-static int write_stream_data(AVFormatContext *s, AVStream *st)
-static int write_header(AVFormatContext *s)
-static void write_timestamp(AVFormatContext *s, AVPacket *pkt)
-static int write_packet(AVFormatContext *s, AVPacket *pkt)
-static int write_table0_header_events(AVIOContext *pb)
-static int write_table0_header_legacy_attrib(AVIOContext *pb)
-static int write_table0_header_time(AVIOContext *pb)
+write_pad ffio_fill(pb, 0, size)
+write_chunk_header
+write_chunk_header2
+finish_chunk_noindex
+write_index
+finish_chunk
+put_videoinfoheader2
+write_stream_codec_info
+write_stream_codec
+write_sync
+write_stream_data
+write_header
+write_timestamp
+write_packet
+write_table0_header_events
+write_table0_header_legacy_attrib
+write_table0_header_time
 static const WTVRootEntryTable wtv_root_entry_table[] = ;
-static int write_root_table(AVFormatContext *s, int64_t sector_pos)
-static void write_fat(AVIOContext *pb, int start_sector, int nb_sectors, int shift)
-static int64_t write_fat_sector(AVFormatContext *s, int64_t start_pos, int nb_sectors, int sector_bits, int depth)
-static void write_table_entries_events(AVFormatContext *s)
-static void write_table_entries_time(AVFormatContext *s)
-static void write_metadata_header(AVIOContext *pb, int type, const char *key, int value_size)
-static int metadata_header_size(const char *key)
-static void write_tag_int32(AVIOContext *pb, const char *key, int value)
-static void write_tag(AVIOContext *pb, const char *key, const char *value)
-static int attachment_value_size(const AVPacket *pkt, const AVDictionaryEntry *e)
-static void write_table_entries_attrib(AVFormatContext *s)
-static void write_table_redirector_legacy_attrib(AVFormatContext *s)
-static int finish_file(AVFormatContext *s, enum WtvFileIndex index, int64_t start_pos)
-static int write_trailer(AVFormatContext *s)
+write_root_table
+write_fat
+write_fat_sector
+write_table_entries_events
+write_table_entries_time
+write_metadata_header
+metadata_header_size
+write_tag_int32
+write_tag
+attachment_value_size
+write_table_entries_attrib
+write_table_redirector_legacy_attrib
+finish_file
+write_trailer
 AVOutputFormat ff_wtv_muxer = ;

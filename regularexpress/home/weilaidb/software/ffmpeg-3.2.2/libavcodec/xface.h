@@ -11,11 +11,11 @@
 #define XFACE_WORDMASK (XFACE_WORDCARRY - 1)
 #define XFACE_MAX_WORDS 546
 typedef struct  BigInt;
-void ff_big_add(BigInt *b, uint8_t a);
-void ff_big_div(BigInt *b, uint8_t a, uint8_t *r);
-void ff_big_mul(BigInt *b, uint8_t a);
+ff_big_add;
+ff_big_div;
+ff_big_mul;
 enum XFaceColor ;
 typedef struct  ProbRange;
 extern const ProbRange ff_xface_probranges_per_level[4][3];
 extern const ProbRange ff_xface_probranges_2x2[16];
-void ff_xface_generate_face(uint8_t *dst, uint8_t * const src);
+ff_xface_generate_face;

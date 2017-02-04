@@ -10,7 +10,6 @@
 #define ER_MB_END   (ER_AC_END|ER_DC_END|ER_MV_END)
 typedef struct ERPicture  ERPicture;
 typedef struct ERContext  ERContext;
-void ff_er_frame_start(ERContext *s);
-void ff_er_frame_end(ERContext *s);
-void ff_er_add_slice(ERContext *s, int startx, int starty, int endx, int endy,
-int status);
+ff_er_frame_start;
+ff_er_frame_end;
+ff_er_add_slice;

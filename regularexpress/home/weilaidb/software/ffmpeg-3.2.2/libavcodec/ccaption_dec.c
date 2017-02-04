@@ -1,8 +1,8 @@
 #define SCREEN_ROWS 15
 #define SCREEN_COLUMNS 32
-#define SET_FLAG(var, val)   ( (var) |=   ( 1 << (val)) )
-#define UNSET_FLAG(var, val) ( (var) &=  ~( 1 << (val)) )
-#define CHECK_FLAG(var, val) ( (var) &    ( 1 << (val)) )
+SET_FLAG   ( (var) |=   ( 1 << (val)) )
+UNSET_FLAG ( (var) &=  ~( 1 << (val)) )
+CHECK_FLAG ( (var) &    ( 1 << (val)) )
 static const AVRational ms_tb = ;
 enum cc_mode ;
 enum cc_color_code ;
@@ -14,24 +14,24 @@ static const unsigned char pac2_attribs[32][3] =
 ;
 struct Screen ;
 typedef struct CCaptionSubContext  CCaptionSubContext;
-static av_cold int init_decoder(AVCodecContext *avctx)
-static av_cold int close_decoder(AVCodecContext *avctx)
-static void flush_decoder(AVCodecContext *avctx)
-static void write_char(CCaptionSubContext *ctx, struct Screen *screen, char ch)
-static int validate_cc_data_pair(uint8_t *cc_data_pair)
-static struct Screen *get_writing_screen(CCaptionSubContext *ctx)
-static void roll_up(CCaptionSubContext *ctx)
-static int capture_screen(CCaptionSubContext *ctx)
-static int reap_screen(CCaptionSubContext *ctx, int64_t pts)
-static void handle_textattr(CCaptionSubContext *ctx, uint8_t hi, uint8_t lo)
-static void handle_pac(CCaptionSubContext *ctx, uint8_t hi, uint8_t lo)
-static void handle_edm(CCaptionSubContext *ctx, int64_t pts)
-static void handle_eoc(CCaptionSubContext *ctx, int64_t pts)
-static void handle_delete_end_of_row(CCaptionSubContext *ctx, char hi, char lo)
-static void handle_char(CCaptionSubContext *ctx, char hi, char lo, int64_t pts)
-static void process_cc608(CCaptionSubContext *ctx, int64_t pts, uint8_t hi, uint8_t lo)
-static int decode(AVCodecContext *avctx, void *data, int *got_sub, AVPacket *avpkt)
-#define OFFSET(x) offsetof(CCaptionSubContext, x)
+init_decoder
+close_decoder
+flush_decoder
+write_char
+validate_cc_data_pair
+*get_writing_screen
+roll_up
+capture_screen
+reap_screen
+handle_textattr
+handle_pac
+handle_edm
+handle_eoc
+handle_delete_end_of_row
+handle_char
+process_cc608
+decode
+OFFSET offsetof(CCaptionSubContext, x)
 #define SD AV_OPT_FLAG_SUBTITLE_PARAM | AV_OPT_FLAG_DECODING_PARAM
 static const AVOption options[] = ;
 static const AVClass ccaption_dec_class = ;

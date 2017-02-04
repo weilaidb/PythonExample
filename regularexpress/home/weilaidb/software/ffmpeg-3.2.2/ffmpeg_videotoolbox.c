@@ -1,10 +1,10 @@
 #if HAVE_UTGETOSTYPEFROMSTRING
 #if CONFIG_VDA
-#  include "libavcodec/vda.h"
+#  include
 #if CONFIG_VIDEOTOOLBOX
-#  include "libavcodec/videotoolbox.h"
+#  include
 typedef struct VTContext  VTContext;
 char *videotoolbox_pixfmt;
-static int videotoolbox_retrieve_data(AVCodecContext *s, AVFrame *frame)
-static void videotoolbox_uninit(AVCodecContext *s)
-int videotoolbox_init(AVCodecContext *s)
+videotoolbox_retrieve_data
+videotoolbox_uninit
+videotoolbox_init

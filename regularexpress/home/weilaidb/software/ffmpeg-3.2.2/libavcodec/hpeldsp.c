@@ -1,5 +1,5 @@
 #define BIT_DEPTH 8
-#define PIXOP2(OPNAME, OP)                                              \
+PIXOP2                                              \
 static inline void OPNAME ## _no_rnd_pixels8_l2_8(uint8_t *dst,         \
 const uint8_t *src1,  \
 const uint8_t *src2,  \
@@ -102,11 +102,10 @@ OPNAME ## _no_rnd_pixels8_y2_8_c,                        \
 CALL_2X_PIXELS(OPNAME ## _no_rnd_pixels16_xy2_8_c,                      \
 OPNAME ## _no_rnd_pixels8_xy2_8_c,                       \
 8)                                                       \
-#define op_avg(a, b) a = rnd_avg32(a, b)
-#define op_put(a, b) a = b
-#define put_no_rnd_pixels8_8_c put_pixels8_8_c
-PIXOP2(avg, op_avg)
+op_avg a = rnd_avg32(a, b)
+op_put a = b
+PIXOP2
 PIXOP2(put, op_put)
 #undef op_avg
 #undef op_put
-av_cold void ff_hpeldsp_init(HpelDSPContext *c, int flags)
+ff_hpeldsp_init

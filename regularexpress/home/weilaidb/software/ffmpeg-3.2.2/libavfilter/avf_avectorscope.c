@@ -2,18 +2,39 @@ enum VectorScopeMode ;
 enum VectorScopeDraw ;
 enum VectorScopeScale ;
 typedef struct AudioVectorScopeContext  AudioVectorScopeContext;
-#define OFFSET(x) offsetof(AudioVectorScopeContext, x)
+OFFSET offsetof(AudioVectorScopeContext, x)
 #define FLAGS AV_OPT_FLAG_FILTERING_PARAM|AV_OPT_FLAG_VIDEO_PARAM
-static const AVOption avectorscope_options[] = ;
+static const AVOption avectorscope_options[] = ,
+, 0, INT_MAX, FLAGS },
+, 0, 0, FLAGS },
+, 0, 0, FLAGS },
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+};
 AVFILTER_DEFINE_CLASS(avectorscope);
-static void draw_dot(AudioVectorScopeContext *s, unsigned x, unsigned y)
-static void draw_line(AudioVectorScopeContext *s, int x0, int y0, int x1, int y1)
-static void fade(AudioVectorScopeContext *s)
-static int query_formats(AVFilterContext *ctx)
-static int config_input(AVFilterLink *inlink)
-static int config_output(AVFilterLink *outlink)
-static int filter_frame(AVFilterLink *inlink, AVFrame *insamples)
-static av_cold void uninit(AVFilterContext *ctx)
+draw_dot
+draw_line
+fade
+query_formats
+config_input
+config_output
+filter_frame
+uninit
 static const AVFilterPad audiovectorscope_inputs[] = ;
 static const AVFilterPad audiovectorscope_outputs[] = ;
 AVFilter ff_avf_avectorscope = ;

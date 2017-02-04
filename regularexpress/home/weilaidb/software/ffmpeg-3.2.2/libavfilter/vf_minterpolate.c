@@ -22,35 +22,63 @@ typedef struct Block  Block;
 typedef struct Pixel  Pixel;
 typedef struct Frame  Frame;
 typedef struct MIContext  MIContext;
-#define OFFSET(x) offsetof(MIContext, x)
+OFFSET offsetof(MIContext, x)
 #define FLAGS AV_OPT_FLAG_VIDEO_PARAM|AV_OPT_FLAG_FILTERING_PARAM
-#define CONST(name, help, val, unit)
-static const AVOption minterpolate_options[] = ;
+CONST
+static const AVOption minterpolate_options[] = ,
+,
+CONST(),
+CONST(),
+CONST(),
+,
+CONST(),
+CONST(),
+,
+CONST(),
+CONST(),
+,
+CONST(),
+CONST(),
+CONST(),
+CONST(),
+CONST(),
+CONST(),
+CONST(),
+CONST(),
+CONST(),
+,
+,
+,
+,
+CONST(),
+CONST(),
+,
+};
 AVFILTER_DEFINE_CLASS(minterpolate);
-static int query_formats(AVFilterContext *ctx)
-static uint64_t get_sbad(AVMotionEstContext *me_ctx, int x, int y, int x_mv, int y_mv)
-static uint64_t get_sbad_ob(AVMotionEstContext *me_ctx, int x, int y, int x_mv, int y_mv)
-static uint64_t get_sad_ob(AVMotionEstContext *me_ctx, int x, int y, int x_mv, int y_mv)
-static int config_input(AVFilterLink *inlink)
-static int config_output(AVFilterLink *outlink)
-#define ADD_PRED(preds, px, py)\
-do  while(0)
-static void search_mv(MIContext *mi_ctx, Block *blocks, int mb_x, int mb_y, int dir)
-static void bilateral_me(MIContext *mi_ctx)
-static int var_size_bme(MIContext *mi_ctx, Block *block, int x_mb, int y_mb, int n)
-static int cluster_mvs(MIContext *mi_ctx)
-static int inject_frame(AVFilterLink *inlink, AVFrame *avf_in)
-static int detect_scene_change(MIContext *mi_ctx)
-#define ADD_PIXELS(b_weight, mv_x, mv_y)\
-do  while(0)
-static void bidirectional_obmc(MIContext *mi_ctx, int alpha)
-static void set_frame_data(MIContext *mi_ctx, int alpha, AVFrame *avf_out)
-static void var_size_bmc(MIContext *mi_ctx, Block *block, int x_mb, int y_mb, int n, int alpha)
-static void bilateral_obmc(MIContext *mi_ctx, Block *block, int mb_x, int mb_y, int alpha)
-static void interpolate(AVFilterLink *inlink, AVFrame *avf_out)
-static int filter_frame(AVFilterLink *inlink, AVFrame *avf_in)
-static av_cold void free_blocks(Block *block, int sb)
-static av_cold void uninit(AVFilterContext *ctx)
+query_formats
+get_sbad
+get_sbad_ob
+get_sad_ob
+config_input
+config_output
+ADD_PRED\
+while
+search_mv
+bilateral_me
+var_size_bme
+cluster_mvs
+inject_frame
+detect_scene_change
+ADD_PIXELS\
+while
+bidirectional_obmc
+set_frame_data
+var_size_bmc
+bilateral_obmc
+interpolate
+filter_frame
+free_blocks
+uninit
 static const AVFilterPad minterpolate_inputs[] = ;
 static const AVFilterPad minterpolate_outputs[] = ;
 AVFilter ff_vf_minterpolate = ;

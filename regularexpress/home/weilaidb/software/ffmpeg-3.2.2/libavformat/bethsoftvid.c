@@ -2,12 +2,10 @@
 #define DEFAULT_SAMPLE_RATE 11111
 typedef struct BVID_DemuxContext
 BVID_DemuxContext;
-static int vid_probe(AVProbeData *p)
-static int vid_read_header(AVFormatContext *s)
+vid_probe
+vid_read_header
 #define BUFFER_PADDING_SIZE 1000
-static int read_frame(BVID_DemuxContext *vid, AVIOContext *pb, AVPacket *pkt,
-uint8_t block_type, AVFormatContext *s)
-static int vid_read_packet(AVFormatContext *s,
-AVPacket *pkt)
-static int vid_read_close(AVFormatContext *s)
+read_frame
+vid_read_packet
+vid_read_close
 AVInputFormat ff_bethsoftvid_demuxer = ;

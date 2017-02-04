@@ -1,1 +1,1 @@
-char *ff_urldecode(const char *url)
+*ff_urldecode

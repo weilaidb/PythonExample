@@ -17,11 +17,11 @@
 #define DCA_FILTER_MODE_FIXED   0x02
 typedef struct DCADSPData  DCADSPData;
 typedef struct DCACoreDecoder  DCACoreDecoder;
-static inline int ff_dca_core_map_spkr(DCACoreDecoder *core, int spkr)
-int ff_dca_core_parse(DCACoreDecoder *s, uint8_t *data, int size);
-int ff_dca_core_parse_exss(DCACoreDecoder *s, uint8_t *data, DCAExssAsset *asset);
-int ff_dca_core_filter_fixed(DCACoreDecoder *s, int x96_synth);
-int ff_dca_core_filter_frame(DCACoreDecoder *s, AVFrame *frame);
-av_cold void ff_dca_core_flush(DCACoreDecoder *s);
-av_cold int ff_dca_core_init(DCACoreDecoder *s);
-av_cold void ff_dca_core_close(DCACoreDecoder *s);
+ff_dca_core_map_spkr
+ff_dca_core_parse;
+ff_dca_core_parse_exss;
+ff_dca_core_filter_fixed;
+ff_dca_core_filter_frame;
+ff_dca_core_flush;
+ff_dca_core_init;
+ff_dca_core_close;

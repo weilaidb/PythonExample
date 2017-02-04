@@ -1,46 +1,37 @@
 #if CONFIG_NETWORK
-static void frac_init(FFFrac *f, int64_t val, int64_t num, int64_t den)
-static void frac_add(FFFrac *f, int64_t incr)
-AVRational ff_choose_timebase(AVFormatContext *s, AVStream *st, int min_precision)
-enum AVChromaLocation ff_choose_chroma_location(AVFormatContext *s, AVStream *st)
-int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *oformat,
-const char *format, const char *filename)
-static int validate_codec_tag(AVFormatContext *s, AVStream *st)
-static int init_muxer(AVFormatContext *s, AVDictionary **options)
-static int init_pts(AVFormatContext *s)
-static int write_header_internal(AVFormatContext *s)
-int avformat_init_output(AVFormatContext *s, AVDictionary **options)
-int avformat_write_header(AVFormatContext *s, AVDictionary **options)
+frac_init
+frac_add
+ff_choose_timebase
+ff_choose_chroma_location
+avformat_alloc_output_context2
+validate_codec_tag
+init_muxer
+init_pts
+write_header_internal
+avformat_init_output
+avformat_write_header
 #define AV_PKT_FLAG_UNCODED_FRAME 0x2000
 #define UNCODED_FRAME_PACKET_SIZE (INT_MIN / 3 * 2 + (int)sizeof(AVFrame))
 #if FF_API_COMPUTE_PKT_FIELDS2 && FF_API_LAVF_AVCTX
 FF_DISABLE_DEPRECATION_WARNINGS
-static int compute_muxer_pkt_fields(AVFormatContext *s, AVStream *st, AVPacket *pkt)
+compute_muxer_pkt_fields
 FF_ENABLE_DEPRECATION_WARNINGS
-static int write_packet(AVFormatContext *s, AVPacket *pkt)
-static int check_packet(AVFormatContext *s, AVPacket *pkt)
-static int prepare_input_packet(AVFormatContext *s, AVPacket *pkt)
-static int do_packet_auto_bsf(AVFormatContext *s, AVPacket *pkt)
-int av_write_frame(AVFormatContext *s, AVPacket *pkt)
+write_packet
+check_packet
+prepare_input_packet
+do_packet_auto_bsf
+av_write_frame
 #define CHUNK_START 0x1000
-int ff_interleave_add_packet(AVFormatContext *s, AVPacket *pkt,
-int (*compare)(AVFormatContext *, AVPacket *, AVPacket *))
-static int interleave_compare_dts(AVFormatContext *s, AVPacket *next,
-AVPacket *pkt)
-int ff_interleave_packet_per_dts(AVFormatContext *s, AVPacket *out,
-AVPacket *pkt, int flush)
-const AVPacket *ff_interleaved_peek(AVFormatContext *s, int stream, int64_t *ts_offset)
-static int interleave_packet(AVFormatContext *s, AVPacket *out, AVPacket *in, int flush)
-int av_interleaved_write_frame(AVFormatContext *s, AVPacket *pkt)
-int av_write_trailer(AVFormatContext *s)
-int av_get_output_timestamp(struct AVFormatContext *s, int stream,
-int64_t *dts, int64_t *wall)
-int ff_write_chained(AVFormatContext *dst, int dst_stream, AVPacket *pkt,
-AVFormatContext *src, int interleave)
-static int av_write_uncoded_frame_internal(AVFormatContext *s, int stream_index,
-AVFrame *frame, int interleaved)
-int av_write_uncoded_frame(AVFormatContext *s, int stream_index,
-AVFrame *frame)
-int av_interleaved_write_uncoded_frame(AVFormatContext *s, int stream_index,
-AVFrame *frame)
-int av_write_uncoded_frame_query(AVFormatContext *s, int stream_index)
+ff_interleave_add_packet(AVFormatContext *, AVPacket *, AVPacket *))
+interleave_compare_dts
+ff_interleave_packet_per_dts
+*ff_interleaved_peek
+interleave_packet
+av_interleaved_write_frame
+av_write_trailer
+av_get_output_timestamp
+ff_write_chained
+av_write_uncoded_frame_internal
+av_write_uncoded_frame
+av_interleaved_write_uncoded_frame
+av_write_uncoded_frame_query

@@ -38,28 +38,24 @@ extern const uint8_t ff_mpeg4_y_dc_scale_table[32];
 extern const uint8_t ff_mpeg4_c_dc_scale_table[32];
 extern const uint16_t ff_mpeg4_resync_prefix[8];
 extern const uint8_t ff_mpeg4_dc_threshold[8];
-void ff_mpeg4_encode_mb(MpegEncContext *s,
-int16_t block[6][64],
-int motion_x, int motion_y);
-void ff_mpeg4_pred_ac(MpegEncContext *s, int16_t *block, int n,
-int dir);
-void ff_set_mpeg4_time(MpegEncContext *s);
-int ff_mpeg4_encode_picture_header(MpegEncContext *s, int picture_number);
-int ff_mpeg4_decode_picture_header(Mpeg4DecContext *ctx, GetBitContext *gb);
-void ff_mpeg4_encode_video_packet_header(MpegEncContext *s);
-void ff_mpeg4_clean_buffers(MpegEncContext *s);
-void ff_mpeg4_stuffing(PutBitContext *pbc);
-void ff_mpeg4_init_partitions(MpegEncContext *s);
-void ff_mpeg4_merge_partitions(MpegEncContext *s);
-void ff_clean_mpeg4_qscales(MpegEncContext *s);
-int ff_mpeg4_decode_partitions(Mpeg4DecContext *ctx);
-int ff_mpeg4_get_video_packet_prefix_length(MpegEncContext *s);
-int ff_mpeg4_decode_video_packet_header(Mpeg4DecContext *ctx);
-void ff_mpeg4_init_direct_mv(MpegEncContext *s);
-void ff_mpeg4videodec_static_init(void);
-int ff_mpeg4_workaround_bugs(AVCodecContext *avctx);
-int ff_mpeg4_frame_end(AVCodecContext *avctx, const uint8_t *buf, int buf_size);
-int ff_mpeg4_set_direct_mv(MpegEncContext *s, int mx, int my);
+ff_mpeg4_encode_mb;
+ff_mpeg4_pred_ac;
+ff_set_mpeg4_time;
+ff_mpeg4_encode_picture_header;
+ff_mpeg4_decode_picture_header;
+ff_mpeg4_encode_video_packet_header;
+ff_mpeg4_clean_buffers;
+ff_mpeg4_stuffing;
+ff_mpeg4_init_partitions;
+ff_mpeg4_merge_partitions;
+ff_clean_mpeg4_qscales;
+ff_mpeg4_decode_partitions;
+ff_mpeg4_get_video_packet_prefix_length;
+ff_mpeg4_decode_video_packet_header;
+ff_mpeg4_init_direct_mv;
+ff_mpeg4videodec_static_init;
+ff_mpeg4_workaround_bugs;
+ff_mpeg4_frame_end;
+ff_mpeg4_set_direct_mv;
 extern uint8_t ff_mpeg4_static_rl_table_store[3][2][2 * MAX_RUN + MAX_LEVEL + 3];
-static inline int ff_mpeg4_pred_dc(MpegEncContext *s, int n, int level,
-int *dir_ptr, int encoding)
+ff_mpeg4_pred_dc

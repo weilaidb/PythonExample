@@ -1,2 +1,2 @@
-int ff_intel_h263_decode_picture_header(MpegEncContext *s)
+ff_intel_h263_decode_picture_header
 AVCodec ff_h263i_decoder = ;

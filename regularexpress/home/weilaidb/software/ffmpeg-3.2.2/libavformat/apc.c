@@ -1,5 +1,5 @@
-static int apc_probe(AVProbeData *p)
-static int apc_read_header(AVFormatContext *s)
+apc_probe
+apc_read_header
 #define MAX_READ_SIZE 4096
-static int apc_read_packet(AVFormatContext *s, AVPacket *pkt)
+apc_read_packet
 AVInputFormat ff_apc_demuxer = ;

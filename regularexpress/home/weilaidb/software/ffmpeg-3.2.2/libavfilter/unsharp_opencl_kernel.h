@@ -1,54 +1,7 @@
 #define AVFILTER_UNSHARP_OPENCL_KERNEL_H
 const char *ff_kernel_unsharp_opencl = AV_OPENCL_KERNEL(
-inline unsigned char clip_uint8(int a)
-kernel void unsharp_luma(
-global unsigned char *src,
-global unsigned char *dst,
-global int *mask_x,
-global int *mask_y,
-int amount,
-int scalebits,
-int halfscale,
-int src_stride,
-int dst_stride,
-int width,
-int height)
-kernel void unsharp_chroma(
-global unsigned char *src_y,
-global unsigned char *dst_y,
-global int *mask_x,
-global int *mask_y,
-int amount,
-int scalebits,
-int halfscale,
-int src_stride_lu,
-int src_stride_ch,
-int dst_stride_lu,
-int dst_stride_ch,
-int width,
-int height,
-int cw,
-int ch)
-kernel void unsharp_default(global  unsigned char *src,
-global  unsigned char *dst,
-const global  unsigned int *mask_lu,
-const global  unsigned int *mask_ch,
-int amount_lu,
-int amount_ch,
-int step_x_lu,
-int step_y_lu,
-int step_x_ch,
-int step_y_ch,
-int scalebits_lu,
-int scalebits_ch,
-int halfscale_lu,
-int halfscale_ch,
-int src_stride_lu,
-int src_stride_ch,
-int dst_stride_lu,
-int dst_stride_ch,
-int height,
-int width,
-int ch,
-int cw)
+clip_uint8
+unsharp_luma
+unsharp_chroma
+unsharp_default
 );

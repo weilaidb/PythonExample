@@ -1,13 +1,13 @@
-static int indexof(const char *s, int c)
+indexof
 struct microdvd_tag ;
 #define MICRODVD_PERSISTENT_OFF     0
 #define MICRODVD_PERSISTENT_ON      1
 #define MICRODVD_PERSISTENT_OPENED  2
-#define MICRODVD_TAGS "cfshyYpo"
-static void microdvd_set_tag(struct microdvd_tag *tags, struct microdvd_tag tag)
-#define MICRODVD_STYLES "ibus"
-static char *check_for_italic_slash_marker(struct microdvd_tag *tags, char *s)
-static char *microdvd_load_tags(struct microdvd_tag *tags, char *s)
+#define MICRODVD_TAGS
+microdvd_set_tag
+#define MICRODVD_STYLES
+*check_for_italic_slash_marker
+*microdvd_load_tags
 case 'S':
 tag.persistent = MICRODVD_PERSISTENT_ON;
 case 's':
@@ -53,12 +53,10 @@ return start;
 microdvd_set_tag(tags, tag);
 s++;
 }
-return check_for_italic_slash_marker(tags, s);
+check_for_italic_slash_marker;
 }
-static void microdvd_open_tags(AVBPrint *new_line, struct microdvd_tag *tags)
-static void microdvd_close_no_persistent_tags(AVBPrint *new_line,
-struct microdvd_tag *tags)
-static int microdvd_decode_frame(AVCodecContext *avctx,
-void *data, int *got_sub_ptr, AVPacket *avpkt)
-static int microdvd_init(AVCodecContext *avctx)
+microdvd_open_tags
+microdvd_close_no_persistent_tags
+microdvd_decode_frame
+microdvd_init
 AVCodec ff_microdvd_decoder = ;

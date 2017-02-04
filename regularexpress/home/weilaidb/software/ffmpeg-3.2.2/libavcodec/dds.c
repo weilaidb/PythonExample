@@ -4,11 +4,9 @@
 enum DDSPostProc ;
 enum DDSDXGIFormat ;
 typedef struct DDSContext  DDSContext;
-static int parse_pixel_format(AVCodecContext *avctx)
-static int decompress_texture_thread(AVCodecContext *avctx, void *arg,
-int slice, int thread_nb)
-static void do_swizzle(AVFrame *frame, int x, int y)
-static void run_postproc(AVCodecContext *avctx, AVFrame *frame)
-static int dds_decode(AVCodecContext *avctx, void *data,
-int *got_frame, AVPacket *avpkt)
+parse_pixel_format
+decompress_texture_thread
+do_swizzle
+run_postproc
+dds_decode
 AVCodec ff_dds_decoder = ;

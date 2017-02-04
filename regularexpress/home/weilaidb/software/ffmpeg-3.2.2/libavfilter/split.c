@@ -1,14 +1,12 @@
 typedef struct SplitContext  SplitContext;
-static av_cold int split_init(AVFilterContext *ctx)
-static av_cold void split_uninit(AVFilterContext *ctx)
-static int filter_frame(AVFilterLink *inlink, AVFrame *frame)
-#define OFFSET(x) offsetof(SplitContext, x)
+split_init
+split_uninit
+filter_frame
+OFFSET offsetof(SplitContext, x)
 #define FLAGS (AV_OPT_FLAG_AUDIO_PARAM | AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_FILTERING_PARAM)
 static const AVOption options[] = ;
-#define split_options options
-AVFILTER_DEFINE_CLASS(split);
-#define asplit_options options
-AVFILTER_DEFINE_CLASS(asplit);
+AVFILTER_DEFINE_CLASS;
+AVFILTER_DEFINE_CLASS;
 static const AVFilterPad avfilter_vf_split_inputs[] = ;
 AVFilter ff_vf_split = ;
 static const AVFilterPad avfilter_af_asplit_inputs[] = ;

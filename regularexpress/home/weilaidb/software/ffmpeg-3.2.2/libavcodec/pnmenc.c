@@ -1,6 +1,5 @@
-static int pnm_encode_frame(AVCodecContext *avctx, AVPacket *pkt,
-const AVFrame *p, int *got_packet)
-static av_cold int pnm_encode_init(AVCodecContext *avctx)
+pnm_encode_frame
+pnm_encode_init
 #if CONFIG_PGM_ENCODER
 AVCodec ff_pgm_encoder = ;
 #if CONFIG_PGMYUV_ENCODER

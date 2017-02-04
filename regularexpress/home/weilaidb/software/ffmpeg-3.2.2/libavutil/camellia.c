@@ -1,5 +1,5 @@
-#define LR32(x,c) ((x) << (c) | (x) >> (32 - (c)))
-#define RR32(x,c) ((x) >> (c) | (x) << (32 - (c)))
+LR32 ((x) << (c) | (x) >> (32 - (c)))
+RR32 ((x) >> (c) | (x) << (32 - (c)))
 #define MASK8 0xff
 #define MASK32 0xffffffff
 #define MASK64 0xffffffffffffffff
@@ -16,16 +16,16 @@ static const uint8_t SBOX2[256] = ;
 static const uint8_t SBOX3[256] = ;
 static const uint8_t SBOX4[256] = ;
 const int av_camellia_size = sizeof(AVCAMELLIA);
-static void LR128(uint64_t d[2], const uint64_t K[2], int x)
-static uint64_t F(uint64_t F_IN, uint64_t KE)
-static uint64_t FL(uint64_t FL_IN, uint64_t KE)
-static uint64_t FLINV(uint64_t FLINV_IN, uint64_t KE)
+LR128
+F
+FL
+FLINV
 static const uint8_t shifts[2][12] = ;
 static const uint8_t vars[2][12] = ;
-static void generate_round_keys(AVCAMELLIA *cs, uint64_t Kl[2], uint64_t Kr[2], uint64_t Ka[2], uint64_t Kb[2])
-static void camellia_encrypt(AVCAMELLIA *cs, uint8_t *dst, const uint8_t *src)
-static void camellia_decrypt(AVCAMELLIA *cs, uint8_t *dst, const uint8_t *src, uint8_t *iv)
-static void computeSP(void)
-struct AVCAMELLIA *av_camellia_alloc(void)
-av_cold int av_camellia_init(AVCAMELLIA *cs, const uint8_t *key, int key_bits)
-void av_camellia_crypt(AVCAMELLIA *cs, uint8_t *dst, const uint8_t *src, int count, uint8_t *iv, int decrypt)
+generate_round_keys
+camellia_encrypt
+camellia_decrypt
+computeSP
+*av_camellia_alloc
+av_camellia_init
+av_camellia_crypt

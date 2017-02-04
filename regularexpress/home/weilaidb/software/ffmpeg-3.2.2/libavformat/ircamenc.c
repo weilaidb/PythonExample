@@ -1,2 +1,2 @@
-static int ircam_write_header(AVFormatContext *s)
+ircam_write_header
 AVOutputFormat ff_ircam_muxer = ;

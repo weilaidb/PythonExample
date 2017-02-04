@@ -1,3 +1,3 @@
-static int framecrc_write_header(struct AVFormatContext *s)
-static int framecrc_write_packet(struct AVFormatContext *s, AVPacket *pkt)
+framecrc_write_header
+framecrc_write_packet
 AVOutputFormat ff_framecrc_muxer = ;

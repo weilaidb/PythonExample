@@ -4,8 +4,8 @@ enum Mode ;
 #define LP_FILTER_ORDER 10
 typedef struct AMRNBSubframe  AMRNBSubframe;
 typedef struct AMRNBFrame  AMRNBFrame;
-#define AMR_BIT(field)                  (offsetof(AMRNBFrame, field))
-#define AMR_OF(frame_num, variable)     AMR_BIT(subframe[frame_num].variable)
+AMR_BIT                  (offsetof(AMRNBFrame, field))
+AMR_OF     AMR_BIT(subframe[frame_num].variable)
 static const uint8_t order_MODE_4k75[] = ;
 static const uint8_t order_MODE_5k15[] = ;
 static const uint8_t order_MODE_5k9[] = ;

@@ -1,12 +1,12 @@
 #define AVFORMAT_OS_SUPPORT_H
 #if HAVE_DIRECT_H
 #if HAVE_IO_H
-#if defined(_WIN32) && !defined(__MINGW32CE__)
+defined && !defined(__MINGW32CE__)
 #  include <fcntl.h>
 #  ifdef lseek
 #   undef lseek
 #  endif
-#  define lseek(f,p,w) _lseeki64((f), (p), (w))
+lseek _lseeki64((f), (p), (w))
 #  ifdef stat
 #   undef stat
 #  endif
@@ -14,20 +14,20 @@
 #  ifdef fstat
 #   undef fstat
 #  endif
-#  define fstat(f,s) _fstati64((f), (s))
+fstat _fstati64((f), (s))
 #  if HAVE_UNISTD_H
 #    include <unistd.h>
 #  endif
 #  ifdef lseek
 #   undef lseek
 #  endif
-#  define lseek(f,p,w) lseek64((f), (p), (w))
-static inline int is_dos_path(const char *path)
-#if defined(__OS2__) || defined(__Plan9__)
+lseek lseek64((f), (p), (w))
+is_dos_path
+defined || defined(__Plan9__)
 #define SHUT_RD 0
 #define SHUT_WR 1
 #define SHUT_RDWR 2
-#if defined(_WIN32)
+defined
 #define SHUT_RD SD_RECEIVE
 #define SHUT_WR SD_SEND
 #define SHUT_RDWR SD_BOTH
@@ -53,25 +53,25 @@ struct pollfd ;
 #define POLLERR    0x0004
 #define POLLHUP    0x0080
 #define POLLNVAL   0x1000
-int ff_poll(struct pollfd *fds, nfds_t numfds, int timeout);
+ff_poll;
 #define poll ff_poll
-#if defined(__MINGW32CE__)
-#define mkdir(a, b) _mkdir(a)
-#elif defined(_WIN32)
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+defined
+mkdir _mkdir(a)
+defined
+WINAPI_FAMILY_PARTITION
 #define USE_MOVEFILEEXA
 #define USE_MOVEFILEEXA
-#define DEF_FS_FUNCTION(name, wfunc, afunc)               \
+DEF_FS_FUNCTION               \
 static inline int win32_##name(const char *filename_utf8) \
 DEF_FS_FUNCTION(unlink, _wunlink, _unlink)
 DEF_FS_FUNCTION(mkdir,  _wmkdir,  _mkdir)
 DEF_FS_FUNCTION(rmdir,  _wrmdir , _rmdir)
-#define DEF_FS_FUNCTION2(name, wfunc, afunc, partype)     \
+DEF_FS_FUNCTION2     \
 static inline int win32_##name(const char *filename_utf8, partype par) \
 DEF_FS_FUNCTION2(access, _waccess, _access, int)
 DEF_FS_FUNCTION2(stat, _wstati64, _stati64, struct stat*)
-static inline int win32_rename(const char *src_utf8, const char *dest_utf8)
-#define mkdir(a, b) win32_mkdir(a)
+win32_rename
+mkdir win32_mkdir(a)
 #define rename      win32_rename
 #define rmdir       win32_rmdir
 #define unlink      win32_unlink

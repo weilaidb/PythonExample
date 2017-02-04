@@ -1,11 +1,11 @@
 #define USE_FLOATS 1
-#define SHR(a,b)       ((a)*(1.0f/(1<<(b))))
-#define FIXR_OLD(a)    ((int)((a) * FRAC_ONE + 0.5))
-#define FIXR(x)        ((float)(x))
-#define FIXHR(x)       ((float)(x))
-#define MULH3(x, y, s) ((s)*(y)*(x))
-#define MULLx(x, y, s) ((y)*(x))
-#define RENAME(a) a ## _float
+SHR       ((a)*(1.0f/(1<<(b))))
+FIXR_OLD    ((int)((a) * FRAC_ONE + 0.5))
+FIXR        ((float)(x))
+FIXHR       ((float)(x))
+MULH3 ((s)*(y)*(x))
+MULLx ((y)*(x))
+RENAME a ## _float
 #define OUT_FMT   AV_SAMPLE_FMT_FLT
 #define OUT_FMT_P AV_SAMPLE_FMT_FLTP
 #if CONFIG_MP1FLOAT_DECODER

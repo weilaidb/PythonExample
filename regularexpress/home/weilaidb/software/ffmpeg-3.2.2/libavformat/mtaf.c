@@ -1,4 +1,4 @@
-static int mtaf_probe(AVProbeData *p)
-static int mtaf_read_header(AVFormatContext *s)
-static int mtaf_read_packet(AVFormatContext *s, AVPacket *pkt)
+mtaf_probe
+mtaf_read_header
+mtaf_read_packet
 AVInputFormat ff_mtaf_demuxer = ;

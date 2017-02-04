@@ -1,6 +1,6 @@
-static int sdr2_probe(AVProbeData *p)
+sdr2_probe
 #define FIRST 0xA8
-static int sdr2_read_header(AVFormatContext *s)
+sdr2_read_header
 static const uint8_t header[24] = ;
-static int sdr2_read_packet(AVFormatContext *s, AVPacket *pkt)
+sdr2_read_packet
 AVInputFormat ff_sdr2_demuxer = ;

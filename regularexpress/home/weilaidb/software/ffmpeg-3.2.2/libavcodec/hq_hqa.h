@@ -8,4 +8,4 @@ extern const int32_t * const ff_hq_quants[16][2][4];
 extern const HQProfile ff_hq_profile[NUM_HQ_PROFILES];
 extern const uint8_t ff_hq_ac_skips[NUM_HQ_AC_ENTRIES];
 extern const int16_t ff_hq_ac_syms [NUM_HQ_AC_ENTRIES];
-int ff_hq_init_vlcs(HQContext *c);
+ff_hq_init_vlcs;

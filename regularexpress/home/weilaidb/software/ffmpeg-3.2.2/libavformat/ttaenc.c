@@ -1,5 +1,5 @@
 typedef struct TTAMuxContext  TTAMuxContext;
-static int tta_write_header(AVFormatContext *s)
-static int tta_write_packet(AVFormatContext *s, AVPacket *pkt)
-static int tta_write_trailer(AVFormatContext *s)
+tta_write_header
+tta_write_packet
+tta_write_trailer
 AVOutputFormat ff_tta_muxer = ;

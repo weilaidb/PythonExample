@@ -1,4 +1,4 @@
-#define RTP_G726_HANDLER(bitrate) \
+RTP_G726_HANDLER \
 static av_cold int g726_ ## bitrate ##_init(AVFormatContext *s, int st_index, \
 PayloadContext *data) \
 \

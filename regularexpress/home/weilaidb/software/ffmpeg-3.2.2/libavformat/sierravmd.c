@@ -2,9 +2,8 @@
 #define BYTES_PER_FRAME_RECORD 16
 typedef struct vmd_frame  vmd_frame;
 typedef struct VmdDemuxContext  VmdDemuxContext;
-static int vmd_probe(AVProbeData *p)
-static int vmd_read_header(AVFormatContext *s)
-static int vmd_read_packet(AVFormatContext *s,
-AVPacket *pkt)
-static int vmd_read_close(AVFormatContext *s)
+vmd_probe
+vmd_read_header
+vmd_read_packet
+vmd_read_close
 AVInputFormat ff_vmd_demuxer = ;

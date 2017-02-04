@@ -81,36 +81,36 @@ int lumStride, int chromStride, int srcStride);
 #define RY ((int)( 0.257 * (1 << RGB2YUV_SHIFT) + 0.5))
 #define RV ((int)( 0.439 * (1 << RGB2YUV_SHIFT) + 0.5))
 #define RU ((int)(-0.148 * (1 << RGB2YUV_SHIFT) + 0.5))
-av_cold void ff_sws_rgb2rgb_init(void)
-void rgb32to24(const uint8_t *src, uint8_t *dst, int src_size)
-void rgb24to32(const uint8_t *src, uint8_t *dst, int src_size)
-void rgb16tobgr32(const uint8_t *src, uint8_t *dst, int src_size)
-void rgb12to15(const uint8_t *src, uint8_t *dst, int src_size)
-void rgb16to24(const uint8_t *src, uint8_t *dst, int src_size)
-void rgb16tobgr16(const uint8_t *src, uint8_t *dst, int src_size)
-void rgb16tobgr15(const uint8_t *src, uint8_t *dst, int src_size)
-void rgb15tobgr32(const uint8_t *src, uint8_t *dst, int src_size)
-void rgb15to24(const uint8_t *src, uint8_t *dst, int src_size)
-void rgb15tobgr16(const uint8_t *src, uint8_t *dst, int src_size)
-void rgb15tobgr15(const uint8_t *src, uint8_t *dst, int src_size)
-void rgb12tobgr12(const uint8_t *src, uint8_t *dst, int src_size)
-#define DEFINE_SHUFFLE_BYTES(a, b, c, d)                                \
+ff_sws_rgb2rgb_init
+rgb32to24
+rgb24to32
+rgb16tobgr32
+rgb12to15
+rgb16to24
+rgb16tobgr16
+rgb16tobgr15
+rgb15tobgr32
+rgb15to24
+rgb15tobgr16
+rgb15tobgr15
+rgb12tobgr12
+DEFINE_SHUFFLE_BYTES                                \
 void shuffle_bytes_ ## a ## b ## c ## d(const uint8_t *src,             \
 uint8_t *dst, int src_size)     \
 DEFINE_SHUFFLE_BYTES(1, 2, 3, 0)
 DEFINE_SHUFFLE_BYTES(3, 0, 1, 2)
 DEFINE_SHUFFLE_BYTES(3, 2, 1, 0)
-#define DEFINE_RGB48TOBGR48(need_bswap, swap)                           \
+DEFINE_RGB48TOBGR48                           \
 void rgb48tobgr48_ ## need_bswap(const uint8_t *src,                    \
 uint8_t *dst, int src_size)            \
 DEFINE_RGB48TOBGR48(nobswap, 0)
 DEFINE_RGB48TOBGR48(bswap, 1)
-#define DEFINE_RGB64TOBGR48(need_bswap, swap)                           \
+DEFINE_RGB64TOBGR48                           \
 void rgb64tobgr48_ ## need_bswap(const uint8_t *src,                    \
 uint8_t *dst, int src_size)            \
 DEFINE_RGB64TOBGR48(nobswap, 0)
 DEFINE_RGB64TOBGR48(bswap, 1)
-#define DEFINE_RGB64TO48(need_bswap, swap)                              \
+DEFINE_RGB64TO48                              \
 void rgb64to48_ ## need_bswap(const uint8_t *src,                       \
 uint8_t *dst, int src_size)               \
 DEFINE_RGB64TO48(nobswap, 0)

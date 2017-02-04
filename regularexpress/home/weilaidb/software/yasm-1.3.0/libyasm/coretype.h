@@ -35,15 +35,14 @@ typedef int (*yasm_output_reloc_func)
 (yasm_symrec *sym, yasm_bytecode *bc, unsigned char *buf,
 unsigned int destsize, unsigned int valsize, int warn, void *d);
 YASM_LIB_DECL
-int yasm__mergesort(void *base, size_t nmemb, size_t size,
-int (*compar)(const void *, const void *));
-YASM_LIB_DECL char *yasm__strsep(char **stringp, const char *delim);
+yasm__mergesort(const void *, const void *));
+*yasm__strsep;
 YASM_LIB_DECL
-int yasm__strcasecmp(const char *s1, const char *s2);
+yasm__strcasecmp;
 YASM_LIB_DECL
-int yasm__strncasecmp(const char *s1, const char *s2, size_t n);
-YASM_LIB_DECL char *yasm__xstrdup(const char *str);
-YASM_LIB_DECL char *yasm__xstrndup(const char *str, size_t max);
+yasm__strncasecmp;
+*yasm__xstrdup;
+*yasm__xstrndup;
 YASM_LIB_DECL
 extern void * (*yasm_xmalloc) (size_t size);
 YASM_LIB_DECL

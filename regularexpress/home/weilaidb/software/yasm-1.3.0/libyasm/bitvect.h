@@ -64,7 +64,7 @@ YASM_LIB_DECL
 N_int   BitVector_Long_Bits  (void);
 YASM_LIB_DECL wordptr BitVector_Create     (N_int bits, boolean clear);
 YASM_LIB_DECL
-listptr BitVector_Create_List(N_int bits, boolean clear, N_int count);
+BitVector_Create_List;
 YASM_LIB_DECL
 wordptr BitVector_Resize     (wordptr oldaddr, N_int bits);
 YASM_LIB_DECL
@@ -109,9 +109,7 @@ YASM_LIB_DECL
 void    BitVector_Interval_Copy      ( wordptr X, wordptr Y, N_int Xoffset,
 N_int Yoffset, N_int length);
 YASM_LIB_DECL
-wordptr BitVector_Interval_Substitute( wordptr X, wordptr Y,
-N_int Xoffset, N_int Xlength,
-N_int Yoffset, N_int Ylength);
+BitVector_Interval_Substitute;
 YASM_LIB_DECL
 boolean BitVector_is_empty   (wordptr addr);
 YASM_LIB_DECL
@@ -119,14 +117,14 @@ boolean BitVector_is_full    (wordptr addr);
 YASM_LIB_DECL
 boolean BitVector_equal      (wordptr X, wordptr Y);
 YASM_LIB_DECL
-Z_int   BitVector_Lexicompare(wordptr X, wordptr Y);
+BitVector_Lexicompare;
 YASM_LIB_DECL
 Z_int   BitVector_Compare    (wordptr X, wordptr Y);
 YASM_LIB_DECL charptr BitVector_to_Hex     (wordptr addr);
 YASM_LIB_DECL
 ErrCode BitVector_from_Hex   (wordptr addr, charptr string);
 YASM_LIB_DECL
-ErrCode BitVector_from_Oct( wordptr addr, charptr string);
+BitVector_from_Oct;
 YASM_LIB_DECL charptr BitVector_to_Bin     (wordptr addr);
 YASM_LIB_DECL
 ErrCode BitVector_from_Bin   ( wordptr addr, charptr string);
@@ -135,11 +133,11 @@ YASM_LIB_DECL
 ErrCode BitVector_from_Dec   ( wordptr addr, charptr string);
 typedef struct BitVector_from_Dec_static_data BitVector_from_Dec_static_data;
 YASM_LIB_DECL
-BitVector_from_Dec_static_data *BitVector_from_Dec_static_Boot(N_word bits);
+*BitVector_from_Dec_static_Boot;
 YASM_LIB_DECL
-void BitVector_from_Dec_static_Shutdown( BitVector_from_Dec_static_data *data);
+BitVector_from_Dec_static_Shutdown;
 YASM_LIB_DECL
-ErrCode BitVector_from_Dec_static(BitVector_from_Dec_static_data *data, wordptr addr, charptr string);
+BitVector_from_Dec_static;
 YASM_LIB_DECL charptr BitVector_to_Enum    (wordptr addr);
 YASM_LIB_DECL
 ErrCode BitVector_from_Enum  ( wordptr addr, charptr string);
@@ -216,7 +214,7 @@ wordptr X, wordptr Y);
 YASM_LIB_DECL
 ErrCode BitVector_Power      (wordptr X, wordptr Y, wordptr Z);
 YASM_LIB_DECL
-void    BitVector_Block_Store(wordptr addr, charptr buffer, N_int length);
+BitVector_Block_Store;
 YASM_LIB_DECL
 charptr BitVector_Block_Read (wordptr addr, N_intptr length);
 YASM_LIB_DECL
@@ -224,14 +222,11 @@ void    BitVector_Word_Store (wordptr addr, N_int offset, N_int value);
 YASM_LIB_DECL
 N_int   BitVector_Word_Read  (wordptr addr, N_int offset);
 YASM_LIB_DECL
-void    BitVector_Word_Insert(wordptr addr, N_int offset, N_int count,
-boolean clear);
+BitVector_Word_Insert;
 YASM_LIB_DECL
-void    BitVector_Word_Delete(wordptr addr, N_int offset, N_int count,
-boolean clear);
+BitVector_Word_Delete;
 YASM_LIB_DECL
-void    BitVector_Chunk_Store(wordptr addr, N_int chunksize,
-N_int offset, N_long value);
+BitVector_Chunk_Store;
 YASM_LIB_DECL
 N_long  BitVector_Chunk_Read (wordptr addr, N_int chunksize,
 N_int offset);
@@ -258,9 +253,7 @@ Z_long  Set_Min              (wordptr addr);
 YASM_LIB_DECL
 Z_long  Set_Max              (wordptr addr);
 YASM_LIB_DECL
-void    Matrix_Multiplication(wordptr X, N_int rowsX, N_int colsX,
-wordptr Y, N_int rowsY, N_int colsY,
-wordptr Z, N_int rowsZ, N_int colsZ);
+Matrix_Multiplication;
 YASM_LIB_DECL
 void    Matrix_Product       (wordptr X, N_int rowsX, N_int colsX,
 wordptr Y, N_int rowsY, N_int colsY,

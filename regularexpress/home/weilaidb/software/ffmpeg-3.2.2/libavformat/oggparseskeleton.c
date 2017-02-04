@@ -1,2 +1,2 @@
-static int skeleton_header(AVFormatContext *s, int idx)
+skeleton_header
 const struct ogg_codec ff_skeleton_codec = ;

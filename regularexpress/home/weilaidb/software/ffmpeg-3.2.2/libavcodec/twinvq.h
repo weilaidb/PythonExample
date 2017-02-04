@@ -21,9 +21,8 @@ typedef struct TwinVQFrameData  TwinVQFrameData;
 typedef struct TwinVQModeTab  TwinVQModeTab;
 typedef struct TwinVQContext  TwinVQContext;
 extern const enum TwinVQFrameType ff_twinvq_wtype_to_ftype_table[];
-static inline void twinvq_memset_float(float *buf, float val, int size)
-static inline float twinvq_mulawinv(float y, float clip, float mu)
-int ff_twinvq_decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame_ptr, AVPacket *avpkt);
-int ff_twinvq_decode_close(AVCodecContext *avctx);
-int ff_twinvq_decode_init(AVCodecContext *avctx);
+twinvq_memset_float
+twinvq_mulawinv
+ff_twinvq_decode_frame;
+ff_twinvq_decode_close;
+ff_twinvq_decode_init;

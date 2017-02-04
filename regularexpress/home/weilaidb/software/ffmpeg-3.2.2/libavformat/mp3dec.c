@@ -7,21 +7,19 @@
 (0xffe00000 | (3 << 17) | (3 << 10) | (3 << 19))
 typedef struct  MP3DecContext;
 enum CheckRet ;
-static int check(AVIOContext *pb, int64_t pos, uint32_t *header);
-static int mp3_read_probe(AVProbeData *p)
-static void read_xing_toc(AVFormatContext *s, int64_t filesize, int64_t duration)
-static void mp3_parse_info_tag(AVFormatContext *s, AVStream *st,
-MPADecodeHeader *c, uint32_t spf)
-static void mp3_parse_vbri_tag(AVFormatContext *s, AVStream *st, int64_t base)
-static int mp3_parse_vbr_tags(AVFormatContext *s, AVStream *st, int64_t base)
-static int mp3_read_header(AVFormatContext *s)
+check;
+mp3_read_probe
+read_xing_toc
+mp3_parse_info_tag
+mp3_parse_vbri_tag
+mp3_parse_vbr_tags
+mp3_read_header
 #define MP3_PACKET_SIZE 1024
-static int mp3_read_packet(AVFormatContext *s, AVPacket *pkt)
+mp3_read_packet
 #define SEEK_WINDOW 4096
-static int check(AVIOContext *pb, int64_t pos, uint32_t *ret_header)
-static int64_t mp3_sync(AVFormatContext *s, int64_t target_pos, int flags)
-static int mp3_seek(AVFormatContext *s, int stream_index, int64_t timestamp,
-int flags)
+check
+mp3_sync
+mp3_seek
 static const AVOption options[] = ;
 static const AVClass demuxer_class = ;
 AVInputFormat ff_mp3_demuxer = ;

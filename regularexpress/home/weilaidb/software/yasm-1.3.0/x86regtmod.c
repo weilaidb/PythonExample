@@ -1,10 +1,7 @@
-#line 26 "./modules/arch/x86/x86regtmod.gperf"
+#line 26
 enum regtmod_type ;
-#line 50 "./modules/arch/x86/x86regtmod.gperf"
+#line 50
 struct regtmod_parse_data ;
-static const struct regtmod_parse_data *
-regtmod_find(const char *key, size_t len)
-#line 254 "./modules/arch/x86/x86regtmod.gperf"
-yasm_arch_regtmod
-yasm_x86__parse_check_regtmod(yasm_arch *arch, const char *id, size_t id_len,
-uintptr_t *data)
+regtmod_find
+#line 254
+yasm_x86__parse_check_regtmod

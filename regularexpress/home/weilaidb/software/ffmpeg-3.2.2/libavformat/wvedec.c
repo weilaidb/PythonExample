@@ -1,3 +1,3 @@
-static int wve_probe(AVProbeData *p)
-static int wve_read_header(AVFormatContext *s)
+wve_probe
+wve_read_header
 AVInputFormat ff_wve_demuxer = ;

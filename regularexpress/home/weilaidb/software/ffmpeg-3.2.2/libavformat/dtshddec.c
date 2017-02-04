@@ -12,7 +12,7 @@
 #define STRMDATA 0x5354524D44415441
 #define TIMECODE 0x54494D45434F4445
 typedef struct DTSHDDemuxContext  DTSHDDemuxContext;
-static int dtshd_probe(AVProbeData *p)
-static int dtshd_read_header(AVFormatContext *s)
-static int raw_read_packet(AVFormatContext *s, AVPacket *pkt)
+dtshd_probe
+dtshd_read_header
+raw_read_packet
 AVInputFormat ff_dtshd_demuxer = ;

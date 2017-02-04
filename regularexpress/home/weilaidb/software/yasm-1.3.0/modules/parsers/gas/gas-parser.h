@@ -23,11 +23,11 @@ typedef struct yasm_parser_gas  yasm_parser_gas;
 #define LABEL_val               (curval.str.contents)
 #define LABEL_len               (curval.str.len)
 #define cur_line        (yasm_linemap_get_current(parser_gas->linemap))
-#define p_expr_new(l,o,r)       yasm_expr_create(o,l,r,cur_line)
-#define p_expr_new_tree(l,o,r)  yasm_expr_create_tree(l,o,r,cur_line)
-#define p_expr_new_branch(o,r)  yasm_expr_create_branch(o,r,cur_line)
-#define p_expr_new_ident(r)     yasm_expr_create_ident(r,cur_line)
-yasm_bytecode *parse_instr_intel(yasm_parser_gas *parser_gas);
-void gas_parser_parse(yasm_parser_gas *parser_gas);
-void gas_parser_cleanup(yasm_parser_gas *parser_gas);
-int gas_parser_lex(YYSTYPE *lvalp, yasm_parser_gas *parser_gas);
+p_expr_new       yasm_expr_create(o,l,r,cur_line)
+p_expr_new_tree  yasm_expr_create_tree(l,o,r,cur_line)
+p_expr_new_branch  yasm_expr_create_branch(o,r,cur_line)
+p_expr_new_ident     yasm_expr_create_ident(r,cur_line)
+*parse_instr_intel;
+gas_parser_parse;
+gas_parser_cleanup;
+gas_parser_lex;

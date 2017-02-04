@@ -8,7 +8,7 @@ int32_t *dst,
 const int32_t *src,
 int dynrng,
 int len)
-static void ac3_downmix_c_fixed16(int16_t **samples, int16_t (*matrix)[2],
+ac3_downmix_c_fixed16[2],
 int out_ch, int in_ch, int len)
 static const AVOption options[] = ;
 static const AVClass ac3_decoder_class = ;

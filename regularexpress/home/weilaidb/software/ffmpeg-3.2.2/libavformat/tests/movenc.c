@@ -3,7 +3,7 @@
 #define HASH_SIZE 16
 static const uint8_t h264_extradata[] = ;
 static const uint8_t aac_extradata[] = ;
-static const char *format = "mp4";
+static const char *format = ;
 AVFormatContext *ctx;
 uint8_t iobuf[32768];
 AVDictionary *opts;
@@ -30,22 +30,21 @@ int do_interleave;
 int fake_pkt_duration;
 int num_warnings;
 int check_faults;
-static void count_warnings(void *avcl, int level, const char *fmt, va_list vl)
-static void init_count_warnings(void)
-static void reset_count_warnings(void)
-static int io_write(void *opaque, uint8_t *buf, int size)
-static int io_write_data_type(void *opaque, uint8_t *buf, int size,
-enum AVIODataMarkerType type, int64_t time)
-static void init_out(const char *name)
-static void close_out(void)
-static void check_func(int value, int line, const char *msg, ...)
-#define check(value, ...) check_func(value, __LINE__, __VA_ARGS__)
-static void init_fps(int bf, int audio_preroll, int fps)
-static void init(int bf, int audio_preroll)
-static void mux_frames(int n, int c)
-static void mux_gops(int n)
-static void skip_gops(int n)
-static void signal_init_ts(void)
-static void finish(void)
-static void help(void)
-int main(int argc, char **argv)
+count_warnings
+init_count_warnings
+reset_count_warnings
+io_write
+io_write_data_type
+init_out
+close_out
+check_func
+check check_func(value, __LINE__, __VA_ARGS__)
+init_fps
+init
+mux_frames
+mux_gops
+skip_gops
+signal_init_ts
+finish
+help
+main

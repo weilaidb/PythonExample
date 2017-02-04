@@ -23,9 +23,6 @@ typedef  struct hstuff hstuff;
 struct qstuff
 ;
 typedef  struct qstuff  qstuff;
-ub4 phash_log2(ub4 x);
-void findhash(bstuff **tabb, hstuff **tabh, ub4 *alen, ub4 *blen, ub4 *salt,
-gencode *final, ub4 *scramble, ub4 *smax, key *keys, ub4 nkeys,
-hashform *form);
-int inithex(key *keys, ub4 nkeys, ub4 alen, ub4 blen, ub4 smax, ub4 salt,
-gencode *final, hashform *form);
+phash_log2;
+findhash;
+inithex;

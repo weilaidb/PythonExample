@@ -20,9 +20,9 @@ typedef double FELEM2;
 typedef double FELEML;
 #define WINDOW_TYPE 24
 typedef struct AVResampleContextAVResampleContext;
-static double bessel(double x)
-static int build_filter(FELEM *filter, double factor, int tap_count, int phase_count, int scale, int type)
-AVResampleContext *av_resample_init(int out_rate, int in_rate, int filter_size, int phase_shift, int linear, double cutoff)
-void av_resample_close(AVResampleContext *c)
-void av_resample_compensate(AVResampleContext *c, int sample_delta, int compensation_distance)
-int av_resample(AVResampleContext *c, short *dst, short *src, int *consumed, int src_size, int dst_size, int update_ctx)
+bessel
+build_filter
+*av_resample_init
+av_resample_close
+av_resample_compensate
+av_resample

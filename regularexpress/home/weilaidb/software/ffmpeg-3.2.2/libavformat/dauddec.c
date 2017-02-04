@@ -1,3 +1,3 @@
-static int daud_header(AVFormatContext *s)
-static int daud_packet(AVFormatContext *s, AVPacket *pkt)
+daud_header
+daud_packet
 AVInputFormat ff_daud_demuxer = ;

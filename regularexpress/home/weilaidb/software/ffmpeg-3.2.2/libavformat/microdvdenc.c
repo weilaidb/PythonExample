@@ -1,3 +1,3 @@
-static int microdvd_write_header(struct AVFormatContext *s)
-static int microdvd_write_packet(AVFormatContext *avf, AVPacket *pkt)
+microdvd_write_header
+microdvd_write_packet
 AVOutputFormat ff_microdvd_muxer = ;

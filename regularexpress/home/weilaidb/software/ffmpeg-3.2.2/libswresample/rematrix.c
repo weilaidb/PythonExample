@@ -27,16 +27,12 @@
 #define TOP_BACK_CENTER        16
 #define TOP_BACK_RIGHT         17
 #define NUM_NAMED_CHANNELS     18
-int swr_set_matrix(struct SwrContext *s, const double *matrix, int stride)
-static int even(int64_t layout)
-static int clean_layout(void *s, int64_t layout)
-static int sane_layout(int64_t layout)
-av_cold int swr_build_matrix(uint64_t in_ch_layout_param, uint64_t out_ch_layout_param,
-double center_mix_level, double surround_mix_level,
-double lfe_mix_level, double maxval,
-double rematrix_volume, double *matrix_param,
-int stride, enum AVMatrixEncoding matrix_encoding, void *log_context)
-av_cold static int auto_matrix(SwrContext *s)
-av_cold int swri_rematrix_init(SwrContext *s)
-av_cold void swri_rematrix_free(SwrContext *s)
-int swri_rematrix(SwrContext *s, AudioData *out, AudioData *in, int len, int mustcopy)
+swr_set_matrix
+even
+clean_layout
+sane_layout
+swr_build_matrix
+auto_matrix
+swri_rematrix_init
+swri_rematrix_free
+swri_rematrix

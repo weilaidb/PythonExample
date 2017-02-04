@@ -32,9 +32,9 @@
 #   define AV_WN2P  AV_WN32
 #   define AV_WN4P  AV_WN64
 #   define AV_WN4PA AV_WN64A
-#   define PIXEL_SPLAT_X4(x) ((x)*0x0001000100010001ULL)
-#   define av_clip_pixel(a) av_clip_uintp2(a, BIT_DEPTH)
-#   define CLIP(a)          av_clip_uintp2(a, BIT_DEPTH)
+PIXEL_SPLAT_X4 ((x)*0x0001000100010001ULL)
+av_clip_pixel av_clip_uintp2(a, BIT_DEPTH)
+CLIP          av_clip_uintp2(a, BIT_DEPTH)
 #   define pixel  uint8_t
 #   define pixel2 uint16_t
 #   define pixel4 uint32_t
@@ -48,10 +48,10 @@
 #   define AV_WN2P  AV_WN16
 #   define AV_WN4P  AV_WN32
 #   define AV_WN4PA AV_WN32A
-#   define PIXEL_SPLAT_X4(x) ((x)*0x01010101U)
-#   define av_clip_pixel(a) av_clip_uint8(a)
-#   define CLIP(a) av_clip_uint8(a)
-#define FUNC3(a, b, c)  a ## _ ## b ## c
-#define FUNC2(a, b, c)  FUNC3(a, b, c)
-#define FUNC(a)  FUNC2(a, BIT_DEPTH,)
-#define FUNCC(a) FUNC2(a, BIT_DEPTH, _c)
+PIXEL_SPLAT_X4 ((x)*0x01010101U)
+av_clip_pixel av_clip_uint8(a)
+CLIP av_clip_uint8(a)
+FUNC3  a ## _ ## b ## c
+FUNC2  FUNC3(a, b, c)
+FUNC  FUNC2(a, BIT_DEPTH,)
+FUNCC FUNC2(a, BIT_DEPTH, _c)

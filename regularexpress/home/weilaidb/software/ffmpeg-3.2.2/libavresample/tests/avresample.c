@@ -1,5 +1,5 @@
-static double dbl_rand(AVLFG *lfg)
-#define PUT_FUNC(name, fmt, type, expr)                                     \
+dbl_rand
+PUT_FUNC                                     \
 static void put_sample_ ## name(void **data, enum AVSampleFormat sample_fmt,\
 int channels, int sample, int ch,           \
 double v_dbl)                               \
@@ -8,11 +8,9 @@ PUT_FUNC(s16, AV_SAMPLE_FMT_S16, int16_t, av_clip_int16 ( lrint(v_dbl * (1  << 1
 PUT_FUNC(s32, AV_SAMPLE_FMT_S32, int32_t, av_clipl_int32(llrint(v_dbl * (1U << 31))))
 PUT_FUNC(flt, AV_SAMPLE_FMT_FLT, float,   v_dbl)
 PUT_FUNC(dbl, AV_SAMPLE_FMT_DBL, double,  v_dbl)
-static void put_sample(void **data, enum AVSampleFormat sample_fmt,
-int channels, int sample, int ch, double v_dbl)
-static void audiogen(AVLFG *rnd, void **data, enum AVSampleFormat sample_fmt,
-int channels, int sample_rate, int nb_samples)
+put_sample
+audiogen
 static const enum AVSampleFormat formats[] = ;
 static const int rates[] = ;
 static const uint64_t layouts[] = ;
-int main(int argc, char **argv)
+main

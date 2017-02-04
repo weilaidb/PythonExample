@@ -24,27 +24,24 @@ static float            sin64[33];
 typedef struct WMAProChannelCtx  WMAProChannelCtx;
 typedef struct WMAProChannelGrp  WMAProChannelGrp;
 typedef struct WMAProDecodeCtx  WMAProDecodeCtx;
-static av_cold void dump_context(WMAProDecodeCtx *s)
-static av_cold int decode_end(AVCodecContext *avctx)
-static av_cold int get_rate(AVCodecContext *avctx)
-static av_cold int decode_init(AVCodecContext *avctx)
-static int decode_subframe_length(WMAProDecodeCtx *s, int offset)
-static int decode_tilehdr(WMAProDecodeCtx *s)
-static void decode_decorrelation_matrix(WMAProDecodeCtx *s,
-WMAProChannelGrp *chgroup)
-static int decode_channel_transform(WMAProDecodeCtx* s)
-static int decode_coeffs(WMAProDecodeCtx *s, int c)
-static int decode_scale_factors(WMAProDecodeCtx* s)
-static void inverse_channel_transform(WMAProDecodeCtx *s)
-static void wmapro_window(WMAProDecodeCtx *s)
-static int decode_subframe(WMAProDecodeCtx *s)
-static int decode_frame(WMAProDecodeCtx *s, AVFrame *frame, int *got_frame_ptr)
-static int remaining_bits(WMAProDecodeCtx *s, GetBitContext *gb)
-static void save_bits(WMAProDecodeCtx *s, GetBitContext* gb, int len,
-int append)
-static int decode_packet(AVCodecContext *avctx, void *data,
-int *got_frame_ptr, AVPacket* avpkt)
-static void flush(AVCodecContext *avctx)
+dump_context
+decode_end
+get_rate
+decode_init
+decode_subframe_length
+decode_tilehdr
+decode_decorrelation_matrix
+decode_channel_transform
+decode_coeffs
+decode_scale_factors
+inverse_channel_transform
+wmapro_window
+decode_subframe
+decode_frame
+remaining_bits
+save_bits
+decode_packet
+flush
 AVCodec ff_wmapro_decoder = ;
 AVCodec ff_xma1_decoder = ;
 AVCodec ff_xma2_decoder = ;

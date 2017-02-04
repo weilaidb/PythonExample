@@ -21,33 +21,29 @@ typedef struct VP56RefDc  VP56RefDc;
 typedef struct VP56Macroblock  VP56Macroblock;
 typedef struct VP56Model  VP56Model;
 struct vp56_context ;
-int ff_vp56_init(AVCodecContext *avctx, int flip, int has_alpha);
-int ff_vp56_init_context(AVCodecContext *avctx, VP56Context *s,
-int flip, int has_alpha);
-int ff_vp56_free(AVCodecContext *avctx);
-int ff_vp56_free_context(VP56Context *s);
-void ff_vp56_init_dequant(VP56Context *s, int quantizer);
-int ff_vp56_decode_frame(AVCodecContext *avctx, void *data, int *got_frame,
-AVPacket *avpkt);
+ff_vp56_init;
+ff_vp56_init_context;
+ff_vp56_free;
+ff_vp56_free_context;
+ff_vp56_init_dequant;
+ff_vp56_decode_frame;
 extern const uint8_t ff_vp56_norm_shift[256];
-void ff_vp56_init_range_decoder(VP56RangeCoder *c, const uint8_t *buf, int buf_size);
-static av_always_inline unsigned int vp56_rac_renorm(VP56RangeCoder *c)
+ff_vp56_init_range_decoder;
+vp56_rac_renorm
 #if   ARCH_ARM
 #elif ARCH_X86
 #define vp56_rac_get_prob vp56_rac_get_prob
-static av_always_inline int vp56_rac_get_prob(VP56RangeCoder *c, uint8_t prob)
-static av_always_inline int vp56_rac_get_prob_branchy(VP56RangeCoder *c, int prob)
-static av_always_inline int vp56_rac_get(VP56RangeCoder *c)
-static av_always_inline int vp8_rac_get(VP56RangeCoder *c)
-static int vp56_rac_gets(VP56RangeCoder *c, int bits)
-static int vp8_rac_get_uint(VP56RangeCoder *c, int bits)
-static av_unused int vp8_rac_get_sint(VP56RangeCoder *c, int bits)
-static av_unused int vp56_rac_gets_nn(VP56RangeCoder *c, int bits)
-static av_unused int vp8_rac_get_nn(VP56RangeCoder *c)
+vp56_rac_get_prob
+vp56_rac_get_prob_branchy
+vp56_rac_get
+vp8_rac_get
+vp56_rac_gets
+vp8_rac_get_uint
+vp8_rac_get_sint
+vp56_rac_gets_nn
+vp8_rac_get_nn
 static av_always_inline
-int vp56_rac_get_tree(VP56RangeCoder *c,
-const VP56Tree *tree,
+vp56_rac_get_tree
+vp8_rac_get_tree[2],
 const uint8_t *probs)
-static av_always_inline int vp8_rac_get_tree(VP56RangeCoder *c, const int8_t (*tree)[2],
-const uint8_t *probs)
-static av_always_inline int vp8_rac_get_coeff(VP56RangeCoder *c, const uint8_t *prob)
+vp8_rac_get_coeff

@@ -7,12 +7,10 @@
 #define MM_TYPE_INTER_HHV   0xf
 #define MM_TYPE_PALETTE     0x31
 typedef struct MmContext  MmContext;
-static av_cold int mm_decode_init(AVCodecContext *avctx)
-static void mm_decode_pal(MmContext *s)
-static int mm_decode_intra(MmContext * s, int half_horiz, int half_vert)
-static int mm_decode_inter(MmContext * s, int half_horiz, int half_vert)
-static int mm_decode_frame(AVCodecContext *avctx,
-void *data, int *got_frame,
-AVPacket *avpkt)
-static av_cold int mm_decode_end(AVCodecContext *avctx)
+mm_decode_init
+mm_decode_pal
+mm_decode_intra
+mm_decode_inter
+mm_decode_frame
+mm_decode_end
 AVCodec ff_mmvideo_decoder = ;

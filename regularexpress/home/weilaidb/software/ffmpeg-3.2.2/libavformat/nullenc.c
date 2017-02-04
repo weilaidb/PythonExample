@@ -1,2 +1,2 @@
-static int null_write_packet(struct AVFormatContext *s, AVPacket *pkt)
+null_write_packet
 AVOutputFormat ff_null_muxer = ;

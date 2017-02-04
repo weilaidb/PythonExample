@@ -16,8 +16,8 @@
 enum Mode ;
 typedef struct AMRWBSubFrame  AMRWBSubFrame;
 typedef struct AMRWBFrame  AMRWBFrame;
-#define AMR_BIT(field)                  (offsetof(AMRWBFrame, field))
-#define AMR_OF(frame_num, variable)     AMR_BIT(subframe[frame_num].variable)
+AMR_BIT                  (offsetof(AMRWBFrame, field))
+AMR_OF     AMR_BIT(subframe[frame_num].variable)
 static const uint16_t order_MODE_6k60[] = ;
 static const uint16_t order_MODE_8k85[] = ;
 static const uint16_t order_MODE_12k65[] = ;

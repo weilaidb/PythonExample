@@ -18,18 +18,15 @@ typedef struct IVIBandDesc  IVIBandDesc;
 typedef struct IVIPlaneDesc  IVIPlaneDesc;
 typedef struct IVIPicConfig  IVIPicConfig;
 typedef struct IVI45DecContext  IVI45DecContext;
-static inline int ivi_pic_config_cmp(IVIPicConfig *str1, IVIPicConfig *str2)
-#define IVI_NUM_TILES(stride, tile_size) (((stride) + (tile_size) - 1) / (tile_size))
-#define IVI_MBs_PER_TILE(tile_width, tile_height, mb_size) \
+ivi_pic_config_cmp
+IVI_NUM_TILES (((stride) + (tile_size) - 1) / (tile_size))
+IVI_MBs_PER_TILE \
 ((((tile_width) + (mb_size) - 1) / (mb_size)) * (((tile_height) + (mb_size) - 1) / (mb_size)))
-#define IVI_TOSIGNED(val) (-(((val) >> 1) ^ -((val) & 1)))
-static inline int ivi_scale_mv(int mv, int mv_scale)
-void ff_ivi_init_static_vlc(void);
-int  ff_ivi_dec_huff_desc(GetBitContext *gb, int desc_coded, int which_tab,
-IVIHuffTab *huff_tab, AVCodecContext *avctx);
-int  ff_ivi_init_planes(IVIPlaneDesc *planes, const IVIPicConfig *cfg,
-int is_indeo4);
-int  ff_ivi_init_tiles(IVIPlaneDesc *planes, int tile_width, int tile_height);
-int ff_ivi_decode_frame(AVCodecContext *avctx, void *data, int *got_frame,
-AVPacket *avpkt);
-int ff_ivi_decode_close(AVCodecContext *avctx);
+IVI_TOSIGNED (-(((val) >> 1) ^ -((val) & 1)))
+ivi_scale_mv
+ff_ivi_init_static_vlc;
+ff_ivi_dec_huff_desc;
+ff_ivi_init_planes;
+ff_ivi_init_tiles;
+ff_ivi_decode_frame;
+ff_ivi_decode_close;

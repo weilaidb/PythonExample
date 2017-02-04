@@ -32,7 +32,7 @@ enum rc_strategy ;
 , \
 , \
 , \
-#define FF_MPV_OFFSET(x) offsetof(MpegEncContext, x)
+FF_MPV_OFFSET offsetof(MpegEncContext, x)
 #define FF_MPV_OPT_FLAGS (AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_ENCODING_PARAM)
 #define FF_MPV_COMMON_OPTS \
 FF_MPV_OPT_CMP_FUNC, \
@@ -80,55 +80,48 @@ FF_MPV_OPT_CMP_FUNC, \
 , \
 , \
 extern const AVOption ff_mpv_generic_options[];
-void ff_mpv_common_defaults(MpegEncContext *s);
-void ff_dct_encode_init_x86(MpegEncContext *s);
-int ff_mpv_common_init(MpegEncContext *s);
-void ff_mpv_common_init_arm(MpegEncContext *s);
-void ff_mpv_common_init_axp(MpegEncContext *s);
-void ff_mpv_common_init_neon(MpegEncContext *s);
-void ff_mpv_common_init_ppc(MpegEncContext *s);
-void ff_mpv_common_init_x86(MpegEncContext *s);
-void ff_mpv_common_init_mips(MpegEncContext *s);
-int ff_mpv_common_frame_size_change(MpegEncContext *s);
-void ff_mpv_common_end(MpegEncContext *s);
-void ff_mpv_decode_defaults(MpegEncContext *s);
-void ff_mpv_decode_init(MpegEncContext *s, AVCodecContext *avctx);
-void ff_mpv_decode_mb(MpegEncContext *s, int16_t block[12][64]);
-void ff_mpv_report_decode_progress(MpegEncContext *s);
-int ff_mpv_frame_start(MpegEncContext *s, AVCodecContext *avctx);
-void ff_mpv_frame_end(MpegEncContext *s);
-int ff_mpv_encode_init(AVCodecContext *avctx);
-void ff_mpv_encode_init_x86(MpegEncContext *s);
-int ff_mpv_encode_end(AVCodecContext *avctx);
-int ff_mpv_encode_picture(AVCodecContext *avctx, AVPacket *pkt,
-const AVFrame *frame, int *got_packet);
-int ff_mpv_reallocate_putbitbuffer(MpegEncContext *s, size_t threshold, size_t size_increase);
-void ff_clean_intra_table_entries(MpegEncContext *s);
-void ff_mpeg_draw_horiz_band(MpegEncContext *s, int y, int h);
-void ff_mpeg_flush(AVCodecContext *avctx);
-void ff_print_debug_info(MpegEncContext *s, Picture *p, AVFrame *pict);
-void ff_print_debug_info2(AVCodecContext *avctx, AVFrame *pict, uint8_t *mbskip_table,
-uint32_t *mbtype_table, int8_t *qscale_table, int16_t (*motion_val[2])[2],
+ff_mpv_common_defaults;
+ff_dct_encode_init_x86;
+ff_mpv_common_init;
+ff_mpv_common_init_arm;
+ff_mpv_common_init_axp;
+ff_mpv_common_init_neon;
+ff_mpv_common_init_ppc;
+ff_mpv_common_init_x86;
+ff_mpv_common_init_mips;
+ff_mpv_common_frame_size_change;
+ff_mpv_common_end;
+ff_mpv_decode_defaults;
+ff_mpv_decode_init;
+ff_mpv_decode_mb;
+ff_mpv_report_decode_progress;
+ff_mpv_frame_start;
+ff_mpv_frame_end;
+ff_mpv_encode_init;
+ff_mpv_encode_init_x86;
+ff_mpv_encode_end;
+ff_mpv_encode_picture;
+ff_mpv_reallocate_putbitbuffer;
+ff_clean_intra_table_entries;
+ff_mpeg_draw_horiz_band;
+ff_mpeg_flush;
+ff_print_debug_info;
+ff_print_debug_info2[2],
 int *low_delay,
 int mb_width, int mb_height, int mb_stride, int quarter_sample);
-int ff_mpv_export_qp_table(MpegEncContext *s, AVFrame *f, Picture *p, int qp_type);
-void ff_write_quant_matrix(PutBitContext *pb, uint16_t *matrix);
-int ff_update_duplicate_context(MpegEncContext *dst, MpegEncContext *src);
-int ff_mpeg_update_thread_context(AVCodecContext *dst, const AVCodecContext *src);
-void ff_set_qscale(MpegEncContext * s, int qscale);
-void ff_mpv_idct_init(MpegEncContext *s);
-int ff_dct_encode_init(MpegEncContext *s);
-void ff_convert_matrix(MpegEncContext *s, int (*qmat)[64], uint16_t (*qmat16)[2][64],
+ff_mpv_export_qp_table;
+ff_write_quant_matrix;
+ff_update_duplicate_context;
+ff_mpeg_update_thread_context;
+ff_set_qscale;
+ff_mpv_idct_init;
+ff_dct_encode_init;
+ff_convert_matrix[64], uint16_t (*qmat16)[2][64],
 const uint16_t *quant_matrix, int bias, int qmin, int qmax, int intra);
-int ff_dct_quantize_c(MpegEncContext *s, int16_t *block, int n, int qscale, int *overflow);
-void ff_block_permute(int16_t *block, uint8_t *permutation,
-const uint8_t *scantable, int last);
-void ff_init_block_index(MpegEncContext *s);
-void ff_mpv_motion(MpegEncContext *s,
-uint8_t *dest_y, uint8_t *dest_cb,
-uint8_t *dest_cr, int dir,
-uint8_t **ref_picture,
-op_pixels_func (*pix_op)[4],
+ff_dct_quantize_c;
+ff_block_permute;
+ff_init_block_index;
+ff_mpv_motion[4],
 qpel_mc_func (*qpix_op)[16]);
-static inline void ff_update_block_index(MpegEncContext *s)
-static inline int get_bits_diff(MpegEncContext *s)
+ff_update_block_index
+get_bits_diff

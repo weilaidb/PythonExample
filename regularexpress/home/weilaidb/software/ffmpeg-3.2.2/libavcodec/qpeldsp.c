@@ -1,5 +1,5 @@
 #define BIT_DEPTH 8
-#define QPEL_MC(r, OPNAME, RND, OP)                                           \
+QPEL_MC                                           \
 static void OPNAME ## mpeg4_qpel8_h_lowpass(uint8_t *dst, const uint8_t *src, \
 int dstStride, int srcStride,     \
 int h)                            \
@@ -186,30 +186,28 @@ ptrdiff_t stride)                         \
 \
 static void OPNAME ## qpel16_mc22_c(uint8_t *dst, const uint8_t *src,         \
 ptrdiff_t stride)                         \
-#define op_avg(a, b)        a = (((a) + cm[((b) + 16) >> 5] + 1) >> 1)
-#define op_put(a, b)        a = cm[((b) + 16) >> 5]
-#define op_put_no_rnd(a, b) a = cm[((b) + 15) >> 5]
+op_avg        a = (((a) + cm[((b) + 16) >> 5] + 1) >> 1)
+op_put        a = cm[((b) + 16) >> 5]
+op_put_no_rnd a = cm[((b) + 15) >> 5]
 QPEL_MC(0, put_, _, op_put)
 QPEL_MC(1, put_no_rnd_, _no_rnd_, op_put_no_rnd)
 QPEL_MC(0, avg_, _, op_avg)
 #undef op_avg
 #undef op_put
 #undef op_put_no_rnd
-void ff_put_pixels8x8_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)
-void ff_avg_pixels8x8_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)
-void ff_put_pixels16x16_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)
-void ff_avg_pixels16x16_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)
+ff_put_pixels8x8_c
+ff_avg_pixels8x8_c
+ff_put_pixels16x16_c
+ff_avg_pixels16x16_c
 #define put_qpel8_mc00_c         ff_put_pixels8x8_c
 #define avg_qpel8_mc00_c         ff_avg_pixels8x8_c
 #define put_qpel16_mc00_c        ff_put_pixels16x16_c
 #define avg_qpel16_mc00_c        ff_avg_pixels16x16_c
 #define put_no_rnd_qpel8_mc00_c  ff_put_pixels8x8_c
 #define put_no_rnd_qpel16_mc00_c ff_put_pixels16x16_c
-void ff_put_pixels8_l2_8(uint8_t *dst, const uint8_t *src1, const uint8_t *src2,
-int dst_stride, int src_stride1, int src_stride2,
-int h)
+ff_put_pixels8_l2_8
 #if CONFIG_DIRAC_DECODER
-#define DIRAC_MC(OPNAME)\
+DIRAC_MC\
 void ff_ ## OPNAME ## _dirac_pixels8_c(uint8_t *dst, const uint8_t *src[5], int stride, int h)\
 \
 void ff_ ## OPNAME ## _dirac_pixels16_c(uint8_t *dst, const uint8_t *src[5], int stride, int h)\
@@ -229,4 +227,4 @@ void ff_ ## OPNAME ## _dirac_pixels16_l4_c(uint8_t *dst, const uint8_t *src[5], 
 void ff_ ## OPNAME ## _dirac_pixels32_l4_c(uint8_t *dst, const uint8_t *src[5], int stride, int h)\
 DIRAC_MC(put)
 DIRAC_MC(avg)
-av_cold void ff_qpeldsp_init(QpelDSPContext *c)
+ff_qpeldsp_init

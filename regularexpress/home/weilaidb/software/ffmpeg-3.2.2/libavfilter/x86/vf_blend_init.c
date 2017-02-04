@@ -1,4 +1,4 @@
-#define BLEND_FUNC(name, opt) \
+BLEND_FUNC \
 void ff_blend_##name##_##opt(const uint8_t *top, ptrdiff_t top_linesize,       \
 const uint8_t *bottom, ptrdiff_t bottom_linesize, \
 uint8_t *dst, ptrdiff_t dst_linesize,             \
@@ -23,4 +23,4 @@ BLEND_FUNC(difference, sse2)
 BLEND_FUNC(difference, ssse3)
 BLEND_FUNC(negation, sse2)
 BLEND_FUNC(negation, ssse3)
-av_cold void ff_blend_init_x86(FilterParams *param, int is_16bit)
+ff_blend_init_x86

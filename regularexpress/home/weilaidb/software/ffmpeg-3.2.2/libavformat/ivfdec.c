@@ -1,4 +1,4 @@
-static int probe(AVProbeData *p)
-static int read_header(AVFormatContext *s)
-static int read_packet(AVFormatContext *s, AVPacket *pkt)
+probe
+read_header
+read_packet
 AVInputFormat ff_ivf_demuxer = ;

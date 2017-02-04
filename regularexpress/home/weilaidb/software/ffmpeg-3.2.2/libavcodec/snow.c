@@ -1,12 +1,11 @@
-void ff_snow_inner_add_yblock(const uint8_t *obmc, const int obmc_stride, uint8_t * * block, int b_w, int b_h,
-int src_x, int src_y, int src_stride, slice_buffer * sb, int add, uint8_t * dst8)
-int ff_snow_get_buffer(SnowContext *s, AVFrame *frame)
-void ff_snow_reset_contexts(SnowContext *s)
-int ff_snow_alloc_blocks(SnowContext *s)
-static av_cold void init_qexp(void)
-static void mc_block(Plane *p, uint8_t *dst, const uint8_t *src, int stride, int b_w, int b_h, int dx, int dy)
-void ff_snow_pred_block(SnowContext *s, uint8_t *dst, uint8_t *tmp, ptrdiff_t stride, int sx, int sy, int b_w, int b_h, const BlockNode *block, int plane_index, int w, int h)
-#define mca(dx,dy,b_w)\
+ff_snow_inner_add_yblock
+ff_snow_get_buffer
+ff_snow_reset_contexts
+ff_snow_alloc_blocks
+init_qexp
+mc_block
+ff_snow_pred_block
+mca\
 static void mc_block_hpel ## dx ## dy ## b_w(uint8_t *dst, const uint8_t *src, ptrdiff_t stride, int h)
 mca( 0, 0,16)
 mca( 8, 0,16)
@@ -16,10 +15,10 @@ mca( 0, 0,8)
 mca( 8, 0,8)
 mca( 0, 8,8)
 mca( 8, 8,8)
-av_cold int ff_snow_common_init(AVCodecContext *avctx)
-int ff_snow_common_init_after_header(AVCodecContext *avctx)
+ff_snow_common_init
+ff_snow_common_init_after_header
 #define USE_HALFPEL_PLANE 0
-static int halfpel_interpol(SnowContext *s, uint8_t *halfpel[4][4], AVFrame *frame)
-void ff_snow_release_buffer(AVCodecContext *avctx)
-int ff_snow_frame_start(SnowContext *s)
-av_cold void ff_snow_common_end(SnowContext *s)
+halfpel_interpol
+ff_snow_release_buffer
+ff_snow_frame_start
+ff_snow_common_end

@@ -4,8 +4,8 @@ enum SAudFlags ;
 typedef struct SmackerContext  SmackerContext;
 typedef struct SmackerFrame  SmackerFrame;
 static const uint8_t smk_pal[64] = ;
-static int smacker_probe(AVProbeData *p)
-static int smacker_read_header(AVFormatContext *s)
-static int smacker_read_packet(AVFormatContext *s, AVPacket *pkt)
-static int smacker_read_close(AVFormatContext *s)
+smacker_probe
+smacker_read_header
+smacker_read_packet
+smacker_read_close
 AVInputFormat ff_smacker_demuxer = ;

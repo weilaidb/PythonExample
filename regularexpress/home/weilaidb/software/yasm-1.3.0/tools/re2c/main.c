@@ -13,7 +13,6 @@ unsigned int vUsedLabelAlloc = 1000;
 static char *opt_arg = NULL;
 static int opt_ind = 1;
 static const mbo_opt_struct OPTIONS[] = ;
-static void usage()
-char *
-mystrdup(const char *str)
-int main(int argc, char *argv[])
+usage
+mystrdup
+main

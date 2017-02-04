@@ -4,7 +4,7 @@
 #define MTV_IMAGE_DEFAULT_BPP 16
 #define MTV_AUDIO_SAMPLING_RATE 44100
 typedef struct MTVDemuxContext  MTVDemuxContext;
-static int mtv_probe(AVProbeData *p)
-static int mtv_read_header(AVFormatContext *s)
-static int mtv_read_packet(AVFormatContext *s, AVPacket *pkt)
+mtv_probe
+mtv_read_header
+mtv_read_packet
 AVInputFormat ff_mtv_demuxer = ;

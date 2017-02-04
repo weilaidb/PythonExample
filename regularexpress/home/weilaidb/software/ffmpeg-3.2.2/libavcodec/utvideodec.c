@@ -1,23 +1,12 @@
-static int build_huff10(const uint8_t *src, VLC *vlc, int *fsym)
-static int build_huff(const uint8_t *src, VLC *vlc, int *fsym)
-static int decode_plane10(UtvideoContext *c, int plane_no,
-uint16_t *dst, int step, int stride,
-int width, int height,
-const uint8_t *src, const uint8_t *huff,
-int use_pred)
-static int decode_plane(UtvideoContext *c, int plane_no,
-uint8_t *dst, int step, int stride,
-int width, int height,
-const uint8_t *src, int use_pred)
-static void restore_rgb_planes(uint8_t *src, int step, int stride, int width,
-int height)
-static void restore_rgb_planes10(AVFrame *frame, int width, int height)
-static void restore_median(uint8_t *src, int step, int stride,
-int width, int height, int slices, int rmode)
-static void restore_median_il(uint8_t *src, int step, int stride,
-int width, int height, int slices, int rmode)
-static int decode_frame(AVCodecContext *avctx, void *data, int *got_frame,
-AVPacket *avpkt)
-static av_cold int decode_init(AVCodecContext *avctx)
-static av_cold int decode_end(AVCodecContext *avctx)
+build_huff10
+build_huff
+decode_plane10
+decode_plane
+restore_rgb_planes
+restore_rgb_planes10
+restore_median
+restore_median_il
+decode_frame
+decode_init
+decode_end
 AVCodec ff_utvideo_decoder = ;

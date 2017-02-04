@@ -12,23 +12,23 @@ static const int TAB04[] = ;
 static const int TAB17[] = ;
 static const int TAB26[] = ;
 static const int TAB35[] = ;
-static int idct_row(short *in, const int *const tab, int rnd)
+idct_row
 #define TAN1  0x32EC
 #define TAN2  0x6A0A
 #define TAN3  0xAB0E
 #define SQRT2 0x5A82
-#define MULT(c, x, n)  (((c) * (x)) >> (n))
-#define BUTTERFLY(a, b, tmp)     \
+MULT  (((c) * (x)) >> (n))
+BUTTERFLY     \
 (tmp) = (a) + (b);           \
 (b)   = (a) - (b);           \
 (a)   = (tmp)
-#define LOAD_BUTTERFLY(m1, m2, a, b, tmp, s)   \
+LOAD_BUTTERFLY   \
 (m1) = (s)[(a)] + (s)[(b)];                \
 (m2) = (s)[(a)] - (s)[(b)]
-static void idct_col_8(short *const in)
-static void idct_col_4(short *const in)
-static void idct_col_3(short *const in)
-void ff_xvid_idct(int16_t *const in)
-static void xvid_idct_put(uint8_t *dest, int line_size, int16_t *block)
-static void xvid_idct_add(uint8_t *dest, int line_size, int16_t *block)
-av_cold void ff_xvid_idct_init(IDCTDSPContext *c, AVCodecContext *avctx)
+idct_col_8
+idct_col_4
+idct_col_3
+ff_xvid_idct
+xvid_idct_put
+xvid_idct_add
+ff_xvid_idct_init

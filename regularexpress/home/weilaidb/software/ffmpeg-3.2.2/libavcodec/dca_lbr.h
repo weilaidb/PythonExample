@@ -7,8 +7,8 @@
 #define DCA_LBR_TIME_HISTORY    8
 typedef struct DCALbrTone  DCALbrTone;
 typedef struct DCALbrDecoder  DCALbrDecoder;
-int ff_dca_lbr_parse(DCALbrDecoder *s, uint8_t *data, DCAExssAsset *asset);
-int ff_dca_lbr_filter_frame(DCALbrDecoder *s, AVFrame *frame);
-av_cold void ff_dca_lbr_flush(DCALbrDecoder *s);
-av_cold int ff_dca_lbr_init(DCALbrDecoder *s);
-av_cold void ff_dca_lbr_close(DCALbrDecoder *s);
+ff_dca_lbr_parse;
+ff_dca_lbr_filter_frame;
+ff_dca_lbr_flush;
+ff_dca_lbr_init;
+ff_dca_lbr_close;

@@ -1,8 +1,4 @@
 typedef struct  DNXHDParserContext;
-static int dnxhd_find_frame_end(DNXHDParserContext *dctx,
-const uint8_t *buf, int buf_size)
-static int dnxhd_parse(AVCodecParserContext *s,
-AVCodecContext *avctx,
-const uint8_t **poutbuf, int *poutbuf_size,
-const uint8_t *buf, int buf_size)
+dnxhd_find_frame_end
+dnxhd_parse
 AVCodecParser ff_dnxhd_parser = ;

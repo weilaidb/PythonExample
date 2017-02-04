@@ -1,6 +1,6 @@
 typedef struct InputStream  InputStream;
 typedef struct InputFile  InputFile;
-const char program_name[] = "ffprobe";
+const char program_name[] = ;
 const int program_birth_year = 2007;
 static int do_bitexact = 0;
 static int do_count_frames = 0;
@@ -47,17 +47,17 @@ static const char *input_filename;
 static AVInputFormat *iformat = NULL;
 static struct AVHashContext *hash;
 static const struct  si_prefixes[] = ;
-static const char unit_second_str[]         = "s"    ;
-static const char unit_hertz_str[]          = "Hz"   ;
-static const char unit_byte_str[]           = "byte" ;
-static const char unit_bit_per_second_str[] = "bit/s";
+static const char unit_second_str[]         =     ;
+static const char unit_hertz_str[]          =    ;
+static const char unit_byte_str[]           =  ;
+static const char unit_bit_per_second_str[] = ;
 static int nb_streams;
 static uint64_t *nb_streams_packets;
 static uint64_t *nb_streams_frames;
 static int *selected_streams;
-static void ffprobe_cleanup(int ret)
+ffprobe_cleanup
 struct unit_value ;
-static char *value_string(char *buf, int buf_size, struct unit_value uv)
+*value_string
 typedef struct WriterContext WriterContext;
 #define WRITER_FLAG_DISPLAY_OPTIONAL_FIELDS 1
 #define WRITER_FLAG_PUT_PACKETS_AND_FRAMES_IN_SAME_CHAPTER 2
@@ -65,203 +65,197 @@ typedef enum  StringValidation;
 typedef struct Writer  Writer;
 #define SECTION_MAX_NB_LEVELS 10
 struct WriterContext ;
-static const char *writer_get_name(void *p)
-#define OFFSET(x) offsetof(WriterContext, x)
-static const AVOption writer_options[] = ;
-static void *writer_child_next(void *obj, void *prev)
+*writer_get_name
+OFFSET offsetof(WriterContext, x)
+static const AVOption writer_options[] = ,
+},
+};
+*writer_child_next
 static const AVClass writer_class = ;
-static void writer_close(WriterContext **wctx)
-static void bprint_bytes(AVBPrint *bp, const uint8_t *ubuf, size_t ubuf_size)
-static int writer_open(WriterContext **wctx, const Writer *writer, const char *args,
-const struct section *sections, int nb_sections)
-static inline void writer_print_section_header(WriterContext *wctx,
-int section_id)
-static inline void writer_print_section_footer(WriterContext *wctx)
-static inline void writer_print_integer(WriterContext *wctx,
-const char *key, long long int val)
-static inline int validate_string(WriterContext *wctx, char **dstp, const char *src)
+writer_close
+bprint_bytes
+writer_open
+writer_print_section_header
+writer_print_section_footer
+writer_print_integer
+validate_string
 #define PRINT_STRING_OPT      1
 #define PRINT_STRING_VALIDATE 2
-static inline int writer_print_string(WriterContext *wctx,
-const char *key, const char *val, int flags)
-static inline void writer_print_rational(WriterContext *wctx,
-const char *key, AVRational q, char sep)
-static void writer_print_time(WriterContext *wctx, const char *key,
-int64_t ts, const AVRational *time_base, int is_duration)
-static void writer_print_ts(WriterContext *wctx, const char *key, int64_t ts, int is_duration)
-static void writer_print_data(WriterContext *wctx, const char *name,
-uint8_t *data, int size)
-static void writer_print_data_hash(WriterContext *wctx, const char *name,
-uint8_t *data, int size)
-static void writer_print_integers(WriterContext *wctx, const char *name,
-uint8_t *data, int size, const char *format,
-int columns, int bytes, int offset_add)
+writer_print_string
+writer_print_rational
+writer_print_time
+writer_print_ts
+writer_print_data
+writer_print_data_hash
+writer_print_integers
 #define MAX_REGISTERED_WRITERS_NB 64
 static const Writer *registered_writers[MAX_REGISTERED_WRITERS_NB + 1];
-static int writer_register(const Writer *writer)
-static const Writer *writer_get_by_name(const char *name)
-#define DEFINE_WRITER_CLASS(name)                   \
+writer_register
+*writer_get_by_name
+DEFINE_WRITER_CLASS                   \
 static const char *name##_get_name(void *ctx)       \
 \
 static const AVClass name##_class =
 typedef struct DefaultContext  DefaultContext;
 #undef OFFSET
-#define OFFSET(x) offsetof(DefaultContext, x)
+OFFSET offsetof(DefaultContext, x)
 static const AVOption default_options[] = ;
 DEFINE_WRITER_CLASS(default);
-static inline char *upcase_string(char *dst, size_t dst_size, const char *src)
-static void default_print_section_header(WriterContext *wctx)
-static void default_print_section_footer(WriterContext *wctx)
-static void default_print_str(WriterContext *wctx, const char *key, const char *value)
-static void default_print_int(WriterContext *wctx, const char *key, long long int value)
+*upcase_string
+default_print_section_header
+default_print_section_footer
+default_print_str
+default_print_int
 static const Writer default_writer = ;
-static const char *c_escape_str(AVBPrint *dst, const char *src, const char sep, void *log_ctx)
-static const char *csv_escape_str(AVBPrint *dst, const char *src, const char sep, void *log_ctx)
-static const char *none_escape_str(AVBPrint *dst, const char *src, const char sep, void *log_ctx)
+*c_escape_str
+*csv_escape_str
+*none_escape_str
 typedef struct CompactContext  CompactContext;
 #undef OFFSET
-#define OFFSET(x) offsetof(CompactContext, x)
-static const AVOption compact_options[]= ;
+OFFSET offsetof(CompactContext, x)
+static const AVOption compact_options[]= ,
+,  CHAR_MIN, CHAR_MAX },
+,
+,
+,  CHAR_MIN, CHAR_MAX },
+,  CHAR_MIN, CHAR_MAX },
+,
+,
+,
+};
 DEFINE_WRITER_CLASS(compact);
-static av_cold int compact_init(WriterContext *wctx)
-static void compact_print_section_header(WriterContext *wctx)
-static void compact_print_section_footer(WriterContext *wctx)
-static void compact_print_str(WriterContext *wctx, const char *key, const char *value)
-static void compact_print_int(WriterContext *wctx, const char *key, long long int value)
+compact_init
+compact_print_section_header
+compact_print_section_footer
+compact_print_str
+compact_print_int
 static const Writer compact_writer = ;
 #undef OFFSET
-#define OFFSET(x) offsetof(CompactContext, x)
-static const AVOption csv_options[] = ;
+OFFSET offsetof(CompactContext, x)
+static const AVOption csv_options[] = ,
+,  CHAR_MIN, CHAR_MAX },
+,
+,
+, CHAR_MIN, CHAR_MAX },
+, CHAR_MIN, CHAR_MAX },
+,
+,
+,
+};
 DEFINE_WRITER_CLASS(csv);
 static const Writer csv_writer = ;
 typedef struct FlatContext  FlatContext;
 #undef OFFSET
-#define OFFSET(x) offsetof(FlatContext, x)
-static const AVOption flat_options[]= ;
+OFFSET offsetof(FlatContext, x)
+static const AVOption flat_options[]= ,
+,  CHAR_MIN, CHAR_MAX },
+,
+,
+,
+};
 DEFINE_WRITER_CLASS(flat);
-static av_cold int flat_init(WriterContext *wctx)
-static const char *flat_escape_key_str(AVBPrint *dst, const char *src, const char sep)
-static const char *flat_escape_value_str(AVBPrint *dst, const char *src)
-static void flat_print_section_header(WriterContext *wctx)
-static void flat_print_int(WriterContext *wctx, const char *key, long long int value)
-static void flat_print_str(WriterContext *wctx, const char *key, const char *value)
+flat_init
+*flat_escape_key_str
+*flat_escape_value_str
+flat_print_section_header
+flat_print_int
+flat_print_str
 static const Writer flat_writer = ;
 typedef struct INIContext  INIContext;
 #undef OFFSET
-#define OFFSET(x) offsetof(INIContext, x)
+OFFSET offsetof(INIContext, x)
 static const AVOption ini_options[] = ;
 DEFINE_WRITER_CLASS(ini);
-static char *ini_escape_str(AVBPrint *dst, const char *src)
-static void ini_print_section_header(WriterContext *wctx)
-static void ini_print_str(WriterContext *wctx, const char *key, const char *value)
-static void ini_print_int(WriterContext *wctx, const char *key, long long int value)
+*ini_escape_str
+ini_print_section_header
+ini_print_str
+ini_print_int
 static const Writer ini_writer = ;
 typedef struct JSONContext  JSONContext;
 #undef OFFSET
-#define OFFSET(x) offsetof(JSONContext, x)
+OFFSET offsetof(JSONContext, x)
 static const AVOption json_options[]= ;
 DEFINE_WRITER_CLASS(json);
-static av_cold int json_init(WriterContext *wctx)
-static const char *json_escape_str(AVBPrint *dst, const char *src, void *log_ctx)
-#define JSON_INDENT() printf("%*c", json->indent_level * 4, ' ')
-static void json_print_section_header(WriterContext *wctx)
-{
-JSONContext *json = wctx->priv;
-AVBPrint buf;
-const struct section *section = wctx->section[wctx->level];
-const struct section *parent_section = wctx->level ?
-wctx->section[wctx->level-1] : NULL;
-if (wctx->level && wctx->nb_item[wctx->level-1])
-printf(",\n");
-if (section->flags & SECTION_FLAG_IS_WRAPPER)
-static inline void json_print_item_str(WriterContext *wctx,
-const char *key, const char *value)
-static void json_print_str(WriterContext *wctx, const char *key, const char *value)
-static void json_print_int(WriterContext *wctx, const char *key, long long int value)
+json_init
+*json_escape_str
+JSON_INDENT printf(, json->indent_level * 4, ' ')
+json_print_section_header
+json_print_section_footer
+json_print_item_str
+json_print_str
+json_print_int
 static const Writer json_writer = ;
 typedef struct XMLContext  XMLContext;
 #undef OFFSET
-#define OFFSET(x) offsetof(XMLContext, x)
+OFFSET offsetof(XMLContext, x)
 static const AVOption xml_options[] = ;
 DEFINE_WRITER_CLASS(xml);
-static av_cold int xml_init(WriterContext *wctx)
-static const char *xml_escape_str(AVBPrint *dst, const char *src, void *log_ctx)
-#define XML_INDENT() printf("%*c", xml->indent_level * 4, ' ')
-static void xml_print_section_header(WriterContext *wctx)
-static void xml_print_section_footer(WriterContext *wctx)
-static void xml_print_str(WriterContext *wctx, const char *key, const char *value)
-static void xml_print_int(WriterContext *wctx, const char *key, long long int value)
+xml_init
+*xml_escape_str
+XML_INDENT printf(, xml->indent_level * 4, ' ')
+xml_print_section_header
+xml_print_section_footer
+xml_print_str
+xml_print_int
 static Writer xml_writer = ;
-static void writer_register_all(void)
-#define print_fmt(k, f, ...) do  while (0)
-#define print_int(k, v)         writer_print_integer(w, k, v)
-#define print_q(k, v, s)        writer_print_rational(w, k, v, s)
-#define print_str(k, v)         writer_print_string(w, k, v, 0)
-#define print_str_opt(k, v)     writer_print_string(w, k, v, PRINT_STRING_OPT)
-#define print_str_validate(k, v) writer_print_string(w, k, v, PRINT_STRING_VALIDATE)
-#define print_time(k, v, tb)    writer_print_time(w, k, v, tb, 0)
-#define print_ts(k, v)          writer_print_ts(w, k, v, 0)
-#define print_duration_time(k, v, tb) writer_print_time(w, k, v, tb, 1)
-#define print_duration_ts(k, v)       writer_print_ts(w, k, v, 1)
-#define print_val(k, v, u) do  while (0)
-#define print_section_header(s) writer_print_section_header(w, s)
-#define print_section_footer(s) writer_print_section_footer(w, s)
-#define REALLOCZ_ARRAY_STREAM(ptr, cur_n, new_n)                        \
-static inline int show_tags(WriterContext *w, AVDictionary *tags, int section_id)
-static void print_pkt_side_data(WriterContext *w,
-const AVPacketSideData *side_data,
-int nb_side_data,
-SectionID id_data_list,
-SectionID id_data)
-static void show_packet(WriterContext *w, InputFile *ifile, AVPacket *pkt, int packet_idx)
-static void show_subtitle(WriterContext *w, AVSubtitle *sub, AVStream *stream,
-AVFormatContext *fmt_ctx)
-static void show_frame(WriterContext *w, AVFrame *frame, AVStream *stream,
-AVFormatContext *fmt_ctx)
-static av_always_inline int process_frame(WriterContext *w,
-InputFile *ifile,
-AVFrame *frame, AVPacket *pkt)
-static void log_read_interval(const ReadInterval *interval, void *log_ctx, int log_level)
-static int read_interval_packets(WriterContext *w, InputFile *ifile,
-const ReadInterval *interval, int64_t *cur_ts)
-static int read_packets(WriterContext *w, InputFile *ifile)
-static int show_stream(WriterContext *w, AVFormatContext *fmt_ctx, int stream_idx, InputStream *ist, int in_program)
-static int show_streams(WriterContext *w, InputFile *ifile)
-static int show_program(WriterContext *w, InputFile *ifile, AVProgram *program)
-static int show_programs(WriterContext *w, InputFile *ifile)
-static int show_chapters(WriterContext *w, InputFile *ifile)
-static int show_format(WriterContext *w, InputFile *ifile)
-static void show_error(WriterContext *w, int err)
-static int open_input_file(InputFile *ifile, const char *filename)
-static void close_input_file(InputFile *ifile)
-static int probe_file(WriterContext *wctx, const char *filename)
-static void show_usage(void)
-static void ffprobe_show_program_version(WriterContext *w)
-#define SHOW_LIB_VERSION(libname, LIBNAME)                              \
+writer_register_all
+print_fmt do  while (0)
+print_int         writer_print_integer(w, k, v)
+print_q        writer_print_rational(w, k, v, s)
+print_str         writer_print_string(w, k, v, 0)
+print_str_opt     writer_print_string(w, k, v, PRINT_STRING_OPT)
+print_str_validate writer_print_string(w, k, v, PRINT_STRING_VALIDATE)
+print_time    writer_print_time(w, k, v, tb, 0)
+print_ts          writer_print_ts(w, k, v, 0)
+print_duration_time writer_print_time(w, k, v, tb, 1)
+print_duration_ts       writer_print_ts(w, k, v, 1)
+print_val do  while (0)
+print_section_header writer_print_section_header(w, s)
+print_section_footer writer_print_section_footer(w, s)
+REALLOCZ_ARRAY_STREAM                        \
+show_tags
+print_pkt_side_data
+show_packet
+show_subtitle
+show_frame
+process_frame
+log_read_interval
+read_interval_packets
+read_packets
+show_stream
+show_streams
+show_program
+show_programs
+show_chapters
+show_format
+show_error
+open_input_file
+close_input_file
+probe_file
+show_usage
+ffprobe_show_program_version
+SHOW_LIB_VERSION                              \
 do  while (0)
-static void ffprobe_show_library_versions(WriterContext *w)
-#define PRINT_PIX_FMT_FLAG(flagname, name)                                \
+ffprobe_show_library_versions
+PRINT_PIX_FMT_FLAG                                \
 do  while (0)
-static void ffprobe_show_pixel_formats(WriterContext *w)
-static int opt_format(void *optctx, const char *opt, const char *arg)
-static inline void mark_section_show_entries(SectionID section_id,
-int show_all_entries, AVDictionary *entries)
-static int match_section(const char *section_name,
-int show_all_entries, AVDictionary *entries)
-static int opt_show_entries(void *optctx, const char *opt, const char *arg)
-static int opt_show_format_entry(void *optctx, const char *opt, const char *arg)
-static void opt_input_file(void *optctx, const char *arg)
-static int opt_input_file_i(void *optctx, const char *opt, const char *arg)
-void show_help_default(const char *opt, const char *arg)
-static int parse_read_interval(const char *interval_spec,
-ReadInterval *interval)
-static int parse_read_intervals(const char *intervals_spec)
-static int opt_read_intervals(void *optctx, const char *opt, const char *arg)
-static int opt_pretty(void *optctx, const char *opt, const char *arg)
-static void print_section(SectionID id, int level)
-static int opt_sections(void *optctx, const char *opt, const char *arg)
-static int opt_show_versions(const char *opt, const char *arg)
-#define DEFINE_OPT_SHOW_SECTION(section, target_section_id)             \
+ffprobe_show_pixel_formats
+opt_format
+mark_section_show_entries
+match_section
+opt_show_entries
+opt_show_format_entry
+opt_input_file
+opt_input_file_i
+show_help_default
+parse_read_interval
+parse_read_intervals
+opt_read_intervals
+opt_pretty
+print_section
+opt_sections
+opt_show_versions
+DEFINE_OPT_SHOW_SECTION             \
 static int opt_show_##section(const char *opt, const char *arg)     \
 DEFINE_OPT_SHOW_SECTION(chapters,         CHAPTERS)
 DEFINE_OPT_SHOW_SECTION(error,            ERROR)
@@ -274,6 +268,6 @@ DEFINE_OPT_SHOW_SECTION(program_version,  PROGRAM_VERSION)
 DEFINE_OPT_SHOW_SECTION(streams,          STREAMS)
 DEFINE_OPT_SHOW_SECTION(programs,         PROGRAMS)
 static const OptionDef real_options[] = ;
-static inline int check_section_show_entries(int section_id)
-#define SET_DO_SHOW(id, varname) do  while (0)
-int main(int argc, char **argv)
+check_section_show_entries
+SET_DO_SHOW do  while (0)
+main

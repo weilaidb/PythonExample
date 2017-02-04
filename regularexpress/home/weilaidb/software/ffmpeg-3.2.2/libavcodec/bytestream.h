@@ -1,7 +1,7 @@
 #define AVCODEC_BYTESTREAM_H
 typedef struct GetByteContext  GetByteContext;
 typedef struct PutByteContext  PutByteContext;
-#define DEF(type, name, bytes, read, write)                                  \
+DEF                                  \
 static av_always_inline type bytestream_get_ ## name(const uint8_t **b)        \
 \
 static av_always_inline void bytestream_put_ ## name(uint8_t **b,              \
@@ -60,58 +60,27 @@ DEF(unsigned int, byte, 1, AV_RB8 , AV_WB8)
 #   define bytestream2_peek_ne24 bytestream2_peek_le24
 #   define bytestream2_peek_ne32 bytestream2_peek_le32
 #   define bytestream2_peek_ne64 bytestream2_peek_le64
-static av_always_inline void bytestream2_init(GetByteContext *g,
-const uint8_t *buf,
-int buf_size)
-static av_always_inline void bytestream2_init_writer(PutByteContext *p,
-uint8_t *buf,
-int buf_size)
-static av_always_inline unsigned int bytestream2_get_bytes_left(GetByteContext *g)
-static av_always_inline unsigned int bytestream2_get_bytes_left_p(PutByteContext *p)
-static av_always_inline void bytestream2_skip(GetByteContext *g,
-unsigned int size)
-static av_always_inline void bytestream2_skipu(GetByteContext *g,
-unsigned int size)
-static av_always_inline void bytestream2_skip_p(PutByteContext *p,
-unsigned int size)
-static av_always_inline int bytestream2_tell(GetByteContext *g)
-static av_always_inline int bytestream2_tell_p(PutByteContext *p)
-static av_always_inline int bytestream2_size(GetByteContext *g)
-static av_always_inline int bytestream2_size_p(PutByteContext *p)
-static av_always_inline int bytestream2_seek(GetByteContext *g,
-int offset,
-int whence)
-static av_always_inline int bytestream2_seek_p(PutByteContext *p,
-int offset,
-int whence)
-static av_always_inline unsigned int bytestream2_get_buffer(GetByteContext *g,
-uint8_t *dst,
-unsigned int size)
-static av_always_inline unsigned int bytestream2_get_bufferu(GetByteContext *g,
-uint8_t *dst,
-unsigned int size)
-static av_always_inline unsigned int bytestream2_put_buffer(PutByteContext *p,
-const uint8_t *src,
-unsigned int size)
-static av_always_inline unsigned int bytestream2_put_bufferu(PutByteContext *p,
-const uint8_t *src,
-unsigned int size)
-static av_always_inline void bytestream2_set_buffer(PutByteContext *p,
-const uint8_t c,
-unsigned int size)
-static av_always_inline void bytestream2_set_bufferu(PutByteContext *p,
-const uint8_t c,
-unsigned int size)
-static av_always_inline unsigned int bytestream2_get_eof(PutByteContext *p)
-static av_always_inline unsigned int bytestream2_copy_bufferu(PutByteContext *p,
-GetByteContext *g,
-unsigned int size)
-static av_always_inline unsigned int bytestream2_copy_buffer(PutByteContext *p,
-GetByteContext *g,
-unsigned int size)
-static av_always_inline unsigned int bytestream_get_buffer(const uint8_t **b,
-uint8_t *dst,
-unsigned int size)
-static av_always_inline void bytestream_put_buffer(uint8_t **b,
-const uint8_t *src,
-unsigned int size)
+bytestream2_init
+bytestream2_init_writer
+bytestream2_get_bytes_left
+bytestream2_get_bytes_left_p
+bytestream2_skip
+bytestream2_skipu
+bytestream2_skip_p
+bytestream2_tell
+bytestream2_tell_p
+bytestream2_size
+bytestream2_size_p
+bytestream2_seek
+bytestream2_seek_p
+bytestream2_get_buffer
+bytestream2_get_bufferu
+bytestream2_put_buffer
+bytestream2_put_bufferu
+bytestream2_set_buffer
+bytestream2_set_bufferu
+bytestream2_get_eof
+bytestream2_copy_bufferu
+bytestream2_copy_buffer
+bytestream_get_buffer
+bytestream_put_buffer

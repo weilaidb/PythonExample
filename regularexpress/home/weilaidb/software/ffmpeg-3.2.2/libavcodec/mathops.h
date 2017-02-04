@@ -6,59 +6,59 @@ extern const uint8_t ff_crop_tab[256 + 2 * MAX_NEG_CROP];
 extern const uint8_t ff_zigzag_direct[64];
 extern const uint8_t ff_zigzag_scan[16+1];
 #if   ARCH_ARM
-#   include "arm/mathops.h"
+#   include
 #elif ARCH_AVR32
-#   include "avr32/mathops.h"
+#   include
 #elif ARCH_MIPS
-#   include "mips/mathops.h"
+#   include
 #elif ARCH_PPC
-#   include "ppc/mathops.h"
+#   include
 #elif ARCH_X86
-#   include "x86/mathops.h"
-#   define MUL64(a,b) ((int64_t)(a) * (int64_t)(b))
-#   define MULL(a,b,s) (MUL64(a, b) >> (s))
-static av_always_inline int MULH(int a, int b)
-static av_always_inline unsigned UMULH(unsigned a, unsigned b)
-#   define MAC64(d, a, b) ((d) += MUL64(a, b))
-#   define MLS64(d, a, b) ((d) -= MUL64(a, b))
-#   define MAC16(rt, ra, rb) rt += (ra) * (rb)
-#   define MUL16(ra, rb) ((ra) * (rb))
-#   define MLS16(rt, ra, rb) ((rt) -= (ra) * (rb))
+#   include
+MUL64 ((int64_t)(a) * (int64_t)(b))
+MULL (MUL64(a, b) >> (s))
+MULH
+UMULH
+MAC64 ((d) += MUL64(a, b))
+MLS64 ((d) -= MUL64(a, b))
+MAC16 rt += (ra) * (rb)
+MUL16 ((ra) * (rb))
+MLS16 ((rt) -= (ra) * (rb))
 #define mid_pred mid_pred
-static inline av_const int mid_pred(int a, int b, int c)
+mid_pred
 #define median4 median4
-static inline av_const int median4(int a, int b, int c, int d)
-static inline av_const int sign_extend(int val, unsigned bits)
-static inline av_const unsigned zero_extend(unsigned val, unsigned bits)
-#define COPY3_IF_LT(x, y, a, b, c, d)\
+median4
+sign_extend
+zero_extend
+COPY3_IF_LT\
 if ((y) < (x))
-#define MASK_ABS(mask, level) do  while (0)
-#   define NEG_SSR32(a,s) ((( int32_t)(a))>>(32-(s)))
-#   define NEG_USR32(a,s) (((uint32_t)(a))>>(32-(s)))
+MASK_ABS do  while (0)
+NEG_SSR32 ((( int32_t)(a))>>(32-(s)))
+NEG_USR32 (((uint32_t)(a))>>(32-(s)))
 #if HAVE_BIGENDIAN
 # ifndef PACK_2U8
-#   define PACK_2U8(a,b)     (((a) <<  8) | (b))
+PACK_2U8     (((a) <<  8) | (b))
 # endif
 # ifndef PACK_4U8
-#   define PACK_4U8(a,b,c,d) (((a) << 24) | ((b) << 16) | ((c) << 8) | (d))
+PACK_4U8 (((a) << 24) | ((b) << 16) | ((c) << 8) | (d))
 # endif
 # ifndef PACK_2U16
-#   define PACK_2U16(a,b)    (((a) << 16) | (b))
+PACK_2U16    (((a) << 16) | (b))
 # endif
 # ifndef PACK_2U8
-#   define PACK_2U8(a,b)     (((b) <<  8) | (a))
+PACK_2U8     (((b) <<  8) | (a))
 # endif
 # ifndef PACK_4U2
-#   define PACK_4U8(a,b,c,d) (((d) << 24) | ((c) << 16) | ((b) << 8) | (a))
+PACK_4U8 (((d) << 24) | ((c) << 16) | ((b) << 8) | (a))
 # endif
 # ifndef PACK_2U16
-#   define PACK_2U16(a,b)    (((b) << 16) | (a))
+PACK_2U16    (((b) << 16) | (a))
 # endif
-#   define PACK_2S8(a,b)     PACK_2U8((a)&255, (b)&255)
-#   define PACK_4S8(a,b,c,d) PACK_4U8((a)&255, (b)&255, (c)&255, (d)&255)
-#   define PACK_2S16(a,b)    PACK_2U16((a)&0xffff, (b)&0xffff)
-#   define FASTDIV(a,b) ((uint32_t)((((uint64_t)a) * ff_inverse[b]) >> 32))
+PACK_2S8     PACK_2U8((a)&255, (b)&255)
+PACK_4S8 PACK_4U8((a)&255, (b)&255, (c)&255, (d)&255)
+PACK_2S16    PACK_2U16((a)&0xffff, (b)&0xffff)
+FASTDIV ((uint32_t)((((uint64_t)a) * ff_inverse[b]) >> 32))
 #define ff_sqrt ff_sqrt
-static inline av_const unsigned int ff_sqrt(unsigned int a)
-static inline av_const float ff_sqrf(float a)
-static inline int8_t ff_u8_to_s8(uint8_t a)
+ff_sqrt
+ff_sqrf
+ff_u8_to_s8

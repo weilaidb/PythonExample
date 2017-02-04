@@ -12,5 +12,4 @@
 #undef BIT_DEPTH
 #define BIT_DEPTH 16
 #undef BIT_DEPTH
-av_cold void ff_h264dsp_init(H264DSPContext *c, const int bit_depth,
-const int chroma_format_idc)
+ff_h264dsp_init

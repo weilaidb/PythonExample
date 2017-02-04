@@ -1,5 +1,5 @@
 typedef struct SMJPEGContext  SMJPEGContext;
-static int smjpeg_probe(AVProbeData *p)
-static int smjpeg_read_header(AVFormatContext *s)
-static int smjpeg_read_packet(AVFormatContext *s, AVPacket *pkt)
+smjpeg_probe
+smjpeg_read_header
+smjpeg_read_packet
 AVInputFormat ff_smjpeg_demuxer = ;

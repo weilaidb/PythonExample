@@ -12,6 +12,5 @@ typedef enum  SiprMode;
 typedef struct SiprParameters  SiprParameters;
 typedef struct SiprContext  SiprContext;
 extern const float ff_pow_0_5[16];
-void ff_sipr_init_16k(SiprContext *ctx);
-void ff_sipr_decode_frame_16k(SiprContext *ctx, SiprParameters *params,
-float *out_data);
+ff_sipr_init_16k;
+ff_sipr_decode_frame_16k;

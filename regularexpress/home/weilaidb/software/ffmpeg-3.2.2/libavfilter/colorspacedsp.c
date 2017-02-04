@@ -25,6 +25,5 @@
 #define BIT_DEPTH 10
 #undef BIT_DEPTH
 #define BIT_DEPTH 12
-static void multiply3x3_c(int16_t *buf[3], ptrdiff_t stride,
-int w, int h, const int16_t m[3][3][8])
-void ff_colorspacedsp_init(ColorSpaceDSPContext *dsp)
+multiply3x3_c
+ff_colorspacedsp_init

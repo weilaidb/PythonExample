@@ -101,35 +101,24 @@ typedef struct ASFStream  ASFStream;
 typedef struct ASFContext  ASFContext;
 static const AVCodecTag codec_asf_bmp_tags[] = ;
 #define PREROLL_TIME 3100
-static void put_str16(AVIOContext *s, const char *tag)
-static int64_t put_header(AVIOContext *pb, const ff_asf_guid *g)
-static void end_header(AVIOContext *pb, int64_t pos)
-static void put_chunk(AVFormatContext *s, int type,
-int payload_length, int flags)
-static int64_t unix_to_file_time(int64_t ti)
-static int32_t get_send_time(ASFContext *asf, int64_t pres_time, uint64_t *offset)
-static int asf_write_markers(AVFormatContext *s)
-static int asf_write_header1(AVFormatContext *s, int64_t file_size,
-int64_t data_chunk_size)
-static int asf_write_header(AVFormatContext *s)
-static int asf_write_stream_header(AVFormatContext *s)
-static int put_payload_parsing_info(AVFormatContext *s,
-unsigned sendtime, unsigned duration,
-int nb_payloads, int padsize)
-static void flush_packet(AVFormatContext *s)
-static void put_payload_header(AVFormatContext *s, ASFStream *stream,
-int64_t presentation_time, int m_obj_size,
-int m_obj_offset, int payload_len, int flags)
-static void put_frame(AVFormatContext *s, ASFStream *stream, AVStream *avst,
-int64_t timestamp, const uint8_t *buf,
-int m_obj_size, int flags)
-static int update_index(AVFormatContext *s, int start_sec,
-uint32_t packet_number, uint16_t packet_count,
-uint64_t packet_offset)
-static int asf_write_packet(AVFormatContext *s, AVPacket *pkt)
-static int asf_write_index(AVFormatContext *s, const ASFIndex *index,
-uint16_t max, uint32_t count)
-static int asf_write_trailer(AVFormatContext *s)
+put_str16
+put_header
+end_header
+put_chunk
+unix_to_file_time
+get_send_time
+asf_write_markers
+asf_write_header1
+asf_write_header
+asf_write_stream_header
+put_payload_parsing_info
+flush_packet
+put_payload_header
+put_frame
+update_index
+asf_write_packet
+asf_write_index
+asf_write_trailer
 static const AVOption asf_options[] = ;
 #if CONFIG_ASF_MUXER
 static const AVClass asf_muxer_class = ;

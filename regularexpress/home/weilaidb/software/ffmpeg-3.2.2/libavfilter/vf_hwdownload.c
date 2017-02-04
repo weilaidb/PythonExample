@@ -1,9 +1,9 @@
 typedef struct HWDownloadContext  HWDownloadContext;
-static int hwdownload_query_formats(AVFilterContext *avctx)
-static int hwdownload_config_input(AVFilterLink *inlink)
-static int hwdownload_config_output(AVFilterLink *outlink)
-static int hwdownload_filter_frame(AVFilterLink *link, AVFrame *input)
-static av_cold void hwdownload_uninit(AVFilterContext *avctx)
+hwdownload_query_formats
+hwdownload_config_input
+hwdownload_config_output
+hwdownload_filter_frame
+hwdownload_uninit
 static const AVClass hwdownload_class = ;
 static const AVFilterPad hwdownload_inputs[] = ;
 static const AVFilterPad hwdownload_outputs[] = ;

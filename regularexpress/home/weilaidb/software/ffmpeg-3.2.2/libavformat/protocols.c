@@ -44,7 +44,6 @@ extern const URLProtocol ff_librtmpt_protocol;
 extern const URLProtocol ff_librtmpte_protocol;
 extern const URLProtocol ff_libssh_protocol;
 extern const URLProtocol ff_libsmbclient_protocol;
-const AVClass *ff_urlcontext_child_class_next(const AVClass *prev)
-const char *avio_enum_protocols(void **opaque, int output)
-const URLProtocol **ffurl_get_protocols(const char *whitelist,
-const char *blacklist)
+*ff_urlcontext_child_class_next
+*avio_enum_protocols
+**ffurl_get_protocols

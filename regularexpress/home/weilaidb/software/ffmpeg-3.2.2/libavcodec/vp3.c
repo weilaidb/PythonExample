@@ -14,64 +14,50 @@ typedef struct Vp3Fragment  Vp3Fragment;
 #define MODE_INTER_FOURMV     7
 #define CODING_MODE_COUNT     8
 #define MODE_COPY             8
-static int theora_decode_header(AVCodecContext *avctx, GetBitContext *gb);
-static int theora_decode_tables(AVCodecContext *avctx, GetBitContext *gb);
+theora_decode_header;
+theora_decode_tables;
 static const int ModeAlphabet[6][CODING_MODE_COUNT] = ;
 static const uint8_t hilbert_offset[16][2] = ;
 #define MIN_DEQUANT_VAL 2
 typedef struct Vp3DecodeContext  Vp3DecodeContext;
-static av_cold void free_tables(AVCodecContext *avctx)
-static void vp3_decode_flush(AVCodecContext *avctx)
-static av_cold int vp3_decode_end(AVCodecContext *avctx)
-static int init_block_mapping(Vp3DecodeContext *s)
-static void init_dequantizer(Vp3DecodeContext *s, int qpi)
-static void init_loop_filter(Vp3DecodeContext *s)
-static int unpack_superblocks(Vp3DecodeContext *s, GetBitContext *gb)
-static int unpack_modes(Vp3DecodeContext *s, GetBitContext *gb)
-static int unpack_vectors(Vp3DecodeContext *s, GetBitContext *gb)
-static int unpack_block_qpis(Vp3DecodeContext *s, GetBitContext *gb)
-static int unpack_vlcs(Vp3DecodeContext *s, GetBitContext *gb,
-VLC *table, int coeff_index,
-int plane,
-int eob_run)
-static void reverse_dc_prediction(Vp3DecodeContext *s,
-int first_fragment,
-int fragment_width,
-int fragment_height);
-static int unpack_dct_coeffs(Vp3DecodeContext *s, GetBitContext *gb)
-#define COMPATIBLE_FRAME(x)                                                   \
+free_tables
+vp3_decode_flush
+vp3_decode_end
+init_block_mapping
+init_dequantizer
+init_loop_filter
+unpack_superblocks
+unpack_modes
+unpack_vectors
+unpack_block_qpis
+unpack_vlcs
+reverse_dc_prediction;
+unpack_dct_coeffs
+COMPATIBLE_FRAME                                                   \
 (compatible_frame[s->all_fragments[x].coding_method] == current_frame_type)
-#define DC_COEFF(u) s->all_fragments[u].dc
-static void reverse_dc_prediction(Vp3DecodeContext *s,
-int first_fragment,
-int fragment_width,
-int fragment_height)
-static void apply_loop_filter(Vp3DecodeContext *s, int plane,
-int ystart, int yend)
-static inline int vp3_dequant(Vp3DecodeContext *s, Vp3Fragment *frag,
-int plane, int inter, int16_t block[64])
-static void vp3_draw_horiz_band(Vp3DecodeContext *s, int y)
-static void await_reference_row(Vp3DecodeContext *s, Vp3Fragment *fragment,
-int motion_y, int y)
-static void render_slice(Vp3DecodeContext *s, int slice)
-static av_cold int allocate_tables(AVCodecContext *avctx)
-static av_cold int init_frames(Vp3DecodeContext *s)
-static av_cold int vp3_decode_init(AVCodecContext *avctx)
-static int update_frames(AVCodecContext *avctx)
-static int ref_frame(Vp3DecodeContext *s, ThreadFrame *dst, ThreadFrame *src)
-static int ref_frames(Vp3DecodeContext *dst, Vp3DecodeContext *src)
+DC_COEFF s->all_fragments[u].dc
+reverse_dc_prediction
+apply_loop_filter
+vp3_dequant
+vp3_draw_horiz_band
+await_reference_row
+render_slice
+allocate_tables
+init_frames
+vp3_decode_init
+update_frames
+ref_frame
+ref_frames
 #if HAVE_THREADS
-static int vp3_update_thread_context(AVCodecContext *dst, const AVCodecContext *src)
-static int vp3_decode_frame(AVCodecContext *avctx,
-void *data, int *got_frame,
-AVPacket *avpkt)
-static int read_huffman_tree(AVCodecContext *avctx, GetBitContext *gb)
+vp3_update_thread_context
+vp3_decode_frame
+read_huffman_tree
 #if HAVE_THREADS
-static int vp3_init_thread_copy(AVCodecContext *avctx)
+vp3_init_thread_copy
 #if CONFIG_THEORA_DECODER
 static const enum AVPixelFormat theora_pix_fmts[4] = ;
-static int theora_decode_header(AVCodecContext *avctx, GetBitContext *gb)
-static int theora_decode_tables(AVCodecContext *avctx, GetBitContext *gb)
-static av_cold int theora_decode_init(AVCodecContext *avctx)
+theora_decode_header
+theora_decode_tables
+theora_decode_init
 AVCodec ff_theora_decoder = ;
 AVCodec ff_vp3_decoder = ;

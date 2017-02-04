@@ -5,28 +5,37 @@ enum var_name ;
 enum ScaleStage ;
 typedef struct NPPScaleStageContext  NPPScaleStageContext;
 typedef struct NPPScaleContext  NPPScaleContext;
-static int nppscale_init(AVFilterContext *ctx)
-static void nppscale_uninit(AVFilterContext *ctx)
-static int nppscale_query_formats(AVFilterContext *ctx)
-static int init_stage(NPPScaleStageContext *stage, AVBufferRef *device_ctx)
-static int format_is_supported(enum AVPixelFormat fmt)
-static enum AVPixelFormat get_deinterleaved_format(enum AVPixelFormat fmt)
-static int init_processing_chain(AVFilterContext *ctx, int in_width, int in_height,
-int out_width, int out_height)
-static int nppscale_config_props(AVFilterLink *outlink)
-static int nppscale_deinterleave(AVFilterContext *ctx, NPPScaleStageContext *stage,
-AVFrame *out, AVFrame *in)
-static int nppscale_resize(AVFilterContext *ctx, NPPScaleStageContext *stage,
-AVFrame *out, AVFrame *in)
-static int nppscale_interleave(AVFilterContext *ctx, NPPScaleStageContext *stage,
-AVFrame *out, AVFrame *in)
+nppscale_init
+nppscale_uninit
+nppscale_query_formats
+init_stage
+format_is_supported
+get_deinterleaved_format
+init_processing_chain
+nppscale_config_props
+nppscale_deinterleave
+nppscale_resize
+nppscale_interleave
 static int (*const nppscale_process[])(AVFilterContext *ctx, NPPScaleStageContext *stage,
 AVFrame *out, AVFrame *in) = ;
-static int nppscale_scale(AVFilterContext *ctx, AVFrame *out, AVFrame *in)
-static int nppscale_filter_frame(AVFilterLink *link, AVFrame *in)
-#define OFFSET(x) offsetof(NPPScaleContext, x)
+nppscale_scale
+nppscale_filter_frame
+OFFSET offsetof(NPPScaleContext, x)
 #define FLAGS (AV_OPT_FLAG_FILTERING_PARAM|AV_OPT_FLAG_VIDEO_PARAM)
-static const AVOption options[] = ;
+static const AVOption options[] = ,
+, .flags = FLAGS },
+, .flags = FLAGS },
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+};
 static const AVClass nppscale_class = ;
 static const AVFilterPad nppscale_inputs[] = ;
 static const AVFilterPad nppscale_outputs[] = ;

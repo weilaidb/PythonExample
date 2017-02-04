@@ -4,50 +4,64 @@
 #define GLOB_NOMAGIC 0
 #define GLOB_BRACE 0
 static const int sizes[][2] = ;
-static int infer_size(int *width_ptr, int *height_ptr, int size)
-static int is_glob(const char *path)
-static int find_image_range(AVIOContext *pb, int *pfirst_index, int *plast_index,
-const char *path, int start_index, int start_index_range)
-static int img_read_probe(AVProbeData *p)
-{
-if (p->filename && ff_guess_image2_codec(p->filename))
-int ff_img_read_header(AVFormatContext *s1)
-int ff_img_read_packet(AVFormatContext *s1, AVPacket *pkt)
-static int img_read_close(struct AVFormatContext* s1)
-static int img_read_seek(AVFormatContext *s, int stream_index, int64_t timestamp, int flags)
-#define OFFSET(x) offsetof(VideoDemuxData, x)
+infer_size
+is_glob
+find_image_range
+img_read_probe
+ff_img_read_header
+ff_img_read_packet
+img_read_close
+img_read_seek
+OFFSET offsetof(VideoDemuxData, x)
 #define DEC AV_OPT_FLAG_DECODING_PARAM
-const AVOption ff_img_options[] = ;
+const AVOption ff_img_options[] = ,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+};
 #if CONFIG_IMAGE2_DEMUXER
 static const AVClass img2_class = ;
 AVInputFormat ff_image2_demuxer = ;
 #if CONFIG_IMAGE2PIPE_DEMUXER
 static const AVClass img2pipe_class = ;
 AVInputFormat ff_image2pipe_demuxer = ;
-static int bmp_probe(AVProbeData *p)
-static int dds_probe(AVProbeData *p)
-static int dpx_probe(AVProbeData *p)
-static int exr_probe(AVProbeData *p)
-static int j2k_probe(AVProbeData *p)
-static int jpeg_probe(AVProbeData *p)
-static int jpegls_probe(AVProbeData *p)
-static int pcx_probe(AVProbeData *p)
-static int qdraw_probe(AVProbeData *p)
-static int pictor_probe(AVProbeData *p)
-static int png_probe(AVProbeData *p)
-static int sgi_probe(AVProbeData *p)
-static int sunrast_probe(AVProbeData *p)
-static int tiff_probe(AVProbeData *p)
-static int webp_probe(AVProbeData *p)
-static int pnm_magic_check(const AVProbeData *p, int magic)
-static inline int pnm_probe(const AVProbeData *p)
-static int pbm_probe(AVProbeData *p)
-static inline int pgmx_probe(AVProbeData *p)
-static int pgm_probe(AVProbeData *p)
-static int pgmyuv_probe(AVProbeData *p)
-static int ppm_probe(AVProbeData *p)
-static int pam_probe(AVProbeData *p)
-#define IMAGEAUTO_DEMUXER(imgname, codecid)\
+bmp_probe
+dds_probe
+dpx_probe
+exr_probe
+j2k_probe
+jpeg_probe
+jpegls_probe
+pcx_probe
+qdraw_probe
+pictor_probe
+png_probe
+sgi_probe
+sunrast_probe
+tiff_probe
+webp_probe
+pnm_magic_check
+pnm_probe
+pbm_probe
+pgmx_probe
+pgm_probe
+pgmyuv_probe
+ppm_probe
+pam_probe
+IMAGEAUTO_DEMUXER\
 static const AVClass imgname ## _class = ;\
 AVInputFormat ff_image_ ## imgname ## _pipe_demuxer = ;
 IMAGEAUTO_DEMUXER(bmp,     AV_CODEC_ID_BMP)

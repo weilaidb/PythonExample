@@ -1,4 +1,4 @@
-#define CPP_PROG "cc -E"
+#define CPP_PROG
 #define ENABLE_NLS 1
 #define HAVE_ABORT 1
 #define HAVE_DCGETTEXT 1
@@ -22,14 +22,14 @@
 #define HAVE_TOASCII 1
 #define HAVE_UNISTD_H 1
 #define HAVE_VSNPRINTF 1
-#define PACKAGE "yasm"
-#define PACKAGE_BUGREPORT "bug-yasm@tortall.net"
-#define PACKAGE_NAME "yasm"
-#define PACKAGE_STRING "yasm 1.3.0"
-#define PACKAGE_TARNAME "yasm"
-#define PACKAGE_URL ""
-#define PACKAGE_VERSION "1.3.0"
+#define PACKAGE
+#define PACKAGE_BUGREPORT
+#define PACKAGE_NAME
+#define PACKAGE_STRING
+#define PACKAGE_TARNAME
+#define PACKAGE_URL
+#define PACKAGE_VERSION
 #define PROTOTYPES 1
 #define STDC_HEADERS 1
-#define VERSION "1.3.0"
+#define VERSION
 #define __PROTOTYPES 1

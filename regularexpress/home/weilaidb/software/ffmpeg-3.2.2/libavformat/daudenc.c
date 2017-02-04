@@ -1,3 +1,3 @@
-static int daud_write_header(struct AVFormatContext *s)
-static int daud_write_packet(struct AVFormatContext *s, AVPacket *pkt)
+daud_write_header
+daud_write_packet
 AVOutputFormat ff_daud_muxer = ;

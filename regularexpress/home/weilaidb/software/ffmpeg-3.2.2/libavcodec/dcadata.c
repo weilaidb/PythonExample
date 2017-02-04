@@ -13,11 +13,10 @@ const uint32_t ff_dca_lossless_quant[32] = ;
 DECLARE_ALIGNED(8, const int8_t, ff_dca_high_freq_vq)[1024][32] = ;
 DECLARE_ALIGNED(16, const float, ff_dca_fir_32bands_perfect)[512] = ;
 DECLARE_ALIGNED(16, const float, ff_dca_fir_32bands_nonperfect)[512] = ;
-#define SCALE(c) ((c) / (256.0f * 32768.0f))
+SCALE ((c) / (256.0f * 32768.0f))
 DECLARE_ALIGNED(16, const float, ff_dca_lfe_fir_64)[256] = ;
 DECLARE_ALIGNED(16, const float, ff_dca_lfe_fir_128)[256] = ;
-#undef SCALE
-DECLARE_ALIGNED(16, const float, ff_dca_fir_64bands)[1024] = ;
+DECLARE_ALIGNED[1024] = ;
 DECLARE_ALIGNED(16, const int32_t, ff_dca_fir_32bands_perfect_fixed)[512] = ;
 DECLARE_ALIGNED(16, const int32_t, ff_dca_fir_32bands_nonperfect_fixed)[512] = ;
 DECLARE_ALIGNED(16, const int32_t, ff_dca_lfe_fir_64_fixed)[256] = ;

@@ -1,8 +1,7 @@
 #undef _WIN32_WINNT
 #define _WIN32_WINNT 0x0600
 #define DXVA2API_USE_BITFIELDS
-#define COBJMACROS
-DEFINE_GUID(IID_IDirectXVideoDecoderService, 0xfc51a551,0xd5e7,0x11d9,0xaf,0x55,0x00,0x05,0x4e,0x43,0xff,0x02);
+DEFINE_GUID;
 DEFINE_GUID(DXVA2_ModeMPEG2_VLD,      0xee27417f, 0x5e28,0x4e65,0xbe,0xea,0x1d,0x26,0xb5,0x08,0xad,0xc9);
 DEFINE_GUID(DXVA2_ModeMPEG2and1_VLD,  0x86695f12, 0x340e,0x4f04,0x9f,0xd3,0x92,0x53,0xdd,0x32,0x74,0x60);
 DEFINE_GUID(DXVA2_ModeH264_E,         0x1b81be68, 0xa0c7,0x11d3,0xb9,0x84,0x00,0xc0,0x4f,0x2e,0x73,0xc5);
@@ -18,12 +17,10 @@ DEFINE_GUID(GUID_NULL,                0x00000000, 0x0000,0x0000,0x00,0x00,0x00,0
 typedef struct dxva2_mode  dxva2_mode;
 static const dxva2_mode dxva2_modes[] = ;
 typedef struct DXVA2Context  DXVA2Context;
-static void dxva2_uninit(AVCodecContext *s)
-static int dxva2_get_buffer(AVCodecContext *s, AVFrame *frame, int flags)
-static int dxva2_retrieve_data(AVCodecContext *s, AVFrame *frame)
-static int dxva2_alloc(AVCodecContext *s)
-static int dxva2_get_decoder_configuration(AVCodecContext *s, const GUID *device_guid,
-const DXVA2_VideoDesc *desc,
-DXVA2_ConfigPictureDecode *config)
-static int dxva2_create_decoder(AVCodecContext *s)
-int dxva2_init(AVCodecContext *s)
+dxva2_uninit
+dxva2_get_buffer
+dxva2_retrieve_data
+dxva2_alloc
+dxva2_get_decoder_configuration
+dxva2_create_decoder
+dxva2_init

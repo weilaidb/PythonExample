@@ -1,7 +1,7 @@
-static int ac3_eac3_probe(AVProbeData *p, enum AVCodecID expected_codec_id)
+ac3_eac3_probe
 #if CONFIG_AC3_DEMUXER
-static int ac3_probe(AVProbeData *p)
+ac3_probe
 AVInputFormat ff_ac3_demuxer = ;
 #if CONFIG_EAC3_DEMUXER
-static int eac3_probe(AVProbeData *p)
+eac3_probe
 AVInputFormat ff_eac3_demuxer = ;

@@ -1,10 +1,9 @@
-int av_reduce(int *dst_num, int *dst_den,
-int64_t num, int64_t den, int64_t max)
-AVRational av_mul_q(AVRational b, AVRational c)
-AVRational av_div_q(AVRational b, AVRational c)
-AVRational av_add_q(AVRational b, AVRational c)
-AVRational av_sub_q(AVRational b, AVRational c)
-AVRational av_d2q(double d, int max)
-int av_nearer_q(AVRational q, AVRational q1, AVRational q2)
-int av_find_nearest_q_idx(AVRational q, const AVRational* q_list)
-uint32_t av_q2intfloat(AVRational q)
+av_reduce
+av_mul_q
+av_div_q
+av_add_q
+av_sub_q
+av_d2q
+av_nearer_q
+av_find_nearest_q_idx
+av_q2intfloat

@@ -2,7 +2,7 @@
 typedef struct QCELPFrame  QCELPFrame;
 static const float qcelp_hammsinc_table[4] = ;
 typedef struct QCELPBitmap  QCELPBitmap;
-#define QCELP_OF(variable, bit, len)
+QCELP_OF
 static const QCELPBitmap qcelp_rate_full_bitmap[] = ;
 static const QCELPBitmap qcelp_rate_half_bitmap[] = ;
 static const QCELPBitmap qcelp_rate_quarter_bitmap[] = ;

@@ -1,4 +1,3 @@
-static av_cold int v410_decode_init(AVCodecContext *avctx)
-static int v410_decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame, AVPacket *avpkt)
+v410_decode_init
+v410_decode_frame
 AVCodec ff_v410_decoder = ;

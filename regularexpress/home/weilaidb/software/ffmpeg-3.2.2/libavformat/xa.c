@@ -1,9 +1,8 @@
-#define XA00_TAG MKTAG('X', 'A', 0, 0)
-#define XAI0_TAG MKTAG('X', 'A', 'I', 0)
-#define XAJ0_TAG MKTAG('X', 'A', 'J', 0)
+MKTAG
+MKTAG
+MKTAG
 typedef struct MaxisXADemuxContext  MaxisXADemuxContext;
-static int xa_probe(AVProbeData *p)
-static int xa_read_header(AVFormatContext *s)
-static int xa_read_packet(AVFormatContext *s,
-AVPacket *pkt)
+xa_probe
+xa_read_header
+xa_read_packet
 AVInputFormat ff_xa_demuxer = ;

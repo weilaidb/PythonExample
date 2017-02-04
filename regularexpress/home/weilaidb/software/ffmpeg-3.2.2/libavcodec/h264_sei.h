@@ -13,7 +13,6 @@ typedef struct H264SEIDisplayOrientation  H264SEIDisplayOrientation;
 typedef struct H264SEIGreenMetaData  H264SEIGreenMetaData;
 typedef struct H264SEIContext  H264SEIContext;
 struct H264ParamSets;
-int ff_h264_sei_decode(H264SEIContext *h, GetBitContext *gb,
-const struct H264ParamSets *ps, void *logctx);
-void ff_h264_sei_uninit(H264SEIContext *h);
-const char *ff_h264_sei_stereo_mode(const H264SEIFramePacking *h);
+ff_h264_sei_decode;
+ff_h264_sei_uninit;
+*ff_h264_sei_stereo_mode;

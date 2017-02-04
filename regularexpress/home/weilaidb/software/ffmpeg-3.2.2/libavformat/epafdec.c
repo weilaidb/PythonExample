@@ -1,3 +1,3 @@
-static int epaf_probe(AVProbeData *p)
-static int epaf_read_header(AVFormatContext *s)
+epaf_probe
+epaf_read_header
 AVInputFormat ff_epaf_demuxer = ;

@@ -1,30 +1,24 @@
 typedef struct  TextContext;
-#define OFFSET(x) offsetof(TextContext, x)
+OFFSET offsetof(TextContext, x)
 #define SD AV_OPT_FLAG_SUBTITLE_PARAM | AV_OPT_FLAG_DECODING_PARAM
 static const AVOption options[] = ;
-static int text_decode_frame(AVCodecContext *avctx, void *data,
-int *got_sub_ptr, AVPacket *avpkt)
-static void text_flush(AVCodecContext *avctx)
-#define DECLARE_CLASS(decname) static const AVClass decname ## _decoder_class =
+text_decode_frame
+text_flush
+DECLARE_CLASS static const AVClass decname ## _decoder_class =
 #if CONFIG_TEXT_DECODER
-#define text_options options
-DECLARE_CLASS(text);
+DECLARE_CLASS;
 AVCodec ff_text_decoder = ;
 #if CONFIG_VPLAYER_DECODER || CONFIG_PJS_DECODER || CONFIG_SUBVIEWER1_DECODER || CONFIG_STL_DECODER
-static int linebreak_init(AVCodecContext *avctx)
+linebreak_init
 #if CONFIG_VPLAYER_DECODER
-#define vplayer_options options
-DECLARE_CLASS(vplayer);
+DECLARE_CLASS;
 AVCodec ff_vplayer_decoder = ;
 #if CONFIG_STL_DECODER
-#define stl_options options
-DECLARE_CLASS(stl);
+DECLARE_CLASS;
 AVCodec ff_stl_decoder = ;
 #if CONFIG_PJS_DECODER
-#define pjs_options options
-DECLARE_CLASS(pjs);
+DECLARE_CLASS;
 AVCodec ff_pjs_decoder = ;
 #if CONFIG_SUBVIEWER1_DECODER
-#define subviewer1_options options
-DECLARE_CLASS(subviewer1);
+DECLARE_CLASS;
 AVCodec ff_subviewer1_decoder = ;

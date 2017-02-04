@@ -1,7 +1,6 @@
 typedef struct SVCContext  SVCContext;
-static av_cold int svc_decode_close(AVCodecContext *avctx)
-static av_cold int svc_decode_init(AVCodecContext *avctx)
-static int init_bsf(AVCodecContext *avctx)
-static int svc_decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame, AVPacket *avpkt)
+svc_decode_close
+svc_decode_init
+init_bsf
+svc_decode_frame
 AVCodec ff_libopenh264_decoder = ;

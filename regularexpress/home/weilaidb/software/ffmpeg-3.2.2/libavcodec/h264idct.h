@@ -1,5 +1,5 @@
 #define AVCODEC_H264IDCT_H
-#define H264_IDCT(depth) \
+H264_IDCT \
 void ff_h264_idct8_add_ ## depth ## _c(uint8_t *dst, int16_t *block, int stride);\
 void ff_h264_idct_add_ ## depth ## _c(uint8_t *dst, int16_t *block, int stride);\
 void ff_h264_idct8_dc_add_ ## depth ## _c(uint8_t *dst, int16_t *block, int stride);\

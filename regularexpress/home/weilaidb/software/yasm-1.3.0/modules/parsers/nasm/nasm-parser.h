@@ -25,9 +25,9 @@ enum nasm_parser_state ;
 #define TARGETMOD_val           (curval.arch_data)
 #define ID_val                  (curval.str_val)
 #define cur_line        (yasm_linemap_get_current(parser_nasm->linemap))
-#define p_expr_new_tree(l,o,r)  yasm_expr_create_tree(l,o,r,cur_line)
-#define p_expr_new_branch(o,r)  yasm_expr_create_branch(o,r,cur_line)
-#define p_expr_new_ident(r)     yasm_expr_create_ident(r,cur_line)
-void nasm_parser_parse(yasm_parser_nasm *parser_nasm);
-void nasm_parser_cleanup(yasm_parser_nasm *parser_nasm);
-int nasm_parser_lex(YYSTYPE *lvalp, yasm_parser_nasm *parser_nasm);
+p_expr_new_tree  yasm_expr_create_tree(l,o,r,cur_line)
+p_expr_new_branch  yasm_expr_create_branch(o,r,cur_line)
+p_expr_new_ident     yasm_expr_create_ident(r,cur_line)
+nasm_parser_parse;
+nasm_parser_cleanup;
+nasm_parser_lex;

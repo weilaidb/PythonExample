@@ -1,6 +1,6 @@
-void ff_vc1_loop_filter_iblk(VC1Context *v, int pq)
-void ff_vc1_loop_filter_iblk_delayed(VC1Context *v, int pq)
-void ff_vc1_smooth_overlap_filter_iblk(VC1Context *v)
-static av_always_inline void vc1_apply_p_v_loop_filter(VC1Context *v, int block_num)
-static av_always_inline void vc1_apply_p_h_loop_filter(VC1Context *v, int block_num)
-void ff_vc1_apply_p_loop_filter(VC1Context *v)
+ff_vc1_loop_filter_iblk
+ff_vc1_loop_filter_iblk_delayed
+ff_vc1_smooth_overlap_filter_iblk
+vc1_apply_p_v_loop_filter
+vc1_apply_p_h_loop_filter
+ff_vc1_apply_p_loop_filter

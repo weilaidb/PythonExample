@@ -1,5 +1,5 @@
 typedef struct CdataDemuxContext  CdataDemuxContext;
-static int cdata_probe(AVProbeData *p)
-static int cdata_read_header(AVFormatContext *s)
-static int cdata_read_packet(AVFormatContext *s, AVPacket *pkt)
+cdata_probe
+cdata_read_header
+cdata_read_packet
 AVInputFormat ff_ea_cdata_demuxer = ;

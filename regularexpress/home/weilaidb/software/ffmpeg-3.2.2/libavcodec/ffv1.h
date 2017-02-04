@@ -13,20 +13,20 @@ typedef struct VlcState  VlcState;
 typedef struct PlaneContext  PlaneContext;
 #define MAX_SLICES 256
 typedef struct FFV1Context  FFV1Context;
-int ff_ffv1_common_init(AVCodecContext *avctx);
-int ff_ffv1_init_slice_state(FFV1Context *f, FFV1Context *fs);
-int ff_ffv1_init_slices_state(FFV1Context *f);
-int ff_ffv1_init_slice_contexts(FFV1Context *f);
-int ff_ffv1_allocate_initial_states(FFV1Context *f);
-void ff_ffv1_clear_slice_state(FFV1Context *f, FFV1Context *fs);
-int ff_ffv1_close(AVCodecContext *avctx);
-static av_always_inline int fold(int diff, int bits)
-static inline void update_vlc_state(VlcState *const state, const int v)
+ff_ffv1_common_init;
+ff_ffv1_init_slice_state;
+ff_ffv1_init_slices_state;
+ff_ffv1_init_slice_contexts;
+ff_ffv1_allocate_initial_states;
+ff_ffv1_clear_slice_state;
+ff_ffv1_close;
+fold
+update_vlc_state
 #define TYPE int16_t
-#define RENAME(name) name
+RENAME name
 #undef TYPE
 #undef RENAME
 #define TYPE int32_t
-#define RENAME(name) name ## 32
+RENAME name ## 32
 #undef TYPE
 #undef RENAME

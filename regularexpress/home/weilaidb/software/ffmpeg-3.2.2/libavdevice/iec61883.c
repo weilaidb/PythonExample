@@ -6,14 +6,13 @@
 #define IEC61883_HDV        2
 typedef struct DVPacket  DVPacket;
 struct iec61883_data ;
-static int iec61883_callback(unsigned char *data, int length,
-int complete, void *callback_data)
-static void *iec61883_receive_task(void *opaque)
-static int iec61883_parse_queue_dv(struct iec61883_data *dv, AVPacket *pkt)
-static int iec61883_parse_queue_hdv(struct iec61883_data *dv, AVPacket *pkt)
-static int iec61883_read_header(AVFormatContext *context)
-static int iec61883_read_packet(AVFormatContext *context, AVPacket *pkt)
-static int iec61883_close(AVFormatContext *context)
+iec61883_callback
+*iec61883_receive_task
+iec61883_parse_queue_dv
+iec61883_parse_queue_hdv
+iec61883_read_header
+iec61883_read_packet
+iec61883_close
 static const AVOption options[] = ;
 static const AVClass iec61883_class = ;
 AVInputFormat ff_iec61883_demuxer = ;

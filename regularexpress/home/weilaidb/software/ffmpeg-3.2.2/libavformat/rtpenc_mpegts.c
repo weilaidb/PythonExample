@@ -1,5 +1,5 @@
 struct MuxChain ;
-static int rtp_mpegts_write_close(AVFormatContext *s)
-static int rtp_mpegts_write_header(AVFormatContext *s)
-static int rtp_mpegts_write_packet(AVFormatContext *s, AVPacket *pkt)
+rtp_mpegts_write_close
+rtp_mpegts_write_header
+rtp_mpegts_write_packet
 AVOutputFormat ff_rtp_mpegts_muxer = ;

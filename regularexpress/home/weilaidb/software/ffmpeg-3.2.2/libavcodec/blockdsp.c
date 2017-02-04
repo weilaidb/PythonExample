@@ -1,5 +1,5 @@
-static void clear_block_c(int16_t *block)
-static void clear_blocks_c(int16_t *blocks)
-static void fill_block16_c(uint8_t *block, uint8_t value, int line_size, int h)
-static void fill_block8_c(uint8_t *block, uint8_t value, int line_size, int h)
-av_cold void ff_blockdsp_init(BlockDSPContext *c, AVCodecContext *avctx)
+clear_block_c
+clear_blocks_c
+fill_block16_c
+fill_block8_c
+ff_blockdsp_init

@@ -1,6 +1,5 @@
 #define AVCODEC_SINEWIN_TABLEGEN_H
-#if !CONFIG_HARDCODED_TABLES
-SINETABLE(  32);
+SINETABLE;
 SINETABLE(  64);
 SINETABLE( 128);
 SINETABLE( 256);
@@ -11,8 +10,8 @@ SINETABLE(4096);
 SINETABLE(8192);
 #if USE_FIXED
 #if USE_FIXED
-#define SIN_FIX(a) (int)floor((a) * 0x80000000 + 0.5)
-#define SIN_FIX(a) a
-SINETABLE_CONST INTFLOAT * const AAC_RENAME(ff_sine_windows)[] = ;
-av_cold void AAC_RENAME(ff_sine_window_init)(INTFLOAT *window, int n)
-av_cold void AAC_RENAME(ff_init_ff_sine_windows)(int index)
+SIN_FIX (int)floor((a) * 0x80000000 + 0.5)
+SIN_FIX a
+AAC_RENAME[] = ;
+AAC_RENAME(INTFLOAT *window, int n)
+AAC_RENAME(int index)

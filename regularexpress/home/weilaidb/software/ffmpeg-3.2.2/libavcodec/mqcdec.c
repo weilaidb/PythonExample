@@ -1,5 +1,5 @@
-static void bytein(MqcState *mqc)
-static int exchange(MqcState *mqc, uint8_t *cxstate, int lps)
-void ff_mqc_initdec(MqcState *mqc, uint8_t *bp, int raw, int reset)
-static int mqc_decode_bypass(MqcState *mqc)
-int ff_mqc_decode(MqcState *mqc, uint8_t *cxstate)
+bytein
+exchange
+ff_mqc_initdec
+mqc_decode_bypass
+ff_mqc_decode

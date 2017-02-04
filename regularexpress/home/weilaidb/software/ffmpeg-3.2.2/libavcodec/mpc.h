@@ -4,5 +4,5 @@
 #define MPC_FRAME_SIZE   (BANDS * SAMPLES_PER_BAND)
 typedef struct Band Band;
 typedef struct MPCContext  MPCContext;
-void ff_mpc_init(void);
-void ff_mpc_dequantize_and_synth(MPCContext *c, int maxband, int16_t **out, int channels);
+ff_mpc_init;
+ff_mpc_dequantize_and_synth;

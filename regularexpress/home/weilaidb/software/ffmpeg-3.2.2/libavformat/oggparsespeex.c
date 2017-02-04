@@ -1,5 +1,5 @@
 struct speex_params ;
-static int speex_header(AVFormatContext *s, int idx)
-static int ogg_page_packets(struct ogg_stream *os)
-static int speex_packet(AVFormatContext *s, int idx)
+speex_header
+ogg_page_packets
+speex_packet
 const struct ogg_codec ff_speex_codec = ;

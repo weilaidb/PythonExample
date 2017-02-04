@@ -5,17 +5,16 @@
 #define BIT_LINE     0x80
 #define BYTE_LINE    0xC0
 typedef struct CDXLVideoContext  CDXLVideoContext;
-static av_cold int cdxl_decode_init(AVCodecContext *avctx)
-static void import_palette(CDXLVideoContext *c, uint32_t *new_palette)
-static void bitplanar2chunky(CDXLVideoContext *c, int linesize, uint8_t *out)
-static void bitline2chunky(CDXLVideoContext *c, int linesize, uint8_t *out)
-static void chunky2chunky(CDXLVideoContext *c, int linesize, uint8_t *out)
-static void import_format(CDXLVideoContext *c, int linesize, uint8_t *out)
-static void cdxl_decode_rgb(CDXLVideoContext *c, AVFrame *frame)
-static void cdxl_decode_raw(CDXLVideoContext *c, AVFrame *frame)
-static void cdxl_decode_ham6(CDXLVideoContext *c, AVFrame *frame)
-static void cdxl_decode_ham8(CDXLVideoContext *c, AVFrame *frame)
-static int cdxl_decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame, AVPacket *pkt)
-static av_cold int cdxl_decode_end(AVCodecContext *avctx)
+cdxl_decode_init
+import_palette
+bitplanar2chunky
+bitline2chunky
+chunky2chunky
+import_format
+cdxl_decode_rgb
+cdxl_decode_raw
+cdxl_decode_ham6
+cdxl_decode_ham8
+cdxl_decode_frame
+cdxl_decode_end
 AVCodec ff_cdxl_decoder = ;

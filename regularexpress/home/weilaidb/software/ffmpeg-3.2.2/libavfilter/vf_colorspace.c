@@ -11,39 +11,31 @@ struct LumaCoefficients ;
 struct WhitepointCoefficients ;
 typedef struct ColorSpaceContext  ColorSpaceContext;
 static const struct LumaCoefficients luma_coefficients[AVCOL_SPC_NB] = ;
-static const struct LumaCoefficients *get_luma_coefficients(enum AVColorSpace csp)
-static void fill_rgb2yuv_table(const struct LumaCoefficients *coeffs,
-double rgb2yuv[3][3])
+*get_luma_coefficients
+fill_rgb2yuv_table
 static const struct TransferCharacteristics transfer_characteristics[AVCOL_TRC_NB] = ;
-static const struct TransferCharacteristics *
-get_transfer_characteristics(enum AVColorTransferCharacteristic trc)
+get_transfer_characteristics
 static const struct WhitepointCoefficients whitepoint_coefficients[WP_NB] = ;
 static const struct ColorPrimaries color_primaries[AVCOL_PRI_NB] = ;
-static const struct ColorPrimaries *get_color_primaries(enum AVColorPrimaries prm)
-static void invert_matrix3x3(const double in[3][3], double out[3][3])
-static int fill_gamma_table(ColorSpaceContext *s)
-static void fill_rgb2xyz_table(const struct ColorPrimaries *coeffs,
-double rgb2xyz[3][3])
-static void mul3x3(double dst[3][3], const double src1[3][3], const double src2[3][3])
-static void fill_whitepoint_conv_table(double out[3][3], enum WhitepointAdaptation wp_adapt,
-enum Whitepoint src, enum Whitepoint dst)
-static void apply_lut(int16_t *buf[3], ptrdiff_t stride,
-int w, int h, const int16_t *lut)
+*get_color_primaries
+invert_matrix3x3
+fill_gamma_table
+fill_rgb2xyz_table
+mul3x3
+fill_whitepoint_conv_table
+apply_lut
 struct ThreadData ;
-static int convert(AVFilterContext *ctx, void *data, int job_nr, int n_jobs)
-static int get_range_off(AVFilterContext *ctx, int *off,
-int *y_rng, int *uv_rng,
-enum AVColorRange rng, int depth)
-static int create_filtergraph(AVFilterContext *ctx,
-const AVFrame *in, const AVFrame *out)
-static int init(AVFilterContext *ctx)
-static void uninit(AVFilterContext *ctx)
-static int filter_frame(AVFilterLink *link, AVFrame *in)
-static int query_formats(AVFilterContext *ctx)
-static int config_props(AVFilterLink *outlink)
-#define OFFSET(x) offsetof(ColorSpaceContext, x)
+convert
+get_range_off
+create_filtergraph
+init
+uninit
+filter_frame
+query_formats
+config_props
+OFFSET offsetof(ColorSpaceContext, x)
 #define FLAGS AV_OPT_FLAG_FILTERING_PARAM | AV_OPT_FLAG_VIDEO_PARAM
-#define ENUM(x, y, z)
+ENUM
 static const AVOption colorspace_options[] = ;
 AVFILTER_DEFINE_CLASS(colorspace);
 static const AVFilterPad inputs[] = ;

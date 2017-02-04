@@ -51,11 +51,11 @@ static const uint16_t dnxhd_1250_run_codes[62] = ;
 static const uint8_t dnxhd_1250_run_bits[62] = ;
 static const uint8_t dnxhd_1250_run[62] = ;
 const CIDEntry ff_dnxhd_cid_table[] = ;
-int ff_dnxhd_get_cid_table(int cid)
-int avpriv_dnxhd_get_frame_size(int cid)
-int avpriv_dnxhd_get_interlaced(int cid)
+ff_dnxhd_get_cid_table
+avpriv_dnxhd_get_frame_size
+avpriv_dnxhd_get_interlaced
 #if LIBAVCODEC_VERSION_MAJOR < 58
-uint64_t avpriv_dnxhd_parse_header_prefix(const uint8_t *buf)
-static int dnxhd_find_hr_cid(AVCodecContext *avctx)
-int ff_dnxhd_find_cid(AVCodecContext *avctx, int bit_depth)
-void ff_dnxhd_print_profiles(AVCodecContext *avctx, int loglevel)
+avpriv_dnxhd_parse_header_prefix
+dnxhd_find_hr_cid
+ff_dnxhd_find_cid
+ff_dnxhd_print_profiles

@@ -4,20 +4,18 @@ typedef struct IntervalTreeNode  IntervalTreeNode;
 typedef struct it_recursion_node  it_recursion_node;
 typedef struct IntervalTree  IntervalTree;
 YASM_LIB_DECL
-IntervalTree *IT_create(void);
+*IT_create;
 YASM_LIB_DECL
-void IT_destroy(IntervalTree *);
+IT_destroy;
 YASM_LIB_DECL
-void IT_print(const IntervalTree *);
+IT_print;
 YASM_LIB_DECL
-void *IT_delete_node(IntervalTree *, IntervalTreeNode *, long *low,
-long *high);
+*IT_delete_node;
 YASM_LIB_DECL
-IntervalTreeNode *IT_insert(IntervalTree *, long low, long high, void *data);
+*IT_insert;
 YASM_LIB_DECL
-IntervalTreeNode *IT_get_predecessor(const IntervalTree *, IntervalTreeNode *);
+*IT_get_predecessor;
 YASM_LIB_DECL
-IntervalTreeNode *IT_get_successor(const IntervalTree *, IntervalTreeNode *);
+*IT_get_successor;
 YASM_LIB_DECL
-void IT_enumerate(IntervalTree *, long low, long high, void *cbd,
-void (*callback) (IntervalTreeNode *node, void *cbd));
+IT_enumerate (IntervalTreeNode *node, void *cbd));

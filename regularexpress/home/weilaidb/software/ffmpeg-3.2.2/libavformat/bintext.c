@@ -1,26 +1,27 @@
 typedef struct  BinDemuxContext;
-static AVStream * init_stream(AVFormatContext *s)
+init_stream
 #if CONFIG_BINTEXT_DEMUXER | CONFIG_ADF_DEMUXER | CONFIG_IDF_DEMUXER
-static void calculate_height(AVCodecParameters *par, uint64_t fsize)
+calculate_height
 #if CONFIG_BINTEXT_DEMUXER
 static const uint8_t next_magic[]=;
-static int next_tag_read(AVFormatContext *avctx, uint64_t *fsize)
-static void predict_width(AVCodecParameters *par, uint64_t fsize, int got_width)
-static int bintext_read_header(AVFormatContext *s)
+next_tag_read
+predict_width
+bintext_read_header
 #if CONFIG_XBIN_DEMUXER
-static int xbin_probe(AVProbeData *p)
-static int xbin_read_header(AVFormatContext *s)
+xbin_probe
+xbin_read_header
 #if CONFIG_ADF_DEMUXER
-static int adf_read_header(AVFormatContext *s)
+adf_read_header
 #if CONFIG_IDF_DEMUXER
 static const uint8_t idf_magic[] = ;
-static int idf_probe(AVProbeData *p)
-static int idf_read_header(AVFormatContext *s)
-static int read_packet(AVFormatContext *s,
-AVPacket *pkt)
-#define OFFSET(x) offsetof(BinDemuxContext, x)
-static const AVOption options[] = ;
-#define CLASS(name) \
+idf_probe
+idf_read_header
+read_packet
+OFFSET offsetof(BinDemuxContext, x)
+static const AVOption options[] = ,
+,
+};
+CLASS \
 (const AVClass[1])
 #if CONFIG_BINTEXT_DEMUXER
 AVInputFormat ff_bintext_demuxer = ;

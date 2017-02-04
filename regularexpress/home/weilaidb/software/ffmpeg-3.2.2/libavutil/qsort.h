@@ -1,3 +1,3 @@
 #define AVUTIL_QSORT_H
-#define AV_QSORT(p, num, type, cmp) do  while (0)
-#define AV_MSORT(p, tmp, num, type, cmp) do  while (0)
+AV_QSORT do  while (0)
+AV_MSORT do  while (0)

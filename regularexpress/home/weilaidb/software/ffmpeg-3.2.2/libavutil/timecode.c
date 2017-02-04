@@ -1,12 +1,12 @@
-int av_timecode_adjust_ntsc_framenum2(int framenum, int fps)
-uint32_t av_timecode_get_smpte_from_framenum(const AVTimecode *tc, int framenum)
-char *av_timecode_make_string(const AVTimecode *tc, char *buf, int framenum)
-static unsigned bcd2uint(uint8_t bcd)
-char *av_timecode_make_smpte_tc_string(char *buf, uint32_t tcsmpte, int prevent_df)
-char *av_timecode_make_mpeg_tc_string(char *buf, uint32_t tc25bit)
-static int check_fps(int fps)
-static int check_timecode(void *log_ctx, AVTimecode *tc)
-static int fps_from_frame_rate(AVRational rate)
-int av_timecode_check_frame_rate(AVRational rate)
-int av_timecode_init(AVTimecode *tc, AVRational rate, int flags, int frame_start, void *log_ctx)
-int av_timecode_init_from_string(AVTimecode *tc, AVRational rate, const char *str, void *log_ctx)
+av_timecode_adjust_ntsc_framenum2
+av_timecode_get_smpte_from_framenum
+*av_timecode_make_string
+bcd2uint
+*av_timecode_make_smpte_tc_string
+*av_timecode_make_mpeg_tc_string
+check_fps
+check_timecode
+fps_from_frame_rate
+av_timecode_check_frame_rate
+av_timecode_init
+av_timecode_init_from_string

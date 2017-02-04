@@ -1,12 +1,12 @@
 typedef struct StereoWidenContext  StereoWidenContext;
-#define OFFSET(x) offsetof(StereoWidenContext, x)
+OFFSET offsetof(StereoWidenContext, x)
 #define A AV_OPT_FLAG_AUDIO_PARAM|AV_OPT_FLAG_FILTERING_PARAM
 static const AVOption stereowiden_options[] = ;
 AVFILTER_DEFINE_CLASS(stereowiden);
-static int query_formats(AVFilterContext *ctx)
-static int config_input(AVFilterLink *inlink)
-static int filter_frame(AVFilterLink *inlink, AVFrame *in)
-static av_cold void uninit(AVFilterContext *ctx)
+query_formats
+config_input
+filter_frame
+uninit
 static const AVFilterPad inputs[] = ;
 static const AVFilterPad outputs[] = ;
 AVFilter ff_af_stereowiden = ;

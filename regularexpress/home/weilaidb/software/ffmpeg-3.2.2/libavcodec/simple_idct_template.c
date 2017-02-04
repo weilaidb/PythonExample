@@ -21,8 +21,8 @@
 #define ROW_SHIFT 11
 #define COL_SHIFT 20
 #define DC_SHIFT 3
-#define MUL(a, b)    MUL16(a, b)
-#define MAC(a, b, c) MAC16(a, b, c)
+MUL    MUL16(a, b)
+MAC MAC16(a, b, c)
 #elif BIT_DEPTH == 10 || BIT_DEPTH == 12
 # if BIT_DEPTH == 10
 #define W1 22725
@@ -53,18 +53,18 @@
 #define COL_SHIFT 17
 #define DC_SHIFT -1
 # endif
-#define MUL(a, b)    ((a) * (b))
-#define MAC(a, b, c) ((a) += (b) * (c))
-#error "Unsupported bitdepth"
-static inline void FUNC(idctRowCondDC_extrashift)(int16_t *row, int extra_shift)
-static inline void FUNC(idctRowCondDC)(int16_t *row, int extra_shift)
+MUL    ((a) * (b))
+MAC ((a) += (b) * (c))
+#error
+FUNC(int16_t *row, int extra_shift)
+FUNC(int16_t *row, int extra_shift)
 #define IDCT_COLS do  while (0)
-static inline void FUNC(idctSparseCol_extrashift)(int16_t *col)
-static inline void FUNC(idctSparseColPut)(pixel *dest, int line_size,
+FUNC(int16_t *col)
+FUNC(pixel *dest, int line_size,
 int16_t *col)
-static inline void FUNC(idctSparseColAdd)(pixel *dest, int line_size,
+FUNC(pixel *dest, int line_size,
 int16_t *col)
-static inline void FUNC(idctSparseCol)(int16_t *col)
-void FUNC(ff_simple_idct_put)(uint8_t *dest_, int line_size, int16_t *block)
-void FUNC(ff_simple_idct_add)(uint8_t *dest_, int line_size, int16_t *block)
-void FUNC(ff_simple_idct)(int16_t *block)
+FUNC(int16_t *col)
+FUNC(uint8_t *dest_, int line_size, int16_t *block)
+FUNC(uint8_t *dest_, int line_size, int16_t *block)
+FUNC(int16_t *block)

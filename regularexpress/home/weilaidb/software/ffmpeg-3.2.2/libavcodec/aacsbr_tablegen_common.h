@@ -1,4 +1,4 @@
 #define AVCODEC_AACSBR_TABLEGEN_COMMON_H
-static DECLARE_ALIGNED(32, INTFLOAT, sbr_qmf_window_ds)[320];
-static DECLARE_ALIGNED(32, INTFLOAT, sbr_qmf_window_us)[640] = ;
-static av_cold void aacsbr_tableinit(void)
+DECLARE_ALIGNED[320];
+DECLARE_ALIGNED[640] = ;
+aacsbr_tableinit

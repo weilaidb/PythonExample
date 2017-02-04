@@ -1,2 +1,2 @@
-static int chomp_filter(AVBSFContext *ctx, AVPacket *out)
+chomp_filter
 const AVBitStreamFilter ff_chomp_bsf = ;

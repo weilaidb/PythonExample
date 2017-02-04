@@ -26,61 +26,38 @@ static const uint32_t celt_pvq_u[1272] = ;
 DECLARE_ALIGNED(32, static const float, celt_window)[120] = ;
 const float ff_celt_window2[120] = ;
 static const uint32_t * const celt_pvq_u_row[15] = ;
-static inline int16_t celt_cos(int16_t x)
-static inline int celt_log2tan(int isin, int icos)
-static inline uint32_t celt_rng(CeltContext *s)
-static void celt_decode_coarse_energy(CeltContext *s, OpusRangeCoder *rc)
-static void celt_decode_fine_energy(CeltContext *s, OpusRangeCoder *rc)
-static void celt_decode_final_energy(CeltContext *s, OpusRangeCoder *rc,
-int bits_left)
-static void celt_decode_tf_changes(CeltContext *s, OpusRangeCoder *rc,
-int transient)
-static void celt_decode_allocation(CeltContext *s, OpusRangeCoder *rc)
-static inline int celt_bits2pulses(const uint8_t *cache, int bits)
-static inline int celt_pulses2bits(const uint8_t *cache, int pulses)
-static inline void celt_normalize_residual(const int * av_restrict iy, float * av_restrict X,
-int N, float g)
-static void celt_exp_rotation1(float *X, unsigned int len, unsigned int stride,
-float c, float s)
-static inline void celt_exp_rotation(float *X, unsigned int len,
-unsigned int stride, unsigned int K,
-enum CeltSpread spread)
-static inline unsigned int celt_extract_collapse_mask(const int *iy,
-unsigned int N,
-unsigned int B)
-static inline void celt_renormalize_vector(float *X, int N, float gain)
-static inline void celt_stereo_merge(float *X, float *Y, float mid, int N)
-static void celt_interleave_hadamard(float *tmp, float *X, int N0,
-int stride, int hadamard)
-static void celt_deinterleave_hadamard(float *tmp, float *X, int N0,
-int stride, int hadamard)
-static void celt_haar1(float *X, int N0, int stride)
-static inline int celt_compute_qn(int N, int b, int offset, int pulse_cap,
-int dualstereo)
-static inline uint64_t celt_cwrsi(unsigned int N, unsigned int K, unsigned int i, int *y)
-static inline float celt_decode_pulses(OpusRangeCoder *rc, int *y, unsigned int N, unsigned int K)
-static inline unsigned int celt_alg_unquant(OpusRangeCoder *rc, float *X,
-unsigned int N, unsigned int K,
-enum CeltSpread spread,
-unsigned int blocks, float gain)
-static unsigned int celt_decode_band(CeltContext *s, OpusRangeCoder *rc,
-const int band, float *X, float *Y,
-int N, int b, unsigned int blocks,
-float *lowband, int duration,
-float *lowband_out, int level,
-float gain, float *lowband_scratch,
-int fill)
-static void celt_denormalize(CeltContext *s, CeltFrame *frame, float *data)
-static void celt_postfilter_apply_transition(CeltFrame *frame, float *data)
-static void celt_postfilter_apply(CeltFrame *frame,
-float *data, int len)
-static void celt_postfilter(CeltContext *s, CeltFrame *frame)
-static int parse_postfilter(CeltContext *s, OpusRangeCoder *rc, int consumed)
-static void process_anticollapse(CeltContext *s, CeltFrame *frame, float *X)
-static void celt_decode_bands(CeltContext *s, OpusRangeCoder *rc)
-int ff_celt_decode_frame(CeltContext *s, OpusRangeCoder *rc,
-float **output, int coded_channels, int frame_size,
-int startband,  int endband)
-void ff_celt_flush(CeltContext *s)
-void ff_celt_free(CeltContext **ps)
-int ff_celt_init(AVCodecContext *avctx, CeltContext **ps, int output_channels)
+celt_cos
+celt_log2tan
+celt_rng
+celt_decode_coarse_energy
+celt_decode_fine_energy
+celt_decode_final_energy
+celt_decode_tf_changes
+celt_decode_allocation
+celt_bits2pulses
+celt_pulses2bits
+celt_normalize_residual
+celt_exp_rotation1
+celt_exp_rotation
+celt_extract_collapse_mask
+celt_renormalize_vector
+celt_stereo_merge
+celt_interleave_hadamard
+celt_deinterleave_hadamard
+celt_haar1
+celt_compute_qn
+celt_cwrsi
+celt_decode_pulses
+celt_alg_unquant
+celt_decode_band
+celt_denormalize
+celt_postfilter_apply_transition
+celt_postfilter_apply
+celt_postfilter
+parse_postfilter
+process_anticollapse
+celt_decode_bands
+ff_celt_decode_frame
+ff_celt_flush
+ff_celt_free
+ff_celt_init

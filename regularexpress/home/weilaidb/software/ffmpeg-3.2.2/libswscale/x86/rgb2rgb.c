@@ -1,5 +1,4 @@
-#if HAVE_INLINE_ASM
-DECLARE_ASM_CONST(8, uint64_t, mmx_ff)       = 0x00000000000000FFULL;
+DECLARE_ASM_CONST       = 0x00000000000000FFULL;
 DECLARE_ASM_CONST(8, uint64_t, mmx_null)     = 0x0000000000000000ULL;
 DECLARE_ASM_CONST(8, uint64_t, mmx_one)      = 0xFFFFFFFFFFFFFFFFULL;
 DECLARE_ASM_CONST(8, uint64_t, mask32b)      = 0x000000FF000000FFULL;
@@ -25,8 +24,7 @@ DECLARE_ASM_CONST(8, uint64_t, mask15rg)     = 0x7FE07FE07FE07FE0ULL;
 DECLARE_ASM_CONST(8, uint64_t, mask15s)      = 0xFFE0FFE0FFE0FFE0ULL;
 DECLARE_ASM_CONST(8, uint64_t, mask15g)      = 0x03E003E003E003E0ULL;
 DECLARE_ASM_CONST(8, uint64_t, mask15r)      = 0x7C007C007C007C00ULL;
-#define mask16b mask15b
-DECLARE_ASM_CONST(8, uint64_t, mask16g)      = 0x07E007E007E007E0ULL;
+DECLARE_ASM_CONST      = 0x07E007E007E007E0ULL;
 DECLARE_ASM_CONST(8, uint64_t, mask16r)      = 0xF800F800F800F800ULL;
 DECLARE_ASM_CONST(8, uint64_t, red_16mask)   = 0x0000f8000000f800ULL;
 DECLARE_ASM_CONST(8, uint64_t, green_16mask) = 0x000007e0000007e0ULL;
@@ -54,19 +52,19 @@ DECLARE_ALIGNED(8, extern const uint64_t, ff_bgr2UVOffset);
 #define COMPILE_TEMPLATE_SSE2 0
 #define COMPILE_TEMPLATE_AVX 0
 #undef RENAME
-#define RENAME(a) a ## _mmx
+RENAME a ## _mmx
 #undef RENAME
 #undef COMPILE_TEMPLATE_MMXEXT
 #define COMPILE_TEMPLATE_MMXEXT 1
-#define RENAME(a) a ## _mmxext
+RENAME a ## _mmxext
 #undef RENAME
 #undef COMPILE_TEMPLATE_SSE2
 #define COMPILE_TEMPLATE_SSE2 1
-#define RENAME(a) a ## _sse2
+RENAME a ## _sse2
 #undef RENAME
 #undef COMPILE_TEMPLATE_AVX
 #define COMPILE_TEMPLATE_AVX 1
-#define RENAME(a) a ## _avx
+RENAME a ## _avx
 #undef RENAME
 #undef COMPILE_TEMPLATE_MMXEXT
 #undef COMPILE_TEMPLATE_SSE2
@@ -76,5 +74,5 @@ DECLARE_ALIGNED(8, extern const uint64_t, ff_bgr2UVOffset);
 #define COMPILE_TEMPLATE_SSE2 0
 #define COMPILE_TEMPLATE_AVX 0
 #define COMPILE_TEMPLATE_AMD3DNOW 1
-#define RENAME(a) a ## _3dnow
-av_cold void rgb2rgb_init_x86(void)
+RENAME a ## _3dnow
+rgb2rgb_init_x86

@@ -10,14 +10,11 @@ struct yasm_bytecode ;
 YASM_LIB_DECL yasm_bytecode *yasm_bc_create_common
 ( const yasm_bytecode_callback *callback, void *contents, unsigned long line);
 YASM_LIB_DECL
-void yasm_bc_transform(yasm_bytecode *bc,
-const yasm_bytecode_callback *callback,
-void *contents);
+yasm_bc_transform;
 YASM_LIB_DECL
-void yasm_bc_finalize_common(yasm_bytecode *bc, yasm_bytecode *prev_bc);
+yasm_bc_finalize_common;
 YASM_LIB_DECL
-int yasm_bc_calc_len_common(yasm_bytecode *bc, yasm_bc_add_span_func add_span,
-void *add_span_data);
+yasm_bc_calc_len_common;
 YASM_LIB_DECL
 int yasm_bc_expand_common
 (yasm_bytecode *bc, int span, long old_val, long new_val, long *neg_thres, long *pos_thres);
@@ -25,9 +22,9 @@ YASM_LIB_DECL
 int yasm_bc_tobytes_common
 (yasm_bytecode *bc, unsigned char **bufp, unsigned char *bufstart, void *d,
 yasm_output_value_func output_value, yasm_output_reloc_func output_reloc);
-#define yasm_bc__next(bc)               STAILQ_NEXT(bc, link)
+yasm_bc__next               STAILQ_NEXT(bc, link)
 YASM_LIB_DECL
-void yasm_bc_set_multiple(yasm_bytecode *bc, yasm_expr *e);
+yasm_bc_set_multiple;
 YASM_LIB_DECL yasm_bytecode *yasm_bc_create_data
 (yasm_datavalhead *datahead, unsigned int size, int append_zero, yasm_arch *arch, unsigned long line);
 YASM_LIB_DECL yasm_bytecode *yasm_bc_create_leb128
@@ -47,54 +44,51 @@ YASM_LIB_DECL yasm_bytecode *yasm_bc_create_org
 YASM_LIB_DECL yasm_section *yasm_bc_get_section
 (yasm_bytecode *bc);
 YASM_LIB_DECL
-void yasm_bc__add_symrec(yasm_bytecode *bc, yasm_symrec *sym);
+yasm_bc__add_symrec;
 YASM_LIB_DECL
-void yasm_bc_destroy( yasm_bytecode *bc);
+yasm_bc_destroy;
 YASM_LIB_DECL
-void yasm_bc_print(const yasm_bytecode *bc, FILE *f, int indent_level);
+yasm_bc_print;
 YASM_LIB_DECL
-void yasm_bc_finalize(yasm_bytecode *bc, yasm_bytecode *prev_bc);
+yasm_bc_finalize;
 YASM_LIB_DECL yasm_intnum *yasm_calc_bc_dist
 (yasm_bytecode *precbc1, yasm_bytecode *precbc2);
 YASM_LIB_DECL
-unsigned long yasm_bc_next_offset(yasm_bytecode *precbc);
+yasm_bc_next_offset;
 YASM_LIB_DECL
-int yasm_bc_elem_size(yasm_bytecode *bc);
+yasm_bc_elem_size;
 YASM_LIB_DECL
-int yasm_bc_calc_len(yasm_bytecode *bc, yasm_bc_add_span_func add_span,
-void *add_span_data);
+yasm_bc_calc_len;
 YASM_LIB_DECL
-int yasm_bc_expand(yasm_bytecode *bc, int span, long old_val, long new_val, long *neg_thres, long *pos_thres);
+yasm_bc_expand;
 YASM_LIB_DECL unsigned char *yasm_bc_tobytes
 (yasm_bytecode *bc, unsigned char *buf, unsigned long *bufsize, int *gap, void *d, yasm_output_value_func output_value, yasm_output_reloc_func output_reloc);
 YASM_LIB_DECL
-int yasm_bc_get_multiple(yasm_bytecode *bc, long *multiple,
-int calc_bc_dist);
+yasm_bc_get_multiple;
 YASM_LIB_DECL
-const yasm_expr *yasm_bc_get_multiple_expr(const yasm_bytecode *bc);
-YASM_LIB_DECL yasm_insn *yasm_bc_get_insn(yasm_bytecode *bc);
+*yasm_bc_get_multiple_expr;
+*yasm_bc_get_insn;
 YASM_LIB_DECL
-yasm_dataval *yasm_dv_create_expr( yasm_expr *expn);
+*yasm_dv_create_expr;
 YASM_LIB_DECL
-yasm_dataval *yasm_dv_create_string( char *contents, size_t len);
+*yasm_dv_create_string;
 YASM_LIB_DECL
-yasm_dataval *yasm_dv_create_raw( unsigned char *contents,
-unsigned long len);
+*yasm_dv_create_raw;
 YASM_LIB_DECL
-yasm_dataval *yasm_dv_create_reserve(void);
-#define yasm_dv_create_string(s, l) yasm_dv_create_raw((unsigned char *)(s), \
+*yasm_dv_create_reserve;
+yasm_dv_create_string yasm_dv_create_raw((unsigned char *)(s), \
 (unsigned long)(l))
 YASM_LIB_DECL
-yasm_value *yasm_dv_get_value(yasm_dataval *dv);
+*yasm_dv_get_value;
 YASM_LIB_DECL
-void yasm_dv_set_multiple(yasm_dataval *dv, yasm_expr *e);
+yasm_dv_set_multiple;
 YASM_LIB_DECL
-int yasm_dv_get_multiple(yasm_dataval *dv, unsigned long *multiple);
-void yasm_dvs_initialize(yasm_datavalhead *headp);
-#define yasm_dvs_initialize(headp)      STAILQ_INIT(headp)
+yasm_dv_get_multiple;
+yasm_dvs_initialize;
+yasm_dvs_initialize      STAILQ_INIT(headp)
 YASM_LIB_DECL
-void yasm_dvs_delete(yasm_datavalhead *headp);
+yasm_dvs_delete;
 YASM_LIB_DECL yasm_dataval *yasm_dvs_append
 (yasm_datavalhead *headp, yasm_dataval *dv);
 YASM_LIB_DECL
-void yasm_dvs_print(const yasm_datavalhead *headp, FILE *f, int indent_level);
+yasm_dvs_print;

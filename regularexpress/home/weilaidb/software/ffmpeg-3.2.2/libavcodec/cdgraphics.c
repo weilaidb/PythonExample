@@ -24,25 +24,18 @@
 #define CDG_HEADER_SIZE            8
 #define CDG_PALETTE_SIZE          16
 typedef struct CDGraphicsContext  CDGraphicsContext;
-static av_cold int cdg_decode_init(AVCodecContext *avctx)
-static void cdg_border_preset(CDGraphicsContext *cc, uint8_t *data)
-static void cdg_load_palette(CDGraphicsContext *cc, uint8_t *data, int low)
-static int cdg_tile_block(CDGraphicsContext *cc, uint8_t *data, int b)
+cdg_decode_init
+cdg_border_preset
+cdg_load_palette
+cdg_tile_block
 #define UP    2
 #define DOWN  1
 #define LEFT  2
 #define RIGHT 1
-static void cdg_copy_rect_buf(int out_tl_x, int out_tl_y, uint8_t *out,
-int in_tl_x, int in_tl_y, uint8_t *in,
-int w, int h, int stride)
-static void cdg_fill_rect_preset(int tl_x, int tl_y, uint8_t *out,
-int color, int w, int h, int stride)
-static void cdg_fill_wrapper(int out_tl_x, int out_tl_y, uint8_t *out,
-int in_tl_x, int in_tl_y, uint8_t *in,
-int color, int w, int h, int stride, int roll)
-static void cdg_scroll(CDGraphicsContext *cc, uint8_t *data,
-AVFrame *new_frame, int roll_over)
-static int cdg_decode_frame(AVCodecContext *avctx,
-void *data, int *got_frame, AVPacket *avpkt)
-static av_cold int cdg_decode_end(AVCodecContext *avctx)
+cdg_copy_rect_buf
+cdg_fill_rect_preset
+cdg_fill_wrapper
+cdg_scroll
+cdg_decode_frame
+cdg_decode_end
 AVCodec ff_cdgraphics_decoder = ;

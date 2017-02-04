@@ -1,1 +1,1 @@
-uchar *ScanFill(uchar *cursor)
+*ScanFill

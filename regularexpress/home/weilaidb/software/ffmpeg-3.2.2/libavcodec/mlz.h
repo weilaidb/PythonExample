@@ -10,6 +10,6 @@
 #define TABLE_SIZE          35023
 typedef struct MLZDict  MLZDict;
 typedef struct MLZ  MLZ;
-void ff_mlz_init_dict(void* context, MLZ *mlz);
-void ff_mlz_flush_dict(MLZ *dict);
-int ff_mlz_decompression(MLZ* mlz, GetBitContext* gb, int size, unsigned char *buff);
+ff_mlz_init_dict;
+ff_mlz_flush_dict;
+ff_mlz_decompression;

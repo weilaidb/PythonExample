@@ -3,23 +3,50 @@ enum var_name ;
 enum EvalMode ;
 typedef struct ScaleContext  ScaleContext;
 AVFilter ff_vf_scale2ref;
-static av_cold int init_dict(AVFilterContext *ctx, AVDictionary **opts)
-static av_cold void uninit(AVFilterContext *ctx)
-static int query_formats(AVFilterContext *ctx)
-static const int *parse_yuv_type(const char *s, enum AVColorSpace colorspace)
-static int config_props(AVFilterLink *outlink)
-static int config_props_ref(AVFilterLink *outlink)
-static int request_frame(AVFilterLink *outlink)
-static int request_frame_ref(AVFilterLink *outlink)
-static int scale_slice(AVFilterLink *link, AVFrame *out_buf, AVFrame *cur_pic, struct SwsContext *sws, int y, int h, int mul, int field)
-static int filter_frame(AVFilterLink *link, AVFrame *in)
-static int filter_frame_ref(AVFilterLink *link, AVFrame *in)
-static int process_command(AVFilterContext *ctx, const char *cmd, const char *args,
-char *res, int res_len, int flags)
-static const AVClass *child_class_next(const AVClass *prev)
-#define OFFSET(x) offsetof(ScaleContext, x)
+init_dict
+uninit
+query_formats
+*parse_yuv_type
+config_props
+config_props_ref
+request_frame
+request_frame_ref
+scale_slice
+filter_frame
+filter_frame_ref
+process_command
+*child_class_next
+OFFSET offsetof(ScaleContext, x)
 #define FLAGS AV_OPT_FLAG_VIDEO_PARAM|AV_OPT_FLAG_FILTERING_PARAM
-static const AVOption scale_options[] = ;
+static const AVOption scale_options[] = ,
+,
+,
+,
+, .flags = FLAGS },
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+};
 static const AVClass scale_class = ;
 static const AVFilterPad avfilter_vf_scale_inputs[] = ;
 static const AVFilterPad avfilter_vf_scale_outputs[] = ;

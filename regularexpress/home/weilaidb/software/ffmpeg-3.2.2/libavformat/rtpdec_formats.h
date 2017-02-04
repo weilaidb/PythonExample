@@ -1,19 +1,10 @@
 #define AVFORMAT_RTPDEC_FORMATS_H
-int ff_wms_parse_sdp_a_line(AVFormatContext *s, const char *p);
-int ff_h263_handle_packet(AVFormatContext *ctx, PayloadContext *data,
-AVStream *st, AVPacket *pkt, uint32_t *timestamp,
-const uint8_t *buf, int len, uint16_t seq, int flags);
-int ff_h264_parse_sprop_parameter_sets(AVFormatContext *s,
-uint8_t **data_ptr, int *size_ptr,
-const char *value);
-int ff_h264_handle_aggregated_packet(AVFormatContext *ctx, PayloadContext *data, AVPacket *pkt,
-const uint8_t *buf, int len,
-int start_skip, int *nal_counters,
-int nal_mask);
-int ff_h264_handle_frag_packet(AVPacket *pkt, const uint8_t *buf, int len,
-int start_bit, const uint8_t *nal_header,
-int nal_header_len);
-void ff_h264_parse_framesize(AVCodecParameters *par, const char *p);
+ff_wms_parse_sdp_a_line;
+ff_h263_handle_packet;
+ff_h264_parse_sprop_parameter_sets;
+ff_h264_handle_aggregated_packet;
+ff_h264_handle_frag_packet;
+ff_h264_parse_framesize;
 extern RTPDynamicProtocolHandler ff_ac3_dynamic_handler;
 extern RTPDynamicProtocolHandler ff_amr_nb_dynamic_handler;
 extern RTPDynamicProtocolHandler ff_amr_wb_dynamic_handler;

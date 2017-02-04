@@ -1,6 +1,3 @@
-int ff_h263_find_frame_end(ParseContext *pc, const uint8_t *buf, int buf_size)
-static int h263_parse(AVCodecParserContext *s,
-AVCodecContext *avctx,
-const uint8_t **poutbuf, int *poutbuf_size,
-const uint8_t *buf, int buf_size)
+ff_h263_find_frame_end
+h263_parse
 AVCodecParser ff_h263_parser = ;

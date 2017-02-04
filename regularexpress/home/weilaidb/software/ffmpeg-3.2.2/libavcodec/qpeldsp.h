@@ -1,12 +1,10 @@
 #define AVCODEC_QPELDSP_H
-void ff_put_pixels8x8_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride);
-void ff_avg_pixels8x8_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride);
-void ff_put_pixels16x16_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride);
-void ff_avg_pixels16x16_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride);
-void ff_put_pixels8_l2_8(uint8_t *dst, const uint8_t *src1, const uint8_t *src2,
-int dst_stride, int src_stride1, int src_stride2,
-int h);
-#define DEF_OLD_QPEL(name)                                              \
+ff_put_pixels8x8_c;
+ff_avg_pixels8x8_c;
+ff_put_pixels16x16_c;
+ff_avg_pixels16x16_c;
+ff_put_pixels8_l2_8;
+DEF_OLD_QPEL                                              \
 void ff_put_        ## name(uint8_t *dst,   \
 const uint8_t *src,           \
 ptrdiff_t stride);                          \
@@ -32,6 +30,6 @@ typedef void (*qpel_mc_func)(uint8_t *dst,
 const uint8_t *src,
 ptrdiff_t stride);
 typedef struct QpelDSPContext  QpelDSPContext;
-void ff_qpeldsp_init(QpelDSPContext *c);
-void ff_qpeldsp_init_x86(QpelDSPContext *c);
-void ff_qpeldsp_init_mips(QpelDSPContext *c);
+ff_qpeldsp_init;
+ff_qpeldsp_init_x86;
+ff_qpeldsp_init_mips;

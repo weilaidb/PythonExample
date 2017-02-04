@@ -10,9 +10,9 @@
 #define FLV_VIDEO_CODECID_MASK    0x0f
 #define FLV_VIDEO_FRAMETYPE_MASK  0xf0
 #define AMF_END_OF_OBJECT         0x09
-#define KEYFRAMES_TAG            "keyframes"
-#define KEYFRAMES_TIMESTAMP_TAG  "times"
-#define KEYFRAMES_BYTEOFFSET_TAG "filepositions"
+#define KEYFRAMES_TAG
+#define KEYFRAMES_TIMESTAMP_TAG
+#define KEYFRAMES_BYTEOFFSET_TAG
 enum ;
 enum FlvTagType ;
 enum ;

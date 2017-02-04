@@ -1,5 +1,5 @@
 #define AVCODEC_MIPS_VP9DSP_MIPS_H
-#define VP9_8TAP_MIPS_MSA_FUNC(SIZE, type, type_idx)                         \
+VP9_8TAP_MIPS_MSA_FUNC                         \
 void ff_put_8tap_##type##_##SIZE##h_msa(uint8_t *dst, ptrdiff_t dststride,   \
 const uint8_t *src,                  \
 ptrdiff_t srcstride,                 \
@@ -29,7 +29,7 @@ void ff_avg_8tap_##type##_##SIZE##hv_msa(uint8_t *dst, ptrdiff_t dststride,  \
 const uint8_t *src,                 \
 ptrdiff_t srcstride,                \
 int h, int mx, int my);
-#define VP9_BILINEAR_MIPS_MSA_FUNC(SIZE)                                   \
+VP9_BILINEAR_MIPS_MSA_FUNC                                   \
 void ff_put_bilin_##SIZE##h_msa(uint8_t *dst, ptrdiff_t dststride,         \
 const uint8_t *src, ptrdiff_t srcstride,   \
 int h, int mx, int my);                    \
@@ -53,7 +53,7 @@ int h, int mx, int my);                    \
 void ff_avg_bilin_##SIZE##hv_msa(uint8_t *dst, ptrdiff_t dststride,        \
 const uint8_t *src, ptrdiff_t srcstride,  \
 int h, int mx, int my);
-#define VP9_COPY_AVG_MIPS_MSA_FUNC(SIZE)                           \
+VP9_COPY_AVG_MIPS_MSA_FUNC                           \
 void ff_copy##SIZE##_msa(uint8_t *dst, ptrdiff_t dststride,        \
 const uint8_t *src, ptrdiff_t srcstride,  \
 int h, int mx, int my);                   \
@@ -89,115 +89,59 @@ VP9_COPY_AVG_MIPS_MSA_FUNC(4);
 #undef VP9_8TAP_MIPS_MSA_FUNC
 #undef VP9_BILINEAR_MIPS_MSA_FUNC
 #undef VP9_COPY_AVG_MIPS_MSA_FUNC
-void ff_loop_filter_h_4_8_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_h_8_8_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_h_16_8_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_v_4_8_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_v_8_8_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_v_16_8_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_h_44_16_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_h_88_16_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_h_16_16_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_v_44_16_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_v_88_16_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_v_16_16_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_h_48_16_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_h_84_16_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_v_48_16_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_loop_filter_v_84_16_msa(uint8_t *dst, ptrdiff_t stride, int32_t e,
-int32_t i, int32_t h);
-void ff_idct_idct_4x4_add_msa(uint8_t *dst, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_idct_idct_8x8_add_msa(uint8_t *dst, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_idct_idct_16x16_add_msa(uint8_t *dst, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_idct_idct_32x32_add_msa(uint8_t *dst, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_iadst_iadst_4x4_add_msa(uint8_t *dst, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_iadst_iadst_8x8_add_msa(uint8_t *dst, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_iadst_iadst_16x16_add_msa(uint8_t *dst, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_iadst_idct_4x4_add_msa(uint8_t *dst, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_iadst_idct_8x8_add_msa(uint8_t *dst, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_iadst_idct_16x16_add_msa(uint8_t *dst, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_idct_iadst_4x4_add_msa(uint8_t *pu8Dest, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_idct_iadst_8x8_add_msa(uint8_t *pu8Dest, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_idct_iadst_16x16_add_msa(uint8_t *pu8Dest, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_iwht_iwht_4x4_add_msa(uint8_t *dst, ptrdiff_t stride,
-int16_t *block, int eob);
-void ff_vert_16x16_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_vert_32x32_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_hor_16x16_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_hor_32x32_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_dc_4x4_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_dc_8x8_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_dc_16x16_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_dc_32x32_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_dc_left_4x4_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_dc_left_8x8_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_dc_left_16x16_msa(uint8_t *dst, ptrdiff_t stride,
-const uint8_t *left, const uint8_t *top);
-void ff_dc_left_32x32_msa(uint8_t *dst, ptrdiff_t stride,
-const uint8_t *left, const uint8_t *top);
-void ff_dc_top_4x4_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_dc_top_8x8_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_dc_top_16x16_msa(uint8_t *dst, ptrdiff_t stride,
-const uint8_t *left, const uint8_t *top);
-void ff_dc_top_32x32_msa(uint8_t *dst, ptrdiff_t stride,
-const uint8_t *left, const uint8_t *top);
-void ff_dc_128_16x16_msa(uint8_t *dst, ptrdiff_t stride,
-const uint8_t *left, const uint8_t *top);
-void ff_dc_128_32x32_msa(uint8_t *dst, ptrdiff_t stride,
-const uint8_t *left, const uint8_t *top);
-void ff_dc_127_16x16_msa(uint8_t *dst, ptrdiff_t stride,
-const uint8_t *left, const uint8_t *top);
-void ff_dc_127_32x32_msa(uint8_t *dst, ptrdiff_t stride,
-const uint8_t *left, const uint8_t *top);
-void ff_dc_129_16x16_msa(uint8_t *dst, ptrdiff_t stride,
-const uint8_t *left, const uint8_t *top);
-void ff_dc_129_32x32_msa(uint8_t *dst, ptrdiff_t stride,
-const uint8_t *left, const uint8_t *top);
-void ff_tm_4x4_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_tm_8x8_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_tm_16x16_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
-void ff_tm_32x32_msa(uint8_t *dst, ptrdiff_t stride, const uint8_t *left,
-const uint8_t *top);
+ff_loop_filter_h_4_8_msa;
+ff_loop_filter_h_8_8_msa;
+ff_loop_filter_h_16_8_msa;
+ff_loop_filter_v_4_8_msa;
+ff_loop_filter_v_8_8_msa;
+ff_loop_filter_v_16_8_msa;
+ff_loop_filter_h_44_16_msa;
+ff_loop_filter_h_88_16_msa;
+ff_loop_filter_h_16_16_msa;
+ff_loop_filter_v_44_16_msa;
+ff_loop_filter_v_88_16_msa;
+ff_loop_filter_v_16_16_msa;
+ff_loop_filter_h_48_16_msa;
+ff_loop_filter_h_84_16_msa;
+ff_loop_filter_v_48_16_msa;
+ff_loop_filter_v_84_16_msa;
+ff_idct_idct_4x4_add_msa;
+ff_idct_idct_8x8_add_msa;
+ff_idct_idct_16x16_add_msa;
+ff_idct_idct_32x32_add_msa;
+ff_iadst_iadst_4x4_add_msa;
+ff_iadst_iadst_8x8_add_msa;
+ff_iadst_iadst_16x16_add_msa;
+ff_iadst_idct_4x4_add_msa;
+ff_iadst_idct_8x8_add_msa;
+ff_iadst_idct_16x16_add_msa;
+ff_idct_iadst_4x4_add_msa;
+ff_idct_iadst_8x8_add_msa;
+ff_idct_iadst_16x16_add_msa;
+ff_iwht_iwht_4x4_add_msa;
+ff_vert_16x16_msa;
+ff_vert_32x32_msa;
+ff_hor_16x16_msa;
+ff_hor_32x32_msa;
+ff_dc_4x4_msa;
+ff_dc_8x8_msa;
+ff_dc_16x16_msa;
+ff_dc_32x32_msa;
+ff_dc_left_4x4_msa;
+ff_dc_left_8x8_msa;
+ff_dc_left_16x16_msa;
+ff_dc_left_32x32_msa;
+ff_dc_top_4x4_msa;
+ff_dc_top_8x8_msa;
+ff_dc_top_16x16_msa;
+ff_dc_top_32x32_msa;
+ff_dc_128_16x16_msa;
+ff_dc_128_32x32_msa;
+ff_dc_127_16x16_msa;
+ff_dc_127_32x32_msa;
+ff_dc_129_16x16_msa;
+ff_dc_129_32x32_msa;
+ff_tm_4x4_msa;
+ff_tm_8x8_msa;
+ff_tm_16x16_msa;
+ff_tm_32x32_msa;

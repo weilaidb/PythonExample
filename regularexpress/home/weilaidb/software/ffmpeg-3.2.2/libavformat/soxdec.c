@@ -1,3 +1,3 @@
-static int sox_probe(AVProbeData *p)
-static int sox_read_header(AVFormatContext *s)
+sox_probe
+sox_read_header
 AVInputFormat ff_sox_demuxer = ;

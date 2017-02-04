@@ -1,379 +1,91 @@
-static void copy_width8_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void copy_width12_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void copy_16multx8mult_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height, int32_t width)
-static void copy_width16_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void copy_width24_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void copy_width32_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void copy_width48_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
-static void copy_width64_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-int32_t height)
+copy_width8_msa
+copy_width12_msa
+copy_16multx8mult_msa
+copy_width16_msa
+copy_width24_msa
+copy_width32_msa
+copy_width48_msa
+copy_width64_msa
 static const uint8_t mc_filt_mask_arr[16 * 3] = ;
-#define FILT_8TAP_DPADD_S_H(vec0, vec1, vec2, vec3,             \
-filt0, filt1, filt2, filt3)         \
+FILT_8TAP_DPADD_S_H         \
 (  )
-#define HORIZ_8TAP_4WID_4VECS_FILT(src0, src1, src2, src3,                  \
-mask0, mask1, mask2, mask3,              \
-filt0, filt1, filt2, filt3,              \
-out0, out1)                              \
-#define HORIZ_8TAP_8WID_4VECS_FILT(src0, src1, src2, src3,                    \
-mask0, mask1, mask2, mask3,                \
-filt0, filt1, filt2, filt3,                \
-out0, out1, out2, out3)                    \
-#define FILT_4TAP_DPADD_S_H(vec0, vec1, filt0, filt1)           \
+HORIZ_8TAP_4WID_4VECS_FILT                              \
+HORIZ_8TAP_8WID_4VECS_FILT                    \
+FILT_4TAP_DPADD_S_H           \
 (  )
-#define HORIZ_4TAP_4WID_4VECS_FILT(src0, src1, src2, src3,             \
-mask0, mask1, filt0, filt1,         \
-out0, out1)                         \
-#define HORIZ_4TAP_8WID_4VECS_FILT(src0, src1, src2, src3,                    \
-mask0, mask1, filt0, filt1,                \
-out0, out1, out2, out3)                    \
-static void common_hz_8t_4x4_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, uint8_t rnd_val)
-static void common_hz_8t_4x8_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, uint8_t rnd_val)
-static void common_hz_8t_4x16_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, uint8_t rnd_val)
-static void common_hz_8t_4w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height, uint8_t rnd_val)
-static void common_hz_8t_8x4_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, uint8_t rnd_val)
-static void common_hz_8t_8x8mult_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_8t_8w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_8t_12w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_8t_16w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_8t_24w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_8t_32w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_8t_48w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_8t_64w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_8t_4w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_8t_8w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_8t_12w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_8t_16w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_8t_16w_mult_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val, int32_t width)
-static void common_vt_8t_24w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height, uint8_t rnd_val)
-static void common_vt_8t_32w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height, uint8_t rnd_val)
-static void common_vt_8t_48w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height, uint8_t rnd_val)
-static void common_vt_8t_64w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height, uint8_t rnd_val)
-static void hevc_hv_uni_8t_4w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_8t_8multx2mult_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height, int32_t width)
-static void hevc_hv_uni_8t_8w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_8t_12w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_8t_16w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_8t_24w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_8t_32w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_8t_48w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_8t_64w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void common_hz_4t_4x2_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, uint8_t rnd_val)
-static void common_hz_4t_4x4_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, uint8_t rnd_val)
-static void common_hz_4t_4x8_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, uint8_t rnd_val)
-static void common_hz_4t_4x16_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, uint8_t rnd_val)
-static void common_hz_4t_4w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_4t_6w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_4t_8x2mult_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_4t_8x4mult_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_4t_8w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_4t_12w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_4t_16w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_4t_24w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_hz_4t_32w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_4t_4x2_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, uint8_t rnd_val)
-static void common_vt_4t_4x4multiple_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_4t_4w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_4t_6w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_4t_8x2_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, uint8_t rnd_val)
-static void common_vt_4t_8x6_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, uint8_t rnd_val)
-static void common_vt_4t_8x4mult_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_4t_8w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_4t_12w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_4t_16w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_4t_24w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void common_vt_4t_32w_mult_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val, int32_t width)
-static void common_vt_4t_32w_msa(uint8_t *src, int32_t src_stride,
-uint8_t *dst, int32_t dst_stride,
-const int8_t *filter, int32_t height,
-uint8_t rnd_val)
-static void hevc_hv_uni_4t_4x2_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_4t_4x4_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_4t_4multx8mult_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_4t_4w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_4t_6w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_4t_8x2_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_4t_8x6_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_4t_8w_mult_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height,
-int32_t width)
-static void hevc_hv_uni_4t_8w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_4t_12w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_4t_16w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_4t_24w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-static void hevc_hv_uni_4t_32w_msa(uint8_t *src,
-int32_t src_stride,
-uint8_t *dst,
-int32_t dst_stride,
-const int8_t *filter_x,
-const int8_t *filter_y,
-int32_t height)
-#define UNI_MC_COPY(WIDTH)                                                 \
+HORIZ_4TAP_4WID_4VECS_FILT                         \
+HORIZ_4TAP_8WID_4VECS_FILT                    \
+common_hz_8t_4x4_msa
+common_hz_8t_4x8_msa
+common_hz_8t_4x16_msa
+common_hz_8t_4w_msa
+common_hz_8t_8x4_msa
+common_hz_8t_8x8mult_msa
+common_hz_8t_8w_msa
+common_hz_8t_12w_msa
+common_hz_8t_16w_msa
+common_hz_8t_24w_msa
+common_hz_8t_32w_msa
+common_hz_8t_48w_msa
+common_hz_8t_64w_msa
+common_vt_8t_4w_msa
+common_vt_8t_8w_msa
+common_vt_8t_12w_msa
+common_vt_8t_16w_msa
+common_vt_8t_16w_mult_msa
+common_vt_8t_24w_msa
+common_vt_8t_32w_msa
+common_vt_8t_48w_msa
+common_vt_8t_64w_msa
+hevc_hv_uni_8t_4w_msa
+hevc_hv_uni_8t_8multx2mult_msa
+hevc_hv_uni_8t_8w_msa
+hevc_hv_uni_8t_12w_msa
+hevc_hv_uni_8t_16w_msa
+hevc_hv_uni_8t_24w_msa
+hevc_hv_uni_8t_32w_msa
+hevc_hv_uni_8t_48w_msa
+hevc_hv_uni_8t_64w_msa
+common_hz_4t_4x2_msa
+common_hz_4t_4x4_msa
+common_hz_4t_4x8_msa
+common_hz_4t_4x16_msa
+common_hz_4t_4w_msa
+common_hz_4t_6w_msa
+common_hz_4t_8x2mult_msa
+common_hz_4t_8x4mult_msa
+common_hz_4t_8w_msa
+common_hz_4t_12w_msa
+common_hz_4t_16w_msa
+common_hz_4t_24w_msa
+common_hz_4t_32w_msa
+common_vt_4t_4x2_msa
+common_vt_4t_4x4multiple_msa
+common_vt_4t_4w_msa
+common_vt_4t_6w_msa
+common_vt_4t_8x2_msa
+common_vt_4t_8x6_msa
+common_vt_4t_8x4mult_msa
+common_vt_4t_8w_msa
+common_vt_4t_12w_msa
+common_vt_4t_16w_msa
+common_vt_4t_24w_msa
+common_vt_4t_32w_mult_msa
+common_vt_4t_32w_msa
+hevc_hv_uni_4t_4x2_msa
+hevc_hv_uni_4t_4x4_msa
+hevc_hv_uni_4t_4multx8mult_msa
+hevc_hv_uni_4t_4w_msa
+hevc_hv_uni_4t_6w_msa
+hevc_hv_uni_4t_8x2_msa
+hevc_hv_uni_4t_8x6_msa
+hevc_hv_uni_4t_8w_mult_msa
+hevc_hv_uni_4t_8w_msa
+hevc_hv_uni_4t_12w_msa
+hevc_hv_uni_4t_16w_msa
+hevc_hv_uni_4t_24w_msa
+hevc_hv_uni_4t_32w_msa
+UNI_MC_COPY                                                 \
 void ff_hevc_put_hevc_uni_pel_pixels##WIDTH##_8_msa(uint8_t *dst,          \
 ptrdiff_t dst_stride,  \
 uint8_t *src,          \
@@ -390,7 +102,7 @@ UNI_MC_COPY(32);
 UNI_MC_COPY(48);
 UNI_MC_COPY(64);
 #undef UNI_MC_COPY
-#define UNI_MC(PEL, DIR, WIDTH, TAP, DIR1, FILT_DIR)                           \
+UNI_MC                           \
 void ff_hevc_put_hevc_uni_##PEL##_##DIR##WIDTH##_8_msa(uint8_t *dst,           \
 ptrdiff_t             \
 dst_stride,           \
@@ -432,7 +144,7 @@ UNI_MC(epel, v, 16, 4, vt, my);
 UNI_MC(epel, v, 24, 4, vt, my);
 UNI_MC(epel, v, 32, 4, vt, my);
 #undef UNI_MC
-#define UNI_MC_HV(PEL, DIR, WIDTH, TAP, DIR1)                           \
+UNI_MC_HV                           \
 void ff_hevc_put_hevc_uni_##PEL##_##DIR##WIDTH##_8_msa(uint8_t *dst,    \
 ptrdiff_t      \
 dst_stride,    \

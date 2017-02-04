@@ -23,9 +23,9 @@ typedef struct  ChannelInformation;
 extern const ChannelInformation ff_mlp_ch_info[21];
 extern const uint64_t ff_mlp_channel_layouts[12];
 uint8_t  ff_mlp_checksum8 (const uint8_t *buf, unsigned int buf_size);
-uint16_t ff_mlp_checksum16(const uint8_t *buf, unsigned int buf_size);
-uint8_t ff_mlp_restart_checksum(const uint8_t *buf, unsigned int bit_size);
-uint8_t ff_mlp_calculate_parity(const uint8_t *buf, unsigned int buf_size);
-void ff_mlp_init_crc(void);
-static inline uint8_t xor_32_to_8(uint32_t value)
+ff_mlp_checksum16;
+ff_mlp_restart_checksum;
+ff_mlp_calculate_parity;
+ff_mlp_init_crc;
+xor_32_to_8
 typedef enum THDChannelModifier  THDChannelModifier;

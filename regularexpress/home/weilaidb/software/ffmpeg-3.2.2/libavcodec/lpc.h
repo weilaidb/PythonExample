@@ -9,26 +9,17 @@
 #define MAX_LPC_ORDER       32
 enum FFLPCType ;
 typedef struct LPCContext  LPCContext;
-int ff_lpc_calc_coefs(LPCContext *s,
-const int32_t *samples, int blocksize, int min_order,
-int max_order, int precision,
-int32_t coefs[][MAX_LPC_ORDER], int *shift,
-enum FFLPCType lpc_type, int lpc_passes,
-int omethod, int min_shift, int max_shift, int zero_shift);
-int ff_lpc_calc_ref_coefs(LPCContext *s,
-const int32_t *samples, int order, double *ref);
-double ff_lpc_calc_ref_coefs_f(LPCContext *s, const float *samples, int len,
-int order, double *ref);
-int ff_lpc_init(LPCContext *s, int blocksize, int max_order,
-enum FFLPCType lpc_type);
-void ff_lpc_init_x86(LPCContext *s);
-void ff_lpc_end(LPCContext *s);
+ff_lpc_calc_coefs;
+ff_lpc_calc_ref_coefs;
+ff_lpc_calc_ref_coefs_f;
+ff_lpc_init;
+ff_lpc_init_x86;
+ff_lpc_end;
 #if USE_FIXED
 typedef int LPC_TYPE;
 typedef double LPC_TYPE;
 typedef float LPC_TYPE;
-static inline void compute_ref_coefs(const LPC_TYPE *autoc, int max_order,
-LPC_TYPE *ref, LPC_TYPE *error)
-static inline int AAC_RENAME(compute_lpc_coefs)(const LPC_TYPE *autoc, int max_order,
+compute_ref_coefs
+AAC_RENAME(const LPC_TYPE *autoc, int max_order,
 LPC_TYPE *lpc, int lpc_stride, int fail,
 int normalize)

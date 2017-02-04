@@ -1,4 +1,4 @@
-static int ingenient_probe(AVProbeData *p)
-static int ingenient_read_packet(AVFormatContext *s, AVPacket *pkt)
+ingenient_probe
+ingenient_read_packet
 FF_RAWVIDEO_DEMUXER_CLASS(ingenient)
 AVInputFormat ff_ingenient_demuxer = ;

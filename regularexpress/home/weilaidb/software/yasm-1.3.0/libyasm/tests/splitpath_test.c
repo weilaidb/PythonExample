@@ -50,7 +50,5 @@ static Test_Entry tests[] = {
 ;
 static char failed[1000];
 static char failmsg[100];
-static int
-run_test(Test_Entry *test)
-int
-main(void)
+run_test
+main

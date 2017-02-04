@@ -13,8 +13,8 @@ const uint8_t ff_h264_dequant8_coeff_init_scan[16] = ;
 const uint8_t ff_h264_dequant8_coeff_init[6][6] = ;
 const uint8_t ff_h264_quant_rem6[QP_MAX_NUM + 1] = ;
 const uint8_t ff_h264_quant_div6[QP_MAX_NUM + 1] = ;
-#define QP(qP, depth) ((qP) + 6 * ((depth) - 8))
-#define CHROMA_QP_TABLE_END(d)                                          \
+QP ((qP) + 6 * ((depth) - 8))
+CHROMA_QP_TABLE_END                                          \
 QP(0,  d), QP(1,  d), QP(2,  d), QP(3,  d), QP(4,  d), QP(5,  d),   \
 QP(6,  d), QP(7,  d), QP(8,  d), QP(9,  d), QP(10, d), QP(11, d),   \
 QP(12, d), QP(13, d), QP(14, d), QP(15, d), QP(16, d), QP(17, d),   \

@@ -9,30 +9,18 @@
 #define MAX_FRAME_HEADER_SIZE 16
 typedef struct FLACHeaderMarker  FLACHeaderMarker;
 typedef struct FLACParseContext  FLACParseContext;
-static int frame_header_is_valid(AVCodecContext *avctx, const uint8_t *buf,
-FLACFrameInfo *fi)
-static uint8_t* flac_fifo_read_wrap(FLACParseContext *fpc, int offset, int len,
-uint8_t** wrap_buf, int* allocated_size)
-static uint8_t* flac_fifo_read(FLACParseContext *fpc, int offset, int *len)
-static int find_headers_search_validate(FLACParseContext *fpc, int offset)
-static int find_headers_search(FLACParseContext *fpc, uint8_t *buf, int buf_size,
-int search_start)
-static int find_new_headers(FLACParseContext *fpc, int search_start)
-static int check_header_fi_mismatch(FLACParseContext  *fpc,
-FLACFrameInfo     *header_fi,
-FLACFrameInfo     *child_fi,
-int                log_level_offset)
-static int check_header_mismatch(FLACParseContext  *fpc,
-FLACHeaderMarker  *header,
-FLACHeaderMarker  *child,
-int                log_level_offset)
-static int score_header(FLACParseContext *fpc, FLACHeaderMarker *header)
-static void score_sequences(FLACParseContext *fpc)
-static int get_best_header(FLACParseContext* fpc, const uint8_t **poutbuf,
-int *poutbuf_size)
-static int flac_parse(AVCodecParserContext *s, AVCodecContext *avctx,
-const uint8_t **poutbuf, int *poutbuf_size,
-const uint8_t *buf, int buf_size)
-static av_cold int flac_parse_init(AVCodecParserContext *c)
-static void flac_parse_close(AVCodecParserContext *c)
+frame_header_is_valid
+flac_fifo_read_wrap
+flac_fifo_read
+find_headers_search_validate
+find_headers_search
+find_new_headers
+check_header_fi_mismatch
+check_header_mismatch
+score_header
+score_sequences
+get_best_header
+flac_parse
+flac_parse_init
+flac_parse_close
 AVCodecParser ff_flac_parser = ;

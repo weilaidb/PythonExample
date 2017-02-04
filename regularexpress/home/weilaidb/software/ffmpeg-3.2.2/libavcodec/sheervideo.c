@@ -25,36 +25,34 @@ static const uint8_t l_y_byryi[256] = ;
 static const uint8_t l_u_byryi[256] = ;
 static const uint8_t l_r_rgbxi[1024] = ;
 static const uint8_t l_g_rgbxi[1024] = ;
-static void decode_ca4i(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_ca4p(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_ybr10i(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_ybr10(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_yry10i(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_yry10(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_ca2i(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_ca2p(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_c82i(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_c82p(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_ybyr(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_byryi(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_byry(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_ybri(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_ybr(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_aybri(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_aybr(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_argxi(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_argx(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_rgbxi(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_rgbx(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_argbi(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_argb(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_rgbi(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static void decode_rgb(AVCodecContext *avctx, AVFrame *p, GetBitContext *gb)
-static int build_vlc(VLC *vlc, const uint8_t *len, int count)
-static int decode_frame(AVCodecContext *avctx,
-void *data, int *got_frame,
-AVPacket *avpkt)
+decode_ca4i
+decode_ca4p
+decode_ybr10i
+decode_ybr10
+decode_yry10i
+decode_yry10
+decode_ca2i
+decode_ca2p
+decode_c82i
+decode_c82p
+decode_ybyr
+decode_byryi
+decode_byry
+decode_ybri
+decode_ybr
+decode_aybri
+decode_aybr
+decode_argxi
+decode_argx
+decode_rgbxi
+decode_rgbx
+decode_argbi
+decode_argb
+decode_rgbi
+decode_rgb
+build_vlc
+decode_frame
 #if HAVE_THREADS
-static int decode_init_thread_copy(AVCodecContext *avctx)
-static av_cold int decode_end(AVCodecContext *avctx)
+decode_init_thread_copy
+decode_end
 AVCodec ff_sheervideo_decoder = ;

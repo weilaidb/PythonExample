@@ -8,44 +8,33 @@ extern const uint8_t ff_interleaved_golomb_vlc_len[256];
 extern const uint8_t ff_interleaved_ue_golomb_vlc_code[256];
 extern const  int8_t ff_interleaved_se_golomb_vlc_code[256];
 extern const uint8_t ff_interleaved_dirac_golomb_vlc_code[256];
-static inline int get_ue_golomb(GetBitContext *gb)
-static inline unsigned get_ue_golomb_long(GetBitContext *gb)
-static inline int get_ue_golomb_31(GetBitContext *gb)
-static inline unsigned get_interleaved_ue_golomb(GetBitContext *gb)
-static inline int get_te0_golomb(GetBitContext *gb, int range)
-static inline int get_te_golomb(GetBitContext *gb, int range)
-static inline int get_se_golomb(GetBitContext *gb)
-static inline int get_se_golomb_long(GetBitContext *gb)
-static inline int get_interleaved_se_golomb(GetBitContext *gb)
-static inline int dirac_get_se_golomb(GetBitContext *gb)
-static inline int get_ur_golomb(GetBitContext *gb, int k, int limit,
-int esc_len)
-static inline int get_ur_golomb_jpegls(GetBitContext *gb, int k, int limit,
-int esc_len)
-static inline int get_sr_golomb(GetBitContext *gb, int k, int limit,
-int esc_len)
-static inline int get_sr_golomb_flac(GetBitContext *gb, int k, int limit,
-int esc_len)
-static inline unsigned int get_ur_golomb_shorten(GetBitContext *gb, int k)
-static inline int get_sr_golomb_shorten(GetBitContext *gb, int k)
-static inline int get_ue(GetBitContext *s, const char *file, const char *func,
-int line)
-static inline int get_se(GetBitContext *s, const char *file, const char *func,
-int line)
-static inline int get_te(GetBitContext *s, int r, char *file, const char *func,
-int line)
-#define get_ue_golomb(a) get_ue(a, __FILE__, __PRETTY_FUNCTION__, __LINE__)
-#define get_se_golomb(a) get_se(a, __FILE__, __PRETTY_FUNCTION__, __LINE__)
-#define get_te_golomb(a, r)  get_te(a, r, __FILE__, __PRETTY_FUNCTION__, __LINE__)
-#define get_te0_golomb(a, r) get_te(a, r, __FILE__, __PRETTY_FUNCTION__, __LINE__)
-static inline void set_ue_golomb(PutBitContext *pb, int i)
-static inline void set_te_golomb(PutBitContext *pb, int i, int range)
-static inline void set_se_golomb(PutBitContext *pb, int i)
-static inline void set_ur_golomb(PutBitContext *pb, int i, int k, int limit,
-int esc_len)
-static inline void set_ur_golomb_jpegls(PutBitContext *pb, int i, int k,
-int limit, int esc_len)
-static inline void set_sr_golomb(PutBitContext *pb, int i, int k, int limit,
-int esc_len)
-static inline void set_sr_golomb_flac(PutBitContext *pb, int i, int k,
-int limit, int esc_len)
+get_ue_golomb
+get_ue_golomb_long
+get_ue_golomb_31
+get_interleaved_ue_golomb
+get_te0_golomb
+get_te_golomb
+get_se_golomb
+get_se_golomb_long
+get_interleaved_se_golomb
+dirac_get_se_golomb
+get_ur_golomb
+get_ur_golomb_jpegls
+get_sr_golomb
+get_sr_golomb_flac
+get_ur_golomb_shorten
+get_sr_golomb_shorten
+get_ue
+get_se
+get_te
+get_ue_golomb get_ue(a, __FILE__, __PRETTY_FUNCTION__, __LINE__)
+get_se_golomb get_se(a, __FILE__, __PRETTY_FUNCTION__, __LINE__)
+get_te_golomb  get_te(a, r, __FILE__, __PRETTY_FUNCTION__, __LINE__)
+get_te0_golomb get_te(a, r, __FILE__, __PRETTY_FUNCTION__, __LINE__)
+set_ue_golomb
+set_te_golomb
+set_se_golomb
+set_ur_golomb
+set_ur_golomb_jpegls
+set_sr_golomb
+set_sr_golomb_flac

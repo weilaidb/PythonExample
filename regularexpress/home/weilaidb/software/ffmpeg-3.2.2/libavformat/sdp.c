@@ -2,28 +2,21 @@
 #if CONFIG_RTP_MUXER
 #define MAX_EXTRADATA_SIZE ((INT_MAX - 10) / 2)
 struct sdp_session_level ;
-static void sdp_write_address(char *buff, int size, const char *dest_addr,
-const char *dest_type, int ttl)
-static void sdp_write_header(char *buff, int size, struct sdp_session_level *s)
+sdp_write_address
+sdp_write_header
 #if CONFIG_NETWORK
-static int resolve_destination(char *dest_addr, int size, char *type,
-int type_size)
-static int resolve_destination(char *dest_addr, int size, char *type,
-int type_size)
-static int sdp_get_address(char *dest_addr, int size, int *ttl, const char *url)
+resolve_destination
+resolve_destination
+sdp_get_address
 #define MAX_PSET_SIZE 1024
-static char *extradata2psets(AVFormatContext *s, AVCodecParameters *par)
-static char *extradata2psets_hevc(AVCodecParameters *par)
-static char *extradata2config(AVFormatContext *s, AVCodecParameters *par)
-static char *xiph_extradata2config(AVFormatContext *s, AVCodecParameters *par)
-static int latm_context2profilelevel(AVCodecParameters *par)
-static char *latm_context2config(AVFormatContext *s, AVCodecParameters *par)
-static char *sdp_write_media_attributes(char *buff, int size, AVStream *st, int payload_type, AVFormatContext *fmt)
-void ff_sdp_write_media(char *buff, int size, AVStream *st, int idx,
-const char *dest_addr, const char *dest_type,
-int port, int ttl, AVFormatContext *fmt)
-int av_sdp_create(AVFormatContext *ac[], int n_files, char *buf, int size)
-int av_sdp_create(AVFormatContext *ac[], int n_files, char *buf, int size)
-void ff_sdp_write_media(char *buff, int size, AVStream *st, int idx,
-const char *dest_addr, const char *dest_type,
-int port, int ttl, AVFormatContext *fmt)
+*extradata2psets
+*extradata2psets_hevc
+*extradata2config
+*xiph_extradata2config
+latm_context2profilelevel
+*latm_context2config
+*sdp_write_media_attributes
+ff_sdp_write_media
+av_sdp_create
+av_sdp_create
+ff_sdp_write_media

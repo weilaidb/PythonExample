@@ -1,4 +1,3 @@
-static int mpl2_event_to_ass(AVBPrint *buf, const char *p)
-static int mpl2_decode_frame(AVCodecContext *avctx, void *data,
-int *got_sub_ptr, AVPacket *avpkt)
+mpl2_event_to_ass
+mpl2_decode_frame
 AVCodec ff_mpl2_decoder = ;

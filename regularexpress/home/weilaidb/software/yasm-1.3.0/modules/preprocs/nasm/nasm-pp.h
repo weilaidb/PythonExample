@@ -5,4 +5,4 @@ void pp_pre_undefine (char *);
 void pp_builtin_define (char *);
 void pp_extra_stdmac (const char **);
 extern Preproc nasmpp;
-void nasm_preproc_add_dep(char *);
+nasm_preproc_add_dep;

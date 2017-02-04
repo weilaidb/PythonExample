@@ -22,8 +22,8 @@
 #define PNGSIG 0x89504e470d0a1a0a
 #define MNGSIG 0x8a4d4e470d0a1a0a
 extern const uint8_t ff_png_pass_ymask[NB_PASSES];
-void *ff_png_zalloc(void *opaque, unsigned int items, unsigned int size);
-void ff_png_zfree(void *opaque, void *ptr);
-int ff_png_get_nb_channels(int color_type);
-int ff_png_pass_row_size(int pass, int bits_per_pixel, int width);
-void ff_add_png_paeth_prediction(uint8_t *dst, uint8_t *src, uint8_t *top, int w, int bpp);
+*ff_png_zalloc;
+ff_png_zfree;
+ff_png_get_nb_channels;
+ff_png_pass_row_size;
+ff_add_png_paeth_prediction;

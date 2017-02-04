@@ -24,10 +24,6 @@
 #define SURROUND_DIRECT_RIGHT  34
 #define LOW_FREQUENCY_2        35
 #define SQRT3_2      1.22474487139158904909
-static av_always_inline int even(uint64_t layout)
-static int sane_layout(uint64_t layout)
-int avresample_build_matrix(uint64_t in_layout, uint64_t out_layout,
-double center_mix_level, double surround_mix_level,
-double lfe_mix_level, int normalize,
-double *matrix_out, int stride,
-enum AVMatrixEncoding matrix_encoding)
+even
+sane_layout
+avresample_build_matrix

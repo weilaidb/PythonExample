@@ -17,9 +17,7 @@ static AVPacket pkt;
 static int video_frame_count = 0;
 static int audio_frame_count = 0;
 static int refcount = 0;
-static int decode_packet(int *got_frame, int cached)
-static int open_codec_context(int *stream_idx,
-AVCodecContext **dec_ctx, AVFormatContext *fmt_ctx, enum AVMediaType type)
-static int get_format_from_sample_fmt(const char **fmt,
-enum AVSampleFormat sample_fmt)
+decode_packet
+open_codec_context
+get_format_from_sample_fmt
 int main (int argc, char **argv)

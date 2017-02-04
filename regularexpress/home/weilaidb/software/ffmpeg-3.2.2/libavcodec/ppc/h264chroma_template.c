@@ -1,4 +1,4 @@
-#define CHROMA_MC8_ALTIVEC_CORE(BIAS1, BIAS2) \
+CHROMA_MC8_ALTIVEC_CORE \
 vsrc2ssH = (vec_s16)VEC_MERGEH(zero_u8v,(vec_u8)vsrc2uc);\
 vsrc3ssH = (vec_s16)VEC_MERGEH(zero_u8v,(vec_u8)vsrc3uc);\
 \
@@ -41,16 +41,15 @@ vec_st(fsum, 0, dst);\
 \
 dst += stride;\
 src += stride;
-#define noop(a) a
-#define add28(a) vec_add(v28ss, a)
+noop a
+add28 vec_add(v28ss, a)
 #if HAVE_BIGENDIAN
-#define GET_VSRC1(vs0, off, b, perm0, s)
-#define GET_VSRC(vs0, vs1, off, b, perm0, perm1, s)
-#define GET_VSRC1(vs0, off, b, perm0, s)
-#define GET_VSRC(vs0, vs1, off, b, perm0, perm1, s)
-static void PREFIX_h264_chroma_mc8_altivec(uint8_t * dst, uint8_t * src,
-int stride, int h, int x, int y)
-static void PREFIX_no_rnd_vc1_chroma_mc8_altivec(uint8_t * dst, uint8_t * src, int stride, int h, int x, int y)
+GET_VSRC1
+GET_VSRC
+GET_VSRC1
+GET_VSRC
+PREFIX_h264_chroma_mc8_altivec
+PREFIX_no_rnd_vc1_chroma_mc8_altivec
 #undef noop
 #undef add28
 #undef CHROMA_MC8_ALTIVEC_CORE

@@ -1,4 +1,4 @@
-static int ads_probe(AVProbeData *p)
-static int ads_read_header(AVFormatContext *s)
-static int ads_read_packet(AVFormatContext *s, AVPacket *pkt)
+ads_probe
+ads_read_header
+ads_read_packet
 AVInputFormat ff_ads_demuxer = ;

@@ -8,6 +8,6 @@
 #define NOISE_PATTERN  16
 typedef struct  FilterParams;
 typedef struct  NoiseContext;
-void ff_line_noise_c(uint8_t *dst, const uint8_t *src, const int8_t *noise, int len, int shift);
-void ff_line_noise_avg_c(uint8_t *dst, const uint8_t *src, int len, const int8_t * const *shift);
-void ff_noise_init_x86(NoiseContext *n);
+ff_line_noise_c;
+ff_line_noise_avg_c;
+ff_noise_init_x86;

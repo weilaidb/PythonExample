@@ -1,41 +1,34 @@
 #define VALIDATE_INDEX_TS_THRESH 2500
 #define RESYNC_BUFFER_SIZE (1<<20)
 typedef struct FLVContext  FLVContext;
-static int probe(AVProbeData *p, int live)
-static int flv_probe(AVProbeData *p)
-static int live_flv_probe(AVProbeData *p)
-static void add_keyframes_index(AVFormatContext *s)
-static AVStream *create_stream(AVFormatContext *s, int codec_type)
-static int flv_same_audio_codec(AVCodecParameters *apar, int flags)
-static void flv_set_audio_codec(AVFormatContext *s, AVStream *astream,
-AVCodecParameters *apar, int flv_codecid)
-static int flv_same_video_codec(AVCodecParameters *vpar, int flags)
-static int flv_set_video_codec(AVFormatContext *s, AVStream *vstream,
-int flv_codecid, int read)
-static int amf_get_string(AVIOContext *ioc, char *buffer, int buffsize)
-static int parse_keyframes_index(AVFormatContext *s, AVIOContext *ioc, int64_t max_pos)
-static int amf_parse_object(AVFormatContext *s, AVStream *astream,
-AVStream *vstream, const char *key,
-int64_t max_pos, int depth)
+probe
+flv_probe
+live_flv_probe
+add_keyframes_index
+*create_stream
+flv_same_audio_codec
+flv_set_audio_codec
+flv_same_video_codec
+flv_set_video_codec
+amf_get_string
+parse_keyframes_index
+amf_parse_object
 #define TYPE_ONTEXTDATA 1
 #define TYPE_ONCAPTION 2
 #define TYPE_ONCAPTIONINFO 3
 #define TYPE_UNKNOWN 9
-static int flv_read_metabody(AVFormatContext *s, int64_t next_pos)
-static int flv_read_header(AVFormatContext *s)
-static int flv_read_close(AVFormatContext *s)
-static int flv_get_extradata(AVFormatContext *s, AVStream *st, int size)
-static int flv_queue_extradata(FLVContext *flv, AVIOContext *pb, int stream,
-int size)
-static void clear_index_entries(AVFormatContext *s, int64_t pos)
-static int amf_skip_tag(AVIOContext *pb, AMFDataType type)
-static int flv_data_packet(AVFormatContext *s, AVPacket *pkt,
-int64_t dts, int64_t next)
-static int resync(AVFormatContext *s)
-static int flv_read_packet(AVFormatContext *s, AVPacket *pkt)
-static int flv_read_seek(AVFormatContext *s, int stream_index,
-int64_t ts, int flags)
-#define OFFSET(x) offsetof(FLVContext, x)
+flv_read_metabody
+flv_read_header
+flv_read_close
+flv_get_extradata
+flv_queue_extradata
+clear_index_entries
+amf_skip_tag
+flv_data_packet
+resync
+flv_read_packet
+flv_read_seek
+OFFSET offsetof(FLVContext, x)
 #define VD AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_DECODING_PARAM
 static const AVOption options[] = ;
 static const AVClass flv_class = ;

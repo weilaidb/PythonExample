@@ -9,4 +9,4 @@ typedef struct HQXSlice  HQXSlice;
 typedef struct HQXContext  HQXContext;
 #define HQX_DC_VLC_BITS 9
 extern const HQXAC ff_hqx_ac[NUM_HQX_AC];
-int ff_hqx_init_vlcs(HQXContext *ctx);
+ff_hqx_init_vlcs;

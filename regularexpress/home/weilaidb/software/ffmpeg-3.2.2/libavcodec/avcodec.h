@@ -168,20 +168,20 @@ enum AVFieldOrder ;
 typedef struct AVCodecContext  AVCodecContext;
 AVRational av_codec_get_pkt_timebase         (const AVCodecContext *avctx);
 void       av_codec_set_pkt_timebase         (AVCodecContext *avctx, AVRational val);
-const AVCodecDescriptor *av_codec_get_codec_descriptor(const AVCodecContext *avctx);
-void                     av_codec_set_codec_descriptor(AVCodecContext *avctx, const AVCodecDescriptor *desc);
-unsigned av_codec_get_codec_properties(const AVCodecContext *avctx);
-int  av_codec_get_lowres(const AVCodecContext *avctx);
-void av_codec_set_lowres(AVCodecContext *avctx, int val);
-int  av_codec_get_seek_preroll(const AVCodecContext *avctx);
-void av_codec_set_seek_preroll(AVCodecContext *avctx, int val);
-uint16_t *av_codec_get_chroma_intra_matrix(const AVCodecContext *avctx);
-void av_codec_set_chroma_intra_matrix(AVCodecContext *avctx, uint16_t *val);
+*av_codec_get_codec_descriptor;
+av_codec_set_codec_descriptor;
+av_codec_get_codec_properties;
+av_codec_get_lowres;
+av_codec_set_lowres;
+av_codec_get_seek_preroll;
+av_codec_set_seek_preroll;
+*av_codec_get_chroma_intra_matrix;
+av_codec_set_chroma_intra_matrix;
 typedef struct AVProfile  AVProfile;
 typedef struct AVCodecDefault AVCodecDefault;
 struct AVSubtitle;
 typedef struct AVCodec  AVCodec;
-int av_codec_get_max_lowres(const AVCodec *codec);
+av_codec_get_max_lowres;
 struct MpegEncContext;
 typedef struct AVHWAccel  AVHWAccel;
 #define AV_HWACCEL_FLAG_IGNORE_LEVEL (1 << 0)
@@ -193,195 +193,154 @@ enum AVSubtitleType ;
 typedef struct AVSubtitleRect  AVSubtitleRect;
 typedef struct AVSubtitle  AVSubtitle;
 typedef struct AVCodecParameters  AVCodecParameters;
-AVCodec *av_codec_next(const AVCodec *c);
-unsigned avcodec_version(void);
-const char *avcodec_configuration(void);
-const char *avcodec_license(void);
-void avcodec_register(AVCodec *codec);
-void avcodec_register_all(void);
-AVCodecContext *avcodec_alloc_context3(const AVCodec *codec);
-void avcodec_free_context(AVCodecContext **avctx);
+*av_codec_next;
+avcodec_version;
+*avcodec_configuration;
+*avcodec_license;
+avcodec_register;
+avcodec_register_all;
+*avcodec_alloc_context3;
+avcodec_free_context;
 #if FF_API_GET_CONTEXT_DEFAULTS
-int avcodec_get_context_defaults3(AVCodecContext *s, const AVCodec *codec);
-const AVClass *avcodec_get_class(void);
+avcodec_get_context_defaults3;
+*avcodec_get_class;
 #if FF_API_COPY_CONTEXT
-const AVClass *avcodec_get_frame_class(void);
-const AVClass *avcodec_get_subtitle_rect_class(void);
+*avcodec_get_frame_class;
+*avcodec_get_subtitle_rect_class;
 attribute_deprecated
-int avcodec_copy_context(AVCodecContext *dest, const AVCodecContext *src);
-AVCodecParameters *avcodec_parameters_alloc(void);
-void avcodec_parameters_free(AVCodecParameters **par);
-int avcodec_parameters_copy(AVCodecParameters *dst, const AVCodecParameters *src);
-int avcodec_parameters_from_context(AVCodecParameters *par,
-const AVCodecContext *codec);
-int avcodec_parameters_to_context(AVCodecContext *codec,
-const AVCodecParameters *par);
-int avcodec_open2(AVCodecContext *avctx, const AVCodec *codec, AVDictionary **options);
-int avcodec_close(AVCodecContext *avctx);
-void avsubtitle_free(AVSubtitle *sub);
-AVPacket *av_packet_alloc(void);
-AVPacket *av_packet_clone(AVPacket *src);
-void av_packet_free(AVPacket **pkt);
-void av_init_packet(AVPacket *pkt);
-int av_new_packet(AVPacket *pkt, int size);
-void av_shrink_packet(AVPacket *pkt, int size);
-int av_grow_packet(AVPacket *pkt, int grow_by);
-int av_packet_from_data(AVPacket *pkt, uint8_t *data, int size);
+avcodec_copy_context;
+*avcodec_parameters_alloc;
+avcodec_parameters_free;
+avcodec_parameters_copy;
+avcodec_parameters_from_context;
+avcodec_parameters_to_context;
+avcodec_open2;
+avcodec_close;
+avsubtitle_free;
+*av_packet_alloc;
+*av_packet_clone;
+av_packet_free;
+av_init_packet;
+av_new_packet;
+av_shrink_packet;
+av_grow_packet;
+av_packet_from_data;
 #if FF_API_AVPACKET_OLD_API
 attribute_deprecated
-int av_dup_packet(AVPacket *pkt);
-int av_copy_packet(AVPacket *dst, const AVPacket *src);
-int av_copy_packet_side_data(AVPacket *dst, const AVPacket *src);
+av_dup_packet;
+av_copy_packet;
+av_copy_packet_side_data;
 attribute_deprecated
-void av_free_packet(AVPacket *pkt);
-uint8_t* av_packet_new_side_data(AVPacket *pkt, enum AVPacketSideDataType type,
-int size);
-int av_packet_add_side_data(AVPacket *pkt, enum AVPacketSideDataType type,
-uint8_t *data, size_t size);
-int av_packet_shrink_side_data(AVPacket *pkt, enum AVPacketSideDataType type,
-int size);
-uint8_t* av_packet_get_side_data(AVPacket *pkt, enum AVPacketSideDataType type,
-int *size);
-int av_packet_merge_side_data(AVPacket *pkt);
-int av_packet_split_side_data(AVPacket *pkt);
-const char *av_packet_side_data_name(enum AVPacketSideDataType type);
-uint8_t *av_packet_pack_dictionary(AVDictionary *dict, int *size);
-int av_packet_unpack_dictionary(const uint8_t *data, int size, AVDictionary **dict);
-void av_packet_free_side_data(AVPacket *pkt);
-int av_packet_ref(AVPacket *dst, const AVPacket *src);
-void av_packet_unref(AVPacket *pkt);
-void av_packet_move_ref(AVPacket *dst, AVPacket *src);
-int av_packet_copy_props(AVPacket *dst, const AVPacket *src);
-void av_packet_rescale_ts(AVPacket *pkt, AVRational tb_src, AVRational tb_dst);
-AVCodec *avcodec_find_decoder(enum AVCodecID id);
-AVCodec *avcodec_find_decoder_by_name(const char *name);
-int avcodec_default_get_buffer2(AVCodecContext *s, AVFrame *frame, int flags);
+av_free_packet;
+av_packet_new_side_data;
+av_packet_add_side_data;
+av_packet_shrink_side_data;
+av_packet_get_side_data;
+av_packet_merge_side_data;
+av_packet_split_side_data;
+*av_packet_side_data_name;
+*av_packet_pack_dictionary;
+av_packet_unpack_dictionary;
+av_packet_free_side_data;
+av_packet_ref;
+av_packet_unref;
+av_packet_move_ref;
+av_packet_copy_props;
+av_packet_rescale_ts;
+*avcodec_find_decoder;
+*avcodec_find_decoder_by_name;
+avcodec_default_get_buffer2;
 #if FF_API_EMU_EDGE
 attribute_deprecated
-unsigned avcodec_get_edge_width(void);
-void avcodec_align_dimensions(AVCodecContext *s, int *width, int *height);
-void avcodec_align_dimensions2(AVCodecContext *s, int *width, int *height,
-int linesize_align[AV_NUM_DATA_POINTERS]);
-int avcodec_enum_to_chroma_pos(int *xpos, int *ypos, enum AVChromaLocation pos);
-enum AVChromaLocation avcodec_chroma_pos_to_enum(int xpos, int ypos);
+avcodec_get_edge_width;
+avcodec_align_dimensions;
+avcodec_align_dimensions2;
+avcodec_enum_to_chroma_pos;
+avcodec_chroma_pos_to_enum;
 attribute_deprecated
-int avcodec_decode_audio4(AVCodecContext *avctx, AVFrame *frame,
-int *got_frame_ptr, const AVPacket *avpkt);
+avcodec_decode_audio4;
 attribute_deprecated
-int avcodec_decode_video2(AVCodecContext *avctx, AVFrame *picture,
-int *got_picture_ptr,
-const AVPacket *avpkt);
-int avcodec_decode_subtitle2(AVCodecContext *avctx, AVSubtitle *sub,
-int *got_sub_ptr,
-AVPacket *avpkt);
-int avcodec_send_packet(AVCodecContext *avctx, const AVPacket *avpkt);
-int avcodec_receive_frame(AVCodecContext *avctx, AVFrame *frame);
-int avcodec_send_frame(AVCodecContext *avctx, const AVFrame *frame);
-int avcodec_receive_packet(AVCodecContext *avctx, AVPacket *avpkt);
+avcodec_decode_video2;
+avcodec_decode_subtitle2;
+avcodec_send_packet;
+avcodec_receive_frame;
+avcodec_send_frame;
+avcodec_receive_packet;
 enum AVPictureStructure ;
 typedef struct AVCodecParserContext  AVCodecParserContext;
 typedef struct AVCodecParser  AVCodecParser;
-AVCodecParser *av_parser_next(const AVCodecParser *c);
-void av_register_codec_parser(AVCodecParser *parser);
-AVCodecParserContext *av_parser_init(int codec_id);
-int av_parser_parse2(AVCodecParserContext *s,
-AVCodecContext *avctx,
-uint8_t **poutbuf, int *poutbuf_size,
-const uint8_t *buf, int buf_size,
-int64_t pts, int64_t dts,
-int64_t pos);
-int av_parser_change(AVCodecParserContext *s,
-AVCodecContext *avctx,
-uint8_t **poutbuf, int *poutbuf_size,
-const uint8_t *buf, int buf_size, int keyframe);
-void av_parser_close(AVCodecParserContext *s);
-AVCodec *avcodec_find_encoder(enum AVCodecID id);
-AVCodec *avcodec_find_encoder_by_name(const char *name);
+*av_parser_next;
+av_register_codec_parser;
+*av_parser_init;
+av_parser_parse2;
+av_parser_change;
+av_parser_close;
+*avcodec_find_encoder;
+*avcodec_find_encoder_by_name;
 attribute_deprecated
-int avcodec_encode_audio2(AVCodecContext *avctx, AVPacket *avpkt,
-const AVFrame *frame, int *got_packet_ptr);
+avcodec_encode_audio2;
 attribute_deprecated
-int avcodec_encode_video2(AVCodecContext *avctx, AVPacket *avpkt,
-const AVFrame *frame, int *got_packet_ptr);
-int avcodec_encode_subtitle(AVCodecContext *avctx, uint8_t *buf, int buf_size,
-const AVSubtitle *sub);
+avcodec_encode_video2;
+avcodec_encode_subtitle;
 #if FF_API_AVCODEC_RESAMPLE
 struct ReSampleContext;
 struct AVResampleContext;
 typedef struct ReSampleContext ReSampleContext;
 attribute_deprecated
-ReSampleContext *av_audio_resample_init(int output_channels, int input_channels,
-int output_rate, int input_rate,
-enum AVSampleFormat sample_fmt_out,
-enum AVSampleFormat sample_fmt_in,
-int filter_length, int log2_phase_count,
-int linear, double cutoff);
+*av_audio_resample_init;
 attribute_deprecated
-int audio_resample(ReSampleContext *s, short *output, short *input, int nb_samples);
+audio_resample;
 attribute_deprecated
-void audio_resample_close(ReSampleContext *s);
+audio_resample_close;
 attribute_deprecated
-struct AVResampleContext *av_resample_init(int out_rate, int in_rate, int filter_length, int log2_phase_count, int linear, double cutoff);
+*av_resample_init;
 attribute_deprecated
-int av_resample(struct AVResampleContext *c, short *dst, short *src, int *consumed, int src_size, int dst_size, int update_ctx);
+av_resample;
 attribute_deprecated
-void av_resample_compensate(struct AVResampleContext *c, int sample_delta, int compensation_distance);
+av_resample_compensate;
 attribute_deprecated
-void av_resample_close(struct AVResampleContext *c);
+av_resample_close;
 #if FF_API_AVPICTURE
 attribute_deprecated
-int avpicture_alloc(AVPicture *picture, enum AVPixelFormat pix_fmt, int width, int height);
+avpicture_alloc;
 attribute_deprecated
-void avpicture_free(AVPicture *picture);
+avpicture_free;
 attribute_deprecated
-int avpicture_fill(AVPicture *picture, const uint8_t *ptr,
-enum AVPixelFormat pix_fmt, int width, int height);
+avpicture_fill;
 attribute_deprecated
-int avpicture_layout(const AVPicture *src, enum AVPixelFormat pix_fmt,
-int width, int height,
-unsigned char *dest, int dest_size);
+avpicture_layout;
 attribute_deprecated
-int avpicture_get_size(enum AVPixelFormat pix_fmt, int width, int height);
+avpicture_get_size;
 attribute_deprecated
-void av_picture_copy(AVPicture *dst, const AVPicture *src,
-enum AVPixelFormat pix_fmt, int width, int height);
+av_picture_copy;
 attribute_deprecated
-int av_picture_crop(AVPicture *dst, const AVPicture *src,
-enum AVPixelFormat pix_fmt, int top_band, int left_band);
+av_picture_crop;
 attribute_deprecated
-int av_picture_pad(AVPicture *dst, const AVPicture *src, int height, int width, enum AVPixelFormat pix_fmt,
-int padtop, int padbottom, int padleft, int padright, int *color);
-void avcodec_get_chroma_sub_sample(enum AVPixelFormat pix_fmt, int *h_shift, int *v_shift);
-unsigned int avcodec_pix_fmt_to_codec_tag(enum AVPixelFormat pix_fmt);
-int avcodec_get_pix_fmt_loss(enum AVPixelFormat dst_pix_fmt, enum AVPixelFormat src_pix_fmt,
-int has_alpha);
-enum AVPixelFormat avcodec_find_best_pix_fmt_of_list(const enum AVPixelFormat *pix_fmt_list,
-enum AVPixelFormat src_pix_fmt,
-int has_alpha, int *loss_ptr);
-enum AVPixelFormat avcodec_find_best_pix_fmt_of_2(enum AVPixelFormat dst_pix_fmt1, enum AVPixelFormat dst_pix_fmt2,
-enum AVPixelFormat src_pix_fmt, int has_alpha, int *loss_ptr);
+av_picture_pad;
+avcodec_get_chroma_sub_sample;
+avcodec_pix_fmt_to_codec_tag;
+avcodec_get_pix_fmt_loss;
+avcodec_find_best_pix_fmt_of_list;
+avcodec_find_best_pix_fmt_of_2;
 attribute_deprecated
-enum AVPixelFormat avcodec_find_best_pix_fmt2(enum AVPixelFormat dst_pix_fmt1, enum AVPixelFormat dst_pix_fmt2,
-enum AVPixelFormat src_pix_fmt, int has_alpha, int *loss_ptr);
-enum AVPixelFormat avcodec_default_get_format(struct AVCodecContext *s, const enum AVPixelFormat * fmt);
+avcodec_find_best_pix_fmt2;
+avcodec_default_get_format;
 #if FF_API_SET_DIMENSIONS
 attribute_deprecated
-void avcodec_set_dimensions(AVCodecContext *s, int width, int height);
-size_t av_get_codec_tag_string(char *buf, size_t buf_size, unsigned int codec_tag);
-void avcodec_string(char *buf, int buf_size, AVCodecContext *enc, int encode);
-const char *av_get_profile_name(const AVCodec *codec, int profile);
-const char *avcodec_profile_name(enum AVCodecID codec_id, int profile);
-int avcodec_default_execute(AVCodecContext *c, int (*func)(AVCodecContext *c2, void *arg2),void *arg, int *ret, int count, int size);
-int avcodec_default_execute2(AVCodecContext *c, int (*func)(AVCodecContext *c2, void *arg2, int, int),void *arg, int *ret, int count);
-int avcodec_fill_audio_frame(AVFrame *frame, int nb_channels,
-enum AVSampleFormat sample_fmt, const uint8_t *buf,
-int buf_size, int align);
-void avcodec_flush_buffers(AVCodecContext *avctx);
-int av_get_bits_per_sample(enum AVCodecID codec_id);
-enum AVCodecID av_get_pcm_codec(enum AVSampleFormat fmt, int be);
-int av_get_exact_bits_per_sample(enum AVCodecID codec_id);
-int av_get_audio_frame_duration(AVCodecContext *avctx, int frame_bytes);
-int av_get_audio_frame_duration2(AVCodecParameters *par, int frame_bytes);
+avcodec_set_dimensions;
+av_get_codec_tag_string;
+avcodec_string;
+*av_get_profile_name;
+*avcodec_profile_name;
+avcodec_default_execute(AVCodecContext *c2, void *arg2),void *arg, int *ret, int count, int size);
+avcodec_default_execute2(AVCodecContext *c2, void *arg2, int, int),void *arg, int *ret, int count);
+avcodec_fill_audio_frame;
+avcodec_flush_buffers;
+av_get_bits_per_sample;
+av_get_pcm_codec;
+av_get_exact_bits_per_sample;
+av_get_audio_frame_duration;
+av_get_audio_frame_duration2;
 #if FF_API_OLD_BSF
 typedef struct AVBitStreamFilterContext  AVBitStreamFilterContext;
 typedef struct AVBSFInternal AVBSFInternal;
@@ -389,52 +348,49 @@ typedef struct AVBSFContext  AVBSFContext;
 typedef struct AVBitStreamFilter  AVBitStreamFilter;
 #if FF_API_OLD_BSF
 attribute_deprecated
-void av_register_bitstream_filter(AVBitStreamFilter *bsf);
+av_register_bitstream_filter;
 attribute_deprecated
-AVBitStreamFilterContext *av_bitstream_filter_init(const char *name);
+*av_bitstream_filter_init;
 attribute_deprecated
-int av_bitstream_filter_filter(AVBitStreamFilterContext *bsfc,
-AVCodecContext *avctx, const char *args,
-uint8_t **poutbuf, int *poutbuf_size,
-const uint8_t *buf, int buf_size, int keyframe);
+av_bitstream_filter_filter;
 attribute_deprecated
-void av_bitstream_filter_close(AVBitStreamFilterContext *bsf);
+av_bitstream_filter_close;
 attribute_deprecated
-AVBitStreamFilter *av_bitstream_filter_next(const AVBitStreamFilter *f);
-const AVBitStreamFilter *av_bsf_get_by_name(const char *name);
-const AVBitStreamFilter *av_bsf_next(void **opaque);
-int av_bsf_alloc(const AVBitStreamFilter *filter, AVBSFContext **ctx);
-int av_bsf_init(AVBSFContext *ctx);
-int av_bsf_send_packet(AVBSFContext *ctx, AVPacket *pkt);
-int av_bsf_receive_packet(AVBSFContext *ctx, AVPacket *pkt);
-void av_bsf_free(AVBSFContext **ctx);
-const AVClass *av_bsf_get_class(void);
+*av_bitstream_filter_next;
+*av_bsf_get_by_name;
+*av_bsf_next;
+av_bsf_alloc;
+av_bsf_init;
+av_bsf_send_packet;
+av_bsf_receive_packet;
+av_bsf_free;
+*av_bsf_get_class;
 typedef struct AVBSFList AVBSFList;
-AVBSFList *av_bsf_list_alloc(void);
-void av_bsf_list_free(AVBSFList **lst);
-int av_bsf_list_append(AVBSFList *lst, AVBSFContext *bsf);
-int av_bsf_list_append2(AVBSFList *lst, const char * bsf_name, AVDictionary **options);
-int av_bsf_list_finalize(AVBSFList **lst, AVBSFContext **bsf);
-int av_bsf_list_parse_str(const char *str, AVBSFContext **bsf);
-int av_bsf_get_null_filter(AVBSFContext **bsf);
-void av_fast_padded_malloc(void *ptr, unsigned int *size, size_t min_size);
-void av_fast_padded_mallocz(void *ptr, unsigned int *size, size_t min_size);
-unsigned int av_xiphlacing(unsigned char *s, unsigned int v);
+*av_bsf_list_alloc;
+av_bsf_list_free;
+av_bsf_list_append;
+av_bsf_list_append2;
+av_bsf_list_finalize;
+av_bsf_list_parse_str;
+av_bsf_get_null_filter;
+av_fast_padded_malloc;
+av_fast_padded_mallocz;
+av_xiphlacing;
 #if FF_API_MISSING_SAMPLE
 attribute_deprecated
-void av_log_missing_feature(void *avc, const char *feature, int want_sample);
+av_log_missing_feature;
 attribute_deprecated
-void av_log_ask_for_sample(void *avc, const char *msg, ...) av_printf_format(2, 3);
-void av_register_hwaccel(AVHWAccel *hwaccel);
-AVHWAccel *av_hwaccel_next(const AVHWAccel *hwaccel);
+av_log_ask_for_sample av_printf_format(2, 3);
+av_register_hwaccel;
+*av_hwaccel_next;
 enum AVLockOp ;
-int av_lockmgr_register(int (*cb)(void **mutex, enum AVLockOp op));
-enum AVMediaType avcodec_get_type(enum AVCodecID codec_id);
-const char *avcodec_get_name(enum AVCodecID id);
-int avcodec_is_open(AVCodecContext *s);
-int av_codec_is_encoder(const AVCodec *codec);
-int av_codec_is_decoder(const AVCodec *codec);
-const AVCodecDescriptor *avcodec_descriptor_get(enum AVCodecID id);
-const AVCodecDescriptor *avcodec_descriptor_next(const AVCodecDescriptor *prev);
-const AVCodecDescriptor *avcodec_descriptor_get_by_name(const char *name);
-AVCPBProperties *av_cpb_properties_alloc(size_t *size);
+av_lockmgr_register(void **mutex, enum AVLockOp op));
+avcodec_get_type;
+*avcodec_get_name;
+avcodec_is_open;
+av_codec_is_encoder;
+av_codec_is_decoder;
+*avcodec_descriptor_get;
+*avcodec_descriptor_next;
+*avcodec_descriptor_get_by_name;
+*av_cpb_properties_alloc;

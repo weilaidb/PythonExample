@@ -35,20 +35,16 @@ static const uint8_t is_audio_command[10] = ;
 #define VERBATIM_BYTE_SIZE 8
 #define CANONICAL_HEADER_SIZE 44
 typedef struct ShortenContext  ShortenContext;
-static av_cold int shorten_decode_init(AVCodecContext *avctx)
-static int allocate_buffers(ShortenContext *s)
-static inline unsigned int get_uint(ShortenContext *s, int k)
-static void fix_bitshift(ShortenContext *s, int32_t *buffer)
-static int init_offset(ShortenContext *s)
-static int decode_aiff_header(AVCodecContext *avctx, const uint8_t *header,
-int header_size)
-static int decode_wave_header(AVCodecContext *avctx, const uint8_t *header,
-int header_size)
+shorten_decode_init
+allocate_buffers
+get_uint
+fix_bitshift
+init_offset
+decode_aiff_header
+decode_wave_header
 static const int fixed_coeffs[][3] = ;
-static int decode_subframe_lpc(ShortenContext *s, int command, int channel,
-int residual_size, int32_t coffset)
-static int read_header(ShortenContext *s)
-static int shorten_decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame_ptr, AVPacket *avpkt)
-static av_cold int shorten_decode_close(AVCodecContext *avctx)
+decode_subframe_lpc
+read_header
+shorten_decode_frame
+shorten_decode_close
 AVCodec ff_shorten_decoder = ;

@@ -1,4 +1,4 @@
-static int svag_probe(AVProbeData *p)
-static int svag_read_header(AVFormatContext *s)
-static int svag_read_packet(AVFormatContext *s, AVPacket *pkt)
+svag_probe
+svag_read_header
+svag_read_packet
 AVInputFormat ff_svag_demuxer = ;

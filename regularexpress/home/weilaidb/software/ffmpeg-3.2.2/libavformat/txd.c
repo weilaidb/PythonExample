@@ -5,7 +5,7 @@
 #define TXD_TEXTURE_DATA    0x01
 #define TXD_MARKER          0x1803ffff
 #define TXD_MARKER2         0x1003ffff
-static int txd_probe(AVProbeData * pd)
-static int txd_read_header(AVFormatContext *s)
-static int txd_read_packet(AVFormatContext *s, AVPacket *pkt)
+txd_probe
+txd_read_header
+txd_read_packet
 AVInputFormat ff_txd_demuxer = ;

@@ -1,15 +1,15 @@
 enum HEVC_SEI_TYPE ;
-static int decode_nal_sei_decoded_picture_hash(HEVCContext *s)
-static int decode_nal_sei_mastering_display_info(HEVCContext *s)
-static int decode_nal_sei_frame_packing_arrangement(HEVCContext *s)
-static int decode_nal_sei_display_orientation(HEVCContext *s)
-static int decode_pic_timing(HEVCContext *s)
-static int decode_registered_user_data_closed_caption(HEVCContext *s, int size)
-static int decode_nal_sei_user_data_registered_itu_t_t35(HEVCContext *s, int size)
-static int active_parameter_sets(HEVCContext *s)
-static int decode_nal_sei_prefix(HEVCContext *s, int type, int size)
-static int decode_nal_sei_suffix(HEVCContext *s, int type, int size)
-static int decode_nal_sei_message(HEVCContext *s)
-static int more_rbsp_data(GetBitContext *gb)
-int ff_hevc_decode_nal_sei(HEVCContext *s)
-void ff_hevc_reset_sei(HEVCContext *s)
+decode_nal_sei_decoded_picture_hash
+decode_nal_sei_mastering_display_info
+decode_nal_sei_frame_packing_arrangement
+decode_nal_sei_display_orientation
+decode_pic_timing
+decode_registered_user_data_closed_caption
+decode_nal_sei_user_data_registered_itu_t_t35
+active_parameter_sets
+decode_nal_sei_prefix
+decode_nal_sei_suffix
+decode_nal_sei_message
+more_rbsp_data
+ff_hevc_decode_nal_sei
+ff_hevc_reset_sei

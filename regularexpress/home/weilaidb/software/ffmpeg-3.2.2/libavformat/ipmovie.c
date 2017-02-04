@@ -34,14 +34,11 @@
 #define OPCODE_UNKNOWN_15              0x15
 #define PALETTE_COUNT 256
 typedef struct IPMVEContext  IPMVEContext;
-static int load_ipmovie_packet(IPMVEContext *s, AVIOContext *pb,
-AVPacket *pkt)
-static int init_audio(AVFormatContext *s)
-static int process_ipmovie_chunk(IPMVEContext *s, AVIOContext *pb,
-AVPacket *pkt)
-static const char signature[] = "Interplay MVE File\x1A\0\x1A";
-static int ipmovie_probe(AVProbeData *p)
-static int ipmovie_read_header(AVFormatContext *s)
-static int ipmovie_read_packet(AVFormatContext *s,
-AVPacket *pkt)
+load_ipmovie_packet
+init_audio
+process_ipmovie_chunk
+static const char signature[] = ;
+ipmovie_probe
+ipmovie_read_header
+ipmovie_read_packet
 AVInputFormat ff_ipmovie_demuxer = ;

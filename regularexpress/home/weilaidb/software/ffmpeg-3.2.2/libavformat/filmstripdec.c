@@ -1,7 +1,6 @@
-#define RAND_TAG MKBETAG('R','a','n','d')
+MKBETAG
 typedef struct FilmstripDemuxContext  FilmstripDemuxContext;
-static int read_header(AVFormatContext *s)
-static int read_packet(AVFormatContext *s,
-AVPacket *pkt)
-static int read_seek(AVFormatContext *s, int stream_index, int64_t timestamp, int flags)
+read_header
+read_packet
+read_seek
 AVInputFormat ff_filmstrip_demuxer = ;

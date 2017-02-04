@@ -11,7 +11,7 @@
 typedef struct DCAXllBand  DCAXllBand;
 typedef struct DCAXllChSet  DCAXllChSet;
 typedef struct DCAXllDecoder  DCAXllDecoder;
-int ff_dca_xll_parse(DCAXllDecoder *s, uint8_t *data, DCAExssAsset *asset);
-int ff_dca_xll_filter_frame(DCAXllDecoder *s, AVFrame *frame);
-av_cold void ff_dca_xll_flush(DCAXllDecoder *s);
-av_cold void ff_dca_xll_close(DCAXllDecoder *s);
+ff_dca_xll_parse;
+ff_dca_xll_filter_frame;
+ff_dca_xll_flush;
+ff_dca_xll_close;

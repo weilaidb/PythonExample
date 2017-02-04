@@ -1,5 +1,4 @@
-static int encode_frame(AVCodecContext *avctx, AVPacket *pkt,
-const AVFrame *pic, int *got_packet)
+encode_frame
 #if CONFIG_R210_ENCODER
 AVCodec ff_r210_encoder = ;
 #if CONFIG_R10K_ENCODER

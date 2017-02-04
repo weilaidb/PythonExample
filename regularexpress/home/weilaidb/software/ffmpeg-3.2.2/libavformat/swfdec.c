@@ -1,12 +1,12 @@
 #if CONFIG_ZLIB
 static const AVCodecTag swf_audio_codec_tags[] = ;
-static int get_swf_tag(AVIOContext *pb, int *len_ptr)
-static int swf_probe(AVProbeData *p)
+get_swf_tag
+swf_probe
 #if CONFIG_ZLIB
-static int zlib_refill(void *opaque, uint8_t *buf, int buf_size)
-static int swf_read_header(AVFormatContext *s)
-static AVStream *create_new_audio_stream(AVFormatContext *s, int id, int info)
-static int swf_read_packet(AVFormatContext *s, AVPacket *pkt)
+zlib_refill
+swf_read_header
+*create_new_audio_stream
+swf_read_packet
 #if CONFIG_ZLIB
-static av_cold int swf_read_close(AVFormatContext *avctx)
+swf_read_close
 AVInputFormat ff_swf_demuxer = ;

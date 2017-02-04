@@ -1,23 +1,20 @@
 #define YASM_FLOATNUM_H
 #define YASM_LIB_DECL
 YASM_LIB_DECL
-void yasm_floatnum_initialize(void);
+yasm_floatnum_initialize;
 YASM_LIB_DECL
-void yasm_floatnum_cleanup(void);
-YASM_LIB_DECL yasm_floatnum *yasm_floatnum_create(const char *str);
-YASM_LIB_DECL yasm_floatnum *yasm_floatnum_copy(const yasm_floatnum *flt);
+yasm_floatnum_cleanup;
+*yasm_floatnum_create;
+*yasm_floatnum_copy;
 YASM_LIB_DECL
-void yasm_floatnum_destroy( yasm_floatnum *flt);
+yasm_floatnum_destroy;
 YASM_LIB_DECL
-int yasm_floatnum_calc(yasm_floatnum *acc, yasm_expr_op op,
-yasm_floatnum *operand);
+yasm_floatnum_calc;
 YASM_LIB_DECL
-int yasm_floatnum_get_int(const yasm_floatnum *flt, unsigned long *ret_val);
+yasm_floatnum_get_int;
 YASM_LIB_DECL
-int yasm_floatnum_get_sized(const yasm_floatnum *flt, unsigned char *ptr,
-size_t destsize, size_t valsize, size_t shift,
-int bigendian, int warn);
+yasm_floatnum_get_sized;
 YASM_LIB_DECL
-int yasm_floatnum_check_size(const yasm_floatnum *flt, size_t size);
+yasm_floatnum_check_size;
 YASM_LIB_DECL
-void yasm_floatnum_print(const yasm_floatnum *flt, FILE *f);
+yasm_floatnum_print;

@@ -1,14 +1,14 @@
 typedef struct  ANoiseSrcContext;
-#define OFFSET(x) offsetof(ANoiseSrcContext, x)
+OFFSET offsetof(ANoiseSrcContext, x)
 #define FLAGS AV_OPT_FLAG_AUDIO_PARAM|AV_OPT_FLAG_FILTERING_PARAM
 static const AVOption anoisesrc_options[] = ;
 AVFILTER_DEFINE_CLASS(anoisesrc);
-static av_cold int query_formats(AVFilterContext *ctx)
-static double white_filter(double white, double *buf)
+query_formats
+white_filter
 ;
-static double pink_filter(double white, double *buf)
-static double brown_filter(double white, double *buf)
-static av_cold int config_props(AVFilterLink *outlink)
-static int request_frame(AVFilterLink *outlink)
+pink_filter
+brown_filter
+config_props
+request_frame
 static const AVFilterPad anoisesrc_outputs[] = ;
 AVFilter ff_asrc_anoisesrc = ;

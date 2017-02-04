@@ -1,6 +1,6 @@
 #define BUF_SIZE 512
-#define randomize_buffers(mask)                        \
+randomize_buffers                        \
 do  while (0)
-#define check_pack_line(type, mask)                                                \
+check_pack_line                                                \
 do  while (0)
-void checkasm_check_v210enc(void)
+checkasm_check_v210enc

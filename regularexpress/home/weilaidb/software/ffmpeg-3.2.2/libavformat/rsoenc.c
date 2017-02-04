@@ -1,4 +1,4 @@
-static int rso_write_header(AVFormatContext *s)
-static int rso_write_packet(AVFormatContext *s, AVPacket *pkt)
-static int rso_write_trailer(AVFormatContext *s)
+rso_write_header
+rso_write_packet
+rso_write_trailer
 AVOutputFormat ff_rso_muxer = ;

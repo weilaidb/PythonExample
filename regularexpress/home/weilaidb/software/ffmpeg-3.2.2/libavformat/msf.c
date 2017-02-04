@@ -1,4 +1,4 @@
-static int msf_probe(AVProbeData *p)
-static int msf_read_header(AVFormatContext *s)
-static int msf_read_packet(AVFormatContext *s, AVPacket *pkt)
+msf_probe
+msf_read_header
+msf_read_packet
 AVInputFormat ff_msf_demuxer = ;

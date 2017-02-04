@@ -14,49 +14,49 @@ static const char * const eof_action_str[] = ;
 enum EvalMode ;
 enum OverlayFormat ;
 typedef struct OverlayContext  OverlayContext;
-static av_cold void uninit(AVFilterContext *ctx)
-static inline int normalize_xy(double d, int chroma_sub)
-static void eval_expr(AVFilterContext *ctx)
-static int set_expr(AVExpr **pexpr, const char *expr, const char *option, void *log_ctx)
-static int process_command(AVFilterContext *ctx, const char *cmd, const char *args,
-char *res, int res_len, int flags)
-static int query_formats(AVFilterContext *ctx)
+uninit
+normalize_xy
+eval_expr
+set_expr
+process_command
+query_formats
 static const enum AVPixelFormat alpha_pix_fmts[] = ;
-static int config_input_overlay(AVFilterLink *inlink)
-static int config_output(AVFilterLink *outlink)
-#define FAST_DIV255(x) ((((x) + 128) * 257) >> 16)
-#define UNPREMULTIPLY_ALPHA(x, y) ((((x) << 16) - ((x) << 9) + (x)) / ((((x) + (y)) << 8) - ((x) + (y)) - (y) * (x)))
-static void blend_image_packed_rgb(AVFilterContext *ctx,
-AVFrame *dst, const AVFrame *src,
-int x, int y)
-static av_always_inline void blend_plane(AVFilterContext *ctx,
-AVFrame *dst, const AVFrame *src,
-int src_w, int src_h,
-int dst_w, int dst_h,
-int i, int hsub, int vsub,
-int x, int y,
-int main_has_alpha)
-static inline void alpha_composite(const AVFrame *src, const AVFrame *dst,
-int src_w, int src_h,
-int dst_w, int dst_h,
-int x, int y)
-static av_always_inline void blend_image_yuv(AVFilterContext *ctx,
-AVFrame *dst, const AVFrame *src,
-int hsub, int vsub,
-int main_has_alpha,
-int x, int y)
-static void blend_image_yuv420(AVFilterContext *ctx, AVFrame *dst, const AVFrame *src, int x, int y)
-static void blend_image_yuv422(AVFilterContext *ctx, AVFrame *dst, const AVFrame *src, int x, int y)
-static void blend_image_yuv444(AVFilterContext *ctx, AVFrame *dst, const AVFrame *src, int x, int y)
-static int config_input_main(AVFilterLink *inlink)
-static AVFrame *do_blend(AVFilterContext *ctx, AVFrame *mainpic,
-const AVFrame *second)
-static int filter_frame(AVFilterLink *inlink, AVFrame *inpicref)
-static int request_frame(AVFilterLink *outlink)
-static av_cold int init(AVFilterContext *ctx)
-#define OFFSET(x) offsetof(OverlayContext, x)
+config_input_overlay
+config_output
+FAST_DIV255 ((((x) + 128) * 257) >> 16)
+UNPREMULTIPLY_ALPHA ((((x) << 16) - ((x) << 9) + (x)) / ((((x) + (y)) << 8) - ((x) + (y)) - (y) * (x)))
+blend_image_packed_rgb
+blend_plane
+alpha_composite
+blend_image_yuv
+blend_image_yuv420
+blend_image_yuv422
+blend_image_yuv444
+config_input_main
+*do_blend
+filter_frame
+request_frame
+init
+OFFSET offsetof(OverlayContext, x)
 #define FLAGS AV_OPT_FLAG_VIDEO_PARAM|AV_OPT_FLAG_FILTERING_PARAM
-static const AVOption overlay_options[] = ;
+static const AVOption overlay_options[] = ,
+, CHAR_MIN, CHAR_MAX, FLAGS },
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+};
 AVFILTER_DEFINE_CLASS(overlay);
 static const AVFilterPad avfilter_vf_overlay_inputs[] = ;
 static const AVFilterPad avfilter_vf_overlay_outputs[] = ;

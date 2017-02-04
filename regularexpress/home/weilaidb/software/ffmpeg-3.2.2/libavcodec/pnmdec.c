@@ -1,6 +1,5 @@
-static void samplecpy(uint8_t *dst, const uint8_t *src, int n, int maxval)
-static int pnm_decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame, AVPacket *avpkt)
+samplecpy
+pnm_decode_frame
 #if CONFIG_PGM_DECODER
 AVCodec ff_pgm_decoder = ;
 #if CONFIG_PGMYUV_DECODER

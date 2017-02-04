@@ -28,4 +28,4 @@
 #define STREAM_TYPE_VIDEO_CAVS      0x42
 #define STREAM_TYPE_AUDIO_AC3       0x81
 static const int lpcm_freq_tab[4] = ;
-static inline int64_t ff_parse_pes_pts(const uint8_t *buf)
+ff_parse_pes_pts

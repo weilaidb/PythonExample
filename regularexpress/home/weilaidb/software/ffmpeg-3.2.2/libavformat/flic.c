@@ -10,8 +10,8 @@
 #define FLIC_HEADER_SIZE 128
 #define FLIC_PREAMBLE_SIZE 6
 typedef struct FlicDemuxContext  FlicDemuxContext;
-static int flic_probe(AVProbeData *p)
-static int flic_read_header(AVFormatContext *s)
+flic_probe
+flic_read_header
 {
 FlicDemuxContext *flic = s->priv_data;
 AVIOContext *pb = s->pb;
@@ -22,14 +22,14 @@ int magic_number;
 unsigned char preamble[FLIC_PREAMBLE_SIZE];
 flic->frame_number = 0;
 if (avio_read(pb, header, FLIC_HEADER_SIZE) != FLIC_HEADER_SIZE)
-return AVERROR(EIO);
+AVERROR;
 magic_number = AV_RL16(&header[4]);
 speed = AV_RL32(&header[0x10]);
 if (speed == 0)
 speed = FLIC_DEFAULT_SPEED;
 st = avformat_new_stream(s, NULL);
 if (!st)
-return AVERROR(ENOMEM);
+AVERROR;
 flic->video_stream_index = st->index;
 st->codecpar->codec_type = AVMEDIA_TYPE_VIDEO;
 st->codecpar->codec_id = AV_CODEC_ID_FLIC;
@@ -37,6 +37,5 @@ st->codecpar->codec_tag = 0;
 st->codecpar->width = AV_RL16(&header[0x08]);
 st->codecpar->height = AV_RL16(&header[0x0A]);
 if (!st->codecpar->width || !st->codecpar->height)
-static int flic_read_packet(AVFormatContext *s,
-AVPacket *pkt)
+flic_read_packet
 AVInputFormat ff_flic_demuxer = ;

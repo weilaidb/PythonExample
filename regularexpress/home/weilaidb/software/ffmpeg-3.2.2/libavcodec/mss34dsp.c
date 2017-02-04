@@ -1,7 +1,7 @@
 static const uint8_t luma_quant[64] = ;
 static const uint8_t chroma_quant[64] = ;
-void ff_mss34_gen_quant_mat(uint16_t *qmat, int quality, int luma)
-#define DCT_TEMPLATE(blk, step, SOP, shift)                         \
+ff_mss34_gen_quant_mat
+DCT_TEMPLATE                         \
 const int t0 = -39409 * blk[7 * step] -  58980 * blk[1 * step]; \
 const int t1 =  39410 * blk[1 * step] -  58980 * blk[7 * step]; \
 const int t2 = -33410 * blk[5 * step] - 167963 * blk[3 * step]; \
@@ -23,6 +23,6 @@ blk[4 * step] = (-(t0 + t7) - t9 + tB) >> shift;                \
 blk[5 * step] = (-(t2 + t6) - t8 + tA) >> shift;                \
 blk[6 * step] = (-(t3 + t7) + t8 + tA) >> shift;                \
 blk[7 * step] = (-(t1 + t6) + t9 + tB) >> shift;                \
-#define SOP_ROW(a) (((a) << 16) + 0x2000)
-#define SOP_COL(a) (((a) + 32) << 16)
-void ff_mss34_dct_put(uint8_t *dst, int stride, int *block)
+SOP_ROW (((a) << 16) + 0x2000)
+SOP_COL (((a) + 32) << 16)
+ff_mss34_dct_put

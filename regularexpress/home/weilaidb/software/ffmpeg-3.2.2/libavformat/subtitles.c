@@ -1,24 +1,22 @@
-void ff_text_init_avio(void *s, FFTextReader *r, AVIOContext *pb)
-void ff_text_init_buf(FFTextReader *r, void *buf, size_t size)
-int64_t ff_text_pos(FFTextReader *r)
-int ff_text_r8(FFTextReader *r)
-void ff_text_read(FFTextReader *r, char *buf, size_t size)
-int ff_text_eof(FFTextReader *r)
-int ff_text_peek_r8(FFTextReader *r)
-AVPacket *ff_subtitles_queue_insert(FFDemuxSubtitlesQueue *q,
-const uint8_t *event, size_t len, int merge)
-static int cmp_pkt_sub_ts_pos(const void *a, const void *b)
-static int cmp_pkt_sub_pos_ts(const void *a, const void *b)
-static void drop_dups(void *log_ctx, FFDemuxSubtitlesQueue *q)
-void ff_subtitles_queue_finalize(void *log_ctx, FFDemuxSubtitlesQueue *q)
-int ff_subtitles_queue_read_packet(FFDemuxSubtitlesQueue *q, AVPacket *pkt)
-static int search_sub_ts(const FFDemuxSubtitlesQueue *q, int64_t ts)
-int ff_subtitles_queue_seek(FFDemuxSubtitlesQueue *q, AVFormatContext *s, int stream_index,
-int64_t min_ts, int64_t ts, int64_t max_ts, int flags)
-void ff_subtitles_queue_clean(FFDemuxSubtitlesQueue *q)
-int ff_smil_extract_next_text_chunk(FFTextReader *tr, AVBPrint *buf, char *c)
-const char *ff_smil_get_attr_ptr(const char *s, const char *attr)
-static inline int is_eol(char c)
-void ff_subtitles_read_text_chunk(FFTextReader *tr, AVBPrint *buf)
-void ff_subtitles_read_chunk(AVIOContext *pb, AVBPrint *buf)
-ptrdiff_t ff_subtitles_read_line(FFTextReader *tr, char *buf, size_t size)
+ff_text_init_avio
+ff_text_init_buf
+ff_text_pos
+ff_text_r8
+ff_text_read
+ff_text_eof
+ff_text_peek_r8
+*ff_subtitles_queue_insert
+cmp_pkt_sub_ts_pos
+cmp_pkt_sub_pos_ts
+drop_dups
+ff_subtitles_queue_finalize
+ff_subtitles_queue_read_packet
+search_sub_ts
+ff_subtitles_queue_seek
+ff_subtitles_queue_clean
+ff_smil_extract_next_text_chunk
+*ff_smil_get_attr_ptr
+is_eol
+ff_subtitles_read_text_chunk
+ff_subtitles_read_chunk
+ff_subtitles_read_line

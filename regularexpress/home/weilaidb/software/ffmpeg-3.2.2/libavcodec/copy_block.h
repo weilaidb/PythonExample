@@ -1,7 +1,7 @@
 #define AVCODEC_COPY_BLOCK_H
-static inline void copy_block2(uint8_t *dst, const uint8_t *src, int dstStride, int srcStride, int h)
-static inline void copy_block4(uint8_t *dst, const uint8_t *src, int dstStride, int srcStride, int h)
-static inline void copy_block8(uint8_t *dst, const uint8_t *src, int dstStride, int srcStride, int h)
-static inline void copy_block9(uint8_t *dst, const uint8_t *src, int dstStride, int srcStride, int h)
-static inline void copy_block16(uint8_t *dst, const uint8_t *src, int dstStride, int srcStride, int h)
-static inline void copy_block17(uint8_t *dst, const uint8_t *src, int dstStride, int srcStride, int h)
+copy_block2
+copy_block4
+copy_block8
+copy_block9
+copy_block16
+copy_block17

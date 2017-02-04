@@ -13,7 +13,7 @@ typedef struct RoqContext  RoqContext;
 #define RoQ_ID_FCC              0x01
 #define RoQ_ID_SLD              0x02
 #define RoQ_ID_CCC              0x03
-void ff_apply_vector_2x2(RoqContext *ri, int x, int y, roq_cell *cell);
-void ff_apply_vector_4x4(RoqContext *ri, int x, int y, roq_cell *cell);
-void ff_apply_motion_4x4(RoqContext *ri, int x, int y, int deltax, int deltay);
-void ff_apply_motion_8x8(RoqContext *ri, int x, int y, int deltax, int deltay);
+ff_apply_vector_2x2;
+ff_apply_vector_4x4;
+ff_apply_motion_4x4;
+ff_apply_motion_8x8;

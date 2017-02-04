@@ -1,4 +1,4 @@
-static int lvf_probe(AVProbeData *p)
-static int lvf_read_header(AVFormatContext *s)
-static int lvf_read_packet(AVFormatContext *s, AVPacket *pkt)
+lvf_probe
+lvf_read_header
+lvf_read_packet
 AVInputFormat ff_lvf_demuxer = ;

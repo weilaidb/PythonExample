@@ -1,4 +1,4 @@
-static int musx_probe(AVProbeData *p)
-static int musx_read_header(AVFormatContext *s)
-static int musx_read_packet(AVFormatContext *s, AVPacket *pkt)
+musx_probe
+musx_read_header
+musx_read_packet
 AVInputFormat ff_musx_demuxer = ;

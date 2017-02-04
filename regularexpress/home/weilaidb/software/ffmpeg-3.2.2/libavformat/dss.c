@@ -14,19 +14,15 @@
 #define DSS_FRAME_SIZE                42
 static const uint8_t frame_size[4] = ;
 typedef struct DSSDemuxContext  DSSDemuxContext;
-static int dss_probe(AVProbeData *p)
-static int dss_read_metadata_date(AVFormatContext *s, unsigned int offset,
-const char *key)
-static int dss_read_metadata_string(AVFormatContext *s, unsigned int offset,
-unsigned int size, const char *key)
-static int dss_read_header(AVFormatContext *s)
-static void dss_skip_audio_header(AVFormatContext *s, AVPacket *pkt)
-static void dss_sp_byte_swap(DSSDemuxContext *ctx,
-uint8_t *dst, const uint8_t *src)
-static int dss_sp_read_packet(AVFormatContext *s, AVPacket *pkt)
-static int dss_723_1_read_packet(AVFormatContext *s, AVPacket *pkt)
-static int dss_read_packet(AVFormatContext *s, AVPacket *pkt)
-static int dss_read_close(AVFormatContext *s)
-static int dss_read_seek(AVFormatContext *s, int stream_index,
-int64_t timestamp, int flags)
+dss_probe
+dss_read_metadata_date
+dss_read_metadata_string
+dss_read_header
+dss_skip_audio_header
+dss_sp_byte_swap
+dss_sp_read_packet
+dss_723_1_read_packet
+dss_read_packet
+dss_read_close
+dss_read_seek
 AVInputFormat ff_dss_demuxer = ;

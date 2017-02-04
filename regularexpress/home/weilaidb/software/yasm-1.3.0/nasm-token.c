@@ -1,22 +1,19 @@
-#line 1 "./modules/parsers/nasm/nasm-token.re"
+#line 1
 #define YYCURSOR        cursor
 #define YYLIMIT         (s->lim)
 #define YYMARKER        (s->ptr)
-#define YYFILL(n)
-#define RETURN(i)
-#define SCANINIT()
+YYFILL
+RETURN
+SCANINIT
 #define TOK             ((char *)s->tok)
 #define TOKLEN          (size_t)(cursor-s->tok)
 #define STRBUF_ALLOC_SIZE       128
 static YYCTYPE *strbuf = NULL;
 static size_t strbuf_size = 0;
 static int linechg_numcount;
-#line 71 "./modules/parsers/nasm/nasm-token.re"
-static int
-handle_dot_label(YYSTYPE *lvalp, char *tok, size_t toklen, size_t zeropos,
-yasm_parser_nasm *parser_nasm)
-int
-nasm_parser_lex(YYSTYPE *lvalp, yasm_parser_nasm *parser_nasm)
+#line 71
+handle_dot_label
+nasm_parser_lex
 {
 yasm_scanner *s = &parser_nasm->s;
 YYCTYPE *cursor = s->cur;
@@ -31,27 +28,27 @@ scan:
 SCANINIT();
 if (*cursor == '\0')
 goto endofinput;
-#line 508 "./modules/parsers/nasm/nasm-token.re"
+#line 508
 linechg:
 SCANINIT();
 if (*cursor == '\0')
 goto endofinput;
-#line 546 "./modules/parsers/nasm/nasm-token.re"
+#line 546
 linechg2:
 SCANINIT();
 if (*cursor == '\0')
 goto endofinput;
-#line 563 "./modules/parsers/nasm/nasm-token.re"
+#line 563
 directive:
 SCANINIT();
 if (*cursor == '\0')
 goto endofinput;
-#line 590 "./modules/parsers/nasm/nasm-token.re"
+#line 590
 section_directive:
 SCANINIT();
 if (*cursor == '\0')
 goto endofinput;
-#line 625 "./modules/parsers/nasm/nasm-token.re"
+#line 625
 directive2:
 SCANINIT();
 if (*cursor == '\0')

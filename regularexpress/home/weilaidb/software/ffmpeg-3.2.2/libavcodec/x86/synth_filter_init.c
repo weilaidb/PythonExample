@@ -1,4 +1,4 @@
-#define SYNTH_FILTER_FUNC(opt)                                                 \
+SYNTH_FILTER_FUNC                                                 \
 void ff_synth_filter_inner_##opt(float *synth_buf_ptr, float synth_buf2[32],   \
 const float window[512],                      \
 float out[32], intptr_t offset, float scale); \
@@ -8,9 +8,8 @@ float synth_buf2[32], const float window[512],  \
 float out[32], const float in[32], float scale) \
 \
 #if HAVE_YASM
-#if ARCH_X86_32
-SYNTH_FILTER_FUNC(sse)
-SYNTH_FILTER_FUNC(sse2)
+SYNTH_FILTER_FUNC
+SYNTH_FILTER_FUNC
 SYNTH_FILTER_FUNC(avx)
 SYNTH_FILTER_FUNC(fma3)
-av_cold void ff_synth_filter_init_x86(SynthFilterContext *s)
+ff_synth_filter_init_x86

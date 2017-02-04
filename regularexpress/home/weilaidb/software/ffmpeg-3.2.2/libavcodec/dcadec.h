@@ -7,11 +7,8 @@
 #define DCA_PACKET_RECOVERY     0x10
 #define DCA_PACKET_RESIDUAL     0x20
 typedef struct DCAContext  DCAContext;
-int ff_dca_set_channel_layout(AVCodecContext *avctx, int *ch_remap, int dca_mask);
-void ff_dca_downmix_to_stereo_fixed(DCADSPContext *dcadsp, int32_t **samples,
-int *coeff_l, int nsamples, int ch_mask);
-void ff_dca_downmix_to_stereo_float(AVFloatDSPContext *fdsp, float **samples,
-int *coeff_l, int nsamples, int ch_mask);
-static inline int ff_dca_check_crc(AVCodecContext *avctx, GetBitContext *s,
-int p1, int p2)
-static inline int ff_dca_seek_bits(GetBitContext *s, int p)
+ff_dca_set_channel_layout;
+ff_dca_downmix_to_stereo_fixed;
+ff_dca_downmix_to_stereo_float;
+ff_dca_check_crc
+ff_dca_seek_bits

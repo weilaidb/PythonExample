@@ -1,7 +1,7 @@
 #define AVCODEC_AACTAB_H
 extern float ff_aac_pow2sf_tab[428];
 extern float ff_aac_pow34sf_tab[428];
-static inline void ff_aac_tableinit(void)
+ff_aac_tableinit
 static const INTFLOAT ltp_coef[8] = ;
 static const INTFLOAT tns_tmp2_map_1_3[4] = ;
 static const INTFLOAT tns_tmp2_map_0_3[8] = ;
@@ -13,10 +13,10 @@ DECLARE_ALIGNED(32, extern float,  ff_aac_kbd_short_128)[128];
 DECLARE_ALIGNED(32, extern int,    ff_aac_kbd_long_1024_fixed)[1024];
 DECLARE_ALIGNED(32, extern int,    ff_aac_kbd_long_512_fixed)[512];
 DECLARE_ALIGNED(32, extern int,    ff_aac_kbd_short_128_fixed)[128];
-const DECLARE_ALIGNED(32, extern float, ff_aac_eld_window_512)[1920];
-const DECLARE_ALIGNED(32, extern int,   ff_aac_eld_window_512_fixed)[1920];
-const DECLARE_ALIGNED(32, extern float, ff_aac_eld_window_480)[1800];
-const DECLARE_ALIGNED(32, extern int,   ff_aac_eld_window_480_fixed)[1800];
+DECLARE_ALIGNED[1920];
+DECLARE_ALIGNED[1920];
+DECLARE_ALIGNED[1800];
+DECLARE_ALIGNED[1800];
 extern const uint8_t ff_aac_num_swb_1024[];
 extern const uint8_t ff_aac_num_swb_512 [];
 extern const uint8_t ff_aac_num_swb_480 [];

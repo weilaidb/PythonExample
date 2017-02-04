@@ -1,3 +1,3 @@
-static int write_header(AVFormatContext *s)
-static int write_packet(AVFormatContext *s, AVPacket *pkt)
+write_header
+write_packet
 AVOutputFormat ff_mkvtimestamp_v2_muxer = ;

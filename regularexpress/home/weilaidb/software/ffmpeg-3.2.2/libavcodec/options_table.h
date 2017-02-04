@@ -1,5 +1,5 @@
 #define AVCODEC_OPTIONS_TABLE_H
-#define OFFSET(x) offsetof(AVCodecContext,x)
+OFFSET offsetof(AVCodecContext,x)
 #define DEFAULT 0
 #define V AV_OPT_FLAG_VIDEO_PARAM
 #define A AV_OPT_FLAG_AUDIO_PARAM

@@ -4,4 +4,4 @@ enum EvalMode ;
 enum VolumeVarName ;
 enum ReplayGainType ;
 typedef struct VolumeContext  VolumeContext;
-void ff_volume_init_x86(VolumeContext *vol);
+ff_volume_init_x86;

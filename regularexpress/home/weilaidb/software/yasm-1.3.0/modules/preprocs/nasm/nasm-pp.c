@@ -24,7 +24,7 @@ struct Cond
 ;
 enum
 ;
-#define emitting(x) ( (x) == COND_IF_TRUE || (x) == COND_ELSE_TRUE )
+emitting ( (x) == COND_IF_TRUE || (x) == COND_ELSE_TRUE )
 #define NO_DIRECTIVE_FOUND  0
 #define DIRECTIVE_FOUND     1
 static const char *conditions[] = ;
@@ -34,13 +34,13 @@ static int inverse_ccs[] = ;
 static const char *directives[] = ;
 enum
 ;
-static int is_condition(int arg)
-#       define MAX(a,b) ( ((a) > (b)) ? (a) : (b))
+is_condition
+MAX ( ((a) > (b)) ? (a) : (b))
 enum
 ;
 static const char *tasm_directives[] = ;
 static int StackSize = 4;
-static const char *StackPointer = "ebp";
+static const char *StackPointer = ;
 static int ArgOffset = 8;
 static int LocalOffset = 4;
 static int Level = 0;
@@ -68,22 +68,21 @@ static int nested_mac_count, nested_rep_count;
 static Token *freeTokens = NULL;
 struct Blocks ;
 static Blocks blocks = ;
-static Token *expand_mmac_params(Token * tline);
-static Token *expand_smacro(Token * tline);
-static Token *expand_id(Token * tline);
-static Context *get_ctx(char *name, int all_contexts);
-static void make_tok_num(Token * tok, yasm_intnum *val);
-static void error(int severity, const char *fmt, ...);
-static void *new_Block(size_t size);
-static void delete_Blocks(void);
-static Token *new_Token(Token * next, int type, const char *text,
-size_t txtlen);
-static Token *delete_Token(Token * t);
-static Token *tokenise(char *line);
-#define tok_type_(x,t) ((x) && (x)->type == (t))
-#define skip_white_(x) if (tok_type_((x), TOK_WHITESPACE)) (x)=(x)->next
-#define tok_is_(x,v) (tok_type_((x), TOK_OTHER) && !strcmp((x)->text,(v)))
-#define tok_isnt_(x,v) ((x) && ((x)->type!=TOK_OTHER || strcmp((x)->text,(v))))
+*expand_mmac_params;
+*expand_smacro;
+*expand_id;
+*get_ctx;
+make_tok_num;
+error;
+*new_Block;
+delete_Blocks;
+*new_Token;
+*delete_Token;
+*tokenise;
+tok_type_ ((x) && (x)->type == (t))
+skip_white_ if (tok_type_((x), TOK_WHITESPACE)) (x)=(x)->next
+tok_is_ (tok_type_((x), TOK_OTHER) && !strcmp((x)->text,(v)))
+tok_isnt_ ((x) && ((x)->type!=TOK_OTHER || strcmp((x)->text,(v))))
 typedef struct TMEndItem  TMEndItem;
 static TMEndItem *EndmStack = NULL, *EndsStack = NULL;
 char **TMParameters;
@@ -93,89 +92,47 @@ static struct TStruc *TStrucs = NULL;
 static int inTstruc = 0;
 struct TSegmentAssume ;
 struct TSegmentAssume *TAssumes;
-const char *tasm_get_segment_register(const char *segment)
-static char *
-check_tasm_directive(char *line)
-static Token * tasm_join_tokens(Token *tline)
-static char *
-prepreproc(char *line)
-static int
-hash(char *s)
-static void
-free_tlist(Token * list_)
-static void
-free_llist(Line * list_)
-static void
-free_mmacro(MMacro * m)
-static void
-ctx_pop(void)
+*tasm_get_segment_register
+check_tasm_directive
+tasm_join_tokens
+prepreproc
+hash
+free_tlist
+free_llist
+free_mmacro
+ctx_pop
 #define BUF_DELTA 512
-static char *
-read_line(void)
-static Token *
-tokenise(char *line)
-static void *
-new_Block(size_t size)
-static void
-delete_Blocks(void)
-static Token *
-new_Token(Token * next, int type, const char *text, size_t txtlen)
-static Token *
-delete_Token(Token * t)
-static char *
-detoken(Token * tlist, int expand_locals)
-static int
-ppscan(void *private_data, struct tokenval *tokval)
-static int
-mstrcmp(char *p, char *q, int casesense)
-static Context *
-get_ctx(char *name, int all_contexts)
-static FILE *
-inc_fopen(char *file, char **newname)
-static int
-smacro_defined(Context * ctx, char *name, int nparam, SMacro ** defn,
-int nocase)
-static void
-count_mmac_params(Token * t, int *nparam, Token *** params)
-static int
-if_condition(Token * tline, int i)
-static void
-expand_macros_in_string(char **p)
-static int
-do_directive(Token * tline)
-static int
-find_cc(Token * t)
-static Token *
-expand_mmac_params(Token * tline)
-static Token *
-expand_smacro(Token * tline)
-static Token *
-expand_id(Token * tline)
-static MMacro *
-is_mmacro(Token * tline, Token *** params_array)
-static int
-expand_mmacro(Token * tline)
-static void
-error(int severity, const char *fmt, ...)
-static void
-pp_reset(FILE *f, const char *file, int apass, efunc errfunc, evalfunc eval,
-ListGen * listgen)
-static void
-poke_predef(Line *predef_lines)
-static char *
-pp_getline(void)
-static void
-pp_cleanup(int pass_)
-void
-pp_pre_include(const char *fname)
-void
-pp_pre_define(char *definition)
-void
-pp_pre_undefine(char *definition)
-void
-pp_builtin_define(char *definition)
-void
-pp_extra_stdmac(const char **macros)
-static void
-make_tok_num(Token * tok, yasm_intnum *val)
+read_line
+tokenise
+new_Block
+delete_Blocks
+new_Token
+delete_Token
+detoken
+ppscan
+mstrcmp
+get_ctx
+inc_fopen
+smacro_defined
+count_mmac_params
+if_condition
+expand_macros_in_string
+do_directive
+find_cc
+expand_mmac_params
+expand_smacro
+expand_id
+is_mmacro
+expand_mmacro
+error
+pp_reset
+poke_predef
+pp_getline
+pp_cleanup
+pp_pre_include
+pp_pre_define
+pp_pre_undefine
+pp_builtin_define
+pp_extra_stdmac
+make_tok_num
 Preproc nasmpp = ;

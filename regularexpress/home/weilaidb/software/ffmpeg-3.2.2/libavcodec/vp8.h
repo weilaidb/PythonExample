@@ -11,7 +11,6 @@ typedef struct VP8Frame  VP8Frame;
 typedef struct VP8intmv  VP8intmv;
 #define MAX_THREADS 8
 typedef struct VP8Context  VP8Context;
-int ff_vp8_decode_init(AVCodecContext *avctx);
-int ff_vp8_decode_frame(AVCodecContext *avctx, void *data, int *got_frame,
-AVPacket *avpkt);
-int ff_vp8_decode_free(AVCodecContext *avctx);
+ff_vp8_decode_init;
+ff_vp8_decode_frame;
+ff_vp8_decode_free;

@@ -1,8 +1,8 @@
 typedef struct QSVContext  QSVContext;
-static void buffer_release(void *opaque, uint8_t *data)
-static int qsv_get_buffer(AVCodecContext *s, AVFrame *frame, int flags)
-static int init_opaque_surf(QSVContext *qsv)
-static void qsv_uninit(AVCodecContext *s)
-int qsv_init(AVCodecContext *s)
-static mfxIMPL choose_implementation(const InputStream *ist)
-int qsv_transcode_init(OutputStream *ost)
+buffer_release
+qsv_get_buffer
+init_opaque_surf
+qsv_uninit
+qsv_init
+choose_implementation
+qsv_transcode_init

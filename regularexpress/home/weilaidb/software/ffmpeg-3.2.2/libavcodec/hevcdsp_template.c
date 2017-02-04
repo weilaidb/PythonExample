@@ -1,45 +1,45 @@
-static void FUNC(put_pcm)(uint8_t *_dst, ptrdiff_t stride, int width, int height,
+FUNC(uint8_t *_dst, ptrdiff_t stride, int width, int height,
 GetBitContext *gb, int pcm_bit_depth)
-static av_always_inline void FUNC(transquant_bypass)(uint8_t *_dst, int16_t *coeffs,
+FUNC(uint8_t *_dst, int16_t *coeffs,
 ptrdiff_t stride, int size)
-static void FUNC(transform_add4x4)(uint8_t *_dst, int16_t *coeffs,
+FUNC(uint8_t *_dst, int16_t *coeffs,
 ptrdiff_t stride)
-static void FUNC(transform_add8x8)(uint8_t *_dst, int16_t *coeffs,
+FUNC(uint8_t *_dst, int16_t *coeffs,
 ptrdiff_t stride)
-static void FUNC(transform_add16x16)(uint8_t *_dst, int16_t *coeffs,
+FUNC(uint8_t *_dst, int16_t *coeffs,
 ptrdiff_t stride)
-static void FUNC(transform_add32x32)(uint8_t *_dst, int16_t *coeffs,
+FUNC(uint8_t *_dst, int16_t *coeffs,
 ptrdiff_t stride)
-static void FUNC(transform_rdpcm)(int16_t *_coeffs, int16_t log2_size, int mode)
-static void FUNC(transform_skip)(int16_t *_coeffs, int16_t log2_size)
-#define SET(dst, x)   (dst) = (x)
-#define SCALE(dst, x) (dst) = av_clip_int16(((x) + add) >> shift)
-#define ADD_AND_SCALE(dst, x)                                           \
+FUNC(int16_t *_coeffs, int16_t log2_size, int mode)
+FUNC(int16_t *_coeffs, int16_t log2_size)
+SET   (dst) = (x)
+SCALE (dst) = av_clip_int16(((x) + add) >> shift)
+ADD_AND_SCALE                                           \
 (dst) = av_clip_pixel((dst) + av_clip_int16(((x) + add) >> shift))
-#define TR_4x4_LUMA(dst, src, step, assign)                             \
+TR_4x4_LUMA                             \
 do  while (0)
-static void FUNC(transform_4x4_luma)(int16_t *coeffs)
+FUNC(int16_t *coeffs)
 #undef TR_4x4_LUMA
-#define TR_4(dst, src, dstep, sstep, assign, end)                              \
+TR_4                              \
 do  while (0)
-#define TR_8(dst, src, dstep, sstep, assign, end)                              \
+TR_8                              \
 do  while (0)
-#define TR_16(dst, src, dstep, sstep, assign, end)                             \
+TR_16                             \
 do  while (0)
-#define TR_32(dst, src, dstep, sstep, assign, end)                             \
+TR_32                             \
 do  while (0)
-#define IDCT_VAR4(H)                                                          \
+IDCT_VAR4                                                          \
 int      limit2   = FFMIN(col_limit + 4, H)
-#define IDCT_VAR8(H)                                                          \
+IDCT_VAR8                                                          \
 int      limit   = FFMIN(col_limit, H);                               \
 int      limit2   = FFMIN(col_limit + 4, H)
-#define IDCT_VAR16(H)   IDCT_VAR8(H)
-#define IDCT_VAR32(H)   IDCT_VAR8(H)
-#define IDCT(H)                                                              \
-static void FUNC(idct_##H ##x ##H )(                                         \
+IDCT_VAR16   IDCT_VAR8(H)
+IDCT_VAR32   IDCT_VAR8(H)
+IDCT                                                              \
+FUNC(                                         \
 int16_t *coeffs, int col_limit)
-#define IDCT_DC(H)                                                           \
-static void FUNC(idct_##H ##x ##H ##_dc)(                                    \
+IDCT_DC                                                           \
+FUNC(                                    \
 int16_t *coeffs)
 IDCT( 4)
 IDCT( 8)
@@ -56,39 +56,39 @@ IDCT_DC(32)
 #undef SET
 #undef SCALE
 #undef ADD_AND_SCALE
-static void FUNC(sao_band_filter)(uint8_t *_dst, uint8_t *_src,
+FUNC(uint8_t *_dst, uint8_t *_src,
 ptrdiff_t stride_dst, ptrdiff_t stride_src,
 int16_t *sao_offset_val, int sao_left_class,
 int width, int height)
-#define CMP(a, b) (((a) > (b)) - ((a) < (b)))
-static void FUNC(sao_edge_filter)(uint8_t *_dst, uint8_t *_src, ptrdiff_t stride_dst, int16_t *sao_offset_val,
+CMP (((a) > (b)) - ((a) < (b)))
+FUNC(uint8_t *_dst, uint8_t *_src, ptrdiff_t stride_dst, int16_t *sao_offset_val,
 int eo, int width, int height)
-static void FUNC(sao_edge_restore_0)(uint8_t *_dst, uint8_t *_src,
+FUNC(uint8_t *_dst, uint8_t *_src,
 ptrdiff_t stride_dst, ptrdiff_t stride_src, SAOParams *sao,
 int *borders, int _width, int _height,
 int c_idx, uint8_t *vert_edge,
 uint8_t *horiz_edge, uint8_t *diag_edge)
-static void FUNC(sao_edge_restore_1)(uint8_t *_dst, uint8_t *_src,
+FUNC(uint8_t *_dst, uint8_t *_src,
 ptrdiff_t stride_dst, ptrdiff_t stride_src, SAOParams *sao,
 int *borders, int _width, int _height,
 int c_idx, uint8_t *vert_edge,
 uint8_t *horiz_edge, uint8_t *diag_edge)
 #undef CMP
-static void FUNC(put_hevc_pel_pixels)(int16_t *dst,
+FUNC(int16_t *dst,
 uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_pel_uni_pixels)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_pel_bi_pixels)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_pel_uni_w_pixels)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int height, int denom, int wx, int ox, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_pel_bi_w_pixels)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, int denom, int wx0, int wx1,
 int ox0, int ox1, intptr_t mx, intptr_t my, int width)
-#define QPEL_FILTER(src, stride)                                               \
+QPEL_FILTER                                               \
 (filter[0] * src[x - 3 * stride] +                                         \
 filter[1] * src[x - 2 * stride] +                                         \
 filter[2] * src[x -     stride] +                                         \
@@ -97,103 +97,103 @@ filter[4] * src[x +     stride] +                                         \
 filter[5] * src[x + 2 * stride] +                                         \
 filter[6] * src[x + 3 * stride] +                                         \
 filter[7] * src[x + 4 * stride])
-static void FUNC(put_hevc_qpel_h)(int16_t *dst,
+FUNC(int16_t *dst,
 uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_v)(int16_t *dst,
+FUNC(int16_t *dst,
 uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_hv)(int16_t *dst,
+FUNC(int16_t *dst,
 uint8_t *_src,
 ptrdiff_t _srcstride,
 int height, intptr_t mx,
 intptr_t my, int width)
-static void FUNC(put_hevc_qpel_uni_h)(uint8_t *_dst,  ptrdiff_t _dststride,
+FUNC(uint8_t *_dst,  ptrdiff_t _dststride,
 uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_bi_h)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_uni_v)(uint8_t *_dst,  ptrdiff_t _dststride,
+FUNC(uint8_t *_dst,  ptrdiff_t _dststride,
 uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_bi_v)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_uni_hv)(uint8_t *_dst,  ptrdiff_t _dststride,
+FUNC(uint8_t *_dst,  ptrdiff_t _dststride,
 uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_bi_hv)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_uni_w_h)(uint8_t *_dst,  ptrdiff_t _dststride,
-uint8_t *_src, ptrdiff_t _srcstride,
-int height, int denom, int wx, int ox,
-intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_bi_w_h)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
-int16_t *src2,
-int height, int denom, int wx0, int wx1,
-int ox0, int ox1, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_uni_w_v)(uint8_t *_dst,  ptrdiff_t _dststride,
+FUNC(uint8_t *_dst,  ptrdiff_t _dststride,
 uint8_t *_src, ptrdiff_t _srcstride,
 int height, int denom, int wx, int ox,
 intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_bi_w_v)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, int denom, int wx0, int wx1,
 int ox0, int ox1, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_uni_w_hv)(uint8_t *_dst,  ptrdiff_t _dststride,
+FUNC(uint8_t *_dst,  ptrdiff_t _dststride,
 uint8_t *_src, ptrdiff_t _srcstride,
 int height, int denom, int wx, int ox,
 intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_qpel_bi_w_hv)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, int denom, int wx0, int wx1,
 int ox0, int ox1, intptr_t mx, intptr_t my, int width)
-#define EPEL_FILTER(src, stride)                                               \
+FUNC(uint8_t *_dst,  ptrdiff_t _dststride,
+uint8_t *_src, ptrdiff_t _srcstride,
+int height, int denom, int wx, int ox,
+intptr_t mx, intptr_t my, int width)
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+int16_t *src2,
+int height, int denom, int wx0, int wx1,
+int ox0, int ox1, intptr_t mx, intptr_t my, int width)
+EPEL_FILTER                                               \
 (filter[0] * src[x - stride] +                                             \
 filter[1] * src[x]          +                                             \
 filter[2] * src[x + stride] +                                             \
 filter[3] * src[x + 2 * stride])
-static void FUNC(put_hevc_epel_h)(int16_t *dst,
+FUNC(int16_t *dst,
 uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_v)(int16_t *dst,
+FUNC(int16_t *dst,
 uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_hv)(int16_t *dst,
+FUNC(int16_t *dst,
 uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_uni_h)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_bi_h)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_uni_v)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_bi_v)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_uni_hv)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_bi_hv)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_uni_w_h)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int height, int denom, int wx, int ox, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_bi_w_h)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, int denom, int wx0, int wx1,
 int ox0, int ox1, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_uni_w_v)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int height, int denom, int wx, int ox, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_bi_w_v)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, int denom, int wx0, int wx1,
 int ox0, int ox1, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_uni_w_hv)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int height, int denom, int wx, int ox, intptr_t mx, intptr_t my, int width)
-static void FUNC(put_hevc_epel_bi_w_hv)(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
+FUNC(uint8_t *_dst, ptrdiff_t _dststride, uint8_t *_src, ptrdiff_t _srcstride,
 int16_t *src2,
 int height, int denom, int wx0, int wx1,
 int ox0, int ox1, intptr_t mx, intptr_t my, int width)
@@ -213,23 +213,23 @@ int ox0, int ox1, intptr_t mx, intptr_t my, int width)
 #define TQ1 pix[1  * xstride + 3 * ystride]
 #define TQ2 pix[2  * xstride + 3 * ystride]
 #define TQ3 pix[3  * xstride + 3 * ystride]
-static void FUNC(hevc_loop_filter_luma)(uint8_t *_pix,
+FUNC(uint8_t *_pix,
 ptrdiff_t _xstride, ptrdiff_t _ystride,
 int beta, int *_tc,
 uint8_t *_no_p, uint8_t *_no_q)
-static void FUNC(hevc_loop_filter_chroma)(uint8_t *_pix, ptrdiff_t _xstride,
+FUNC(uint8_t *_pix, ptrdiff_t _xstride,
 ptrdiff_t _ystride, int *_tc,
 uint8_t *_no_p, uint8_t *_no_q)
-static void FUNC(hevc_h_loop_filter_chroma)(uint8_t *pix, ptrdiff_t stride,
+FUNC(uint8_t *pix, ptrdiff_t stride,
 int32_t *tc, uint8_t *no_p,
 uint8_t *no_q)
-static void FUNC(hevc_v_loop_filter_chroma)(uint8_t *pix, ptrdiff_t stride,
+FUNC(uint8_t *pix, ptrdiff_t stride,
 int32_t *tc, uint8_t *no_p,
 uint8_t *no_q)
-static void FUNC(hevc_h_loop_filter_luma)(uint8_t *pix, ptrdiff_t stride,
+FUNC(uint8_t *pix, ptrdiff_t stride,
 int beta, int32_t *tc, uint8_t *no_p,
 uint8_t *no_q)
-static void FUNC(hevc_v_loop_filter_luma)(uint8_t *pix, ptrdiff_t stride,
+FUNC(uint8_t *pix, ptrdiff_t stride,
 int beta, int32_t *tc, uint8_t *no_p,
 uint8_t *no_q)
 #undef P3

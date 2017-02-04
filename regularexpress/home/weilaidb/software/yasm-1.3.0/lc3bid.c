@@ -1,4 +1,4 @@
-#line 1 "./modules/arch/lc3b/lc3bid.re"
+#line 1
 #define MOD_OpHAdd  (1UL<<0)
 #define MOD_OpLAdd  (1UL<<1)
 #define OPT_Imm         0x0
@@ -20,9 +20,9 @@
 #define OPI_MASK        (7<<3)
 typedef struct lc3b_insn_info  lc3b_insn_info;
 typedef struct lc3b_id_insn  lc3b_id_insn;
-static void lc3b_id_insn_destroy(void *contents);
-static void lc3b_id_insn_print(const void *contents, FILE *f, int indent_level);
-static void lc3b_id_insn_finalize(yasm_bytecode *bc, yasm_bytecode *prev_bc);
+lc3b_id_insn_destroy;
+lc3b_id_insn_print;
+lc3b_id_insn_finalize;
 static const yasm_bytecode_callback lc3b_id_insn_callback = ;
 static const lc3b_insn_info empty_insn[] = ;
 static const lc3b_insn_info addand_insn[] = ;
@@ -35,25 +35,16 @@ static const lc3b_insn_info not_insn[] = ;
 static const lc3b_insn_info nooperand_insn[] = ;
 static const lc3b_insn_info shift_insn[] = ;
 static const lc3b_insn_info trap_insn[] = ;
-static void
-lc3b_id_insn_finalize(yasm_bytecode *bc, yasm_bytecode *prev_bc)
+lc3b_id_insn_finalize
 #define YYCTYPE         unsigned char
 #define YYCURSOR        id
 #define YYLIMIT         id
 #define YYMARKER        marker
-#define YYFILL(n)       (void)(n)
-yasm_arch_regtmod
-yasm_lc3b__parse_check_regtmod(yasm_arch *arch, const char *oid, size_t id_len,
-uintptr_t *data)
-#define RET_INSN(g, m) \
-do  while(0)
-yasm_arch_insnprefix
-yasm_lc3b__parse_check_insnprefix(yasm_arch *arch, const char *oid,
-size_t id_len, unsigned long line,
-yasm_bytecode **bc, uintptr_t *prefix)
-static void
-lc3b_id_insn_destroy(void *contents)
-static void
-lc3b_id_insn_print(const void *contents, FILE *f, int indent_level)
-yasm_bytecode *
-yasm_lc3b__create_empty_insn(yasm_arch *arch, unsigned long line)
+YYFILL       (void)(n)
+yasm_lc3b__parse_check_regtmod
+RET_INSN \
+while
+yasm_lc3b__parse_check_insnprefix
+lc3b_id_insn_destroy
+lc3b_id_insn_print
+yasm_lc3b__create_empty_insn

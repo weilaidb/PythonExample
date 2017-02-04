@@ -7,9 +7,9 @@
 #  include <openjpeg.h>
 #if HAVE_OPENJPEG_2_1_OPENJPEG_H || HAVE_OPENJPEG_2_0_OPENJPEG_H
 #  define OPENJPEG_MAJOR_VERSION 2
-#  define OPJ(x) OPJ_##x
+OPJ OPJ_##x
 #  define OPENJPEG_MAJOR_VERSION 1
-#  define OPJ(x) x
+OPJ x
 #define JP2_SIG_TYPE    0x6A502020
 #define JP2_SIG_VALUE   0x0D0A870A
 #define RGB_PIXEL_FORMATS  AV_PIX_FMT_RGB24, AV_PIX_FMT_RGBA,                 \
@@ -33,27 +33,25 @@ static const enum AVPixelFormat libopenjpeg_gray_pix_fmts[] = ;
 static const enum AVPixelFormat libopenjpeg_yuv_pix_fmts[]  = ;
 static const enum AVPixelFormat libopenjpeg_all_pix_fmts[]  = ;
 typedef struct LibOpenJPEGContext  LibOpenJPEGContext;
-static void error_callback(const char *msg, void *data)
-static void warning_callback(const char *msg, void *data)
-static void info_callback(const char *msg, void *data)
+error_callback
+warning_callback
+info_callback
 #if OPENJPEG_MAJOR_VERSION == 2
 typedef struct BufferReader  BufferReader;
-static OPJ_SIZE_T stream_read(void *out_buffer, OPJ_SIZE_T nb_bytes, void *user_data)
-static OPJ_OFF_T stream_skip(OPJ_OFF_T nb_bytes, void *user_data)
-static OPJ_BOOL stream_seek(OPJ_OFF_T nb_bytes, void *user_data)
-static inline int libopenjpeg_matches_pix_fmt(const opj_image_t *image, enum AVPixelFormat pix_fmt)
-static inline enum AVPixelFormat libopenjpeg_guess_pix_fmt(const opj_image_t *image)
-static inline int libopenjpeg_ispacked(enum AVPixelFormat pix_fmt)
-static inline void libopenjpeg_copy_to_packed8(AVFrame *picture, opj_image_t *image)
-static inline void libopenjpeg_copy_to_packed16(AVFrame *picture, opj_image_t *image)
-static inline void libopenjpeg_copyto8(AVFrame *picture, opj_image_t *image)
-static inline void libopenjpeg_copyto16(AVFrame *picture, opj_image_t *image)
-static av_cold int libopenjpeg_decode_init(AVCodecContext *avctx)
-static int libopenjpeg_decode_frame(AVCodecContext *avctx,
-void *data, int *got_frame,
-AVPacket *avpkt)
-static av_cold void libopenjpeg_static_init(AVCodec *codec)
-#define OFFSET(x) offsetof(LibOpenJPEGContext, x)
+stream_read
+stream_skip
+stream_seek
+libopenjpeg_matches_pix_fmt
+libopenjpeg_guess_pix_fmt
+libopenjpeg_ispacked
+libopenjpeg_copy_to_packed8
+libopenjpeg_copy_to_packed16
+libopenjpeg_copyto8
+libopenjpeg_copyto16
+libopenjpeg_decode_init
+libopenjpeg_decode_frame
+libopenjpeg_static_init
+OFFSET offsetof(LibOpenJPEGContext, x)
 #define VD AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_DECODING_PARAM
 static const AVOption options[] = ;
 static const AVClass openjpeg_class = ;

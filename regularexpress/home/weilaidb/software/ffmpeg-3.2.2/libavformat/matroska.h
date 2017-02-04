@@ -194,14 +194,14 @@ extern const CodecMime ff_mkv_image_mime_tags[];
 extern const AVMetadataConv ff_mkv_metadata_conv[];
 extern const char * const ff_matroska_video_stereo_mode[MATROSKA_VIDEO_STEREOMODE_TYPE_NB];
 extern const char * const ff_matroska_video_stereo_plane[MATROSKA_VIDEO_STEREO_PLANE_COUNT];
-#define INITIALIZATION_RANGE "webm_dash_manifest_initialization_range"
-#define CUES_START "webm_dash_manifest_cues_start"
-#define CUES_END "webm_dash_manifest_cues_end"
-#define FILENAME "webm_dash_manifest_file_name"
-#define BANDWIDTH "webm_dash_manifest_bandwidth"
-#define DURATION "webm_dash_manifest_duration"
-#define CLUSTER_KEYFRAME "webm_dash_manifest_cluster_keyframe"
-#define CUE_TIMESTAMPS "webm_dash_manifest_cue_timestamps"
-#define TRACK_NUMBER "webm_dash_manifest_track_number"
-#define CODEC_PRIVATE_SIZE "webm_dash_manifest_codec_priv_size"
-int ff_mkv_stereo3d_conv(AVStream *st, MatroskaVideoStereoModeType stereo_mode);
+#define INITIALIZATION_RANGE
+#define CUES_START
+#define CUES_END
+#define FILENAME
+#define BANDWIDTH
+#define DURATION
+#define CLUSTER_KEYFRAME
+#define CUE_TIMESTAMPS
+#define TRACK_NUMBER
+#define CODEC_PRIVATE_SIZE
+ff_mkv_stereo3d_conv;

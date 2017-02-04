@@ -1,36 +1,36 @@
-static int get_linear(GetBitContext *gb, int n)
-static int get_rice_un(GetBitContext *gb, int k)
-static int get_rice(GetBitContext *gb, int k)
-static void get_array(GetBitContext *gb, int32_t *array, int size, int n)
-static void get_linear_array(GetBitContext *gb, int32_t *array, int size, int n)
-static void get_rice_array(GetBitContext *gb, int32_t *array, int size, int k)
-static int parse_dmix_coeffs(DCAXllDecoder *s, DCAXllChSet *c)
-static int chs_parse_header(DCAXllDecoder *s, DCAXllChSet *c, DCAExssAsset *asset)
-static int chs_alloc_msb_band_data(DCAXllDecoder *s, DCAXllChSet *c)
-static int chs_alloc_lsb_band_data(DCAXllDecoder *s, DCAXllChSet *c)
-static int chs_parse_band_data(DCAXllDecoder *s, DCAXllChSet *c, int band, int seg, int band_data_end)
-static av_cold void chs_clear_band_data(DCAXllDecoder *s, DCAXllChSet *c, int band, int seg)
-static void chs_filter_band_data(DCAXllDecoder *s, DCAXllChSet *c, int band)
-static int chs_get_lsb_width(DCAXllDecoder *s, DCAXllChSet *c, int band, int ch)
-static void chs_assemble_msbs_lsbs(DCAXllDecoder *s, DCAXllChSet *c, int band)
-static int chs_assemble_freq_bands(DCAXllDecoder *s, DCAXllChSet *c)
-static int parse_common_header(DCAXllDecoder *s)
-static int is_hier_dmix_chset(DCAXllChSet *c)
-static DCAXllChSet *find_next_hier_dmix_chset(DCAXllDecoder *s, DCAXllChSet *c)
-static void prescale_down_mix(DCAXllChSet *c, DCAXllChSet *o)
-static int parse_sub_headers(DCAXllDecoder *s, DCAExssAsset *asset)
-static int parse_navi_table(DCAXllDecoder *s)
-static int parse_band_data(DCAXllDecoder *s)
-static int parse_frame(DCAXllDecoder *s, uint8_t *data, int size, DCAExssAsset *asset)
-static void clear_pbr(DCAXllDecoder *s)
-static int copy_to_pbr(DCAXllDecoder *s, uint8_t *data, int size, int delay)
-static int parse_frame_no_pbr(DCAXllDecoder *s, uint8_t *data, int size, DCAExssAsset *asset)
-static int parse_frame_pbr(DCAXllDecoder *s, uint8_t *data, int size, DCAExssAsset *asset)
-int ff_dca_xll_parse(DCAXllDecoder *s, uint8_t *data, DCAExssAsset *asset)
-static void undo_down_mix(DCAXllDecoder *s, DCAXllChSet *o, int band)
-static void scale_down_mix(DCAXllDecoder *s, DCAXllChSet *o, int band)
-static av_cold void force_lossy_output(DCAXllDecoder *s, DCAXllChSet *c)
-static int combine_residual_frame(DCAXllDecoder *s, DCAXllChSet *c)
-int ff_dca_xll_filter_frame(DCAXllDecoder *s, AVFrame *frame)
-av_cold void ff_dca_xll_flush(DCAXllDecoder *s)
-av_cold void ff_dca_xll_close(DCAXllDecoder *s)
+get_linear
+get_rice_un
+get_rice
+get_array
+get_linear_array
+get_rice_array
+parse_dmix_coeffs
+chs_parse_header
+chs_alloc_msb_band_data
+chs_alloc_lsb_band_data
+chs_parse_band_data
+chs_clear_band_data
+chs_filter_band_data
+chs_get_lsb_width
+chs_assemble_msbs_lsbs
+chs_assemble_freq_bands
+parse_common_header
+is_hier_dmix_chset
+*find_next_hier_dmix_chset
+prescale_down_mix
+parse_sub_headers
+parse_navi_table
+parse_band_data
+parse_frame
+clear_pbr
+copy_to_pbr
+parse_frame_no_pbr
+parse_frame_pbr
+ff_dca_xll_parse
+undo_down_mix
+scale_down_mix
+force_lossy_output
+combine_residual_frame
+ff_dca_xll_filter_frame
+ff_dca_xll_flush
+ff_dca_xll_close

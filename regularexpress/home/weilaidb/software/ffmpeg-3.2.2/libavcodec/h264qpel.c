@@ -11,4 +11,4 @@
 #undef BIT_DEPTH
 #define BIT_DEPTH 14
 #undef BIT_DEPTH
-av_cold void ff_h264qpel_init(H264QpelContext *c, int bit_depth)
+ff_h264qpel_init

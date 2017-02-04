@@ -1,19 +1,18 @@
 typedef struct dir_lookup  dir_lookup;
-static void cpp_line_marker(yasm_parser_gas *parser_gas);
-static void nasm_line_marker(yasm_parser_gas *parser_gas);
-static yasm_bytecode *parse_instr(yasm_parser_gas *parser_gas);
-static int parse_dirvals(yasm_parser_gas *parser_gas, yasm_valparamhead *vps);
-static int parse_datavals(yasm_parser_gas *parser_gas, yasm_datavalhead *dvs);
-static int parse_strvals(yasm_parser_gas *parser_gas, yasm_datavalhead *dvs);
-static yasm_effaddr *parse_memaddr(yasm_parser_gas *parser_gas);
-static yasm_insn_operand *parse_operand(yasm_parser_gas *parser_gas);
-static yasm_expr *parse_expr(yasm_parser_gas *parser_gas);
-static yasm_expr *parse_expr0(yasm_parser_gas *parser_gas);
-static yasm_expr *parse_expr1(yasm_parser_gas *parser_gas);
-static yasm_expr *parse_expr2(yasm_parser_gas *parser_gas);
-static void define_label(yasm_parser_gas *parser_gas, char *name, int local);
-static void define_lcomm(yasm_parser_gas *parser_gas, char *name,
-yasm_expr *size, yasm_expr *align);
+cpp_line_marker;
+nasm_line_marker;
+*parse_instr;
+parse_dirvals;
+parse_datavals;
+parse_strvals;
+*parse_memaddr;
+*parse_operand;
+*parse_expr;
+*parse_expr0;
+*parse_expr1;
+*parse_expr2;
+define_label;
+define_lcomm;
 static yasm_section *gas_get_section
 (yasm_parser_gas *parser_gas, char *name, char *flags, char *type, yasm_valparamhead *objext_valparams,
 int builtin);
@@ -24,102 +23,54 @@ static yasm_bytecode *gas_parser_align
 int power2);
 static yasm_bytecode *gas_parser_dir_fill
 (yasm_parser_gas *parser_gas, yasm_expr *repeat, yasm_expr *size, yasm_expr *value);
-#define is_eol_tok(tok) ((tok) == '\n' || (tok) == ';' || (tok) == 0)
-#define is_eol()        is_eol_tok(curtok)
-#define get_next_token()    (curtok = gas_parser_lex(&curval, parser_gas))
-static void
-get_peek_token(yasm_parser_gas *parser_gas)
-static void
-destroy_curtok_(yasm_parser_gas *parser_gas)
-#define destroy_curtok()    destroy_curtok_(parser_gas)
-static void
-demand_eol_(yasm_parser_gas *parser_gas)
-#define demand_eol() demand_eol_(parser_gas)
-static int
-expect_(yasm_parser_gas *parser_gas, int token)
-#define expect(token) expect_(parser_gas, token)
-static yasm_bytecode *
-parse_line(yasm_parser_gas *parser_gas)
-static void
-cpp_line_marker(yasm_parser_gas *parser_gas)
-static void
-nasm_line_marker(yasm_parser_gas *parser_gas)
-static yasm_bytecode *
-dir_line(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_align(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_org(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_local(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_comm(yasm_parser_gas *parser_gas, unsigned int is_lcomm)
-static yasm_bytecode *
-dir_ascii(yasm_parser_gas *parser_gas, unsigned int withzero)
-static yasm_bytecode *
-dir_data(yasm_parser_gas *parser_gas, unsigned int size)
-static yasm_bytecode *
-dir_leb128(yasm_parser_gas *parser_gas, unsigned int sign)
-static yasm_bytecode *
-dir_zero(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_skip(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_fill(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_bss_section(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_data_section(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_text_section(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_section(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_equ(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_file(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_intel_syntax(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-dir_att_syntax(yasm_parser_gas *parser_gas, unsigned int param)
-static yasm_bytecode *
-parse_instr(yasm_parser_gas *parser_gas)
-static int
-parse_dirvals(yasm_parser_gas *parser_gas, yasm_valparamhead *vps)
-static int
-parse_datavals(yasm_parser_gas *parser_gas, yasm_datavalhead *dvs)
-static int
-parse_strvals(yasm_parser_gas *parser_gas, yasm_datavalhead *dvs)
-static yasm_effaddr *
-parse_memaddr(yasm_parser_gas *parser_gas)
-static yasm_insn_operand *
-parse_operand(yasm_parser_gas *parser_gas)
-static yasm_expr *
-parse_expr(yasm_parser_gas *parser_gas)
-static yasm_expr *
-parse_expr0(yasm_parser_gas *parser_gas)
-static yasm_expr *
-parse_expr1(yasm_parser_gas *parser_gas)
-static yasm_expr *
-parse_expr2(yasm_parser_gas *parser_gas)
-static void
-define_label(yasm_parser_gas *parser_gas, char *name, int local)
-static void
-define_lcomm(yasm_parser_gas *parser_gas, char *name,
-yasm_expr *size, yasm_expr *align)
-static yasm_section *
-gas_get_section(yasm_parser_gas *parser_gas, char *name, char *flags, char *type, yasm_valparamhead *objext_valparams,
-int builtin)
-static void
-gas_switch_section(yasm_parser_gas *parser_gas, const char *name, char *flags, char *type, yasm_valparamhead *objext_valparams,
-int builtin)
-static yasm_bytecode *
-gas_parser_align(yasm_parser_gas *parser_gas, yasm_section *sect,
-yasm_expr *boundval, yasm_expr *fillval, yasm_expr *maxskipval, int power2)
-static yasm_bytecode *
-gas_parser_dir_fill(yasm_parser_gas *parser_gas, yasm_expr *repeat, yasm_expr *size, yasm_expr *value)
+is_eol_tok ((tok) == '\n' || (tok) == ';' || (tok) == 0)
+is_eol        is_eol_tok(curtok)
+get_next_token    (curtok = gas_parser_lex(&curval, parser_gas))
+get_peek_token
+destroy_curtok_
+destroy_curtok    destroy_curtok_(parser_gas)
+demand_eol_
+demand_eol demand_eol_(parser_gas)
+expect_
+expect expect_(parser_gas, token)
+parse_line
+cpp_line_marker
+nasm_line_marker
+dir_line
+dir_align
+dir_org
+dir_local
+dir_comm
+dir_ascii
+dir_data
+dir_leb128
+dir_zero
+dir_skip
+dir_fill
+dir_bss_section
+dir_data_section
+dir_text_section
+dir_section
+dir_equ
+dir_file
+dir_intel_syntax
+dir_att_syntax
+parse_instr
+parse_dirvals
+parse_datavals
+parse_strvals
+parse_memaddr
+parse_operand
+parse_expr
+parse_expr0
+parse_expr1
+parse_expr2
+define_label
+define_lcomm
+gas_get_section
+gas_switch_section
+gas_parser_align
+gas_parser_dir_fill
 static dir_lookup dirs_static[] = ;
-static void
-no_delete(void *data)
-void
-gas_parser_parse(yasm_parser_gas *parser_gas)
+no_delete
+gas_parser_parse

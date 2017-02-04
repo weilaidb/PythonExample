@@ -1,8 +1,8 @@
-#define BOUNDARY_TAG "ffserver"
+#define BOUNDARY_TAG
 typedef struct MPJPEGContext  MPJPEGContext;
-static int mpjpeg_write_header(AVFormatContext *s)
-static int mpjpeg_write_packet(AVFormatContext *s, AVPacket *pkt)
-static int mpjpeg_write_trailer(AVFormatContext *s)
+mpjpeg_write_header
+mpjpeg_write_packet
+mpjpeg_write_trailer
 static const AVOption options[] = ;
 static const AVClass mpjpeg_muxer_class = ;
 AVOutputFormat ff_mpjpeg_muxer = ;

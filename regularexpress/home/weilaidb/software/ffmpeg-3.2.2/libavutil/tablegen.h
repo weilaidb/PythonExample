@@ -1,9 +1,9 @@
 #define AVUTIL_TABLEGEN_H
-static inline double ff_cbrt(double x)
+ff_cbrt
 #define cbrt ff_cbrt
-static inline double ff_rint(double x)
+ff_rint
 #define rint ff_rint
-static inline long long ff_llrint(double x)
+ff_llrint
 #define llrint ff_llrint
-static inline long ff_lrint(double x)
+ff_lrint
 #define lrint ff_lrint

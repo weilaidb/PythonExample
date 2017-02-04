@@ -54,16 +54,14 @@
 #define AV_CH_LAYOUT_HEXADECAGONAL     (AV_CH_LAYOUT_OCTAGONAL|AV_CH_WIDE_LEFT|AV_CH_WIDE_RIGHT|AV_CH_TOP_BACK_LEFT|AV_CH_TOP_BACK_RIGHT|AV_CH_TOP_BACK_CENTER|AV_CH_TOP_FRONT_CENTER|AV_CH_TOP_FRONT_LEFT|AV_CH_TOP_FRONT_RIGHT)
 #define AV_CH_LAYOUT_STEREO_DOWNMIX    (AV_CH_STEREO_LEFT|AV_CH_STEREO_RIGHT)
 enum AVMatrixEncoding ;
-uint64_t av_get_channel_layout(const char *name);
-void av_get_channel_layout_string(char *buf, int buf_size, int nb_channels, uint64_t channel_layout);
+av_get_channel_layout;
+av_get_channel_layout_string;
 struct AVBPrint;
-void av_bprint_channel_layout(struct AVBPrint *bp, int nb_channels, uint64_t channel_layout);
-int av_get_channel_layout_nb_channels(uint64_t channel_layout);
-int64_t av_get_default_channel_layout(int nb_channels);
-int av_get_channel_layout_channel_index(uint64_t channel_layout,
-uint64_t channel);
-uint64_t av_channel_layout_extract_channel(uint64_t channel_layout, int index);
-const char *av_get_channel_name(uint64_t channel);
-const char *av_get_channel_description(uint64_t channel);
-int av_get_standard_channel_layout(unsigned index, uint64_t *layout,
-const char **name);
+av_bprint_channel_layout;
+av_get_channel_layout_nb_channels;
+av_get_default_channel_layout;
+av_get_channel_layout_channel_index;
+av_channel_layout_extract_channel;
+*av_get_channel_name;
+*av_get_channel_description;
+av_get_standard_channel_layout;

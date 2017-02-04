@@ -6,19 +6,17 @@
 #define W5 1609
 #define W6 1108
 #define W7 565
-static void wmv2_idct_row(short * b)
-static void wmv2_idct_col(short * b)
-static void wmv2_idct_add_c(uint8_t *dest, int line_size, int16_t *block)
-static void wmv2_idct_put_c(uint8_t *dest, int line_size, int16_t *block)
-static void wmv2_mspel8_h_lowpass(uint8_t *dst, const uint8_t *src,
-int dstStride, int srcStride, int h)
-static void wmv2_mspel8_v_lowpass(uint8_t *dst, const uint8_t *src,
-int dstStride, int srcStride, int w)
-static void put_mspel8_mc10_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)
-static void put_mspel8_mc20_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)
-static void put_mspel8_mc30_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)
-static void put_mspel8_mc02_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)
-static void put_mspel8_mc12_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)
-static void put_mspel8_mc32_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)
-static void put_mspel8_mc22_c(uint8_t *dst, const uint8_t *src, ptrdiff_t stride)
-av_cold void ff_wmv2dsp_init(WMV2DSPContext *c)
+wmv2_idct_row
+wmv2_idct_col
+wmv2_idct_add_c
+wmv2_idct_put_c
+wmv2_mspel8_h_lowpass
+wmv2_mspel8_v_lowpass
+put_mspel8_mc10_c
+put_mspel8_mc20_c
+put_mspel8_mc30_c
+put_mspel8_mc02_c
+put_mspel8_mc12_c
+put_mspel8_mc32_c
+put_mspel8_mc22_c
+ff_wmv2dsp_init

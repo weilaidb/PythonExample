@@ -1,4 +1,2 @@
-static int bmp_decode_frame(AVCodecContext *avctx,
-void *data, int *got_frame,
-AVPacket *avpkt)
+bmp_decode_frame
 AVCodec ff_bmp_decoder = ;

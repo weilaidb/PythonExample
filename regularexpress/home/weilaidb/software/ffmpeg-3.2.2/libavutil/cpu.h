@@ -36,10 +36,10 @@
 #define AV_CPU_FLAG_ARMV8        (1 << 6)
 #define AV_CPU_FLAG_VFP_VM       (1 << 7)
 #define AV_CPU_FLAG_SETEND       (1 <<16)
-int av_get_cpu_flags(void);
-void av_force_cpu_flags(int flags);
-attribute_deprecated void av_set_cpu_flags_mask(int mask);
+av_get_cpu_flags;
+av_force_cpu_flags;
+av_set_cpu_flags_mask;
 attribute_deprecated
-int av_parse_cpu_flags(const char *s);
-int av_parse_cpu_caps(unsigned *flags, const char *s);
-int av_cpu_count(void);
+av_parse_cpu_flags;
+av_parse_cpu_caps;
+av_cpu_count;

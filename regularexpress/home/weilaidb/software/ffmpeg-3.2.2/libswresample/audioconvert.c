@@ -1,6 +1,6 @@
-#define CONV_FUNC_NAME(dst_fmt, src_fmt) conv_ ## src_fmt ## _to_ ## dst_fmt
-#define CONV_FUNC(ofmt, otype, ifmt, expr)\
-static void CONV_FUNC_NAME(ofmt, ifmt)(uint8_t *po, const uint8_t *pi, int is, int os, uint8_t *end)\
+CONV_FUNC_NAME conv_ ## src_fmt ## _to_ ## dst_fmt
+CONV_FUNC\
+CONV_FUNC_NAME(uint8_t *po, const uint8_t *pi, int is, int os, uint8_t *end)\
 CONV_FUNC(AV_SAMPLE_FMT_U8 , uint8_t, AV_SAMPLE_FMT_U8 ,  *(const uint8_t*)pi)
 CONV_FUNC(AV_SAMPLE_FMT_S16, int16_t, AV_SAMPLE_FMT_U8 , (*(const uint8_t*)pi - 0x80U)<<8)
 CONV_FUNC(AV_SAMPLE_FMT_S32, int32_t, AV_SAMPLE_FMT_U8 , (*(const uint8_t*)pi - 0x80U)<<24)
@@ -37,15 +37,12 @@ CONV_FUNC(AV_SAMPLE_FMT_S32, int32_t, AV_SAMPLE_FMT_DBL, av_clipl_int32(llrint(*
 CONV_FUNC(AV_SAMPLE_FMT_S64, int64_t, AV_SAMPLE_FMT_DBL, llrint(*(const double*)pi * (INT64_C(1)<<63)))
 CONV_FUNC(AV_SAMPLE_FMT_FLT, float  , AV_SAMPLE_FMT_DBL, *(const double*)pi)
 CONV_FUNC(AV_SAMPLE_FMT_DBL, double , AV_SAMPLE_FMT_DBL, *(const double*)pi)
-#define FMT_PAIR_FUNC(out, in) [(out) + AV_SAMPLE_FMT_NB*(in)] = CONV_FUNC_NAME(out, in)
+FMT_PAIR_FUNC [(out) + AV_SAMPLE_FMT_NB*(in)] = CONV_FUNC_NAME(out, in)
 static conv_func_type * const fmt_pair_to_conv_functions[AV_SAMPLE_FMT_NB*AV_SAMPLE_FMT_NB] = ;
-static void cpy1(uint8_t **dst, const uint8_t **src, int len)
-static void cpy2(uint8_t **dst, const uint8_t **src, int len)
-static void cpy4(uint8_t **dst, const uint8_t **src, int len)
-static void cpy8(uint8_t **dst, const uint8_t **src, int len)
-AudioConvert *swri_audio_convert_alloc(enum AVSampleFormat out_fmt,
-enum AVSampleFormat in_fmt,
-int channels, const int *ch_map,
-int flags)
-void swri_audio_convert_free(AudioConvert **ctx)
-int swri_audio_convert(AudioConvert *ctx, AudioData *out, AudioData *in, int len)
+cpy1
+cpy2
+cpy4
+cpy8
+*swri_audio_convert_alloc
+swri_audio_convert_free
+swri_audio_convert

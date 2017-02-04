@@ -4,5 +4,5 @@ AVStream *st, AVPacket *pkt,
 uint32_t *timestamp,
 const uint8_t *buf, int len, uint16_t seq,
 int flags)
-static void svq3_close_context(PayloadContext *sv)
+svq3_close_context
 RTPDynamicProtocolHandler ff_svq3_dynamic_handler = ;

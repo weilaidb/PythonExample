@@ -1,9 +1,9 @@
-#define randomize_buffers(w, h)                         \
+randomize_buffers                         \
 do  while (0)
-#define iter_1d(type, fix, fix_val, var, var_start, var_end)        \
+iter_1d        \
 for (fix = fix_val, var = var_start; var <= var_end; var++)
-#define check_emu_edge_size(type, src_w, src_h, dst_w, dst_h)   \
+check_emu_edge_size   \
 do  while (0)
-#define check_emu_edge(type)                                    \
+check_emu_edge                                    \
 do  while (0)
-void checkasm_check_videodsp(void)
+checkasm_check_videodsp

@@ -13,9 +13,9 @@ typedef struct  DiracArith;
 extern const uint8_t ff_dirac_next_ctx[DIRAC_CTX_COUNT];
 extern const uint16_t ff_dirac_prob[256];
 extern int16_t ff_dirac_prob_branchless[256][2];
-static inline void renorm(DiracArith *c)
-static inline void refill(DiracArith *c)
-static inline int dirac_get_arith_bit(DiracArith *c, int ctx)
-static inline int dirac_get_arith_uint(DiracArith *c, int follow_ctx, int data_ctx)
-static inline int dirac_get_arith_int(DiracArith *c, int follow_ctx, int data_ctx)
-void ff_dirac_init_arith_decoder(DiracArith *c, GetBitContext *gb, int length);
+renorm
+refill
+dirac_get_arith_bit
+dirac_get_arith_uint
+dirac_get_arith_int
+ff_dirac_init_arith_decoder;

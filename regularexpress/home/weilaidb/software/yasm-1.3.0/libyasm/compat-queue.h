@@ -1,111 +1,111 @@
 #define SYS_QUEUE_H
-#define SLIST_HEAD(name, type)                                          \
+SLIST_HEAD                                          \
 struct name
-#define SLIST_HEAD_INITIALIZER(head)                                    \
-#define SLIST_ENTRY(type)                                               \
+SLIST_HEAD_INITIALIZER                                    \
+SLIST_ENTRY                                               \
 struct
-#define SLIST_EMPTY(head)       ((head)->slh_first == NULL)
-#define SLIST_FIRST(head)       ((head)->slh_first)
-#define SLIST_FOREACH(var, head, field)                                 \
+SLIST_EMPTY       ((head)->slh_first == NULL)
+SLIST_FIRST       ((head)->slh_first)
+SLIST_FOREACH                                 \
 for ((var) = SLIST_FIRST((head));                               \
 (var);                                                      \
 (var) = SLIST_NEXT((var), field))
-#define SLIST_FOREACH_SAFE(var, head, field, tvar)                      \
+SLIST_FOREACH_SAFE                      \
 for ((var) = SLIST_FIRST((head));                               \
 (var) && ((tvar) = SLIST_NEXT((var), field), 1);            \
 (var) = (tvar))
-#define SLIST_FOREACH_PREVPTR(var, varp, head, field)                   \
+SLIST_FOREACH_PREVPTR                   \
 for ((varp) = &SLIST_FIRST((head));                             \
 ((var) = *(varp)) != NULL;                                  \
 (varp) = &SLIST_NEXT((var), field))
-#define SLIST_INIT(head) do  while (0)
-#define SLIST_INSERT_AFTER(slistelm, elm, field) do  while (0)
-#define SLIST_INSERT_HEAD(head, elm, field) do  while (0)
-#define SLIST_NEXT(elm, field)  ((elm)->field.sle_next)
-#define SLIST_REMOVE(head, elm, type, field) do  while (0)
-#define SLIST_REMOVE_HEAD(head, field) do  while (0)
-#define STAILQ_HEAD(name, type)                                         \
+SLIST_INIT do  while (0)
+SLIST_INSERT_AFTER do  while (0)
+SLIST_INSERT_HEAD do  while (0)
+SLIST_NEXT  ((elm)->field.sle_next)
+SLIST_REMOVE do  while (0)
+SLIST_REMOVE_HEAD do  while (0)
+STAILQ_HEAD                                         \
 struct name
-#define STAILQ_HEAD_INITIALIZER(head)                                   \
-#define STAILQ_ENTRY(type)                                              \
+STAILQ_HEAD_INITIALIZER                                   \
+STAILQ_ENTRY                                              \
 struct
-#define STAILQ_CONCAT(head1, head2) do  while (0)
-#define STAILQ_EMPTY(head)      ((head)->stqh_first == NULL)
-#define STAILQ_FIRST(head)      ((head)->stqh_first)
-#define STAILQ_FOREACH(var, head, field)                                \
+STAILQ_CONCAT do  while (0)
+STAILQ_EMPTY      ((head)->stqh_first == NULL)
+STAILQ_FIRST      ((head)->stqh_first)
+STAILQ_FOREACH                                \
 for((var) = STAILQ_FIRST((head));                               \
 (var);                                                       \
 (var) = STAILQ_NEXT((var), field))
-#define STAILQ_FOREACH_SAFE(var, head, field, tvar)                     \
+STAILQ_FOREACH_SAFE                     \
 for ((var) = STAILQ_FIRST((head));                              \
 (var) && ((tvar) = STAILQ_NEXT((var), field), 1);           \
 (var) = (tvar))
-#define STAILQ_INIT(head) do  while (0)
-#define STAILQ_INSERT_AFTER(head, tqelm, elm, field) do  while (0)
-#define STAILQ_INSERT_HEAD(head, elm, field) do  while (0)
-#define STAILQ_INSERT_TAIL(head, elm, field) do  while (0)
-#define STAILQ_LAST(head, type, field)                                  \
+STAILQ_INIT do  while (0)
+STAILQ_INSERT_AFTER do  while (0)
+STAILQ_INSERT_HEAD do  while (0)
+STAILQ_INSERT_TAIL do  while (0)
+STAILQ_LAST                                  \
 (STAILQ_EMPTY((head)) ?                                         \
 NULL :                                                  \
 ((struct type *)                                        \
 ((char *)((head)->stqh_last) - offsetof(struct type, field))))
-#define STAILQ_NEXT(elm, field) ((elm)->field.stqe_next)
-#define STAILQ_REMOVE(head, elm, type, field) do  while (0)
-#define STAILQ_REMOVE_HEAD(head, field) do  while (0)
-#define STAILQ_REMOVE_HEAD_UNTIL(head, elm, field) do  while (0)
-#define LIST_HEAD(name, type)                                           \
+STAILQ_NEXT ((elm)->field.stqe_next)
+STAILQ_REMOVE do  while (0)
+STAILQ_REMOVE_HEAD do  while (0)
+STAILQ_REMOVE_HEAD_UNTIL do  while (0)
+LIST_HEAD                                           \
 struct name
-#define LIST_HEAD_INITIALIZER(head)                                     \
-#define LIST_ENTRY(type)                                                \
+LIST_HEAD_INITIALIZER                                     \
+LIST_ENTRY                                                \
 struct
-#define LIST_EMPTY(head)        ((head)->lh_first == NULL)
-#define LIST_FIRST(head)        ((head)->lh_first)
-#define LIST_FOREACH(var, head, field)                                  \
+LIST_EMPTY        ((head)->lh_first == NULL)
+LIST_FIRST        ((head)->lh_first)
+LIST_FOREACH                                  \
 for ((var) = LIST_FIRST((head));                                \
 (var);                                                      \
 (var) = LIST_NEXT((var), field))
-#define LIST_FOREACH_SAFE(var, head, field, tvar)                       \
+LIST_FOREACH_SAFE                       \
 for ((var) = LIST_FIRST((head));                                \
 (var) && ((tvar) = LIST_NEXT((var), field), 1);             \
 (var) = (tvar))
-#define LIST_INIT(head) do  while (0)
-#define LIST_INSERT_AFTER(listelm, elm, field) do  while (0)
-#define LIST_INSERT_BEFORE(listelm, elm, field) do  while (0)
-#define LIST_INSERT_HEAD(head, elm, field) do  while (0)
-#define LIST_NEXT(elm, field)   ((elm)->field.le_next)
-#define LIST_REMOVE(elm, field) do  while (0)
-#define TAILQ_HEAD(name, type)                                          \
+LIST_INIT do  while (0)
+LIST_INSERT_AFTER do  while (0)
+LIST_INSERT_BEFORE do  while (0)
+LIST_INSERT_HEAD do  while (0)
+LIST_NEXT   ((elm)->field.le_next)
+LIST_REMOVE do  while (0)
+TAILQ_HEAD                                          \
 struct name
-#define TAILQ_HEAD_INITIALIZER(head)                                    \
-#define TAILQ_ENTRY(type)                                               \
+TAILQ_HEAD_INITIALIZER                                    \
+TAILQ_ENTRY                                               \
 struct
-#define TAILQ_CONCAT(head1, head2, field) do  while (0)
-#define TAILQ_EMPTY(head)       ((head)->tqh_first == NULL)
-#define TAILQ_FIRST(head)       ((head)->tqh_first)
-#define TAILQ_FOREACH(var, head, field)                                 \
+TAILQ_CONCAT do  while (0)
+TAILQ_EMPTY       ((head)->tqh_first == NULL)
+TAILQ_FIRST       ((head)->tqh_first)
+TAILQ_FOREACH                                 \
 for ((var) = TAILQ_FIRST((head));                               \
 (var);                                                      \
 (var) = TAILQ_NEXT((var), field))
-#define TAILQ_FOREACH_SAFE(var, head, field, tvar)                      \
+TAILQ_FOREACH_SAFE                      \
 for ((var) = TAILQ_FIRST((head));                               \
 (var) && ((tvar) = TAILQ_NEXT((var), field), 1);            \
 (var) = (tvar))
-#define TAILQ_FOREACH_REVERSE(var, head, headname, field)               \
+TAILQ_FOREACH_REVERSE               \
 for ((var) = TAILQ_LAST((head), headname);                      \
 (var);                                                      \
 (var) = TAILQ_PREV((var), headname, field))
-#define TAILQ_FOREACH_REVERSE_SAFE(var, head, headname, field, tvar)    \
+TAILQ_FOREACH_REVERSE_SAFE    \
 for ((var) = TAILQ_LAST((head), headname);                      \
 (var) && ((tvar) = TAILQ_PREV((var), headname, field), 1);  \
 (var) = (tvar))
-#define TAILQ_INIT(head) do  while (0)
-#define TAILQ_INSERT_AFTER(head, listelm, elm, field) do  while (0)
-#define TAILQ_INSERT_BEFORE(listelm, elm, field) do  while (0)
-#define TAILQ_INSERT_HEAD(head, elm, field) do  while (0)
-#define TAILQ_INSERT_TAIL(head, elm, field) do  while (0)
-#define TAILQ_LAST(head, headname)                                      \
+TAILQ_INIT do  while (0)
+TAILQ_INSERT_AFTER do  while (0)
+TAILQ_INSERT_BEFORE do  while (0)
+TAILQ_INSERT_HEAD do  while (0)
+TAILQ_INSERT_TAIL do  while (0)
+TAILQ_LAST                                      \
 (*(((struct headname *)((head)->tqh_last))->tqh_last))
-#define TAILQ_NEXT(elm, field) ((elm)->field.tqe_next)
-#define TAILQ_PREV(elm, headname, field)                                \
+TAILQ_NEXT ((elm)->field.tqe_next)
+TAILQ_PREV                                \
 (*(((struct headname *)((elm)->field.tqe_prev))->tqh_last))
-#define TAILQ_REMOVE(head, elm, field) do  while (0)
+TAILQ_REMOVE do  while (0)

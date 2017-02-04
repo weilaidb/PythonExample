@@ -50,23 +50,18 @@ typedef struct Jpeg2000Prec  Jpeg2000Prec;
 typedef struct Jpeg2000Band  Jpeg2000Band;
 typedef struct Jpeg2000ResLevel  Jpeg2000ResLevel;
 typedef struct Jpeg2000Component  Jpeg2000Component;
-static inline int ff_jpeg2000_ceildivpow2(int a, int b)
-static inline int ff_jpeg2000_ceildiv(int a, int b)
-void ff_jpeg2000_init_tier1_luts(void);
-void ff_jpeg2000_set_significance(Jpeg2000T1Context *t1,
-int x, int y, int negative);
+ff_jpeg2000_ceildivpow2
+ff_jpeg2000_ceildiv
+ff_jpeg2000_init_tier1_luts;
+ff_jpeg2000_set_significance;
 extern uint8_t ff_jpeg2000_sigctxno_lut[256][4];
-static inline int ff_jpeg2000_getsigctxno(int flag, int bandno)
+ff_jpeg2000_getsigctxno
 static const uint8_t refctxno_lut[2][2] = ;
-static inline int ff_jpeg2000_getrefctxno(int flag)
+ff_jpeg2000_getrefctxno
 extern uint8_t ff_jpeg2000_sgnctxno_lut[16][16];
 extern uint8_t ff_jpeg2000_xorbit_lut[16][16];
-static inline int ff_jpeg2000_getsgnctxno(int flag, int *xorbit)
-int ff_jpeg2000_init_component(Jpeg2000Component *comp,
-Jpeg2000CodingStyle *codsty,
-Jpeg2000QuantStyle *qntsty,
-int cbps, int dx, int dy,
-AVCodecContext *ctx);
-void ff_jpeg2000_reinit(Jpeg2000Component *comp, Jpeg2000CodingStyle *codsty);
-void ff_jpeg2000_cleanup(Jpeg2000Component *comp, Jpeg2000CodingStyle *codsty);
-static inline int needs_termination(int style, int passno)
+ff_jpeg2000_getsgnctxno
+ff_jpeg2000_init_component;
+ff_jpeg2000_reinit;
+ff_jpeg2000_cleanup;
+needs_termination

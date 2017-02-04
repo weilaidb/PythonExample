@@ -2,4 +2,4 @@
 typedef struct RCCMPEntry  RCCMPEntry;
 typedef struct RCEntry  RCEntry;
 typedef struct DNXHDEncContext  DNXHDEncContext;
-void ff_dnxhdenc_init_x86(DNXHDEncContext *ctx);
+ff_dnxhdenc_init_x86;

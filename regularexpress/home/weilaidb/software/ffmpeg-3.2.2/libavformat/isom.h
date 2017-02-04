@@ -3,8 +3,8 @@ extern const AVCodecTag ff_mp4_obj_type[];
 extern const AVCodecTag ff_codec_movvideo_tags[];
 extern const AVCodecTag ff_codec_movaudio_tags[];
 extern const AVCodecTag ff_codec_movsubtitle_tags[];
-int ff_mov_iso639_to_lang(const char lang[4], int mp4);
-int ff_mov_lang_to_iso639(unsigned code, char to[4]);
+ff_mov_iso639_to_lang;
+ff_mov_lang_to_iso639;
 struct AVAESCTR;
 typedef struct MOVStts  MOVStts;
 typedef struct MOVStsc  MOVStsc;
@@ -19,10 +19,10 @@ typedef struct MOVFragmentIndexItem  MOVFragmentIndexItem;
 typedef struct MOVFragmentIndex  MOVFragmentIndex;
 typedef struct MOVStreamContext  MOVStreamContext;
 typedef struct MOVContext  MOVContext;
-int ff_mp4_read_descr_len(AVIOContext *pb);
-int ff_mp4_read_descr(AVFormatContext *fc, AVIOContext *pb, int *tag);
-int ff_mp4_read_dec_config_descr(AVFormatContext *fc, AVStream *st, AVIOContext *pb);
-void ff_mp4_parse_es_descr(AVIOContext *pb, int *es_id);
+ff_mp4_read_descr_len;
+ff_mp4_read_descr;
+ff_mp4_read_dec_config_descr;
+ff_mp4_parse_es_descr;
 #define MP4ODescrTag                    0x01
 #define MP4IODescrTag                   0x02
 #define MP4ESDescrTag                   0x03
@@ -54,7 +54,7 @@ void ff_mp4_parse_es_descr(AVIOContext *pb, int *es_id);
 #define MOV_TKHD_FLAG_IN_MOVIE      0x0002
 #define MOV_TKHD_FLAG_IN_PREVIEW    0x0004
 #define MOV_TKHD_FLAG_IN_POSTER     0x0008
-#define TAG_IS_AVCI(tag)                    \
+TAG_IS_AVCI                    \
 ((tag) == MKTAG('a', 'i', '5', 'p') ||  \
 (tag) == MKTAG('a', 'i', '5', 'q') ||  \
 (tag) == MKTAG('a', 'i', '5', '2') ||  \
@@ -69,10 +69,10 @@ void ff_mp4_parse_es_descr(AVIOContext *pb, int *es_id);
 (tag) == MKTAG('a', 'i', '1', '6') ||  \
 (tag) == MKTAG('a', 'i', 'v', 'x') ||  \
 (tag) == MKTAG('A', 'V', 'i', 'n'))
-int ff_mov_read_esds(AVFormatContext *fc, AVIOContext *pb);
-enum AVCodecID ff_mov_get_lpcm_codec_id(int bps, int flags);
-int ff_mov_read_stsd_entries(MOVContext *c, AVIOContext *pb, int entries);
-void ff_mov_write_chan(AVIOContext *pb, int64_t channel_layout);
+ff_mov_read_esds;
+ff_mov_get_lpcm_codec_id;
+ff_mov_read_stsd_entries;
+ff_mov_write_chan;
 #define FF_MOV_FLAG_MFRA_AUTO -1
 #define FF_MOV_FLAG_MFRA_DTS 1
 #define FF_MOV_FLAG_MFRA_PTS 2

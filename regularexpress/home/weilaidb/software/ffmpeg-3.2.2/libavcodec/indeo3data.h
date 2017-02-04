@@ -181,10 +181,10 @@ PD(  36,  36), PD( -20, -52), E2(  40,  40), PD( -32, -52)
 PD(   0,   0), E2(   2,   2), E2(   6,   6), E2(  12,  12), E2(  20,  20),\
 E2(  32,  32), E2(  46,  46)
 #if HAVE_BIGENDIAN
-#define PD(a,b) (((a) * (1 << 8)) + (b))
-#define PD(a,b) (((b) * (1 << 8)) + (a))
-#define E2(a, b) PD(a, b), PD(-(a), -(b))
-#define E4(a, b) PD(a, b), PD(-(a), -(b)), PD(b, a), PD(-(b), -(a))
+PD (((a) * (1 << 8)) + (b))
+PD (((b) * (1 << 8)) + (a))
+E2 PD(a, b), PD(-(a), -(b))
+E4 PD(a, b), PD(-(a), -(b)), PD(b, a), PD(-(b), -(a))
 static const int16_t delta_tab_1_1[195] = ;
 static const int16_t delta_tab_1_2[159] = ;
 static const int16_t delta_tab_1_3[133] = ;
@@ -208,8 +208,8 @@ static const int16_t delta_tab_3_4[79]  = ;
 static const int16_t delta_tab_3_5[79]  = ;
 #undef PD
 #if HAVE_BIGENDIAN
-#define PD(a,b) (((a) * (1 << 24)) + ((a) * (1 << 16)) + ((b) * (1 << 8)) + (b))
-#define PD(a,b) (((b) * (1 << 24)) + ((b) * (1 << 16)) + ((a) * (1 << 8)) + (a))
+PD (((a) * (1 << 24)) + ((a) * (1 << 16)) + ((b) * (1 << 8)) + (b))
+PD (((b) * (1 << 24)) + ((b) * (1 << 16)) + ((a) * (1 << 8)) + (a))
 static const int32_t delta_tab_1_1_m10[195] = ;
 static const int32_t delta_tab_1_2_m10[159] = ;
 static const int32_t delta_tab_1_3_m10[133] = ;

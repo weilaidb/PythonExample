@@ -1,4 +1,4 @@
 #define AVUTIL_AARCH64_CPU_H
-#define have_armv8(flags) CPUEXT(flags, ARMV8)
-#define have_neon(flags) CPUEXT(flags, NEON)
-#define have_vfp(flags)  CPUEXT(flags, VFP)
+have_armv8 CPUEXT(flags, ARMV8)
+have_neon CPUEXT(flags, NEON)
+have_vfp  CPUEXT(flags, VFP)

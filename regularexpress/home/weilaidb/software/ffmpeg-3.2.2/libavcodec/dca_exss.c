@@ -1,5 +1,5 @@
-static void parse_xll_parameters(DCAExssParser *s, DCAExssAsset *asset)
-static void parse_lbr_parameters(DCAExssParser *s, DCAExssAsset *asset)
-static int parse_descriptor(DCAExssParser *s, DCAExssAsset *asset)
-static int set_exss_offsets(DCAExssAsset *asset)
-int ff_dca_exss_parse(DCAExssParser *s, const uint8_t *data, int size)
+parse_xll_parameters
+parse_lbr_parameters
+parse_descriptor
+set_exss_offsets
+ff_dca_exss_parse

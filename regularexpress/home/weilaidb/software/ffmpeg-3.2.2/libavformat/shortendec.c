@@ -1,2 +1,2 @@
-static int shn_probe(AVProbeData *p)
+shn_probe
 AVInputFormat ff_shorten_demuxer = ;

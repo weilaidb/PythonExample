@@ -1,6 +1,6 @@
-static void add_int16_c(uint16_t *dst, const uint16_t *src, unsigned mask, int w)
-static void diff_int16_c(uint16_t *dst, const uint16_t *src1, const uint16_t *src2, unsigned mask, int w)
-static void add_hfyu_median_pred_int16_c(uint16_t *dst, const uint16_t *src, const uint16_t *diff, unsigned mask, int w, int *left, int *left_top)
-static void sub_hfyu_median_pred_int16_c(uint16_t *dst, const uint16_t *src1, const uint16_t *src2, unsigned mask, int w, int *left, int *left_top)
-static int add_hfyu_left_pred_int16_c(uint16_t *dst, const uint16_t *src, unsigned mask, int w, unsigned acc)
-void ff_llviddsp_init(LLVidDSPContext *c, AVCodecContext *avctx)
+add_int16_c
+diff_int16_c
+add_hfyu_median_pred_int16_c
+sub_hfyu_median_pred_int16_c
+add_hfyu_left_pred_int16_c
+ff_llviddsp_init

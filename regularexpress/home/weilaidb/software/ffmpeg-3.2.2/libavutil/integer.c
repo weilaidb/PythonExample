@@ -1,13 +1,13 @@
 static const AVInteger zero_i;
-AVInteger av_add_i(AVInteger a, AVInteger b)
-AVInteger av_sub_i(AVInteger a, AVInteger b)
-int av_log2_i(AVInteger a)
-AVInteger av_mul_i(AVInteger a, AVInteger b)
-int av_cmp_i(AVInteger a, AVInteger b)
-AVInteger av_shr_i(AVInteger a, int s)
-AVInteger av_mod_i(AVInteger *quot, AVInteger a, AVInteger b)
-AVInteger av_div_i(AVInteger a, AVInteger b)
-AVInteger av_int2i(int64_t a)
-int64_t av_i2int(AVInteger a)
+av_add_i
+av_sub_i
+av_log2_i
+av_mul_i
+av_cmp_i
+av_shr_i
+av_mod_i
+av_div_i
+av_int2i
+av_i2int
 const uint8_t ff_log2_tab[256]=;
-int main(void)
+main

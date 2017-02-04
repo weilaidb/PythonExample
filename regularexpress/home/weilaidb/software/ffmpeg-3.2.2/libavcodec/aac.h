@@ -9,7 +9,7 @@ enum RawDataBlockType ;
 enum ExtensionPayloadID ;
 enum WindowSequence ;
 enum BandType ;
-#define IS_CODEBOOK_UNSIGNED(x) (((x) - 1) & 10)
+IS_CODEBOOK_UNSIGNED (((x) - 1) & 10)
 enum ChannelPosition ;
 enum CouplingPoint ;
 enum OCStatus ;
@@ -34,4 +34,4 @@ typedef struct ChannelCoupling  ChannelCoupling;
 typedef struct SingleChannelElement  SingleChannelElement;
 typedef struct ChannelElement  ChannelElement;
 struct AACContext ;
-void ff_aacdec_init_mips(AACContext *c);
+ff_aacdec_init_mips;

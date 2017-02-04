@@ -1,4 +1,4 @@
-#define RESAMPLE_FUNCS(type, opt) \
+RESAMPLE_FUNCS \
 int ff_resample_common_##type##_##opt(ResampleContext *c, void *dst, \
 const void *src, int sz, int upd); \
 int ff_resample_linear_##type##_##opt(ResampleContext *c, void *dst, \
@@ -11,4 +11,4 @@ RESAMPLE_FUNCS(float,  avx);
 RESAMPLE_FUNCS(float,  fma3);
 RESAMPLE_FUNCS(float,  fma4);
 RESAMPLE_FUNCS(double, sse2);
-av_cold void swri_resample_dsp_x86_init(ResampleContext *c)
+swri_resample_dsp_x86_init

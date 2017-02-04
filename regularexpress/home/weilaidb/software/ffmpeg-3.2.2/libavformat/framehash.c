@@ -1,1 +1,1 @@
-int ff_framehash_write_header(AVFormatContext *s)
+ff_framehash_write_header

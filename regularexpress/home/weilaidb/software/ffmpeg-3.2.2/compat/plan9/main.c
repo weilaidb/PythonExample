@@ -1,3 +1,3 @@
-int plan9_main(int argc, char **argv);
+plan9_main;
 #undef main
-int main(int argc, char **argv)
+main

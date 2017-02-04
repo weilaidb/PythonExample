@@ -55,7 +55,6 @@ enum TAKCodecType ;
 enum TAKMetaDataType ;
 enum TAKFrameSizeType ;
 typedef struct TAKStreamInfo  TAKStreamInfo;
-int ff_tak_check_crc(const uint8_t *buf, unsigned int buf_size);
-void avpriv_tak_parse_streaminfo(GetBitContext *gb, TAKStreamInfo *s);
-int ff_tak_decode_frame_header(AVCodecContext *avctx, GetBitContext *gb,
-TAKStreamInfo *s, int log_level_offset);
+ff_tak_check_crc;
+avpriv_tak_parse_streaminfo;
+ff_tak_decode_frame_header;

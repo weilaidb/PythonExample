@@ -1,10 +1,10 @@
 #if HAVE_ALTIVEC_H
 #if HAVE_ALTIVEC
-#define vs16(v)   ((vector signed short) (v))
-#define vs32(v)     ((vector signed int) (v))
-#define  vu8(v)  ((vector unsigned char) (v))
-#define vu16(v) ((vector unsigned short) (v))
-#define vu32(v)   ((vector unsigned int) (v))
+vs16   ((vector signed short) (v))
+vs32     ((vector signed int) (v))
+vu8  ((vector unsigned char) (v))
+vu16 ((vector unsigned short) (v))
+vu32   ((vector unsigned int) (v))
 #define C1     0.98078528040323044912618224
 #define C2     0.92387953251128675612818319
 #define C3     0.83146961230254523707878838
@@ -25,19 +25,19 @@
 #define WA (M_SQRT2 * (-C3 - C5))
 #define WB (M_SQRT2 *  (C5 - C3))
 static const vector float fdctconsts[3] = ;
-#define LD_W0 vec_splat(cnsts0, 0)
-#define LD_W1 vec_splat(cnsts0, 1)
-#define LD_W2 vec_splat(cnsts0, 2)
-#define LD_W3 vec_splat(cnsts0, 3)
-#define LD_W4 vec_splat(cnsts1, 0)
-#define LD_W5 vec_splat(cnsts1, 1)
-#define LD_W6 vec_splat(cnsts1, 2)
-#define LD_W7 vec_splat(cnsts1, 3)
-#define LD_W8 vec_splat(cnsts2, 0)
-#define LD_W9 vec_splat(cnsts2, 1)
-#define LD_WA vec_splat(cnsts2, 2)
-#define LD_WB vec_splat(cnsts2, 3)
-#define FDCTROW(b0, b1, b2, b3, b4, b5, b6, b7)           \
+vec_splat
+vec_splat
+vec_splat
+vec_splat
+vec_splat
+vec_splat
+vec_splat
+vec_splat
+vec_splat
+vec_splat
+vec_splat
+vec_splat
+FDCTROW           \
 x0 = vec_add(b0, b7);         \
 x7 = vec_sub(b0, b7);         \
 x1 = vec_add(b1, b6);         \
@@ -92,7 +92,7 @@ b7 = vec_add(b7, x2);         \
 b5 = vec_add(b5, x3);         \
 b3 = vec_add(b3, x2);         \
 b1 = vec_add(b1, x3)         \
-#define FDCTCOL(b0, b1, b2, b3, b4, b5, b6, b7)           \
+FDCTCOL           \
 x0 = vec_add(b0, b7);         \
 x7 = vec_sub(b0, b7);         \
 x1 = vec_add(b1, b6);         \
@@ -147,6 +147,5 @@ b7 = vec_add(b7, x2);             \
 b5 = vec_add(b5, x3);             \
 b3 = vec_add(b3, x2);             \
 b1 = vec_add(b1, x3)             \
-void ff_fdct_altivec(int16_t *block)
-av_cold void ff_fdctdsp_init_ppc(FDCTDSPContext *c, AVCodecContext *avctx,
-unsigned high_bit_depth)
+ff_fdct_altivec
+ff_fdctdsp_init_ppc

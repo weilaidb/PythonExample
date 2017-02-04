@@ -10,21 +10,15 @@ static const uint8_t aic_c_scan[64] = ;
 static const uint8_t aic_c_ext_scan[192] = ;
 static const uint8_t * const aic_scan[NUM_BANDS] = ;
 typedef struct AICContext  AICContext;
-static int aic_decode_header(AICContext *ctx, const uint8_t *src, int size)
-#define GET_CODE(val, type, add_bits)                         \
+aic_decode_header
+GET_CODE                         \
 do  while (0)
-static int aic_decode_coeffs(GetBitContext *gb, int16_t *dst,
-int band, int slice_width, int force_chroma)
-static void recombine_block(int16_t *dst, const uint8_t *scan,
-int16_t **base, int16_t **ext)
-static void recombine_block_il(int16_t *dst, const uint8_t *scan,
-int16_t **base, int16_t **ext,
-int block_no)
-static void unquant_block(int16_t *block, int q, uint8_t *quant_matrix)
-static int aic_decode_slice(AICContext *ctx, int mb_x, int mb_y,
-const uint8_t *src, int src_size)
-static int aic_decode_frame(AVCodecContext *avctx, void *data, int *got_frame,
-AVPacket *avpkt)
-static av_cold int aic_decode_init(AVCodecContext *avctx)
-static av_cold int aic_decode_close(AVCodecContext *avctx)
+aic_decode_coeffs
+recombine_block
+recombine_block_il
+unquant_block
+aic_decode_slice
+aic_decode_frame
+aic_decode_init
+aic_decode_close
 AVCodec ff_aic_decoder = ;

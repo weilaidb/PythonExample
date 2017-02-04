@@ -6,9 +6,9 @@ typedef  unsigned short int  ub2;
 typedef  unsigned       char ub1;
 #define UB1MAXVAL 0xff
 typedef                 int  word;
-#define bis(target,mask)  ((target) |=  (mask))
-#define bic(target,mask)  ((target) &= ~(mask))
-#define bit(target,mask)  ((target) &   (mask))
-# define align(a) (((ub4)a+(sizeof(void *)-1))&(~(sizeof(void *)-1)))
+bis  ((target) |=  (mask))
+bic  ((target) &= ~(mask))
+bit  ((target) &   (mask))
+align (((ub4)a+(sizeof(void *)-1))&(~(sizeof(void *)-1)))
 #define FALSE 0
 #define TRUE 1

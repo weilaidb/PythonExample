@@ -1,4 +1,4 @@
-#define CABAC(h) 0
+CABAC 0
 #define UNCHECKED_BITSTREAM_READER 1
 static const uint8_t golomb_to_inter_cbp_gray[16]=;
 static const uint8_t golomb_to_intra4x4_cbp_gray[16]=;
@@ -50,17 +50,11 @@ static int8_t cavlc_level_tab[7][1<<LEVEL_TAB_BITS][2];
 #define CHROMA422_DC_TOTAL_ZEROS_VLC_BITS 5
 #define RUN_VLC_BITS                   3
 #define RUN7_VLC_BITS                  6
-static inline int pred_non_zero_count(const H264Context *h, H264SliceContext *sl, int n)
-static av_cold void init_cavlc_level_tab(void)
-av_cold void ff_h264_decode_init_vlc(void)
-static inline int get_level_prefix(GetBitContext *gb)
-static int decode_residual(const H264Context *h, H264SliceContext *sl,
-GetBitContext *gb, int16_t *block, int n,
-const uint8_t *scantable, const uint32_t *qmul,
-int max_coeff)
+pred_non_zero_count
+init_cavlc_level_tab
+ff_h264_decode_init_vlc
+get_level_prefix
+decode_residual
 static av_always_inline
-int decode_luma_residual(const H264Context *h, H264SliceContext *sl,
-GetBitContext *gb, const uint8_t *scan,
-const uint8_t *scan8x8, int pixel_shift,
-int mb_type, int cbp, int p)
-int ff_h264_decode_mb_cavlc(const H264Context *h, H264SliceContext *sl)
+decode_luma_residual
+ff_h264_decode_mb_cavlc

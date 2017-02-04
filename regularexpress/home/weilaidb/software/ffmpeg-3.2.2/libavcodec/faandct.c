@@ -12,6 +12,6 @@ typedef float FLOAT;
 #define A5 0.38268343236508977170
 #define A4 1.30656296487637652774
 static const FLOAT postscale[64]=;
-static av_always_inline void row_fdct(FLOAT temp[64], int16_t *data)
-void ff_faandct(int16_t *data)
-void ff_faandct248(int16_t *data)
+row_fdct
+ff_faandct
+ff_faandct248

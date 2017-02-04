@@ -7,4 +7,4 @@ typedef struct CFHD_RL_VLC_ELEM  CFHD_RL_VLC_ELEM;
 typedef struct SubBand  SubBand;
 typedef struct Plane  Plane;
 typedef struct CFHDContext  CFHDContext;
-int ff_cfhd_init_vlcs(CFHDContext *s);
+ff_cfhd_init_vlcs;

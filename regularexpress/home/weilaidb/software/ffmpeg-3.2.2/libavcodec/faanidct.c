@@ -10,7 +10,7 @@ typedef float FLOAT;
 #define A4 0.70710678118654752438
 #define A2 0.92387953251128675613
 static const FLOAT prescale[64]=;
-static inline void p8idct(int16_t data[64], FLOAT temp[64], uint8_t *dest, int stride, int x, int y, int type)
-void ff_faanidct(int16_t block[64])
-void ff_faanidct_add(uint8_t *dest, int line_size, int16_t block[64])
-void ff_faanidct_put(uint8_t *dest, int line_size, int16_t block[64])
+p8idct
+ff_faanidct
+ff_faanidct_add
+ff_faanidct_put

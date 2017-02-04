@@ -7,9 +7,9 @@
 #define W7  4520
 #define ROW_SHIFT 11
 #define COL_SHIFT 20
-static inline int idct_row(int16_t *row)
-static inline void idct_col(int16_t *col)
-static inline void idct_col2(int16_t *col)
-void ff_simple_idct_axp(int16_t *block)
-void ff_simple_idct_put_axp(uint8_t *dest, int line_size, int16_t *block)
-void ff_simple_idct_add_axp(uint8_t *dest, int line_size, int16_t *block)
+idct_row
+idct_col
+idct_col2
+ff_simple_idct_axp
+ff_simple_idct_put_axp
+ff_simple_idct_add_axp

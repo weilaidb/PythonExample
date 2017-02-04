@@ -2,33 +2,35 @@ enum FilterMode ;
 typedef struct  SignalstatsContext;
 typedef struct ThreadData  ThreadData;
 typedef struct ThreadDataHueSatMetrics  ThreadDataHueSatMetrics;
-#define OFFSET(x) offsetof(SignalstatsContext, x)
+OFFSET offsetof(SignalstatsContext, x)
 #define FLAGS AV_OPT_FLAG_FILTERING_PARAM|AV_OPT_FLAG_VIDEO_PARAM
-static const AVOption signalstats_options[] = ;
+static const AVOption signalstats_options[] = ,
+, .flags=FLAGS},
+};
 AVFILTER_DEFINE_CLASS(signalstats);
-static av_cold int init(AVFilterContext *ctx)
-static av_cold void uninit(AVFilterContext *ctx)
-static int query_formats(AVFilterContext *ctx)
-static AVFrame *alloc_frame(enum AVPixelFormat pixfmt, int w, int h)
-static int config_props(AVFilterLink *outlink)
-static void burn_frame8(const SignalstatsContext *s, AVFrame *f, int x, int y)
-static void burn_frame16(const SignalstatsContext *s, AVFrame *f, int x, int y)
-static int filter8_brng(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
-static int filter16_brng(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
-static int filter_tout_outlier(uint8_t x, uint8_t y, uint8_t z)
-static int filter8_tout(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
-static int filter16_tout(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
+init
+uninit
+query_formats
+*alloc_frame
+config_props
+burn_frame8
+burn_frame16
+filter8_brng
+filter16_brng
+filter_tout_outlier
+filter8_tout
+filter16_tout
 #define VREP_START 4
-static int filter8_vrep(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
-static int filter16_vrep(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
+filter8_vrep
+filter16_vrep
 static const struct  filters_def[] = ;
 #define DEPTH 256
-static int compute_sat_hue_metrics8(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
-static int compute_sat_hue_metrics16(AVFilterContext *ctx, void *arg, int jobnr, int nb_jobs)
-static unsigned compute_bit_depth(uint16_t mask)
-static int filter_frame8(AVFilterLink *link, AVFrame *in)
-static int filter_frame16(AVFilterLink *link, AVFrame *in)
-static int filter_frame(AVFilterLink *link, AVFrame *in)
+compute_sat_hue_metrics8
+compute_sat_hue_metrics16
+compute_bit_depth
+filter_frame8
+filter_frame16
+filter_frame
 static const AVFilterPad signalstats_inputs[] = ;
 static const AVFilterPad signalstats_outputs[] = ;
 AVFilter ff_vf_signalstats = ;

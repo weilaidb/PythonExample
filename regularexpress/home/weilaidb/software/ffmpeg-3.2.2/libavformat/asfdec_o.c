@@ -19,58 +19,51 @@ typedef struct ASFPacket  ASFPacket;
 typedef struct ASFStream  ASFStream;
 typedef struct ASFStreamData ASFStreamData;
 typedef struct ASFContext  ASFContext;
-static int detect_unknown_subobject(AVFormatContext *s, int64_t offset, int64_t size);
-static const GUIDParseTable *find_guid(ff_asf_guid guid);
-static int asf_probe(AVProbeData *pd)
-static void swap_guid(ff_asf_guid guid)
-static void align_position(AVIOContext *pb,  int64_t offset, uint64_t size)
-static int asf_read_unknown(AVFormatContext *s, const GUIDParseTable *g)
-static int get_asf_string(AVIOContext *pb, int maxlen, char *buf, int buflen)
-static int asf_read_marker(AVFormatContext *s, const GUIDParseTable *g)
-static int asf_read_metadata(AVFormatContext *s, const char *title, uint16_t len,
-unsigned char *ch, uint16_t buflen)
-static int asf_read_value(AVFormatContext *s, const uint8_t *name,
-uint16_t val_len, int type, AVDictionary **met)
-static int asf_read_generic_value(AVIOContext *pb, int type, uint64_t *value)
-static int asf_set_metadata(AVFormatContext *s, const uint8_t *name,
-int type, AVDictionary **met)
-static int asf_read_picture(AVFormatContext *s, int len)
-static void get_id3_tag(AVFormatContext *s, int len)
-static int process_metadata(AVFormatContext *s, const uint8_t *name, uint16_t name_len,
-uint16_t val_len, uint16_t type, AVDictionary **met)
-static int asf_read_ext_content(AVFormatContext *s, const GUIDParseTable *g)
-static AVStream *find_stream(AVFormatContext *s, uint16_t st_num)
-static int asf_store_aspect_ratio(AVFormatContext *s, uint8_t st_num, uint8_t *name, int type)
-static int asf_read_metadata_obj(AVFormatContext *s, const GUIDParseTable *g)
-static int asf_read_content_desc(AVFormatContext *s, const GUIDParseTable *g)
-static int asf_read_properties(AVFormatContext *s, const GUIDParseTable *g)
-static int parse_video_info(AVIOContext *pb, AVStream *st)
-static int asf_read_stream_properties(AVFormatContext *s, const GUIDParseTable *g)
-static void set_language(AVFormatContext *s, const char *rfc1766, AVDictionary **met)
-static int asf_read_ext_stream_properties(AVFormatContext *s, const GUIDParseTable *g)
-static int asf_read_language_list(AVFormatContext *s, const GUIDParseTable *g)
-static int asf_read_data(AVFormatContext *s, const GUIDParseTable *g)
-static int asf_read_simple_index(AVFormatContext *s, const GUIDParseTable *g)
+detect_unknown_subobject;
+*find_guid;
+asf_probe
+swap_guid
+align_position
+asf_read_unknown
+get_asf_string
+asf_read_marker
+asf_read_metadata
+asf_read_value
+asf_read_generic_value
+asf_set_metadata
+asf_read_picture
+get_id3_tag
+process_metadata
+asf_read_ext_content
+*find_stream
+asf_store_aspect_ratio
+asf_read_metadata_obj
+asf_read_content_desc
+asf_read_properties
+parse_video_info
+asf_read_stream_properties
+set_language
+asf_read_ext_stream_properties
+asf_read_language_list
+asf_read_data
+asf_read_simple_index
 static const GUIDParseTable gdef[] = ;
-#define READ_LEN(flag, name, len)            \
-do  while(0)
-static int asf_read_subpayload(AVFormatContext *s, AVPacket *pkt, int is_header)
-static void reset_packet(ASFPacket *asf_pkt)
-static int asf_read_replicated_data(AVFormatContext *s, ASFPacket *asf_pkt)
-static int asf_read_multiple_payload(AVFormatContext *s, AVPacket *pkt,
-ASFPacket *asf_pkt)
-static int asf_read_single_payload(AVFormatContext *s, ASFPacket *asf_pkt)
-static int asf_read_payload(AVFormatContext *s, AVPacket *pkt)
-static int asf_read_packet_header(AVFormatContext *s)
-static int asf_deinterleave(AVFormatContext *s, ASFPacket *asf_pkt, int st_num)
-static int asf_read_packet(AVFormatContext *s, AVPacket *pkt)
-static int asf_read_close(AVFormatContext *s)
-static void reset_packet_state(AVFormatContext *s)
-static int64_t asf_read_timestamp(AVFormatContext *s, int stream_index,
-int64_t *pos, int64_t pos_limit)
-static int asf_read_seek(AVFormatContext *s, int stream_index,
-int64_t timestamp, int flags)
-static const GUIDParseTable *find_guid(ff_asf_guid guid)
-static int detect_unknown_subobject(AVFormatContext *s, int64_t offset, int64_t size)
-static int asf_read_header(AVFormatContext *s)
+READ_LEN            \
+while
+asf_read_subpayload
+reset_packet
+asf_read_replicated_data
+asf_read_multiple_payload
+asf_read_single_payload
+asf_read_payload
+asf_read_packet_header
+asf_deinterleave
+asf_read_packet
+asf_read_close
+reset_packet_state
+asf_read_timestamp
+asf_read_seek
+*find_guid
+detect_unknown_subobject
+asf_read_header
 AVInputFormat ff_asf_o_demuxer = ;

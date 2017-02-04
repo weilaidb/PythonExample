@@ -1,6 +1,6 @@
 enum BMVFlags ;
 typedef struct BMVContext  BMVContext;
-static int bmv_read_header(AVFormatContext *s)
-static int bmv_read_packet(AVFormatContext *s, AVPacket *pkt)
-static int bmv_read_close(AVFormatContext *s)
+bmv_read_header
+bmv_read_packet
+bmv_read_close
 AVInputFormat ff_bmv_demuxer = ;

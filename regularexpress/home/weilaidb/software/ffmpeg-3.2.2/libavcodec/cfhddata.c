@@ -12,4 +12,4 @@ static const uint32_t table_18_vlc_bits[NB_VLC_TABLE_18] = ;
 static const uint8_t table_18_vlc_len[NB_VLC_TABLE_18] = ;
 static const uint16_t table_18_vlc_run[NB_VLC_TABLE_18] = ;
 static const uint8_t table_18_vlc_level[NB_VLC_TABLE_18] = ;
-av_cold int ff_cfhd_init_vlcs(CFHDContext *s)
+ff_cfhd_init_vlcs

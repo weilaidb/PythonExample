@@ -1,2 +1,2 @@
-static av_cold int oma_write_header(AVFormatContext *s)
+oma_write_header
 AVOutputFormat ff_oma_muxer = ;

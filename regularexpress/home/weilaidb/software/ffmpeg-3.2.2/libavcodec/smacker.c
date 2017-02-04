@@ -6,18 +6,16 @@ typedef struct HuffContext  HuffContext;
 typedef struct DBCtx  DBCtx;
 static const int block_runs[64] = ;
 enum SmkBlockTypes ;
-static int smacker_decode_tree(GetBitContext *gb, HuffContext *hc, uint32_t prefix, int length)
-static int smacker_decode_bigtree(GetBitContext *gb, HuffContext *hc, DBCtx *ctx, int length)
-static int smacker_decode_header_tree(SmackVContext *smk, GetBitContext *gb, int **recodes, int *last, int size)
-static int decode_header_trees(SmackVContext *smk)
-static av_always_inline void last_reset(int *recode, int *last)
-static av_always_inline int smk_get_code(GetBitContext *gb, int *recode, int *last)
-static int decode_frame(AVCodecContext *avctx, void *data, int *got_frame,
-AVPacket *avpkt)
-static av_cold int decode_end(AVCodecContext *avctx)
-static av_cold int decode_init(AVCodecContext *avctx)
-static av_cold int smka_decode_init(AVCodecContext *avctx)
-static int smka_decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame_ptr, AVPacket *avpkt)
+smacker_decode_tree
+smacker_decode_bigtree
+smacker_decode_header_tree
+decode_header_trees
+last_reset
+smk_get_code
+decode_frame
+decode_end
+decode_init
+smka_decode_init
+smka_decode_frame
 AVCodec ff_smacker_decoder = ;
 AVCodec ff_smackaud_decoder = ;

@@ -1,29 +1,101 @@
-#if defined(_MSC_VER)
+defined
 #define X264_API_IMPORTS 1
 typedef struct X264Context  X264Context;
-static void X264_log(void *p, int level, const char *fmt, va_list args)
-static int encode_nals(AVCodecContext *ctx, AVPacket *pkt,
-const x264_nal_t *nals, int nnal)
-static int avfmt2_num_planes(int avfmt)
-static void reconfig_encoder(AVCodecContext *ctx, const AVFrame *frame)
-static int X264_frame(AVCodecContext *ctx, AVPacket *pkt, const AVFrame *frame,
-int *got_packet)
-static av_cold int X264_close(AVCodecContext *avctx)
-#define OPT_STR(opt, param)                                                   \
+X264_log
+encode_nals
+avfmt2_num_planes
+reconfig_encoder
+X264_frame
+X264_close
+OPT_STR                                                   \
 do  while (0)
-static int convert_pix_fmt(enum AVPixelFormat pix_fmt)
-#define PARSE_X264_OPT(name, var)\
-if (x4->var && x264_param_parse(&x4->params, name, x4->var) < 0)
-static av_cold int X264_init(AVCodecContext *avctx)
+convert_pix_fmt
+PARSE_X264_OPT\
+x264_param_parse < 0)
+X264_init
 static const enum AVPixelFormat pix_fmts_8bit[] = ;
 static const enum AVPixelFormat pix_fmts_9bit[] = ;
 static const enum AVPixelFormat pix_fmts_10bit[] = ;
 #if CONFIG_LIBX264RGB_ENCODER
 static const enum AVPixelFormat pix_fmts_8bit_rgb[] = ;
-static av_cold void X264_init_static(AVCodec *codec)
-#define OFFSET(x) offsetof(X264Context, x)
+X264_init_static
+OFFSET offsetof(X264Context, x)
 #define VE AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_ENCODING_PARAM
-static const AVOption options[] = ;
+static const AVOption options[] = ,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+#if X264_BUILD >= 144
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+};
 static const AVCodecDefault x264_defaults[] = ;
 #if CONFIG_LIBX264_ENCODER
 static const AVClass x264_class = ;

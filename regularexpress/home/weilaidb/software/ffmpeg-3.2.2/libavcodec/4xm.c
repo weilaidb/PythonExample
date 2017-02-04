@@ -12,29 +12,24 @@ typedef struct FourXContext  FourXContext;
 #define FIX_1_414213562  92682
 #define FIX_1_847759065 121095
 #define FIX_2_613125930 171254
-#define MULTIPLY(var, const) (((var) * (const)) >> 16)
-static void idct(int16_t block[64])
-static av_cold void init_vlcs(FourXContext *f)
-static void init_mv(FourXContext *f, int linesize)
+MULTIPLY (((var) * (const)) >> 16)
+idct
+init_vlcs
+init_mv
 #if HAVE_BIGENDIAN
-#define LE_CENTRIC_MUL(dst, src, scale, dc)             \
-#define LE_CENTRIC_MUL(dst, src, scale, dc)              \
-static inline void mcdc(uint16_t *dst, const uint16_t *src, int log2w,
-int h, int stride, int scale, unsigned dc)
-static int decode_p_block(FourXContext *f, uint16_t *dst, const uint16_t *src,
-int log2w, int log2h, int stride)
-static int decode_p_frame(FourXContext *f, const uint8_t *buf, int length)
-static int decode_i_block(FourXContext *f, int16_t *block)
-static inline void idct_put(FourXContext *f, int x, int y)
-static int decode_i_mb(FourXContext *f)
-static const uint8_t *read_huffman_tables(FourXContext *f,
-const uint8_t * const buf,
-int buf_size)
-static int mix(int c0, int c1)
-static int decode_i2_frame(FourXContext *f, const uint8_t *buf, int length)
-static int decode_i_frame(FourXContext *f, const uint8_t *buf, int length)
-static int decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame, AVPacket *avpkt)
-static av_cold int decode_end(AVCodecContext *avctx)
-static av_cold int decode_init(AVCodecContext *avctx)
+LE_CENTRIC_MUL             \
+LE_CENTRIC_MUL              \
+mcdc
+decode_p_block
+decode_p_frame
+decode_i_block
+idct_put
+decode_i_mb
+*read_huffman_tables
+mix
+decode_i2_frame
+decode_i_frame
+decode_frame
+decode_end
+decode_init
 AVCodec ff_fourxm_decoder = ;

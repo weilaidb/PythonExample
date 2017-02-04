@@ -1,10 +1,9 @@
 #define AVUTIL_ATOMIC_SUNCC_H
 #define avpriv_atomic_int_get atomic_int_get_suncc
-static inline int atomic_int_get_suncc(volatile int *ptr)
+atomic_int_get_suncc
 #define avpriv_atomic_int_set atomic_int_set_suncc
-static inline void atomic_int_set_suncc(volatile int *ptr, int val)
+atomic_int_set_suncc
 #define avpriv_atomic_int_add_and_fetch atomic_int_add_and_fetch_suncc
-static inline int atomic_int_add_and_fetch_suncc(volatile int *ptr, int inc)
+atomic_int_add_and_fetch_suncc
 #define avpriv_atomic_ptr_cas atomic_ptr_cas_suncc
-static inline void *atomic_ptr_cas_suncc(void * volatile *ptr,
-void *oldval, void *newval)
+*atomic_ptr_cas_suncc

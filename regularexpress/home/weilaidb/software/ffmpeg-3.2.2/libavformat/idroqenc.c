@@ -1,2 +1,2 @@
-static int roq_write_header(struct AVFormatContext *s)
+roq_write_header
 AVOutputFormat ff_roq_muxer = ;

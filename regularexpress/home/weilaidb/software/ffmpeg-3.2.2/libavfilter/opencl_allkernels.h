@@ -1,2 +1,2 @@
 #define AVFILTER_OPENCL_ALLKERNELS_H
-void ff_opencl_register_filter_kernel_code_all(void);
+ff_opencl_register_filter_kernel_code_all;

@@ -95,8 +95,7 @@ vx5 = vec_sra(vy5, shift);                                              \
 vx6 = vec_sra(vy6, shift);                                              \
 vx7 = vec_sra(vy7, shift)
 static const vec_s16 constants[5] = ;
-static void idct_altivec(int16_t *blk)
-static void idct_put_altivec(uint8_t *dest, int stride, int16_t *blk)
-static void idct_add_altivec(uint8_t *dest, int stride, int16_t *blk)
-av_cold void ff_idctdsp_init_ppc(IDCTDSPContext *c, AVCodecContext *avctx,
-unsigned high_bit_depth)
+idct_altivec
+idct_put_altivec
+idct_add_altivec
+ff_idctdsp_init_ppc

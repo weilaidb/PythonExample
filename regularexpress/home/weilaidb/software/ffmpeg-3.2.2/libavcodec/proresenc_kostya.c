@@ -14,64 +14,31 @@ struct TrellisNode ;
 #define MAX_STORED_Q 16
 typedef struct ProresThreadData  ProresThreadData;
 typedef struct ProresContext  ProresContext;
-static void get_slice_data(ProresContext *ctx, const uint16_t *src,
-int linesize, int x, int y, int w, int h,
-int16_t *blocks, uint16_t *emu_buf,
-int mbs_per_slice, int blocks_per_mb, int is_chroma)
-static void get_alpha_data(ProresContext *ctx, const uint16_t *src,
-int linesize, int x, int y, int w, int h,
-int16_t *blocks, int mbs_per_slice, int abits)
-static inline void encode_vlc_codeword(PutBitContext *pb, unsigned codebook, int val)
-#define GET_SIGN(x)  ((x) >> 31)
-#define MAKE_CODE(x) (((x) << 1) ^ GET_SIGN(x))
-static void encode_dcs(PutBitContext *pb, int16_t *blocks,
-int blocks_per_slice, int scale)
-static void encode_acs(PutBitContext *pb, int16_t *blocks,
-int blocks_per_slice,
-int plane_size_factor,
-const uint8_t *scan, const int16_t *qmat)
-static int encode_slice_plane(ProresContext *ctx, PutBitContext *pb,
-const uint16_t *src, int linesize,
-int mbs_per_slice, int16_t *blocks,
-int blocks_per_mb, int plane_size_factor,
-const int16_t *qmat)
-static void put_alpha_diff(PutBitContext *pb, int cur, int prev, int abits)
-static void put_alpha_run(PutBitContext *pb, int run)
-static int encode_alpha_plane(ProresContext *ctx, PutBitContext *pb,
-int mbs_per_slice, uint16_t *blocks,
-int quant)
-static int encode_slice(AVCodecContext *avctx, const AVFrame *pic,
-PutBitContext *pb,
-int sizes[4], int x, int y, int quant,
-int mbs_per_slice)
-static inline int estimate_vlc(unsigned codebook, int val)
-static int estimate_dcs(int *error, int16_t *blocks, int blocks_per_slice,
-int scale)
-static int estimate_acs(int *error, int16_t *blocks, int blocks_per_slice,
-int plane_size_factor,
-const uint8_t *scan, const int16_t *qmat)
-static int estimate_slice_plane(ProresContext *ctx, int *error, int plane,
-const uint16_t *src, int linesize,
-int mbs_per_slice,
-int blocks_per_mb, int plane_size_factor,
-const int16_t *qmat, ProresThreadData *td)
-static int est_alpha_diff(int cur, int prev, int abits)
-static int estimate_alpha_plane(ProresContext *ctx, int *error,
-const uint16_t *src, int linesize,
-int mbs_per_slice, int quant,
-int16_t *blocks)
-static int find_slice_quant(AVCodecContext *avctx,
-int trellis_node, int x, int y, int mbs_per_slice,
-ProresThreadData *td)
-static int find_quant_thread(AVCodecContext *avctx, void *arg,
-int jobnr, int threadnr)
-static int encode_frame(AVCodecContext *avctx, AVPacket *pkt,
-const AVFrame *pic, int *got_packet)
-static av_cold int encode_close(AVCodecContext *avctx)
-static void prores_fdct(FDCTDSPContext *fdsp, const uint16_t *src,
-int linesize, int16_t *block)
-static av_cold int encode_init(AVCodecContext *avctx)
-#define OFFSET(x) offsetof(ProresContext, x)
+get_slice_data
+get_alpha_data
+encode_vlc_codeword
+GET_SIGN  ((x) >> 31)
+MAKE_CODE (((x) << 1) ^ GET_SIGN(x))
+encode_dcs
+encode_acs
+encode_slice_plane
+put_alpha_diff
+put_alpha_run
+encode_alpha_plane
+encode_slice
+estimate_vlc
+estimate_dcs
+estimate_acs
+estimate_slice_plane
+est_alpha_diff
+estimate_alpha_plane
+find_slice_quant
+find_quant_thread
+encode_frame
+encode_close
+prores_fdct
+encode_init
+OFFSET offsetof(ProresContext, x)
 #define VE     AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_ENCODING_PARAM
 static const AVOption options[] = ;
 static const AVClass proresenc_class = ;

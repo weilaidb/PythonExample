@@ -1,16 +1,16 @@
-static void sum_a(const int *input, int *output, int len)
-static void sum_b(const int *input, int *output, int len)
-static void sum_c(const int *input, int *output, int len)
-static void sum_d(const int *input, int *output, int len)
-static void dct_a(const int *input, int *output)
-static void dct_b(const int *input, int *output)
-static void mod_a(const int *input, int *output)
-static void mod_b(int *input, int *output)
-static void mod_c(const int *input, int *output)
-static void clp_v(int *input, int len)
-static void imdct_half_32(int32_t *output, const int32_t *input)
-static void mod64_a(const int *input, int *output)
-static void mod64_b(int *input, int *output)
-static void mod64_c(const int *input, int *output)
-static void imdct_half_64(int32_t *output, const int32_t *input)
-av_cold void ff_dcadct_init(DCADCTContext *c)
+sum_a
+sum_b
+sum_c
+sum_d
+dct_a
+dct_b
+mod_a
+mod_b
+mod_c
+clp_v
+imdct_half_32
+mod64_a
+mod64_b
+mod64_c
+imdct_half_64
+ff_dcadct_init

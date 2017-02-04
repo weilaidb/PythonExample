@@ -1,24 +1,24 @@
-#define SAT(x) (((x) < -32768) ? -32768 : (((x) > 32767) ? 32767 : (x)))
-static void test_pabsb_c(char *pDst, char *pSrc, int xmm)
-static void test_pabsw_c(short *pDst, short *pSrc, int xmm)
-static void test_pabsd_c(int *pDst, int *pSrc, int xmm)
-static void test_psignb_c(char *pDst, char *pSrc, int xmm)
-static void test_psignw_c(short *pDst, short *pSrc, int xmm)
-static void test_psignd_c(int *pDst, int *pSrc, int xmm)
-static void test_phaddw_c(unsigned short *pDst,unsigned short *pSrc, int xmm)
-static void test_phaddsw_c(short *pDst, short *pSrc, int xmm)
-static void test_phaddd_c(unsigned int *pDst, unsigned int *pSrc, int xmm)
-static void test_phsubw_c(unsigned short *pDst,unsigned short *pSrc, int xmm)
-static void test_phsubsw_c(short *pDst, short *pSrc, int xmm)
-static void test_phsubd_c(unsigned int *pDst, unsigned int *pSrc, int xmm)
-static void test_pmulhrsw_c(short *pDst, short *pSrc, int xmm)
-static void test_pmaddubsw_c(unsigned char *pDst, signed char *pSrc, int xmm)
-static void test_pshufb_c(unsigned char *pDst, unsigned char *pSrc, int xmm)
-static void test_palignr_c(unsigned char *pDst, unsigned char *pSrc, int xmm)
-static void randomize_args(unsigned char *pDst, unsigned char *pSrc)
-#define CHECK_FUNCTION(instruction, extension, additionnal, pDst, pSrc) \
-do  while( 0 )
-#define CHECK_FUNCTIONS(instruction) \
+SAT (((x) < -32768) ? -32768 : (((x) > 32767) ? 32767 : (x)))
+test_pabsb_c
+test_pabsw_c
+test_pabsd_c
+test_psignb_c
+test_psignw_c
+test_psignd_c
+test_phaddw_c
+test_phaddsw_c
+test_phaddd_c
+test_phsubw_c
+test_phsubsw_c
+test_phsubd_c
+test_pmulhrsw_c
+test_pmaddubsw_c
+test_pshufb_c
+test_palignr_c
+randomize_args
+CHECK_FUNCTION \
+while
+CHECK_FUNCTIONS \
 CHECK_FUNCTION(instruction, mmx, 0, pDst, pSrc); \
 CHECK_FUNCTION(instruction, xmm, 1, pDst, pSrc)
-void main(int nArgC, char *pArgv[])
+main

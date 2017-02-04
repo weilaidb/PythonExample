@@ -1,17 +1,17 @@
 const int32_t ff_yuv2rgb_coeffs[11][4] = ;
-const int *sws_getCoefficients(int colorspace)
-#define LOADCHROMA(i)                               \
+*sws_getCoefficients
+LOADCHROMA                               \
 U = pu[i];                                      \
 V = pv[i];                                      \
 r = (void *)c->table_rV[V+YUVRGB_TABLE_HEADROOM];                     \
 g = (void *)(c->table_gU[U+YUVRGB_TABLE_HEADROOM] + c->table_gV[V+YUVRGB_TABLE_HEADROOM]);  \
 b = (void *)c->table_bU[U+YUVRGB_TABLE_HEADROOM];
-#define PUTRGB(dst, src, i)                         \
+PUTRGB                         \
 Y              = src[2 * i];                    \
 dst[2 * i]     = r[Y] + g[Y] + b[Y];            \
 Y              = src[2 * i + 1];                \
 dst[2 * i + 1] = r[Y] + g[Y] + b[Y];
-#define PUTRGB24(dst, src, i)                       \
+PUTRGB24                       \
 Y              = src[2 * i];                    \
 dst[6 * i + 0] = r[Y];                          \
 dst[6 * i + 1] = g[Y];                          \
@@ -20,7 +20,7 @@ Y              = src[2 * i + 1];                \
 dst[6 * i + 3] = r[Y];                          \
 dst[6 * i + 4] = g[Y];                          \
 dst[6 * i + 5] = b[Y];
-#define PUTBGR24(dst, src, i)                       \
+PUTBGR24                       \
 Y              = src[2 * i];                    \
 dst[6 * i + 0] = b[Y];                          \
 dst[6 * i + 1] = g[Y];                          \
@@ -29,12 +29,12 @@ Y              = src[2 * i + 1];                \
 dst[6 * i + 3] = b[Y];                          \
 dst[6 * i + 4] = g[Y];                          \
 dst[6 * i + 5] = r[Y];
-#define PUTRGBA(dst, ysrc, asrc, i, s)                                  \
+PUTRGBA                                  \
 Y              = ysrc[2 * i];                                       \
 dst[2 * i]     = r[Y] + g[Y] + b[Y] + (asrc[2 * i]     << s);       \
 Y              = ysrc[2 * i + 1];                                   \
 dst[2 * i + 1] = r[Y] + g[Y] + b[Y] + (asrc[2 * i + 1] << s);
-#define PUTRGB48(dst, src, i)                       \
+PUTRGB48                       \
 Y                = src[ 2 * i];                 \
 dst[12 * i +  0] = dst[12 * i +  1] = r[Y];     \
 dst[12 * i +  2] = dst[12 * i +  3] = g[Y];     \
@@ -43,7 +43,7 @@ Y                = src[ 2 * i + 1];             \
 dst[12 * i +  6] = dst[12 * i +  7] = r[Y];     \
 dst[12 * i +  8] = dst[12 * i +  9] = g[Y];     \
 dst[12 * i + 10] = dst[12 * i + 11] = b[Y];
-#define PUTBGR48(dst, src, i)                       \
+PUTBGR48                       \
 Y                = src[2 * i];                  \
 dst[12 * i +  0] = dst[12 * i +  1] = b[Y];     \
 dst[12 * i +  2] = dst[12 * i +  3] = g[Y];     \
@@ -52,11 +52,9 @@ Y                = src[2  * i +  1];            \
 dst[12 * i +  6] = dst[12 * i +  7] = b[Y];     \
 dst[12 * i +  8] = dst[12 * i +  9] = g[Y];     \
 dst[12 * i + 10] = dst[12 * i + 11] = r[Y];
-#define YUV2RGBFUNC(func_name, dst_type, alpha)                             \
-static int func_name(SwsContext *c, const uint8_t *src[],               \
-int srcStride[], int srcSliceY, int srcSliceH,     \
-uint8_t *dst[], int dstStride[])                   \
-#define CLOSEYUV2RGBFUNC(dst_delta)                 \
+YUV2RGBFUNC                             \
+func_name                   \
+CLOSEYUV2RGBFUNC                 \
 ENDYUV2RGBLINE(dst_delta, 0)                    \
 ENDYUV2RGBFUNC()
 YUV2RGBFUNC(yuv2rgb_c_48, uint8_t, 0)
@@ -246,7 +244,7 @@ YUV2RGBFUNC(yuv2rgb_c_16_ordered_dither, uint16_t, 0)
 const uint8_t *d16 = ff_dither_2x2_8[y & 1];
 const uint8_t *e16 = ff_dither_2x2_4[y & 1];
 const uint8_t *f16 = ff_dither_2x2_8[(y & 1)^1];
-#define PUTRGB16(dst, src, i, o)                    \
+PUTRGB16                    \
 Y              = src[2 * i];                    \
 dst[2 * i]     = r[Y + d16[0 + o]] +            \
 g[Y + e16[0 + o]] +            \
@@ -271,7 +269,7 @@ CLOSEYUV2RGBFUNC(8)
 YUV2RGBFUNC(yuv2rgb_c_15_ordered_dither, uint16_t, 0)
 const uint8_t *d16 = ff_dither_2x2_8[y & 1];
 const uint8_t *e16 = ff_dither_2x2_8[(y & 1)^1];
-#define PUTRGB15(dst, src, i, o)                    \
+PUTRGB15                    \
 Y              = src[2 * i];                    \
 dst[2 * i]     = r[Y + d16[0 + o]] +            \
 g[Y + d16[1 + o]] +            \
@@ -295,7 +293,7 @@ PUTRGB15(dst_1, py_1, 3, 6);
 CLOSEYUV2RGBFUNC(8)
 YUV2RGBFUNC(yuv2rgb_c_12_ordered_dither, uint16_t, 0)
 const uint8_t *d16 = ff_dither_4x4_16[y & 3];
-#define PUTRGB12(dst, src, i, o)                    \
+PUTRGB12                    \
 Y              = src[2 * i];                    \
 dst[2 * i]     = r[Y + d16[0 + o]] +            \
 g[Y + d16[0 + o]] +            \
@@ -320,7 +318,7 @@ CLOSEYUV2RGBFUNC(8)
 YUV2RGBFUNC(yuv2rgb_c_8_ordered_dither, uint8_t, 0)
 const uint8_t *d32 = ff_dither_8x8_32[y & 7];
 const uint8_t *d64 = ff_dither_8x8_73[y & 7];
-#define PUTRGB8(dst, src, i, o)                     \
+PUTRGB8                     \
 Y              = src[2 * i];                    \
 dst[2 * i]     = r[Y + d32[0 + o]] +            \
 g[Y + d32[0 + o]] +            \
@@ -361,7 +359,7 @@ YUV2RGBFUNC(yuv2rgb_c_4_ordered_dither, uint8_t, 0)
 const uint8_t * d64 = ff_dither_8x8_73[y & 7];
 const uint8_t *d128 = ff_dither_8x8_220[y & 7];
 int acc;
-#define PUTRGB4D(dst, src, i, o)                    \
+PUTRGB4D                    \
 Y      = src[2 * i];                            \
 acc    = r[Y + d128[0 + o]] +                   \
 g[Y +  d64[0 + o]] +                   \
@@ -404,7 +402,7 @@ ENDYUV2RGBFUNC()
 YUV2RGBFUNC(yuv2rgb_c_4b_ordered_dither, uint8_t, 0)
 const uint8_t *d64  = ff_dither_8x8_73[y & 7];
 const uint8_t *d128 = ff_dither_8x8_220[y & 7];
-#define PUTRGB4DB(dst, src, i, o)                   \
+PUTRGB4DB                   \
 Y              = src[2 * i];                    \
 dst[2 * i]     = r[Y + d128[0 + o]] +           \
 g[Y +  d64[0 + o]] +           \
@@ -445,7 +443,7 @@ YUV2RGBFUNC(yuv2rgb_c_1_ordered_dither, uint8_t, 0)
 const uint8_t *d128 = ff_dither_8x8_220[y & 7];
 char out_1 = 0, out_2 = 0;
 g = c->table_gU[128 + YUVRGB_TABLE_HEADROOM] + c->table_gV[128 + YUVRGB_TABLE_HEADROOM];
-#define PUTRGB1(out, src, i, o)                     \
+PUTRGB1                     \
 Y    = src[2 * i];                              \
 out += out + g[Y + d128[0 + o]];                \
 Y    = src[2 * i + 1];                          \
@@ -461,11 +459,8 @@ PUTRGB1(out_1, py_1, 3, 6);
 dst_1[0] = out_1;
 dst_2[0] = out_2;
 CLOSEYUV2RGBFUNC(1)
-SwsFunc ff_yuv2rgb_get_func_ptr(SwsContext *c)
-static void fill_table(uint8_t* table[256 + 2*YUVRGB_TABLE_HEADROOM], const int elemsize,
-const int64_t inc, void *y_tab)
-static void fill_gv_table(int table[256 + 2*YUVRGB_TABLE_HEADROOM], const int elemsize, const int64_t inc)
-static uint16_t roundToInt16(int64_t f)
-av_cold int ff_yuv2rgb_c_init_tables(SwsContext *c, const int inv_table[4],
-int fullRange, int brightness,
-int contrast, int saturation)
+ff_yuv2rgb_get_func_ptr
+fill_table
+fill_gv_table
+roundToInt16
+ff_yuv2rgb_c_init_tables

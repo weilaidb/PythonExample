@@ -8,7 +8,6 @@ static const int8_t index_table4[] = ;
 static const int8_t index_table5[] = ;
 static const int8_t index_table6[] = ;
 static const int8_t *const step_index_tables[] = ;
-static av_cold int decode_init(AVCodecContext *avctx)
-static int decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame_ptr, AVPacket *pkt)
+decode_init
+decode_frame
 AVCodec ff_adpcm_vima_decoder = ;

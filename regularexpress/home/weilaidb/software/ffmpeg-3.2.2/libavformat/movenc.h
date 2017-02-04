@@ -36,9 +36,7 @@ typedef struct MOVMuxContext  MOVMuxContext;
 #define FF_MOV_FLAG_WRITE_COLR            (1 << 15)
 #define FF_MOV_FLAG_WRITE_GAMA            (1 << 16)
 #define FF_MOV_FLAG_USE_MDTA              (1 << 17)
-int ff_mov_write_packet(AVFormatContext *s, AVPacket *pkt);
-int ff_mov_init_hinting(AVFormatContext *s, int index, int src_index);
-int ff_mov_add_hinted_packet(AVFormatContext *s, AVPacket *pkt,
-int track_index, int sample,
-uint8_t *sample_data, int sample_size);
-void ff_mov_close_hinting(MOVTrack *track);
+ff_mov_write_packet;
+ff_mov_init_hinting;
+ff_mov_add_hinted_packet;
+ff_mov_close_hinting;

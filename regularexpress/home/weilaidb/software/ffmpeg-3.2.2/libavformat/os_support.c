@@ -6,17 +6,14 @@
 #if HAVE_WINSOCK2_H
 #elif HAVE_SYS_SELECT_H
 #if !HAVE_INET_ATON
-int ff_inet_aton(const char *str, struct in_addr *add)
-int ff_inet_aton(const char *str, struct in_addr *add)
+ff_inet_aton
+ff_inet_aton
 #if !HAVE_GETADDRINFO
-int ff_getaddrinfo(const char *node, const char *service,
-const struct addrinfo *hints, struct addrinfo **res)
-void ff_freeaddrinfo(struct addrinfo *res)
-int ff_getnameinfo(const struct sockaddr *sa, int salen,
-char *host, int hostlen,
-char *serv, int servlen, int flags)
+ff_getaddrinfo
+ff_freeaddrinfo
+ff_getnameinfo
 #if !HAVE_GETADDRINFO || HAVE_WINSOCK2_H
-const char *ff_gai_strerror(int ecode)
-int ff_socket_nonblock(int socket, int enable)
+*ff_gai_strerror
+ff_socket_nonblock
 #if !HAVE_POLL_H
-int ff_poll(struct pollfd *fds, nfds_t numfds, int timeout)
+ff_poll

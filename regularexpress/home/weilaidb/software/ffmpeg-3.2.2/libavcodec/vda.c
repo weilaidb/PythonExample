@@ -1,10 +1,10 @@
 #if CONFIG_H264_VDA_HWACCEL
-AVVDAContext *av_vda_alloc_context(void)
-int av_vda_default_init(AVCodecContext *avctx)
-int av_vda_default_init2(AVCodecContext *avctx, AVVDAContext *vdactx)
-void av_vda_default_free(AVCodecContext *avctx)
-void ff_vda_default_free(AVCodecContext *avctx)
-AVVDAContext *av_vda_alloc_context(void)
-int av_vda_default_init(AVCodecContext *avctx)
-int av_vda_default_init2(AVCodecContext *avctx, AVVDAContext *vdactx)
-void av_vda_default_free(AVCodecContext *ctx)
+*av_vda_alloc_context
+av_vda_default_init
+av_vda_default_init2
+av_vda_default_free
+ff_vda_default_free
+*av_vda_alloc_context
+av_vda_default_init
+av_vda_default_init2
+av_vda_default_free

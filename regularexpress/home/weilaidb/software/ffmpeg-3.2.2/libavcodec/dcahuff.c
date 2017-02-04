@@ -161,4 +161,4 @@ VLC     ff_dca_vlc_st_grid;
 VLC     ff_dca_vlc_grid_2;
 VLC     ff_dca_vlc_grid_3;
 VLC     ff_dca_vlc_rsd;
-av_cold void ff_dca_init_vlcs(void)
+ff_dca_init_vlcs

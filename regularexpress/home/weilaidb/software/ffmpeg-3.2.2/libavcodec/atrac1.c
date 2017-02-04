@@ -12,15 +12,12 @@ typedef struct AT1SUCtx  AT1SUCtx;
 typedef struct AT1Ctx  AT1Ctx;
 static const uint16_t samples_per_band[3] = ;
 static const uint8_t   mdct_long_nbits[3] = ;
-static void at1_imdct(AT1Ctx *q, float *spec, float *out, int nbits,
-int rev_spec)
-static int at1_imdct_block(AT1SUCtx* su, AT1Ctx *q)
-static int at1_parse_bsm(GetBitContext* gb, int log2_block_cnt[AT1_QMF_BANDS])
-static int at1_unpack_dequant(GetBitContext* gb, AT1SUCtx* su,
-float spec[AT1_SU_SAMPLES])
-static void at1_subband_synthesis(AT1Ctx *q, AT1SUCtx* su, float *pOut)
-static int atrac1_decode_frame(AVCodecContext *avctx, void *data,
-int *got_frame_ptr, AVPacket *avpkt)
-static av_cold int atrac1_decode_end(AVCodecContext * avctx)
-static av_cold int atrac1_decode_init(AVCodecContext *avctx)
+at1_imdct
+at1_imdct_block
+at1_parse_bsm
+at1_unpack_dequant
+at1_subband_synthesis
+atrac1_decode_frame
+atrac1_decode_end
+atrac1_decode_init
 AVCodec ff_atrac1_decoder = ;

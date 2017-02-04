@@ -40,9 +40,13 @@ def writefilewithcontent(filename, text):
 	# finally:
 		# print "Error:没有找到文件或读取文件失败"
 	
+def f2(m2):
+	d = m2.groupdict()
+	return d['functionname']
 
 ###regular expression for header and source files
 def regrexheader(text):
+	p = re.compile(r'.*[\w&*]+\s+(?P<functionname>([\w:*&~]+))\((?P<paramterlist>([\s\S]*?))\)')
 	astr = re.sub(r'\s*\/\/.*','', text) ##del //
 	astr = re.sub(r'\s*\/\*([\s\S]*?)\*\/', '', astr) ##del /* * in multi line
 	astr = re.sub(r'#ifdef\s+__cplusplus([\s\S]*?)#endif', '', astr)  ##del __cplusplus
@@ -63,6 +67,9 @@ def regrexheader(text):
 	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
 	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}
 	astr = re.sub(r'\{([^{]*?)\}', '',astr)  ##del {}	
+
+	astr = p.sub(f2,astr)   ##提取函数名称   效率高
+
 	astr = re.sub(r'#pragma.*', '', astr)  ##del 
 	astr = re.sub(r'\s*#endif', '', astr)  ##del 
 	astr = re.sub(r'\s*#ifndef.*', '', astr)  ##del 

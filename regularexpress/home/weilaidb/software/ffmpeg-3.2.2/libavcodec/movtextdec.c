@@ -23,20 +23,18 @@ typedef struct  HilightcolorBox;
 typedef struct  TextWrapBox;
 typedef struct  MovTextContext;
 typedef struct  Box;
-static void mov_text_cleanup(MovTextContext *m)
-static void mov_text_cleanup_ftab(MovTextContext *m)
-static int mov_text_tx3g(AVCodecContext *avctx, MovTextContext *m)
-static int decode_twrp(const uint8_t *tsmb, MovTextContext *m, AVPacket *avpkt)
-static int decode_hlit(const uint8_t *tsmb, MovTextContext *m, AVPacket *avpkt)
-static int decode_hclr(const uint8_t *tsmb, MovTextContext *m, AVPacket *avpkt)
-static int decode_styl(const uint8_t *tsmb, MovTextContext *m, AVPacket *avpkt)
+mov_text_cleanup
+mov_text_cleanup_ftab
+mov_text_tx3g
+decode_twrp
+decode_hlit
+decode_hclr
+decode_styl
 static const Box box_types[] = ;
 const static size_t box_count = FF_ARRAY_ELEMS(box_types);
-static int text_to_ass(AVBPrint *buf, const char *text, const char *text_end,
-MovTextContext *m)
-static int mov_text_init(AVCodecContext *avctx)
-static int mov_text_decode_frame(AVCodecContext *avctx,
-void *data, int *got_sub_ptr, AVPacket *avpkt)
-static int mov_text_decode_close(AVCodecContext *avctx)
-static void mov_text_flush(AVCodecContext *avctx)
+text_to_ass
+mov_text_init
+mov_text_decode_frame
+mov_text_decode_close
+mov_text_flush
 AVCodec ff_movtext_decoder = ;

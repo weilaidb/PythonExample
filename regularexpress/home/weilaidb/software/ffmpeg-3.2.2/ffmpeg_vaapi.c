@@ -5,13 +5,11 @@
 static AVClass vaapi_class = ;
 #define DEFAULT_SURFACES 20
 typedef struct VAAPIDecoderContext  VAAPIDecoderContext;
-static int vaapi_get_buffer(AVCodecContext *avctx, AVFrame *frame, int flags)
-static int vaapi_retrieve_data(AVCodecContext *avctx, AVFrame *input)
+vaapi_get_buffer
+vaapi_retrieve_data
 static const struct  vaapi_profile_map[] = ;
-static int vaapi_build_decoder_config(VAAPIDecoderContext *ctx,
-AVCodecContext *avctx,
-int fallback_allowed)
-static void vaapi_decode_uninit(AVCodecContext *avctx)
-int vaapi_decode_init(AVCodecContext *avctx)
+vaapi_build_decoder_config
+vaapi_decode_uninit
+vaapi_decode_init
 static AVClass *vaapi_log = &vaapi_class;
-av_cold int vaapi_device_init(const char *device)
+vaapi_device_init

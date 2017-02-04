@@ -31,14 +31,10 @@
 #define STREAM_TYPE_AUDIO_TRUEHD    0x83
 #define STREAM_TYPE_AUDIO_EAC3      0x87
 typedef struct MpegTSContext MpegTSContext;
-MpegTSContext *avpriv_mpegts_parse_open(AVFormatContext *s);
-int avpriv_mpegts_parse_packet(MpegTSContext *ts, AVPacket *pkt,
-const uint8_t *buf, int len);
-void avpriv_mpegts_parse_close(MpegTSContext *ts);
+*avpriv_mpegts_parse_open;
+avpriv_mpegts_parse_packet;
+avpriv_mpegts_parse_close;
 typedef struct SLConfigDescr  SLConfigDescr;
 typedef struct Mp4Descr  Mp4Descr;
-int ff_parse_mpeg2_descriptor(AVFormatContext *fc, AVStream *st, int stream_type,
-const uint8_t **pp, const uint8_t *desc_list_end,
-Mp4Descr *mp4_descr, int mp4_descr_count, int pid,
-MpegTSContext *ts);
-int ff_check_h264_startcode(AVFormatContext *s, const AVStream *st, const AVPacket *pkt);
+ff_parse_mpeg2_descriptor;
+ff_check_h264_startcode;
